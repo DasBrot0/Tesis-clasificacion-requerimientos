@@ -372,3 +372,4 @@ externos macro_recall: 0.4159 ± 0.0957 | agrupado 0.4197
 externos security_recall: 0.8198 ± 0.1016 | agrupado 0.8192
 externos subset_accuracy: 0.6023 ± 0.0545 | agrupado 0.6023
 externos hamming_loss: 0.1114 ± 0.0192 | agrupado 0.1114
+c1_augmented/secreq/bilstm: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\secreq\bilstm\summary.json); use --force para repetirlo.

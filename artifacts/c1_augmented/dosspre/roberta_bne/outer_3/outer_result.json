@@ -1,0 +1,89 @@
+{
+  "outer": 3,
+  "train_real_rows": 1009,
+  "train_synthetic_rows": 114,
+  "test_rows": 253,
+  "optuna": {
+    "trials_finished": 12,
+    "trials_completed": 7,
+    "trials_pruned": 5
+  },
+  "default_config_inner_cv_macro_f1": 0.6509446130577139,
+  "best_trial": {
+    "trial_id": 11,
+    "inner_cv_macro_f1_mean": 0.6839183819322571,
+    "inner_cv_macro_f1_std": 0.031031444120124374
+  },
+  "winning_config": {
+    "learning_rate": 2.1373342787267833e-05,
+    "batch_size": 8,
+    "epochs": 15,
+    "dropout": 0.242627862340338,
+    "weight_decay": 1.8180102687222947e-05,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.06,
+    "pos_weight": true
+  },
+  "final_training_epochs": 7,
+  "thresholds_by_label": {
+    "Security": 0.4,
+    "Confidentiality": 0.45000000000000007,
+    "Integrity": 0.4750000000000001,
+    "Authenticity": 0.6000000000000002,
+    "Resistance": 0.5750000000000002
+  },
+  "test": {
+    "macro_f1": 0.6621569305333752,
+    "weighted_f1": 0.697521853798595,
+    "micro_f1": 0.7003367003367004,
+    "macro_precision": 0.7243814080656186,
+    "macro_recall": 0.6214797178130512,
+    "security_recall": 0.7160493827160493,
+    "subset_accuracy": 0.7905138339920948,
+    "hamming_loss": 0.07035573122529644,
+    "loss": 0.4468695956020958
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.7532467532467533,
+      "recall": 0.7160493827160493,
+      "f1": 0.7341772151898734,
+      "support": 81,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.7,
+      "recall": 0.56,
+      "f1": 0.6222222222222222,
+      "support": 25,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.75,
+      "recall": 0.42857142857142855,
+      "f1": 0.5454545454545454,
+      "support": 7,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.7368421052631579,
+      "recall": 0.7777777777777778,
+      "f1": 0.7567567567567568,
+      "support": 18,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.6818181818181818,
+      "recall": 0.625,
+      "f1": 0.6521739130434783,
+      "support": 24,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 19.6
+}

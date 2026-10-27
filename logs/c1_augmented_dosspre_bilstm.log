@@ -362,3 +362,4 @@ externos macro_recall: 0.4332 ± 0.0496 | agrupado 0.4327
 externos security_recall: 0.6429 ± 0.0607 | agrupado 0.6429
 externos subset_accuracy: 0.6751 ± 0.0496 | agrupado 0.6751
 externos hamming_loss: 0.1032 ± 0.0184 | agrupado 0.1032
+c1_augmented/dosspre/bilstm: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\dosspre\bilstm\summary.json); use --force para repetirlo.

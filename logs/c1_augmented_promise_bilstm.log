@@ -366,3 +366,4 @@ externos macro_recall: 0.3452 ± 0.1213 | agrupado 0.3359
 externos security_recall: 0.6342 ± 0.1322 | agrupado 0.6329
 externos subset_accuracy: 0.7804 ± 0.0518 | agrupado 0.7804
 externos hamming_loss: 0.0713 ± 0.0156 | agrupado 0.0713
+c1_augmented/promise/bilstm: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\promise\bilstm\summary.json); use --force para repetirlo.

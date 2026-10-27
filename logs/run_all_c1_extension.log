@@ -5,3 +5,41 @@ C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\dosspre\roberta
 [2026-10-26T20:40:41] INICIO c1_augmented/promise/roberta_bne
 [2026-10-26T21:30:59] FIN c1_augmented/promise/roberta_bne (50.3 min)
 [2026-10-26T21:30:59] INICIO c1_augmented/secreq/roberta_bne
+[2026-10-26T22:36:02] FIN c1_augmented/secreq/roberta_bne (65.1 min)
+[2026-10-26T22:36:02] INICIO c1_augmented/dosspre/roberta_bne
+[2026-10-27T00:08:41] FIN c1_augmented/dosspre/roberta_bne (92.6 min)
+[2026-10-27T00:08:41] ENTRENAMIENTO COMPLETO
+[2026-10-27T00:08:41] INICIO c1_augmented/promise/beto
+[2026-10-27T00:56:34] FIN c1_augmented/promise/beto (47.9 min)
+[2026-10-27T00:56:34] INICIO c1_augmented/secreq/beto
+[2026-10-27T01:49:13] FIN c1_augmented/secreq/beto (52.7 min)
+[2026-10-27T01:49:13] INICIO c1_augmented/dosspre/beto
+[2026-10-27T03:32:50] FIN c1_augmented/dosspre/beto (103.6 min)
+[2026-10-27T03:32:50] ENTRENAMIENTO COMPLETO
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\promise\beto: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\secreq\beto: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\dosspre\beto: etapa de 6 trials archivada en stage_6trials; lista para extender
+[2026-10-27T03:32:50] INICIO c1_augmented/promise/beto
+[2026-10-27T04:29:26] FIN c1_augmented/promise/beto (56.6 min)
+[2026-10-27T04:29:26] INICIO c1_augmented/secreq/beto
+[2026-10-27T05:32:49] FIN c1_augmented/secreq/beto (63.4 min)
+[2026-10-27T05:32:49] INICIO c1_augmented/dosspre/beto
+[2026-10-27T07:30:56] FIN c1_augmented/dosspre/beto (118.1 min)
+[2026-10-27T07:30:56] ENTRENAMIENTO COMPLETO
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\python.exe: can't open file 'C:\\Users\\Franco\\Projects\\ULima\\SeminarioI\\scripts\\extend_trials.py': [Errno 2] No such file or directory
+[2026-10-27T07:30:56] INICIO c1_augmented/promise/cnn
+[2026-10-27T07:30:59] FIN c1_augmented/promise/cnn (0.1 min)
+[2026-10-27T07:30:59] INICIO c1_augmented/secreq/cnn
+[2026-10-27T07:31:03] FIN c1_augmented/secreq/cnn (0.1 min)
+[2026-10-27T07:31:03] INICIO c1_augmented/dosspre/cnn
+[2026-10-27T07:31:06] FIN c1_augmented/dosspre/cnn (0.1 min)
+[2026-10-27T07:31:06] ENTRENAMIENTO COMPLETO
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\python.exe: can't open file 'C:\\Users\\Franco\\Projects\\ULima\\SeminarioI\\scripts\\extend_trials.py': [Errno 2] No such file or directory
+[2026-10-27T07:31:06] INICIO c1_augmented/promise/bilstm
+[2026-10-27T07:31:09] FIN c1_augmented/promise/bilstm (0.1 min)
+[2026-10-27T07:31:09] INICIO c1_augmented/secreq/bilstm
+[2026-10-27T07:31:13] FIN c1_augmented/secreq/bilstm (0.1 min)
+[2026-10-27T07:31:13] INICIO c1_augmented/dosspre/bilstm
+[2026-10-27T07:31:16] FIN c1_augmented/dosspre/bilstm (0.1 min)
+[2026-10-27T07:31:16] ENTRENAMIENTO COMPLETO
+[2026-10-27T07:31:16-05:00] COLA TERMINADA

@@ -1,0 +1,542 @@
+
+=== c1_augmented | PROMISE_exp / BETO | device=cuda ===
+filas reales=460 | sintéticos=92 | CV anidada 5x3 | trials por externo=6 | etiquetas evaluadas=['Security', 'Confidentiality', 'Integrity', 'Authenticity', 'Resistance']
+
+--- externo 1/5: entrenamiento=368 reales + 72 sintéticos | prueba=92 ---
+[I 2026-10-27 00:08:46,794] A new study created in RDB with name: promise_beto_outer_0
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 39369.06it/s]
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\autograd\graph.py:1072: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:912.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+    fold=1/3 macro_f1=0.5457 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25498.47it/s]
+    fold=2/3 macro_f1=0.6527 security_recall=1.0000 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22331.83it/s]
+    fold=3/3 macro_f1=0.3430 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 00:09:45,110] Trial 0 finished with value: 0.5137815126050419 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.5137815126050419.
+  trial 1: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19731.54it/s]
+    fold=1/3 macro_f1=0.5910 security_recall=0.8095 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20856.65it/s]
+    fold=2/3 macro_f1=0.5835 security_recall=0.9524 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24643.68it/s]
+    fold=3/3 macro_f1=0.6200 security_recall=0.8095 best_epoch=5
+[I 2026-10-27 00:11:01,758] Trial 1 finished with value: 0.5981905801054737 and parameters: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5981905801054737.
+  trial 2: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20960.35it/s]
+    fold=1/3 macro_f1=0.6170 security_recall=0.8095 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15050.60it/s]
+    fold=2/3 macro_f1=0.6736 security_recall=0.9048 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25878.60it/s]
+    fold=3/3 macro_f1=0.4962 security_recall=0.8095 best_epoch=9
+[I 2026-10-27 00:13:29,713] Trial 2 finished with value: 0.5956133240903677 and parameters: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 1 with value: 0.5981905801054737.
+  trial 3: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 14070.53it/s]
+    fold=1/3 macro_f1=0.4615 security_recall=0.8095 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 29396.54it/s]
+    fold=2/3 macro_f1=0.4861 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25844.61it/s]
+    fold=3/3 macro_f1=0.4503 security_recall=0.8095 best_epoch=4
+[I 2026-10-27 00:14:20,611] Trial 3 finished with value: 0.4659699727290401 and parameters: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5981905801054737.
+  trial 4: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25186.79it/s]
+    fold=1/3 macro_f1=0.4618 security_recall=0.6667 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24675.32it/s]
+    fold=2/3 macro_f1=0.6910 security_recall=0.9524 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22359.03it/s]
+    fold=3/3 macro_f1=0.5883 security_recall=0.7619 best_epoch=4
+[I 2026-10-27 00:15:46,528] Trial 4 finished with value: 0.5803824606765783 and parameters: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5981905801054737.
+  trial 5: {'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21652.98it/s]
+    fold=1/3 macro_f1=0.6927 security_recall=0.8095 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19883.96it/s]
+    fold=2/3 macro_f1=0.6674 security_recall=0.9048 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22368.11it/s]
+    fold=3/3 macro_f1=0.6062 security_recall=0.8571 best_epoch=8
+[I 2026-10-27 00:17:40,698] Trial 5 finished with value: 0.6554324091068277 and parameters: {'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6554324091068277.
+  modelo del externo 1: 5 épocas sobre 440 filas, config={'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19997.53it/s]
+  externo 1 prueba: {'macro_f1': 0.5819, 'weighted_f1': 0.7231, 'micro_f1': 0.75, 'macro_precision': 0.5654, 'macro_recall': 0.7, 'security_recall': 1.0, 'subset_accuracy': 0.8804, 'hamming_loss': 0.0391, 'loss': 0.1673}
+
+--- externo 2/5: entrenamiento=368 reales + 73 sintéticos | prueba=92 ---
+[I 2026-10-27 00:18:16,915] A new study created in RDB with name: promise_beto_outer_1
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21845.33it/s]
+    fold=1/3 macro_f1=0.4707 security_recall=0.9524 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 27832.05it/s]
+    fold=2/3 macro_f1=0.3267 security_recall=0.6667 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18825.25it/s]
+    fold=3/3 macro_f1=0.4439 security_recall=0.8571 best_epoch=5
+[I 2026-10-27 00:19:17,630] Trial 0 finished with value: 0.4137553589727503 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.4137553589727503.
+  trial 1: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25140.81it/s]
+    fold=1/3 macro_f1=0.6415 security_recall=0.9524 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26500.25it/s]
+    fold=2/3 macro_f1=0.5964 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20927.96it/s]
+    fold=3/3 macro_f1=0.5724 security_recall=0.8095 best_epoch=4
+[I 2026-10-27 00:20:34,206] Trial 1 finished with value: 0.6034301929133653 and parameters: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.6034301929133653.
+  trial 2: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12777.23it/s]
+    fold=1/3 macro_f1=0.5767 security_recall=0.9048 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12606.65it/s]
+    fold=2/3 macro_f1=0.6767 security_recall=0.8095 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25954.20it/s]
+    fold=3/3 macro_f1=0.4680 security_recall=0.8571 best_epoch=10
+[I 2026-10-27 00:23:01,630] Trial 2 finished with value: 0.5737870544240614 and parameters: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 1 with value: 0.6034301929133653.
+  trial 3: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20520.49it/s]
+    fold=1/3 macro_f1=0.5806 security_recall=1.0000 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 28410.05it/s]
+    fold=2/3 macro_f1=0.5644 security_recall=0.5714 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23415.27it/s]
+    fold=3/3 macro_f1=0.5774 security_recall=0.8571 best_epoch=5
+[I 2026-10-27 00:23:52,060] Trial 3 finished with value: 0.5741611872360635 and parameters: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.6034301929133653.
+  trial 4: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22611.11it/s]
+    fold=1/3 macro_f1=0.7115 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26166.25it/s]
+    fold=2/3 macro_f1=0.5872 security_recall=0.6190 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18280.08it/s]
+    fold=3/3 macro_f1=0.5798 security_recall=0.9524 best_epoch=5
+[I 2026-10-27 00:25:18,041] Trial 4 finished with value: 0.6261661272653192 and parameters: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 4 with value: 0.6261661272653192.
+  trial 5: {'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26587.23it/s]
+    fold=1/3 macro_f1=0.7360 security_recall=0.9524 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18224.44it/s]
+    fold=2/3 macro_f1=0.6767 security_recall=0.9524 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20734.70it/s]
+    fold=3/3 macro_f1=0.6222 security_recall=0.6667 best_epoch=5
+[I 2026-10-27 00:27:25,359] Trial 5 finished with value: 0.6783088052636099 and parameters: {'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6783088052636099.
+  modelo del externo 2: 5 épocas sobre 441 filas, config={'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22523.59it/s]
+  externo 2 prueba: {'macro_f1': 0.5642, 'weighted_f1': 0.6763, 'micro_f1': 0.6667, 'macro_precision': 0.4739, 'macro_recall': 0.7125, 'security_recall': 0.9375, 'subset_accuracy': 0.8152, 'hamming_loss': 0.0587, 'loss': 0.2939}
+
+--- externo 3/5: entrenamiento=368 reales + 79 sintéticos | prueba=92 ---
+[I 2026-10-27 00:28:01,587] A new study created in RDB with name: promise_beto_outer_2
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17157.29it/s]
+    fold=1/3 macro_f1=0.3140 security_recall=0.6364 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17689.91it/s]
+    fold=2/3 macro_f1=0.4445 security_recall=0.8095 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 13389.91it/s]
+    fold=3/3 macro_f1=0.2952 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 00:28:52,206] Trial 0 finished with value: 0.3512587847349169 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.3512587847349169.
+  trial 1: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 28441.34it/s]
+    fold=1/3 macro_f1=0.5643 security_recall=0.6818 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26786.33it/s]
+    fold=2/3 macro_f1=0.6033 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19664.86it/s]
+    fold=3/3 macro_f1=0.6096 security_recall=0.9048 best_epoch=4
+[I 2026-10-27 00:30:09,299] Trial 1 finished with value: 0.5924196174196174 and parameters: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5924196174196174.
+  trial 2: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16289.68it/s]
+    fold=1/3 macro_f1=0.6738 security_recall=0.7273 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19428.12it/s]
+    fold=2/3 macro_f1=0.5911 security_recall=0.8095 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25981.95it/s]
+    fold=3/3 macro_f1=0.6632 security_recall=0.9524 best_epoch=9
+[I 2026-10-27 00:32:39,273] Trial 2 finished with value: 0.6427031837558153 and parameters: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 2 with value: 0.6427031837558153.
+  trial 3: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21296.37it/s]
+    fold=1/3 macro_f1=0.5518 security_recall=0.7727 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21467.90it/s]
+    fold=2/3 macro_f1=0.5463 security_recall=0.8095 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19891.14it/s]
+    fold=3/3 macro_f1=0.6079 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 00:33:29,706] Trial 3 finished with value: 0.5686885173021244 and parameters: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 2 with value: 0.6427031837558153.
+  trial 4: {'learning_rate': 4.0082123057480886e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.17308853062465873, 'weight_decay': 7.482201689193726e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 11133.42it/s]
+    fold=1/3 macro_f1=0.5981 security_recall=0.8182 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20054.32it/s]
+    fold=2/3 macro_f1=0.5152 security_recall=0.8095 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19023.32it/s]
+    fold=3/3 macro_f1=0.6818 security_recall=0.9524 best_epoch=9
+[I 2026-10-27 00:35:59,588] Trial 4 finished with value: 0.5983999639691194 and parameters: {'learning_rate': 4.0082123057480886e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.17308853062465873, 'weight_decay': 7.482201689193726e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 2 with value: 0.6427031837558153.
+  trial 5: {'learning_rate': 1.0171734421668333e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.43611800388281563, 'weight_decay': 0.002574078501831433, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24804.21it/s]
+    fold=1/3 macro_f1=0.3155 security_recall=0.7273 best_epoch=10
+[I 2026-10-27 00:36:50,223] Trial 5 pruned. 
+  modelo del externo 3: 7 épocas sobre 447 filas, config={'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23633.60it/s]
+  externo 3 prueba: {'macro_f1': 0.5635, 'weighted_f1': 0.652, 'micro_f1': 0.6923, 'macro_precision': 0.7333, 'macro_recall': 0.4967, 'security_recall': 0.7333, 'subset_accuracy': 0.8913, 'hamming_loss': 0.0348, 'loss': 0.1178}
+
+--- externo 4/5: entrenamiento=368 reales + 73 sintéticos | prueba=92 ---
+[I 2026-10-27 00:37:39,974] A new study created in RDB with name: promise_beto_outer_3
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18899.31it/s]
+    fold=1/3 macro_f1=0.2180 security_recall=0.6667 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17600.60it/s]
+    fold=2/3 macro_f1=0.2704 security_recall=0.7619 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12153.65it/s]
+    fold=3/3 macro_f1=0.4365 security_recall=0.9524 best_epoch=5
+[I 2026-10-27 00:38:31,201] Trial 0 finished with value: 0.30830307659575956 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.30830307659575956.
+  trial 1: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 11837.11it/s]
+    fold=1/3 macro_f1=0.6082 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23113.31it/s]
+    fold=2/3 macro_f1=0.4421 security_recall=0.7619 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 13529.57it/s]
+    fold=3/3 macro_f1=0.5613 security_recall=0.7619 best_epoch=4
+[I 2026-10-27 00:39:48,820] Trial 1 finished with value: 0.5371908902204153 and parameters: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5371908902204153.
+  trial 2: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17339.11it/s]
+    fold=1/3 macro_f1=0.6597 security_recall=0.6667 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24571.86it/s]
+    fold=2/3 macro_f1=0.4486 security_recall=0.8095 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16650.10it/s]
+    fold=3/3 macro_f1=0.3638 security_recall=0.7143 best_epoch=7
+[I 2026-10-27 00:42:17,208] Trial 2 finished with value: 0.49070331128470657 and parameters: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 1 with value: 0.5371908902204153.
+  trial 3: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25305.58it/s]
+    fold=1/3 macro_f1=0.4449 security_recall=0.6667 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21910.79it/s]
+    fold=2/3 macro_f1=0.5400 security_recall=0.8571 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24864.67it/s]
+    fold=3/3 macro_f1=0.4376 security_recall=0.7619 best_epoch=5
+[I 2026-10-27 00:43:07,936] Trial 3 finished with value: 0.4741909162961795 and parameters: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.5371908902204153.
+  trial 4: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12369.98it/s]
+    fold=1/3 macro_f1=0.5889 security_recall=0.6667 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25043.28it/s]
+    fold=2/3 macro_f1=0.4958 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26030.24it/s]
+    fold=3/3 macro_f1=0.5681 security_recall=0.8095 best_epoch=5
+[I 2026-10-27 00:44:23,968] Trial 4 finished with value: 0.5509284523922006 and parameters: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 4 with value: 0.5509284523922006.
+  trial 5: {'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20023.70it/s]
+    fold=1/3 macro_f1=0.7600 security_recall=0.6667 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23172.30it/s]
+    fold=2/3 macro_f1=0.6722 security_recall=0.7143 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18159.95it/s]
+    fold=3/3 macro_f1=0.5837 security_recall=0.6190 best_epoch=4
+[I 2026-10-27 00:46:22,462] Trial 5 finished with value: 0.6719702032859928 and parameters: {'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6719702032859928.
+  modelo del externo 4: 5 épocas sobre 441 filas, config={'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21471.24it/s]
+  externo 4 prueba: {'macro_f1': 0.554, 'weighted_f1': 0.5776, 'micro_f1': 0.6038, 'macro_precision': 0.7667, 'macro_recall': 0.5202, 'security_recall': 0.625, 'subset_accuracy': 0.8478, 'hamming_loss': 0.0457, 'loss': 0.3686}
+
+--- externo 5/5: entrenamiento=368 reales + 71 sintéticos | prueba=92 ---
+[I 2026-10-27 00:46:58,261] A new study created in RDB with name: promise_beto_outer_4
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15294.93it/s]
+    fold=1/3 macro_f1=0.4625 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25422.37it/s]
+    fold=2/3 macro_f1=0.4219 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12195.80it/s]
+    fold=3/3 macro_f1=0.4002 security_recall=0.7143 best_epoch=5
+[I 2026-10-27 00:47:48,030] Trial 0 finished with value: 0.4281718966349907 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.4281718966349907.
+  trial 1: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15316.48it/s]
+    fold=1/3 macro_f1=0.6966 security_recall=0.8571 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24352.43it/s]
+    fold=2/3 macro_f1=0.6228 security_recall=0.8095 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17417.69it/s]
+    fold=3/3 macro_f1=0.5180 security_recall=0.8095 best_epoch=5
+[I 2026-10-27 00:49:02,954] Trial 1 finished with value: 0.6124625521511874 and parameters: {'learning_rate': 1.827226177606625e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.4464704583099741, 'weight_decay': 0.00031232721657900017, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.6124625521511874.
+  trial 2: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23112.67it/s]
+    fold=1/3 macro_f1=0.7267 security_recall=0.9048 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20240.99it/s]
+    fold=2/3 macro_f1=0.3856 security_recall=0.8571 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15945.77it/s]
+    fold=3/3 macro_f1=0.4500 security_recall=0.7619 best_epoch=9
+[I 2026-10-27 00:51:28,218] Trial 2 finished with value: 0.5207836784458572 and parameters: {'learning_rate': 1.6317596956423427e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2465447373174767, 'weight_decay': 2.5709318977571628e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 1 with value: 0.6124625521511874.
+  trial 3: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 13894.03it/s]
+    fold=1/3 macro_f1=0.4840 security_recall=0.9524 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20414.52it/s]
+    fold=2/3 macro_f1=0.5311 security_recall=0.7143 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23885.70it/s]
+    fold=3/3 macro_f1=0.4726 security_recall=0.8571 best_epoch=3
+[I 2026-10-27 00:52:18,214] Trial 3 finished with value: 0.49586735715307145 and parameters: {'learning_rate': 1.1103735608516824e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.27606099749584057, 'weight_decay': 8.175130228842683e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.6124625521511874.
+  trial 4: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25523.67it/s]
+    fold=1/3 macro_f1=0.7437 security_recall=0.8571 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 29636.94it/s]
+    fold=2/3 macro_f1=0.4568 security_recall=0.4286 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19886.83it/s]
+    fold=3/3 macro_f1=0.5715 security_recall=0.7619 best_epoch=5
+[I 2026-10-27 00:53:33,726] Trial 4 finished with value: 0.5906492983666897 and parameters: {'learning_rate': 3.467707282618655e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.37101677554493956, 'weight_decay': 0.00019192402887477537, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 1 with value: 0.6124625521511874.
+  trial 5: {'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 14612.23it/s]
+    fold=1/3 macro_f1=0.8222 security_recall=0.9048 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20781.11it/s]
+    fold=2/3 macro_f1=0.5380 security_recall=0.8095 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23254.47it/s]
+    fold=3/3 macro_f1=0.5829 security_recall=0.9524 best_epoch=10
+[I 2026-10-27 00:55:45,131] Trial 5 finished with value: 0.6476847452457208 and parameters: {'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6476847452457208.
+  modelo del externo 5: 7 épocas sobre 439 filas, config={'learning_rate': 4.295639605113189e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11035325148437686, 'weight_decay': 0.004409085354863199, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21166.53it/s]
+  externo 5 prueba: {'macro_f1': 0.5002, 'weighted_f1': 0.6966, 'micro_f1': 0.6885, 'macro_precision': 0.5048, 'macro_recall': 0.5214, 'security_recall': 0.75, 'subset_accuracy': 0.8587, 'hamming_loss': 0.0413, 'loss': 0.2739}
+externos macro_f1: 0.5527 ± 0.0311 | agrupado 0.5667
+externos weighted_f1: 0.6651 ± 0.0555 | agrupado 0.6769
+externos micro_f1: 0.6803 ± 0.0527 | agrupado 0.6834
+externos macro_precision: 0.6088 ± 0.1335 | agrupado 0.5652
+externos macro_recall: 0.5902 ± 0.1065 | agrupado 0.5822
+externos security_recall: 0.8092 ± 0.1550 | agrupado 0.8101
+externos subset_accuracy: 0.8587 ± 0.0298 | agrupado 0.8587
+externos hamming_loss: 0.0439 ± 0.0091 | agrupado 0.0439
+
+=== c1_augmented | PROMISE_exp / BETO | device=cuda ===
+filas reales=460 | sintéticos=92 | CV anidada 5x3 | trials por externo=12 | etiquetas evaluadas=['Security', 'Confidentiality', 'Integrity', 'Authenticity', 'Resistance']
+
+--- externo 1/5: entrenamiento=368 reales + 72 sintéticos | prueba=92 ---
+[I 2026-10-27 03:32:55,048] Using an existing study with `study_name='promise_beto_outer_0'` instead of creating a new one.
+  trial 6: {'learning_rate': 4.853604421634413e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262201582083083, 'weight_decay': 0.00019547316069181282, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 10845.39it/s]
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\autograd\graph.py:1072: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:912.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+    fold=1/3 macro_f1=0.5694 security_recall=0.7143 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25288.54it/s]
+    fold=2/3 macro_f1=0.7316 security_recall=1.0000 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 27820.80it/s]
+    fold=3/3 macro_f1=0.5744 security_recall=0.8095 best_epoch=5
+[I 2026-10-27 03:35:04,310] Trial 6 finished with value: 0.6251631156848548 and parameters: {'learning_rate': 4.853604421634413e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262201582083083, 'weight_decay': 0.00019547316069181282, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6554324091068277.
+  trial 7: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16190.10it/s]
+    fold=1/3 macro_f1=0.7170 security_recall=0.8095 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16284.55it/s]
+    fold=2/3 macro_f1=0.7502 security_recall=1.0000 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20906.25it/s]
+    fold=3/3 macro_f1=0.5581 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 03:36:35,819] Trial 7 finished with value: 0.6751307561833877 and parameters: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6751307561833877.
+  trial 8: {'learning_rate': 2.86462445824248e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.4947424166773104, 'weight_decay': 0.0003139225343871418, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26965.53it/s]
+    fold=1/3 macro_f1=0.6170 security_recall=0.8095 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21140.00it/s]
+    fold=2/3 macro_f1=0.6570 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25225.24it/s]
+    fold=3/3 macro_f1=0.5726 security_recall=0.8571 best_epoch=8
+[I 2026-10-27 03:38:16,782] Trial 8 finished with value: 0.6155329535752146 and parameters: {'learning_rate': 2.86462445824248e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.4947424166773104, 'weight_decay': 0.0003139225343871418, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6751307561833877.
+  trial 9: {'learning_rate': 4.7886063029229075e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.20992755381955405, 'weight_decay': 0.0008532984184403783, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18868.24it/s]
+    fold=1/3 macro_f1=0.6476 security_recall=0.7143 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21038.27it/s]
+    fold=2/3 macro_f1=0.7342 security_recall=0.8095 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26958.50it/s]
+    fold=3/3 macro_f1=0.6036 security_recall=0.8095 best_epoch=10
+[I 2026-10-27 03:40:06,237] Trial 9 finished with value: 0.6618290414420006 and parameters: {'learning_rate': 4.7886063029229075e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.20992755381955405, 'weight_decay': 0.0008532984184403783, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6751307561833877.
+  trial 10: {'learning_rate': 4.322003611534391e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.1153077663135289, 'weight_decay': 7.625776789692469e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24306.58it/s]
+    fold=1/3 macro_f1=0.6694 security_recall=0.8095 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25411.42it/s]
+    fold=2/3 macro_f1=0.7353 security_recall=0.8571 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22933.69it/s]
+    fold=3/3 macro_f1=0.5585 security_recall=0.8571 best_epoch=5
+[I 2026-10-27 03:41:37,722] Trial 10 finished with value: 0.6544095098110295 and parameters: {'learning_rate': 4.322003611534391e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.1153077663135289, 'weight_decay': 7.625776789692469e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6751307561833877.
+  trial 11: {'learning_rate': 3.8877594534863114e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.3247801706356114, 'weight_decay': 0.004491131712921591, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25460.76it/s]
+    fold=1/3 macro_f1=0.6119 security_recall=0.7619 best_epoch=4
+[I 2026-10-27 03:42:01,194] Trial 11 pruned. 
+  modelo del externo 1: 7 épocas sobre 440 filas, config={'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 31465.27it/s]
+  externo 1 prueba: {'macro_f1': 0.6515, 'weighted_f1': 0.7336, 'micro_f1': 0.7576, 'macro_precision': 0.5978, 'macro_recall': 0.7304, 'security_recall': 0.9375, 'subset_accuracy': 0.8804, 'hamming_loss': 0.0348, 'loss': 0.1606}
+
+--- externo 2/5: entrenamiento=368 reales + 73 sintéticos | prueba=92 ---
+[I 2026-10-27 03:42:33,555] Using an existing study with `study_name='promise_beto_outer_1'` instead of creating a new one.
+  trial 6: {'learning_rate': 4.8547213684552794e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262282540014129, 'weight_decay': 0.00019361884074383236, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19634.02it/s]
+    fold=1/3 macro_f1=0.7022 security_recall=0.9048 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23706.15it/s]
+    fold=2/3 macro_f1=0.6510 security_recall=0.6667 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18788.44it/s]
+    fold=3/3 macro_f1=0.6472 security_recall=0.7619 best_epoch=4
+[I 2026-10-27 03:44:26,961] Trial 6 finished with value: 0.6667990562569006 and parameters: {'learning_rate': 4.8547213684552794e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262282540014129, 'weight_decay': 0.00019361884074383236, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6783088052636099.
+  trial 7: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23955.64it/s]
+    fold=1/3 macro_f1=0.6965 security_recall=0.9048 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12135.08it/s]
+    fold=2/3 macro_f1=0.7683 security_recall=0.9524 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16001.66it/s]
+    fold=3/3 macro_f1=0.5889 security_recall=0.8571 best_epoch=3
+[I 2026-10-27 03:45:53,846] Trial 7 finished with value: 0.6845732532629866 and parameters: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6845732532629866.
+  trial 8: {'learning_rate': 2.86462445824248e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.4947424166773104, 'weight_decay': 0.0003139225343871418, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22394.18it/s]
+    fold=1/3 macro_f1=0.7006 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23898.82it/s]
+    fold=2/3 macro_f1=0.6132 security_recall=0.7143 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17904.18it/s]
+    fold=3/3 macro_f1=0.6223 security_recall=0.8571 best_epoch=7
+[I 2026-10-27 03:47:29,514] Trial 8 finished with value: 0.6453584592275642 and parameters: {'learning_rate': 2.86462445824248e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.4947424166773104, 'weight_decay': 0.0003139225343871418, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 7 with value: 0.6845732532629866.
+  trial 9: {'learning_rate': 4.7886063029229075e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.20992755381955405, 'weight_decay': 0.0008532984184403783, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23384.12it/s]
+    fold=1/3 macro_f1=0.7745 security_recall=0.9524 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21443.94it/s]
+    fold=2/3 macro_f1=0.7426 security_recall=0.9048 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19525.91it/s]
+    fold=3/3 macro_f1=0.5630 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 03:48:59,491] Trial 9 finished with value: 0.6933597140746683 and parameters: {'learning_rate': 4.7886063029229075e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.20992755381955405, 'weight_decay': 0.0008532984184403783, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 9 with value: 0.6933597140746683.
+  trial 10: {'learning_rate': 4.320514252321027e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.11020770876213365, 'weight_decay': 7.205128013137245e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 28110.43it/s]
+    fold=1/3 macro_f1=0.8057 security_recall=0.9048 best_epoch=11
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 16651.78it/s]
+    fold=2/3 macro_f1=0.7264 security_recall=0.9048 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 27706.99it/s]
+    fold=3/3 macro_f1=0.6202 security_recall=0.8571 best_epoch=5
+[I 2026-10-27 03:50:41,650] Trial 10 finished with value: 0.7174233293904555 and parameters: {'learning_rate': 4.320514252321027e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.11020770876213365, 'weight_decay': 7.205128013137245e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 10 with value: 0.7174233293904555.
+  trial 11: {'learning_rate': 4.748346695951102e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.13778327511106936, 'weight_decay': 2.7241648320841557e-06, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21741.29it/s]
+    fold=1/3 macro_f1=0.7715 security_recall=1.0000 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18319.39it/s]
+    fold=2/3 macro_f1=0.7585 security_recall=0.9524 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21298.57it/s]
+    fold=3/3 macro_f1=0.5642 security_recall=0.8571 best_epoch=5
+[I 2026-10-27 03:52:11,710] Trial 11 finished with value: 0.6980365930717501 and parameters: {'learning_rate': 4.748346695951102e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.13778327511106936, 'weight_decay': 2.7241648320841557e-06, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 10 with value: 0.7174233293904555.
+  modelo del externo 2: 8 épocas sobre 441 filas, config={'learning_rate': 4.320514252321027e-05, 'batch_size': 16, 'epochs': 15, 'dropout': 0.11020770876213365, 'weight_decay': 7.205128013137245e-07, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18476.70it/s]
+  externo 2 prueba: {'macro_f1': 0.531, 'weighted_f1': 0.6726, 'micro_f1': 0.6667, 'macro_precision': 0.5154, 'macro_recall': 0.5875, 'security_recall': 0.9375, 'subset_accuracy': 0.7826, 'hamming_loss': 0.0543, 'loss': 0.2634}
+
+--- externo 3/5: entrenamiento=368 reales + 79 sintéticos | prueba=92 ---
+[I 2026-10-27 03:52:47,330] Using an existing study with `study_name='promise_beto_outer_2'` instead of creating a new one.
+  trial 6: {'learning_rate': 3.313405895451531e-05, 'batch_size': 8, 'epochs': 15, 'dropout': 0.4848208495101055, 'weight_decay': 1.7863010344699535e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25208.31it/s]
+    fold=1/3 macro_f1=0.5976 security_recall=0.7727 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15952.54it/s]
+    fold=2/3 macro_f1=0.5328 security_recall=0.9048 best_epoch=7
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21679.12it/s]
+    fold=3/3 macro_f1=0.6915 security_recall=0.9048 best_epoch=8
+[I 2026-10-27 03:55:41,149] Trial 6 finished with value: 0.6073040844244675 and parameters: {'learning_rate': 3.313405895451531e-05, 'batch_size': 8, 'epochs': 15, 'dropout': 0.4848208495101055, 'weight_decay': 1.7863010344699535e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 2 with value: 0.6427031837558153.
+  trial 7: {'learning_rate': 1.078664738656386e-05, 'batch_size': 8, 'epochs': 5, 'dropout': 0.2384632361349669, 'weight_decay': 1.176709869772392e-06, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22630.93it/s]
+    fold=1/3 macro_f1=0.1619 security_recall=0.7727 best_epoch=4
+[I 2026-10-27 03:56:07,271] Trial 7 pruned. 
+  trial 8: {'learning_rate': 1.9078258328716856e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.14162011752579884, 'weight_decay': 1.2922335231179844e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18755.17it/s]
+    fold=1/3 macro_f1=0.5815 security_recall=0.7727 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18606.93it/s]
+    fold=2/3 macro_f1=0.5224 security_recall=0.8095 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23028.28it/s]
+    fold=3/3 macro_f1=0.7085 security_recall=0.9524 best_epoch=10
+[I 2026-10-27 03:58:27,104] Trial 8 finished with value: 0.604127655290446 and parameters: {'learning_rate': 1.9078258328716856e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.14162011752579884, 'weight_decay': 1.2922335231179844e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 2 with value: 0.6427031837558153.
+  trial 9: {'learning_rate': 1.557637063151714e-05, 'batch_size': 8, 'epochs': 20, 'dropout': 0.15120100401852338, 'weight_decay': 1.8041913380284478e-05, 'optimizer': 'Adam', 'warmup_ratio': 0.06, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24604.05it/s]
+    fold=1/3 macro_f1=0.5998 security_recall=0.7273 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21928.82it/s]
+    fold=2/3 macro_f1=0.5276 security_recall=0.7619 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19600.48it/s]
+    fold=3/3 macro_f1=0.6612 security_recall=0.9048 best_epoch=8
+[I 2026-10-27 04:01:37,642] Trial 9 finished with value: 0.5962376819921577 and parameters: {'learning_rate': 1.557637063151714e-05, 'batch_size': 8, 'epochs': 20, 'dropout': 0.15120100401852338, 'weight_decay': 1.8041913380284478e-05, 'optimizer': 'Adam', 'warmup_ratio': 0.06, 'pos_weight': False}. Best is trial 2 with value: 0.6427031837558153.
+  trial 10: {'learning_rate': 2.292564875162168e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2503953890882822, 'weight_decay': 0.0011375397363366697, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19700.96it/s]
+    fold=1/3 macro_f1=0.6743 security_recall=0.9091 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19775.46it/s]
+    fold=2/3 macro_f1=0.5581 security_recall=0.7143 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20255.88it/s]
+    fold=3/3 macro_f1=0.6188 security_recall=0.9048 best_epoch=6
+[I 2026-10-27 04:03:58,266] Trial 10 finished with value: 0.6170537539686475 and parameters: {'learning_rate': 2.292564875162168e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.2503953890882822, 'weight_decay': 0.0011375397363366697, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 2 with value: 0.6427031837558153.
+  trial 11: {'learning_rate': 1.7901753824180456e-05, 'batch_size': 8, 'epochs': 15, 'dropout': 0.242627862340338, 'weight_decay': 1.8180102687222947e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 11818.15it/s]
+    fold=1/3 macro_f1=0.6643 security_recall=0.7727 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21423.92it/s]
+    fold=2/3 macro_f1=0.5894 security_recall=0.7619 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24432.36it/s]
+    fold=3/3 macro_f1=0.7162 security_recall=0.9048 best_epoch=6
+[I 2026-10-27 04:06:33,929] Trial 11 finished with value: 0.6566458808209167 and parameters: {'learning_rate': 1.7901753824180456e-05, 'batch_size': 8, 'epochs': 15, 'dropout': 0.242627862340338, 'weight_decay': 1.8180102687222947e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 11 with value: 0.6566458808209167.
+  modelo del externo 3: 7 épocas sobre 447 filas, config={'learning_rate': 1.7901753824180456e-05, 'batch_size': 8, 'epochs': 15, 'dropout': 0.242627862340338, 'weight_decay': 1.8180102687222947e-05, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20637.34it/s]
+  externo 3 prueba: {'macro_f1': 0.6724, 'weighted_f1': 0.7012, 'micro_f1': 0.7119, 'macro_precision': 0.7989, 'macro_recall': 0.6433, 'security_recall': 0.8, 'subset_accuracy': 0.8804, 'hamming_loss': 0.037, 'loss': 0.2709}
+
+--- externo 4/5: entrenamiento=368 reales + 73 sintéticos | prueba=92 ---
+[I 2026-10-27 04:07:24,087] Using an existing study with `study_name='promise_beto_outer_3'` instead of creating a new one.
+  trial 6: {'learning_rate': 4.8547213684552794e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262282540014129, 'weight_decay': 0.00019361884074383236, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23238.12it/s]
+    fold=1/3 macro_f1=0.6613 security_recall=0.8095 best_epoch=3
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 27358.38it/s]
+    fold=2/3 macro_f1=0.6112 security_recall=0.8571 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18819.68it/s]
+    fold=3/3 macro_f1=0.5234 security_recall=0.8571 best_epoch=7
+[I 2026-10-27 04:09:19,862] Trial 6 finished with value: 0.5986189961799718 and parameters: {'learning_rate': 4.8547213684552794e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262282540014129, 'weight_decay': 0.00019361884074383236, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6719702032859928.
+  trial 7: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18379.70it/s]
+    fold=1/3 macro_f1=0.7129 security_recall=0.7143 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26936.52it/s]
+    fold=2/3 macro_f1=0.7015 security_recall=0.7619 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24636.33it/s]
+    fold=3/3 macro_f1=0.5973 security_recall=0.9048 best_epoch=5
+[I 2026-10-27 04:10:51,187] Trial 7 finished with value: 0.6705543773964826 and parameters: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 5 with value: 0.6719702032859928.
+  trial 8: {'learning_rate': 2.237519238244307e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.1355612972567797, 'weight_decay': 1.3527263628650725e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19739.55it/s]
+    fold=1/3 macro_f1=0.6884 security_recall=0.7143 best_epoch=8
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 20821.44it/s]
+    fold=2/3 macro_f1=0.6130 security_recall=0.7619 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22714.29it/s]
+    fold=3/3 macro_f1=0.6222 security_recall=0.9048 best_epoch=9
+[I 2026-10-27 04:13:10,397] Trial 8 finished with value: 0.641195956237973 and parameters: {'learning_rate': 2.237519238244307e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.1355612972567797, 'weight_decay': 1.3527263628650725e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6719702032859928.
+  trial 9: {'learning_rate': 2.5543148699248355e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.49941447419575935, 'weight_decay': 0.05584278607627419, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24011.33it/s]
+    fold=1/3 macro_f1=0.6734 security_recall=0.6667 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 17841.94it/s]
+    fold=2/3 macro_f1=0.6424 security_recall=0.8095 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22513.16it/s]
+    fold=3/3 macro_f1=0.5237 security_recall=0.6667 best_epoch=4
+[I 2026-10-27 04:15:43,125] Trial 9 finished with value: 0.6132015787829741 and parameters: {'learning_rate': 2.5543148699248355e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.49941447419575935, 'weight_decay': 0.05584278607627419, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 5 with value: 0.6719702032859928.
+  trial 10: {'learning_rate': 1.1688595840039237e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.4223306371137548, 'weight_decay': 2.201140367536088e-06, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22800.79it/s]
+    fold=1/3 macro_f1=0.5955 security_recall=0.7143 best_epoch=8
+[I 2026-10-27 04:16:32,343] Trial 10 pruned. 
+  trial 11: {'learning_rate': 3.427260702899303e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.32171751270190196, 'weight_decay': 0.2714342562689163, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18936.99it/s]
+    fold=1/3 macro_f1=0.6628 security_recall=0.8571 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23128.84it/s]
+    fold=2/3 macro_f1=0.5567 security_recall=0.9048 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 27290.61it/s]
+    fold=3/3 macro_f1=0.5217 security_recall=0.9524 best_epoch=9
+[I 2026-10-27 04:18:06,140] Trial 11 finished with value: 0.5803962101636521 and parameters: {'learning_rate': 3.427260702899303e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.32171751270190196, 'weight_decay': 0.2714342562689163, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 5 with value: 0.6719702032859928.
+  modelo del externo 4: 5 épocas sobre 441 filas, config={'learning_rate': 4.5156321168792874e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11049689336879653, 'weight_decay': 0.003922592778170174, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22939.42it/s]
+  externo 4 prueba: {'macro_f1': 0.554, 'weighted_f1': 0.5776, 'micro_f1': 0.6038, 'macro_precision': 0.7667, 'macro_recall': 0.5202, 'security_recall': 0.625, 'subset_accuracy': 0.8478, 'hamming_loss': 0.0457, 'loss': 0.3686}
+
+--- externo 5/5: entrenamiento=368 reales + 71 sintéticos | prueba=92 ---
+[I 2026-10-27 04:18:41,866] Using an existing study with `study_name='promise_beto_outer_4'` instead of creating a new one.
+  trial 6: {'learning_rate': 4.853604421634413e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262201582083083, 'weight_decay': 0.00019547316069181282, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12934.03it/s]
+    fold=1/3 macro_f1=0.8020 security_recall=0.9048 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24848.97it/s]
+    fold=2/3 macro_f1=0.5554 security_recall=0.7143 best_epoch=2
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 18846.29it/s]
+    fold=3/3 macro_f1=0.5480 security_recall=0.9524 best_epoch=4
+[I 2026-10-27 04:20:25,130] Trial 6 finished with value: 0.6351571402020696 and parameters: {'learning_rate': 4.853604421634413e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.11262201582083083, 'weight_decay': 0.00019547316069181282, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6476847452457208.
+  trial 7: {'learning_rate': 4.918546040239325e-05, 'batch_size': 16, 'epochs': 10, 'dropout': 0.41348317763887243, 'weight_decay': 0.1871398719496119, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19996.56it/s]
+    fold=1/3 macro_f1=0.7006 security_recall=0.9524 best_epoch=8
+[I 2026-10-27 04:20:56,446] Trial 7 pruned. 
+  trial 8: {'learning_rate': 2.2358662135895858e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.13555938797909012, 'weight_decay': 1.3525226941383977e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 24153.11it/s]
+    fold=1/3 macro_f1=0.7736 security_recall=0.9048 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15689.32it/s]
+    fold=2/3 macro_f1=0.5575 security_recall=0.7619 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 15728.74it/s]
+    fold=3/3 macro_f1=0.5940 security_recall=0.7619 best_epoch=7
+[I 2026-10-27 04:23:22,950] Trial 8 finished with value: 0.6416930411362749 and parameters: {'learning_rate': 2.2358662135895858e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.13555938797909012, 'weight_decay': 1.3525226941383977e-08, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 5 with value: 0.6476847452457208.
+  trial 9: {'learning_rate': 2.551464365820338e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.49941450924143405, 'weight_decay': 0.05618117669082524, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 19841.94it/s]
+    fold=1/3 macro_f1=0.7616 security_recall=0.9048 best_epoch=9
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21000.30it/s]
+    fold=2/3 macro_f1=0.5686 security_recall=0.9524 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 22851.24it/s]
+    fold=3/3 macro_f1=0.6112 security_recall=0.7619 best_epoch=4
+[I 2026-10-27 04:25:36,885] Trial 9 finished with value: 0.6471160106043827 and parameters: {'learning_rate': 2.551464365820338e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.49941450924143405, 'weight_decay': 0.05618117669082524, 'optimizer': 'AdamW', 'warmup_ratio': 0.06, 'pos_weight': True}. Best is trial 5 with value: 0.6476847452457208.
+  trial 10: {'learning_rate': 1.1694425830672609e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.4223325936510445, 'weight_decay': 2.209492697177901e-06, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 23727.25it/s]
+    fold=1/3 macro_f1=0.7073 security_recall=0.9048 best_epoch=9
+[I 2026-10-27 04:26:25,154] Trial 10 pruned. 
+  trial 11: {'learning_rate': 2.7428571041196516e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.4443904691504487, 'weight_decay': 0.09182953809897049, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21831.48it/s]
+    fold=1/3 macro_f1=0.8459 security_recall=0.9048 best_epoch=10
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 26026.96it/s]
+    fold=2/3 macro_f1=0.5743 security_recall=0.7619 best_epoch=6
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 21635.41it/s]
+    fold=3/3 macro_f1=0.5894 security_recall=0.7619 best_epoch=5
+[I 2026-10-27 04:28:37,886] Trial 11 finished with value: 0.6698428706873849 and parameters: {'learning_rate': 2.7428571041196516e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.4443904691504487, 'weight_decay': 0.09182953809897049, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}. Best is trial 11 with value: 0.6698428706873849.
+  modelo del externo 5: 7 épocas sobre 439 filas, config={'learning_rate': 2.7428571041196516e-05, 'batch_size': 8, 'epochs': 10, 'dropout': 0.4443904691504487, 'weight_decay': 0.09182953809897049, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': True}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 25349.84it/s]
+  externo 5 prueba: {'macro_f1': 0.679, 'weighted_f1': 0.7894, 'micro_f1': 0.8148, 'macro_precision': 0.75, 'macro_recall': 0.6423, 'security_recall': 0.6875, 'subset_accuracy': 0.9348, 'hamming_loss': 0.0217, 'loss': 0.2342}
+externos macro_f1: 0.6176 ± 0.0698 | agrupado 0.6438
+externos weighted_f1: 0.6949 ± 0.0786 | agrupado 0.7073
+externos micro_f1: 0.7109 ± 0.0813 | agrupado 0.7101
+externos macro_precision: 0.6857 ± 0.1227 | agrupado 0.6750
+externos macro_recall: 0.6247 ± 0.0776 | agrupado 0.6175
+externos security_recall: 0.7975 ± 0.1424 | agrupado 0.7975
+externos subset_accuracy: 0.8652 ± 0.0557 | agrupado 0.8652
+externos hamming_loss: 0.0387 ± 0.0122 | agrupado 0.0387

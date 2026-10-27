@@ -380,3 +380,4 @@ externos macro_recall: 0.5049 ± 0.0348 | agrupado 0.5039
 externos security_recall: 0.6749 ± 0.0779 | agrupado 0.6749
 externos subset_accuracy: 0.6505 ± 0.0571 | agrupado 0.6506
 externos hamming_loss: 0.1024 ± 0.0158 | agrupado 0.1024
+c1_augmented/dosspre/cnn: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\dosspre\cnn\summary.json); use --force para repetirlo.

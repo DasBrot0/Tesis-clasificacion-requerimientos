@@ -388,3 +388,4 @@ externos macro_recall: 0.6071 ± 0.1337 | agrupado 0.6120
 externos security_recall: 0.8927 ± 0.0611 | agrupado 0.8927
 externos subset_accuracy: 0.6159 ± 0.0998 | agrupado 0.6159
 externos hamming_loss: 0.0986 ± 0.0297 | agrupado 0.0986
+c1_augmented/secreq/cnn: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\secreq\cnn\summary.json); use --force para repetirlo.

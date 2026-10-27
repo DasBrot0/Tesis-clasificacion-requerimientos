@@ -367,3 +367,4 @@ externos macro_recall: 0.3426 ± 0.1486 | agrupado 0.3403
 externos security_recall: 0.6808 ± 0.1807 | agrupado 0.6835
 externos subset_accuracy: 0.7261 ± 0.0762 | agrupado 0.7261
 externos hamming_loss: 0.0757 ± 0.0205 | agrupado 0.0757
+c1_augmented/promise/cnn: ya completado (C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\promise\cnn\summary.json); use --force para repetirlo.
