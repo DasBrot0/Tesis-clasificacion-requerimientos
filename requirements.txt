@@ -8,3 +8,4 @@ transformers>=4.38
 safetensors>=0.4
 sentencepiece>=0.2
 optuna>=3.6
+openpyxl>=3.1

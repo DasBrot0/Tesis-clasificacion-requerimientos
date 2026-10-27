@@ -22,17 +22,24 @@ src/
   training.py   rutina de entrenamiento
   tuning.py     estudio de Optuna sobre los folds internos
   pipeline.py   corrida completa de un trío (condición, dataset, modelo)
+  reporting.py  matrices de confusión, tabla comparativa y Excel de resultados (sin reentrenar)
 scripts/
   prepare_datasets.py      original/ -> training/
   verify_subcategories.py  cobertura de las subcategorías
+  extend_trials.py         archiva una etapa terminada para extender su búsqueda de Optuna
+  build_report.py          regenera matrices de confusión, model_comparison.csv y el Excel
+  compare_conditions.py    pruebas estadísticas C0 vs. C1 (requiere las dos condiciones)
+  glossary/                flujo de PLAN_TRADUCCION_GLOSARIO.md (P0-P8, E2)
   augmentation/            flujo de PLAN_AUMENTO_DATOS.md (G1, G3, G4, G5-G7)
 train.py                   una corrida: --condition C --dataset X --model Y
 run_all_training.py        las corridas de una condición
 tests/                     pruebas rápidas del protocolo (no entrenan)
 artifacts/splits/                         folds externos e internos y distribución de etiquetas
-artifacts/<condición>/<dataset>/<modelo>/ métricas, trials, predicciones, curvas
+artifacts/<condición>/<dataset>/<modelo>/ métricas, trials, predicciones, curvas, matrices de confusión
 artifacts/<condición>/model_comparison.csv
+artifacts/<condición>/results_<condición>.xlsx
 logs/                      salida de cada corrida
+notas_sesion/              planes, metodología y notas de resultados provisionales
 old/                       código y corridas anteriores (ver old/run_2026-10-19_sonnet_deepl_holdout/)
 ```
 
@@ -45,6 +52,7 @@ python scripts/verify_subcategories.py
 python -m unittest discover -s tests -v
 python run_all_training.py --condition c1_augmented --models cnn roberta_bne
 python train.py --condition c0_real --dataset secreq --model beto
+python scripts/build_report.py           # reportes de corridas ya terminadas, sin reentrenar
 ```
 
 Una corrida interrumpida se retoma desde el último fold externo terminado. `--save-checkpoints`
@@ -97,8 +105,10 @@ su `Anchor_ID`: el requisito real del que se generó. Detalle en
    requisito real se evalúa exactamente una vez.
 2. **Folds internos**: dentro del entrenamiento de cada fold externo, 3 folds para Optuna.
 3. **Optuna** (TPE + poda por mediana): el objetivo es el macro-F1 medio de los folds internos con
-   umbral 0.50. El trial 0 siempre es la configuración por defecto. Trials por fold externo: 15
-   para CNN y BiLSTM, 6 para BETO y RoBERTa-BNE.
+   umbral 0.50. El trial 0 siempre es la configuración por defecto. Trials por fold externo
+   (`N_TRIALS`): 25 para CNN y BiLSTM, 12 para BETO y RoBERTa-BNE. Se alcanzan en dos etapas
+   (15/15/6/6 y luego `scripts/extend_trials.py`); la etapa anterior queda en `stage_<n>trials/`.
+   Estado de C1: BETO y RoBERTa-BNE con 12 trials; CNN y BiLSTM todavía con 15.
 4. **Umbrales por etiqueta** (0.40–0.60): con las predicciones out-of-fold internas del ganador.
 5. **Modelo del fold externo**: se entrena con todo el entrenamiento externo durante la media de
    las mejores épocas internas y predice una vez el fold externo de prueba.
@@ -138,7 +148,30 @@ Diferencias respecto de los notebooks originales:
 | `summary.json` | resumen completo: folds externos, métricas agrupadas, configuración por fold |
 | `outer_fold_metrics.csv` | métricas de cada fold externo |
 | `pooled_outer_test_predictions.csv`, `pooled_metrics_by_label.csv` | predicciones externas agrupadas y F1 por etiqueta |
+| `pooled_confusion_by_label.csv`, `pooled_confusion_matrices.png` | matriz de confusión 2×2 de cada etiqueta (VP, FP, FN, VN) sobre las predicciones agrupadas |
+| `stage_<n>trials/` | resultado de una etapa anterior de Optuna, archivado por `extend_trials.py` |
 | `outer_<k>/outer_result.json` | configuración ganadora, umbrales y prueba del fold externo k |
 | `outer_<k>/optuna_trials.csv`, `optuna_study.db`, `trials/` | estudio de Optuna del fold externo (reanudable) |
 | `outer_<k>/inner_cv_history.csv`, `inner_cv_curves.png` | curvas internas del ganador |
 | `outer_<k>/outer_test_predictions.csv` | predicciones del fold externo de prueba |
+
+## Resultados de una condición (`artifacts/<condición>/`)
+
+`train.py` actualiza estos archivos al terminar cada corrida; `scripts/build_report.py` los
+regenera desde los artefactos guardados.
+
+| Archivo | Contenido |
+|---|---|
+| `model_comparison.csv` | una fila por (dataset, modelo): métricas generales y F1 por etiqueta |
+| `results_<condición>.xlsx` | libro formateado para leer los resultados (ver abajo) |
+
+Hojas de `results_<condición>.xlsx` (en negrita, el mejor modelo de cada dataset; escala de color
+de 0 a 1 en las métricas):
+
+| Hoja | Contenido |
+|---|---|
+| Resumen general | métricas generales agrupadas y media ± desviación de los 5 folds externos |
+| F1 por clase | F1 de cada etiqueta y macro-F1, una fila por (dataset, modelo) |
+| Métricas por clase | precisión, recall, F1, soporte y VP/FP/FN/VN de cada etiqueta (con filtros) |
+| Matrices de confusión | matriz 2×2 de cada etiqueta, un bloque por (dataset, modelo) |
+| Folds externos | métricas generales de cada fold externo |

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verifica que las seis subcategorías de seguridad estén presentes en cada dataset de entrenamiento.
+"""Verifica que las subcategorías de seguridad estén presentes en cada dataset de entrenamiento.
 
 Escribe datasets/training/subcategory_coverage.csv y termina con código 1 si alguna subcategoría
 está AUSENTE (0 positivos) o es INSUFICIENTE (< MIN_POSITIVES_PER_LABEL) en algún dataset.
@@ -35,7 +35,7 @@ def main() -> int:
           .loc[["Security", *SUBCATEGORY_COLS]].to_string())
     problems = coverage[coverage["label"].isin(SUBCATEGORY_COLS) & coverage["status"].ne("OK")]
     if problems.empty:
-        print("\nOK: las seis subcategorías tienen cobertura suficiente en los tres datasets.")
+        print(f"\nOK: las {len(SUBCATEGORY_COLS)} subcategorías tienen cobertura suficiente en los tres datasets.")
         return 0
     print("\nSubcategorías sin cobertura suficiente:")
     for row in problems.itertuples():

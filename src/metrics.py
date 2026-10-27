@@ -24,7 +24,7 @@ def multilabel_metrics(
     threshold: float | Iterable[float] = 0.50,
     active: np.ndarray | None = None,
 ) -> dict[str, Any]:
-    """Aggregates use only the `active` labels; `per_label` always reports the seven of them."""
+    """Aggregates use only the `active` labels; `per_label` always reports every label."""
     y_true = np.asarray(y_true, dtype=int)
     y_prob = np.asarray(y_prob, dtype=float)
     if y_true.shape != y_prob.shape or y_true.ndim != 2 or y_true.shape[1] != len(LABEL_COLS):

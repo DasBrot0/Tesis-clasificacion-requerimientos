@@ -23,9 +23,8 @@ import pandas as pd
 import torch
 
 from .config import (
-    ARTIFACTS, CONDITIONS, DATASET_NAMES, DATASETS, DEFAULT_CONFIGS, LABEL_COLS, MAX_LENGTH,
-    MODEL_DISPLAY, MODELS, N_INNER, N_OUTER, N_TRIALS, SEARCH_SPACES, SEED, WORD_MODELS,
-    checkpoint_dir, run_dir,
+    CONDITIONS, DATASET_NAMES, DEFAULT_CONFIGS, LABEL_COLS, MAX_LENGTH, MODEL_DISPLAY, N_INNER,
+    N_OUTER, N_TRIALS, SEARCH_SPACES, SEED, WORD_MODELS, checkpoint_dir, run_dir,
 )
 from .data import (
     SPLITS_DIR, active_label_mask, get_inner_folds, get_outer_folds, label_coverage, load_dataset,
@@ -36,6 +35,7 @@ from .metrics import (
     select_per_label_thresholds,
 )
 from .models import DEVICE
+from .reporting import export_excel, save_run_confusion, update_comparison_table
 from .training import fit, predict, release_memory
 from .tuning import trial_paths, trials_frame, tune
 
@@ -88,33 +88,6 @@ def save_checkpoint(model_name: str, result, config: dict, thresholds: np.ndarra
         result.encoder.tokenizer.save_pretrained(directory)
         meta.update({"model_source_used": result.encoder.source, "max_length": MAX_LENGTH})
     save_json(directory / "metrics_config.json", meta)
-
-
-def update_comparison_table(condition: str) -> pd.DataFrame:
-    rows = []
-    for dataset in DATASETS:
-        for model_name in MODELS:
-            path = run_dir(condition, dataset, model_name) / "summary.json"
-            if not path.exists():
-                continue
-            report = json.loads(path.read_text(encoding="utf-8"))
-            outer, pooled = report["outer_aggregate"], report["pooled_outer_test"]
-            fmt = lambda name: f"{outer[name]['mean']:.4f} ± {outer[name]['std']:.4f}"
-            rows.append({
-                "Condición": condition, "Dataset": DATASET_NAMES[dataset], "Modelo": MODEL_DISPLAY[model_name],
-                "Macro-F1 (5 folds externos)": fmt("macro_f1"), "Weighted-F1 (5 folds externos)": fmt("weighted_f1"),
-                "Recall Security (5 folds externos)": fmt("security_recall"),
-                "Macro-F1 agrupado": pooled["macro_f1"], "Weighted-F1 agrupado": pooled["weighted_f1"],
-                "Micro-F1 agrupado": pooled["micro_f1"], "Recall Security agrupado": pooled["security_recall"],
-                **{f"F1 {row['label']}": row["f1"] for row in report["pooled_outer_test_per_label"]},
-                "Etiquetas en el promedio": ", ".join(report["labels_in_macro_average"]),
-                "Sintéticos": report["synthetic_rows"], "Minutos": report["elapsed_minutes"],
-            })
-    table = pd.DataFrame(rows)
-    path = ARTIFACTS / condition / "model_comparison.csv"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    table.to_csv(path, index=False, encoding="utf-8-sig")
-    return table
 
 
 def run_outer_fold(condition: str, dataset: str, model_name: str, outer: int, data: pd.DataFrame,
@@ -228,6 +201,8 @@ def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool 
     aggregate = aggregate_rows(fold_rows)
     pd.DataFrame(fold_rows).to_csv(out_dir / "outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
     pooled_metrics["per_label"].to_csv(out_dir / "pooled_metrics_by_label.csv", index=False, encoding="utf-8-sig")
+    confusion = save_run_confusion(
+        out_dir, f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} ({condition})")
     for name in METRIC_NAMES:
         print(f"externos {name}: {aggregate[name]['mean']:.4f} ± {aggregate[name]['std']:.4f} | "
               f"agrupado {pooled_metrics[name]:.4f}")
@@ -243,9 +218,11 @@ def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool 
         "outer_folds": outer_reports, "outer_aggregate": aggregate,
         "pooled_outer_test": {name: pooled_metrics[name] for name in METRIC_NAMES},
         "pooled_outer_test_per_label": pooled_metrics["per_label"].to_dict("records"),
+        "pooled_outer_test_confusion": confusion.to_dict("records"),
         # Sum of the outer folds, so a resumed run still reports its full training time.
         "elapsed_minutes": round(sum(r["elapsed_minutes"] for r in outer_reports), 1),
     }
     save_json(summary_path, report)
     update_comparison_table(condition)
+    export_excel(condition)
     return report
