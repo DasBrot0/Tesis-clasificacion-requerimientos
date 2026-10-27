@@ -1,0 +1,31 @@
+{"id": "g0059", "text": "The data warehousing system shall grant access to the reporting portal only after the identity of an approved analyst has been successfully verified."}
+{"id": "g0049", "text": "The payroll and human resources management system shall let only a payroll administrator modify tax-rate tables and pay-grade definitions."}
+{"id": "g0345", "text": "The web browser must verify the identity of a user unlocking the saved-credentials store by requiring a master secret of at least eight characters."}
+{"id": "g0236", "text": "The sales forecasting system must verify the login name and secret phrase supplied by an analyst against the registered account before the analyst can open any forecast."}
+{"id": "g0253", "text": "The data warehousing system shall append a keyed message authentication code to every extraction log so that unauthorised edits to the log content are detectable."}
+{"id": "g0022", "text": "The online booking system shall reject any reservation request whose check-out date precedes its check-in date or whose guest count is not a positive whole number."}
+{"id": "g0314", "text": "The payroll system shall ensure that the tamper-detection marking in exported payslips remains verifiable after format conversion or deliberate attempts to strip it out."}
+{"id": "g0161", "text": "The web browser shall compare a cryptographic digest of every downloaded extension package against the digest published by its store and shall refuse to install the package when the two differ."}
+{"id": "g0277", "text": "The patient-record system must establish the identity of each clinician through a verified credential check before opening any patient chart, and shall deny entry when the identity cannot be confirmed."}
+{"id": "g0192", "text": "The hospital patient-record system shall stamp every configuration update sent to a connected bedside device with the current time or a message counter, enabling the receiver to discard repeated updates."}
+{"id": "g0294", "text": "The online banking application shall validate the format and checksum of a beneficiary account number before saving it and shall reject any entry that is malformed or already registered."}
+{"id": "g0344", "text": "The payroll and human resources management system shall identify each staff member at sign-in by a secret code that is checked against the one registered for that person."}
+{"id": "g0258", "text": "The banking application shall verify that account numbers and monetary amounts entered in a transfer form conform to the required format and precision before the transaction is recorded."}
+{"id": "g0309", "text": "The sales forecasting system must expose a fake reporting endpoint that appears to be a live service and must raise an alert and block the source address when any client interacts with it."}
+{"id": "g0150", "text": "The payroll and human resources management system must send salary files to external banking partners only over an encrypted transfer protocol."}
+{"id": "g0131", "text": "The online banking application must overwrite any memory region that held account balances or transaction data before that region is allocated to another process."}
+{"id": "g0152", "text": "The simulation software should support symmetric-key encryption of saved simulation results so that stored results can be read only by holders of the key."}
+{"id": "g0360", "text": "The compiler shall produce a checksum for each generated object file so that any alteration of the file after compilation can be detected at link time."}
+{"id": "g0100", "text": "The electronic purse shall keep the stored balance unreadable and unalterable by external devices except through its defined load and debit commands."}
+{"id": "g0088", "text": "The hospital patient-record system shall allow a nurse's account to hold an authenticated session on only one workstation at a time and shall reject a second concurrent sign-in with the same credentials."}
+{"id": "g0331", "text": "The smart-home IoT controller shall allow the homeowner to check that camera snapshots kept in storage have not been changed since they were captured."}
+{"id": "g0215", "text": "The online banking application shall track the state of every network connection to its back-end and discard packets that do not match a legitimate ongoing exchange."}
+{"id": "g0122", "text": "The electronic purse must decline a payment and leave the balance untouched when the verification code over the transaction number, currency and value indicates the data were modified in transit."}
+{"id": "g0382", "text": "The smart-home IoT controller shall let only the registered household administrator undo a configuration change previously applied to a connected device."}
+{"id": "g0021", "text": "The data warehousing system shall refrain from sending personal data to external reporting services without the data subject's consent and shall detect and block exfiltration attempts made through compromised accounts."}
+{"id": "g0189", "text": "Should the online banking application detect that an outgoing message would expose account holder details contrary to its privacy rules, it shall suppress all messages in that exchange, including those to partner institutions."}
+{"id": "g0072", "text": "The data warehousing system shall terminate any analyst's query session that has shown no activity for a set period, preventing a hijacker from taking over the abandoned connection."}
+{"id": "g0107", "text": "The data warehousing system shall flag any loaded dataset whose recomputed integrity code differs from the code supplied by the source, and shall start a correction procedure to restore the affected records."}
+{"id": "g0271", "text": "The smart-home controller shall apply a digital signature to each firmware update package so that any modification of the package after signing is detectable before installation."}
+{"id": "g0349", "text": "The online banking application shall verify the digital signature of each payment instruction against the account holder's registered key before executing it."}
+{"id": "g0103", "text": "The payroll and human resources management system shall attach a keyed message authentication code, derived from a key held only by the communicating servers, to each salary file exchanged between them so that any modification is detected."}

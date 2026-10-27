@@ -1,0 +1,39 @@
+{"id": "g0134", "text": "The simulation software must verify that every message exchanged between its distributed simulation nodes arrives at the receiving node with its content unchanged."}
+{"id": "g0185", "text": "The electronic purse must apply a written rule that identifies cardholder identity data and spending history as information to be kept from any reader other than the authorised issuer."}
+{"id": "g0278", "text": "The database server shall continue serving legitimate queries while rejecting injection attempts and brute-force connection floods launched by hostile clients."}
+{"id": "g0045", "text": "The screen capture tool must force a user to replace the sign-in secret of a cloud account every 90 days before further sign-ins are accepted."}
+{"id": "g0351", "text": "The compiler shall require a developer to be identified by a face-biometric match before it signs a release build."}
+{"id": "g0066", "text": "The payroll and human resources management system must require every department manager to prove their identity with a valid login credential before displaying the salary approval screen."}
+{"id": "g0284", "text": "The patient-record system shall let an authorised clinician recompute the MD5 hash of an archived medical report and compare it with the hash stored at archiving to reveal any alteration."}
+{"id": "g0086", "text": "The simulation software must accept a new operator credential only when its estimated strength is at least 64 bits of entropy."}
+{"id": "g0187", "text": "When the compiler detects that its telemetry feature is about to send source code fragments contrary to the configured disclosure rules, it shall drop all outbound telemetry messages."}
+{"id": "g0071", "text": "The smart-card electronic purse must close its open transaction session and require a fresh start after the card has been idle for a defined time, so that an abandoned session cannot be abused by an attacker."}
+{"id": "g0160", "text": "The compiler shall let build scripts obfuscate embedded string literals and licence keys within the output binary so that they cannot be read by inspecting the executable."}
+{"id": "g0013", "text": "The compiler's cloud build service shall allow only users who present a valid, registered identity token to submit compilation jobs."}
+{"id": "g0036", "text": "The web browser shall allow an administrator to assign read permission and write permission separately for each of its components, such as stored passwords, bookmarks, history and extensions, so that a user can view or change only the components granted to that user."}
+{"id": "g0029", "text": "The data warehousing system must grant guest analysts view-only access to fact tables and must block every insert, update and delete operation they attempt."}
+{"id": "g0171", "text": "The online booking system shall validate that guest passport and payment details received from a partner agency were shielded against disclosure in transit, and shall discard any that were not."}
+{"id": "g0143", "text": "The hospital patient-record system shall return to each client module only the patient fields that the module's function needs and shall withhold all other fields."}
+{"id": "g0312", "text": "The compiler shall embed a concealed integrity mark in every produced binary so that any later modification of the binary can be detected."}
+{"id": "g0343", "text": "The database server shall apply each committed statement so that the stored data remain correct and consistent with the statement's intended effect."}
+{"id": "g0151", "text": "The air traffic control software shall exchange flight-plan data between control centres using at least one encrypted link protocol that prevents interception of the content."}
+{"id": "g0229", "text": "The simulation software shall let a reviewing institution check the digital signature on a submitted scenario file with the group public key, confirming that the file originated from a member of the authorised research consortium without revealing which member signed it."}
+{"id": "g0222", "text": "The web browser shall check embedded ownership marks in downloaded images and flag any image whose mark has been removed or changed."}
+{"id": "g0132", "text": "The smart-home IoT controller shall clear memory that held camera streams or door-lock credentials before it is handed to any other task, preventing disclosure of leftover content."}
+{"id": "g0096", "text": "The sales forecasting system shall permit only analysts holding the forecast-editor role to create or change forecast scenarios."}
+{"id": "g0052", "text": "The payroll and human resources management system shall validate that salary amounts, dates and employee identifiers entered or imported are within permitted ranges and formats and must reject records that are inconsistent."}
+{"id": "g0241", "text": "The sales forecasting system shall allow only the data administrator role to alter which users are entitled to edit forecast datasets."}
+{"id": "g0286", "text": "The smart-home controller must verify a cryptographic hash of every automation rule set before applying it and must discard any rule set whose hash does not match."}
+{"id": "g0291", "text": "The smart-home controller must send a time-limited identity confirmation message to the owner's registered contact address before permitting the owner's access credential to be replaced."}
+{"id": "g0179", "text": "The online booking system must detect when a session token that was already used and retired is presented again by a client."}
+{"id": "g0042", "text": "The compiler service must identify every developer by a distinct credential tied to a single account before it accepts remote compilation jobs."}
+{"id": "g0341", "text": "The smart-home IoT controller shall ensure that every command received from the user is carried out exactly as specified and that the resulting device state matches the command."}
+{"id": "g0207", "text": "The simulation software shall expose the addresses and capacity of its remote compute nodes only to users holding a simulation-administrator role."}
+{"id": "g0255", "text": "The electronic purse must calculate a message authentication code over the stored balance-change history so that tampering with the history can be recognised by the terminal."}
+{"id": "g0317", "text": "The sales forecasting system shall attach a hash value to each imported sales dataset and reject any dataset whose recomputed hash differs from the recorded one."}
+{"id": "g0005", "text": "The electronic purse shall enter a locked state that refuses all transactions when it detects voltage or clock manipulation intended to induce faults in the card chip."}
+{"id": "g0257", "text": "The booking system must validate the format of every date, time and guest-count field before a reservation is saved, so that malformed entries cannot corrupt stored reservation records."}
+{"id": "g0342", "text": "The payroll and human resources management system must calculate and record salary figures exactly as defined by the pay rules, without any unintended alteration of stored values."}
+{"id": "g0101", "text": "The data warehousing system must reject a reversal of a loaded record unless it originates from the same source feed as the original load and carries identical row counts and totals."}
+{"id": "g0227", "text": "The payroll system shall verify the personal identification number entered by an employee against the stored reference value before granting access to that employee's pay slips."}
+{"id": "g0327", "text": "The data warehousing system shall verify the X.509 certificate presented by an analyst at sign-in and shall reuse that verified identity for other connected reporting tools while the session remains valid."}

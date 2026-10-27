@@ -1,0 +1,625 @@
+{
+  "condition": "c1_augmented",
+  "dataset": "dosspre",
+  "model": "roberta_bne",
+  "seed": 42,
+  "n_outer": 5,
+  "n_inner": 3,
+  "n_trials_per_outer": 6,
+  "rows": 1262,
+  "synthetic_rows": 139,
+  "labels_in_macro_average": [
+    "Security",
+    "Confidentiality",
+    "Integrity",
+    "Authenticity",
+    "Resistance"
+  ],
+  "labels_excluded_from_macro_average": [],
+  "label_positives": {
+    "Security": 406,
+    "Confidentiality": 123,
+    "Integrity": 33,
+    "Authenticity": 92,
+    "Resistance": 120
+  },
+  "search_space": {
+    "learning_rate": [
+      "log_float",
+      1e-05,
+      5e-05
+    ],
+    "batch_size": [
+      "categorical",
+      [
+        8,
+        16
+      ]
+    ],
+    "epochs": [
+      "categorical",
+      [
+        5,
+        10,
+        15,
+        20
+      ]
+    ],
+    "dropout": [
+      "float",
+      0.1,
+      0.5
+    ],
+    "weight_decay": [
+      "log_float",
+      1e-08,
+      0.3
+    ],
+    "optimizer": [
+      "categorical",
+      [
+        "AdamW",
+        "Adam"
+      ]
+    ],
+    "warmup_ratio": [
+      "categorical",
+      [
+        0.0,
+        0.06,
+        0.1
+      ]
+    ],
+    "pos_weight": [
+      "categorical",
+      [
+        false,
+        true
+      ]
+    ]
+  },
+  "default_config": {
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "epochs": 5,
+    "dropout": 0.1,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": false
+  },
+  "outer_folds": [
+    {
+      "outer": 0,
+      "train_real_rows": 1010,
+      "train_synthetic_rows": 111,
+      "test_rows": 252,
+      "optuna": {
+        "trials_finished": 6,
+        "trials_completed": 5,
+        "trials_pruned": 1
+      },
+      "default_config_inner_cv_macro_f1": 0.641481239675577,
+      "best_trial": {
+        "trial_id": 4,
+        "inner_cv_macro_f1_mean": 0.6700496964704272,
+        "inner_cv_macro_f1_std": 0.05378018733473673
+      },
+      "winning_config": {
+        "learning_rate": 3.467707282618655e-05,
+        "batch_size": 8,
+        "epochs": 5,
+        "dropout": 0.37101677554493956,
+        "weight_decay": 0.00019192402887477537,
+        "optimizer": "AdamW",
+        "warmup_ratio": 0.0,
+        "pos_weight": true
+      },
+      "final_training_epochs": 2,
+      "thresholds_by_label": {
+        "Security": 0.5000000000000001,
+        "Confidentiality": 0.5250000000000001,
+        "Integrity": 0.6000000000000002,
+        "Authenticity": 0.5000000000000001,
+        "Resistance": 0.5750000000000002
+      },
+      "test": {
+        "macro_f1": 0.6194218042493905,
+        "weighted_f1": 0.7046159031920989,
+        "micro_f1": 0.7055393586005831,
+        "macro_precision": 0.5824736377331048,
+        "macro_recall": 0.6924409601238869,
+        "security_recall": 0.8292682926829268,
+        "subset_accuracy": 0.753968253968254,
+        "hamming_loss": 0.08015873015873017,
+        "loss": 0.29882043564603444
+      },
+      "test_per_label": [
+        {
+          "label": "Security",
+          "precision": 0.7391304347826086,
+          "recall": 0.8292682926829268,
+          "f1": 0.7816091954022989,
+          "support": 82,
+          "in_macro_average": true
+        },
+        {
+          "label": "Confidentiality",
+          "precision": 0.5806451612903226,
+          "recall": 0.75,
+          "f1": 0.6545454545454545,
+          "support": 24,
+          "in_macro_average": true
+        },
+        {
+          "label": "Integrity",
+          "precision": 0.5,
+          "recall": 0.2857142857142857,
+          "f1": 0.36363636363636365,
+          "support": 7,
+          "in_macro_average": true
+        },
+        {
+          "label": "Authenticity",
+          "precision": 0.5925925925925926,
+          "recall": 0.8888888888888888,
+          "f1": 0.7111111111111111,
+          "support": 18,
+          "in_macro_average": true
+        },
+        {
+          "label": "Resistance",
+          "precision": 0.5,
+          "recall": 0.7083333333333334,
+          "f1": 0.5862068965517241,
+          "support": 24,
+          "in_macro_average": true
+        }
+      ],
+      "elapsed_minutes": 17.8
+    },
+    {
+      "outer": 1,
+      "train_real_rows": 1009,
+      "train_synthetic_rows": 112,
+      "test_rows": 253,
+      "optuna": {
+        "trials_finished": 6,
+        "trials_completed": 5,
+        "trials_pruned": 1
+      },
+      "default_config_inner_cv_macro_f1": 0.6410862775096731,
+      "best_trial": {
+        "trial_id": 1,
+        "inner_cv_macro_f1_mean": 0.6935279756387317,
+        "inner_cv_macro_f1_std": 0.003923138005437176
+      },
+      "winning_config": {
+        "learning_rate": 1.827226177606625e-05,
+        "batch_size": 8,
+        "epochs": 5,
+        "dropout": 0.4464704583099741,
+        "weight_decay": 0.00031232721657900017,
+        "optimizer": "AdamW",
+        "warmup_ratio": 0.0,
+        "pos_weight": true
+      },
+      "final_training_epochs": 4,
+      "thresholds_by_label": {
+        "Security": 0.42500000000000004,
+        "Confidentiality": 0.5250000000000001,
+        "Integrity": 0.4750000000000001,
+        "Authenticity": 0.5500000000000002,
+        "Resistance": 0.5500000000000002
+      },
+      "test": {
+        "macro_f1": 0.6321016218384178,
+        "weighted_f1": 0.6673582559152182,
+        "micro_f1": 0.6666666666666666,
+        "macro_precision": 0.7417917511832319,
+        "macro_recall": 0.557167641325536,
+        "security_recall": 0.5925925925925926,
+        "subset_accuracy": 0.8023715415019763,
+        "hamming_loss": 0.07035573122529644,
+        "loss": 0.4226031918299528
+      },
+      "test_per_label": [
+        {
+          "label": "Security",
+          "precision": 0.8275862068965517,
+          "recall": 0.5925925925925926,
+          "f1": 0.6906474820143885,
+          "support": 81,
+          "in_macro_average": true
+        },
+        {
+          "label": "Confidentiality",
+          "precision": 0.8666666666666667,
+          "recall": 0.52,
+          "f1": 0.65,
+          "support": 25,
+          "in_macro_average": true
+        },
+        {
+          "label": "Integrity",
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 6,
+          "in_macro_average": true
+        },
+        {
+          "label": "Authenticity",
+          "precision": 0.75,
+          "recall": 0.631578947368421,
+          "f1": 0.6857142857142857,
+          "support": 19,
+          "in_macro_average": true
+        },
+        {
+          "label": "Resistance",
+          "precision": 0.7647058823529411,
+          "recall": 0.5416666666666666,
+          "f1": 0.6341463414634146,
+          "support": 24,
+          "in_macro_average": true
+        }
+      ],
+      "elapsed_minutes": 18.1
+    },
+    {
+      "outer": 2,
+      "train_real_rows": 1010,
+      "train_synthetic_rows": 112,
+      "test_rows": 252,
+      "optuna": {
+        "trials_finished": 6,
+        "trials_completed": 5,
+        "trials_pruned": 1
+      },
+      "default_config_inner_cv_macro_f1": 0.6469419745137994,
+      "best_trial": {
+        "trial_id": 2,
+        "inner_cv_macro_f1_mean": 0.6551978168417208,
+        "inner_cv_macro_f1_std": 0.05923270587131424
+      },
+      "winning_config": {
+        "learning_rate": 1.6317596956423427e-05,
+        "batch_size": 8,
+        "epochs": 10,
+        "dropout": 0.2465447373174767,
+        "weight_decay": 2.5709318977571628e-05,
+        "optimizer": "AdamW",
+        "warmup_ratio": 0.06,
+        "pos_weight": false
+      },
+      "final_training_epochs": 6,
+      "thresholds_by_label": {
+        "Security": 0.4,
+        "Confidentiality": 0.5000000000000001,
+        "Integrity": 0.4750000000000001,
+        "Authenticity": 0.5000000000000001,
+        "Resistance": 0.5000000000000001
+      },
+      "test": {
+        "macro_f1": 0.6999934397399834,
+        "weighted_f1": 0.7086933692144038,
+        "micro_f1": 0.710691823899371,
+        "macro_precision": 0.7270215924426451,
+        "macro_recall": 0.6837954144620813,
+        "security_recall": 0.8024691358024691,
+        "subset_accuracy": 0.753968253968254,
+        "hamming_loss": 0.07301587301587302,
+        "loss": 0.2241481017498743
+      },
+      "test_per_label": [
+        {
+          "label": "Security",
+          "precision": 0.6842105263157895,
+          "recall": 0.8024691358024691,
+          "f1": 0.7386363636363636,
+          "support": 81,
+          "in_macro_average": true
+        },
+        {
+          "label": "Confidentiality",
+          "precision": 0.7083333333333334,
+          "recall": 0.68,
+          "f1": 0.6938775510204082,
+          "support": 25,
+          "in_macro_average": true
+        },
+        {
+          "label": "Integrity",
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "f1": 0.7692307692307693,
+          "support": 7,
+          "in_macro_average": true
+        },
+        {
+          "label": "Authenticity",
+          "precision": 0.7692307692307693,
+          "recall": 0.5555555555555556,
+          "f1": 0.6451612903225806,
+          "support": 18,
+          "in_macro_average": true
+        },
+        {
+          "label": "Resistance",
+          "precision": 0.64,
+          "recall": 0.6666666666666666,
+          "f1": 0.6530612244897959,
+          "support": 24,
+          "in_macro_average": true
+        }
+      ],
+      "elapsed_minutes": 20.8
+    },
+    {
+      "outer": 3,
+      "train_real_rows": 1009,
+      "train_synthetic_rows": 114,
+      "test_rows": 253,
+      "optuna": {
+        "trials_finished": 6,
+        "trials_completed": 5,
+        "trials_pruned": 1
+      },
+      "default_config_inner_cv_macro_f1": 0.6509446130577139,
+      "best_trial": {
+        "trial_id": 4,
+        "inner_cv_macro_f1_mean": 0.6795347706002088,
+        "inner_cv_macro_f1_std": 0.029133721985573364
+      },
+      "winning_config": {
+        "learning_rate": 4.0082123057480886e-05,
+        "batch_size": 8,
+        "epochs": 10,
+        "dropout": 0.17308853062465873,
+        "weight_decay": 7.482201689193726e-07,
+        "optimizer": "AdamW",
+        "warmup_ratio": 0.06,
+        "pos_weight": false
+      },
+      "final_training_epochs": 4,
+      "thresholds_by_label": {
+        "Security": 0.5500000000000002,
+        "Confidentiality": 0.4,
+        "Integrity": 0.4,
+        "Authenticity": 0.5750000000000002,
+        "Resistance": 0.5000000000000001
+      },
+      "test": {
+        "macro_f1": 0.6081343943412909,
+        "weighted_f1": 0.6840831693334473,
+        "micro_f1": 0.6892307692307692,
+        "macro_precision": 0.6329814749169588,
+        "macro_recall": 0.6175502645502646,
+        "security_recall": 0.8148148148148148,
+        "subset_accuracy": 0.7549407114624506,
+        "hamming_loss": 0.07984189723320158,
+        "loss": 0.22690929098444965
+      },
+      "test_per_label": [
+        {
+          "label": "Security",
+          "precision": 0.7096774193548387,
+          "recall": 0.8148148148148148,
+          "f1": 0.7586206896551724,
+          "support": 81,
+          "in_macro_average": true
+        },
+        {
+          "label": "Confidentiality",
+          "precision": 0.5925925925925926,
+          "recall": 0.64,
+          "f1": 0.6153846153846154,
+          "support": 25,
+          "in_macro_average": true
+        },
+        {
+          "label": "Integrity",
+          "precision": 0.6666666666666666,
+          "recall": 0.2857142857142857,
+          "f1": 0.4,
+          "support": 7,
+          "in_macro_average": true
+        },
+        {
+          "label": "Authenticity",
+          "precision": 0.6190476190476191,
+          "recall": 0.7222222222222222,
+          "f1": 0.6666666666666666,
+          "support": 18,
+          "in_macro_average": true
+        },
+        {
+          "label": "Resistance",
+          "precision": 0.5769230769230769,
+          "recall": 0.625,
+          "f1": 0.6,
+          "support": 24,
+          "in_macro_average": true
+        }
+      ],
+      "elapsed_minutes": 18.8
+    },
+    {
+      "outer": 4,
+      "train_real_rows": 1010,
+      "train_synthetic_rows": 107,
+      "test_rows": 252,
+      "optuna": {
+        "trials_finished": 6,
+        "trials_completed": 5,
+        "trials_pruned": 1
+      },
+      "default_config_inner_cv_macro_f1": 0.6460269187556967,
+      "best_trial": {
+        "trial_id": 2,
+        "inner_cv_macro_f1_mean": 0.6542092895490647,
+        "inner_cv_macro_f1_std": 0.024177119446286883
+      },
+      "winning_config": {
+        "learning_rate": 1.6317596956423427e-05,
+        "batch_size": 8,
+        "epochs": 10,
+        "dropout": 0.2465447373174767,
+        "weight_decay": 2.5709318977571628e-05,
+        "optimizer": "AdamW",
+        "warmup_ratio": 0.06,
+        "pos_weight": false
+      },
+      "final_training_epochs": 9,
+      "thresholds_by_label": {
+        "Security": 0.42500000000000004,
+        "Confidentiality": 0.6000000000000002,
+        "Integrity": 0.5000000000000001,
+        "Authenticity": 0.42500000000000004,
+        "Resistance": 0.6000000000000002
+      },
+      "test": {
+        "macro_f1": 0.6537568419921361,
+        "weighted_f1": 0.7194477729237088,
+        "micro_f1": 0.7266187050359713,
+        "macro_precision": 0.7746031746031746,
+        "macro_recall": 0.59770955165692,
+        "security_recall": 0.7407407407407407,
+        "subset_accuracy": 0.8055555555555556,
+        "hamming_loss": 0.06031746031746032,
+        "loss": 0.21175141626643756
+      },
+      "test_per_label": [
+        {
+          "label": "Security",
+          "precision": 0.8333333333333334,
+          "recall": 0.7407407407407407,
+          "f1": 0.7843137254901961,
+          "support": 81,
+          "in_macro_average": true
+        },
+        {
+          "label": "Confidentiality",
+          "precision": 0.7777777777777778,
+          "recall": 0.5833333333333334,
+          "f1": 0.6666666666666666,
+          "support": 24,
+          "in_macro_average": true
+        },
+        {
+          "label": "Integrity",
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.46153846153846156,
+          "support": 6,
+          "in_macro_average": true
+        },
+        {
+          "label": "Authenticity",
+          "precision": 0.8333333333333334,
+          "recall": 0.7894736842105263,
+          "f1": 0.8108108108108109,
+          "support": 19,
+          "in_macro_average": true
+        },
+        {
+          "label": "Resistance",
+          "precision": 1.0,
+          "recall": 0.375,
+          "f1": 0.5454545454545454,
+          "support": 24,
+          "in_macro_average": true
+        }
+      ],
+      "elapsed_minutes": 21.0
+    }
+  ],
+  "outer_aggregate": {
+    "macro_f1": {
+      "mean": 0.6426816204322436,
+      "std": 0.03624145214615647
+    },
+    "weighted_f1": {
+      "mean": 0.6968396941157755,
+      "std": 0.020880543522761134
+    },
+    "micro_f1": {
+      "mean": 0.6997494646866722,
+      "std": 0.022805309976784996
+    },
+    "macro_precision": {
+      "mean": 0.691774326175823,
+      "std": 0.08063493437812222
+    },
+    "macro_recall": {
+      "mean": 0.6297327664237378,
+      "std": 0.057651288984874
+    },
+    "security_recall": {
+      "mean": 0.7559771153267087,
+      "std": 0.09736738276600983
+    },
+    "subset_accuracy": {
+      "mean": 0.7741608632912982,
+      "std": 0.027232178788815235
+    },
+    "hamming_loss": {
+      "mean": 0.0727379383901123,
+      "std": 0.008147926360476917
+    }
+  },
+  "pooled_outer_test": {
+    "macro_f1": 0.6456661401078151,
+    "weighted_f1": 0.6984044663998987,
+    "micro_f1": 0.7001959503592423,
+    "macro_precision": 0.6658663814058132,
+    "macro_recall": 0.6291148138316018,
+    "security_recall": 0.7561576354679803,
+    "subset_accuracy": 0.7741679873217115,
+    "hamming_loss": 0.07274167987321711
+  },
+  "pooled_outer_test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.748780487804878,
+      "recall": 0.7561576354679803,
+      "f1": 0.7524509803921569,
+      "support": 406,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.6782608695652174,
+      "recall": 0.6341463414634146,
+      "f1": 0.6554621848739496,
+      "support": 123,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.5769230769230769,
+      "recall": 0.45454545454545453,
+      "f1": 0.5084745762711864,
+      "support": 33,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.6947368421052632,
+      "recall": 0.717391304347826,
+      "f1": 0.7058823529411765,
+      "support": 92,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.6306306306306306,
+      "recall": 0.5833333333333334,
+      "f1": 0.6060606060606061,
+      "support": 120,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 96.5
+}

@@ -1,0 +1,13 @@
+[2026-10-09T00:54:45] INICIO promise/cnn
+[2026-10-09T00:54:50] FIN promise/cnn
+[2026-10-09T00:54:50] INICIO secreq/cnn
+[2026-10-09T00:54:53] FIN secreq/cnn
+[2026-10-09T00:54:53] INICIO dosspre/cnn
+[2026-10-09T00:59:47] FIN dosspre/cnn
+[2026-10-09T00:59:47] INICIO promise/bilstm
+[2026-10-09T01:33:57] ERROR promise/bilstm (ver logs/promise_bilstm.log)
+[2026-10-09T01:33:57] INICIO secreq/bilstm
+[2026-10-09T02:08:24] ERROR secreq/bilstm (ver logs/secreq_bilstm.log)
+[2026-10-09T02:08:24] INICIO dosspre/bilstm
+[2026-10-09T03:30:09] ERROR dosspre/bilstm (ver logs/dosspre_bilstm.log)
+[2026-10-09T03:30:09] TERMINADO CON ERRORES: ['promise/bilstm', 'secreq/bilstm', 'dosspre/bilstm']

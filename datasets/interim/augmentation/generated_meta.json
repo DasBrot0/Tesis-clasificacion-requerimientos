@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "prompt": "prompt_gen_v1.md",
+  "prompt_sha256_12": "1e13988b0b26",
+  "n_batches": 13,
+  "n_generated": 382,
+  "by_dataset": {
+    "dosspre": 167,
+    "secreq": 115,
+    "promise": 100
+  },
+  "without_modal": 5,
+  "reusing_4gram": 8,
+  "collected_utc": "2026-10-26T04:51:14.449610+00:00",
+  "runs": "un subagente nuevo (claude-sonnet-5-5) por lote de 12 fuentes; sin control de temperature/seed"
+}

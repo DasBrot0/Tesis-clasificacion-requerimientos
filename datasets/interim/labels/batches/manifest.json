@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "prompt": "prompt_v1.md",
+  "guide": "guia_anotacion_subcategorias_v1_provisional.md",
+  "prompt_guide_sha256_12": "4b65e1e3aee9",
+  "n_items": 256,
+  "by_dataset": {
+    "secreq": 177,
+    "promise": 79
+  },
+  "n_batches": 9,
+  "n_runs": 3,
+  "date_utc": "2026-10-19",
+  "runs": "3 corridas, un subagente nuevo (claude-sonnet-5-5) por lote y corrida; salidas congeladas en labels/runs/run_{1,2,3}",
+  "caveat": "corridas independientes en contexto, pero con el mismo prompt/guia; sin control de temperature/seed. Tres subagentes (run_2 b04, run_3 b01, run_3 b07/b06 aprox.) usaron un script auxiliar para escribir su JSONL"
+}

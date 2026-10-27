@@ -1,0 +1,29 @@
+{"id": "e0001", "text": "Only collision estimators shall search for recycled parts. Users without the collision estimator role shall not have access to the search for recycled parts."}
+{"id": "e0002", "text": "The product shall have audit capabilities.The product shall store messages for a minimum of one year for audit and transaction tracking purposes."}
+{"id": "e0003", "text": "All additions of new users and modifications to user\\92s access shall be recorded on the User Report."}
+{"id": "e0004", "text": "The product shall provide players no access to information that might reveal the identity of another player"}
+{"id": "e0005", "text": "Only adjusters with a supervisor role can update preferred repair facility ratings. Users without the supervisor role cannot access the repair facility ratings."}
+{"id": "e0006", "text": "The system’s back-end servers shall never display a customer’s password. The customer’s password may be reset but never shown."}
+{"id": "e0007", "text": "The system shall be built such that it is as secure as possible from malicious interference."}
+{"id": "e0008", "text": "The website shall protect itself from intentional abuse and notify the administrator at all occurrences."}
+{"id": "e0009", "text": "The product shall ensure that only company employees or external users with company-approved user IDs may have product access. 100% of all logons shall be by either company employees or external users with company-approved user IDs."}
+{"id": "e0010", "text": "The system shall use secure sockets in all transactions that include any confidential customer information."}
+{"id": "e0011", "text": "Only managers are able to perform search queries for reservations by user. 100% of all search queries for reservations by user shall be from logons of only management logons."}
+{"id": "e0012", "text": "Everyone (stakeholders and guests) can have access to the system and the catalogue. Every client must have secure and private access to his/her data. The and the service man can have access to every part of the system. All these accesses (except the “guest tour” access) require identification through ID and password."}
+{"id": "e0013", "text": "A tablet shall require a user to log in using a username and password."}
+{"id": "e0014", "text": "Full data backups must be created daily."}
+{"id": "e0015", "text": "The Disputes application shall ensure that only authorized users are allowed to logon to the application."}
+{"id": "e0016", "text": "The product shall ensure that the database\\92s data corresponds to the data entered by the user. Each conference room reservation in the system will contain the same information as was entered by the user."}
+{"id": "e0017", "text": "The website must provide highest degree of security to the registered users. All the transactions that are made must be secured. The sensitive information passed to and from the website must be secured. Identity theft and other security related issues must be solved. Unauthorized transmission of sensitive information of the user to third party websites for reference must be avoided. On the basis of user agreement the information must be processed. All the information about the registered user must be securely stored in the central database."}
+{"id": "e0018", "text": "Only valid data shall be entered into the system. No invalid data shall be entered into the system."}
+{"id": "e0019", "text": "A waiter that attempts to log into a second tablet while already logged into another tablet shall be rejected and notified through both tablets."}
+{"id": "e0020", "text": "A customer can only stream a movie if they purchased it and are within the 2 day viewing period."}
+{"id": "e0021", "text": "Only authorized users shall have access to the portion of the system that interfaces with CampusConnect."}
+{"id": "e0022", "text": "The system shall not leave any cookies on the customer’s computer containing the user’s password."}
+{"id": "e0023", "text": "Unauthorised users can only read data without modifying anything."}
+{"id": "e0024", "text": "Personal information security is defined outside the scope of the SDMS by the database server."}
+{"id": "e0025", "text": "The product shall ensure that only supervisors can view schedule of all callers.The product must ensure that supervisors are allowed to access advertise empty time slots."}
+{"id": "e0026", "text": "The system shall automatically log out all customers after a period of inactivity."}
+{"id": "e0027", "text": "The IP addresses where the transaction was made from will be logged."}
+{"id": "e0028", "text": "Users shall be required to log into the system for all operations except the operations on the login page."}
+{"id": "e0029", "text": "The System shall granularly control access rights to all major subsystems. It should be possible to assign access rights to all subsystems independently."}

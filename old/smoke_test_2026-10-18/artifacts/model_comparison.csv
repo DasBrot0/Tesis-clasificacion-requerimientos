@@ -1,0 +1,3 @@
+﻿Dataset,Modelo,"CV Macro-F1 (config. por defecto, umbral 0.50)","CV Macro-F1 (Optuna, umbral 0.50)",CV Macro-F1,CV Weighted-F1,CV Recall Security,Test Macro-F1,Test Weighted-F1,Test Micro-F1,Test Recall Security,Etiquetas en el promedio
+PROMISE_exp,CNN,0.17116791979949877,0.17116791979949877,0.1720 ± 0.0676,0.3297 ± 0.0761,0.4418 ± 0.1434,0.11047619047619048,0.20723809523809525,0.21428571428571427,0.15384615384615385,"Security, Confidentiality, Integrity, Authenticity, Resistance"
+PROMISE_exp,RoBERTa-BNE,0.226944758944759,0.226944758944759,0.2697 ± 0.0760,0.5271 ± 0.1026,0.7725 ± 0.1963,0.29051724137931034,0.5803448275862069,0.6666666666666666,0.9230769230769231,"Security, Confidentiality, Integrity, Authenticity, Resistance"

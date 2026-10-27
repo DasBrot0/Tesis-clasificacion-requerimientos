@@ -1,0 +1,33 @@
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\Franco\.venvs\cometkiwi\Lib\site-packages\torchmetrics\utilities\imports.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|##########| 5/5 [00:00<00:00, 2499.88it/s]
+C:\Users\Franco\.venvs\cometkiwi\Lib\site-packages\lightning_fabric\utilities\cloud_io.py:73: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Lightning automatically upgraded your loaded checkpoint from v1.8.2 to v2.6.6. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint C:\Users\Franco\.cache\huggingface\hub\models--Unbabel--wmt22-cometkiwi-da\snapshots\1ad785194e391eebc6c53e2d0776cada8f83179a\checkpoints\model.ckpt`
+Encoder model frozen.
+C:\Users\Franco\.venvs\cometkiwi\Lib\site-packages\pytorch_lightning\core\saving.py:216: Found keys that are not in the model state dict but in the checkpoint: ['encoder.model.embeddings.position_ids']
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+\U0001f4a1 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+Predicting: 0it [00:00, ?it/s]Predicting: 0it [00:00, ?it/s]Predicting DataLoader 0:   0%|          | 0/24 [00:00<?, ?it/s]Predicting DataLoader 0:   4%|4         | 1/24 [00:02<00:56,  2.44s/it]Predicting DataLoader 0:   8%|8         | 2/24 [00:04<00:52,  2.40s/it]Predicting DataLoader 0:  12%|#2        | 3/24 [00:07<00:52,  2.51s/it]Predicting DataLoader 0:  17%|#6        | 4/24 [00:10<00:51,  2.56s/it]Predicting DataLoader 0:  21%|##        | 5/24 [00:13<00:50,  2.66s/it]Predicting DataLoader 0:  25%|##5       | 6/24 [00:16<00:48,  2.69s/it]Predicting DataLoader 0:  29%|##9       | 7/24 [00:19<00:46,  2.74s/it]Predicting DataLoader 0:  33%|###3      | 8/24 [00:22<00:44,  2.79s/it]Predicting DataLoader 0:  38%|###7      | 9/24 [00:25<00:42,  2.84s/it]Predicting DataLoader 0:  42%|####1     | 10/24 [00:28<00:40,  2.86s/it]Predicting DataLoader 0:  46%|####5     | 11/24 [00:32<00:38,  2.95s/it]Predicting DataLoader 0:  50%|#####     | 12/24 [00:35<00:35,  3.00s/it]Predicting DataLoader 0:  54%|#####4    | 13/24 [00:39<00:33,  3.06s/it]Predicting DataLoader 0:  58%|#####8    | 14/24 [00:43<00:30,  3.09s/it]Predicting DataLoader 0:  62%|######2   | 15/24 [00:46<00:28,  3.13s/it]Predicting DataLoader 0:  67%|######6   | 16/24 [00:50<00:25,  3.16s/it]Predicting DataLoader 0:  71%|#######   | 17/24 [00:54<00:22,  3.21s/it]Predicting DataLoader 0:  75%|#######5  | 18/24 [00:58<00:19,  3.24s/it]Predicting DataLoader 0:  79%|#######9  | 19/24 [01:02<00:16,  3.28s/it]Predicting DataLoader 0:  83%|########3 | 20/24 [01:06<00:13,  3.31s/it]Predicting DataLoader 0:  88%|########7 | 21/24 [01:10<00:10,  3.35s/it]Predicting DataLoader 0:  92%|#########1| 22/24 [01:14<00:06,  3.38s/it]Predicting DataLoader 0:  96%|#########5| 23/24 [01:18<00:03,  3.42s/it]Predicting DataLoader 0: 100%|##########| 24/24 [01:22<00:00,  3.45s/it]Predicting DataLoader 0: 100%|##########| 24/24 [01:22<00:00,  3.45s/it]
+        cometkiwi       labse
+count  382.000000  382.000000
+mean     0.866864    0.894466
+std      0.021762    0.020879
+min      0.749342    0.800559
+25%      0.860707    0.882575
+50%      0.871532    0.897414
+75%      0.881114    0.908278
+max      0.897769    0.940358
+términos listos
+         term_acc   cometkiwi       labse
+count  382.000000  382.000000  382.000000
+mean     0.985428    0.866864    0.894466
+std      0.102092    0.021762    0.020879
+min      0.000000    0.749342    0.800559
+25%      1.000000    0.860707    0.882575
+50%      1.000000    0.871532    0.897414
+75%      1.000000    0.881114    0.908278
+max      1.000000    0.897769    0.940358

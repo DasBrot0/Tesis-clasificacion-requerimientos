@@ -1,0 +1,29 @@
+{"id": "e0059", "text": "To prevent attacks the system should generate random word and ask the user to enter it correctly for multiple tryings."}
+{"id": "e0060", "text": "User authentication and privileges are defined outside the scope of the sytem by the Microsoft Active Directroy Server."}
+{"id": "e0061", "text": "The product shall ensure that only supervisors can enter a caller\\92s schedule.The product must ensure that supervisors are allowed to access advertise empty time slots."}
+{"id": "e0062", "text": "The product shall have security.The product shall provide authentication and authorization."}
+{"id": "e0063", "text": "Only registered realtors shall be able to access the system."}
+{"id": "e0064", "text": "Only authorized user shall access the RFS system. ONLY users that exist in the UAS system with the RFS system assigned to their role(s) shall access the RFS system and use it."}
+{"id": "e0065", "text": "All network transactions that involve financial information or personally identifiable information shall be encrypted."}
+{"id": "e0066", "text": "Patrons shall log in according to the restricted computer system access policy."}
+{"id": "e0067", "text": "Only users who have been authorized for home access to the corporate Intranet may use the COS from non-company locations."}
+{"id": "e0068", "text": "A waiter password used for tablet login must have a bit-strength of at least 64 bits."}
+{"id": "e0069", "text": "A waiter shall only be able to log into one tablet at any given instance of time."}
+{"id": "e0070", "text": "Secure data transfer over the Internet could be provided using SSL encryption that will be configured by the host system administrator."}
+{"id": "e0071", "text": "Sensitive data will be encrypted before being sent over insecure connections like the internet."}
+{"id": "e0072", "text": "The system will develop a security system that will reduce to the minimum the possibility of corruption from systems and/or humans."}
+{"id": "e0073", "text": "System will have different types of users and every user has access constraints."}
+{"id": "e0074", "text": "The data transaction between client and server must be encrypted using SSL technology."}
+{"id": "e0075", "text": "The system shall utilize HTTPS communication to ensure data confidentiality."}
+{"id": "e0076", "text": "The customer’s web browser shall never display a customer’s credit card number after retrieving from the database. It shall always be shown with just the last 4 digits of the credit card number."}
+{"id": "e0077", "text": "The system shall use the organization\\92s standard virus protection software to help monitor threats to itself."}
+{"id": "e0078", "text": "The Disputes application shall ensure that only users with the appropriate access level are allowed to initiate dispute requests."}
+{"id": "e0079", "text": "The Disputes application shall manipulate and view business data. Users will not have direct access to data files or databases."}
+{"id": "e0080", "text": "Successful authentication is a prerequisite for the processing of any on-line or offline CEPS transaction"}
+{"id": "e0081", "text": "On-line authentication must take place between the card issuer and the CEP card for load, unload, and currency exchange transactions"}
+{"id": "e0082", "text": "The card issuer and the CEP card share a secret key to generate and verify MACs"}
+{"id": "e0083", "text": "Off-line authentication must take place between a PSAM in the POS device and the CEP card for purchase and cancel last purchase transactions"}
+{"id": "e0084", "text": "The card and the PSAM must use a public key algorithm for mutual authentication and session key exchange, as no permanent shared secret key may exist between the CEP card and the PSAM"}
+{"id": "e0085", "text": "To load value into a slot of the CEP card securely, the load device establishes a connection between the issuer and the CEP card"}
+{"id": "e0086", "text": "The card should use a unique diversified secret key, personalized into the card, to generate and authenticate transaction signatures"}
+{"id": "e0087", "text": "If this is not a cash load, the funds issuer needs to verify that the funds are requested by the legitimate account owner, which is normally done by the presentation of an enciphered PIN"}

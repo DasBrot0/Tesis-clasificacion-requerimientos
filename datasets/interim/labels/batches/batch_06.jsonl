@@ -1,0 +1,29 @@
+{"id": "e0146", "text": "The terminal must participate in a two-way authentication process with the card"}
+{"id": "e0147", "text": "For cancel last purchase transactions, the terminal must validate the card and sign the cancellation"}
+{"id": "e0148", "text": "The terminal must secure transactions by retaining the card's symmetric MACing key signature as part of the transaction"}
+{"id": "e0149", "text": "The terminal must generate a symmetric MACing key signature and send it to the merchant acquirer"}
+{"id": "e0150", "text": "Incremental purchase transactions must use two-way authentication for the initial session authentication, and at least one-way, with the terminal authenticating the card, for the remaining increments or some of the remaining increments"}
+{"id": "e0151", "text": "Load and unload functions must be authenticated using end-to-end security between the card and the card issuer"}
+{"id": "e0152", "text": "The issuer host must authenticate the card upon the load/unload request"}
+{"id": "e0153", "text": "The card must authenticate the issuer host upon the response to the request"}
+{"id": "e0154", "text": "A proof must be sent to the load acquirer that a load or unload occurred to avoid repudiation"}
+{"id": "e0155", "text": "The management of keys must be accomplished in a secure, certified environment"}
+{"id": "e0156", "text": "There may be multiple certification authorities that manage keys for the system, including the possibility of one overall highest level certification authority (perhaps on an international level), and domestic certification authorities for each country or region"}
+{"id": "e0157", "text": "The system must protect the integrity of key transaction data including transaction identification, currency code and amount. If tampering is suspected, the system must cause the transaction to fail"}
+{"id": "e0158", "text": "Funds issuers must accept funds authorization requests, regardless of the load currency type, as permitted"}
+{"id": "e0159", "text": "Authorizations for load transactions require a form of cardholder authentication for funds requests"}
+{"id": "e0160", "text": "The load device must support on-line PIN encryption or off-line PIN verification"}
+{"id": "e0161", "text": "The load device which supports only off-line PIN verification must support both the off-line PIN encryption method and the off-line PIN plain text verification method as defined in EMV"}
+{"id": "e0162", "text": "Unload transactions do not require cardholder authentication. (However, an acquirer's devices may be configured such that authentication is required for access.)"}
+{"id": "e0163", "text": "All applications under the GlobalPlatform shall be implemented in a hardware-neutral secure runtime environment"}
+{"id": "e0164", "text": "The run time environment shall be responsible to separate secure storage for the application code and data"}
+{"id": "e0165", "text": "Security domain shall ensure complete seperation of keys among the card issuers and other application providers"}
+{"id": "e0166", "text": "\" \"\"Security Domains shall support security services such as key handling, encryption, decryption, digital signature generation and verification for their providers' such as card issuer, applicaiton providers and controlling authority\"\"\""}
+{"id": "e0167", "text": "The OPEN shall responsible to enforce security principles defined for Card Content management."}
+{"id": "e0168", "text": "The GlobalPlatform API shall provides services to the application such as card verification and security services"}
+{"id": "e0169", "text": "The primary goal of the GlobalPlatform is to ensure the security and integrity of the card's components for the life of the card. These components are The runtime environment,The OPEN,The Issuer Security Domain,Supplementary Security Domains, The Applications."}
+{"id": "e0170", "text": "To ensure card security and integrity, the GlobalPlatform is designed to support a range of secure mechanisms for: Data integrity, Resource availability, Confidentiality, Authentication."}
+{"id": "e0171", "text": "The Card Issuer is responsible for Generating and loading the Issuer Security Domain keys,"}
+{"id": "e0172", "text": "\" \"\"The Card Issuer is responsible for Enforcing standards and policies for Application Providers governing all aspects of Applications to be provided to the Card Issuer or operated on the Card Issuer's cards,\"\"\""}
+{"id": "e0173", "text": "The Card Issuer is responsible for Cryptographically authorizing load, install, and extradition to be performed by Application Providers."}
+{"id": "e0174", "text": "\" \"\"The Application Provider is responsible for Generating the keys for its own Security Domains or obtaining Security Domain keys from a trusted third party,\"\"\""}

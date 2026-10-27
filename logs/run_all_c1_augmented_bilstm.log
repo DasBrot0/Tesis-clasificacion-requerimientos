@@ -1,0 +1,7 @@
+[2026-10-26T04:04:15] INICIO c1_augmented/promise/bilstm
+[2026-10-26T04:28:21] ERROR c1_augmented/promise/bilstm (24.1 min; ver c1_augmented_promise_bilstm.log)
+[2026-10-26T04:28:21] INICIO c1_augmented/secreq/bilstm
+[2026-10-26T04:55:12] ERROR c1_augmented/secreq/bilstm (26.9 min; ver c1_augmented_secreq_bilstm.log)
+[2026-10-26T04:55:12] INICIO c1_augmented/dosspre/bilstm
+[2026-10-26T05:48:27] ERROR c1_augmented/dosspre/bilstm (53.2 min; ver c1_augmented_dosspre_bilstm.log)
+[2026-10-26T05:48:27] TERMINADO CON ERRORES: ['promise/bilstm', 'secreq/bilstm', 'dosspre/bilstm']

@@ -1,0 +1,21 @@
+
+=== PROMISE_exp / CNN | device=cuda ===
+filas=460 | pool CV=391 | test=69 | etiquetas evaluadas=['Security', 'Confidentiality', 'Integrity', 'Authenticity', 'Resistance']
+[I 2026-10-18 22:28:22,564] A new study created in RDB with name: promise_cnn
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'epochs': 50, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold=1/5 macro_f1=0.0889 security_recall=0.2857 best_epoch=38
+    fold=2/5 macro_f1=0.2596 security_recall=0.4615 best_epoch=32
+    fold=3/5 macro_f1=0.1200 security_recall=0.4615 best_epoch=38
+    fold=4/5 macro_f1=0.2095 security_recall=0.6154 best_epoch=45
+    fold=5/5 macro_f1=0.1778 security_recall=0.3077 best_epoch=36
+[I 2026-10-18 22:28:52,333] Trial 0 finished with value: 0.17116791979949877 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'epochs': 50, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.17116791979949877.
+CV macro_f1: 0.1720 ± 0.0676
+CV weighted_f1: 0.3297 ± 0.0761
+CV micro_f1: 0.3807 ± 0.0910
+CV macro_precision: 0.2803 ± 0.1166
+CV macro_recall: 0.1284 ± 0.0509
+CV security_recall: 0.4418 ± 0.1434
+CV subset_accuracy: 0.8440 ± 0.0183
+CV hamming_loss: 0.0542 ± 0.0056
+Modelo final: 38 épocas sobre 391 filas, config={'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'epochs': 50, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+Test: {'macro_f1': 0.1105, 'weighted_f1': 0.2072, 'micro_f1': 0.2143, 'macro_precision': 0.4, 'macro_recall': 0.0641, 'security_recall': 0.1538, 'subset_accuracy': 0.8261, 'hamming_loss': 0.0638, 'loss': 0.1504}

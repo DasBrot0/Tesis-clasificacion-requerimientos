@@ -1,0 +1,2 @@
+﻿trial_id,embedding_dim,hidden_units,num_layers,batch_size,epochs,dropout,learning_rate,optimizer,threshold,val_macro_f1,val_security_recall,val_loss,best_epoch
+0,100,64,1,32,30,0.2,0.001,Adam,0.5,0.21725118945361283,0.48717948717948717,0.2757519209826434,27

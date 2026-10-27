@@ -1,0 +1,13 @@
+﻿dataset,label,n_real,n_max,n_aug_target,n_aug_assigned
+promise,Confidentiality,37,37,0,7
+promise,Integrity,14,37,23,23
+promise,Authenticity,18,37,19,19
+promise,Resistance,10,37,20,20
+secreq,Confidentiality,31,70,39,39
+secreq,Integrity,60,70,10,12
+secreq,Authenticity,70,70,0,2
+secreq,Resistance,12,70,24,24
+dosspre,Confidentiality,123,123,0,2
+dosspre,Integrity,33,123,66,66
+dosspre,Authenticity,92,123,31,31
+dosspre,Resistance,120,123,3,5

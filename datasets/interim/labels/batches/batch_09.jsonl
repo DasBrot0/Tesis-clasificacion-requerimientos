@@ -1,0 +1,24 @@
+{"id": "e0233", "text": "When the CNG detects replayed user and/or device credentials, the CNG shall stop the relevant processes."}
+{"id": "e0234", "text": "The CNG shall implement a privacy protection policy specifying as a minimum private and critical information."}
+{"id": "e0235", "text": "When the CNG detects violation of the privacy protection policy the CNG shall discard all signalling, including signalling from the NGN."}
+{"id": "e0236", "text": "The CNG shall implement an authorization management handling policy."}
+{"id": "e0237", "text": "On reception at the CNG of a message to access configuration information for update and detection of authorization failure the CNG shall reject the request and manage the failure in accordance with the CPN authorization management handling policy."}
+{"id": "e0238", "text": "Where a CND invokes a session at the CNG the CNG shall record the association of session-id, invoking device identity and invoking user-id."}
+{"id": "e0239", "text": "On transmission of management information from the CNG to a CND the CNG shall append a timestamp or sequence number to the outgoing message."}
+{"id": "e0240", "text": "On reception at the CNG of a message containing management information the CNG shall extract the timestamp or sequence number and verify that the message has not been replayed."}
+{"id": "e0241", "text": "On reception at the CNG of a message to access or update configuration information the CNG shall allow access only if the sender is an administrator."}
+{"id": "e0242", "text": "On detection of a message integrity error at the CNG the CNG shall discard the message."}
+{"id": "e0243", "text": "On indication received at the CNG of a resource allocation expiry the CNG shall delete all residual data associated with the invocation of the resource."}
+{"id": "e0244", "text": "On receipt of a valid (i.e. authorized) request for data stored in the CNG the CNG shall return the requested data to the requesting user."}
+{"id": "e0245", "text": "On receipt of a valid (i.e. authorized) request for access to a CNG hosted service or application the CNG shall provide the requested service or application to the requesting user."}
+{"id": "e0246", "text": "On detection of any system failure or discontinuity not specifically handled by other mechanisms the CNG shall revert to a known safe state."}
+{"id": "e0247", "text": "The CNG shall support mechanisms to authenticate itself to the NGN for connectivity purposes."}
+{"id": "e0248", "text": "The CNG shall support mechanisms to authenticate itself to the NGN for service usage purposes."}
+{"id": "e0249", "text": "The CNG shall support mechanisms to authenticate CNDs to the NGN for service usage purposes if they are not able to fully support the related procedures in an autonomous way."}
+{"id": "e0250", "text": "The CNG shall support mechanisms for authentication of wireless CNDs for local connectivity. Similar mechanisms may be also implemented for non-wireless devices."}
+{"id": "e0251", "text": "The CNG and CPN shall support mechanisms that prevent access to the network by unauthorized users."}
+{"id": "e0252", "text": "The capacity of the authorized entities should depend on the security policies defined by the service providers, managing the CNG."}
+{"id": "e0253", "text": "The CNG and the CPN shall implement mechanisms to limit the visibility of the WAN side network and resources to authorized entities."}
+{"id": "e0254", "text": "The diagnostic operations on the CPN by an operator shall be performed in accordance with rules protecting the users' privacy."}
+{"id": "e0255", "text": "CPN environment shall be protected with a stateful firewall function, that may be implemented in the CNG."}
+{"id": "e0256", "text": "The CNG and the CPN shall be able to support parental control related functionalities limiting the use of the broadband connection on a user or time basis. Limitations on a content basis may be shared with devoted network servers."}

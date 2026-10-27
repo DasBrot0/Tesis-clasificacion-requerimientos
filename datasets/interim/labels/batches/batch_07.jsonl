@@ -1,0 +1,29 @@
+{"id": "e0175", "text": "The Application Provider is responsible for Working with the Card Issuer to load generated keys into the Application Provider's Security Domain,"}
+{"id": "e0176", "text": "\" \"\"The Application Provider is responsible for Providing load file data block signatures according to its own security policy for integrity and source authenticity,\"\"\""}
+{"id": "e0177", "text": "\" \"\"A Controlling Authority is responsible for Generating the keys for its own Security Domain or obtaining Security Domain keys from a trusted third party,\"\"\""}
+{"id": "e0178", "text": "A Controlling Authority is responsible for Working with the Card Issuer to load generated keys into the Controlling Authority's Security Domain,"}
+{"id": "e0179", "text": "\" \"\"A Controlling Authority is responsible for Providing load file data block signatures according to its own security policy for integrity and source authenticity.\"\"\""}
+{"id": "e0180", "text": "\" \"\"The runtime environment is responsible for Providing an interface to all Applications that ensures that the runtime environment security mechanisms cannot be bypassed, deactivated, corrupted or otherwise circumvented,\"\"\""}
+{"id": "e0181", "text": "The runtime environment is responsible for Performing secure memory management"}
+{"id": "e0182", "text": "\" \"\"Secure memory management shall ensure that Each application's code and data (including transient session data) as well as the runtime environment itself and its data (including transient session data) is protected from unauthorized access from within the card,\"\"\""}
+{"id": "e0183", "text": "\" \"\"Secure memory management shall ensure that When more than one logical channel is supported, each concurrently selected Application's code and data (including transient session data) as well as the runtime environment itself and its data (including transient session data) is protected from unauthorized access from within the card,\"\"\""}
+{"id": "e0184", "text": "Secure memory management shall ensure that The previous contents of the memory is not accessible when that memory is reused,"}
+{"id": "e0185", "text": "\" \"\"Secure memory management shall ensure that The memory recovery process is secure and consistent in case of a loss of power or withdrawal of the card from the card reader while an operation is in progress,\"\"\""}
+{"id": "e0186", "text": "\" \"\"The runtime environment is responsible for Providing communication services with off-card entities that ensures the proper transmission (according to the specific communication protocol rules) of unaltered command and response messages.\"\"\""}
+{"id": "e0187", "text": "Each Trusted Framework present on the card shall Check the application access rules of the inter-acting Applications according to their respective privileges,"}
+{"id": "e0188", "text": "\" \"\"Each Trusted Framework present on the card shall Enforce the Trusted Framework security rules for inter-application communication, including the rules, defined in appendix G,\"\"\""}
+{"id": "e0189", "text": "Each Trusted Framework present on the card shall Ensure that incoming messages are properly routed unaltered to their intended destinations,"}
+{"id": "e0190", "text": "\" \"\"Each Trusted Framework present on the card shall Ensure that any response messages are properly returned unaltered (except for any cryptographic protection) to the original receiver of the incoming message.\"\"\""}
+{"id": "e0191", "text": "\" \"\"The OPEN shall Provide an interface to all Applications that ensures that the GlobalPlatform security mechanism cannot be bypassed, deactivated, corrupted or otherwise circumvented,\"\"\""}
+{"id": "e0192", "text": "The OPEN shall Check application access rules according to the Applications' privileges,"}
+{"id": "e0193", "text": "The OPEN shall Ensure that the Card Content changes are authorized by the Card Issuer,"}
+{"id": "e0194", "text": "The OPEN shall Ensure that application code has been signed by the Controlling Authority represented on the card,"}
+{"id": "e0195", "text": "The OPEN shall Ensure that application code has been signed by Application Providers represented on the card, if required."}
+{"id": "e0196", "text": "Security Domains enforce the security policies of their off-card Security Domain Provider."}
+{"id": "e0197", "text": "\" \"\"When applicable a Security Domain shall Communicate with off-card entities in accordance with its Security Domain Provider's security policy in Pre-Issuance and Post-Issuance,\"\"\""}
+{"id": "e0198", "text": "When applicable a Security Domain shall Manage on-card data securely,"}
+{"id": "e0199", "text": "\" \"\"When applicable a Security Domain shall Provide cryptographic protection services for its own Applications during their personalization and optionally during their subsequent operation,\"\"\""}
+{"id": "e0200", "text": "When applicable a Security Domain shall Verify the authorization for Card Content changes initiated by an off-card authority,"}
+{"id": "e0201", "text": "When applicable a Security Domain shall Verify the load file data block signature when requested by the OPEN."}
+{"id": "e0202", "text": "A Global Services Application shall Hold the Global Services application-related data securely,"}
+{"id": "e0203", "text": "A Global Services Application shall Perform internal security measures as required by the service."}

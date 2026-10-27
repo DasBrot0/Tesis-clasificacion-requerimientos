@@ -1,0 +1,12 @@
+{
+  "aligner": "sentence-transformers/LaBSE",
+  "layer": 6,
+  "n_renderings": 14275,
+  "terms_with_2plus_occ": 1715,
+  "pct_inconsistent_2plus": 0.315,
+  "mean_consistency_2plus": 0.881,
+  "by_dataset": {
+    "dosspre": 0.877,
+    "secreq": 0.887
+  }
+}

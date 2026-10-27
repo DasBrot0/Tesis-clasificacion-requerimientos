@@ -1,0 +1,234 @@
+[2026-09-28T02:33:22] INICIO 01_CNN_multilabel.ipynb
+Device: cuda | PyTorch: 2.14.0+cu126
+Etiquetas (orden fijo): ['Security', 'Confidentiality', 'Integrity', 'Non_repudiation', 'Accountability', 'Authenticity', 'Resistance']
+Particiones: {'train': 629, 'val': 135, 'test': 135}
+Método de estratificación: constrained-milp-rare-holdout-seed42
+train {'Security': 0.283, 'Confidentiality': 0.079, 'Integrity': 0.057, 'Non_repudiation': 0.008, 'Accountability': 0.01, 'Authenticity': 0.099, 'Resistance': 0.019}
+val {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+test {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+Train real / utilizado: 629 / 629
+Positivos utilizados: {'Security': 178, 'Confidentiality': 50, 'Integrity': 36, 'Non_repudiation': 5, 'Accountability': 6, 'Authenticity': 62, 'Resistance': 12}
+Moderate pos_weight: {'Security': np.float64(1.592), 'Confidentiality': np.float64(3.403), 'Integrity': np.float64(4.059), 'Non_repudiation': np.float64(10.0), 'Accountability': np.float64(10.0), 'Authenticity': np.float64(3.024), 'Resistance': np.float64(7.171)}
+Vocabulario: 2273 | MAX_LEN: 56
+trial=0 epoch=1/50 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=2/50 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=3/50 val_macro_f1=0.0071 security_recall=0.0256
+trial=0 epoch=4/50 val_macro_f1=0.0070 security_recall=0.0256
+trial=0 epoch=5/50 val_macro_f1=0.0899 security_recall=0.2051
+trial=0 epoch=6/50 val_macro_f1=0.0815 security_recall=0.1538
+trial=0 epoch=7/50 val_macro_f1=0.0990 security_recall=0.2821
+trial=0 epoch=8/50 val_macro_f1=0.1236 security_recall=0.3333
+trial=0 epoch=9/50 val_macro_f1=0.1207 security_recall=0.3077
+trial=0 epoch=10/50 val_macro_f1=0.1409 security_recall=0.4872
+trial=0 epoch=11/50 val_macro_f1=0.1409 security_recall=0.4872
+trial=0 epoch=12/50 val_macro_f1=0.1391 security_recall=0.4615
+trial=0 epoch=13/50 val_macro_f1=0.1422 security_recall=0.4872
+trial=0 epoch=14/50 val_macro_f1=0.1453 security_recall=0.5128
+trial=0 epoch=15/50 val_macro_f1=0.1551 security_recall=0.4872
+trial=0 epoch=16/50 val_macro_f1=0.1499 security_recall=0.5641
+trial=0 epoch=17/50 val_macro_f1=0.1935 security_recall=0.5641
+trial=0 epoch=18/50 val_macro_f1=0.1935 security_recall=0.5641
+trial=0 epoch=19/50 val_macro_f1=0.1920 security_recall=0.5385
+trial=0 epoch=20/50 val_macro_f1=0.1814 security_recall=0.5385
+trial=0 epoch=21/50 val_macro_f1=0.2043 security_recall=0.6667
+trial=0 epoch=22/50 val_macro_f1=0.1920 security_recall=0.5385
+trial=0 epoch=23/50 val_macro_f1=0.2110 security_recall=0.7692
+trial=0 epoch=24/50 val_macro_f1=0.1949 security_recall=0.5641
+trial=0 epoch=25/50 val_macro_f1=0.2082 security_recall=0.6923
+trial=0 epoch=26/50 val_macro_f1=0.1843 security_recall=0.5641
+trial=0 epoch=27/50 val_macro_f1=0.2017 security_recall=0.6410
+trial=0 epoch=28/50 val_macro_f1=0.1977 security_recall=0.5897
+trial=0 epoch=29/50 val_macro_f1=0.2068 security_recall=0.6923
+trial=0 epoch=30/50 val_macro_f1=0.2005 security_recall=0.6154
+trial=0 epoch=31/50 val_macro_f1=0.2057 security_recall=0.6667
+trial=0 epoch=32/50 val_macro_f1=0.2053 security_recall=0.6923
+trial=0 epoch=33/50 val_macro_f1=0.2043 security_recall=0.6667
+trial=0 epoch=34/50 val_macro_f1=0.2101 security_recall=0.7436
+trial=0 epoch=35/50 val_macro_f1=0.2078 security_recall=0.7179
+trial=0 epoch=36/50 val_macro_f1=0.2078 security_recall=0.7179
+trial=0 epoch=37/50 val_macro_f1=0.2116 security_recall=0.7436
+trial=0 epoch=38/50 val_macro_f1=0.2082 security_recall=0.6923
+trial=0 epoch=39/50 val_macro_f1=0.2161 security_recall=0.7949
+trial=0 epoch=40/50 val_macro_f1=0.2057 security_recall=0.6667
+trial=0 epoch=41/50 val_macro_f1=0.2082 security_recall=0.6923
+trial=0 epoch=42/50 val_macro_f1=0.2131 security_recall=0.7436
+trial=0 epoch=43/50 val_macro_f1=0.2130 security_recall=0.7949
+trial=0 epoch=44/50 val_macro_f1=0.2061 security_recall=0.7179
+trial=0 epoch=45/50 val_macro_f1=0.2092 security_recall=0.7179
+trial=0 epoch=46/50 val_macro_f1=0.2107 security_recall=0.7692
+trial=0 epoch=47/50 val_macro_f1=0.2107 security_recall=0.7692
+trial=0 epoch=48/50 val_macro_f1=0.2115 security_recall=0.7949
+trial=0 epoch=49/50 val_macro_f1=0.2107 security_recall=0.7692
+trial=0 epoch=50/50 val_macro_f1=0.2051 security_recall=0.6923
+Umbrales seleccionados solo con validation: {'Security': 0.5000000000000001, 'Confidentiality': 0.4750000000000001, 'Integrity': 0.4, 'Non_repudiation': 0.4, 'Accountability': 0.4, 'Authenticity': 0.4, 'Resistance': 0.4}
+   trial_id  embedding_dim  ...  val_loss  best_epoch
+0         0             64  ...  0.227749          39
+
+[1 rows x 14 columns]
+             label  precision    recall        f1  support
+0         Security   0.815789  0.794872  0.805195       39
+1  Confidentiality   1.000000  0.181818  0.307692       11
+2        Integrity   0.000000  0.000000  0.000000        8
+3  Non_repudiation   0.000000  0.000000  0.000000        2
+4   Accountability   0.000000  0.000000  0.000000        3
+5     Authenticity   0.571429  0.307692  0.400000       13
+6       Resistance   0.000000  0.000000  0.000000        5
+{'macro_f1': 0.21612673041244473, 'security_recall': 0.7948717948717948, 'micro_f1': 0.5648854961832062, 'subset_accuracy': 0.7333333333333333, 'hamming_loss': 0.06031746031746032}
+             label  probability  predicted  threshold
+0         Security     0.688766          1      0.500
+1  Confidentiality     0.033818          0      0.475
+2        Integrity     0.003846          0      0.400
+3  Non_repudiation     0.002934          0      0.400
+4   Accountability     0.001314          0      0.400
+5     Authenticity     0.007808          0      0.400
+6       Resistance     0.008863          0      0.400
+Test reservado: RUN_FINAL_TEST = False
+[2026-09-28T02:33:45] FIN 01_CNN_multilabel.ipynb
+[2026-09-28T02:33:45] INICIO 02_BiLSTM_multilabel.ipynb
+Device: cuda | PyTorch: 2.14.0+cu126
+Etiquetas (orden fijo): ['Security', 'Confidentiality', 'Integrity', 'Non_repudiation', 'Accountability', 'Authenticity', 'Resistance']
+Particiones: {'train': 629, 'val': 135, 'test': 135}
+Método de estratificación: constrained-milp-rare-holdout-seed42
+train {'Security': 0.283, 'Confidentiality': 0.079, 'Integrity': 0.057, 'Non_repudiation': 0.008, 'Accountability': 0.01, 'Authenticity': 0.099, 'Resistance': 0.019}
+val {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+test {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+Train real / utilizado: 629 / 629
+Positivos utilizados: {'Security': 178, 'Confidentiality': 50, 'Integrity': 36, 'Non_repudiation': 5, 'Accountability': 6, 'Authenticity': 62, 'Resistance': 12}
+Moderate pos_weight: {'Security': np.float64(1.592), 'Confidentiality': np.float64(3.403), 'Integrity': np.float64(4.059), 'Non_repudiation': np.float64(10.0), 'Accountability': np.float64(10.0), 'Authenticity': np.float64(3.024), 'Resistance': np.float64(7.171)}
+Vocabulario: 2273 | MAX_LEN: 56
+trial=0 epoch=1/30 val_macro_f1=0.0071 security_recall=0.0256
+trial=0 epoch=2/30 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=3/30 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=4/30 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=5/30 val_macro_f1=0.0071 security_recall=0.0256
+trial=0 epoch=6/30 val_macro_f1=0.0495 security_recall=0.2308
+trial=0 epoch=7/30 val_macro_f1=0.0771 security_recall=0.4359
+trial=0 epoch=8/30 val_macro_f1=0.0816 security_recall=0.4615
+trial=0 epoch=9/30 val_macro_f1=0.0930 security_recall=0.3846
+trial=0 epoch=10/30 val_macro_f1=0.1279 security_recall=0.5641
+trial=0 epoch=11/30 val_macro_f1=0.1457 security_recall=0.4872
+trial=0 epoch=12/30 val_macro_f1=0.1412 security_recall=0.4872
+trial=0 epoch=13/30 val_macro_f1=0.1521 security_recall=0.6154
+trial=0 epoch=14/30 val_macro_f1=0.1393 security_recall=0.4359
+trial=0 epoch=15/30 val_macro_f1=0.1609 security_recall=0.5641
+trial=0 epoch=16/30 val_macro_f1=0.1823 security_recall=0.4615
+trial=0 epoch=17/30 val_macro_f1=0.1841 security_recall=0.4872
+trial=0 epoch=18/30 val_macro_f1=0.1994 security_recall=0.7436
+trial=0 epoch=19/30 val_macro_f1=0.1938 security_recall=0.6154
+trial=0 epoch=20/30 val_macro_f1=0.1926 security_recall=0.5897
+trial=0 epoch=21/30 val_macro_f1=0.2064 security_recall=0.6154
+trial=0 epoch=22/30 val_macro_f1=0.1820 security_recall=0.4872
+trial=0 epoch=23/30 val_macro_f1=0.2050 security_recall=0.6667
+trial=0 epoch=24/30 val_macro_f1=0.1897 security_recall=0.5641
+trial=0 epoch=25/30 val_macro_f1=0.1773 security_recall=0.4359
+trial=0 epoch=26/30 val_macro_f1=0.2125 security_recall=0.5641
+trial=0 epoch=27/30 val_macro_f1=0.2173 security_recall=0.4872
+trial=0 epoch=28/30 val_macro_f1=0.1823 security_recall=0.4615
+trial=0 epoch=29/30 val_macro_f1=0.2124 security_recall=0.4359
+trial=0 epoch=30/30 val_macro_f1=0.2124 security_recall=0.4359
+Umbrales seleccionados solo con validation: {'Security': 0.4, 'Confidentiality': 0.42500000000000004, 'Integrity': 0.4, 'Non_repudiation': 0.4, 'Accountability': 0.4, 'Authenticity': 0.5000000000000001, 'Resistance': 0.4}
+   trial_id  embedding_dim  ...  val_loss  best_epoch
+0         0            100  ...  0.275752          27
+
+[1 rows x 14 columns]
+             label  precision    recall        f1  support
+0         Security   0.840000  0.538462  0.656250       39
+1  Confidentiality   0.666667  0.181818  0.285714       11
+2        Integrity   1.000000  0.125000  0.222222        8
+3  Non_repudiation   0.000000  0.000000  0.000000        2
+4   Accountability   0.000000  0.000000  0.000000        3
+5     Authenticity   0.600000  0.461538  0.521739       13
+6       Resistance   0.000000  0.000000  0.000000        5
+{'macro_f1': 0.24084651976732724, 'security_recall': 0.5384615384615384, 'micro_f1': 0.5, 'subset_accuracy': 0.7407407407407407, 'hamming_loss': 0.06349206349206349}
+             label  probability  predicted  threshold
+0         Security     0.984228          1      0.400
+1  Confidentiality     0.169884          0      0.425
+2        Integrity     0.036141          0      0.400
+3  Non_repudiation     0.004897          0      0.400
+4   Accountability     0.006256          0      0.400
+5     Authenticity     0.465217          0      0.500
+6       Resistance     0.018991          0      0.400
+Test reservado: RUN_FINAL_TEST = False
+[2026-09-28T02:34:04] FIN 02_BiLSTM_multilabel.ipynb
+[2026-09-28T02:34:04] INICIO 03_BETO_multilabel.ipynb
+Device: cuda | PyTorch: 2.14.0+cu126
+Etiquetas (orden fijo): ['Security', 'Confidentiality', 'Integrity', 'Non_repudiation', 'Accountability', 'Authenticity', 'Resistance']
+Particiones: {'train': 629, 'val': 135, 'test': 135}
+Método de estratificación: constrained-milp-rare-holdout-seed42
+train {'Security': 0.283, 'Confidentiality': 0.079, 'Integrity': 0.057, 'Non_repudiation': 0.008, 'Accountability': 0.01, 'Authenticity': 0.099, 'Resistance': 0.019}
+val {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+test {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+Train real / utilizado: 629 / 629
+Positivos utilizados: {'Security': 178, 'Confidentiality': 50, 'Integrity': 36, 'Non_repudiation': 5, 'Accountability': 6, 'Authenticity': 62, 'Resistance': 12}
+Moderate pos_weight: {'Security': np.float64(1.592), 'Confidentiality': np.float64(3.403), 'Integrity': np.float64(4.059), 'Non_repudiation': np.float64(10.0), 'Accountability': np.float64(10.0), 'Authenticity': np.float64(3.024), 'Resistance': np.float64(7.171)}
+trial=0 epoch=1/5 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=2/5 val_macro_f1=0.1363 security_recall=0.5641
+trial=0 epoch=3/5 val_macro_f1=0.1969 security_recall=0.9231
+trial=0 epoch=4/5 val_macro_f1=0.2573 security_recall=0.8462
+trial=0 epoch=5/5 val_macro_f1=0.2858 security_recall=0.9744
+Umbrales seleccionados solo con validation: {'Security': 0.5750000000000002, 'Confidentiality': 0.4, 'Integrity': 0.4, 'Non_repudiation': 0.4, 'Accountability': 0.4, 'Authenticity': 0.4, 'Resistance': 0.4}
+   trial_id  learning_rate  ...  val_loss  best_epoch
+0         0        0.00002  ...  0.152342           5
+
+[1 rows x 13 columns]
+             label  precision    recall        f1  support
+0         Security   0.822222  0.948718  0.880952       39
+1  Confidentiality   0.700000  0.636364  0.666667       11
+2        Integrity   0.000000  0.000000  0.000000        8
+3  Non_repudiation   0.000000  0.000000  0.000000        2
+4   Accountability   0.000000  0.000000  0.000000        3
+5     Authenticity   0.538462  0.538462  0.538462       13
+6       Resistance   0.000000  0.000000  0.000000        5
+{'macro_f1': 0.29801151229722656, 'security_recall': 0.9487179487179487, 'micro_f1': 0.6845637583892618, 'subset_accuracy': 0.762962962962963, 'hamming_loss': 0.04973544973544974}
+             label  probability  predicted  threshold
+0         Security     0.941991          1      0.575
+1  Confidentiality     0.432767          1      0.400
+2        Integrity     0.117501          0      0.400
+3  Non_repudiation     0.218819          0      0.400
+4   Accountability     0.079813          0      0.400
+5     Authenticity     0.845186          1      0.400
+6       Resistance     0.072716          0      0.400
+Test reservado: RUN_FINAL_TEST = False
+[2026-09-28T02:35:44] FIN 03_BETO_multilabel.ipynb
+[2026-09-28T02:35:44] INICIO 04_RoBERTa_BNE_multilabel.ipynb
+Device: cuda | PyTorch: 2.14.0+cu126
+AVISO: PlanTL-GOB-ES/roberta-base-bne no publica pesos; se usará el mirror explícito Buzzeitor/roberta-base-bne.
+Etiquetas (orden fijo): ['Security', 'Confidentiality', 'Integrity', 'Non_repudiation', 'Accountability', 'Authenticity', 'Resistance']
+Particiones: {'train': 629, 'val': 135, 'test': 135}
+Método de estratificación: constrained-milp-rare-holdout-seed42
+train {'Security': 0.283, 'Confidentiality': 0.079, 'Integrity': 0.057, 'Non_repudiation': 0.008, 'Accountability': 0.01, 'Authenticity': 0.099, 'Resistance': 0.019}
+val {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+test {'Security': 0.289, 'Confidentiality': 0.081, 'Integrity': 0.059, 'Non_repudiation': 0.015, 'Accountability': 0.022, 'Authenticity': 0.096, 'Resistance': 0.037}
+Train real / utilizado: 629 / 629
+Positivos utilizados: {'Security': 178, 'Confidentiality': 50, 'Integrity': 36, 'Non_repudiation': 5, 'Accountability': 6, 'Authenticity': 62, 'Resistance': 12}
+Moderate pos_weight: {'Security': np.float64(1.592), 'Confidentiality': np.float64(3.403), 'Integrity': np.float64(4.059), 'Non_repudiation': np.float64(10.0), 'Accountability': np.float64(10.0), 'Authenticity': np.float64(3.024), 'Resistance': np.float64(7.171)}
+trial=0 epoch=1/5 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=2/5 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=3/5 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=4/5 val_macro_f1=0.0000 security_recall=0.0000
+trial=0 epoch=5/5 val_macro_f1=0.0000 security_recall=0.0000
+Umbrales seleccionados solo con validation: {'Security': 0.4, 'Confidentiality': 0.4, 'Integrity': 0.4, 'Non_repudiation': 0.4, 'Accountability': 0.4, 'Authenticity': 0.4, 'Resistance': 0.4}
+   trial_id  learning_rate  ...  val_loss  best_epoch
+0         0        0.00002  ...  0.274386           1
+
+[1 rows x 13 columns]
+             label  precision  recall   f1  support
+0         Security        0.0     0.0  0.0       39
+1  Confidentiality        0.0     0.0  0.0       11
+2        Integrity        0.0     0.0  0.0        8
+3  Non_repudiation        0.0     0.0  0.0        2
+4   Accountability        0.0     0.0  0.0        3
+5     Authenticity        0.0     0.0  0.0       13
+6       Resistance        0.0     0.0  0.0        5
+{'macro_f1': 0.0, 'security_recall': 0.0, 'micro_f1': 0.0, 'subset_accuracy': 0.7111111111111111, 'hamming_loss': 0.08571428571428572}
+             label  probability  predicted  threshold
+0         Security     0.327699          0        0.4
+1  Confidentiality     0.114754          0        0.4
+2        Integrity     0.116562          0        0.4
+3  Non_repudiation     0.099813          0        0.4
+4   Accountability     0.077778          0        0.4
+5     Authenticity     0.131899          0        0.4
+6       Resistance     0.099867          0        0.4
+Test reservado: RUN_FINAL_TEST = False
+[2026-09-28T02:37:45] FIN 04_RoBERTa_BNE_multilabel.ipynb
+[2026-09-28T02:37:45] ENTRENAMIENTO COMPLETO

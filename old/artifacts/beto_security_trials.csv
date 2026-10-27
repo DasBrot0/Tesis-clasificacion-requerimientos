@@ -1,0 +1,2 @@
+﻿trial_id,learning_rate,batch_size,epochs,dropout,weight_decay,max_length,optimizer,threshold,val_macro_f1,val_security_recall,val_loss,best_epoch
+0,2e-05,16,5,0.1,0.01,128,AdamW,0.5,0.28575143585285573,0.9743589743589743,0.15234237644407483,5

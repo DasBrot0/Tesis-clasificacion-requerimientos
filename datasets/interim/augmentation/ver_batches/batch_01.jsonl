@@ -1,0 +1,39 @@
+{"id": "g0281", "text": "The booking system must recognise unusual surges of requests from a single origin that suggest automated abuse and throttle or drop that traffic while normal customers continue booking."}
+{"id": "g0249", "text": "The simulation software must support enrolment of a researcher's fingerprint when an account is created and must require a matching fingerprint scan to start each session."}
+{"id": "g0219", "text": "The online booking system shall allow a travel agency employee to sign a group reservation on behalf of the agency using a private signing key that is kept hidden from all other users, so that any later change to the reservation is detectable."}
+{"id": "g0328", "text": "The smart-home IoT controller must accept a paired device only after validating the device's signed certificate against a trusted issuer."}
+{"id": "g0057", "text": "The smart-home companion app must end its control session and revoke the access token when the app is shut down, so a lost phone cannot continue operating the home."}
+{"id": "g0371", "text": "The smart-home IoT controller shall verify the identity of every person and companion app before accepting any command."}
+{"id": "g0034", "text": "The compiler shall verify the identity of a developer through valid credentials before accepting any build, configuration or plugin-management command, except the command that starts the sign-in dialog."}
+{"id": "g0115", "text": "The air traffic control software shall let a supervisor suspend a compromised workstation session remotely, and shall refuse every command from a suspended session."}
+{"id": "g0374", "text": "The hospital patient-record system must re-confirm a clinician's identity with additional challenge questions before opening a record flagged as restricted."}
+{"id": "g0238", "text": "The compiler shall reject any edit to a saved build configuration unless the edit is made by the configuration's owner following successful identity verification."}
+{"id": "g0363", "text": "The hospital patient-record system shall store a digest with every discharge summary and flag the record as corrupted when a later digest comparison fails."}
+{"id": "g0119", "text": "The hospital patient-record system must keep the keys that encrypt patient files in a certified hardware vault that never exports them in plaintext."}
+{"id": "g0195", "text": "The payroll and human resources management system must detect and refuse a resubmitted salary-change transaction that repeats the unique identifier of an earlier processed transaction."}
+{"id": "g0287", "text": "The web browser shall compare each downloaded file against the digest published by its origin and shall flag the file as corrupted or altered when the values differ."}
+{"id": "g0111", "text": "The electronic purse shall, upon reversing its latest debit, restore the prior balance and regenerate the authentication code that covers the cumulative debit total, before releasing the record for collection."}
+{"id": "g0176", "text": "The simulation software must reject a compute node whose certificate fails verification and shall react according to the configured policy, including isolating that node from the cluster when repeated forged identities are detected."}
+{"id": "g0153", "text": "The online banking application shall encrypt stored customer statements with a symmetric block cipher so that anyone obtaining the storage media cannot read them."}
+{"id": "g0359", "text": "The smart-card electronic purse must calculate a hash over every transaction record it stores, enabling the terminal to detect tampering with that record."}
+{"id": "g0366", "text": "The web browser must require the profile owner to be verified before it allows edits to synchronised passwords and autofill entries."}
+{"id": "g0246", "text": "The sales forecasting system must grant a session only when the submitted credentials match a registered account and must otherwise return the user to the sign-in screen to retry."}
+{"id": "g0043", "text": "The online booking system shall grant each user only the view and edit capabilities defined for the role assigned to that user, so that, for example, a front-desk agent can see reservations of its own branch but cannot change tariff tables."}
+{"id": "g0040", "text": "The simulation software shall restrict the creation, editing and deletion of validated reference scenarios to users assigned the lead engineer role."}
+{"id": "g0010", "text": "The web browser shall verify that a synchronisation service presents a valid certificate matching its claimed domain name before establishing a synchronisation session with it."}
+{"id": "g0094", "text": "The simulation software must scan every third-party model plug-in for malicious code before loading it and must refuse to load any plug-in flagged as infected."}
+{"id": "g0016", "text": "The data warehousing system shall load each record so that the stored values match exactly the values in the source extract, and shall flag any record whose checksum differs after loading."}
+{"id": "g0056", "text": "The data warehousing client shall terminate the authenticated session and invalidate its session token on the server whenever the user closes the client."}
+{"id": "g0146", "text": "The database server shall encrypt all client connections using a negotiated channel protocol so that query traffic cannot be read in transit."}
+{"id": "g0235", "text": "The database server shall identify each client connection by validating a submitted account name and its matching secret before any query is executed."}
+{"id": "g0001", "text": "The electronic purse shall allow only card issuer personnel holding the administrator role to change the spending limit stored on a card, and shall deny every other user the ability to view that limit."}
+{"id": "g0243", "text": "The booking system shall allow only the data administrator to change the rights governing modification of reservation records, and shall store a hash of each reservation record so that any alteration can be detected."}
+{"id": "g0109", "text": "The online booking system shall compute a fresh integrity code over the running total of reservations and revenue each time a booking is confirmed, and shall store that code with the batch record."}
+{"id": "g0026", "text": "The data warehousing system shall lock an analyst account for 15 minutes after five consecutive failed sign-in attempts."}
+{"id": "g0324", "text": "The database server shall reject any attempt by an unprivileged account to insert, update or delete records in protected tables."}
+{"id": "g0079", "text": "The screen capture tool must permit only the recording's owner to open, and to trim or overwrite, a saved capture, and must deny those actions to all other accounts."}
+{"id": "g0138", "text": "The smart-home IoT controller shall apply a change to its automation rules or firmware only when the change has been approved by the registered household owner."}
+{"id": "g0369", "text": "The payroll and human resources management system shall issue a one-time code from the server that expires after a configured number of seconds and is required to complete an employee's login."}
+{"id": "g0182", "text": "Upon identifying a replayed transfer authorisation, the online banking application must halt the pending payment and end the customer session involved."}
+{"id": "g0047", "text": "The compiler shall allow only the designated build manager to change the optimisation and target-platform settings of a shared project."}
+{"id": "g0354", "text": "The smart-card electronic purse must detect and refuse any attempt to alter the stored balance outside a completed and validated load or debit operation."}

@@ -1,0 +1,39 @@
+{"id": "g0270", "text": "The electronic purse must compare the cardholder's presented fingerprint with the template stored on the card before authorising any spending operation."}
+{"id": "g0202", "text": "When the data warehousing system detects that a load job has been disrupted by an intrusion or malicious input, it must abort the job and place the affected tables into a read-only state."}
+{"id": "g0162", "text": "The screen capture tool must attach a keyed hash to each saved recording and shall verify that hash on playback so that any edit made to the file after capture is detected."}
+{"id": "g0044", "text": "The smart-home controller must map every household member to a role such as owner, guest or child, and must expose device status and device control only to the extent that the role allows."}
+{"id": "g0218", "text": "The hospital patient-record system shall allow auditors to confirm that archived medical records are identical to the versions originally saved."}
+{"id": "g0191", "text": "The electronic purse must include a time value or running sequence number in every top-up request it issues to the loading terminal so that stale copies of earlier requests are rejected."}
+{"id": "g0310", "text": "The simulation software shall embed an imperceptible mark in every exported result file so that any unauthorised alteration of the file can be detected."}
+{"id": "g0260", "text": "The database server must confirm the identity of every connecting client by validating a client-supplied certificate against a trusted issuer before accepting any query."}
+{"id": "g0106", "text": "The smart-home IoT controller must append a keyed authentication code covering the event count and cumulative energy reading to each telemetry bundle it uploads."}
+{"id": "g0054", "text": "The sales forecasting system shall terminate any session that has seen no activity for 30 minutes, so that an unattended workstation cannot be used by a passer-by."}
+{"id": "g0002", "text": "The data warehousing system shall permit only users assigned the data steward role to edit dimension table definitions, and shall deny read access to those definitions to all users lacking that role."}
+{"id": "g0050", "text": "The database server shall verify checksums of stored data pages on every read and must report any page whose content differs from what was last written."}
+{"id": "g0081", "text": "The data warehousing system must confirm the claimed identity of every analyst and every scheduled loading job through a verifiable credential before it accepts a connection."}
+{"id": "g0206", "text": "The smart-home IoT controller shall deny wireless network joining to every device that the homeowner has not explicitly approved."}
+{"id": "g0035", "text": "The smart-home controller must authenticate every person or companion app by checking a registered identity before executing any device command other than the pairing sign-in request."}
+{"id": "g0264", "text": "The banking application's fraud-screening function shall flag a transaction only when its detection rules produce a confirmed match, keeping wrongly flagged legitimate transactions below a defined rate."}
+{"id": "g0092", "text": "The data warehousing system shall validate the consistency of each loaded record against its source checksum and shall discard any record that has been modified or damaged in transit."}
+{"id": "g0053", "text": "The screen capture tool must end the active session and require renewed sign-in after 15 minutes without user interaction."}
+{"id": "g0265", "text": "The payroll system must ensure that its automated check for duplicate or altered salary records reports discrepancies accurately, with erroneous alerts not exceeding a specified percentage."}
+{"id": "g0242", "text": "The screen capture tool shall prevent anyone other than the designated administrator from changing the rights that govern who may edit or delete stored recordings."}
+{"id": "g0014", "text": "The screen capture tool shall require each user to prove their identity with a registered account before it uploads any recording to the shared team library."}
+{"id": "g0316", "text": "The data warehousing system shall compute and store a cryptographic digest for every loaded data extract so that any later change to the extract can be detected."}
+{"id": "g0089", "text": "The data warehousing system must limit each analyst identity to a single authenticated session at any moment, refusing a further login from another client while one is active."}
+{"id": "g0274", "text": "The simulation software shall require a user to supply both a knowledge-based credential and a one-time code from a registered token before authorising a purchase of a licensed module."}
+{"id": "g0167", "text": "The hospital patient-record system must keep diagnosis details hidden from unauthorised staff and external systems whenever it sends them to the pharmacy module."}
+{"id": "g0329", "text": "The smart-card electronic purse shall confirm the cardholder's identity by relying on an external trusted identity provider reached over the network before enabling a top-up."}
+{"id": "g0376", "text": "The online booking system must ensure that the reservation details displayed to a customer at confirmation are identical to those stored when the booking was created."}
+{"id": "g0135", "text": "The compiler shall present an interface to build plugins that makes it impossible for a plugin to bypass, switch off or corrupt the compiler's integrity-verification and hardening features."}
+{"id": "g0307", "text": "The compiler's remote build service must authenticate each client with a valid certificate before accepting any compilation job."}
+{"id": "g0367", "text": "The sales forecasting system shall let only the analyst who owns a forecast scenario change its assumptions and adjusted figures."}
+{"id": "g0320", "text": "The simulation software shall let a researcher validate that saved model parameters and result files have not been modified since they were written."}
+{"id": "g0244", "text": "The patient-record system must restrict modification of record-editing privileges to the data administrator and must keep a hash value for every stored clinical entry to reveal unauthorised changes."}
+{"id": "g0055", "text": "The data warehousing system must automatically close query-console sessions after 20 minutes of idleness and discard their session tokens."}
+{"id": "g0051", "text": "The web browser must check the cryptographic hash of each downloaded update package against the published value and must discard the package when the values differ."}
+{"id": "g0175", "text": "When a clinician's credential check fails, the hospital patient-record system shall deny access, apply the configured response such as a temporary lockout, and notify the genuine account holder if the credentials were presented again after having been captured."}
+{"id": "g0190", "text": "The online banking application shall add a unique incrementing counter to each administrative command sent to the payment gateway so that a re-sent command can be told apart from a new one."}
+{"id": "g0380", "text": "The electronic purse shall allow only a card issuer's authorised operator to cancel a completed load transaction and restore the previous balance."}
+{"id": "g0188", "text": "If the web browser determines that a page script attempts to read data in breach of the configured privacy rules, the browser must block every pending network request from that page."}
+{"id": "g0170", "text": "The online banking application must confirm that account statements received from the core ledger service were delivered through an encrypted channel before it displays them to the customer."}

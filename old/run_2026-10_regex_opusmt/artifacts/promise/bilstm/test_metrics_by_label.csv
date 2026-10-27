@@ -1,0 +1,8 @@
+﻿label,precision,recall,f1,support,in_macro_average
+Security,0.44,0.9166666666666666,0.5945945945945946,12,True
+Confidentiality,0.3333333333333333,0.8333333333333334,0.47619047619047616,6,True
+Integrity,0.0,0.0,0.0,1,False
+Non_repudiation,0.0,0.0,0.0,1,False
+Accountability,0.0,0.0,0.0,1,False
+Authenticity,0.3,1.0,0.46153846153846156,3,True
+Resistance,0.0,0.0,0.0,1,False

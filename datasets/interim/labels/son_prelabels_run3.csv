@@ -1,0 +1,257 @@
+﻿id,Confidentiality,Integrity,Non_repudiation,Accountability,Authenticity,Resistance,conf_Confidentiality,conf_Integrity,conf_Non_repudiation,conf_Accountability,conf_Authenticity,conf_Resistance,rationale
+e0001,1,0,0,0,0,0,0.9,0.9,0.95,0.95,0.9,0.95,Restricts search access to the collision estimator role.
+e0002,0,0,0,1,0,0,0.9,0.9,0.7,0.85,0.9,0.9,Audit capability and message retention for audit and transaction tracking.
+e0003,0,0,0,1,0,0,0.9,0.8,0.85,0.8,0.9,0.9,Records user additions and access changes for traceability.
+e0004,1,0,0,0,0,0,0.85,0.9,0.95,0.95,0.9,0.9,Prevents disclosure of other players' identity information.
+e0005,1,1,0,0,0,0,0.85,0.85,0.95,0.95,0.9,0.95,Limits who can update (integrity) and access (confidentiality) the ratings.
+e0006,1,0,0,0,0,0,0.9,0.9,0.95,0.95,0.8,0.9,"Passwords must never be displayed, protecting sensitive data."
+e0007,0,0,0,0,0,1,0.9,0.85,0.95,0.95,0.95,0.85,Requires protection from malicious interference.
+e0008,0,0,0,0,0,1,0.9,0.9,0.95,0.8,0.95,0.85,Protects against intentional abuse and notifies the administrator.
+e0009,0,0,0,0,1,0,0.65,0.9,0.95,0.95,0.85,0.9,"Only users with approved IDs may log on, i.e. identity verification."
+e0010,1,0,0,0,0,0,0.9,0.8,0.95,0.95,0.9,0.9,Secure sockets protect confidential customer information in transit.
+e0011,1,0,0,0,0,0,0.8,0.9,0.95,0.95,0.85,0.95,Restricts reservation searches by user to managers.
+e0012,1,0,0,0,1,0,0.8,0.85,0.95,0.95,0.8,0.95,Requires private access to client data and ID/password identification.
+e0013,0,0,0,0,1,0,0.9,0.95,0.95,0.95,0.95,0.95,Requires username and password login.
+e0014,0,0,0,0,0,0,0.9,0.8,0.95,0.95,0.95,0.9,"Backups concern availability, not a security subcharacteristic."
+e0015,0,0,0,0,1,0,0.7,0.9,0.95,0.95,0.8,0.9,"Only authorized users may log on, requiring user verification."
+e0016,0,1,0,0,0,0,0.95,0.9,0.95,0.95,0.95,0.95,Stored data must match what the user entered.
+e0017,1,0,0,0,0,1,0.6,0.7,0.9,0.9,0.6,0.5,"Secure transactions and storage of sensitive data, avoiding unauthorized transmission and identity theft."
+e0018,0,1,0,0,0,0,0.95,0.8,0.95,0.95,0.95,0.7,"Only valid data may enter, ensuring data validity."
+e0019,0,0,0,0,0,1,0.9,0.9,0.95,0.9,0.6,0.4,"Rejects a concurrent second login, limiting credential misuse; weak signal."
+e0020,1,0,0,0,0,0,0.45,0.85,0.95,0.95,0.85,0.9,Content access limited to purchasers within a period; weak access control.
+e0021,1,0,0,0,0,0,0.8,0.85,0.95,0.95,0.7,0.95,Restricts access to a subsystem to authorized users.
+e0022,1,0,0,0,0,0,0.85,0.9,0.95,0.95,0.85,0.9,Prevents password exposure through cookies.
+e0023,0,1,0,0,0,0,0.8,0.7,0.95,0.95,0.95,0.9,Unauthorized users cannot modify data.
+e0024,0,0,0,0,0,0,0.7,0.85,0.95,0.95,0.95,0.95,"Security is declared out of scope, so nothing is expressed."
+e0025,1,0,0,0,0,0,0.8,0.85,0.95,0.95,0.9,0.95,Only supervisors may view schedules of callers.
+e0026,0,0,0,0,0,1,0.7,0.9,0.95,0.95,0.9,0.5,Automatic logout after inactivity limits exposure to abuse.
+e0027,0,0,0,1,0,0,0.95,0.95,0.7,0.7,0.9,0.9,Logging IP addresses of transactions allows tracing their origin.
+e0028,0,0,0,0,1,0,0.85,0.95,0.95,0.95,0.85,0.95,"Login is required for all operations, i.e. identification."
+e0029,1,1,0,0,0,0,0.6,0.6,0.95,0.95,0.9,0.95,Granular access rights control who can view and operate on subsystems.
+e0030,0,1,0,0,0,0,0.85,0.75,0.95,0.95,0.9,0.95,"Only supervisors may advertise time slots, which restricts who can create or modify data (role-based write control)."
+e0031,1,0,0,0,0,0,0.97,0.9,0.98,0.98,0.9,0.95,"Credit card data is access-restricted to administrators and encrypted in the database, protecting it from disclosure."
+e0032,1,0,0,0,1,0,0.85,0.9,0.98,0.95,0.95,0.95,Access is limited to authorized employees and users must authenticate with username and password.
+e0033,1,0,0,0,0,0,0.93,0.7,0.98,0.95,0.85,0.95,"Each student can access only their own records and only administrators see all, restricting who can read information."
+e0034,1,0,0,0,1,0,0.6,0.95,0.98,0.98,0.75,0.7,"Forbidding automatic logins requires explicit authentication, and not storing login cookies avoids exposing credential information."
+e0035,1,0,0,0,1,0,0.8,0.7,0.98,0.95,0.85,0.85,Access is restricted to authorized users and the product must distinguish authorized from unauthorized users on each access attempt.
+e0036,0,0,0,0,1,0,0.95,0.98,0.98,0.7,0.93,0.98,"Requires every user to log in with unique identification, which is identity authentication."
+e0037,0,0,0,0,0,0,0.9,0.95,0.98,0.98,0.8,0.98,"States that no login is required, so it does not express any security subcharacteristic (likely not a security requirement)."
+e0038,0,0,0,0,0,0,0.6,0.7,0.98,0.98,0.95,0.85,A generic 'secured database' statement without a stated protection goal does not clearly fit any subcharacteristic.
+e0039,1,1,0,0,0,0,0.85,0.7,0.98,0.95,0.9,0.95,"Role-based access limits which functionality and data users may reach, covering both reading and modifying (rule 3)."
+e0040,0,0,0,0,1,0,0.9,0.95,0.98,0.98,0.9,0.7,Password rotation for tablet login concerns credential-based authentication.
+e0041,0,0,0,1,0,0,0.95,0.85,0.9,0.93,0.95,0.95,A report of added users and access-level changes reviewed for auditing provides traceability of who changed what.
+e0042,1,0,0,0,0,0,0.65,0.98,0.98,0.95,0.98,0.98,A privacy policy disclosing information practices on data collection relates to privacy of personal data.
+e0043,1,0,0,0,0,0,0.95,0.8,0.98,0.98,0.9,0.98,Restricts access to sales information to authorized personnel.
+e0044,0,1,0,0,0,0,0.9,0.85,0.98,0.98,0.9,0.98,"Only the Commissioner may adjust league settings, restricting who can modify data."
+e0045,0,1,0,0,0,0,0.98,0.93,0.98,0.98,0.98,0.9,Data integrity checking to prevent incorrect or invalid data directly addresses data accuracy and integrity.
+e0046,1,0,0,0,0,0,0.93,0.7,0.98,0.98,0.9,0.98,"Only authorized users may access clinical site information, restricting reading."
+e0047,0,0,0,0,0,1,0.7,0.95,0.98,0.98,0.85,0.6,Automatic logout after inactivity limits session abuse and exposure (rule 7).
+e0048,0,0,0,0,0,0,0.6,0.95,0.98,0.98,0.85,0.55,Logging out on application exit states no explicit protection or attack-related goal.
+e0049,1,0,0,0,0,0,0.5,0.98,0.95,0.9,0.98,0.98,"Notifying customers of information-policy changes is a privacy-related requirement (rule 10), with weak textual evidence."
+e0050,0,0,0,0,1,0,0.7,0.95,0.98,0.98,0.85,0.95,Users must be authenticated before logging on to the system.
+e0051,0,1,0,0,0,0,0.85,0.7,0.98,0.98,0.9,0.98,"Only users with Update access may initiate dispute requests, restricting who can create or change data."
+e0052,0,0,0,0,1,0,0.75,0.95,0.98,0.98,0.95,0.98,Team owners must authenticate with username and password to reach their page.
+e0053,0,0,0,0,0,0,0.7,0.6,0.98,0.98,0.6,0.9,Consistent propagation of password and permission changes is a generic security-consistency requirement without a clear subcharacteristic.
+e0054,0,0,0,0,0,1,0.7,0.95,0.98,0.98,0.85,0.6,Automatic logout after inactivity limits session abuse and exposure (rule 7).
+e0055,1,0,0,0,0,0,0.9,0.6,0.98,0.98,0.9,0.98,"Only two named people may access the final class section scheduling, restricting access to it."
+e0056,0,0,0,0,0,0,0.9,0.95,0.98,0.98,0.8,0.98,"States that no login is required, so it does not express any security subcharacteristic (likely not a security requirement)."
+e0057,0,0,0,0,0,0,0.6,0.7,0.98,0.98,0.95,0.85,A generic 'secured database' statement without a stated protection goal does not clearly fit any subcharacteristic.
+e0058,1,0,0,0,0,0,0.93,0.85,0.98,0.98,0.8,0.9,"Passwords must be stored encrypted, protecting them from disclosure."
+e0059,0,0,0,0,0,1,0.95,0.9,0.98,0.98,0.8,0.9,A random-word challenge to prevent attacks over multiple tries counters automated or brute-force abuse.
+e0060,0,0,0,0,1,0,0.85,0.9,0.98,0.98,0.6,0.95,"User authentication is delegated to Active Directory, so the text concerns identity verification, though only as an out-of-scope statement."
+e0061,1,1,0,0,0,0,0.55,0.8,0.98,0.98,0.9,0.97,"Only supervisors may enter schedules (restricted modification) and access empty time slots (restricted access), per the role-based access rule."
+e0062,0,0,0,0,1,0,0.7,0.7,0.98,0.98,0.8,0.95,"It requires authentication (and generic authorization), which maps to Authenticity without stating what is protected."
+e0063,1,0,0,0,0,0,0.7,0.8,0.98,0.98,0.5,0.95,"Restricts system access to registered realtors, which is access restriction to authorized users."
+e0064,1,0,0,0,0,0,0.7,0.75,0.98,0.98,0.5,0.95,"Only authorized users with the proper role may access and use the system, an access restriction."
+e0065,1,0,0,0,0,0,0.97,0.9,0.99,0.99,0.97,0.95,Encrypting network transactions with financial or personal data protects against disclosure.
+e0066,0,0,0,0,1,0,0.7,0.9,0.98,0.98,0.75,0.95,"Patrons must log in under an access policy, which is user authentication."
+e0067,1,0,0,0,0,0,0.65,0.85,0.98,0.98,0.5,0.9,"Restricts remote use of the system to users authorized for home access, an access restriction."
+e0068,0,0,0,0,1,0,0.9,0.95,0.98,0.98,0.9,0.7,"Sets a minimum password strength for login, which concerns credential-based authentication."
+e0069,0,0,0,0,1,0,0.9,0.9,0.95,0.9,0.5,0.8,"Limits a waiter to one concurrent tablet login, a login/identity constraint without an explicit attack or data-protection goal."
+e0070,1,0,0,0,0,0,0.93,0.85,0.99,0.99,0.95,0.95,SSL encryption for secure data transfer over the Internet protects data from disclosure.
+e0071,1,0,0,0,0,0,0.97,0.9,0.99,0.99,0.97,0.95,Sensitive data must be encrypted before being sent over insecure connections.
+e0072,0,1,0,0,0,0,0.9,0.7,0.98,0.98,0.97,0.6,"Aims to minimize the possibility of data corruption by systems or humans, which is protection against alteration."
+e0073,1,0,0,0,0,0,0.55,0.45,0.98,0.98,0.9,0.95,"Different user types each have access constraints, a general access restriction that most directly limits who can see data."
+e0074,1,0,0,0,0,0,0.95,0.85,0.99,0.99,0.95,0.95,"Client-server transactions must be SSL-encrypted, protecting data in transit from disclosure."
+e0075,1,0,0,0,0,0,0.99,0.9,0.99,0.99,0.97,0.97,HTTPS is required explicitly to ensure data confidentiality.
+e0076,1,0,0,0,0,0,0.95,0.95,0.99,0.99,0.98,0.97,Masking the credit card number to its last four digits prevents disclosure of sensitive data.
+e0077,0,0,0,0,0,1,0.9,0.85,0.99,0.99,0.98,0.9,"Virus protection software monitors threats to the system, i.e. detecting malware."
+e0078,0,1,0,0,0,0,0.8,0.65,0.98,0.97,0.85,0.93,"Only users with the proper access level may initiate (create) dispute requests, restricting who can create data."
+e0079,1,1,0,0,0,0,0.6,0.65,0.99,0.98,0.97,0.9,"Users are denied direct access to data files and databases, limiting both reading and altering of the data outside the application."
+e0080,0,0,0,0,1,0,0.9,0.85,0.98,0.98,0.93,0.9,Successful authentication is required before processing any transaction.
+e0081,0,0,0,0,1,0,0.95,0.85,0.98,0.98,0.95,0.95,"Requires on-line authentication between the card issuer and the card for load, unload and exchange transactions."
+e0082,0,1,0,0,1,0,0.9,0.8,0.97,0.98,0.8,0.95,A shared secret key to generate and verify MACs detects alteration and verifies the origin of messages.
+e0083,0,0,0,0,1,0,0.95,0.85,0.98,0.98,0.95,0.95,Requires off-line authentication between the PSAM and the card for purchase transactions.
+e0084,0,0,0,0,1,0,0.8,0.85,0.98,0.98,0.95,0.9,Mutual authentication between the card and the PSAM using a public key algorithm verifies each party's identity.
+e0085,0,0,0,0,0,0,0.7,0.7,0.97,0.97,0.65,0.85,"Says value is loaded 'securely' through an issuer connection but names no specific protection, so no subcharacteristic is explicit."
+e0086,0,1,0,0,1,0,0.9,0.75,0.85,0.95,0.8,0.9,"A unique card key generates and authenticates transaction signatures, protecting against alteration and verifying origin."
+e0087,0,0,0,0,1,0,0.7,0.9,0.97,0.98,0.92,0.93,"The issuer verifies the legitimate account owner via an enciphered PIN, which is identity verification."
+e0088,0,0,0,0,1,0,0.95,0.85,0.9,0.95,0.9,0.95,"Requires ensuring the card is authentic, which is verification of a component's identity."
+e0089,0,0,0,0,1,0,0.95,0.85,0.85,0.9,0.85,0.95,"The acquirer must ensure the issuer is the true owner and the card is presented to authenticate a failure, both identity/origin verification."
+e0090,0,0,0,0,0,0,0.9,0.7,0.9,0.9,0.6,0.9,Only describes sending S1 in an authorization request without stating any security objective explicitly.
+e0091,0,0,0,0,1,0,0.9,0.9,0.95,0.95,0.95,0.95,"Verifies the cardholder identity via PIN verification, which is authentication."
+e0092,0,1,0,0,1,0,0.95,0.65,0.9,0.95,0.95,0.9,The issuer validates S1 to authenticate the card (Authenticity) and the transaction data (Integrity).
+e0093,0,0,0,0,0,0,0.9,0.7,0.9,0.9,0.65,0.9,"Merely states that S2 is sent in the authorization response, with no explicit security property."
+e0094,0,1,0,0,0,0,0.8,0.5,0.95,0.9,0.8,0.8,"Restricts unloads to issuer-controlled accounts and devices, limiting unauthorized movement of funds (modification of value)."
+e0095,0,0,0,0,1,0,0.95,0.7,0.9,0.9,0.9,0.9,"Funds are credited only after the issuer authenticates the card, an authentication requirement."
+e0096,0,1,0,0,1,0,0.95,0.8,0.9,0.95,0.95,0.95,Mutual authentication of card and issuer plus assurance that the data is the same as used by the issuer.
+e0097,0,1,0,0,1,0,0.95,0.8,0.9,0.95,0.95,0.95,S1 is sent so the issuer can authenticate the card and the data to be used in the transaction.
+e0098,0,1,0,0,1,0,0.95,0.85,0.9,0.95,0.95,0.95,S2 lets the card validate the issuer's authenticity and that the transaction data is as the issuer intended.
+e0099,0,1,0,0,1,0,0.95,0.9,0.8,0.9,0.95,0.95,The card must ensure the POS is authentic and generate a signature so the issuer can verify transaction integrity.
+e0100,0,1,0,0,1,0,0.95,0.95,0.85,0.9,0.95,0.95,The POS must ensure the card is authentic and guarantee integrity of transactions and batches.
+e0101,0,0,0,0,1,0,0.95,0.85,0.95,0.95,0.95,0.85,Requires the card to re-authenticate the PSAM during a reversal.
+e0102,0,1,0,0,0,0,0.95,0.7,0.85,0.8,0.6,0.8,"Checks that the cancellation matches the original device and amount, a data coherence/accuracy validation."
+e0103,0,0,0,0,1,0,0.95,0.85,0.95,0.95,0.95,0.95,"The CEP card is authenticated by the PSAM, an authentication requirement."
+e0104,0,0,0,0,1,0,0.95,0.6,0.85,0.8,0.85,0.9,"The PSAM authenticates that the canceled purchase originated from itself and belongs to the active batch, verifying origin."
+e0105,0,0,0,0,1,0,0.95,0.65,0.9,0.9,0.9,0.95,The issuer and merchant acquirer authenticate the transaction upon receipt.
+e0106,0,1,0,0,0,0,0.9,0.9,0.95,0.95,0.55,0.9,MACs on transmissions detect alteration of data; the text does not mention origin verification.
+e0107,0,1,0,0,0,0,0.95,0.97,0.9,0.95,0.7,0.95,Transaction signatures explicitly ensure end-to-end integrity of transmitted data.
+e0108,0,1,0,0,0,0,0.95,0.95,0.95,0.9,0.9,0.95,Totals are used to ensure the integrity of the batch.
+e0109,0,1,0,0,0,0,0.9,0.9,0.95,0.95,0.7,0.9,"Count and amount must be protected by a MAC, which detects alteration of batch data."
+e0110,0,0,0,0,0,0,0.95,0.85,0.9,0.55,0.6,0.95,Assigning unique identifiers is administrative; the text states no explicit tracing or verification objective.
+e0111,0,0,0,0,0,0,0.95,0.85,0.9,0.55,0.6,0.95,Assigning unique PSAM identifiers is administrative; no explicit security property is stated.
+e0112,0,0,0,0,0,0,0.95,0.7,0.85,0.55,0.55,0.6,Describes a transaction counter and ID used in conversations without explicitly stating replay protection or tracing.
+e0113,0,0,0,0,1,0,0.8,0.8,0.95,0.95,0.85,0.95,Holds keys and certificates used for mutual authentication between the POS device and the card.
+e0114,0,0,0,0,1,0,0.95,0.7,0.85,0.95,0.9,0.95,"Generates a signature so the CEP card can validate the PSAM, verifying its identity."
+e0115,0,0,0,0,0,0,0.85,0.8,0.95,0.9,0.8,0.8,"Generic statement that the entity controls transaction flow and enforces security, without a specific subcharacteristic."
+e0116,0,0,0,0,1,0,0.95,0.6,0.85,0.95,0.85,0.95,Verifying signatures and certificates during purchase and cancellation authenticates the parties involved.
+e0117,0,0,0,0,1,0,0.9,0.7,0.95,0.95,0.5,0.7,Distributing CA public keys and certificate revocation lists to POS devices supports certificate-based verification of identity.
+e0118,0,1,0,0,1,0,0.9,0.9,0.9,0.95,0.7,0.85,Creating and verifying a MAC on each transmission detects alteration and checks the sending processor origin.
+e0119,0,0,0,1,0,0,0.95,0.7,0.7,0.85,0.95,0.95,An auditable end-to-end process requires traceability of who did what.
+e0120,0,1,0,0,0,0,0.95,0.55,0.6,0.8,0.85,0.9,"A dispute mechanism handles MAC errors, which indicate altered or corrupted data, though it is a business remedy rather than explicit evidence for non-repudiation."
+e0121,0,1,0,0,0,0,0.95,0.5,0.7,0.7,0.9,0.85,Collecting all transactions with MAC errors in a central repository concerns handling detected data-integrity failures.
+e0122,0,0,0,0,1,0,0.95,0.6,0.95,0.95,0.9,0.9,The CEP card must authenticate the PSAM using previously exchanged certificates.
+e0123,0,1,0,0,0,0,0.95,0.7,0.95,0.95,0.5,0.95,"The reversal command carries a MAC computed by the PSAM, protecting the command and amount against alteration."
+e0124,0,1,0,1,0,0,0.95,0.75,0.8,0.5,0.5,0.95,"MACs on the transaction and batch totals protect data integrity, and the transaction is logged, which supports traceability."
+e0125,0,0,0,0,1,0,0.95,0.5,0.9,0.55,0.9,0.95,The card authenticates the PSAM using certificates; the logging is mainly functional with no stated purpose of tracing responsibility.
+e0126,0,0,0,0,1,0,0.95,0.5,0.9,0.85,0.8,0.7,"The card verifies that the PSAM is the one used in the original transaction and responds with a MAC, which is an identity check."
+e0127,0,0,0,0,1,0,0.95,0.5,0.95,0.95,0.9,0.95,The POS device authenticates the CEP card using the session key and the S1 MAC.
+e0128,0,1,0,1,0,0,0.95,0.7,0.8,0.5,0.5,0.95,"MACs protect transaction and batch data and the transaction is logged and retained until collected, supporting traceability."
+e0129,0,1,0,0,0,0,0.95,0.7,0.95,0.95,0.5,0.95,The credit command includes a MAC computed with the session key to protect the command from alteration.
+e0130,0,1,0,0,1,0,0.95,0.6,0.95,0.5,0.9,0.9,"The card authenticates the terminal via the MAC and verifies that the cancellation amount matches the original, checking data consistency."
+e0131,0,1,0,0,0,0,0.95,0.95,0.95,0.9,0.9,0.95,Transmitted data must be sent in a manner that ensures its integrity.
+e0132,0,1,0,0,1,0,0.95,0.8,0.85,0.8,0.8,0.9,MACs validate that transactions came from a POS with a valid PSAM and protect the batch totals from alteration.
+e0133,0,1,0,0,1,0,0.95,0.8,0.9,0.9,0.55,0.9,"The acquirer validates the PSAM MACs and checks selected data elements for correct processing, covering data integrity and the device origin."
+e0134,0,1,0,0,1,0,0.95,0.7,0.75,0.9,0.9,0.6,"The signed MAC lets the issuer validate that the transaction came from a legitimate, non-counterfeit card, protecting origin and data."
+e0135,0,1,0,0,1,0,0.95,0.45,0.7,0.85,0.45,0.9,"Payment decisions depend on signature validations, which verify origin and detect alteration."
+e0136,0,1,0,0,1,0,0.95,0.5,0.7,0.85,0.6,0.85,"The acquirer relies on the POS transaction MAC to accept only valid transactions, which checks origin and data validity."
+e0137,1,0,0,0,1,0,0.6,0.85,0.95,0.95,0.9,0.9,"Cardholder verification via PIN is required, and on-line PIN must be encrypted to protect it from disclosure."
+e0138,0,0,0,0,1,0,0.6,0.9,0.95,0.95,0.85,0.9,Off-line PIN verification of the cardholder is an identity check; the text does not state a goal of protecting data from disclosure.
+e0139,0,0,0,0,1,0,0.85,0.95,0.95,0.95,0.85,0.9,The card must declare support for PIN-based cardholder verification methods.
+e0140,0,0,0,0,0,1,0.9,0.85,0.95,0.9,0.7,0.5,"The issuer can lock the card or application and locked cards cannot transact, which contains misuse of a compromised card."
+e0141,0,0,0,0,1,0,0.9,0.6,0.95,0.95,0.4,0.9,"PSAMs must be able to generate and validate cryptograms with the relevant keys, which supports mutual verification of components."
+e0142,0,0,0,0,1,0,0.95,0.9,0.95,0.95,0.97,0.9,Mutual authentication between card and terminal is required for off-line transactions.
+e0143,0,0,0,0,1,0,0.9,0.8,0.9,0.95,0.9,0.8,Asymmetric cryptography must be used as the authentication mechanism for off-line transactions.
+e0144,0,0,0,0,1,0,0.95,0.9,0.95,0.95,0.97,0.85,The card must authenticate the terminal as genuine using two-way authentication.
+e0145,0,0,0,0,1,0,0.95,0.6,0.95,0.95,0.93,0.85,The terminal must authenticate the card and the transaction as genuine and valid.
+e0146,0,0,0,0,1,0,0.95,0.95,0.97,0.97,0.97,0.93,Two-way authentication between terminal and card verifies identity of both parties.
+e0147,0,1,0,0,1,0,0.93,0.7,0.7,0.9,0.9,0.93,Validating the card verifies identity and signing the cancellation protects it against alteration.
+e0148,0,1,1,0,0,0,0.93,0.85,0.5,0.8,0.75,0.9,Retaining the MAC signature with the transaction detects alteration and can serve as evidence of the transaction.
+e0149,0,1,0,0,0,0,0.93,0.75,0.75,0.88,0.7,0.93,A MAC sent to the acquirer allows detection of alteration of the transaction.
+e0150,0,0,0,0,1,0,0.95,0.93,0.97,0.97,0.97,0.93,Requires two-way or one-way authentication of card and terminal during incremental purchases.
+e0151,0,0,0,0,1,0,0.6,0.65,0.95,0.95,0.93,0.9,Load and unload functions must be authenticated end to end between card and issuer.
+e0152,0,0,0,0,1,0,0.95,0.93,0.97,0.97,0.97,0.95,The issuer host must verify the identity of the card.
+e0153,0,0,0,0,1,0,0.95,0.93,0.97,0.97,0.97,0.95,The card must verify the identity of the issuer host.
+e0154,0,0,1,0,0,0,0.97,0.85,0.98,0.7,0.9,0.95,A proof of the load/unload is sent explicitly to avoid repudiation.
+e0155,1,0,0,0,0,0,0.5,0.45,0.95,0.95,0.8,0.8,Key management in a secure certified environment protects keys from disclosure.
+e0156,0,0,0,0,0,0,0.85,0.85,0.95,0.9,0.6,0.95,Describes the organization of certification authorities without stating a specific security property.
+e0157,0,1,0,0,0,1,0.97,0.98,0.95,0.95,0.95,0.7,Protects transaction data integrity and fails the transaction when tampering is suspected.
+e0158,0,0,0,0,0,0,0.97,0.97,0.98,0.98,0.95,0.98,"Functional requirement about accepting authorization requests in any currency, not a security property."
+e0159,0,0,0,0,1,0,0.93,0.93,0.97,0.97,0.95,0.95,Load authorizations require cardholder authentication.
+e0160,1,0,0,0,1,0,0.8,0.85,0.97,0.97,0.9,0.93,PIN encryption protects the PIN from disclosure and PIN verification authenticates the cardholder.
+e0161,1,0,0,0,1,0,0.65,0.85,0.97,0.97,0.85,0.93,Off-line PIN encryption and plain text verification methods protect the PIN and authenticate the cardholder.
+e0162,0,0,0,0,0,0,0.9,0.93,0.97,0.97,0.7,0.95,"States that unload does not require authentication, so it does not express a security property."
+e0163,0,0,0,0,0,0,0.65,0.65,0.97,0.97,0.93,0.7,Generic secure runtime environment without a specific stated property.
+e0164,1,1,0,0,0,0,0.75,0.7,0.97,0.97,0.95,0.85,Separate secure storage of application code and data protects against unauthorized access and modification.
+e0165,1,0,0,0,0,0,0.8,0.6,0.97,0.97,0.93,0.9,Complete separation of keys among providers restricts access to each party's keys.
+e0166,1,1,0,0,0,0,0.85,0.8,0.7,0.97,0.55,0.95,Encryption/decryption protect confidentiality and digital signature generation and verification detect alteration.
+e0167,0,0,0,0,0,0,0.8,0.8,0.97,0.95,0.9,0.85,Generic enforcement of unspecified security principles.
+e0168,0,0,0,0,1,0,0.85,0.85,0.97,0.97,0.55,0.93,"Card verification service implies verifying identity, with other security services unspecified."
+e0169,0,1,0,0,0,0,0.7,0.85,0.97,0.97,0.93,0.7,Primary goal explicitly includes the integrity of the card components.
+e0170,1,1,0,0,1,0,0.9,0.95,0.97,0.97,0.9,0.85,"Lists mechanisms for data integrity, confidentiality and authentication; resource availability is out of scope."
+e0171,0,0,0,0,0,0,0.8,0.85,0.97,0.9,0.85,0.95,Assigns responsibility for key generation and loading without stating a security property.
+e0172,0,0,0,0,0,0,0.9,0.85,0.97,0.8,0.93,0.93,Generic policy enforcement responsibility with no specific security property.
+e0173,0,1,0,0,1,0,0.9,0.5,0.9,0.85,0.55,0.93,Cryptographic authorization of load and install restricts who may modify card contents and verifies the authorizing party.
+e0174,0,0,0,0,0,0,0.75,0.85,0.97,0.95,0.9,0.95,Assigns responsibility for key generation without stating a specific security property.
+e0175,0,0,0,0,0,0,0.6,0.6,0.9,0.9,0.6,0.8,Loading keys into a Security Domain is key management with no explicit security property among the six.
+e0176,0,1,0,0,1,0,0.9,0.9,0.85,0.95,0.9,0.9,Load file signatures are required explicitly for integrity and source authenticity.
+e0177,0,0,0,0,0,0,0.6,0.6,0.9,0.9,0.7,0.85,Key generation or sourcing is key management without a stated security property.
+e0178,0,0,0,0,0,0,0.6,0.6,0.9,0.9,0.6,0.8,Loading keys into a Security Domain is key management with no explicit security property among the six.
+e0179,0,1,0,0,1,0,0.9,0.9,0.85,0.95,0.9,0.9,Load file signatures are required explicitly for integrity and source authenticity.
+e0180,0,0,0,0,0,1,0.8,0.65,0.95,0.95,0.9,0.8,"Security mechanisms must not be bypassed, deactivated, corrupted or circumvented, which is resistance to attack."
+e0181,0,0,0,0,0,0,0.6,0.6,0.95,0.95,0.9,0.7,Generic statement about secure memory management with no specific property.
+e0182,1,1,0,0,0,0,0.8,0.7,0.95,0.95,0.9,0.7,"Application code and data must be protected from unauthorized access, covering disclosure and modification."
+e0183,1,1,0,0,0,0,0.8,0.7,0.95,0.95,0.9,0.7,"Code and data of concurrently selected applications must be protected from unauthorized access, covering disclosure and modification."
+e0184,1,0,0,0,0,0,0.85,0.8,0.95,0.95,0.95,0.8,"Previous memory contents must not be accessible on reuse, which prevents disclosure of data."
+e0185,0,1,0,0,0,0,0.8,0.5,0.95,0.95,0.95,0.65,"Memory recovery must be secure and consistent after power loss or card withdrawal, protecting data consistency."
+e0186,0,1,0,0,0,0,0.9,0.9,0.95,0.95,0.85,0.85,"Command and response messages must be transmitted unaltered, which is data integrity."
+e0187,1,1,0,0,0,0,0.6,0.6,0.95,0.95,0.9,0.8,"Access rules by privilege limit who can read and modify, per the role-based access rule."
+e0188,0,0,0,0,0,0,0.6,0.6,0.95,0.95,0.9,0.75,Enforcing inter-application security rules is generic and the text states no specific property.
+e0189,0,1,0,0,0,0,0.9,0.9,0.95,0.95,0.85,0.85,"Incoming messages must be routed unaltered, which is data integrity."
+e0190,0,1,0,0,0,0,0.9,0.9,0.95,0.95,0.85,0.85,"Response messages must be returned unaltered, which is data integrity."
+e0191,0,0,0,0,0,1,0.8,0.65,0.95,0.95,0.9,0.8,"The security mechanism must not be bypassed, deactivated, corrupted or circumvented, which is resistance to attack."
+e0192,1,1,0,0,0,0,0.6,0.6,0.95,0.95,0.9,0.8,"Access rules by privilege limit who can read and modify, per the role-based access rule."
+e0193,0,1,0,0,0,0,0.85,0.8,0.9,0.9,0.7,0.85,"Card content changes must be authorized by the issuer, restricting who may modify."
+e0194,0,1,0,0,1,0,0.95,0.85,0.85,0.95,0.75,0.85,Checking the code signature detects alteration and verifies the origin of the code.
+e0195,0,1,0,0,1,0,0.95,0.85,0.85,0.95,0.75,0.85,Checking the code signature detects alteration and verifies the origin of the code.
+e0196,0,0,0,0,0,0,0.65,0.65,0.95,0.95,0.9,0.8,Enforcing provider security policies is generic with no specific property stated.
+e0197,0,0,0,0,0,0,0.65,0.65,0.95,0.95,0.85,0.8,Communicating according to a security policy is generic with no specific property stated.
+e0198,0,0,0,0,0,0,0.55,0.55,0.95,0.95,0.95,0.85,Managing on-card data securely is generic with no specific property stated.
+e0199,1,0,0,0,0,0,0.65,0.55,0.95,0.95,0.85,0.85,Cryptographic protection services for applications imply protection of data from disclosure.
+e0200,0,1,0,0,0,0,0.85,0.75,0.9,0.9,0.65,0.85,Verifying authorization for card content changes restricts who may modify.
+e0201,0,1,0,0,1,0,0.95,0.85,0.85,0.95,0.7,0.85,Verifying the load file signature detects alteration and checks the origin.
+e0202,1,0,0,0,0,0,0.55,0.5,0.95,0.95,0.95,0.85,"Holding application data securely implies protection from disclosure, though the text is vague."
+e0203,0,0,0,0,0,0,0.65,0.65,0.95,0.95,0.9,0.8,"Internal security measures are unspecified, so no subcharacteristic is clearly expressed."
+e0204,1,0,0,0,0,0,0.5,0.85,0.95,0.95,0.95,0.8,Exposing only necessary data and resources limits disclosure of information.
+e0205,0,0,0,0,0,0,0.8,0.8,0.95,0.95,0.95,0.8,Generic internal security measures with no specific subcharacteristic stated.
+e0206,0,0,0,0,0,0,0.8,0.75,0.95,0.95,0.6,0.9,"Back-end systems must be trusted, a generic trust statement that does not map clearly to one subcharacteristic."
+e0207,0,0,0,0,0,0,0.65,0.7,0.85,0.95,0.8,0.9,Requires a minimum cryptographic capability (e.g. signatures) without stating a specific security objective.
+e0208,1,0,0,0,0,0,0.5,0.7,0.95,0.95,0.7,0.85,"Implementing a Secure Channel Protocol implies a protected channel, which maps to Confidentiality under the secure-channel rule."
+e0209,1,0,0,0,0,0,0.5,0.7,0.95,0.95,0.7,0.85,"Requires a Secure Channel Protocol, implying a protected channel (Confidentiality)."
+e0210,1,0,0,0,0,0,0.55,0.8,0.95,0.95,0.85,0.9,Support for symmetric encryption such as DES points to data protection against disclosure.
+e0211,1,0,0,0,0,0,0.5,0.8,0.9,0.95,0.8,0.9,"Optional asymmetric cryptography support such as RSA points to data protection, though uses are not specified."
+e0212,1,0,0,0,0,0,0.7,0.85,0.95,0.95,0.9,0.9,Encryption and decryption services for application data protect against disclosure.
+e0213,0,0,0,0,0,0,0.75,0.95,0.95,0.9,0.95,0.95,"Concerns legal compliance and scope exclusions for cryptography, with no direct security objective."
+e0214,0,1,0,0,0,0,0.95,0.95,0.95,0.95,0.8,0.9,The hash is explicitly meant to verify the integrity of the loaded data block.
+e0215,0,1,0,0,0,0,0.95,0.65,0.9,0.95,0.75,0.95,"The hash feeds the signature computation, a mechanism for detecting alteration of the load file."
+e0216,0,1,0,0,0,0,0.95,0.7,0.9,0.95,0.6,0.9,Verifying signatures of loaded files detects alteration; the text does not mention origin or non-denial.
+e0217,0,0,0,0,1,0,0.85,0.7,0.95,0.95,0.5,0.9,"Tokens must be verified, a credential-verification check that points to Authenticity."
+e0218,0,0,0,0,1,0,0.95,0.9,0.95,0.95,0.97,0.95,Entity authentication where each party proves its authenticity via a cryptographic exchange.
+e0219,0,1,0,0,1,0,0.9,0.95,0.95,0.95,0.95,0.6,Ensures data came from an authenticated entity and was not altered; correct sequence is mentioned but no attack is stated.
+e0220,1,0,0,0,0,0,0.97,0.95,0.95,0.95,0.8,0.95,Transmitted data must not be viewable by an unauthenticated entity.
+e0221,0,0,0,0,0,0,0.85,0.85,0.95,0.95,0.95,0.85,"Generic statement about life cycle models being responsible for functionality and security, with no specific subcharacteristic."
+e0222,0,0,0,0,0,0,0.8,0.8,0.95,0.9,0.95,0.85,"Generic responsibility to maintain security and administration, not tied to a specific subcharacteristic."
+e0223,0,0,0,0,0,0,0.7,0.8,0.95,0.95,0.85,0.9,Key separation between domains is a design detail with no explicit protection objective stated.
+e0224,0,0,0,0,0,0,0.8,0.8,0.95,0.95,0.95,0.85,Enforcing unspecified security policies is too generic to assign a subcharacteristic.
+e0225,0,0,0,0,0,0,0.85,0.85,0.95,0.95,0.95,0.85,"Concerns availability of keys, which is outside the security subcharacteristics."
+e0226,1,0,0,0,0,0,0.97,0.95,0.95,0.95,0.95,0.95,Private or critical data must be protected from unauthorised disclosure.
+e0227,1,0,0,0,0,0,0.92,0.9,0.95,0.95,0.9,0.95,Receiver should verify that data was protected from unauthorised disclosure.
+e0228,0,0,0,0,0,0,0.7,0.85,0.95,0.95,0.85,0.8,Detecting key end of life is key-management housekeeping without a stated security objective.
+e0229,0,0,0,0,1,0,0.8,0.95,0.95,0.9,0.97,0.95,Users must be identified and authenticated before accessing a service.
+e0230,0,0,0,0,0,1,0.95,0.95,0.95,0.9,0.6,0.55,"An authentication failure handling policy addresses repeated or failed access attempts, which is attack resistance."
+e0231,0,0,0,0,1,1,0.9,0.95,0.95,0.85,0.65,0.8,"Action on authentication failures and credential replay detection is attack handling, and it concerns identification and authentication."
+e0232,0,0,0,0,0,1,0.97,0.95,0.97,0.95,0.6,0.92,Detecting replayed credentials is explicit resistance to replay attacks.
+e0233,0,0,0,0,0,1,0.9,0.85,0.95,0.95,0.6,0.9,Detecting replayed credentials and stopping processes is a response to a replay attack.
+e0234,1,0,0,0,0,0,0.9,0.9,0.98,0.98,0.95,0.9,A privacy protection policy for private and critical information concerns confidentiality.
+e0235,1,0,0,0,0,0,0.8,0.9,0.98,0.98,0.95,0.6,Discarding signalling upon a privacy policy violation enforces privacy protection.
+e0236,0,0,0,0,0,0,0.5,0.5,0.95,0.95,0.85,0.85,"A generic authorization management policy does not state whether it limits reading or modification, so no label clearly applies."
+e0237,1,1,0,0,0,0,0.6,0.75,0.95,0.9,0.8,0.6,Rejecting unauthorized requests to access and update configuration information restricts both reading and modification.
+e0238,0,0,0,1,0,0,0.95,0.95,0.7,0.9,0.8,0.95,"Recording session-id, device identity and user-id traces who invoked each session."
+e0239,0,0,0,0,0,1,0.95,0.6,0.95,0.9,0.8,0.8,Timestamps or sequence numbers on outgoing messages are a replay-protection mechanism.
+e0240,0,0,0,0,0,1,0.95,0.6,0.95,0.9,0.8,0.9,Verifying that a message has not been replayed counters replay attacks.
+e0241,1,1,0,0,0,0,0.8,0.85,0.97,0.95,0.6,0.8,Allowing only administrators to access or update configuration is role-based control over reading and modification.
+e0242,0,1,0,0,0,0,0.95,0.95,0.97,0.97,0.8,0.6,Detecting a message integrity error and discarding the message protects data from alteration.
+e0243,1,0,0,0,0,0,0.75,0.9,0.98,0.98,0.97,0.85,Deleting residual data after resource expiry prevents disclosure of leftover information.
+e0244,1,0,0,0,0,0,0.5,0.9,0.98,0.98,0.85,0.9,"Data is returned only for authorized requests, which implies access restriction on reading, though the text is mostly functional."
+e0245,0,0,0,0,0,0,0.6,0.9,0.98,0.98,0.85,0.9,"The requirement describes providing a service after a valid request, with no explicit security objective beyond the authorization precondition."
+e0246,0,0,0,0,0,1,0.9,0.8,0.98,0.98,0.95,0.55,"Reverting to a known safe state on failure is a secure-state response, although the failure is not stated to be malicious."
+e0247,0,0,0,0,1,0,0.95,0.95,0.98,0.98,0.95,0.95,The CNG authenticating itself to the NGN is an authentication requirement.
+e0248,0,0,0,0,1,0,0.95,0.95,0.98,0.98,0.95,0.95,The CNG authenticating itself to the NGN for service usage is an authentication requirement.
+e0249,0,0,0,0,1,0,0.95,0.95,0.98,0.98,0.95,0.95,Authenticating CNDs to the NGN is an authentication requirement.
+e0250,0,0,0,0,1,0,0.95,0.95,0.98,0.98,0.95,0.95,Authentication of wireless CNDs for local connectivity is an authentication requirement.
+e0251,1,0,0,0,0,0,0.5,0.45,0.98,0.98,0.6,0.55,"Preventing network access by unauthorized users is access restriction, but the text does not say which data is protected."
+e0252,0,0,0,0,0,0,0.6,0.6,0.98,0.98,0.95,0.95,"The capacity of authorized entities depends on provider policies, which is too generic to map to a specific subcharacteristic."
+e0253,1,0,0,0,0,0,0.85,0.9,0.98,0.98,0.9,0.85,Limiting the visibility of WAN network and resources to authorized entities restricts access to information.
+e0254,1,0,0,0,0,0,0.9,0.95,0.98,0.9,0.97,0.97,Diagnostic operations must follow rules protecting user privacy.
+e0255,0,0,0,0,0,1,0.6,0.6,0.98,0.98,0.95,0.8,A stateful firewall protecting the CPN blocks hostile network traffic.
+e0256,0,0,0,0,0,0,0.8,0.9,0.98,0.98,0.95,0.85,Parental control limits usage by user or time and is a functional policy rather than one of the six subcharacteristics.

@@ -1,0 +1,33 @@
+
+=== PROMISE_exp / RoBERTa-BNE | device=cuda ===
+filas=460 | pool CV=391 | test=69 | etiquetas evaluadas=['Security', 'Confidentiality', 'Integrity', 'Authenticity', 'Resistance']
+[I 2026-10-18 22:29:15,403] A new study created in RDB with name: promise_roberta_bne
+  trial 0: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+AVISO: se usa el mirror explícito Buzzeitor/roberta-base-bne porque el repositorio BNE no publica pesos.
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 10473.13it/s]
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\autograd\graph.py:1072: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:912.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\autograd\graph.py:1072: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:912.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+    fold=1/5 macro_f1=0.1571 security_recall=0.7857 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 20395.88it/s]
+    fold=2/5 macro_f1=0.1692 security_recall=0.8462 best_epoch=4
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 11286.41it/s]
+    fold=3/5 macro_f1=0.3017 security_recall=1.0000 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 8505.79it/s]
+    fold=4/5 macro_f1=0.2667 security_recall=0.7692 best_epoch=5
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 11762.63it/s]
+    fold=5/5 macro_f1=0.2400 security_recall=0.4615 best_epoch=5
+[I 2026-10-18 22:31:14,500] Trial 0 finished with value: 0.226944758944759 and parameters: {'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}. Best is trial 0 with value: 0.226944758944759.
+CV macro_f1: 0.2697 ± 0.0760
+CV weighted_f1: 0.5271 ± 0.1026
+CV micro_f1: 0.6202 ± 0.1092
+CV macro_precision: 0.2856 ± 0.0739
+CV macro_recall: 0.2621 ± 0.0885
+CV security_recall: 0.7725 ± 0.1963
+CV subset_accuracy: 0.8467 ± 0.0317
+CV hamming_loss: 0.0409 ± 0.0080
+Modelo final: 5 épocas sobre 391 filas, config={'learning_rate': 2e-05, 'batch_size': 16, 'epochs': 5, 'dropout': 0.1, 'weight_decay': 0.01, 'optimizer': 'AdamW', 'warmup_ratio': 0.0, 'pos_weight': False}
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 12651.44it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  1.33it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  1.33it/s]
+Test: {'macro_f1': 0.2905, 'weighted_f1': 0.5803, 'micro_f1': 0.6667, 'macro_precision': 0.25, 'macro_recall': 0.3513, 'security_recall': 0.9231, 'subset_accuracy': 0.8261, 'hamming_loss': 0.0493, 'loss': 0.1269}

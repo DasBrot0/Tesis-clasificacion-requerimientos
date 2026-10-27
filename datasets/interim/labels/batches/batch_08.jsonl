@@ -1,0 +1,29 @@
+{"id": "e0204", "text": "Applications should Expose only data and resources that are necessary for proper application functionality"}
+{"id": "e0205", "text": "Applications should Perform internal security measures required by the Application Provider"}
+{"id": "e0206", "text": "The back-end systems (multiple back-end systems may exist for a single card), which communicate with the cards, perform the verifications, and manage the off-card key databases, also shall be trusted."}
+{"id": "e0207", "text": "\" \"\"One of the major requirements for a GlobalPlatform card is the ability to provide a minimum level of cryptographic functionality. This cryptography is, for example, used for the generation of signatures, and is available for use by the Applications present on the card.\"\"\""}
+{"id": "e0208", "text": "The Issuer Security Domain shall implement one Secure Channel Protocol."}
+{"id": "e0209", "text": "A Security Domain other than the Issuer Security Domain shall implement [at least] one Secure Channel Protocol."}
+{"id": "e0210", "text": "A GlobalPlatform card should support symmetric cryptography such as the Data Encryption Standard (DES) algorithm."}
+{"id": "e0211", "text": "A GlobalPlatform card may also support asymmetric cryptography such as the Rivest / Shamir / Adleman (RSA) algorithm."}
+{"id": "e0212", "text": "When present, services to encrypt and decrypt any pattern of data using these algorithms shall be available to Applications."}
+{"id": "e0213", "text": "\" \"\"It is the responsibility of the Card Issuer or the Controlling Authority to set up the appropriate off-card procedures to comply with the governmental restrictions upon cryptography. Features to disable or restrict cryptography usage by Applications on a card are beyond the scope of this Specification.\"\"\""}
+{"id": "e0214", "text": "The Load File Data Block Hash is intended to verify the integrity of a complete Load File Data Block when loaded to a GlobalPlatform card."}
+{"id": "e0215", "text": "The Load File Data Block Hash is used in the computation of The Load File Data Block Signature"}
+{"id": "e0216", "text": "When present during the loading of a Load File to the card, each signature shall be verified by the appropriate Security Domain."}
+{"id": "e0217", "text": "Tokens shall be verified by the appropriate Security Domain."}
+{"id": "e0218", "text": "A GlobalPlatform card offers Entity authentication - in which the card or the off-card entity proves its authenticity to the other entity through a cryptographic exchange,"}
+{"id": "e0219", "text": "A GlobalPlatform card offers Integrity and authentication - in which the receiving entity (the card or off-card entity) ensures that the data being received from the sending entity (respectively the off-card entity or card) actually came from an authenticated entity in the correct sequence and has not been altered,"}
+{"id": "e0220", "text": "A GlobalPlatform card offers Confidentiality - in which data being transmitted from the sending entity (the off-card entity or card) to the receiving entity (respectively the card or off-card entity) is not viewable by an unauthenticated entity."}
+{"id": "e0221", "text": "The life cycle models is responsible to functionality and security of Card, Executable Load Files, Executable Modules, Security Domains, and Applications."}
+{"id": "e0222", "text": "The OPEN shall be responsible to maintain security and administration of the card and its content"}
+{"id": "e0223", "text": "The off-card entity under the OP_READY state may insert Security Domain keys in order to maintain a cryptographic key separation from the Issuer Security Domain keys"}
+{"id": "e0224", "text": "The SECURED state may be used to enforce the relevant security policies of the security domain and applications"}
+{"id": "e0225", "text": "The off-card entity under the SECURE state shall be used to ensure the availability of all keys by the issuer security domain"}
+{"id": "e0226", "text": "Internally to the CPN, a CNG transmitting private or other critical information (i.e. to a CND) shall protect the data from unauthorised disclosure."}
+{"id": "e0227", "text": "Internally to the CPN, a CNG receiving private or other critical information (i.e. from a CND) should verify that the data was protected from unauthorised disclosure."}
+{"id": "e0228", "text": "The CNG shall detect the end of the life of the key used for cryptographic protection of the wireless communication between the CND and the CNG."}
+{"id": "e0229", "text": "A CPN-user attempting to invoke a CNG-mediated service shall be identified and authenticated by the CNG before being granted access to the service."}
+{"id": "e0230", "text": "The CNG shall implement an authentication failure handling policy."}
+{"id": "e0231", "text": "The CNG shall take action according to local authentication failure handling policy (which may include silently discarding the authentication and explicit failure notification, or in the case of a replay of credentials may include notification of the true owner of the credentials) upon detection of failure during identification, authentication and authorization."}
+{"id": "e0232", "text": "The CNG should detect replayed user and/or device credentials."}

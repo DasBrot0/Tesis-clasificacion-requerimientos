@@ -1,0 +1,39 @@
+{"id": "g0321", "text": "The online banking application shall provide an auditor with a function to confirm that stored transaction records match their original recorded checksums."}
+{"id": "g0220", "text": "The compiler must sign each release build on behalf of the development team with a private key that is never disclosed to individual developers, so that any modification of the binary invalidates the signature."}
+{"id": "g0095", "text": "The sales forecasting system shall continuously monitor its host for malware and intrusion signatures and shall isolate the affected component when a threat is detected."}
+{"id": "g0232", "text": "The banking application must prompt the account holder for a separately configured secret credential and verify it before accepting any change to the registered email address."}
+{"id": "g0372", "text": "The air traffic control software must establish the identity of each controller and each connected radar feed before granting it access to flight data."}
+{"id": "g0267", "text": "The simulation software shall require each operator to present a valid digital certificate that is checked against the organisation's trusted authority before a simulation session is opened."}
+{"id": "g0254", "text": "The database server must sign its server event files with a keyed HMAC and must verify the tag whenever a file is opened to ensure the content is unchanged."}
+{"id": "g0357", "text": "The online banking application must let a customer who has proven their identity once reach the savings, cards and loans modules without a further login prompt during the same session."}
+{"id": "g0332", "text": "The data warehousing system must enable a data steward to run a check that proves archived fact tables are identical to the versions originally loaded."}
+{"id": "g0204", "text": "The compiler shall refuse remote connections to its build-cache service from any client that is not on the list of approved build agents."}
+{"id": "g0076", "text": "The hospital patient-record system shall delegate the verification of each clinician's identity to the hospital's central directory service and shall deny access when that service does not confirm the claimed identity."}
+{"id": "g0288", "text": "The database server shall require each new administrative account request to include a unique login name and a credential, and shall verify the requester's identity against the organisation's directory before the account is created."}
+{"id": "g0336", "text": "The screen capture tool shall verify the validity and trust chain of the upload server's certificate before transmitting any recording."}
+{"id": "g0017", "text": "The online booking system shall store every reservation with the same dates, times and guest details that the customer submitted at confirmation."}
+{"id": "g0067", "text": "The database server shall apply a change to any account credential to every service endpoint and node of the server, so that the superseded credential is rejected everywhere at the next login attempt."}
+{"id": "g0250", "text": "The electronic purse shall attach a keyed message authentication code to every transaction log entry stored on the card so that any modification of an entry can be detected when the log is read."}
+{"id": "g0008", "text": "The database server must detect SQL injection attempts, refuse the offending statements, and send a notification to the database administrator for every blocked attempt."}
+{"id": "g0020", "text": "The database server shall encrypt customer records at rest and shall block any connection that attempts to extract bulk data through repeated abnormal queries."}
+{"id": "g0256", "text": "The smart-home controller shall reject any device command whose parameter values fall outside the declared type and range, so that malformed values never alter the stored device configuration."}
+{"id": "g0339", "text": "The simulation software shall grant a researcher access to the project workspace only after the researcher supplies a secret passphrase that matches the one registered for that account."}
+{"id": "g0333", "text": "The database server shall offer an administrator a command that validates stored data pages against recorded checksums and reports every mismatch."}
+{"id": "g0102", "text": "The online booking system must accept a refund for a reservation only when it is issued from the same terminal that took the original payment and equals the amount originally charged."}
+{"id": "g0173", "text": "The online booking system must slow down and eventually refuse repeated failed login requests originating from the same network address in order to hinder automated guessing."}
+{"id": "g0356", "text": "The simulation software shall accept a single institutional login from a researcher for access to the model library, the job scheduler and the results portal, without asking for credentials again."}
+{"id": "g0370", "text": "The simulation software must have its server create a time-limited one-time code for each researcher sign-in and reject that code once its validity period has elapsed."}
+{"id": "g0285", "text": "The payroll system shall verify, before each pay run is released, that the stored salary and deduction records match their recorded checksums and shall reject the run if any record differs."}
+{"id": "g0061", "text": "The sales forecasting system must allow a registered sales manager to enter the forecast workspace after that manager's identity has been proven through the sign-in procedure."}
+{"id": "g0080", "text": "The database server shall verify the identity of each connecting client with a valid credential before opening a session."}
+{"id": "g0273", "text": "The banking application shall let a customer digitally sign a loan agreement, and shall invalidate the signature if even one character of the agreement is subsequently altered."}
+{"id": "g0178", "text": "The smart-home controller shall recognise when a previously captured pairing message from a door lock or sensor is sent again and shall flag it as an attack."}
+{"id": "g0240", "text": "The data warehousing system must restrict changes to the access rights on warehouse tables to the warehouse's designated data administrator."}
+{"id": "g0149", "text": "The database server shall support at least one encrypted replication protocol for traffic between primary and replica nodes so that replicated rows cannot be read in transit."}
+{"id": "g0110", "text": "The air traffic control software must sign each clearance message it issues and recompute the checksum of the clearance sequence log whenever an entry is appended, so that altered entries can be detected."}
+{"id": "g0018", "text": "The compiler shall guarantee that constant values written in the source code appear unchanged in the generated binary."}
+{"id": "g0174", "text": "The screen capture tool shall suspend unlocking of its protected recording library after several unsuccessful unlock attempts and shall require a waiting period before accepting another try."}
+{"id": "g0025", "text": "The online booking system shall reject a second simultaneous sign-in by the same travel agent from a different device and shall display a warning on both devices."}
+{"id": "g0203", "text": "When the smart-home IoT controller detects that its firmware has been interfered with, it shall switch all connected locks and heating devices to preconfigured fallback settings."}
+{"id": "g0335", "text": "The online banking application must check that the TLS certificate of its server is valid, issued by a trusted authority and unaltered, and must warn the operator when the check fails."}
+{"id": "g0141", "text": "The simulation software must encrypt scenario configuration files during their provisioning to a simulation node and may continue encrypting them during later runs."}

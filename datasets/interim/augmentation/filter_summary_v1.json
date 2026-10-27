@@ -1,0 +1,92 @@
+{
+  "thresholds": {
+    "cometkiwi_p5_real": 0.7962,
+    "labse_p5_real": 0.8035,
+    "leak_cosine": 0.9,
+    "source_sim_q3": {
+      "dosspre": 0.6403,
+      "promise": 0.6074,
+      "secreq": 0.6022
+    }
+  },
+  "son_v_mean_pairwise_kappa": {
+    "Confidentiality": 0.988,
+    "Integrity": 0.979,
+    "Authenticity": 0.95,
+    "Resistance": 0.967
+  },
+  "by_dataset": {
+    "dosspre": {
+      "generated": 167,
+      "accepted": 78,
+      "rejected_by_reason": {
+        "G5_casi_copia_fuente": 38,
+        "G1_tope_por_fuente": 29,
+        "G6_etiqueta_no_coincide": 10,
+        "G3_formato_o_reuso": 6,
+        "G4_traduccion": 5,
+        "G6_unclear": 1
+      },
+      "accepted_positives": {
+        "Confidentiality": 0,
+        "Integrity": 51,
+        "Authenticity": 24,
+        "Resistance": 5
+      },
+      "target_positives": {
+        "Confidentiality": 0,
+        "Integrity": 66,
+        "Authenticity": 31,
+        "Resistance": 3
+      }
+    },
+    "promise": {
+      "generated": 100,
+      "accepted": 48,
+      "rejected_by_reason": {
+        "G1_tope_por_fuente": 23,
+        "G5_casi_copia_fuente": 23,
+        "G4_traduccion": 2,
+        "G3_formato_o_reuso": 2,
+        "G6_unclear": 1,
+        "G6_etiqueta_no_coincide": 1
+      },
+      "accepted_positives": {
+        "Confidentiality": 7,
+        "Integrity": 22,
+        "Authenticity": 12,
+        "Resistance": 14
+      },
+      "target_positives": {
+        "Confidentiality": 0,
+        "Integrity": 23,
+        "Authenticity": 19,
+        "Resistance": 20
+      }
+    },
+    "secreq": {
+      "generated": 115,
+      "accepted": 50,
+      "rejected_by_reason": {
+        "G5_casi_copia_fuente": 28,
+        "G1_tope_por_fuente": 16,
+        "G6_etiqueta_no_coincide": 11,
+        "G3_formato_o_reuso": 5,
+        "G4_traduccion": 3,
+        "G6_unclear": 2
+      },
+      "accepted_positives": {
+        "Confidentiality": 27,
+        "Integrity": 7,
+        "Authenticity": 0,
+        "Resistance": 16
+      },
+      "target_positives": {
+        "Confidentiality": 39,
+        "Integrity": 10,
+        "Authenticity": 0,
+        "Resistance": 24
+      }
+    }
+  }
+}

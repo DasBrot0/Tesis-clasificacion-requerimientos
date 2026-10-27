@@ -1,0 +1,23 @@
+{
+  "config": {
+    "learning_rate": 2.8865595142855972e-05,
+    "batch_size": 8,
+    "epochs": 20,
+    "dropout": 0.3385226109465002,
+    "weight_decay": 0.0031737668446310493,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.1,
+    "pos_weight": true
+  },
+  "final_training_epochs": 6,
+  "thresholds_by_label": {
+    "Security": 0.42500000000000004,
+    "Confidentiality": 0.4,
+    "Integrity": 0.4,
+    "Non_repudiation": 0.5,
+    "Accountability": 0.4,
+    "Authenticity": 0.5750000000000002,
+    "Resistance": 0.5500000000000002
+  },
+  "selected_from": "OOF only"
+}

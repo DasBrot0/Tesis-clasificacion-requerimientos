@@ -1,0 +1,29 @@
+{"id": "e0088", "text": "The card issuer needs to ensure that the load acquirer is guaranteeing payment for the electronic value, and that the card is authentic"}
+{"id": "e0089", "text": "The load acquirer needs to ensure that the issuer is the true owner of the card, and, in the case of an apparent failure of the load, the load acquirer needs the card presented to authenticate the failure"}
+{"id": "e0090", "text": "The load device sends S1 in an authorization request to the issuer"}
+{"id": "e0091", "text": "The load device also provides for verification of the identity of the cardholder (with either on-line or off-line PIN verification) and forwards verification data in the authorization request"}
+{"id": "e0092", "text": "The issuer validates S1 to authenticate the card and the data to be used in the transaction"}
+{"id": "e0093", "text": "The issuer sends S2 to the load acquirer in the authorization response message"}
+{"id": "e0094", "text": "Unloads are permitted only to an account controlled by the card issuer and are performed only at a load device under the control of the card issuer"}
+{"id": "e0095", "text": "The cardholder must have an account relationship with the card issuer, and funds removed from the card are credited to the cardholder account only after the card issuer authenticates the card"}
+{"id": "e0096", "text": "The issuer needs only to authenticate the card, and the card needs only to authenticate the issuer and that the data is the same as used by the issuer"}
+{"id": "e0097", "text": "The card generates S1, using data from the card and load device, and sends S1 to the card issuer to authenticate the card and the data that is to be used in the transaction"}
+{"id": "e0098", "text": "The card issuer generates S2, which is sent to the card to allow the card to validate the card issuer's authenticity and to ensure that the data used by the card in the transaction is the same as the card issuer intended"}
+{"id": "e0099", "text": "During a purchase transaction, the CEP card must ensure that it is dealing with an authentic POS device, and it must generate a signature to allow the card issuer to verify the integrity of the transaction"}
+{"id": "e0100", "text": "The POS device must ensure that it is dealing with an authentic card, and guarantee integrity of transactions and batches to the merchant acquirer"}
+{"id": "e0101", "text": "In the case of a reversal, the CEP card must re-authenticate the PSAM"}
+{"id": "e0102", "text": "The card must ensure that the transaction is performed by the same POS device as was used for the purchase being canceled, and that the amount of the cancellation is the same as the amount of the purchase, or, in the case of an incremental purchase, the same as the amount of the last step"}
+{"id": "e0103", "text": "During a Cancel Last Purchase transaction, the CEP card is authenticated by the PSAM in the POS device"}
+{"id": "e0104", "text": "The PSAM authenticates that the purchase transaction being canceled was performed by the PSAM, and that the transaction being canceled is part of the active batch"}
+{"id": "e0105", "text": "The card issuer and the merchant acquirer also authenticate the transaction when they receive it"}
+{"id": "e0106", "text": "Transmissions between host systems should be protected by MACs based on unique keys that are shared by the nodes involved"}
+{"id": "e0107", "text": "The transaction signatures ensure end to end integrity of transmitted data for load, unload, and currency exchange transactions"}
+{"id": "e0108", "text": "These totals are used by the merchant acquirer to ensure the integrity of the batch"}
+{"id": "e0109", "text": "The count and amount of the transactions in the batch must be protected by the S4 MAC, This information is not part of the card issuer's verification process"}
+{"id": "e0110", "text": "Scheme providers must assign unique identifying numbers to merchant acquirers who provide PSAMs"}
+{"id": "e0111", "text": "These merchant acquirers must then assign unique identifiers to PSAMs"}
+{"id": "e0112", "text": "Each PSAM must maintain a transaction count, The unique PSAM ID and the transaction count are used during a conversation with a CEP card. The transaction count must not be reset during the life of the PSAM"}
+{"id": "e0113", "text": "Contain the CA public RSA key, the PSAM's private RSA key and optionally the certificates that the POS device uses to perform mutual authentication with the CEP card"}
+{"id": "e0114", "text": "Perform the calculation required to generate a signature using the PSAM's private RSA key, to allow the CEP card to validate the PSAM"}
+{"id": "e0115", "text": "Be the entity that maintains control over the flow of a transaction, ensuring that all security is enforced"}
+{"id": "e0116", "text": "Perform the verification of signatures and certificates during a purchase and cancel last purchase transaction"}

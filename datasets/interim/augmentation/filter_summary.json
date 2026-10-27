@@ -1,0 +1,88 @@
+{
+  "filter_version": 2,
+  "thresholds": {
+    "cometkiwi_p5_real": 0.7962,
+    "labse_p5_real": 0.8035,
+    "leak_cosine": 0.9,
+    "near_copy_cosine": 0.85,
+    "source_sim_q3_reported_only": {
+      "dosspre": 0.6403,
+      "promise": 0.6074,
+      "secreq": 0.6022
+    }
+  },
+  "son_v_mean_pairwise_kappa": {
+    "Confidentiality": 0.988,
+    "Integrity": 0.979,
+    "Authenticity": 0.95,
+    "Resistance": 0.967
+  },
+  "by_dataset": {
+    "dosspre": {
+      "generated": 167,
+      "accepted": 139,
+      "rejected_by_reason": {
+        "G6_etiqueta_no_coincide": 16,
+        "G3_formato_o_reuso": 6,
+        "G4_traduccion": 5,
+        "G6_unclear": 1
+      },
+      "accepted_positives": {
+        "Confidentiality": 0,
+        "Integrity": 78,
+        "Authenticity": 55,
+        "Resistance": 9
+      },
+      "target_positives": {
+        "Confidentiality": 0,
+        "Integrity": 66,
+        "Authenticity": 31,
+        "Resistance": 3
+      }
+    },
+    "promise": {
+      "generated": 100,
+      "accepted": 92,
+      "rejected_by_reason": {
+        "G6_etiqueta_no_coincide": 3,
+        "G4_traduccion": 2,
+        "G3_formato_o_reuso": 2,
+        "G6_unclear": 1
+      },
+      "accepted_positives": {
+        "Confidentiality": 12,
+        "Integrity": 35,
+        "Authenticity": 29,
+        "Resistance": 28
+      },
+      "target_positives": {
+        "Confidentiality": 0,
+        "Integrity": 23,
+        "Authenticity": 19,
+        "Resistance": 20
+      }
+    },
+    "secreq": {
+      "generated": 115,
+      "accepted": 90,
+      "rejected_by_reason": {
+        "G6_etiqueta_no_coincide": 15,
+        "G3_formato_o_reuso": 5,
+        "G4_traduccion": 3,
+        "G6_unclear": 2
+      },
+      "accepted_positives": {
+        "Confidentiality": 47,
+        "Integrity": 14,
+        "Authenticity": 3,
+        "Resistance": 29
+      },
+      "target_positives": {
+        "Confidentiality": 39,
+        "Integrity": 10,
+        "Authenticity": 0,
+        "Resistance": 24
+      }
+    }
+  }
+}

@@ -1,0 +1,1619 @@
+﻿cand_id,term,freq
+c0001,system,1401
+c0002,user,449
+c0003,card,311
+c0004,application,252
+c0005,data,212
+c0006,CNG,126
+c0007,interface,106
+c0008,issuer,104
+c0009,transaction,120
+c0010,logical channel,101
+c0011,card issuer,68
+c0012,device,96
+c0013,security,115
+c0014,channel,107
+c0015,authentication,57
+c0016,file,83
+c0017,information,117
+c0018,CND,50
+c0019,globalplatform,47
+c0020,command,80
+c0021,security domain,56
+c0022,load,67
+c0023,CEP card,45
+c0024,service,110
+c0025,network,79
+c0026,access,78
+c0027,logical,72
+c0028,CPN,43
+c0029,domain,59
+c0030,key,82
+c0031,CEP,51
+c0032,server,56
+c0033,web,58
+c0034,database,51
+c0035,password,44
+c0036,acquirer,36
+c0037,supplementary logical channel,39
+c0038,NGN,32
+c0039,environment,55
+c0040,supplementary logical,39
+c0041,platform,49
+c0042,basic logical channel,33
+c0043,email,53
+c0044,administrator,38
+c0045,globalplatform registry,23
+c0046,provider,39
+c0047,client,46
+c0048,watermark,32
+c0049,error,44
+c0050,software,49
+c0051,merchant acquirer,26
+c0052,functionality,31
+c0053,user interface,29
+c0054,OPEN,63
+c0055,module,33
+c0056,mechanism,36
+c0057,management,50
+c0058,message,51
+c0059,PSAM,31
+c0060,verification,33
+c0061,encryption,30
+c0062,supplementary,38
+c0063,signature,32
+c0064,detail,31
+c0065,registry,27
+c0066,entity,35
+c0067,card entity,23
+c0068,POS device,22
+c0069,algorithm,28
+c0070,issuer security domain,19
+c0071,integrity,29
+c0072,exchange,37
+c0073,life cycle,25
+c0074,communication,32
+c0075,merchant,34
+c0076,resource,29
+c0077,image,35
+c0078,log,27
+c0079,parameter,27
+c0080,currency,43
+c0081,content,37
+c0082,POS,27
+c0083,request,29
+c0084,session,30
+c0085,basic,33
+c0086,detection,23
+c0087,runtime environment,15
+c0088,occurrence,28
+c0089,issuer security,19
+c0090,traffic,30
+c0091,selection,28
+c0092,input,23
+c0093,performance,34
+c0094,spam,22
+c0095,registration,22
+c0096,MAC,25
+c0097,cycle,25
+c0098,requirement,22
+c0099,runtime,18
+c0100,report,38
+c0101,time,133
+c0102,appropriate error,16
+c0103,customer,25
+c0104,identity,27
+c0105,purchase,27
+c0106,process,35
+c0107,purchase transaction,17
+c0108,capability,19
+c0109,connection,24
+c0110,only occurrence,13
+c0111,configuration,18
+c0112,protocol,22
+c0113,operation,27
+c0114,partial match,20
+c0115,globalplatform card,10
+c0116,account,32
+c0117,activity,25
+c0118,packet,19
+c0119,life cycle state,16
+c0120,response,28
+c0121,framework,19
+c0122,credential,15
+c0123,batch,16
+c0124,next occurrence,12
+c0125,hardware,18
+c0126,availability,17
+c0127,application provider,13
+c0128,login,14
+c0129,number,47
+c0130,processing,19
+c0131,ability,24
+c0132,vulnerability,14
+c0133,cryptojacking,12
+c0134,failure,22
+c0135,transmission,17
+c0136,usage,18
+c0137,terminal,17
+c0138,privilege,16
+c0139,SMS,13
+c0140,code,25
+c0141,format,18
+c0142,load device,12
+c0143,malware,14
+c0144,digital watermark,10
+c0145,cardholder,11
+c0146,authorization,13
+c0147,certificate,16
+c0148,function,19
+c0149,amount,26
+c0150,classification,15
+c0151,anomaly,12
+c0152,load file,14
+c0153,scheme provider,10
+c0154,restriction,12
+c0155,graphical user interface,8
+c0156,unload,12
+c0157,storage,16
+c0158,node,13
+c0159,case,37
+c0160,alert,14
+c0161,SELECT,16
+c0162,cycle state,16
+c0163,AES,10
+c0164,hash,11
+c0165,flow,17
+c0166,owner,18
+c0167,keyword,10
+c0168,qos,9
+c0169,notification,12
+c0170,medium,15
+c0171,intrusion,10
+c0172,ease,14
+c0173,confidentiality,10
+c0174,result,23
+c0175,currency exchange,15
+c0176,AID,18
+c0177,location,18
+c0178,rogue node,8
+c0179,machine,18
+c0180,validation,11
+c0181,currency exchange transaction,9
+c0182,selection restriction,8
+c0183,customer network,11
+c0184,student,21
+c0185,record,24
+c0186,API,10
+c0187,STB,8
+c0188,scanning,10
+c0189,username,10
+c0190,scheme,14
+c0191,policy,22
+c0192,component,12
+c0193,load acquirer,7
+c0194,web environment,10
+c0195,fault tolerance,8
+c0196,patient,16
+c0197,button,13
+c0198,website,20
+c0199,SELECT command,9
+c0200,new supplementary logical channel,6
+c0201,entry,15
+c0202,folder,9
+c0203,match,23
+c0204,classifier,8
+c0205,phone,24
+c0206,type,23
+c0207,GUI,8
+c0208,remote access,9
+c0209,PIN,14
+c0210,cryptography,8
+c0211,current card interface,7
+c0212,SSL,8
+c0213,last purchase transaction,7
+c0214,o interface,11
+c0215,line PIN verification,6
+c0216,web application,9
+c0217,load file data block,8
+c0218,IP,9
+c0219,computer,16
+c0220,IP address,7
+c0221,address,15
+c0222,SSL certificate,6
+c0223,IMS capable CND,5
+c0224,system administrator,7
+c0225,extraction,8
+c0226,screen,14
+c0227,KYC,7
+c0228,encryption key,7
+c0229,card content,11
+c0230,fault,12
+c0231,rogue,8
+c0232,handling,10
+c0233,memory,14
+c0234,executable load file,5
+c0235,mobile phone,10
+c0236,slot,14
+c0237,op_ready state,5
+c0238,documentation,9
+c0239,selectable application,6
+c0240,cloud,10
+c0241,name,34
+c0242,profile,13
+c0243,decryption,6
+c0244,gateway,8
+c0245,analysis,14
+c0246,MANAGE CHANNEL,9
+c0247,tolerance,8
+c0248,port scanning,6
+c0249,card i,15
+c0250,laptop,9
+c0251,sequence,9
+c0252,level,25
+c0253,task,11
+c0254,NGN service,6
+c0255,multiple client,8
+c0256,bluetooth,7
+c0257,host,12
+c0258,install,8
+c0259,executable load,7
+c0260,token,7
+c0261,PDP,6
+c0262,windows,12
+c0263,UICC,6
+c0264,explicit selection,6
+c0265,manner,10
+c0266,line PIN,9
+c0267,connectivity,7
+c0268,public key,12
+c0269,reliability,7
+c0270,admin,7
+c0271,SQL,6
+c0272,recoverability,5
+c0273,licence,7
+c0274,workload,6
+c0275,feature,12
+c0276,pattern,10
+c0277,agent,12
+c0278,S2,6
+c0279,false positive,8
+c0280,fingerprint,6
+c0281,IPTV,6
+c0282,interaction,8
+c0283,current card,11
+c0284,audit,7
+c0285,implicit selection,6
+c0286,final application privilege,6
+c0287,smartphone,7
+c0288,document,9
+c0289,method,12
+c0290,resource behaviour,6
+c0291,executable,6
+c0292,identifiable information,5
+c0293,port,11
+c0294,legitimate user,6
+c0295,principle,8
+c0296,privacy,8
+c0297,invisible digital watermark,4
+c0298,UGC,5
+c0299,mobile device,7
+c0300,S1,7
+c0301,trusted framework,6
+c0302,signer,5
+c0303,twitter,12
+c0304,unauthorized access,5
+c0305,authorised user,5
+c0306,specification,6
+c0307,authority,12
+c0308,email address,7
+c0309,response time,11
+c0310,attribute,6
+c0311,rule,13
+c0312,service provider,7
+c0313,operating system,8
+c0314,RFID,5
+c0315,maintenance,9
+c0316,python,6
+c0317,line,26
+c0318,update,10
+c0319,globalplatform environment,4
+c0320,parent,9
+c0321,subscription,7
+c0322,dataset,5
+c0323,log file,6
+c0324,MANAGE,9
+c0325,control,22
+c0326,value,16
+c0327,payment,10
+c0328,interactive interface,5
+c0329,throughput,5
+c0330,ham,7
+c0331,reversal,6
+c0332,receipt,6
+c0333,file data block,8
+c0334,security domain key,6
+c0335,attack,15
+c0336,extradition,5
+c0337,internet,14
+c0338,processor,7
+c0339,retrieval,5
+c0340,POS transaction,5
+c0341,identification,7
+c0342,linux,6
+c0343,block,12
+c0344,CPU,9
+c0345,balance,11
+c0346,manual,7
+c0347,IMS capable device,4
+c0348,guidance,7
+c0349,maintainability,4
+c0350,executable module,4
+c0351,purpose,11
+c0352,monitoring,7
+c0353,layer,8
+c0354,attacker,5
+c0355,authenticity,5
+c0356,downloader,4
+c0357,authorized user,5
+c0358,AES algorithm,4
+c0359,practitioner,5
+c0360,behaviour,7
+c0361,KYC information,6
+c0362,use,39
+c0363,blockchain,5
+c0364,TS,5
+c0365,RSA,5
+c0366,symmetric key,4
+c0367,eventuality,4
+c0368,controlling authority,5
+c0369,scalability,4
+c0370,number of queue,4
+c0371,zimbabwe,5
+c0372,dispatching,4
+c0373,SQL injection,4
+c0374,recovery,8
+c0375,IMS,4
+c0376,priority,7
+c0377,LAN,6
+c0378,secure memory management,5
+c0379,WAN,5
+c0380,ID,8
+c0381,coding,5
+c0382,CPN user,4
+c0383,bottleneck,4
+c0384,operating,9
+c0385,condition,10
+c0386,procedure,7
+c0387,login page,4
+c0388,reset,5
+c0389,client KYC information,3
+c0390,CEP application,4
+c0391,potential operational performance bottleneck,3
+c0392,manipulation,5
+c0393,card content management,6
+c0394,file data block signature,4
+c0395,data owner,7
+c0396,extraction module,4
+c0397,maturity,5
+c0398,upgrade,6
+c0399,ethereum,4
+c0400,system user interface,4
+c0401,access control,8
+c0402,firmware,4
+c0403,maximum balance,7
+c0404,future scalability problem,3
+c0405,audio file,5
+c0406,public identity,6
+c0407,WAN interface,4
+c0408,communication service,6
+c0409,section,11
+c0410,network traffic,6
+c0411,use of password,4
+c0412,user detail,5
+c0413,recipient,5
+c0414,consecutive wrong attempt,4
+c0415,theintrusiond,3
+c0416,plutomail,3
+c0417,S4,4
+c0418,execution,6
+c0419,computation,4
+c0420,zimbabwe anti,4
+c0421,digital watermark agency,3
+c0422,central server,5
+c0423,trusted,6
+c0424,source,13
+c0425,spam detection,4
+c0426,original supplementary logical channel,3
+c0427,open supplementary logical channel,3
+c0428,H2H,4
+c0429,medium gateway,4
+c0430,employee,7
+c0431,protection,9
+c0432,private identity,6
+c0433,false negative,5
+c0434,HMAC,3
+c0435,IEC,5
+c0436,MANAGE CHANNEL command,4
+c0437,efficiency,6
+c0438,system player,8
+c0439,CHANNEL,9
+c0440,vehicle,8
+c0441,licence owner,4
+c0442,delay,6
+c0443,unicast,3
+c0444,card interface,9
+c0445,scan,5
+c0446,XSS,3
+c0447,application session,5
+c0448,watermarking,3
+c0449,architecture,6
+c0450,android,6
+c0451,agency,9
+c0452,file data block hash,3
+c0453,basic logical,33
+c0454,query,4
+c0455,curve,5
+c0456,correct life cycle state,4
+c0457,element,6
+c0458,search,10
+c0459,remote management system,4
+c0460,rate,12
+c0461,controlling,5
+c0462,action,14
+c0463,updating,4
+c0464,ease of use,4
+c0465,install ability,4
+c0466,downloading,4
+c0467,cryptojacking activity,3
+c0468,wireless connection,4
+c0469,digest,4
+c0470,video,18
+c0471,group public key,6
+c0472,registration number,6
+c0473,hashing,3
+c0474,proxy,4
+c0475,remote server,4
+c0476,smart contract,5
+c0477,radiologist,3
+c0478,user interaction,4
+c0479,software requirement,4
+c0480,set of parameter,3
+c0481,internet connection,5
+c0482,codec,3
+c0483,friendly interface,5
+c0484,application life cycle,4
+c0485,user manual,4
+c0486,type of application,5
+c0487,modification,4
+c0488,private key,6
+c0489,queue,4
+c0490,transient session data,4
+c0491,emergency,7
+c0492,signalling,4
+c0493,future upgrade,4
+c0494,digital watermarking,3
+c0495,locking,5
+c0496,motion,7
+c0497,application code,5
+c0498,watermarked image,3
+c0499,virtual machine,4
+c0500,activation,4
+c0501,unmanaged service,3
+c0502,network configuration,5
+c0503,player,12
+c0504,selenium,3
+c0505,md5 hash,3
+c0506,ISO,5
+c0507,corruption commission,4
+c0508,URL,4
+c0509,presentation,5
+c0510,browser,4
+c0511,secure data exchange protocol,3
+c0512,IPTV flow,3
+c0513,accountability,4
+c0514,system database,4
+c0515,receipt for load,3
+c0516,usability,3
+c0517,batch total count,3
+c0518,data block,8
+c0519,desktop,4
+c0520,imaging,4
+c0521,NGN network,4
+c0522,warning,6
+c0523,corruption,5
+c0524,actual signer,3
+c0525,system component,4
+c0526,responsiveness,3
+c0527,fund,8
+c0528,secret key,5
+c0529,load transaction,4
+c0530,threat,6
+c0531,cryptographic protection,3
+c0532,purse,4
+c0533,QR,3
+c0534,unstructured data,3
+c0535,django,3
+c0536,programming,5
+c0537,count,8
+c0538,concept,7
+c0539,real time,12
+c0540,error recovery,5
+c0541,identifier,3
+c0542,testing,7
+c0543,symmetric macing key signature,2
+c0544,data transmission,5
+c0545,injection,4
+c0546,standard format,4
+c0547,state,30
+c0548,learning,8
+c0549,downtime,3
+c0550,probability,4
+c0551,option,7
+c0552,unauthorised user,3
+c0553,design,11
+c0554,dispute,5
+c0555,S5,3
+c0556,harmful website,5
+c0557,PIN verification,7
+c0558,firewall,3
+c0559,QR code,3
+c0560,security policy,6
+c0561,SAG,3
+c0562,application selection,4
+c0563,unique identifier,3
+c0564,cost engineer,4
+c0565,graphical user,8
+c0566,output,5
+c0567,viewing,4
+c0568,electronic value,4
+c0569,tag,5
+c0570,high throughput,3
+c0571,factor,6
+c0572,logical channel support,3
+c0573,loading,4
+c0574,presentation of element,3
+c0575,other application,5
+c0576,S4 MAC,4
+c0577,high rate,6
+c0578,SAG system,3
+c0579,dashboard,3
+c0580,way authentication,4
+c0581,period,11
+c0582,digit,4
+c0583,certain keyword,3
+c0584,instruction,4
+c0585,data item,4
+c0586,appropriate security domain,3
+c0587,global services application,4
+c0588,authentication server,3
+c0589,remote management,6
+c0590,factor authentication,3
+c0591,user authentication,3
+c0592,merchant acquirer S5 MAC,2
+c0593,vehicle registration number,3
+c0594,positive,8
+c0595,glitch,3
+c0596,domain key,6
+c0597,exchange transaction,9
+c0598,graphical,3
+c0599,card session,4
+c0600,S2 MAC,3
+c0601,speed,8
+c0602,individual,8
+c0603,utilization,3
+c0604,good performance,6
+c0605,clear secure data exchange,3
+c0606,input validation,4
+c0607,examiner,3
+c0608,fraudulent transaction,3
+c0609,low false positive rate,3
+c0610,patch,4
+c0611,new supplementary logical,6
+c0612,user account,4
+c0613,reversal command,3
+c0614,unauthorized user,3
+c0615,new supplementary,6
+c0616,size without difficulty,3
+c0617,text,8
+c0618,periodic log,3
+c0619,PC,5
+c0620,multimedia,3
+c0621,discrete,3
+c0622,scanner,3
+c0623,client KYC,4
+c0624,NGN service usage,2
+c0625,NGN network function,2
+c0626,NGN for service,2
+c0627,event,10
+c0628,downstream direction,3
+c0629,quality,9
+c0630,background,6
+c0631,medical practitioner,3
+c0632,search query,3
+c0633,capable CND,5
+c0634,hostname of rogue,2
+c0635,session key,5
+c0636,malicious activity,3
+c0637,tool,5
+c0638,bandwidth,3
+c0639,debit,3
+c0640,additional functionality,3
+c0641,user name,4
+c0642,application for processing,3
+c0643,various functionality,3
+c0644,message digest,3
+c0645,user experience,5
+c0646,real vulnerability,3
+c0647,authorization request,3
+c0648,form of cardholder,2
+c0649,activation sequence,3
+c0650,experience,11
+c0651,lag,3
+c0652,IMPU,2
+c0653,classification algorithm,3
+c0654,card reset,3
+c0655,facility,5
+c0656,sm,3
+c0657,load file data,8
+c0658,data structure,4
+c0659,issuer security domain key,2
+c0660,logging,3
+c0661,capturing,3
+c0662,cancellation,3
+c0663,target,6
+c0664,normal web search,3
+c0665,mode,5
+c0666,accountability purpose,3
+c0667,sequence of expletive,2
+c0668,difficulty,4
+c0669,forking towards customer,2
+c0670,email account,4
+c0671,system module,3
+c0672,redirection of IP,2
+c0673,card life cycle,3
+c0674,mode of operation,3
+c0675,honeypot,3
+c0676,victim of pivoting,2
+c0677,compression,3
+c0678,macing,2
+c0679,transaction count,4
+c0680,system user,6
+c0681,self,10
+c0682,netstat,2
+c0683,file data,8
+c0684,attempt,6
+c0685,ISIM,2
+c0686,user credential registration,2
+c0687,facial recognition,3
+c0688,licence number,3
+c0689,executable load files,2
+c0690,subsequent command dispatching,2
+c0691,learning curve,4
+c0692,TLS web traffic,2
+c0693,partial AID selection,3
+c0694,aggregation,4
+c0695,end,21
+c0696,AES encryption key,2
+c0697,basis,6
+c0698,national i.d number,2
+c0699,testability,2
+c0700,page,9
+c0701,program,10
+c0702,web interface,3
+c0703,network administrator,3
+c0704,digital watermark system,2
+c0705,partial AID,5
+c0706,behalf,4
+c0707,type of device,3
+c0708,service subscription,3
+c0709,TOTP,2
+c0710,standard,7
+c0711,term of responsiveness,2
+c0712,application privilege,6
+c0713,capacity,5
+c0714,user input,4
+c0715,order,14
+c0716,different screen size,3
+c0717,private RSA key,2
+c0718,keyword in SMS,2
+c0719,service usage,4
+c0720,recognition,4
+c0721,OSPF,2
+c0722,explicit,3
+c0723,high availability,3
+c0724,term of throughput,2
+c0725,firmware upgrade purpose,2
+c0726,child,10
+c0727,implicit selection parameter,2
+c0728,good quality online service,3
+c0729,life,30
+c0730,confidentiality through encryption,2
+c0731,multithreading,2
+c0732,secure database,3
+c0733,picture,8
+c0734,classification process,3
+c0735,hostname,2
+c0736,clause,3
+c0737,digital signature,3
+c0738,reusability,2
+c0739,card content change,3
+c0740,keyword in database,2
+c0741,command dispatching,3
+c0742,alert message,4
+c0743,SSID,2
+c0744,CPU utilization percentage,2
+c0745,new S4 MAC,2
+c0746,estimate,4
+c0747,responsibility,5
+c0748,data integrity,3
+c0749,line transaction,3
+c0750,engineer,4
+c0751,permission,4
+c0752,logout,2
+c0753,principle of authentication,2
+c0754,functional account,3
+c0755,authorization management handling policy,2
+c0756,version,7
+c0757,hypervisor,2
+c0758,analyser,2
+c0759,doctor,7
+c0760,EMV,2
+c0761,globalplatform API,2
+c0762,map,5
+c0763,security mechanism,3
+c0764,complexity,3
+c0765,way authentication process,2
+c0766,data from twitter,3
+c0767,copy,5
+c0768,PII,2
+c0769,access right,4
+c0770,time anomaly detection,2
+c0771,clear presentation,3
+c0772,blockchain land registry,2
+c0773,imago,2
+c0774,IP multimedia session,2
+c0775,later date,4
+c0776,tweet,6
+c0777,negative,5
+c0778,modularity,2
+c0779,practice,7
+c0780,confirmation,3
+c0781,fast response time,3
+c0782,S5 MAC,3
+c0783,panel,4
+c0784,line PIN encryption,2
+c0785,content management,7
+c0786,minimum adequate resource level,2
+c0787,email client,3
+c0788,secure storage,3
+c0789,memory management,6
+c0790,last purchase,7
+c0791,deliverable,2
+c0792,script,4
+c0793,OS,3
+c0794,file type filtering,2
+c0795,personnel,4
+c0796,unrealistic waiting time,2
+c0797,contact,6
+c0798,link,6
+c0799,mail,5
+c0800,bit encryption key,2
+c0801,network configuration service function,2
+c0802,scalability problem,3
+c0803,future scalability,3
+c0804,item,4
+c0805,twitter streaming API,2
+c0806,alphabetic currency code,2
+c0807,generation,5
+c0808,encryption of data,2
+c0809,accordance,3
+c0810,date,8
+c0811,SMS alert message,2
+c0812,user input validation,2
+c0813,cosine,2
+c0814,tempering,2
+c0815,group,15
+c0816,provision,3
+c0817,association,6
+c0818,expletive,2
+c0819,inaccurate data format,2
+c0820,PGP,2
+c0821,stage,7
+c0822,authentication process,3
+c0823,service provider multiple client,2
+c0824,NGN authentication,2
+c0825,NGN terminal,2
+c0826,forking,2
+c0827,NGN side,2
+c0828,plane,6
+c0829,unlinked load,2
+c0830,anomaly detection,3
+c0831,multicast,2
+c0832,entertainment,4
+c0833,redirection,2
+c0834,different OSPF,2
+c0835,operational performance bottleneck,3
+c0836,operational performance,4
+c0837,windows platform,3
+c0838,watermark agency,3
+c0839,XSS vulnerability,2
+c0840,stress testing,3
+c0841,CPN subscription,2
+c0842,performance bottleneck,3
+c0843,CPN communication,2
+c0844,different CPN,2
+c0845,mother,8
+c0846,section for verification,2
+c0847,pivoting,2
+c0848,timestamp,2
+c0849,authorization for load,2
+c0850,management information,4
+c0851,OTP,2
+c0852,customer environment,3
+c0853,easy maintainability,2
+c0854,AVS,2
+c0855,system server,3
+c0856,logout capability,2
+c0857,currency code,4
+c0858,phone to zimbabwe,2
+c0859,form,9
+c0860,backup,3
+c0861,provider for configuration,2
+c0862,camera,5
+c0863,cardholder authentication,2
+c0864,provisioning,2
+c0865,baby,8
+c0866,communication channel,3
+c0867,reception,3
+c0868,challenge,5
+c0869,ECC,2
+c0870,speech command,3
+c0871,raw data,3
+c0872,bitcoin,3
+c0873,copyright,3
+c0874,system downloader,2
+c0875,other CND,2
+c0876,DES,3
+c0877,robustness,2
+c0878,rogue note screen,2
+c0879,network configuration server,2
+c0880,faceprint,2
+c0881,website against URL,2
+c0882,TLS,2
+c0883,scope,3
+c0884,acquisition,3
+c0885,menu,3
+c0886,backend,2
+c0887,voice,6
+c0888,consistent interface format,2
+c0889,bootstrap,2
+c0890,originator,2
+c0891,secure memory,5
+c0892,runtime behavior requirement,2
+c0893,test,7
+c0894,route,4
+c0895,network connection,4
+c0896,security domain provider,2
+c0897,web material,3
+c0898,margin,3
+c0899,life cycle information,3
+c0900,discrete cosine,2
+c0901,data exchange,5
+c0902,portability,2
+c0903,original supplementary logical,3
+c0904,access to admin,2
+c0905,open supplementary logical,3
+c0906,software tempering,2
+c0907,phone call notification,2
+c0908,university WIFI network,2
+c0909,aggregation record,3
+c0910,pin,3
+c0911,decompression,2
+c0912,friendliness,2
+c0913,relevant information,3
+c0914,notification of child,2
+c0915,call forking,2
+c0916,exponent,2
+c0917,technology,6
+c0918,multicast flow,2
+c0919,data block signature,4
+c0920,direction,5
+c0921,administration,5
+c0922,interface for ease,2
+c0923,practice in documentation,2
+c0924,qos rule,2
+c0925,friendly user interface,2
+c0926,original supplementary,3
+c0927,qos control,2
+c0928,open supplementary,3
+c0929,speech,5
+c0930,friendly input component,2
+c0931,biometric,2
+c0932,child device,3
+c0933,contract,5
+c0934,cost,8
+c0935,block signature,4
+c0936,relation,3
+c0937,implementation,3
+c0938,mouse,3
+c0939,n signer,2
+c0940,login credential,2
+c0941,logical channel(s,3
+c0942,asymmetric cryptography,2
+c0943,term,7
+c0944,contactless card,2
+c0945,decoy,2
+c0946,bookmark,2
+c0947,secure channel protocol,2
+c0948,device credential,2
+c0949,friendly interface design,2
+c0950,o interface(,3
+c0951,author,5
+c0952,configuration server,3
+c0953,different device,3
+c0954,general user,3
+c0955,cryptojacking application,2
+c0956,knowledge,5
+c0957,logistic,2
+c0958,CPU usage baseline,2
+c0959,end user,3
+c0960,logical channel management,2
+c0961,multiple service provider,2
+c0962,background process,3
+c0963,TCP,2
+c0964,size,6
+c0965,removal,3
+c0966,movement,5
+c0967,GSM,2
+c0968,scan on university,2
+c0969,decompression option,2
+c0970,scalable speed,2
+c0971,organisation,3
+c0972,logic,3
+c0973,currency exponent,2
+c0974,central error repository,2
+c0975,small learning curve,2
+c0976,data block hash,3
+c0977,list,8
+c0978,new logical channel,2
+c0979,networked resource,2
+c0980,unauthorised disclosure,2
+c0981,block hash,3
+c0982,patient information,3
+c0983,PDP functionality,2
+c0984,DES session key,2
+c0985,cryptogram,2
+c0986,experiment,3
+c0987,availability of data,2
+c0988,fund issuer,2
+c0989,issuer host,2
+c0990,guideline,2
+c0991,main screen,3
+c0992,decision,6
+c0993,final application,6
+c0994,alert from PC,2
+c0995,critical information,4
+c0996,service usage purpose,2
+c0997,blower,2
+c0998,response message,3
+c0999,start menu screen,2
+c1000,traffic data,3
+c1001,training,6
+c1002,adversary,2
+c1003,document on behalf,2
+c1004,ethereum protocol,2
+c1005,blood,6
+c1006,remote access device,2
+c1007,mailbox,2
+c1008,platform with ease,2
+c1009,policy for integrity,2
+c1010,HTTPS,3
+c1011,redundancy,2
+c1012,RSA key,3
+c1013,unintended usage,2
+c1014,quick error recovery,2
+c1015,privacy protection policy,2
+c1016,playback,2
+c1017,distinct security question,2
+c1018,symmetric macing key,2
+c1019,symmetric macing,2
+c1020,university PC register,2
+c1021,macing key,2
+c1022,macing key signature,2
+c1023,alert through text,2
+c1024,mutual authentication,2
+c1025,own security domain,2
+c1026,adjustment,3
+c1027,huge amount,3
+c1028,EMS,2
+c1029,IDS,2
+c1030,payload,2
+c1031,metadata,2
+c1032,short data transmission,2
+c1033,bus,4
+c1034,correct life cycle,4
+c1035,information retrieval,2
+c1036,secure authentication,2
+c1037,intruder,2
+c1038,authentication failure,2
+c1039,S1 MAC,2
+c1040,complex computation,2
+c1041,cloud data owner,2
+c1042,line authentication,2
+c1043,authentication service,2
+c1044,local authentication,2
+c1045,structure,4
+c1046,authentication system,2
+c1047,audio,3
+c1048,data during transmission,2
+c1049,incremental purchase,2
+c1050,mobile,4
+c1051,buzzer,2
+c1052,goal,5
+c1053,batch total,3
+c1054,login password,2
+c1055,malware detection,2
+c1056,internal security measure,2
+c1057,web data mining,2
+c1058,donor,3
+c1059,current card i,3
+c1060,single customer device,2
+c1061,video content,3
+c1062,right service control platform,2
+c1063,centralized database,2
+c1064,intrusion attack,2
+c1065,transient session,4
+c1066,complexity avoidance,2
+c1067,user for storage,2
+c1068,statistic,2
+c1069,CPU usage,4
+c1070,initial load time,2
+c1071,access to data,3
+c1072,efficiency in mind,2
+c1073,unknown malware,2
+c1074,file for storage,2
+c1075,CHANNEL command,4
+c1076,certification authority,3
+c1077,malware activity,2
+c1078,agreement,4
+c1079,auditor,2
+c1080,student personal detail,2
+c1081,concurrent service,2
+c1082,malware family,2
+c1083,parameter input,2
+c1084,TISPAN,1
+c1085,ISAAS,1
+c1086,EGOVAUTH,1
+c1087,ERC721,1
+c1088,CVMI,1
+c1089,APDU,1
+c1090,ODPF,1
+c1091,CSCF,1
+c1092,LAN interface,2
+c1093,section on campus,2
+c1094,tweet corpus,2
+c1095,initiation,2
+c1096,incident,3
+c1097,reporting,3
+c1098,initialize command,2
+c1099,upstream direction,2
+c1100,encryption standard,2
+c1101,number of tag,2
+c1102,internet connectivity,2
+c1103,avoidance,2
+c1104,presence,4
+c1105,initialize,2
+c1106,specific private identity,2
+c1107,single parameter,2
+c1108,commission,4
+c1109,risk of error,2
+c1110,unlocking,3
+c1111,different parameter,2
+c1112,routing,2
+c1113,spam folder,2
+c1114,unauthorized use,2
+c1115,recent network connection,2
+c1116,merchant acquirer S5,2
+c1117,creation,3
+c1118,mining,3
+c1119,acquirer S5 MAC,2
+c1120,source authenticity,2
+c1121,acquirer S5,2
+c1122,filtering,2
+c1123,data exchange protocol,3
+c1124,LAN traffic,2
+c1125,hash value,2
+c1126,health practitioner,2
+c1127,normal flow information,2
+c1128,unavailability,2
+c1129,application access rule,2
+c1130,capable device,4
+c1131,exchange protocol,3
+c1132,user validation,2
+c1133,similarity,2
+c1134,current maximum number,2
+c1135,twitter API,2
+c1136,child SMS,2
+c1137,scanning tool,2
+c1138,verification method,2
+c1139,register,3
+c1140,hidden folder,2
+c1141,CA public key,2
+c1142,potential operational performance,3
+c1143,handling policy,3
+c1144,packet priority,2
+c1145,card verification,2
+c1146,python programming,2
+c1147,admin console,2
+c1148,coding principle,2
+c1149,command dispatch,2
+c1150,unique username,2
+c1151,forensic image,2
+c1152,stream,3
+c1153,applicant,2
+c1154,corpus,2
+c1155,multiple logical channel,2
+c1156,collection,4
+c1157,forensic process,2
+c1158,card locking,2
+c1159,quality attribute,2
+c1160,possible occurrence,2
+c1161,better user experience,2
+c1162,extraction stage,2
+c1163,logical channel number,2
+c1164,expired card,2
+c1165,management system,5
+c1166,vehicle registration,3
+c1167,compression ability,2
+c1168,request for access,2
+c1169,program coding,2
+c1170,member,6
+c1171,applications,3
+c1172,phase,3
+c1173,batch processing,2
+c1174,media gateway,2
+c1175,credit,4
+c1176,template,2
+c1177,admin panel,2
+c1178,measure,3
+c1179,dispute resolution process,2
+c1180,anti,4
+c1181,other different platform,2
+c1182,data manipulation,2
+c1183,lecturer,2
+c1184,credential registration,2
+c1185,analysis module,2
+c1186,user credential,2
+c1187,electronic purse,2
+c1188,irrelevant document,2
+c1189,active batch,2
+c1190,growth,4
+c1191,secure channel,3
+c1192,network admin,2
+c1193,case of emergency,2
+c1194,TLS web,2
+c1195,CA,3
+c1196,forensic,2
+c1197,imaging ability,2
+c1198,incoming message,2
+c1199,dispatch,2
+c1200,AES encryption,2
+c1201,download,3
+c1202,interval,2
+c1203,linux platform,2
+c1204,national i.d,2
+c1205,i.d number,2
+c1206,newer version,2
+c1207,other critical information,2
+c1208,personal detail,3
+c1209,affiliated risk,2
+c1210,exchange of data,2
+c1211,transaction signature,2
+c1212,viewing format,2
+c1213,specific card i,2
+c1214,assurance,2
+c1215,configuration management,2
+c1216,increment,2
+c1217,proof,3
+c1218,test data source,2
+c1219,watermark system,2
+c1220,app,4
+c1221,self configuration,2
+c1222,motion detection,2
+c1223,configuration information,2
+c1224,investigator,2
+c1225,humidity,2
+c1226,path,3
+c1227,accident,3
+c1228,ZRP,1
+c1229,user password,2
+c1230,typing,2
+c1231,continuous sequence,2
+c1232,slot maximum,2
+c1233,diagram,2
+c1234,port scan,2
+c1235,static analysis,2
+c1236,HGI,1
+c1237,maximum availability,2
+c1238,wrong attempt,4
+c1239,stress,3
+c1240,reaction,3
+c1241,identity theft,2
+c1242,audit report,2
+c1243,private RSA,2
+c1244,whistle,2
+c1245,header,2
+c1246,IMPI,1
+c1247,RACS,1
+c1248,secure protocol,2
+c1249,correct life,4
+c1250,reference,3
+c1251,USSD,1
+c1252,nursery,2
+c1253,FXS,1
+c1254,firmware upgrade,2
+c1255,classification phase,2
+c1256,data administrator,2
+c1257,detail transaction,2
+c1258,secure data exchange,3
+c1259,false positive rate,3
+c1260,logical condition,2
+c1261,transaction ID,2
+c1262,unnecessary file,2
+c1263,UUID,1
+c1264,deployment,2
+c1265,CPU utilization,2
+c1266,indicator,2
+c1267,data breach,2
+c1268,system interface,2
+c1269,different platform,3
+c1270,CEPS,1
+c1271,progress,3
+c1272,DECT,1
+c1273,new S4,2
+c1274,POP3,1
+c1275,reduced margin,2
+c1276,meaningful information,2
+c1277,WIFI,2
+c1278,frequent update,2
+c1279,application life,4
+c1280,application access,3
+c1281,strength,3
+c1282,memory acquisition,2
+c1283,warning script,2
+c1284,global,4
+c1285,error handling,2
+c1286,offence,2
+c1287,student laptop,2
+c1288,RRT,1
+c1289,online transaction,2
+c1290,USD,2
+c1291,respective family,2
+c1292,transaction data,2
+c1293,virtual file,2
+c1294,transaction information,2
+c1295,clear secure data,3
+c1296,data usage,2
+c1297,IP multimedia,2
+c1298,mouse movement,2
+c1299,android device,2
+c1300,CVM,1
+c1301,LAN port,2
+c1302,utilization percentage,2
+c1303,signal processing,2
+c1304,java,2
+c1305,portal,2
+c1306,disclosure,2
+c1307,time anomaly,2
+c1308,cost estimate,2
+c1309,central database,2
+c1310,exception,3
+c1311,issuance,2
+c1312,PIN encryption,2
+c1313,registration page,2
+c1314,invalid transaction,2
+c1315,flexibility,2
+c1316,web search,3
+c1317,cloud user,2
+c1318,multiple currency,2
+c1319,unrealistic waiting,2
+c1320,multimedia session,2
+c1321,selection parameter,2
+c1322,GPS,2
+c1323,registration process,2
+c1324,services application,4
+c1325,several terminal,2
+c1326,web server,2
+c1327,crime,3
+c1328,normal web,3
+c1329,security principle,2
+c1330,database side,2
+c1331,SAML,1
+c1332,static,2
+c1333,graph,2
+c1334,android application,2
+c1335,alphabetic currency,2
+c1336,type filtering,2
+c1337,appropriate security,3
+c1338,damage,3
+c1339,resolution,4
+c1340,bit encryption,2
+c1341,secure data,3
+c1342,unusual activity,2
+c1343,medium stream,2
+c1344,streaming API,2
+c1345,parent device,2
+c1346,SMS alert,2
+c1347,consequence,2
+c1348,sequence number,2
+c1349,organization,3
+c1350,impact,3
+c1351,plain text,2
+c1352,IPD,1
+c1353,repository,2
+c1354,buying pattern,2
+c1355,console,2
+c1356,receiver,2
+c1357,gadget,2
+c1358,authorization management handling,2
+c1359,inaccurate data,2
+c1360,application client,2
+c1361,client application,2
+c1362,illegal sharing,2
+c1363,user identity,2
+c1364,MD5,1
+c1365,blockchain land,2
+c1366,resource use,2
+c1367,unique ID,2
+c1368,different layer,2
+c1369,global services,4
+c1370,error condition,2
+c1371,work handling,2
+c1372,bank server,2
+c1373,different priority,2
+c1374,cloud account,2
+c1375,keyboard,2
+c1376,clock,3
+c1377,PKI,1
+c1378,certification,3
+c1379,DCT,1
+c1380,sensitive information,2
+c1381,controller,2
+c1382,theft,2
+c1383,separation,2
+c1384,breach,2
+c1385,authorization management,2
+c1386,software platform,2
+c1387,technical user,2
+c1388,attractive website,2
+c1389,screen size,3
+c1390,student detail,2
+c1391,HCI,1
+c1392,monthly report,2
+c1393,twitter platform,2
+c1394,apache,2
+c1395,land registry,2
+c1396,total count,3
+c1397,acceptance,2
+c1398,installation,2
+c1399,user profile,2
+c1400,privilege usage,2
+c1401,client re,2
+c1402,application communication,2
+c1403,impairment,2
+c1404,accurate result,2
+c1405,easy maintenance,2
+c1406,minimum adequate resource,2
+c1407,MPLS,1
+c1408,storage space,2
+c1409,scenario,2
+c1410,single client,2
+c1411,multiple user,2
+c1412,particular task,2
+c1413,transformation,2
+c1414,rogue note,2
+c1415,independent path,2
+c1416,google map,2
+c1417,random check,2
+c1418,completion,2
+c1419,streaming,2
+c1420,adequate resource level,2
+c1421,runtime behavior,2
+c1422,application software,2
+c1423,software application,2
+c1424,specific device,2
+c1425,adequate resource,2
+c1426,button set,2
+c1427,command message,2
+c1428,voice communication,2
+c1429,various platform,2
+c1430,domain provider,2
+c1431,conversion,2
+c1432,configuration service function,2
+c1433,positive rate,3
+c1434,quality online service,3
+c1435,WIFI network,2
+c1436,tracking,2
+c1437,movement map,2
+c1438,call notification,2
+c1439,national ID,2
+c1440,channel support,3
+c1441,provider multiple client,2
+c1442,minimum training,2
+c1443,network configuration service,2
+c1444,fast response,3
+c1445,different screen,3
+c1446,university WIFI,2
+c1447,huge file,2
+c1448,management plane,2
+c1449,CRUD,1
+c1450,user re,2
+c1451,same subscription,2
+c1452,essential part,2
+c1453,editing,2
+c1454,data entry,2
+c1455,multiple application,2
+c1456,user data,2
+c1457,configuration service,2
+c1458,interface format,2
+c1459,machine learning,2
+c1460,video communication,2
+c1461,consistent interface,2
+c1462,filter,2
+c1463,user information,2
+c1464,management function,2
+c1465,baseline,2
+c1466,exception processing,2
+c1467,data plane,2
+c1468,proper control,2
+c1469,control plane,2
+c1470,different user,2
+c1471,timing,2
+c1472,emergency service,2
+c1473,performance target,2
+c1474,other platform,2
+c1475,system failure,2
+c1476,key exchange,2
+c1477,stability,2
+c1478,vehicle information,2
+c1479,URLS,1
+c1480,new user,2
+c1481,other command,2
+c1482,exchange price,2
+c1483,software system,2
+c1484,system software,2
+c1485,feedback,2
+c1486,input component,2
+c1487,content change,3
+c1488,AID selection,3
+c1489,contact card,2
+c1490,current location,2
+c1491,reaction time,2
+c1492,L3,1
+c1493,phone location,2
+c1494,reader,2
+c1495,true owner,2
+c1496,error repository,2
+c1497,service profile,2
+c1498,microsoft,2
+c1499,objective,2
+c1500,channel protocol,2
+c1501,DRM,1
+c1502,interface design,2
+c1503,MMS,1
+c1504,summary,2
+c1505,session data,4
+c1506,twitter streaming,2
+c1507,DES session,2
+c1508,mail server,2
+c1509,script message,2
+c1510,signing,2
+c1511,usage purpose,2
+c1512,upgrade purpose,2
+c1513,menu screen,2
+c1514,aspect,2
+c1515,friendly input,2
+c1516,S6,1
+c1517,capture,2
+c1518,soil,2
+c1519,key signature,2
+c1520,load files,2
+c1521,subsequent command,2
+c1522,usage baseline,2
+c1523,financial institution,2
+c1524,start menu,2
+c1525,privacy protection,2
+c1526,distinct security,2
+c1527,formula,2
+c1528,behavior,3
+c1529,PC register,2
+c1530,management handling policy,2
+c1531,files,2
+c1532,cycle information,3
+c1533,L2,1
+c1534,limit,3
+c1535,healthcare,2
+c1536,percentage,2
+c1537,improvement,2
+c1538,spike,2
+c1539,management handling,2
+c1540,customer device,2
+c1541,initial load,2
+c1542,VM,1
+c1543,campus,2
+c1544,suspect,2
+c1545,resource level,2
+c1546,friendly user,2
+c1547,ISP,1
+c1548,multi,2
+c1549,cloud data,2
+c1550,quick error,2
+c1551,data format,2
+c1552,consumer,2
+c1553,victim,2
+c1554,delivery,2
+c1555,window,3
+c1556,maximum,2
+c1557,university PC,2
+c1558,resolution process,3
+c1559,NIC,1
+c1560,fail,2
+c1561,combination,2
+c1562,web traffic,2
+c1563,CSS,1
+c1564,data mining,2
+c1565,signal,2
+c1566,normal flow,2
+c1567,secure,2
+c1568,access device,2
+c1569,sharing,2
+c1570,storm,2
+c1571,security measure,2
+c1572,service control platform,2
+c1573,single customer,2
+c1574,internal security,2
+c1575,maximum number,2
+c1576,load time,2
+c1577,network function,2
+c1578,yield,2
+c1579,hundred,2
+c1580,control platform,2
+c1581,flow information,2
+c1582,description,2
+c1583,dispute resolution,2
+c1584,note screen,2
+c1585,strategy,2
+c1586,file type,2
+c1587,low false positive,2
+c1588,HTTP,2
+c1589,web data,2
+c1590,better user,2
+c1591,HELP,2
+c1592,UI,1
+c1593,behavior requirement,2
+c1594,channel management,2
+c1595,protection policy,2
+c1596,access rule,2
+c1597,service function,2
+c1598,arrangement,2
+c1599,recent network,2
+c1600,specific card,2
+c1601,DOS,1
+c1602,HID,1
+c1603,PDF,1
+c1604,reporter,2
+c1605,ES,1
+c1606,institution,2
+c1607,central error,2
+c1608,USB,1
+c1609,JAVA,1
+c1610,LBS,1
+c1611,AKA,1
+c1612,RAM,1
+c1613,id,2
+c1614,NBA,1
+c1615,UPS,1
+c1616,WAVE,1
+c1617,SECURE,1
+c1618,IT,1

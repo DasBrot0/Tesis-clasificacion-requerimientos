@@ -1,0 +1,7 @@
+{
+  "glossary_id": "3607abad-ebe0-4517-aeb7-8aa1e807285d",
+  "entries_sha256_12": "5bf02f573b58",
+  "n_entries": 643,
+  "note": "v2: glosario limpiado y actualizado in situ (PUT /v3/glossaries/{id}/dictionaries) porque el plan Free admite 1 solo glosario; v1 (657 entradas, hash cad26e05261a) qued\u00f3 sustituido",
+  "updated_utc": "2026-10-19T03:34:44.883690"
+}

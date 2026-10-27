@@ -1,0 +1,24 @@
+{
+  "config": {
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "epochs": 5,
+    "dropout": 0.1,
+    "weight_decay": 0.01,
+    "max_length": 128,
+    "optimizer": "AdamW",
+    "threshold": 0.5,
+    "thresholds_by_label": {
+      "Security": 0.5750000000000002,
+      "Confidentiality": 0.4,
+      "Integrity": 0.4,
+      "Non_repudiation": 0.4,
+      "Accountability": 0.4,
+      "Authenticity": 0.4,
+      "Resistance": 0.4
+    }
+  },
+  "best_epoch": 5,
+  "val_macro_f1": 0.29801151229722656,
+  "val_security_recall": 0.9487179487179487
+}

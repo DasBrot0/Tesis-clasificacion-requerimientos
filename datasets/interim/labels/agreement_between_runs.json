@@ -1,0 +1,42 @@
+{
+  "n": 256,
+  "unanimity_per_label": {
+    "Confidentiality": 0.9766,
+    "Integrity": 0.9766,
+    "Non_repudiation": 0.9922,
+    "Accountability": 0.9688,
+    "Authenticity": 0.9648,
+    "Resistance": 0.9883
+  },
+  "unanimity_all_labels": 0.875,
+  "mean_pairwise_kappa": {
+    "Confidentiality": 0.96,
+    "Integrity": 0.962,
+    "Non_repudiation": 0.664,
+    "Accountability": 0.711,
+    "Authenticity": 0.948,
+    "Resistance": 0.948
+  },
+  "positives": {
+    "promise": {
+      "Confidentiality": 37,
+      "Integrity": 14,
+      "Non_repudiation": 0,
+      "Accountability": 4,
+      "Authenticity": 18,
+      "Resistance": 10
+    },
+    "secreq": {
+      "Confidentiality": 31,
+      "Integrity": 60,
+      "Non_repudiation": 2,
+      "Accountability": 4,
+      "Authenticity": 70,
+      "Resistance": 12
+    }
+  },
+  "none_applies": {
+    "promise": 6,
+    "secreq": 39
+  }
+}

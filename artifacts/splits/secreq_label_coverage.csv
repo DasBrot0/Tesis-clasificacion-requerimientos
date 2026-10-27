@@ -1,0 +1,6 @@
+﻿label,positives,rows,prevalence,status
+Security,177,440,0.4022727272727273,OK
+Confidentiality,31,440,0.07045454545454545,OK
+Integrity,60,440,0.13636363636363635,OK
+Authenticity,70,440,0.1590909090909091,OK
+Resistance,12,440,0.02727272727272727,OK

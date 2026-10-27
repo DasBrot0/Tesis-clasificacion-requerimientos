@@ -1,0 +1,89 @@
+{
+  "outer": 2,
+  "train_real_rows": 352,
+  "train_synthetic_rows": 76,
+  "test_rows": 88,
+  "optuna": {
+    "trials_finished": 6,
+    "trials_completed": 6,
+    "trials_pruned": 0
+  },
+  "default_config_inner_cv_macro_f1": 0.4652293858129776,
+  "best_trial": {
+    "trial_id": 5,
+    "inner_cv_macro_f1_mean": 0.6798925331235918,
+    "inner_cv_macro_f1_std": 0.11553995372270975
+  },
+  "winning_config": {
+    "learning_rate": 4.532025129505636e-05,
+    "batch_size": 8,
+    "epochs": 10,
+    "dropout": 0.10656577757568712,
+    "weight_decay": 0.0016330276692816817,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": false
+  },
+  "final_training_epochs": 9,
+  "thresholds_by_label": {
+    "Security": 0.6000000000000002,
+    "Confidentiality": 0.4,
+    "Integrity": 0.45000000000000007,
+    "Authenticity": 0.4,
+    "Resistance": 0.4
+  },
+  "test": {
+    "macro_f1": 0.6319511474441052,
+    "weighted_f1": 0.7517060404384348,
+    "micro_f1": 0.7536231884057971,
+    "macro_precision": 0.6533333333333334,
+    "macro_recall": 0.6142857142857143,
+    "security_recall": 0.8571428571428571,
+    "subset_accuracy": 0.7386363636363636,
+    "hamming_loss": 0.07727272727272727,
+    "loss": 0.2934374231210148
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.8333333333333334,
+      "recall": 0.8571428571428571,
+      "f1": 0.8450704225352113,
+      "support": 35,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.6,
+      "recall": 0.5,
+      "f1": 0.5454545454545454,
+      "support": 6,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666,
+      "support": 12,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.8333333333333334,
+      "recall": 0.7142857142857143,
+      "f1": 0.7692307692307693,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "support": 3,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 12.1
+}

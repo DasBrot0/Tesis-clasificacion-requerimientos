@@ -1,0 +1,29 @@
+{"id": "e0030", "text": "The product shall ensure that only supervisors can advertise empty time slots.The product must ensure that supervisors are allowed to access advertise empty time slots."}
+{"id": "e0031", "text": "All credit card information will be secured on the server and only accessible by authorized Izogn administrators. Information will be encrypted in the database."}
+{"id": "e0032", "text": "The system shall only be accessed by authorized Corporate Community Grants (CCR) employees. Users must be authenticated using their IBM intranet user name and password."}
+{"id": "e0033", "text": "System security and access levels are provided in the online system. There are varying levels of system access and functional authority. Each student’s access is limited to his/her own registration records. Only authorized system administrator(s) has access to all student registration records."}
+{"id": "e0034", "text": "The WCS system shall not allow automatic logins by any user. Cookies containing WCS login information about a user will not be stored on a user\\92s computer."}
+{"id": "e0035", "text": "The product shall ensure that it can only be accessed by authorized users. The product will be able to distinguish between authorized and unauthorized users in all access attempts"}
+{"id": "e0036", "text": "All users of the system shall login using some form of unique identification."}
+{"id": "e0037", "text": "A display shall not require a user to log in."}
+{"id": "e0038", "text": "System will use secured database"}
+{"id": "e0039", "text": "User access should be limited to the permissions granted to their role(s) Each level in the PCG hierarchy will be assigned a role and users will be assigned to these roles. Access to functionality within RFS system is dependent on the privileges/permission assigned to the role.."}
+{"id": "e0040", "text": "A waiter password used for tablet login must be changed every three months."}
+{"id": "e0041", "text": "The Disputes System shall generate a User Report that details any new users that have been added and any changes to an existing user\\92s access level. The report will be reviewed for auditing purposes."}
+{"id": "e0042", "text": "The website shall make its user aware of its information practices before collection data from them via a Privacy Policy accessible on all pages of the website."}
+{"id": "e0043", "text": "Only authorized personnel can access sales information."}
+{"id": "e0044", "text": "The Commissioner will be the only authorized user per league to adjust league settings."}
+{"id": "e0045", "text": "The system shall have basic data integrity checking to reduce the possibility of incorrect or invalid data being introduced."}
+{"id": "e0046", "text": "Only authorized users shall have access to clinical site information."}
+{"id": "e0047", "text": "Logout must be automatic after 1 hour of inactivity."}
+{"id": "e0048", "text": "The application must log the user out when it is exited."}
+{"id": "e0049", "text": "The system shall notify customers of changes to its information policy."}
+{"id": "e0050", "text": "All authorized users once authenticated must be able to logon to the Disputes System"}
+{"id": "e0051", "text": "Only users with Update access must be able to initiate dispute requests."}
+{"id": "e0052", "text": "Each team owner will need to use a username and password in order to be authenticated to reach the team owner\\92s page"}
+{"id": "e0053", "text": "The System shall maintain consistent security. Any changes in user passwords and/or permissions should take affect in all parts of the System."}
+{"id": "e0054", "text": "The system must automatically log out all customers after a period of inactivity."}
+{"id": "e0055", "text": "Fit Criterion: Dr Susan Poslusny and Karen Sysol are the only people who shall have access to the final class section scheduling for the system that interfaces with CampusConnect."}
+{"id": "e0056", "text": "A surface computer shall not require a user to log in."}
+{"id": "e0057", "text": "System will use secured database."}
+{"id": "e0058", "text": "All the passwords that are generated or accepted must be stored in database in an encrypted form."}

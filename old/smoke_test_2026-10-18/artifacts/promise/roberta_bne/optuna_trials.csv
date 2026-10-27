@@ -1,0 +1,2 @@
+﻿trial_id,state,is_default_config,cv_macro_f1_mean,cv_macro_f1_std,cv_security_recall_mean,mean_best_epoch,folds_run,learning_rate,batch_size,epochs,dropout,weight_decay,optimizer,warmup_ratio,pos_weight
+0,COMPLETE,True,0.226944758944759,0.062324471602483375,0.7725274725274726,4.8,5,2e-05,16,5,0.1,0.01,AdamW,0.0,False

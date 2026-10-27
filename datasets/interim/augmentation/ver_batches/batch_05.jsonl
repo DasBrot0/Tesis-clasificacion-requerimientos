@@ -1,0 +1,39 @@
+{"id": "g0212", "text": "During maintenance diagnostics, the air traffic control software shall mask the personal identities of crew and passengers in any data shown to the maintenance engineer."}
+{"id": "g0148", "text": "The hospital patient-record system shall exchange patient data with external clinics only through an encrypted communication channel."}
+{"id": "g0319", "text": "The online booking system must allow an administrator to run a verification of the stored reservation records that reports any record that has been altered since it was saved."}
+{"id": "g0093", "text": "The database server shall run an anti-malware scanner that inspects uploaded files and backup imports and quarantines any file detected as malicious."}
+{"id": "g0070", "text": "The screen capture tool shall end the active recording session and lock the application when no user input has been received for a configurable idle interval, limiting exploitation of an unattended session."}
+{"id": "g0124", "text": "The hospital patient-record system shall use a distinct encryption key for each participating clinic so that one clinic's key can never decrypt another clinic's patient records."}
+{"id": "g0097", "text": "The online booking system shall allow only staff with reservation-management privileges to create, modify or cancel bookings on behalf of customers."}
+{"id": "g0144", "text": "The screen capture tool must grant integrated applications access only to the windows and screen regions they are actively authorised to record, and hide the remaining screen content."}
+{"id": "g0290", "text": "The screen capture tool shall let a user register a recovery email address and shall only allow the account to be regained after the user proves control of that address through a single-use confirmation link."}
+{"id": "g0098", "text": "The database server shall grant write and delete permissions on production tables solely to accounts that have been explicitly assigned a data-modification privilege."}
+{"id": "g0224", "text": "The smart-home IoT controller shall verify the embedded ownership mark of each firmware image offered by different vendors and reject any image whose mark has been modified."}
+{"id": "g0069", "text": "The smart-home IoT controller shall propagate a revoked or updated user credential to all paired hubs and mobile apps so that each one authenticates the user only with the current credential."}
+{"id": "g0024", "text": "The compiler shall validate that every build configuration option holds a value of its declared type within its permitted range and shall abort the build when any option fails this check."}
+{"id": "g0038", "text": "The hospital patient-record system shall allow only users holding the physician role to amend a diagnosis entry, and it must reject amendment attempts from every other role."}
+{"id": "g0145", "text": "The smart-home IoT controller shall let each connected app read only the device states needed for that app's purpose and conceal every other household sensor reading."}
+{"id": "g0123", "text": "The online booking system must cancel a pending reservation and notify the user of the failure when the signed booking reference, date or price is found to have been manipulated."}
+{"id": "g0068", "text": "The payroll and human resources management system must enforce a reset of an employee's login credential across all of its modules, including the time-sheet and benefits portals, so that identity checks always use the latest credential."}
+{"id": "g0347", "text": "The payroll and human resources management system must restrict edits to salary and bank-account records to staff members whose role grants payroll update rights."}
+{"id": "g0358", "text": "The simulation software shall compute a cryptographic digest of each input scenario file on import so that later changes to the file can be detected."}
+{"id": "g0326", "text": "The compiler shall require a developer to present valid credentials before it accepts a build request on the shared build service."}
+{"id": "g0303", "text": "The web browser shall validate the signature of its installed extensions and settings store at each launch and shall block any item that has been altered without authorisation."}
+{"id": "g0299", "text": "The database server must refuse to write a value into a column when the value does not conform to the column's declared type, and must keep the stored row unmodified."}
+{"id": "g0126", "text": "The database server shall assign each hosted customer its own encryption key hierarchy so that data encrypted for one customer remains unreadable to every other customer."}
+{"id": "g0147", "text": "The web browser must transmit page requests and responses over an encrypted transport protocol so that eavesdroppers on the network cannot read their content."}
+{"id": "g0266", "text": "The forecasting system shall detect tampered historical sales data with a documented maximum rate of incorrect tampering reports, so that analysts can trust the reported data accuracy."}
+{"id": "g0087", "text": "The smart-card electronic purse shall accept a cardholder's PIN or passphrase for card activation only when it provides at least 64 bits of strength."}
+{"id": "g0322", "text": "The screen capture tool shall prevent any process other than the authorised capture session from modifying or deleting recordings that have already been saved."}
+{"id": "g0193", "text": "The hospital patient-record system shall reject any clinical data exchange message whose nonce or sequence counter duplicates one already accepted from the same sending device."}
+{"id": "g0323", "text": "The sales forecasting system must restrict write access to historical sales figures to authorised analysts so that unauthorised users cannot change the figures used in forecasts."}
+{"id": "g0377", "text": "The simulation software shall detect any alteration of an input scenario file between its release by the model author and its loading for execution."}
+{"id": "g0289", "text": "The smart-home controller must require a new household member to present a unique identifier and a pairing credential, and must confirm that the person is an invited resident before enrolling the member's account."}
+{"id": "g0184", "text": "The database server shall enforce a documented data-protection rule that lists which tables and fields hold personal or business-critical content and limits their viewing to explicitly permitted roles."}
+{"id": "g0318", "text": "The online booking system shall protect each confirmed reservation record with a message authentication code that is verified before the record is displayed or processed."}
+{"id": "g0311", "text": "The online banking application must embed a hidden tamper-evident mark in each generated account statement so that any modification of the statement can be detected."}
+{"id": "g0199", "text": "The database server shall return query results only for the tables and rows that the requesting account has been granted permission to read."}
+{"id": "g0313", "text": "The electronic purse must keep the integrity mark in its transaction records detectable after the records are copied, compressed or deliberately edited in an attempt to erase the mark."}
+{"id": "g0130", "text": "The online booking system shall erase the memory buffers holding a customer's payment details before releasing them so that no later session can read residual values."}
+{"id": "g0039", "text": "The web browser must permit modification of enterprise policy settings solely by a signed-in device administrator and must refuse such changes from ordinary profiles."}
+{"id": "g0012", "text": "The smart-home IoT controller must require each person using the mobile app to present a registered account name and its matching credential before it accepts any device command."}

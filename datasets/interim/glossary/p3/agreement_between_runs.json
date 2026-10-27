@@ -1,0 +1,15 @@
+{
+  "category": 0.775,
+  "is_security_term": 0.9499,
+  "iso25010_subchar": 0.9388,
+  "boundary_ok": 0.9085,
+  "n_candidates": 1618,
+  "category_counts": {
+    "NotTerm": 673,
+    "Specific": 496,
+    "Common": 330,
+    "NE": 71,
+    "OOD": 48
+  },
+  "n_security_terms": 324
+}

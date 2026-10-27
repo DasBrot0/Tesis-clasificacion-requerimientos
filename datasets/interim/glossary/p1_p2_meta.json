@@ -1,0 +1,11 @@
+{
+  "spacy": "3.8.16",
+  "model": "en_core_web_trf",
+  "model_version": "3.8.0",
+  "n_texts": 1727,
+  "n_tokens": 35869,
+  "min_freq": 2,
+  "ref_corpus_tokens": 1000000000.0,
+  "n_raw": 4800,
+  "n_kept": 1618
+}

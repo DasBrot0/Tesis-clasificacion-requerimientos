@@ -1,0 +1,15 @@
+# Secretos
+.env
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Modelos entrenados (pesados; se regeneran con train.py --save-checkpoints)
+checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

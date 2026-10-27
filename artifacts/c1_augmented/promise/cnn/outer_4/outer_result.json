@@ -1,0 +1,89 @@
+{
+  "outer": 4,
+  "train_real_rows": 368,
+  "train_synthetic_rows": 71,
+  "test_rows": 92,
+  "optuna": {
+    "trials_finished": 15,
+    "trials_completed": 12,
+    "trials_pruned": 3
+  },
+  "default_config_inner_cv_macro_f1": 0.24945287774556066,
+  "best_trial": {
+    "trial_id": 4,
+    "inner_cv_macro_f1_mean": 0.49208053820439246,
+    "inner_cv_macro_f1_std": 0.24585962843179376
+  },
+  "winning_config": {
+    "embedding_dim": 128,
+    "num_filters": 100,
+    "kernel_size": 3,
+    "batch_size": 16,
+    "epochs": 50,
+    "dropout": 0.2,
+    "learning_rate": 0.004274869455295219,
+    "pos_weight": true
+  },
+  "final_training_epochs": 22,
+  "thresholds_by_label": {
+    "Security": 0.5000000000000001,
+    "Confidentiality": 0.5000000000000001,
+    "Integrity": 0.5250000000000001,
+    "Authenticity": 0.4,
+    "Resistance": 0.5500000000000002
+  },
+  "test": {
+    "macro_f1": 0.19612903225806452,
+    "weighted_f1": 0.3900104058272633,
+    "micro_f1": 0.4489795918367347,
+    "macro_precision": 0.2533333333333333,
+    "macro_recall": 0.16964285714285715,
+    "security_recall": 0.5625,
+    "subset_accuracy": 0.7934782608695652,
+    "hamming_loss": 0.058695652173913045,
+    "loss": 0.6871627679337626
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.6,
+      "recall": 0.5625,
+      "f1": 0.5806451612903226,
+      "support": 16,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.6666666666666666,
+      "recall": 0.2857142857142857,
+      "f1": 0.4,
+      "support": 7,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 1.8
+}

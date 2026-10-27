@@ -1,0 +1,9 @@
+{
+  "model": "claude-sonnet-5-5",
+  "prompt": "prompt_v1.md",
+  "prompt_sha256_12": "d9d7bd420609",
+  "batch_size": 90,
+  "n_batches": 18,
+  "n_candidates": 1618,
+  "n_runs": 3
+}

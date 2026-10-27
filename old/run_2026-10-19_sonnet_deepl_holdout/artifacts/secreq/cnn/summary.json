@@ -1,0 +1,379 @@
+{
+  "dataset": "secreq",
+  "model": "cnn",
+  "seed": 42,
+  "n_splits": 5,
+  "rows": 440,
+  "cv_pool_size": 374,
+  "test_size": 66,
+  "labels_in_macro_average": [
+    "Security",
+    "Confidentiality",
+    "Integrity",
+    "Authenticity",
+    "Resistance"
+  ],
+  "labels_excluded_from_macro_average": [
+    "Non_repudiation",
+    "Accountability"
+  ],
+  "label_positives": {
+    "Security": 177,
+    "Confidentiality": 31,
+    "Integrity": 60,
+    "Non_repudiation": 2,
+    "Accountability": 4,
+    "Authenticity": 70,
+    "Resistance": 12
+  },
+  "optuna": {
+    "trials_finished": 30,
+    "trials_completed": 20,
+    "trials_pruned": 10,
+    "search_space": {
+      "embedding_dim": [
+        "categorical",
+        [
+          64,
+          100,
+          128
+        ]
+      ],
+      "num_filters": [
+        "categorical",
+        [
+          100,
+          128
+        ]
+      ],
+      "kernel_size": [
+        "categorical",
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "batch_size": [
+        "categorical",
+        [
+          16,
+          32
+        ]
+      ],
+      "epochs": [
+        "categorical",
+        [
+          50,
+          60
+        ]
+      ],
+      "dropout": [
+        "categorical",
+        [
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ]
+      ],
+      "learning_rate": [
+        "log_float",
+        0.0001,
+        0.01
+      ],
+      "pos_weight": [
+        "categorical",
+        [
+          false,
+          true
+        ]
+      ]
+    }
+  },
+  "default_config": {
+    "embedding_dim": 64,
+    "num_filters": 100,
+    "kernel_size": 3,
+    "batch_size": 32,
+    "epochs": 50,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "pos_weight": false
+  },
+  "default_config_cv": {
+    "cv_macro_f1_mean": 0.3482966083922472,
+    "cv_macro_f1_std": 0.03466637463443815
+  },
+  "best_trial": {
+    "trial_id": 22,
+    "cv_macro_f1_mean": 0.6129144713858403,
+    "cv_macro_f1_std": 0.09988300774139718
+  },
+  "winning_config": {
+    "embedding_dim": 128,
+    "num_filters": 128,
+    "kernel_size": 5,
+    "batch_size": 32,
+    "epochs": 60,
+    "dropout": 0.2,
+    "learning_rate": 0.009939905377926744,
+    "pos_weight": true
+  },
+  "final_training_epochs": 41,
+  "thresholds_by_label": {
+    "Security": 0.5250000000000001,
+    "Confidentiality": 0.4,
+    "Integrity": 0.4750000000000001,
+    "Non_repudiation": 0.5,
+    "Accountability": 0.5,
+    "Authenticity": 0.5750000000000002,
+    "Resistance": 0.4
+  },
+  "cv_folds": [
+    {
+      "fold": 0,
+      "best_epoch": 12,
+      "macro_f1": 0.4964795008912656,
+      "weighted_f1": 0.658938651218063,
+      "micro_f1": 0.6804123711340206,
+      "macro_precision": 0.7514285714285714,
+      "macro_recall": 0.400909090909091,
+      "security_recall": 0.6,
+      "subset_accuracy": 0.72,
+      "hamming_loss": 0.08266666666666667
+    },
+    {
+      "fold": 1,
+      "best_epoch": 23,
+      "macro_f1": 0.5829346092503986,
+      "weighted_f1": 0.6931581650582543,
+      "micro_f1": 0.7192982456140351,
+      "macro_precision": 0.7484126984126984,
+      "macro_recall": 0.5433333333333333,
+      "security_recall": 0.9,
+      "subset_accuracy": 0.6486486486486487,
+      "hamming_loss": 0.08648648648648649
+    },
+    {
+      "fold": 2,
+      "best_epoch": 59,
+      "macro_f1": 0.6709993293091884,
+      "weighted_f1": 0.707221862246928,
+      "micro_f1": 0.7401574803149606,
+      "macro_precision": 0.6622967479674796,
+      "macro_recall": 0.7366666666666666,
+      "security_recall": 0.9666666666666667,
+      "subset_accuracy": 0.6533333333333333,
+      "hamming_loss": 0.088
+    },
+    {
+      "fold": 3,
+      "best_epoch": 56,
+      "macro_f1": 0.582463768115942,
+      "weighted_f1": 0.7574637681159421,
+      "micro_f1": 0.7747747747747747,
+      "macro_precision": 0.6687878787878787,
+      "macro_recall": 0.5266666666666666,
+      "security_recall": 0.8666666666666667,
+      "subset_accuracy": 0.72,
+      "hamming_loss": 0.06666666666666667
+    },
+    {
+      "fold": 4,
+      "best_epoch": 55,
+      "macro_f1": 0.7607315389924085,
+      "weighted_f1": 0.7700986068708987,
+      "micro_f1": 0.7768595041322314,
+      "macro_precision": 0.7748251748251749,
+      "macro_recall": 0.7666666666666666,
+      "security_recall": 0.8666666666666667,
+      "subset_accuracy": 0.7333333333333333,
+      "hamming_loss": 0.072
+    }
+  ],
+  "cv_aggregate": {
+    "macro_f1": {
+      "mean": 0.6187217493118407,
+      "std": 0.10054632468245074
+    },
+    "weighted_f1": {
+      "mean": 0.7173762107020172,
+      "std": 0.04607395197667183
+    },
+    "micro_f1": {
+      "mean": 0.7383004751940045,
+      "std": 0.040412680656123995
+    },
+    "macro_precision": {
+      "mean": 0.7211502142843604,
+      "std": 0.051832827477903895
+    },
+    "macro_recall": {
+      "mean": 0.5948484848484848,
+      "std": 0.1537440600359145
+    },
+    "security_recall": {
+      "mean": 0.8400000000000001,
+      "std": 0.14023789311975088
+    },
+    "subset_accuracy": {
+      "mean": 0.6950630630630631,
+      "std": 0.04063244837227494
+    },
+    "hamming_loss": {
+      "mean": 0.07916396396396395,
+      "std": 0.009373748110554638
+    }
+  },
+  "cv_per_label_aggregate": [
+    {
+      "label": "Security",
+      "precision_mean": 0.7938010769718087,
+      "precision_std": 0.06847383814690314,
+      "recall_mean": 0.8400000000000001,
+      "recall_std": 0.1402378931197509,
+      "f1_mean": 0.8066058143274383,
+      "f1_std": 0.05988661552872611,
+      "support_cv_pool": 150,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision_mean": 0.8333333333333334,
+      "precision_std": 0.1559023911155809,
+      "recall_mean": 0.38,
+      "recall_std": 0.17888543819998315,
+      "f1_mean": 0.48666666666666664,
+      "f1_std": 0.1520233900132184,
+      "support_cv_pool": 26,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision_mean": 0.7940170940170941,
+      "precision_std": 0.2132559990226459,
+      "recall_mean": 0.5709090909090909,
+      "recall_std": 0.26311861385823254,
+      "f1_mean": 0.6360330173259234,
+      "f1_std": 0.20462179503700945,
+      "support_cv_pool": 51,
+      "in_macro_average": true
+    },
+    {
+      "label": "Non_repudiation",
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "support_cv_pool": 2,
+      "in_macro_average": false
+    },
+    {
+      "label": "Accountability",
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "support_cv_pool": 3,
+      "in_macro_average": false
+    },
+    {
+      "label": "Authenticity",
+      "precision_mean": 0.7512662337662338,
+      "precision_std": 0.08471540786003388,
+      "recall_mean": 0.6833333333333333,
+      "recall_std": 0.18066236157232332,
+      "f1_mean": 0.704303248239175,
+      "f1_std": 0.11338573914600675,
+      "support_cv_pool": 60,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision_mean": 0.4333333333333333,
+      "precision_std": 0.4346134936801766,
+      "recall_mean": 0.5,
+      "recall_std": 0.5,
+      "f1_mean": 0.45999999999999996,
+      "f1_std": 0.4560701700396552,
+      "support_cv_pool": 10,
+      "in_macro_average": true
+    }
+  ],
+  "final_test": {
+    "macro_f1": 0.6742800397219464,
+    "weighted_f1": 0.723464053512207,
+    "micro_f1": 0.76,
+    "macro_precision": 0.6770940170940171,
+    "macro_recall": 0.6733333333333332,
+    "security_recall": 0.7777777777777778,
+    "subset_accuracy": 0.7424242424242424,
+    "hamming_loss": 0.07272727272727272,
+    "loss": 2.0961944117690576
+  },
+  "final_test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.8076923076923077,
+      "recall": 0.7777777777777778,
+      "f1": 0.7924528301886793,
+      "support": 27,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 5,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.8,
+      "recall": 0.8888888888888888,
+      "f1": 0.8421052631578947,
+      "support": 9,
+      "in_macro_average": true
+    },
+    {
+      "label": "Non_repudiation",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0,
+      "in_macro_average": false
+    },
+    {
+      "label": "Accountability",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1,
+      "in_macro_average": false
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.7777777777777778,
+      "recall": 0.7,
+      "f1": 0.7368421052631579,
+      "support": 10,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "in_macro_average": true
+    }
+  ],
+  "checkpoint": "C:\\Users\\Franco\\Projects\\ULima\\SeminarioI\\checkpoints\\secreq\\cnn\\final",
+  "elapsed_minutes": 5.5
+}

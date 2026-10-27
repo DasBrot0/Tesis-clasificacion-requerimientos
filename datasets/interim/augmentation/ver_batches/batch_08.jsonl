@@ -1,0 +1,39 @@
+{"id": "g0214", "text": "The online booking system must drop unsolicited incoming packets that do not belong to an established session, so that port scans and flooding attempts do not reach its application servers."}
+{"id": "g0172", "text": "The hospital patient-record system shall block further sign-in attempts from an account for a defined period after a configured number of consecutive failed attempts."}
+{"id": "g0099", "text": "The web browser shall prevent web pages from reading or altering the files that store saved credentials and browsing profiles, exposing them only through its controlled interfaces."}
+{"id": "g0216", "text": "The database server shall let an administrator run a check that detects whether any stored record has been altered since it was last written by an authorised process."}
+{"id": "g0062", "text": "The air traffic control software shall accept the creation of a flight-plan amendment only from controllers who hold the write privilege for that sector."}
+{"id": "g0048", "text": "The hospital patient-record system must restrict changes to ward-level clinical protocol templates to the ward's chief physician."}
+{"id": "g0033", "text": "The payroll and human resources management system shall end an employee's session after 10 minutes without activity to prevent misuse of an abandoned browser."}
+{"id": "g0268", "text": "The web browser must validate the certificate chain presented by a website and confirm that the certificate names the requested host before treating the site as the claimed party."}
+{"id": "g0201", "text": "If the simulation software detects tampering with its model files or an unexpected halt caused by hostile input, it shall stop the run and return to a predefined clean configuration."}
+{"id": "g0340", "text": "The hospital patient-record system must admit a clinician only when the clinician enters a registered secret that meets the complexity rules defined by the hospital."}
+{"id": "g0028", "text": "The payroll system shall let users without payroll-administrator rights view salary records but shall prevent them from creating, editing or deleting any record."}
+{"id": "g0298", "text": "The sales forecasting system shall reject any uploaded sales figure whose value is not a valid number and shall leave the existing dataset unchanged."}
+{"id": "g0231", "text": "The booking system shall let a customer define a dedicated passphrase that must be correctly supplied before the contact email address on the customer's profile can be modified."}
+{"id": "g0261", "text": "The database server shall check each incoming record against its schema constraints and checksum, and shall block and flag any write that fails the check or shows signs of deliberate tampering."}
+{"id": "g0163", "text": "The air traffic control software shall encrypt flight-plan updates exchanged between control centres so that an eavesdropper on the network link cannot interpret their contents."}
+{"id": "g0325", "text": "The screen capture tool shall require each user to prove their identity with valid credentials before a recording session can be started."}
+{"id": "g0139", "text": "The online banking application must permit modification of a customer's payee list only after the account holder has explicitly approved the modification."}
+{"id": "g0063", "text": "The screen capture tool must permit only users granted the editor permission to trim, annotate or delete shared recordings."}
+{"id": "g0136", "text": "The online banking application must provide third-party integrations with an interface through which they cannot evade, disable or tamper with its fraud-detection and brute-force protection controls."}
+{"id": "g0129", "text": "The simulation software shall ensure that user-supplied scripts running inside it cannot deactivate or modify the software's attack-detection and lockdown mechanisms."}
+{"id": "g0009", "text": "The electronic purse shall accept a payment request only from a terminal that proves its identity with a valid certificate issued by the scheme operator."}
+{"id": "g0065", "text": "The smart-home IoT controller shall verify a homeowner's credentials against the stored account record before granting access to the device configuration panel."}
+{"id": "g0015", "text": "The simulation software must verify the identity of each operator against the organisation's directory before granting the operator the ability to launch a simulation run."}
+{"id": "g0157", "text": "The online booking system may employ public-key cryptography to encrypt customers' travel documents so that only the booking operator's private key can decrypt them."}
+{"id": "g0041", "text": "The screen capture tool shall require each user to sign in with an individual account identifier that no other user shares before uploading recordings to the cloud library."}
+{"id": "g0350", "text": "The sales forecasting system must verify the claimed origin of every uploaded sales data feed using the submitting source's registered certificate before the feed is accepted."}
+{"id": "g0365", "text": "The simulation software must confirm that the secret supplied at login matches the one registered for the account before opening a workspace."}
+{"id": "g0217", "text": "The compiler must verify, before linking, that each cached object file matches the checksum recorded when it was produced and reject any file that differs."}
+{"id": "g0280", "text": "The patient-record system shall monitor inbound network traffic, identify patterns that deviate from the established baseline such as scanning bursts, and block the offending source."}
+{"id": "g0330", "text": "The simulation software must let a researcher sign in using an identity assertion issued by a recognised third-party identity provider."}
+{"id": "g0237", "text": "The simulation software shall permit changes to stored simulation parameters only by the user who entered them and only after that user's identity has been verified."}
+{"id": "g0208", "text": "The web browser must prevent web pages from enumerating the hosts and services present on the user's internal network."}
+{"id": "g0213", "text": "The payroll and human resources management system shall block inbound traffic from the internet that is not a reply to a connection started from inside the internal network."}
+{"id": "g0296", "text": "The electronic purse must keep its balance record consistent across simultaneous terminal transactions and must allow only authorised terminals to change that balance."}
+{"id": "g0348", "text": "The web browser shall prevent web pages and unapproved extensions from altering saved bookmarks and stored browser settings."}
+{"id": "g0252", "text": "The data warehousing system shall protect each load-job record file with a keyed HMAC tag and shall report any file whose recomputed tag differs from the stored tag."}
+{"id": "g0373", "text": "The web browser shall ask a user to confirm their identity again by answering personal challenge questions before revealing saved payment cards."}
+{"id": "g0381", "text": "The data warehousing system must permit only users holding the data steward role to roll back a committed batch load to the preceding consistent state."}
+{"id": "g0304", "text": "The online booking system must query the customer account store during sign-in and shall grant access only when the supplied identity matches a registered customer."}

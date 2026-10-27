@@ -1,0 +1,13 @@
+[2026-10-26T00:08:14] INICIO c1_augmented/promise/cnn
+[2026-10-26T00:16:40] FIN c1_augmented/promise/cnn (8.4 min)
+[2026-10-26T00:16:40] INICIO c1_augmented/secreq/cnn
+[2026-10-26T00:25:26] FIN c1_augmented/secreq/cnn (8.8 min)
+[2026-10-26T00:25:26] INICIO c1_augmented/dosspre/cnn
+[2026-10-26T00:44:19] FIN c1_augmented/dosspre/cnn (18.9 min)
+[2026-10-26T00:44:19] INICIO c1_augmented/promise/roberta_bne
+[2026-10-26T01:33:31] FIN c1_augmented/promise/roberta_bne (49.2 min)
+[2026-10-26T01:33:31] INICIO c1_augmented/secreq/roberta_bne
+[2026-10-26T02:27:14] FIN c1_augmented/secreq/roberta_bne (53.7 min)
+[2026-10-26T02:27:14] INICIO c1_augmented/dosspre/roberta_bne
+[2026-10-26T04:03:42] FIN c1_augmented/dosspre/roberta_bne (96.5 min)
+[2026-10-26T04:03:42] ENTRENAMIENTO COMPLETO

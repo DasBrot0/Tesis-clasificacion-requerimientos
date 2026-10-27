@@ -1,0 +1,9 @@
+{
+  "model": "claude-sonnet-5-5",
+  "prompt": "prompt_v1.md",
+  "prompt_sha256_12": "c6b7df395fc9",
+  "n_batches": 23,
+  "n_terms": 661,
+  "date_utc": "2026-10-19",
+  "runs": "1 corrida, 1 subagente nuevo por lote (23)"
+}

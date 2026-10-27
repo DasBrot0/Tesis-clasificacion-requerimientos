@@ -1,0 +1,69 @@
+01_CNN_multilabel.ipynb:cell-17:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+02_BiLSTM_multilabel.ipynb:cell-17:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 52045.72it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: dccuchile/bert-base-spanish-wwm-cased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+bert.pooler.dense.bias                     | MISSING    | 
+bert.pooler.dense.weight                   | MISSING    | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+C:\Users\Franco\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\autograd\graph.py:1072: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:912.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.68it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.66it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  3.08it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  3.06it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.93it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.90it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.31it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.30it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.12it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.11it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.25it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.25it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.75it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.75it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.83it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.80it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.74it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.72it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.27it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.26it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  10%|#         | 21/201 [00:00<00:00, 191.79it/s]Loading weights:  20%|##        | 41/201 [00:00<00:00, 192.76it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 892.63it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.91it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.89it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  12%|#2        | 25/201 [00:00<00:00, 238.36it/s]Loading weights:  30%|##9       | 60/201 [00:00<00:00, 272.81it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 873.49it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  5.41it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  5.40it/s]
+03_BETO_multilabel.ipynb:cell-14:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|##########| 197/197 [00:00<00:00, 36960.01it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: Buzzeitor/roberta-base-bne
+Key                        | Status     | 
+---------------------------+------------+-
+lm_head.layer_norm.bias    | UNEXPECTED | 
+lm_head.dense.weight       | UNEXPECTED | 
+lm_head.decoder.bias       | UNEXPECTED | 
+lm_head.dense.bias         | UNEXPECTED | 
+lm_head.layer_norm.weight  | UNEXPECTED | 
+lm_head.bias               | UNEXPECTED | 
+lm_head.decoder.weight     | UNEXPECTED | 
+classifier.out_proj.weight | MISSING    | 
+classifier.out_proj.bias   | MISSING    | 
+classifier.dense.bias      | MISSING    | 
+classifier.dense.weight    | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.64it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.62it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.30it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.29it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.38it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.37it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.31it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.30it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.43it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.43it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.23it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.22it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  10%|#         | 21/201 [00:00<00:00, 195.33it/s]Loading weights:  28%|##8       | 57/201 [00:00<00:00, 288.86it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 804.75it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.61it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  2.60it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  15%|#4        | 30/201 [00:00<00:00, 288.77it/s]Loading weights:  31%|###1      | 63/201 [00:00<00:00, 306.66it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 849.59it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  1.66it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00,  1.66it/s]
+04_RoBERTa_BNE_multilabel.ipynb:cell-14:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown

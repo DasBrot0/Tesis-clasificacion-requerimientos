@@ -1,0 +1,2 @@
+﻿trial_id,state,is_default_config,cv_macro_f1_mean,cv_macro_f1_std,cv_security_recall_mean,mean_best_epoch,folds_run,embedding_dim,num_filters,kernel_size,batch_size,epochs,dropout,learning_rate,pos_weight
+0,COMPLETE,True,0.17116791979949877,0.06843205157104984,0.42637362637362647,37.8,5,64,100,3,32,50,0.2,0.001,False

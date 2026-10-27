@@ -1,0 +1,39 @@
+{"id": "g0364", "text": "The screen capture tool shall check the secret entered by a user against the stored credential before granting access to saved recordings."}
+{"id": "g0186", "text": "The smart-home controller shall follow a configurable policy naming occupancy patterns and camera footage as sensitive data that cannot be exposed to third-party services without the owner's permission."}
+{"id": "g0209", "text": "The air traffic control software shall show the topology of external radar-feed links solely to authorised controllers and supervisors."}
+{"id": "g0113", "text": "The electronic purse must accept a top-up instruction only if it carries a valid authentication code computed with the key negotiated for the current session."}
+{"id": "g0180", "text": "The online banking application shall identify one-time authorisation codes that have been submitted more than once and shall treat the repeat as a replay attempt."}
+{"id": "g0269", "text": "The smart-home controller shall compare a scanned fingerprint with the enrolled templates of registered residents and admit only the matching resident to the control interface."}
+{"id": "g0245", "text": "The data warehousing system shall limit updates of table-level write privileges to the data administrator and shall compute and retain a digest of each loaded dataset so tampering can be identified."}
+{"id": "g0118", "text": "The smart-home IoT controller shall generate and store its encryption keys exclusively inside a tamper-resistant hardware module, so that key material is never readable outside it."}
+{"id": "g0352", "text": "The smart-home IoT controller must identify residents by matching their face against enrolled templates before unlocking the front door."}
+{"id": "g0368", "text": "The online booking system shall allow only the customer who made a reservation, or an authorised agent, to amend or cancel it."}
+{"id": "g0275", "text": "The banking application must verify two independent proofs of identity, a memorised secret and a single-use code sent to the customer's enrolled device, before releasing any outgoing payment."}
+{"id": "g0346", "text": "The data warehousing system shall permit modification of fact and dimension tables only by ETL jobs and administrators holding explicit write privileges."}
+{"id": "g0165", "text": "The electronic purse shall encrypt balance and transaction data exchanged with a merchant terminal so that a device that has not proven its identity cannot read that data."}
+{"id": "g0251", "text": "The booking system must compute a keyed hash-based message authentication code over each audit file and must flag a file whose code no longer matches its content."}
+{"id": "g0137", "text": "The payroll and human resources management system shall give integrated modules an access layer that prevents them from circumventing or deactivating its malicious-activity detection and blocking functions."}
+{"id": "g0155", "text": "The smart-home IoT controller may use public-key encryption to protect the pairing secrets exchanged with new devices from disclosure to nearby eavesdroppers."}
+{"id": "g0200", "text": "The hospital patient-record system must release a patient's medical history only to clinicians who are assigned to that patient's care."}
+{"id": "g0198", "text": "After a guest's temporary access grant lapses, the smart-home IoT controller shall wipe the occupancy and routine data it collected about that guest during the grant."}
+{"id": "g0375", "text": "The web browser shall verify that each downloaded extension package is bit-for-bit identical to the package published by its vendor before installing it."}
+{"id": "g0003", "text": "The compiler shall detect source files crafted to trigger buffer overflows in its parser, reject them, and terminate compilation without executing any embedded content."}
+{"id": "g0205", "text": "The smart-card electronic purse must prevent card readers that are not approved by the issuer from reading the stored balance and transaction data."}
+{"id": "g0116", "text": "The web browser shall block all further requests from an extension that the vendor has revoked as malicious, including after a restart."}
+{"id": "g0221", "text": "The hospital patient-record system shall let a physician sign a discharge summary for the care team with a private key accessible only to that physician, so that alteration of the summary is detectable."}
+{"id": "g0223", "text": "The compiler must detect when the same embedded provenance mark appears in sources submitted by different contributors and report the conflicting submissions."}
+{"id": "g0027", "text": "The sales forecasting system shall block any client that submits more than 100 forecast requests per minute and shall return a rejection message to that client."}
+{"id": "g0121", "text": "The hospital patient-record system shall abort any prescription order, and report it as failed, when a mismatch is detected in the patient identifier, drug code or dosage fields as compared with their protected checksum."}
+{"id": "g0293", "text": "The web browser must validate the format and consistency of bookmark entries before saving them and must not store an entry that duplicates an existing one."}
+{"id": "g0228", "text": "The web browser must verify the PIN typed by the user against the stored value before it unlocks the saved credential vault."}
+{"id": "g0301", "text": "The smart-home controller shall periodically verify its stored device configuration against signed reference values and shall restore any entry found to differ from them."}
+{"id": "g0338", "text": "The web browser's sync service must allow a user to regain access to an existing account by confirming ownership through a message sent to the registered email address."}
+{"id": "g0128", "text": "The payroll and human resources management system must offer its extension API so that no extension can switch off, alter or evade the system's intrusion-detection and request-throttling controls."}
+{"id": "g0075", "text": "The simulation software shall demand a solved anti-automation challenge before processing additional remote job submissions from a client that has sent many rejected requests, so that bots cannot flood the service."}
+{"id": "g0308", "text": "The hospital patient-record system shall deploy a decoy server that imitates the records database, capturing and analysing traffic from intruders so that attacks on the real system can be detected and blocked."}
+{"id": "g0030", "text": "The electronic purse shall let a terminal lacking issuer rights read the card balance but shall refuse any command from that terminal that would change the stored balance."}
+{"id": "g0084", "text": "The database server shall permit a connection only after the requesting user has been identified by a registered account and a matching credential."}
+{"id": "g0334", "text": "The hospital patient-record system shall validate the certificate chain and expiry of the server certificate before clinicians' workstations exchange patient data with it."}
+{"id": "g0108", "text": "The web browser shall refuse to run a downloaded extension whose signature fails verification and shall offer the user a way to restore the previously installed version."}
+{"id": "g0234", "text": "The compiler service must establish the identity of a developer submitting a build job by matching keystroke timing and cursor motion characteristics to the biometric profile registered for that developer."}
+{"id": "g0259", "text": "The banking application shall verify each customer's identity through a registered credential check before granting access to any account session."}

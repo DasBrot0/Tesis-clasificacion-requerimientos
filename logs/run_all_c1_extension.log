@@ -1,0 +1,7 @@
+[2026-10-26T20:40:41-05:00] COLA: roberta 6->12, beto 6->12, cnn 15->25, bilstm 15->25
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\promise\roberta_bne: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\secreq\roberta_bne: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\artifacts\c1_augmented\dosspre\roberta_bne: etapa de 6 trials archivada en stage_6trials; lista para extender
+[2026-10-26T20:40:41] INICIO c1_augmented/promise/roberta_bne
+[2026-10-26T21:30:59] FIN c1_augmented/promise/roberta_bne (50.3 min)
+[2026-10-26T21:30:59] INICIO c1_augmented/secreq/roberta_bne

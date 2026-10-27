@@ -1,0 +1,1919 @@
+﻿term,Dataset,n_occurrences,n_unaligned,n_variants,top_variant,consistency,variants,n_left_in_english,flag_inconsistent,flag_left_in_english
+user,dosspre,412,19,3,usuario,0.962,"{""usuario"": 378, ""usar"": 14, ""uso"": 1}",0,True,False
+application,secreq,194,10,3,aplicación,0.793,"{""aplicación"": 146, ""aplicaciones"": 37, ""application"": 1}",1,True,True
+data,dosspre,155,3,2,dato,0.993,"{""dato"": 151, ""data"": 1}",1,True,True
+time,dosspre,120,4,5,tiempo,0.853,"{""tiempo"": 99, ""momento"": 9, ""hora"": 3, ""vez"": 3, ""plazo"": 2}",0,True,False
+logical channel,secreq,101,3,5,canal lógico,0.714,"{""canal lógico"": 70, ""canal lógicos"": 15, ""canal"": 10, ""lógico"": 2, ""canal lógico básico y no contempla los canal lógicos"": 1}",0,True,False
+logical,secreq,91,11,2,lógico,0.85,"{""lógico"": 68, ""lógicos"": 12}",0,True,False
+command,secreq,69,4,2,comando,0.985,"{""comando"": 64, ""comandos"": 1}",0,True,False
+file,dosspre,69,1,3,archivo,0.926,"{""archivo"": 63, ""fichero"": 4, ""expediente"": 1}",0,True,False
+card issuer,secreq,68,2,4,emisor de la tarjeta,0.606,"{""emisor de la tarjeta"": 40, ""emisor"": 16, ""emisor de tarjeta"": 7, ""tarjeta"": 3}",0,True,False
+load,secreq,65,2,2,carga,0.968,"{""carga"": 61, ""cargar"": 2}",0,True,False
+web,dosspre,58,1,2,web,0.982,"{""web"": 56, ""red"": 1}",56,True,True
+access,dosspre,57,1,2,acceso,0.982,"{""acceso"": 55, ""acceder"": 1}",0,True,False
+data,secreq,57,1,3,dato,0.893,"{""dato"": 50, ""datos"": 5, ""data"": 1}",1,True,True
+domain,secreq,57,2,2,dominio,0.764,"{""dominio"": 42, ""dominios"": 13}",0,True,False
+security domain,secreq,56,2,3,dominio de seguridad,0.759,"{""dominio de seguridad"": 41, ""dominios de seguridad"": 12, ""dominios"": 1}",0,True,False
+email,dosspre,53,1,3,electrónico,0.519,"{""electrónico"": 27, ""correo"": 21, ""electrónicos"": 4}",0,True,False
+software,dosspre,49,2,3,software,0.915,"{""software"": 43, ""programa"": 3, ""informático"": 1}",43,True,True
+CEP card,secreq,45,0,2,tarjeta cep,0.956,"{""tarjeta cep"": 43, ""cep"": 2}",0,True,False
+management,secreq,42,0,2,gestión,0.976,"{""gestión"": 41, ""gestionar"": 1}",0,True,False
+key,dosspre,41,0,2,clave,0.976,"{""clave"": 40, ""llave"": 1}",0,True,False
+supplementary logical,secreq,39,6,3,lógico suplementario,0.939,"{""lógico suplementario"": 31, ""suplementario"": 1, ""lógicos suplementarios"": 1}",0,True,False
+supplementary logical channel,secreq,39,2,3,canal lógico suplementario,0.865,"{""canal lógico suplementario"": 32, ""canal"": 4, ""suplementario"": 1}",0,True,False
+client,dosspre,38,0,2,cliente,0.974,"{""cliente"": 37, ""cliente-servidor"": 1}",0,True,False
+supplementary,secreq,38,6,2,suplementario,0.969,"{""suplementario"": 31, ""suplementarios"": 1}",0,True,False
+acquirer,secreq,36,1,3,adquirente,0.857,"{""adquirente"": 30, ""adquirent"": 4, ""adquirentes"": 1}",0,True,False
+use,dosspre,35,1,3,uso,0.912,"{""uso"": 31, ""utilización"": 2, ""utilizará"": 1}",0,True,False
+provider,secreq,34,0,2,proveedor,0.853,"{""proveedor"": 29, ""proveedores"": 5}",0,True,False
+basic logical,secreq,33,0,3,lógico básico,0.939,"{""lógico básico"": 31, ""básico"": 1, ""básico y no contempla los canal lógicos"": 1}",0,True,False
+basic logical channel,secreq,33,0,3,canal lógico básico,0.939,"{""canal lógico básico"": 31, ""canal lógico básico y no contempla los canal lógicos"": 1, ""lógico básico"": 1}",0,True,False
+performance,dosspre,33,0,2,rendimiento,0.97,"{""rendimiento"": 32, ""prestación"": 1}",0,True,False
+interface,secreq,32,2,2,interfaz,0.967,"{""interfaz"": 29, ""interfaces"": 1}",0,True,False
+watermark,dosspre,32,0,2,agua,0.594,"{""agua"": 19, ""marca"": 13}",0,True,False
+user interface,dosspre,29,0,2,interfaz de usuario,0.724,"{""interfaz de usuario"": 21, ""interfaz gráfica de usuario"": 8}",0,True,False
+authentication,dosspre,28,0,2,autenticación,0.964,"{""autenticación"": 27, ""autentificación"": 1}",0,True,False
+detail,dosspre,27,2,2,dato,0.64,"{""dato"": 16, ""detalle"": 9}",0,True,False
+number,dosspre,27,1,2,número,0.962,"{""número"": 25, ""serie"": 1}",0,True,False
+log,dosspre,26,0,3,registro,0.923,"{""registro"": 24, ""registrar"": 1, ""sesión"": 1}",0,True,False
+merchant acquirer,secreq,26,0,4,adquirente del comercio,0.846,"{""adquirente del comercio"": 22, ""adquirent de comercio"": 2, ""adquirentes de comercio"": 1, ""adquirent"": 1}",0,True,False
+communication,secreq,25,0,2,comunicación,0.96,"{""comunicación"": 24, ""communication"": 1}",1,True,True
+life cycle,secreq,25,1,2,ciclo de vida,0.958,"{""ciclo de vida"": 23, ""vida"": 1}",0,True,False
+access,secreq,24,0,2,acceso,0.917,"{""acceso"": 22, ""acceder"": 2}",0,True,False
+algorithm,dosspre,24,0,2,algoritmo,0.958,"{""algoritmo"": 23, ""algoritmos"": 1}",0,True,False
+card entity,secreq,23,1,3,entidad externa a la tarjeta,0.591,"{""entidad externa a la tarjeta"": 13, ""entidad"": 6, ""entidad externas a la tarjeta"": 3}",0,True,False
+input,dosspre,23,0,4,entrada,0.87,"{""entrada"": 20, ""introducción"": 1, ""aportación"": 1, ""introducidos"": 1}",0,True,False
+functionality,dosspre,22,2,2,funcionalidad,0.9,"{""funcionalidad"": 18, ""función"": 2}",0,True,False
+ability,dosspre,20,1,2,capacidad,0.947,"{""capacidad"": 18, ""podrá"": 1}",0,True,False
+exchange,dosspre,20,1,2,intercambio,0.842,"{""intercambio"": 16, ""cambio"": 3}",0,True,False
+number,secreq,20,5,4,número,0.6,"{""número"": 9, ""conjunto"": 3, ""cantidad"": 2, ""diversas"": 1}",0,True,False
+partial match,secreq,20,3,3,coincidencia total o parcial,0.765,"{""coincidencia total o parcial"": 13, ""coincidencia"": 2, ""coincidencia total ni parcial"": 2}",0,True,False
+phone,dosspre,20,0,4,teléfono,0.8,"{""teléfono"": 16, ""telefónica"": 2, ""telefónicas"": 1, ""teléfonos"": 1}",0,True,False
+website,dosspre,20,0,2,web,0.6,"{""web"": 12, ""sitio"": 8}",0,True,False
+detection,dosspre,19,0,2,detección,0.947,"{""detección"": 18, ""detectar"": 1}",0,True,False
+issuer security,secreq,19,0,2,seguridad del emisor,0.947,"{""seguridad del emisor"": 18, ""seguridad"": 1}",0,True,False
+issuer security domain,secreq,19,0,2,dominio de seguridad del emisor,0.947,"{""dominio de seguridad del emisor"": 18, ""dominio de seguridad"": 1}",0,True,False
+operation,dosspre,19,0,2,operación,0.632,"{""operación"": 12, ""funcionamiento"": 7}",0,True,False
+policy,secreq,19,0,2,política,0.947,"{""política"": 18, ""políticas"": 1}",0,True,False
+registration,dosspre,19,0,4,registro,0.632,"{""registro"": 12, ""registrarse"": 4, ""matrícula"": 2, ""inscripción"": 1}",0,True,False
+machine,dosspre,18,0,2,máquina,0.889,"{""máquina"": 16, ""automático"": 2}",0,True,False
+verification,secreq,18,0,2,verificación,0.944,"{""verificación"": 17, ""verificar"": 1}",0,True,False
+amount,secreq,17,0,2,importe,0.882,"{""importe"": 15, ""cantidad"": 2}",0,True,False
+exchange,secreq,17,0,2,cambio,0.882,"{""cambio"": 15, ""intercambio"": 2}",0,True,False
+purchase transaction,secreq,17,0,5,transacción de compra,0.588,"{""transacción de compra"": 10, ""transacción de cancelación de la última compra"": 4, ""transacción de compra y cancelación de la última compra"": 1, ""transacción de compra y de cancelación de la última compra"": 1, ""transacción de última compra"": 1}",0,True,False
+computer,dosspre,16,0,3,ordenador,0.812,"{""ordenador"": 13, ""informáticos"": 2, ""informático"": 1}",0,True,False
+cycle state,secreq,16,0,3,estado de ciclo,0.875,"{""estado de ciclo"": 14, ""estado del ciclo"": 1, ""estado"": 1}",0,True,False
+life cycle state,secreq,16,0,3,estado de ciclo de vida,0.875,"{""estado de ciclo de vida"": 14, ""estado del ciclo de vida"": 1, ""estado"": 1}",0,True,False
+card i,secreq,15,5,3,e,0.8,"{""e"": 8, ""e s de la tarjeta"": 1, ""e s actual de la tarjeta"": 1}",0,True,False
+currency exchange,secreq,15,0,2,cambio de divisa,0.933,"{""cambio de divisa"": 14, ""cambio"": 1}",0,True,False
+login,dosspre,15,0,3,sesión,0.733,"{""sesión"": 11, ""acceso"": 3, ""conectará"": 1}",0,True,False
+owner,dosspre,15,0,2,propietario,0.667,"{""propietario"": 10, ""titular"": 5}",0,True,False
+runtime environment,secreq,15,0,2,entorno de ejecución,0.867,"{""entorno de ejecución"": 13, ""entorno"": 2}",0,True,False
+verification,dosspre,15,0,2,verificación,0.8,"{""verificación"": 12, ""reverificación"": 3}",0,True,False
+configuration,secreq,14,0,2,configuración,0.857,"{""configuración"": 12, ""autoconfiguración"": 2}",0,True,False
+ease,dosspre,14,1,4,facilidad,0.538,"{""facilidad"": 7, ""facilitará"": 3, ""fácil"": 2, ""facilitar"": 1}",0,True,False
+file,secreq,14,0,2,archivo,0.786,"{""archivo"": 11, ""archivos"": 3}",0,True,False
+load file,secreq,14,0,2,archivo de carga,0.786,"{""archivo de carga"": 11, ""archivos de carga"": 3}",0,True,False
+location,dosspre,14,1,3,ubicación,0.769,"{""ubicación"": 10, ""lugar"": 2, ""localización"": 1}",0,True,False
+application provider,secreq,13,0,3,proveedor de aplicaciones,0.615,"{""proveedor de aplicaciones"": 8, ""proveedores de aplicaciones"": 4, ""proveedor de aplicación"": 1}",0,True,False
+end,dosspre,13,1,2,final,0.583,"{""final"": 7, ""extremo"": 5}",0,True,False
+framework,dosspre,13,0,2,marco,0.923,"{""marco"": 12, ""framework"": 1}",1,True,True
+time,secreq,13,3,4,momento,0.6,"{""momento"": 6, ""tiempo"": 2, ""horario"": 1, ""vez"": 1}",0,True,False
+cryptojacking,dosspre,12,0,2,criptojacking,0.917,"{""criptojacking"": 11, ""criptojaqueo"": 1}",0,True,False
+failure,dosspre,12,0,3,fallo,0.75,"{""fallo"": 9, ""falla"": 2, ""fracaso"": 1}",0,True,False
+fault,dosspre,12,0,2,fallo,0.833,"{""fallo"": 10, ""falla"": 2}",0,True,False
+player,dosspre,12,0,2,reproductor,0.75,"{""reproductor"": 9, ""jugador"": 3}",0,True,False
+request,dosspre,12,0,2,solicitud,0.917,"{""solicitud"": 11, ""petición"": 1}",0,True,False
+requirement,secreq,12,1,2,requisito,0.909,"{""requisito"": 10, ""exige"": 1}",0,True,False
+unload,secreq,12,0,2,descarga,0.917,"{""descarga"": 11, ""las"": 1}",0,True,False
+windows,dosspre,12,2,2,windows,0.7,"{""windows"": 7, ""ventana"": 3}",7,True,True
+cardholder,secreq,11,3,2,tarjeta,0.5,"{""tarjeta"": 4, ""titular"": 4}",0,True,False
+certificate,dosspre,11,1,2,certificado,0.9,"{""certificado"": 9, ""certificación"": 1}",0,True,False
+command,dosspre,11,0,4,comando,0.545,"{""comando"": 6, ""orden"": 2, ""órden"": 2, ""mando"": 1}",0,True,False
+credential,dosspre,11,0,2,credencial,0.909,"{""credencial"": 10, ""acreditativa"": 1}",0,True,False
+current card,secreq,11,0,3,actual de la tarjeta,0.727,"{""actual de la tarjeta"": 8, ""actual"": 2, ""tarjeta vigentes"": 1}",0,True,False
+feature,dosspre,11,0,2,característica,0.909,"{""característica"": 10, ""función"": 1}",0,True,False
+o interface,secreq,11,1,3,interfaz de e s,0.6,"{""interfaz de e s"": 6, ""interfaz"": 3, ""s"": 1}",0,True,False
+response time,dosspre,11,0,2,tiempo de respuesta,0.909,"{""tiempo de respuesta"": 10, ""respuesta"": 1}",0,True,False
+action,dosspre,10,0,2,acción,0.9,"{""acción"": 9, ""medida"": 1}",0,True,False
+child,dosspre,10,0,2,niño,0.6,"{""niño"": 6, ""infantil"": 4}",0,True,False
+digital watermark,dosspre,10,0,3,agua digital,0.7,"{""agua digital"": 7, ""digital de marca de agua"": 2, ""digital de marca"": 1}",0,True,False
+failure,secreq,10,1,2,fallo,0.667,"{""fallo"": 6, ""falla"": 3}",0,True,False
+intrusion,dosspre,10,0,2,intrusión,0.9,"{""intrusión"": 9, ""intromisión"": 1}",0,True,False
+keyword,dosspre,10,0,2,palabra,0.6,"{""palabra"": 6, ""clave"": 4}",0,True,False
+medium,secreq,10,1,3,medio,0.444,"{""medio"": 4, ""media"": 4, ""multimedia"": 1}",0,True,False
+mobile phone,dosspre,10,0,2,teléfono móvil,0.9,"{""teléfono móvil"": 9, ""teléfonos móviles"": 1}",0,True,False
+notification,dosspre,10,0,2,notificación,0.9,"{""notificación"": 9, ""notificará"": 1}",0,True,False
+requirement,dosspre,10,0,2,requisito,0.9,"{""requisito"": 9, ""necesidad"": 1}",0,True,False
+scanning,dosspre,10,0,3,escaneo,0.7,"{""escaneo"": 7, ""escanear"": 2, ""escaneado"": 1}",0,True,False
+username,dosspre,10,6,2,nombre,0.5,"{""nombre"": 2, ""usuario"": 2}",0,True,False
+SELECT command,secreq,9,0,2,comando select,0.889,"{""comando select"": 8, ""comando"": 1}",0,True,False
+agency,dosspre,9,1,2,agencia,0.875,"{""agencia"": 7, ""organismo"": 1}",0,True,False
+amount,dosspre,9,1,2,cantidad,0.875,"{""cantidad"": 7, ""volumen"": 1}",0,True,False
+card interface,secreq,9,0,3,interfaz actual de la tarjeta,0.778,"{""interfaz actual de la tarjeta"": 7, ""interfaz de la tarjeta"": 1, ""interfaz"": 1}",0,True,False
+currency exchange transaction,secreq,9,0,6,transacción de cambio de divisa,0.333,"{""transacción de cambio de divisa"": 3, ""transacción de carga descarga y cambio de divisa"": 2, ""transacción de descarga y cambio de divisa"": 1, ""transacción de descarga o la de cambio de divisa"": 1, ""transacción de carga o de cambio de divisa"": 1, ""transacción de carga o cambio de divisa"": 1}",0,True,False
+exchange transaction,secreq,9,0,6,transacción de cambio,0.333,"{""transacción de cambio"": 3, ""transacción de carga descarga y cambio"": 2, ""transacción de descarga y cambio"": 1, ""transacción de descarga o la de cambio"": 1, ""transacción de carga o de cambio"": 1, ""transacción de carga o cambio"": 1}",0,True,False
+false positive,dosspre,9,0,4,falsos positivos,0.667,"{""falsos positivos"": 6, ""falso positivo"": 1, ""positiva"": 1, ""positivas falsas"": 1}",0,True,False
+functionality,secreq,9,0,2,funcionalidad,0.889,"{""funcionalidad"": 8, ""funcionamiento"": 1}",0,True,False
+line PIN,secreq,9,1,3,pin fuera de línea,0.75,"{""pin fuera de línea"": 6, ""pin en línea o fuera de línea"": 1, ""pin en línea"": 1}",0,True,False
+operating,dosspre,9,0,3,operativos,0.556,"{""operativos"": 5, ""operativo"": 3, ""funcionamiento"": 1}",0,True,False
+order,dosspre,9,5,2,el,0.75,"{""el"": 3, ""fin"": 1}",0,True,False
+parent,dosspre,9,0,3,padre,0.778,"{""padre"": 7, ""original"": 1, ""matriz"": 1}",0,True,False
+positive,dosspre,9,0,4,positivos,0.667,"{""positivos"": 6, ""positivo"": 1, ""positiva"": 1, ""positivas"": 1}",0,True,False
+processing,dosspre,9,0,3,procesamiento,0.667,"{""procesamiento"": 6, ""tratamiento"": 2, ""procesar"": 1}",0,True,False
+public key,dosspre,9,0,2,clave pública,0.778,"{""clave pública"": 7, ""clave públicas"": 2}",0,True,False
+remote access,secreq,9,0,2,acceso remoto,0.889,"{""acceso remoto"": 8, ""acceder de forma remota"": 1}",0,True,False
+type,secreq,9,0,2,tipo,0.889,"{""tipo"": 8, ""forma"": 1}",0,True,False
+GUI,dosspre,8,0,2,gui,0.5,"{""gui"": 4, ""gráfica"": 4}",4,True,True
+data block,secreq,8,0,2,bloque de datos,0.625,"{""bloque de datos"": 5, ""bloque de dato"": 3}",0,True,False
+end,secreq,8,2,3,extremo,0.667,"{""extremo"": 4, ""fin"": 1, ""final"": 1}",0,True,False
+fault tolerance,dosspre,8,0,2,tolerancia a fallo,0.875,"{""tolerancia a fallo"": 7, ""tolerancia a las falla"": 1}",0,True,False
+file data,secreq,8,0,2,datos del archivo,0.625,"{""datos del archivo"": 5, ""dato del archivo"": 3}",0,True,False
+file data block,secreq,8,0,2,bloque de datos del archivo,0.625,"{""bloque de datos del archivo"": 5, ""bloque de dato del archivo"": 3}",0,True,False
+gateway,secreq,8,0,2,gateway,0.875,"{""gateway"": 7, ""gateways"": 1}",7,True,True
+load file data,secreq,8,0,2,datos del archivo de carga,0.625,"{""datos del archivo de carga"": 5, ""dato del archivo de carga"": 3}",0,True,False
+load file data block,secreq,8,0,2,bloque de datos del archivo de carga,0.625,"{""bloque de datos del archivo de carga"": 5, ""bloque de dato del archivo de carga"": 3}",0,True,False
+management,dosspre,8,0,2,gestión,0.875,"{""gestión"": 7, ""dirección"": 1}",0,True,False
+manner,dosspre,8,1,2,forma,0.571,"{""forma"": 4, ""manera"": 3}",0,True,False
+operating system,dosspre,8,0,2,sistema operativos,0.625,"{""sistema operativos"": 5, ""sistema operativo"": 3}",0,True,False
+operation,secreq,8,1,3,operación,0.429,"{""operación"": 3, ""funcionamiento"": 3, ""opera"": 1}",0,True,False
+picture,dosspre,8,0,3,imagen,0.5,"{""imagen"": 4, ""fotografía"": 3, ""fotos"": 1}",0,True,False
+quality,dosspre,8,0,2,calidad,0.875,"{""calidad"": 7, ""cualidad"": 1}",0,True,False
+self,dosspre,8,4,3,autoexplicativa,0.5,"{""autoexplicativa"": 2, ""auto"": 1, ""sí"": 1}",0,True,False
+system player,dosspre,8,0,3,jugador del sistema,0.375,"{""jugador del sistema"": 3, ""reproductor del sistema"": 3, ""reproductor de sistema"": 2}",0,True,False
+admin,dosspre,7,1,2,administrador,0.5,"{""administrador"": 3, ""administración"": 3}",0,True,False
+data owner,dosspre,7,0,3,propietario de dato,0.429,"{""propietario de dato"": 3, ""propietario de los dato"": 3, ""titular de los dato"": 1}",0,True,False
+email address,dosspre,7,0,2,dirección de correo electrónico,0.714,"{""dirección de correo electrónico"": 5, ""dirección de correo"": 2}",0,True,False
+event,dosspre,7,0,3,caso,0.714,"{""caso"": 5, ""hecho"": 1, ""suceso"": 1}",0,True,False
+executable load,secreq,7,0,2,carga ejecutables,0.714,"{""carga ejecutables"": 5, ""carga ejecutable"": 2}",0,True,False
+form,dosspre,7,1,2,formulario,0.5,"{""formulario"": 3, ""forma"": 3}",0,True,False
+ham,dosspre,7,0,2,jamón,0.857,"{""jamón"": 6, ""ham"": 1}",1,True,True
+host,dosspre,7,0,2,host,0.857,"{""host"": 6, ""anfitrión"": 1}",5,True,True
+last purchase transaction,secreq,7,0,4,transacción de cancelación de la última compra,0.571,"{""transacción de cancelación de la última compra"": 4, ""transacción de compra y cancelación de la última compra"": 1, ""transacción de compra y de cancelación de la última compra"": 1, ""transacción de última compra"": 1}",0,True,False
+load acquirer,secreq,7,1,3,adquirente de la carga,0.667,"{""adquirente de la carga"": 4, ""adquirent de carga"": 1, ""adquirente de carga"": 1}",0,True,False
+maximum balance,secreq,7,0,2,saldo máximo,0.571,"{""saldo máximo"": 4, ""saldo máximos"": 3}",0,True,False
+resource,secreq,7,0,2,recurso,0.857,"{""recurso"": 6, ""recursos"": 1}",0,True,False
+smartphone,dosspre,7,0,3,smartphone,0.571,"{""smartphone"": 4, ""teléfono"": 2, ""inteligente"": 1}",4,True,True
+stage,dosspre,7,0,2,etapa,0.571,"{""etapa"": 4, ""fase"": 3}",0,True,False
+term,dosspre,7,0,2,término,0.857,"{""término"": 6, ""función"": 1}",0,True,False
+test,dosspre,7,0,2,ensayo,0.571,"{""ensayo"": 4, ""prueba"": 3}",0,True,False
+testing,dosspre,7,0,2,prueba,0.714,"{""prueba"": 5, ""ensayo"": 2}",0,True,False
+text,dosspre,7,0,2,texto,0.857,"{""texto"": 6, ""mensaje"": 1}",0,True,False
+ID,dosspre,6,0,3,id,0.5,"{""id"": 3, ""identificación"": 2, ""identificador"": 1}",0,True,False
+KYC information,dosspre,6,0,2,información kyc,0.833,"{""información kyc"": 5, ""información del cliente kyc"": 1}",0,True,False
+SSL certificate,dosspre,6,0,2,certificado ssl,0.833,"{""certificado ssl"": 5, ""certificación ssl"": 1}",0,True,False
+access control,dosspre,6,0,2,control de acceso,0.833,"{""control de acceso"": 5, ""control del acceso"": 1}",0,True,False
+attribute,dosspre,6,0,2,atributo,0.833,"{""atributo"": 5, ""atribuye"": 1}",0,True,False
+background,dosspre,6,0,4,fondo,0.5,"{""fondo"": 3, ""segundo"": 1, ""base"": 1, ""plano"": 1}",0,True,False
+card content management,secreq,6,0,2,gestión del contenido de la tarjeta,0.833,"{""gestión del contenido de la tarjeta"": 5, ""gestión"": 1}",0,True,False
+content management,secreq,6,0,2,gestión del contenido,0.833,"{""gestión del contenido"": 5, ""gestión"": 1}",0,True,False
+domain key,secreq,6,2,4,clave del dominio,0.25,"{""clave del dominio"": 1, ""clave de dominio"": 1, ""dominio"": 1, ""clave y dato de dominios"": 1}",0,True,False
+fingerprint,dosspre,6,0,3,huella,0.5,"{""huella"": 3, ""impresión"": 2, ""dactilar"": 1}",0,True,False
+good performance,dosspre,6,0,3,buen rendimiento,0.5,"{""buen rendimiento"": 3, ""rendimiento y un comportamiento de los recurso relativamente buenos"": 2, ""rendimiento y un comportamiento de recurso relativamente buenos"": 1}",0,True,False
+group public key,dosspre,6,0,2,clave pública del grupo,0.667,"{""clave pública del grupo"": 4, ""clave públicas de grupo"": 2}",0,True,False
+handling,dosspre,6,0,3,manipulación,0.5,"{""manipulación"": 3, ""manejo"": 2, ""gestión"": 1}",0,True,False
+legitimate user,dosspre,6,0,3,usuario legítimos,0.5,"{""usuario legítimos"": 3, ""usuario legítimo"": 2, ""usuario registrado y legítimo"": 1}",0,True,False
+line PIN verification,secreq,6,0,2,verificación de pin fuera de línea,0.833,"{""verificación de pin fuera de línea"": 5, ""verificación de pin en línea o fuera de línea"": 1}",0,True,False
+log file,dosspre,6,0,2,archivo de registro,0.833,"{""archivo de registro"": 5, ""fichero de registro"": 1}",0,True,False
+maximum,secreq,6,0,2,máximo,0.667,"{""máximo"": 4, ""máximos"": 2}",0,True,False
+memory management,secreq,6,0,2,gestión segura de la memoria,0.833,"{""gestión segura de la memoria"": 5, ""gestionar la memoria"": 1}",0,True,False
+multiple client,dosspre,6,0,2,varios cliente,0.667,"{""varios cliente"": 4, ""múltiples cliente"": 2}",0,True,False
+network traffic,dosspre,6,0,2,tráfico de la red,0.5,"{""tráfico de la red"": 3, ""tráfico de red"": 3}",0,True,False
+port scanning,dosspre,6,0,3,escaneo del puerto,0.5,"{""escaneo del puerto"": 3, ""escaneo de puerto"": 2, ""escanear el puerto"": 1}",0,True,False
+private identity,secreq,6,0,2,identidad privada,0.5,"{""identidad privada"": 3, ""identidad privadas"": 3}",0,True,False
+private key,dosspre,6,0,4,clave ecc públicas y privadas,0.333,"{""clave ecc públicas y privadas"": 2, ""clave privada"": 2, ""clave públicas y privadas"": 1, ""llave públicas y privadas"": 1}",0,True,False
+public identity,secreq,6,0,2,identidad pública,0.833,"{""identidad pública"": 5, ""identidad públicas"": 1}",0,True,False
+purpose,dosspre,6,1,2,efecto,0.6,"{""efecto"": 3, ""fin"": 2}",0,True,False
+python,dosspre,6,0,2,python,0.667,"{""python"": 4, ""pitón"": 2}",4,True,True
+receipt,secreq,6,0,4,comprobantes,0.333,"{""comprobantes"": 2, ""recibir"": 2, ""comprobante"": 1, ""comprobant"": 1}",0,True,False
+registration number,dosspre,6,0,2,número de registro,0.667,"{""número de registro"": 4, ""número de matrícula"": 2}",0,True,False
+resource behaviour,dosspre,6,0,3,comportamiento de los recurso,0.667,"{""comportamiento de los recurso"": 4, ""comportamiento de recurso"": 1, ""comportamiento en materia de recurso"": 1}",0,True,False
+security domain key,secreq,6,2,4,clave del dominio de seguridad,0.25,"{""clave del dominio de seguridad"": 1, ""clave de dominio de seguridad"": 1, ""dominio de seguridad"": 1, ""clave y dato de dominios de seguridad"": 1}",0,True,False
+target,dosspre,6,0,2,destino,0.5,"{""destino"": 3, ""objetivo"": 3}",0,True,False
+training,dosspre,6,0,2,formación,0.667,"{""formación"": 4, ""entrenamiento"": 2}",0,True,False
+transmission,secreq,6,0,2,transmisión,0.833,"{""transmisión"": 5, ""transmitir"": 1}",0,True,False
+IMS capable CND,secreq,5,0,2,cnd no compatibles con ims,0.8,"{""cnd no compatibles con ims"": 4, ""cnd compatibles"": 1}",0,True,False
+PC,dosspre,5,0,3,pc,0.6,"{""pc"": 3, ""ordenador"": 1, ""pcs"": 1}",0,True,False
+application code,secreq,5,0,3,código de las aplicación,0.4,"{""código de las aplicación"": 2, ""código de la aplicación"": 2, ""código y los dato de las aplicación"": 1}",0,True,False
+basis,secreq,5,2,2,basándose,0.667,"{""basándose"": 2, ""basadas"": 1}",0,True,False
+capable CND,secreq,5,0,2,cnd no compatibles,0.8,"{""cnd no compatibles"": 4, ""cnd compatibles"": 1}",0,True,False
+challenge,dosspre,5,0,4,reto,0.4,"{""reto"": 2, ""problema"": 1, ""desafío"": 1, ""impugnación"": 1}",0,True,False
+contract,dosspre,5,0,2,contrato,0.8,"{""contrato"": 4, ""contract"": 1}",1,True,True
+corruption,dosspre,5,0,2,anticorrupción,0.6,"{""anticorrupción"": 3, ""corrupción"": 2}",0,True,False
+data exchange,dosspre,5,0,2,intercambio de dato,0.8,"{""intercambio de dato"": 4, ""intercambio"": 1}",0,True,False
+delay,dosspre,5,0,2,retraso,0.6,"{""retraso"": 3, ""demora"": 2}",0,True,False
+error recovery,dosspre,5,0,2,recuperación de error,0.6,"{""recuperación de error"": 3, ""recuperación rápida de error"": 2}",0,True,False
+executable load file,secreq,5,0,2,archivos de carga ejecutables,0.6,"{""archivos de carga ejecutables"": 3, ""archivo de carga ejecutable"": 2}",0,True,False
+friendly interface,dosspre,5,0,3,interfaz amigable,0.4,"{""interfaz amigable"": 2, ""interfaz"": 2, ""interfaz fácil"": 1}",0,True,False
+identifiable information,dosspre,5,0,3,información personal identificable,0.4,"{""información personal identificable"": 2, ""información de identificación"": 2, ""información personal e identificable"": 1}",0,True,False
+interactive interface,dosspre,5,0,2,interfaz interactiva,0.8,"{""interfaz interactiva"": 4, ""interfaz fácil de usar e interactiva"": 1}",0,True,False
+map,dosspre,5,0,2,mapa,0.8,"{""mapa"": 4, ""hoja"": 1}",0,True,False
+medium,dosspre,5,1,2,medio,0.75,"{""medio"": 3, ""multimedia"": 1}",0,True,False
+monitoring,dosspre,5,0,3,supervisión,0.4,"{""supervisión"": 2, ""seguimiento"": 2, ""monitoreo"": 1}",0,True,False
+other application,secreq,5,0,3,otra aplicación,0.6,"{""otra aplicación"": 3, ""otros proveedor de aplicación"": 1, ""otras aplicaciones"": 1}",0,True,False
+partial AID,secreq,5,0,2,parcial de aid,0.6,"{""parcial de aid"": 3, ""aid parcial"": 2}",0,True,False
+recipient,dosspre,5,0,2,destinatario,0.8,"{""destinatario"": 4, ""receptor"": 1}",0,True,False
+recoverability,dosspre,5,0,2,recuperación,0.8,"{""recuperación"": 4, ""recuperabilidad"": 1}",0,True,False
+scan,dosspre,5,0,2,escaneo,0.8,"{""escaneo"": 4, ""exploración"": 1}",0,True,False
+signer,dosspre,5,0,2,firmante,0.6,"{""firmante"": 3, ""firmantes"": 2}",0,True,False
+smart contract,dosspre,5,0,2,contrato inteligente,0.8,"{""contrato inteligente"": 4, ""smart contract"": 1}",1,True,True
+system administrator,dosspre,5,0,2,administrador de sistema,0.6,"{""administrador de sistema"": 3, ""administrador del sistema"": 2}",0,True,False
+token,dosspre,5,0,3,ficha,0.6,"{""ficha"": 3, ""token"": 1, ""tokens"": 1}",1,True,True
+user detail,dosspre,5,0,3,dato de usuario,0.4,"{""dato de usuario"": 2, ""dato del usuario"": 2, ""detalle del usuario"": 1}",0,True,False
+video,secreq,5,1,2,video,0.75,"{""video"": 3, ""videovigilancia"": 1}",3,True,True
+zimbabwe,dosspre,5,0,2,zimbabue,0.8,"{""zimbabue"": 4, ""zimbabwe"": 1}",1,True,True
+CPU usage,dosspre,4,0,3,uso de la cpu,0.5,"{""uso de la cpu"": 2, ""cpu"": 1, ""uso"": 1}",0,True,False
+IMS capable device,secreq,4,0,4,dispositivo del cliente que no sean compatibles con ims,0.25,"{""dispositivo del cliente que no sean compatibles con ims"": 1, ""dispositivo compatibles con ims"": 1, ""dispositivo no compatibles con ims"": 1, ""dispositivo del cliente no compatibles con ims"": 1}",0,True,False
+NGN network,secreq,4,0,2,red de la ngn,0.5,"{""red de la ngn"": 2, ""red ngn"": 2}",0,True,False
+SQL injection,dosspre,4,0,2,sql inyection,0.5,"{""sql inyection"": 2, ""inyección sql"": 2}",0,True,False
+ability,secreq,4,0,2,poder,0.5,"{""poder"": 2, ""capacidad"": 2}",0,True,False
+action,secreq,4,0,2,acción,0.75,"{""acción"": 3, ""actuar"": 1}",0,True,False
+application life,secreq,4,0,4,vida de las aplicación,0.25,"{""vida de las aplicación"": 1, ""vida de la tarjeta y las aplicaciones"": 1, ""vida de la tarjeta y de las aplicaciones"": 1, ""vida de las aplicaciones"": 1}",0,True,False
+application life cycle,secreq,4,0,4,ciclo de vida de las aplicación,0.25,"{""ciclo de vida de las aplicación"": 1, ""ciclo de vida de la tarjeta y las aplicaciones"": 1, ""ciclo de vida de la tarjeta y de las aplicaciones"": 1, ""ciclo de vida de las aplicaciones"": 1}",0,True,False
+application selection,secreq,4,0,2,selección de aplicaciones,0.75,"{""selección de aplicaciones"": 3, ""selección"": 1}",0,True,False
+authorized user,dosspre,4,0,2,usuario autorizado,0.5,"{""usuario autorizado"": 2, ""usuario autorizados"": 2}",0,True,False
+block signature,secreq,4,0,2,firma de bloque,0.5,"{""firma de bloque"": 2, ""firma del bloque"": 2}",0,True,False
+capable device,secreq,4,0,4,dispositivo del cliente que no sean compatibles,0.25,"{""dispositivo del cliente que no sean compatibles"": 1, ""dispositivo compatibles"": 1, ""dispositivo no compatibles"": 1, ""dispositivo del cliente no compatibles"": 1}",0,True,False
+card session,secreq,4,0,2,sesión de tarjeta,0.75,"{""sesión de tarjeta"": 3, ""sesión de la tarjeta"": 1}",0,True,False
+client KYC,dosspre,4,0,3,kyc del cliente,0.5,"{""kyc del cliente"": 2, ""cliente kyc"": 1, ""kyc de los cliente"": 1}",0,True,False
+consecutive wrong attempt,dosspre,4,0,2,intento incorrectos consecutivos,0.5,"{""intento incorrectos consecutivos"": 2, ""intento erróneos consecutivos"": 2}",0,True,False
+corruption commission,dosspre,4,0,2,comisión anticorrupción,0.75,"{""comisión anticorrupción"": 3, ""comisión de lucha contra la corrupción"": 1}",0,True,False
+cost engineer,dosspre,4,0,2,ingeniero de coste,0.75,"{""ingeniero de coste"": 3, ""ingeniero o contratista de coste"": 1}",0,True,False
+currency code,secreq,4,0,3,código alfabético de divisa,0.5,"{""código alfabético de divisa"": 2, ""código"": 1, ""código de divisa"": 1}",0,True,False
+data block signature,secreq,4,0,3,firma de bloque de dato,0.5,"{""firma de bloque de dato"": 2, ""firma del bloque de dato"": 1, ""firma del bloque de datos"": 1}",0,True,False
+data item,dosspre,4,0,3,elemento de dato,0.5,"{""elemento de dato"": 2, ""elemento de dato y las estructura de dato"": 1, ""dato"": 1}",0,True,False
+data structure,dosspre,4,0,2,estructura de dato,0.75,"{""estructura de dato"": 3, ""estructura"": 1}",0,True,False
+detail,secreq,4,0,3,detalle,0.5,"{""detalle"": 2, ""detallada"": 1, ""detalladas"": 1}",0,True,False
+ease of use,dosspre,4,0,4,facilidad de uso,0.25,"{""facilidad de uso"": 1, ""de fácil uso"": 1, ""facilitará su utilización"": 1, ""facilitará su uso"": 1}",0,True,False
+email account,dosspre,4,0,2,cuenta de correo,0.75,"{""cuenta de correo"": 3, ""cuenta de correo electrónico"": 1}",0,True,False
+encryption,secreq,4,0,2,cifrado,0.75,"{""cifrado"": 3, ""encryption"": 1}",1,True,True
+executable,secreq,4,0,2,ejecutables,0.5,"{""ejecutables"": 2, ""ejecutable"": 2}",0,True,False
+executable module,secreq,4,0,2,módulos ejecutables,0.5,"{""módulos ejecutables"": 2, ""módulo ejecutable"": 2}",0,True,False
+extraction module,dosspre,4,0,2,módulo de extracción,0.5,"{""módulo de extracción"": 2, ""módulo de hashing y extracción"": 2}",0,True,False
+facility,dosspre,4,0,2,instalación,0.75,"{""instalación"": 3, ""centro"": 1}",0,True,False
+file data block signature,secreq,4,0,3,firma de bloque de dato del archivo,0.5,"{""firma de bloque de dato del archivo"": 2, ""firma del bloque de dato del archivo"": 1, ""firma del bloque de datos del archivo"": 1}",0,True,False
+future upgrade,dosspre,4,0,2,futuras actualización,0.5,"{""futuras actualización"": 2, ""mejora futuras"": 2}",0,True,False
+injection,dosspre,4,0,2,inyection,0.5,"{""inyection"": 2, ""inyección"": 2}",0,True,False
+input validation,dosspre,4,0,2,validación de entrada,0.75,"{""validación de entrada"": 3, ""validación de las entrada"": 1}",0,True,False
+maintainability,dosspre,4,0,2,mantenimiento,0.75,"{""mantenimiento"": 3, ""mantenibilidad"": 1}",0,True,False
+management information,secreq,4,0,2,información de gestión,0.75,"{""información de gestión"": 3, ""información relevante de gestión"": 1}",0,True,False
+medium gateway,secreq,4,0,2,media gateway,0.75,"{""media gateway"": 3, ""media gateways"": 1}",0,True,False
+module,secreq,4,0,2,módulos,0.5,"{""módulos"": 2, ""módulo"": 2}",0,True,False
+network connection,dosspre,4,0,3,conexión de red,0.5,"{""conexión de red"": 2, ""conexión netstat y de red"": 1, ""conexión o asociación de red"": 1}",0,True,False
+number of queue,secreq,4,0,3,número de cola,0.5,"{""número de cola"": 2, ""de cola"": 1, ""conjunto de cola"": 1}",0,True,False
+operational performance,dosspre,4,0,2,rendimiento operativo,0.75,"{""rendimiento operativo"": 3, ""rendimiento operacional"": 1}",0,True,False
+phone,secreq,4,1,2,telefónico,0.667,"{""telefónico"": 2, ""teléfono"": 1}",0,True,False
+registry,dosspre,4,0,2,registro,0.75,"{""registro"": 3, ""registry"": 1}",1,True,True
+result,secreq,4,1,3,tanto,0.333,"{""tanto"": 1, ""ello"": 1, ""resultado"": 1}",0,True,False
+software requirement,dosspre,4,0,2,requisito de hardware y software,0.75,"{""requisito de hardware y software"": 3, ""requisito especificados de hardware y software"": 1}",0,True,False
+source,secreq,4,0,2,origen,0.75,"{""origen"": 3, ""fuente"": 1}",0,True,False
+standard,dosspre,4,1,2,norma,0.667,"{""norma"": 2, ""estándar"": 1}",0,True,False
+symmetric key,dosspre,4,0,2,clave simétrica,0.75,"{""clave simétrica"": 3, ""clave simétrico"": 1}",0,True,False
+transaction count,secreq,4,0,2,contador de transacción,0.75,"{""contador de transacción"": 3, ""contador y el importe más recientes de los lote de transacción"": 1}",0,True,False
+upgrade,dosspre,4,0,2,actualización,0.5,"{""actualización"": 2, ""mejora"": 2}",0,True,False
+use of password,dosspre,4,0,2,uso de contraseña,0.75,"{""uso de contraseña"": 3, ""uso de cuenta de usuario protegidas por contraseña"": 1}",0,True,False
+user account,dosspre,4,0,2,cuenta de usuario,0.5,"{""cuenta de usuario"": 2, ""cuenta de los usuario"": 2}",0,True,False
+user input,dosspre,4,0,3,entrada de usuario,0.5,"{""entrada de usuario"": 2, ""entrada"": 1, ""entrada del usuario"": 1}",0,True,False
+virtual machine,dosspre,4,0,2,máquina virtual,0.75,"{""máquina virtual"": 3, ""máquina virtuales"": 1}",0,True,False
+wrong attempt,dosspre,4,0,2,intento incorrectos,0.5,"{""intento incorrectos"": 2, ""intento erróneos"": 2}",0,True,False
+zimbabwe anti,dosspre,4,0,2,zimbabue,0.75,"{""zimbabue"": 3, ""contra la corrupción de zimbabue"": 1}",0,True,False
+OS,dosspre,3,0,2,os,0.667,"{""os"": 2, ""operativo"": 1}",0,True,False
+RSA key,secreq,3,0,2,clave privada rsa,0.667,"{""clave privada rsa"": 2, ""clave pública rsa"": 1}",0,True,False
+access right,dosspre,3,0,2,derecho de acceso,0.667,"{""derecho de acceso"": 2, ""derecho de usuario y de acceso"": 1}",0,True,False
+access to data,dosspre,3,0,2,acceso a los dato,0.667,"{""acceso a los dato"": 2, ""acceso no autorizado a los dato"": 1}",0,True,False
+accident,dosspre,3,0,2,accidente,0.667,"{""accidente"": 2, ""accidental"": 1}",0,True,False
+activation sequence,secreq,3,0,2,secuencia de activación,0.667,"{""secuencia de activación"": 2, ""secuencia de reinicio o activación"": 1}",0,True,False
+additional functionality,dosspre,3,0,2,funcionalidad adicional,0.667,"{""funcionalidad adicional"": 2, ""función adicionales"": 1}",0,True,False
+background process,dosspre,3,0,2,proceso de fondo,0.667,"{""proceso de fondo"": 2, ""proceso de base"": 1}",0,True,False
+batch total,secreq,3,0,3,total del lote,0.333,"{""total del lote"": 1, ""total y el importe actualizados del lote"": 1, ""total y el importe del lote"": 1}",0,True,False
+batch total count,secreq,3,0,2,contador total y el importe del lote,0.667,"{""contador total y el importe del lote"": 2, ""contador total y el importe actualizados del lote"": 1}",0,True,False
+capturing,dosspre,3,0,2,captura,0.667,"{""captura"": 2, ""capturar"": 1}",0,True,False
+card life cycle,secreq,3,0,2,ciclo de vida,0.667,"{""ciclo de vida"": 2, ""vida"": 1}",0,True,False
+card reset,secreq,3,0,3,reinicio de tarjeta,0.333,"{""reinicio de tarjeta"": 1, ""reinicio o activación de la tarjeta"": 1, ""reinicio de la tarjeta"": 1}",0,True,False
+certain keyword,dosspre,3,0,2,determinadas palabra clave,0.667,"{""determinadas palabra clave"": 2, ""determinadas palabra"": 1}",0,True,False
+clear secure data,dosspre,3,0,2,claros de intercambio de dato seguros,0.667,"{""claros de intercambio de dato seguros"": 2, ""claros y seguros de intercambio de dato"": 1}",0,True,False
+clear secure data exchange,dosspre,3,0,2,claros de intercambio de dato seguros,0.667,"{""claros de intercambio de dato seguros"": 2, ""claros y seguros de intercambio de dato"": 1}",0,True,False
+client KYC information,dosspre,3,0,3,información kyc del cliente,0.333,"{""información kyc del cliente"": 1, ""información del cliente kyc"": 1, ""información kyc de los cliente"": 1}",0,True,False
+clock,dosspre,3,1,2,hora,0.5,"{""hora"": 1, ""reloj"": 1}",0,True,False
+collection,dosspre,3,0,2,recogida,0.667,"{""recogida"": 2, ""collection"": 1}",1,True,True
+command dispatching,secreq,3,0,2,despacho de los comando,0.667,"{""despacho de los comando"": 2, ""despacho de comando"": 1}",0,True,False
+configuration server,secreq,3,0,2,servidor de configuración,0.667,"{""servidor de configuración"": 2, ""servidor de autoconfiguración"": 1}",0,True,False
+critical information,secreq,3,0,2,información crítica,0.667,"{""información crítica"": 2, ""información privada y crítica"": 1}",0,True,False
+cryptojacking activity,dosspre,3,0,2,actividad de criptojacking,0.667,"{""actividad de criptojacking"": 2, ""actividad de criptojaqueo"": 1}",0,True,False
+current card i,secreq,3,0,2,e s actual,0.667,"{""e s actual"": 2, ""e s actual de la tarjeta"": 1}",0,True,False
+customer environment,secreq,3,0,2,entorno del cliente,0.667,"{""entorno del cliente"": 2, ""entorno físicos del cliente"": 1}",0,True,False
+cycle information,secreq,3,0,3,información del ciclo,0.333,"{""información del ciclo"": 1, ""ciclo"": 1, ""información"": 1}",0,True,False
+dashboard,dosspre,3,0,2,panel,0.667,"{""panel"": 2, ""salpicadero"": 1}",0,True,False
+data exchange protocol,dosspre,3,0,2,protocolo claros de intercambio de dato,0.667,"{""protocolo claros de intercambio de dato"": 2, ""protocolo claros y seguros de intercambio de dato"": 1}",0,True,False
+different platform,dosspre,3,0,2,plataforma diferentes,0.667,"{""plataforma diferentes"": 2, ""diferentes plataforma"": 1}",0,True,False
+digest,dosspre,3,0,2,resumen,0.667,"{""resumen"": 2, ""compendio"": 1}",0,True,False
+digital watermark agency,dosspre,3,0,2,agencia digital de marca de agua,0.667,"{""agencia digital de marca de agua"": 2, ""agencia digital de marca"": 1}",0,True,False
+digital watermarking,dosspre,3,0,3,marca de agua digitales,0.333,"{""marca de agua digitales"": 1, ""digital de marca"": 1, ""digital de señalización"": 1}",0,True,False
+discrete,dosspre,3,0,2,discreto,0.667,"{""discreto"": 2, ""discretas"": 1}",0,True,False
+downstream direction,secreq,3,0,2,dirección descendente,0.667,"{""dirección descendente"": 2, ""dirección ascendente o descendente"": 1}",0,True,False
+downtime,dosspre,3,1,2,inactividad,0.5,"{""inactividad"": 1, ""tiempo"": 1}",0,True,False
+email client,dosspre,3,0,2,cliente de correo electrónico,0.667,"{""cliente de correo electrónico"": 2, ""cliente de correo"": 1}",0,True,False
+event,secreq,3,1,2,evento,0.5,"{""evento"": 1, ""cuando"": 1}",0,True,False
+exchange protocol,dosspre,3,0,2,protocolo claros de intercambio,0.667,"{""protocolo claros de intercambio"": 2, ""protocolo claros y seguros de intercambio"": 1}",0,True,False
+factor authentication,dosspre,3,0,3,autenticación de 2 factor,0.333,"{""autenticación de 2 factor"": 1, ""autenticación de múltiples factor"": 1, ""autenticación de dos factor"": 1}",0,True,False
+false positive rate,dosspre,3,0,2,tasa de falsos positivos,0.667,"{""tasa de falsos positivos"": 2, ""tasa positiva"": 1}",0,True,False
+fast response,dosspre,3,0,3,respuesta muy rápido,0.333,"{""respuesta muy rápido"": 1, ""respuesta rápido"": 1, ""respuesta rápida"": 1}",0,True,False
+fast response time,dosspre,3,0,3,tiempo de respuesta muy rápido,0.333,"{""tiempo de respuesta muy rápido"": 1, ""tiempo de respuesta rápido"": 1, ""respuesta rápida"": 1}",0,True,False
+fraudulent transaction,dosspre,3,0,2,transacción fraudulentas,0.667,"{""transacción fraudulentas"": 2, ""transacción fraudulentas y no fraudulentas"": 1}",0,True,False
+glitch,dosspre,3,0,2,falla,0.667,"{""falla"": 2, ""fallo"": 1}",0,True,False
+handling policy,secreq,3,0,2,política,0.667,"{""política"": 2, ""política local de gestión"": 1}",0,True,False
+high availability,dosspre,3,0,2,alta disponibilidad,0.667,"{""alta disponibilidad"": 2, ""gran disponibilidad"": 1}",0,True,False
+high throughput,dosspre,3,0,2,alto rendimiento,0.667,"{""alto rendimiento"": 2, ""alto"": 1}",0,True,False
+life cycle information,secreq,3,0,3,información del ciclo de vida,0.333,"{""información del ciclo de vida"": 1, ""ciclo de vida"": 1, ""información del ciclo de vida de las aplicaciones almacenar información del ciclo de vida"": 1}",0,True,False
+line transaction,secreq,3,0,3,transacción en línea,0.333,"{""transacción en línea"": 1, ""línea"": 1, ""transacción fuera de línea"": 1}",0,True,False
+logical channel support,secreq,3,0,2,canal lógicos,0.667,"{""canal lógicos"": 2, ""canal"": 1}",0,True,False
+logical channel(s,secreq,3,0,2,canal,0.667,"{""canal"": 2, ""canal lógicos"": 1}",0,True,False
+low false positive rate,dosspre,3,0,2,tasa de falsos positivos aceptables y bajas,0.667,"{""tasa de falsos positivos aceptables y bajas"": 2, ""tasa positiva falsa muy baja"": 1}",0,True,False
+malicious activity,dosspre,3,0,2,actividad maliciosas,0.667,"{""actividad maliciosas"": 2, ""actividad maliciosa"": 1}",0,True,False
+match,dosspre,3,0,2,coincidencia,0.667,"{""coincidencia"": 2, ""coincidan"": 1}",0,True,False
+md5 hash,dosspre,3,0,2,hash de md5,0.667,"{""hash de md5"": 2, ""hash md5"": 1}",3,True,True
+message digest,dosspre,3,0,2,resumen del mensaje,0.667,"{""resumen del mensaje"": 2, ""compendio de mensaje"": 1}",0,True,False
+mining,dosspre,3,0,2,extracción,0.667,"{""extracción"": 2, ""mineras"": 1}",0,True,False
+mode of operation,secreq,3,0,3,modo de funcionamiento,0.333,"{""modo de funcionamiento"": 1, ""opera en modo enrutado o puente permitiendo el direccionamiento directo de los cnd desde el lado ngn para los flujo del plano de dato del plano de control y del plano de"": 1, ""modo"": 1}",0,True,False
+normal web,dosspre,3,0,2,web normal,0.667,"{""web normal"": 2, ""normal en la web"": 1}",3,True,True
+normal web search,dosspre,3,0,2,búsqueda web normal,0.667,"{""búsqueda web normal"": 2, ""búsqueda normal en la web"": 1}",0,True,False
+o interface(,secreq,3,0,2,interfaz de e s,0.667,"{""interfaz de e s"": 2, ""interfaz"": 1}",0,True,False
+occurrence,dosspre,3,0,2,ocurrencia,0.667,"{""ocurrencia"": 2, ""aparición"": 1}",0,True,False
+owner,secreq,3,0,2,propietario,0.667,"{""propietario"": 2, ""titular"": 1}",0,True,False
+path,dosspre,3,0,2,camino,0.667,"{""camino"": 2, ""ruta"": 1}",0,True,False
+patient information,dosspre,3,0,3,información básica del paciente,0.333,"{""información básica del paciente"": 1, ""información crítica del paciente"": 1, ""información del paciente"": 1}",0,True,False
+pin,dosspre,3,0,2,alfiler,0.667,"{""alfiler"": 2, ""pasador"": 1}",0,True,False
+positive rate,dosspre,3,0,2,tasa de falsos positivos,0.667,"{""tasa de falsos positivos"": 2, ""tasa positiva"": 1}",0,True,False
+presence,secreq,3,1,2,existencia,0.5,"{""existencia"": 1, ""presencia"": 1}",0,True,False
+proxy,dosspre,3,0,2,proxy,0.667,"{""proxy"": 2, ""apoderado"": 1}",2,True,True
+public key,secreq,3,0,2,clave pública,0.667,"{""clave pública"": 2, ""clave públicas"": 1}",0,True,False
+receipt for load,secreq,3,0,3,comprobantes de carga,0.333,"{""comprobantes de carga"": 1, ""comprobante de carga"": 1, ""comprobant de carga"": 1}",0,True,False
+registration,secreq,3,0,2,registro,0.667,"{""registro"": 2, ""registrarse"": 1}",0,True,False
+relevant information,dosspre,3,0,2,información relevante,0.667,"{""información relevante"": 2, ""información pertinente"": 1}",0,True,False
+reporting,dosspre,3,0,2,informe,0.667,"{""informe"": 2, ""notificación"": 1}",0,True,False
+resolution process,secreq,3,0,2,proceso,0.667,"{""proceso"": 2, ""proceso de resolución"": 1}",0,True,False
+response message,secreq,3,0,2,mensaje de respuesta,0.667,"{""mensaje de respuesta"": 2, ""mensaje de comando y respuesta"": 1}",0,True,False
+secure data,dosspre,3,0,2,dato seguros,0.667,"{""dato seguros"": 2, ""seguros de intercambio de dato"": 1}",0,True,False
+secure data exchange,dosspre,3,0,2,intercambio de dato seguros,0.667,"{""intercambio de dato seguros"": 2, ""seguros de intercambio de dato"": 1}",0,True,False
+secure data exchange protocol,dosspre,3,0,2,protocolo claros de intercambio de dato seguros,0.667,"{""protocolo claros de intercambio de dato seguros"": 2, ""protocolo claros y seguros de intercambio de dato"": 1}",0,True,False
+selenium,dosspre,3,0,2,selenium,0.667,"{""selenium"": 2, ""selenio"": 1}",2,True,True
+service subscription,secreq,3,0,2,suscripción al servicio,0.667,"{""suscripción al servicio"": 2, ""suscripción o modificación de servicio"": 1}",0,True,False
+set of parameter,secreq,3,0,2,conjunto distintos de parámetro,0.667,"{""conjunto distintos de parámetro"": 2, ""conjunto específico de parámetro"": 1}",0,True,False
+speech command,dosspre,3,0,2,comando de voz,0.667,"{""comando de voz"": 2, ""órden de voz"": 1}",0,True,False
+standard,secreq,3,0,2,norma,0.667,"{""norma"": 2, ""standard"": 1}",1,True,True
+strength,dosspre,3,0,2,fuerza,0.667,"{""fuerza"": 2, ""resistencia"": 1}",0,True,False
+stress,dosspre,3,0,3,resistencia,0.333,"{""resistencia"": 1, ""estrés"": 1, ""esfuerzo"": 1}",0,True,False
+stress testing,dosspre,3,0,3,prueba de resistencia,0.333,"{""prueba de resistencia"": 1, ""prueba de estrés"": 1, ""prueba de esfuerzo"": 1}",0,True,False
+unmanaged service,secreq,3,0,2,servicio no gestionados,0.667,"{""servicio no gestionados"": 2, ""servicio no gestionado"": 1}",0,True,False
+user authentication,dosspre,3,0,2,autenticación del usuario,0.667,"{""autenticación del usuario"": 2, ""autenticación de usuario"": 1}",0,True,False
+user experience,dosspre,3,0,2,experiencia de usuario,0.667,"{""experiencia de usuario"": 2, ""experiencia del usuario"": 1}",0,True,False
+vehicle registration,dosspre,3,0,2,matrícula del vehículo,0.667,"{""matrícula del vehículo"": 2, ""registro del vehículo"": 1}",0,True,False
+vehicle registration number,dosspre,3,0,2,número de matrícula del vehículo,0.667,"{""número de matrícula del vehículo"": 2, ""número de registro del vehículo"": 1}",0,True,False
+watermark agency,dosspre,3,0,2,agencia digital de marca de agua,0.667,"{""agencia digital de marca de agua"": 2, ""agencia digital de marca"": 1}",0,True,False
+watermarked image,dosspre,3,0,3,imagen de marca de agua,0.333,"{""imagen de marca de agua"": 1, ""imagen marcadas por el agua"": 1, ""imagen marcada por el agua"": 1}",0,True,False
+watermarking,dosspre,3,0,2,marca,0.667,"{""marca"": 2, ""señalización"": 1}",0,True,False
+web material,dosspre,3,0,2,material web,0.667,"{""material web"": 2, ""material de la web"": 1}",0,True,False
+web search,dosspre,3,0,2,búsqueda web,0.667,"{""búsqueda web"": 2, ""búsqueda normal en la web"": 1}",0,True,False
+windows platform,dosspre,3,0,2,plataforma de ventana,0.667,"{""plataforma de ventana"": 2, ""plataforma"": 1}",0,True,False
+CA public key,secreq,2,0,2,clave públicas de la ca,0.5,"{""clave públicas de la ca"": 1, ""clave pública de la ca"": 1}",0,True,False
+CPU usage baseline,dosspre,2,0,2,cpu del ordenador y compararlo con la línea de base,0.5,"{""cpu del ordenador y compararlo con la línea de base"": 1, ""uso de la cpu y detectará los pico o desviación extremos de la línea de base"": 1}",0,True,False
+CPU utilization,dosspre,2,0,2,utilización de cpu,0.5,"{""utilización de cpu"": 1, ""utilización"": 1}",0,True,False
+CPU utilization percentage,dosspre,2,0,2,porcentaje medio de utilización de cpu,0.5,"{""porcentaje medio de utilización de cpu"": 1, ""porcentaje actual de utilización"": 1}",0,True,False
+ID,secreq,2,0,2,id,0.5,"{""id"": 1, ""identificador"": 1}",0,True,False
+LAN interface,secreq,2,0,2,interfaces lan,0.5,"{""interfaces lan"": 1, ""interfaz lan"": 1}",0,True,False
+NGN authentication,secreq,2,0,2,autenticación enrutamiento y conectividad de la ngn,0.5,"{""autenticación enrutamiento y conectividad de la ngn"": 1, ""autenticación de la ngn"": 1}",0,True,False
+PC register,dosspre,2,0,2,registro de pc,0.5,"{""registro de pc"": 1, ""registro de ordenador portátil y pc"": 1}",0,True,False
+SMS alert,dosspre,2,0,2,alerta sms,0.5,"{""alerta sms"": 1, ""alerta por sms"": 1}",0,True,False
+SMS alert message,dosspre,2,0,2,mensaje de alerta sms,0.5,"{""mensaje de alerta sms"": 1, ""mensaje de alerta por sms"": 1}",0,True,False
+TLS web,dosspre,2,0,2,tls,0.5,"{""tls"": 1, ""web de tcp http(s y tls"": 1}",1,True,True
+TLS web traffic,dosspre,2,0,2,tráfico tcp entrante y saliente http(s y tls,0.5,"{""tráfico tcp entrante y saliente http(s y tls"": 1, ""tráfico web de tcp http(s y tls"": 1}",0,True,False
+access control,secreq,2,0,2,control de acceso,0.5,"{""control de acceso"": 1, ""control seguro de acceso"": 1}",0,True,False
+access to admin,dosspre,2,0,2,acceso no autorizado a la consola de administración,0.5,"{""acceso no autorizado a la consola de administración"": 1, ""acceso a la consola de administración"": 1}",0,True,False
+admin panel,dosspre,2,0,2,panel,0.5,"{""panel"": 1, ""panel de administración"": 1}",0,True,False
+affiliated risk,dosspre,2,0,2,riesgo asociado,0.5,"{""riesgo asociado"": 1, ""riesgo afiliado"": 1}",0,True,False
+alert from PC,dosspre,2,0,2,alerta deseadas de los ordenador,0.5,"{""alerta deseadas de los ordenador"": 1, ""alerta deseadas de pcs"": 1}",0,True,False
+alphabetic currency code,secreq,2,0,2,código alfabético de divisa,0.5,"{""código alfabético de divisa"": 1, ""código"": 1}",0,True,False
+application access,secreq,2,0,2,acceso,0.5,"{""acceso"": 1, ""acceso de las aplicación"": 1}",0,True,False
+application access rule,secreq,2,0,2,regla de acceso,0.5,"{""regla de acceso"": 1, ""regla de acceso de las aplicación"": 1}",0,True,False
+application communication,secreq,2,0,2,comunicación entre aplicación,0.5,"{""comunicación entre aplicación"": 1, ""comunicación segura entre aplicación"": 1}",0,True,False
+application software,dosspre,2,0,2,programa informáticos de aplicación,0.5,"{""programa informáticos de aplicación"": 1, ""programa"": 1}",0,True,False
+attractive website,dosspre,2,0,2,web sencillo de usar y atractivo,0.5,"{""web sencillo de usar y atractivo"": 1, ""web sencillo y atractivo"": 1}",0,True,False
+authentication failure,secreq,2,0,2,fallo de autenticación,0.5,"{""fallo de autenticación"": 1, ""autenticación o autorización el cng deberá actuar de acuerdo con la política local de gestión de fallo"": 1}",0,True,False
+authorization for load,secreq,2,0,2,autorización de las transacción de carga,0.5,"{""autorización de las transacción de carga"": 1, ""autorización previa del emisor de la tarjeta para las operación de carga"": 1}",0,True,False
+authorization management handling policy,secreq,2,0,2,política para la gestión de autorización,0.5,"{""política para la gestión de autorización"": 1, ""política de gestión de autorización"": 1}",0,True,False
+bandwidth,secreq,2,0,2,banda,0.5,"{""banda"": 1, ""ancho"": 1}",0,True,False
+batch processing,dosspre,2,0,2,procesamiento por lote,0.5,"{""procesamiento por lote"": 1, ""procesar los lote"": 1}",0,True,False
+behavior requirement,secreq,2,0,2,requisito de comportamiento,0.5,"{""requisito de comportamiento"": 1, ""requisito"": 1}",0,True,False
+better user,dosspre,2,0,2,mejorar la experiencia del usuario,0.5,"{""mejorar la experiencia del usuario"": 1, ""mejor experiencia de usuario"": 1}",0,True,False
+better user experience,dosspre,2,0,2,mejorar la experiencia del usuario,0.5,"{""mejorar la experiencia del usuario"": 1, ""mejor experiencia de usuario"": 1}",0,True,False
+blockchain land,dosspre,2,0,2,territorial de blockchain,0.5,"{""territorial de blockchain"": 1, ""blockchain land"": 1}",1,True,True
+blockchain land registry,dosspre,2,0,2,registro territorial de blockchain,0.5,"{""registro territorial de blockchain"": 1, ""blockchain land registry"": 1}",1,True,True
+blower,dosspre,2,0,2,denunciante,0.5,"{""denunciante"": 1, ""denunciant"": 1}",0,True,False
+button set,dosspre,2,0,2,juego de botón,0.5,"{""juego de botón"": 1, ""conjunto de botón"": 1}",0,True,False
+card locking,secreq,2,0,2,bloqueo de la tarjeta,0.5,"{""bloqueo de la tarjeta"": 1, ""bloqueo y desbloqueo de aplicaciones bloqueo y desbloqueo de la tarjeta"": 1}",0,True,False
+case of emergency,dosspre,2,0,2,caso de emergencia,0.5,"{""caso de emergencia"": 1, ""caso de registro de emergencia"": 1}",0,True,False
+central error repository,secreq,2,0,2,repositorio central de error,0.5,"{""repositorio central de error"": 1, ""repositorio"": 1}",0,True,False
+child SMS,dosspre,2,0,2,sms a los niño,0.5,"{""sms a los niño"": 1, ""sms mms infantil"": 1}",0,True,False
+command dispatch,secreq,2,0,2,despacho de comando,0.5,"{""despacho de comando"": 1, ""despacho de comandos"": 1}",0,True,False
+confidentiality through encryption,dosspre,2,0,2,confidencialidad mediante el cifrado,0.5,"{""confidencialidad mediante el cifrado"": 1, ""confidencialidad mediante cifrado"": 1}",0,True,False
+connectivity,dosspre,2,0,2,conexión,0.5,"{""conexión"": 1, ""conectividad"": 1}",0,True,False
+cost estimate,dosspre,2,0,2,estimación de los coste,0.5,"{""estimación de los coste"": 1, ""estimación de coste"": 1}",0,True,False
+credential registration,dosspre,2,0,2,registro de credencial,0.5,"{""registro de credencial"": 1, ""registro de las credencial"": 1}",0,True,False
+currency exponent,secreq,2,0,2,exponente,0.5,"{""exponente"": 1, ""exponente de la divisa"": 1}",0,True,False
+data breach,dosspre,2,0,2,violación de dato,0.5,"{""violación de dato"": 1, ""violación de los dato"": 1}",0,True,False
+deliverable,dosspre,2,0,2,entregable,0.5,"{""entregable"": 1, ""entregables"": 1}",0,True,False
+detail transaction,secreq,2,0,2,transacción detallada,0.5,"{""transacción detallada"": 1, ""transacción detalladas"": 1}",0,True,False
+different CPN,secreq,2,0,2,distintas cpn,0.5,"{""distintas cpn"": 1, ""cpn diferentes"": 1}",0,True,False
+different OSPF,dosspre,2,0,2,diferentes área de ospf,0.5,"{""diferentes área de ospf"": 1, ""ospf diferente"": 1}",0,True,False
+different parameter,secreq,2,0,2,distintos conjunto de parámetro,0.5,"{""distintos conjunto de parámetro"": 1, ""distintos parámetro"": 1}",0,True,False
+digital signature,dosspre,2,0,2,firma digitales,0.5,"{""firma digitales"": 1, ""firma digital"": 1}",0,True,False
+dispute resolution process,secreq,2,0,2,proceso de resolución de disputa,0.5,"{""proceso de resolución de disputa"": 1, ""proceso"": 1}",0,True,False
+domain provider,secreq,2,0,2,proveedores de dominios,0.5,"{""proveedores de dominios"": 1, ""proveedor de dominio"": 1}",0,True,False
+easy maintainability,dosspre,2,0,2,facilidad de mantenimiento,0.5,"{""facilidad de mantenimiento"": 1, ""facilitar su mantenimiento"": 1}",0,True,False
+efficiency in mind,dosspre,2,0,2,en cuenta la eficiencia,0.5,"{""en cuenta la eficiencia"": 1, ""eficiencia"": 1}",0,True,False
+electronic purse,secreq,2,0,2,monedero electrónicos,0.5,"{""monedero electrónicos"": 1, ""monedero electrónico"": 1}",0,True,False
+error handling,dosspre,2,0,2,manejo de error,0.5,"{""manejo de error"": 1, ""manipulación de error"": 1}",0,True,False
+error repository,secreq,2,0,2,repositorio central de error,0.5,"{""repositorio central de error"": 1, ""repositorio"": 1}",0,True,False
+exception processing,secreq,2,0,2,procesamiento,0.5,"{""procesamiento"": 1, ""procesamiento de excepción"": 1}",0,True,False
+expired card,secreq,2,0,2,tarjeta vencidas,0.5,"{""tarjeta vencidas"": 1, ""tarjeta vencida"": 1}",0,True,False
+expletive,dosspre,2,0,2,expletivo,0.5,"{""expletivo"": 1, ""expleción"": 1}",0,True,False
+extraction stage,dosspre,2,0,2,fase de obtención de imagen y extracción,0.5,"{""fase de obtención de imagen y extracción"": 1, ""fase de imagen y extracción"": 1}",0,True,False
+faceprint,dosspre,2,0,2,facial,0.5,"{""facial"": 1, ""faciales"": 1}",0,True,False
+feedback,dosspre,2,0,2,retroalimentación,0.5,"{""retroalimentación"": 1, ""comentario"": 1}",0,True,False
+file type filtering,dosspre,2,0,2,filtro de tipo de archivo,0.5,"{""filtro de tipo de archivo"": 1, ""filtrar el tipo de archivo"": 1}",0,True,False
+filtering,dosspre,2,0,2,filtro,0.5,"{""filtro"": 1, ""filtrar"": 1}",0,True,False
+forensic image,dosspre,2,0,2,imagen forense,0.5,"{""imagen forense"": 1, ""imagen forenses"": 1}",0,True,False
+form of cardholder,secreq,2,0,2,forma de verificación del titular de la tarjeta,0.5,"{""forma de verificación del titular de la tarjeta"": 1, ""forma de autenticación del titular de la tarjeta"": 1}",0,True,False
+friendliness,dosspre,2,0,2,facilitar,0.5,"{""facilitar"": 1, ""facilidad"": 1}",0,True,False
+fund issuer,secreq,2,0,2,emisor de los fondo,0.5,"{""emisor de los fondo"": 1, ""emisor de fondo"": 1}",0,True,False
+generation,secreq,2,0,2,generación,0.5,"{""generación"": 1, ""generar"": 1}",0,True,False
+healthcare,dosspre,2,0,2,salud,0.5,"{""salud"": 1, ""sanitaria"": 1}",0,True,False
+huge amount,dosspre,2,0,2,enormes cantidad,0.5,"{""enormes cantidad"": 1, ""gran cantidad"": 1}",0,True,False
+imago,dosspre,2,0,2,imagen,0.5,"{""imagen"": 1, ""imaginación"": 1}",0,True,False
+impact,dosspre,2,0,2,efecto,0.5,"{""efecto"": 1, ""impacto"": 1}",0,True,False
+implementation,secreq,2,0,2,implementación,0.5,"{""implementación"": 1, ""implementar"": 1}",0,True,False
+implicit selection parameter,secreq,2,0,2,parámetro específico de selección implícita,0.5,"{""parámetro específico de selección implícita"": 1, ""parámetro de selección implícita"": 1}",0,True,False
+improvement,dosspre,2,0,2,mejorarse,0.5,"{""mejorarse"": 1, ""mejora"": 1}",0,True,False
+incoming message,secreq,2,0,2,mensaje entrantes,0.5,"{""mensaje entrantes"": 1, ""mensaje entrante"": 1}",0,True,False
+initiation,dosspre,2,0,2,inicio,0.5,"{""inicio"": 1, ""iniciar"": 1}",0,True,False
+interface for ease,dosspre,2,0,2,interfaz de usuario amigable para facilitar,0.5,"{""interfaz de usuario amigable para facilitar"": 1, ""interfaz de usuario amigable para fin de fácil"": 1}",0,True,False
+internet connectivity,dosspre,2,0,2,conexión a internet,0.5,"{""conexión a internet"": 1, ""conectividad a internet"": 1}",0,True,False
+issuer security domain key,secreq,2,0,2,clave del dominio de seguridad del emisor,0.5,"{""clave del dominio de seguridad del emisor"": 1, ""dominio de seguridad del emisor"": 1}",0,True,False
+key signature,secreq,2,0,2,firma de la clave,0.5,"{""firma de la clave"": 1, ""firma de clave"": 1}",0,True,False
+land registry,dosspre,2,0,2,registro territorial,0.5,"{""registro territorial"": 1, ""land registry"": 1}",1,True,True
+line PIN encryption,secreq,2,0,2,cifrado de pin en línea,0.5,"{""cifrado de pin en línea"": 1, ""cifrado de pin fuera de línea"": 1}",0,True,False
+line authentication,secreq,2,0,2,autenticación en línea,0.5,"{""autenticación en línea"": 1, ""autenticación fuera de línea"": 1}",0,True,False
+local authentication,secreq,2,0,2,autenticación o autorización el cng deberá actuar de acuerdo con la política local,0.5,"{""autenticación o autorización el cng deberá actuar de acuerdo con la política local"": 1, ""autenticación local"": 1}",0,True,False
+logic,dosspre,2,0,2,lógico,0.5,"{""lógico"": 1, ""lógica"": 1}",0,True,False
+login credential,dosspre,2,0,2,credencial de inicio de sesión,0.5,"{""credencial de inicio de sesión"": 1, ""credencial de acceso"": 1}",0,True,False
+low false positive,dosspre,2,0,2,positiva falsa muy baja,0.5,"{""positiva falsa muy baja"": 1, ""falsos positivos muy bajos"": 1}",0,True,False
+macing key signature,secreq,2,0,2,firma de la clave mac,0.5,"{""firma de la clave mac"": 1, ""firma de clave mac"": 1}",0,True,False
+malware activity,dosspre,2,0,2,actividad conocida de malware,0.5,"{""actividad conocida de malware"": 1, ""actividad de malware"": 1}",0,True,False
+malware detection,dosspre,2,0,2,detectar malware,0.5,"{""detectar malware"": 1, ""detección de malware"": 1}",0,True,False
+management handling policy,secreq,2,0,2,política para la gestión,0.5,"{""política para la gestión"": 1, ""política de gestión"": 1}",0,True,False
+management plane,secreq,2,0,2,gestión,0.5,"{""gestión"": 1, ""plano de gestión"": 1}",0,True,False
+medium stream,secreq,2,0,2,flujo de voz y medio,0.5,"{""flujo de voz y medio"": 1, ""flujo multimedia"": 1}",0,True,False
+modification,secreq,2,0,2,modifique,0.5,"{""modifique"": 1, ""modificación"": 1}",0,True,False
+multiple application,secreq,2,0,2,múltiples aplicación,0.5,"{""múltiples aplicación"": 1, ""varias aplicaciones"": 1}",0,True,False
+multiple client,secreq,2,0,2,cliente,0.5,"{""cliente"": 1, ""varios cliente"": 1}",0,True,False
+multiple currency,secreq,2,0,2,varias divisa,0.5,"{""varias divisa"": 1, ""múltiples divisa"": 1}",0,True,False
+multiple logical channel,secreq,2,0,2,canal lógicos,0.5,"{""canal lógicos"": 1, ""múltiples canal lógicos"": 1}",0,True,False
+multithreading,dosspre,2,0,2,multihilo,0.5,"{""multihilo"": 1, ""multi-hilo"": 1}",0,True,False
+national i.d number,dosspre,2,0,2,número nacional,0.5,"{""número nacional"": 1, ""nacional"": 1}",0,True,False
+new logical channel,secreq,2,0,2,nuevo canal,0.5,"{""nuevo canal"": 1, ""nuevo canal lógico"": 1}",0,True,False
+notification of child,dosspre,2,0,2,notificación de llamada telefónica del dispositivo infantil,0.5,"{""notificación de llamada telefónica del dispositivo infantil"": 1, ""notificación de llamada telefónicas del dispositivo infantil"": 1}",0,True,False
+own security domain,secreq,2,0,2,propios dominios de seguridad,0.5,"{""propios dominios de seguridad"": 1, ""propio dominio de seguridad"": 1}",0,True,False
+parent device,dosspre,2,0,2,dispositivo padre,0.5,"{""dispositivo padre"": 1, ""dispositivo original"": 1}",0,True,False
+particular task,dosspre,2,0,2,tarea en particular,0.5,"{""tarea en particular"": 1, ""tarea determinada"": 1}",0,True,False
+phone call notification,dosspre,2,0,2,notificación de llamada telefónica,0.5,"{""notificación de llamada telefónica"": 1, ""notificación de llamada telefónicas"": 1}",0,True,False
+progress,dosspre,2,0,2,evolución,0.5,"{""evolución"": 1, ""progreso"": 1}",0,True,False
+qos control,secreq,2,0,2,control remoto de qos,0.5,"{""control remoto de qos"": 1, ""control de qos"": 1}",2,True,True
+quality attribute,dosspre,2,0,2,atributo estáticos de calidad,0.5,"{""atributo estáticos de calidad"": 1, ""calidad del software atribuye"": 1}",0,True,False
+random check,dosspre,2,0,2,control aleatorios,0.5,"{""control aleatorios"": 1, ""comprobar al azar"": 1}",0,True,False
+recent network connection,dosspre,2,0,2,conexión netstat y de red recientes,0.5,"{""conexión netstat y de red recientes"": 1, ""conexión de red recientes"": 1}",0,True,False
+removal,secreq,2,0,2,retirar,0.5,"{""retirar"": 1, ""eliminación"": 1}",0,True,False
+resource use,dosspre,2,0,2,uso limitado de los recurso,0.5,"{""uso limitado de los recurso"": 1, ""uso de recurso"": 1}",0,True,False
+risk of error,dosspre,2,0,2,riesgo asociado de error,0.5,"{""riesgo asociado de error"": 1, ""riesgo afiliado de error"": 1}",0,True,False
+robustness,dosspre,2,0,2,robustez,0.5,"{""robustez"": 1, ""solidez"": 1}",0,True,False
+runtime behavior requirement,secreq,2,0,2,requisito de comportamiento en tiempo de ejecución,0.5,"{""requisito de comportamiento en tiempo de ejecución"": 1, ""requisito"": 1}",0,True,False
+scanning tool,dosspre,2,0,2,herramienta de escaneo,0.5,"{""herramienta de escaneo"": 1, ""herramienta de escaneado"": 1}",0,True,False
+security domain provider,secreq,2,0,2,proveedores de dominios de seguridad,0.5,"{""proveedores de dominios de seguridad"": 1, ""proveedor de dominio de seguridad"": 1}",0,True,False
+selection parameter,secreq,2,0,2,parámetro específico de selección,0.5,"{""parámetro específico de selección"": 1, ""parámetro de selección"": 1}",0,True,False
+sequence of expletive,dosspre,2,0,2,secuencia continua de expletivo,0.5,"{""secuencia continua de expletivo"": 1, ""secuencia continua de expleción"": 1}",0,True,False
+short data transmission,dosspre,2,0,2,breve transmisión de dato,0.5,"{""breve transmisión de dato"": 1, ""breve tiempo de transmisión de dato"": 1}",0,True,False
+small learning curve,dosspre,2,0,2,curva de aprendizaje muy pequeña,0.5,"{""curva de aprendizaje muy pequeña"": 1, ""pequeña curva de aprendizaje"": 1}",0,True,False
+software application,dosspre,2,0,2,aplicación de software,0.5,"{""aplicación de software"": 1, ""aplicación"": 1}",0,True,False
+software platform,dosspre,2,0,2,plataforma de software,0.5,"{""plataforma de software"": 1, ""plataforma"": 1}",0,True,False
+software system,dosspre,2,0,2,sistema de software,0.5,"{""sistema de software"": 1, ""sistema informático"": 1}",0,True,False
+software tempering,dosspre,2,0,2,atenuación del software,0.5,"{""atenuación del software"": 1, ""templado antisoftware"": 1}",0,True,False
+specific card,secreq,2,0,2,específica,0.5,"{""específica"": 1, ""determinadas interfaz de e s de la tarjeta"": 1}",0,True,False
+specific card i,secreq,2,0,2,específica,0.5,"{""específica"": 1, ""determinadas interfaz de e s de la tarjeta"": 1}",0,True,False
+specific device,secreq,2,0,2,dispositivo específico,0.5,"{""dispositivo específico"": 1, ""dispositivo"": 1}",0,True,False
+state,dosspre,2,0,2,estado,0.5,"{""estado"": 1, ""situación"": 1}",0,True,False
+storm,dosspre,2,0,2,storm,0.5,"{""storm"": 1, ""tormenta"": 1}",1,True,True
+student laptop,dosspre,2,0,2,estudiante el ordenador portátil,0.5,"{""estudiante el ordenador portátil"": 1, ""estudiante el registro de ordenador portátil"": 1}",0,True,False
+student personal detail,dosspre,2,0,2,dato personales correspondientes de los estudiante y estudiante,0.5,"{""dato personales correspondientes de los estudiante y estudiante"": 1, ""dato personales correspondientes de estudiante y estudiante"": 1}",0,True,False
+symmetric macing key signature,secreq,2,0,2,firma de la clave mac simétrica,0.5,"{""firma de la clave mac simétrica"": 1, ""firma de clave mac simétrica"": 1}",0,True,False
+tempering,dosspre,2,0,2,atenuación,0.5,"{""atenuación"": 1, ""templado"": 1}",0,True,False
+time anomaly,dosspre,2,0,2,tiempo real detección de anomalía,0.5,"{""tiempo real detección de anomalía"": 1, ""anomalía casi en tiempo"": 1}",0,True,False
+time anomaly detection,dosspre,2,0,2,tiempo real detección de anomalía,0.5,"{""tiempo real detección de anomalía"": 1, ""detección de anomalía casi en tiempo"": 1}",0,True,False
+transaction ID,dosspre,2,0,2,identificador de transacción,0.5,"{""identificador de transacción"": 1, ""id de transacción"": 1}",0,True,False
+tweet corpus,dosspre,2,0,2,corpus,0.5,"{""corpus"": 1, ""corpus de tuit"": 1}",0,True,False
+twitter API,dosspre,2,0,2,twitter api,0.5,"{""twitter api"": 1, ""api de twitter"": 1}",2,True,True
+type filtering,dosspre,2,0,2,filtro de tipo,0.5,"{""filtro de tipo"": 1, ""filtrar el tipo"": 1}",0,True,False
+unauthorized user,dosspre,2,0,2,usuario no autorizados,0.5,"{""usuario no autorizados"": 1, ""usuario no"": 1}",0,True,False
+unintended usage,dosspre,2,0,2,uso accidentales o no deseados,0.5,"{""uso accidentales o no deseados"": 1, ""uso no autorizado accidental o no"": 1}",0,True,False
+unique username,dosspre,2,0,2,único,0.5,"{""único"": 1, ""usuario y contraseña únicos"": 1}",0,True,False
+university PC,dosspre,2,0,2,pc universitario,0.5,"{""pc universitario"": 1, ""pc universitaria"": 1}",0,True,False
+university PC register,dosspre,2,0,2,registro de pc universitario,0.5,"{""registro de pc universitario"": 1, ""registro de ordenador portátil y pc universitaria"": 1}",0,True,False
+unknown malware,dosspre,2,0,2,malware conocidas y desconocidas,0.5,"{""malware conocidas y desconocidas"": 1, ""desconocido"": 1}",0,True,False
+unlinked load,secreq,2,0,2,carga no vinculadas,0.5,"{""carga no vinculadas"": 1, ""carga vinculadas como no vinculadas"": 1}",0,True,False
+usage baseline,dosspre,2,0,2,base,0.5,"{""base"": 1, ""uso de la cpu y detectará los pico o desviación extremos de la línea de base"": 1}",0,True,False
+user credential,dosspre,2,0,2,credencial de usuario,0.5,"{""credencial de usuario"": 1, ""credencial del usuario"": 1}",0,True,False
+user credential registration,dosspre,2,0,2,registro de credencial de usuario,0.5,"{""registro de credencial de usuario"": 1, ""registro de las credencial del usuario"": 1}",0,True,False
+user data,dosspre,2,0,2,dato del usuario,0.5,"{""dato del usuario"": 1, ""dato de los usuario"": 1}",0,True,False
+user identity,secreq,2,0,2,identidad de usuario,0.5,"{""identidad de usuario"": 1, ""identidad del usuario"": 1}",0,True,False
+user information,dosspre,2,0,2,información sensible de los usuario,0.5,"{""información sensible de los usuario"": 1, ""información del usuario"": 1}",0,True,False
+user interaction,dosspre,2,0,2,interacción con el usuario,0.5,"{""interacción con el usuario"": 1, ""interacción del usuario"": 1}",0,True,False
+user profile,dosspre,2,0,2,perfil de los usuario,0.5,"{""perfil de los usuario"": 1, ""perfil de usuario"": 1}",0,True,False
+user re,dosspre,2,0,2,usuario,0.5,"{""usuario"": 1, ""nueva verificación del usuario"": 1}",0,True,False
+utilization percentage,dosspre,2,0,2,porcentaje medio de utilización,0.5,"{""porcentaje medio de utilización"": 1, ""porcentaje actual de utilización"": 1}",0,True,False
+web traffic,dosspre,2,0,2,tráfico,0.5,"{""tráfico"": 1, ""tráfico web"": 1}",0,True,False
+work handling,dosspre,2,0,2,gestión del trabajo,0.5,"{""gestión del trabajo"": 1, ""manipulación del trabajo"": 1}",0,True,False
+system,dosspre,1387,4,1,sistema,1.0,"{""sistema"": 1383}",0,False,False
+card,secreq,305,50,1,tarjeta,1.0,"{""tarjeta"": 255}",0,False,False
+CNG,secreq,126,9,1,cng,1.0,"{""cng"": 117}",117,False,True
+issuer,secreq,104,7,1,emisor,1.0,"{""emisor"": 97}",0,False,False
+channel,secreq,103,5,1,canal,1.0,"{""canal"": 98}",0,False,False
+transaction,secreq,101,1,1,transacción,1.0,"{""transacción"": 100}",0,False,False
+information,dosspre,90,1,1,información,1.0,"{""información"": 89}",0,False,False
+security,secreq,86,3,1,seguridad,1.0,"{""seguridad"": 83}",0,False,False
+service,secreq,78,0,1,servicio,1.0,"{""servicio"": 78}",0,False,False
+interface,dosspre,74,0,1,interfaz,1.0,"{""interfaz"": 74}",0,False,False
+OPEN,secreq,63,0,1,open,1.0,"{""open"": 63}",63,False,True
+device,secreq,62,0,1,dispositivo,1.0,"{""dispositivo"": 62}",0,False,False
+application,dosspre,58,1,1,aplicación,1.0,"{""aplicación"": 57}",0,False,False
+server,dosspre,52,1,1,servidor,1.0,"{""servidor"": 51}",0,False,False
+CEP,secreq,51,0,1,cep,1.0,"{""cep"": 51}",51,False,True
+CND,secreq,50,0,1,cnd,1.0,"{""cnd"": 50}",50,False,True
+database,dosspre,49,0,1,base,1.0,"{""base"": 49}",0,False,False
+globalplatform,secreq,47,0,1,globalplatform,1.0,"{""globalplatform"": 47}",47,False,True
+platform,dosspre,46,0,1,plataforma,1.0,"{""plataforma"": 46}",0,False,False
+network,dosspre,45,0,1,red,1.0,"{""red"": 45}",0,False,False
+CPN,secreq,44,0,1,cpn,1.0,"{""cpn"": 44}",44,False,True
+password,dosspre,44,0,1,contraseña,1.0,"{""contraseña"": 44}",0,False,False
+currency,secreq,43,7,1,divisa,1.0,"{""divisa"": 36}",0,False,False
+key,secreq,41,3,1,clave,1.0,"{""clave"": 38}",0,False,False
+report,dosspre,38,1,1,informe,1.0,"{""informe"": 37}",0,False,False
+user,secreq,37,1,1,usuario,1.0,"{""usuario"": 36}",0,False,False
+entity,secreq,35,1,1,entidad,1.0,"{""entidad"": 34}",0,False,False
+image,dosspre,35,0,1,imagen,1.0,"{""imagen"": 35}",0,False,False
+administrator,dosspre,34,0,1,administrador,1.0,"{""administrador"": 34}",0,False,False
+device,dosspre,34,1,1,dispositivo,1.0,"{""dispositivo"": 33}",0,False,False
+merchant,secreq,34,1,1,comercio,1.0,"{""comercio"": 33}",0,False,False
+network,secreq,34,1,1,red,1.0,"{""red"": 33}",0,False,False
+basic,secreq,33,0,1,básico,1.0,"{""básico"": 33}",0,False,False
+NGN,secreq,32,0,1,ngn,1.0,"{""ngn"": 32}",32,False,True
+service,dosspre,32,0,1,servicio,1.0,"{""servicio"": 32}",0,False,False
+PSAM,secreq,31,1,1,psam,1.0,"{""psam"": 30}",30,False,True
+authentication,secreq,29,0,1,autenticación,1.0,"{""autenticación"": 29}",0,False,False
+environment,secreq,29,4,1,entorno,1.0,"{""entorno"": 25}",0,False,False
+mechanism,secreq,29,0,1,mecanismo,1.0,"{""mecanismo"": 29}",0,False,False
+message,dosspre,29,0,1,mensaje,1.0,"{""mensaje"": 29}",0,False,False
+module,dosspre,29,0,1,módulo,1.0,"{""módulo"": 29}",0,False,False
+security,dosspre,29,0,1,seguridad,1.0,"{""seguridad"": 29}",0,False,False
+account,dosspre,28,0,1,cuenta,1.0,"{""cuenta"": 28}",0,False,False
+life,secreq,28,1,1,vida,1.0,"{""vida"": 27}",0,False,False
+state,secreq,28,0,1,estado,1.0,"{""estado"": 28}",0,False,False
+POS,secreq,27,0,1,pos,1.0,"{""pos"": 27}",27,False,True
+information,secreq,27,1,1,información,1.0,"{""información"": 26}",0,False,False
+selection,secreq,27,0,1,selección,1.0,"{""selección"": 27}",0,False,False
+session,secreq,27,0,1,sesión,1.0,"{""sesión"": 27}",0,False,False
+content,secreq,26,6,1,contenido,1.0,"{""contenido"": 20}",0,False,False
+encryption,dosspre,26,0,1,cifrado,1.0,"{""cifrado"": 26}",0,False,False
+environment,dosspre,26,0,1,entorno,1.0,"{""entorno"": 26}",0,False,False
+name,secreq,26,2,1,nombre,1.0,"{""nombre"": 24}",0,False,False
+activity,dosspre,25,0,1,actividad,1.0,"{""actividad"": 25}",0,False,False
+cycle,secreq,25,2,1,ciclo,1.0,"{""ciclo"": 23}",0,False,False
+occurrence,secreq,25,0,1,ocurrencia,1.0,"{""ocurrencia"": 25}",0,False,False
+parameter,secreq,24,1,1,parámetro,1.0,"{""parámetro"": 23}",0,False,False
+purchase,secreq,24,0,1,compra,1.0,"{""compra"": 24}",0,False,False
+traffic,dosspre,24,0,1,tráfico,1.0,"{""tráfico"": 24}",0,False,False
+MAC,secreq,23,0,1,mac,1.0,"{""mac"": 23}",23,False,True
+error,secreq,23,1,1,error,1.0,"{""error"": 22}",19,False,True
+globalplatform registry,secreq,23,0,1,registro globalplatform,1.0,"{""registro globalplatform"": 23}",0,False,False
+identity,secreq,23,0,1,identidad,1.0,"{""identidad"": 23}",0,False,False
+registry,secreq,23,0,1,registro,1.0,"{""registro"": 23}",0,False,False
+POS device,secreq,22,0,1,dispositivo pos,1.0,"{""dispositivo pos"": 22}",0,False,False
+SELECT,secreq,22,3,1,select,1.0,"{""select"": 19}",19,False,True
+line,secreq,22,2,1,línea,1.0,"{""línea"": 20}",0,False,False
+message,secreq,22,0,1,mensaje,1.0,"{""mensaje"": 22}",0,False,False
+process,dosspre,22,0,1,proceso,1.0,"{""proceso"": 22}",0,False,False
+resource,dosspre,22,0,1,recurso,1.0,"{""recurso"": 22}",0,False,False
+spam,dosspre,22,0,1,spam,1.0,"{""spam"": 22}",22,False,True
+customer,secreq,21,0,1,cliente,1.0,"{""cliente"": 21}",0,False,False
+error,dosspre,21,0,1,error,1.0,"{""error"": 21}",6,False,True
+student,dosspre,21,0,1,estudiante,1.0,"{""estudiante"": 21}",0,False,False
+match,secreq,20,3,1,coincidencia,1.0,"{""coincidencia"": 17}",0,False,False
+record,dosspre,20,1,1,registro,1.0,"{""registro"": 19}",0,False,False
+case,dosspre,19,1,1,caso,1.0,"{""caso"": 18}",0,False,False
+result,dosspre,19,0,1,resultado,1.0,"{""resultado"": 19}",0,False,False
+transaction,dosspre,19,0,1,transacción,1.0,"{""transacción"": 19}",0,False,False
+AID,secreq,18,0,1,aid,1.0,"{""aid"": 18}",18,False,True
+case,secreq,18,2,1,caso,1.0,"{""caso"": 16}",0,False,False
+connection,dosspre,18,0,1,conexión,1.0,"{""conexión"": 18}",0,False,False
+level,dosspre,18,0,1,nivel,1.0,"{""nivel"": 18}",0,False,False
+response,dosspre,18,0,1,respuesta,1.0,"{""respuesta"": 18}",0,False,False
+runtime,secreq,18,3,1,ejecución,1.0,"{""ejecución"": 15}",0,False,False
+request,secreq,17,0,1,solicitud,1.0,"{""solicitud"": 17}",0,False,False
+signature,dosspre,17,0,1,firma,1.0,"{""firma"": 17}",0,False,False
+terminal,secreq,17,0,1,terminal,1.0,"{""terminal"": 17}",15,False,True
+appropriate error,secreq,16,0,1,error correspondiente,1.0,"{""error correspondiente"": 16}",0,False,False
+format,dosspre,16,0,1,formato,1.0,"{""formato"": 16}",0,False,False
+hardware,dosspre,16,0,1,hardware,1.0,"{""hardware"": 16}",16,False,True
+patient,dosspre,16,1,1,paciente,1.0,"{""paciente"": 15}",0,False,False
+attack,dosspre,15,0,1,ataque,1.0,"{""ataque"": 15}",0,False,False
+availability,dosspre,15,0,1,disponibilidad,1.0,"{""disponibilidad"": 15}",0,False,False
+function,secreq,15,0,1,función,1.0,"{""función"": 15}",0,False,False
+integrity,secreq,15,0,1,integridad,1.0,"{""integridad"": 15}",0,False,False
+signature,secreq,15,0,1,firma,1.0,"{""firma"": 15}",0,False,False
+alert,dosspre,14,1,1,alerta,1.0,"{""alerta"": 13}",0,False,False
+analysis,dosspre,14,0,1,análisis,1.0,"{""análisis"": 14}",0,False,False
+batch,secreq,14,0,1,lote,1.0,"{""lote"": 14}",0,False,False
+integrity,dosspre,14,0,1,integridad,1.0,"{""integridad"": 14}",0,False,False
+malware,dosspre,14,1,1,malware,1.0,"{""malware"": 13}",13,False,True
+slot,secreq,14,0,1,ranura,1.0,"{""ranura"": 14}",0,False,False
+storage,dosspre,14,1,1,almacenamiento,1.0,"{""almacenamiento"": 13}",0,False,False
+system,secreq,14,1,1,sistema,1.0,"{""sistema"": 13}",0,False,False
+type,dosspre,14,1,1,tipo,1.0,"{""tipo"": 13}",0,False,False
+vulnerability,dosspre,14,0,1,vulnerabilidad,1.0,"{""vulnerabilidad"": 14}",0,False,False
+PIN,secreq,13,1,1,pin,1.0,"{""pin"": 12}",12,False,True
+SMS,dosspre,13,0,1,sms,1.0,"{""sms"": 13}",13,False,True
+button,dosspre,13,0,1,botón,1.0,"{""botón"": 13}",0,False,False
+code,dosspre,13,0,1,código,1.0,"{""código"": 13}",0,False,False
+control,secreq,13,0,1,control,1.0,"{""control"": 13}",13,False,True
+group,dosspre,13,0,1,grupo,1.0,"{""grupo"": 13}",0,False,False
+internet,dosspre,13,0,1,internet,1.0,"{""internet"": 13}",13,False,True
+only occurrence,secreq,13,0,1,única ocurrencia,1.0,"{""única ocurrencia"": 13}",0,False,False
+privilege,secreq,13,1,1,privilegio,1.0,"{""privilegio"": 12}",0,False,False
+process,secreq,13,0,1,proceso,1.0,"{""proceso"": 13}",0,False,False
+protocol,dosspre,13,0,1,protocolo,1.0,"{""protocolo"": 13}",0,False,False
+scheme,secreq,13,0,1,esquema,1.0,"{""esquema"": 13}",0,False,False
+screen,dosspre,13,0,1,pantalla,1.0,"{""pantalla"": 13}",0,False,False
+video,dosspre,13,0,1,vídeo,1.0,"{""vídeo"": 13}",0,False,False
+address,dosspre,12,0,1,dirección,1.0,"{""dirección"": 12}",0,False,False
+anomaly,dosspre,12,0,1,anomalía,1.0,"{""anomalía"": 12}",0,False,False
+authorization,secreq,12,0,1,autorización,1.0,"{""autorización"": 12}",0,False,False
+code,secreq,12,0,1,código,1.0,"{""código"": 12}",0,False,False
+flow,secreq,12,0,1,flujo,1.0,"{""flujo"": 12}",0,False,False
+load device,secreq,12,0,1,dispositivo de carga,1.0,"{""dispositivo de carga"": 12}",0,False,False
+next occurrence,secreq,12,0,1,siguiente ocurrencia,1.0,"{""siguiente ocurrencia"": 12}",0,False,False
+node,dosspre,12,0,1,nodo,1.0,"{""nodo"": 12}",0,False,False
+packet,secreq,12,1,1,paquete,1.0,"{""paquete"": 11}",0,False,False
+real time,dosspre,12,0,1,tiempo real,1.0,"{""tiempo real"": 12}",0,False,False
+rule,secreq,12,0,1,regla,1.0,"{""regla"": 12}",0,False,False
+twitter,dosspre,12,0,1,twitter,1.0,"{""twitter"": 12}",12,False,True
+value,secreq,12,0,1,valor,1.0,"{""valor"": 12}",0,False,False
+agent,dosspre,11,0,1,agente,1.0,"{""agente"": 11}",0,False,False
+authority,secreq,11,0,1,autoridad,1.0,"{""autoridad"": 11}",0,False,False
+capability,dosspre,11,0,1,capacidad,1.0,"{""capacidad"": 11}",0,False,False
+card content,secreq,11,1,1,contenido de la tarjeta,1.0,"{""contenido de la tarjeta"": 10}",0,False,False
+content,dosspre,11,0,1,contenido,1.0,"{""contenido"": 11}",0,False,False
+customer network,secreq,11,0,1,red del cliente,1.0,"{""red del cliente"": 11}",0,False,False
+entry,secreq,11,0,1,entrada,1.0,"{""entrada"": 11}",0,False,False
+rate,dosspre,11,0,1,tasa,1.0,"{""tasa"": 11}",0,False,False
+restriction,secreq,11,0,1,restricción,1.0,"{""restricción"": 11}",0,False,False
+task,dosspre,11,0,1,tarea,1.0,"{""tarea"": 11}",0,False,False
+transmission,dosspre,11,0,1,transmisión,1.0,"{""transmisión"": 11}",0,False,False
+usage,dosspre,11,1,1,uso,1.0,"{""uso"": 10}",0,False,False
+AES,dosspre,10,0,1,aes,1.0,"{""aes"": 10}",10,False,True
+balance,secreq,10,0,1,saldo,1.0,"{""saldo"": 10}",0,False,False
+cloud,dosspre,10,0,1,nube,1.0,"{""nube"": 10}",0,False,False
+component,dosspre,10,0,1,componente,1.0,"{""componente"": 10}",0,False,False
+condition,dosspre,10,0,1,condición,1.0,"{""condición"": 10}",0,False,False
+globalplatform card,secreq,10,0,1,tarjeta globalplatform,1.0,"{""tarjeta globalplatform"": 10}",0,False,False
+memory,secreq,10,0,1,memoria,1.0,"{""memoria"": 10}",0,False,False
+period,dosspre,10,0,1,período,1.0,"{""período"": 10}",0,False,False
+processing,secreq,10,0,1,procesamiento,1.0,"{""procesamiento"": 10}",0,False,False
+profile,dosspre,10,0,1,perfil,1.0,"{""perfil"": 10}",0,False,False
+program,dosspre,10,0,1,programa,1.0,"{""programa"": 10}",0,False,False
+response,secreq,10,0,1,respuesta,1.0,"{""respuesta"": 10}",0,False,False
+scheme provider,secreq,10,0,1,proveedor del esquema,1.0,"{""proveedor del esquema"": 10}",0,False,False
+web environment,dosspre,10,0,1,entorno web,1.0,"{""entorno web"": 10}",0,False,False
+CHANNEL,secreq,9,0,1,channel,1.0,"{""channel"": 9}",9,False,True
+CPU,dosspre,9,2,1,cpu,1.0,"{""cpu"": 7}",7,False,True
+MANAGE,secreq,9,0,1,manage,1.0,"{""manage"": 9}",9,False,True
+MANAGE CHANNEL,secreq,9,0,1,manage channel,1.0,"{""manage channel"": 9}",9,False,True
+classification,dosspre,9,0,1,clasificación,1.0,"{""clasificación"": 9}",0,False,False
+control,dosspre,9,0,1,control,1.0,"{""control"": 9}",6,False,True
+design,dosspre,9,0,1,diseño,1.0,"{""diseño"": 9}",0,False,False
+document,dosspre,9,0,1,documento,1.0,"{""documento"": 9}",0,False,False
+documentation,dosspre,9,1,1,documentación,1.0,"{""documentación"": 8}",0,False,False
+experience,dosspre,9,0,1,experiencia,1.0,"{""experiencia"": 9}",0,False,False
+folder,dosspre,9,0,1,carpeta,1.0,"{""carpeta"": 9}",0,False,False
+laptop,dosspre,9,0,1,portátil,1.0,"{""portátil"": 9}",0,False,False
+maintenance,dosspre,9,0,1,mantenimiento,1.0,"{""mantenimiento"": 9}",0,False,False
+page,dosspre,9,0,1,página,1.0,"{""página"": 9}",0,False,False
+pattern,dosspre,9,0,1,patrón,1.0,"{""patrón"": 9}",0,False,False
+payment,secreq,9,1,1,pago,1.0,"{""pago"": 8}",0,False,False
+port,dosspre,9,0,1,puerto,1.0,"{""puerto"": 9}",0,False,False
+protocol,secreq,9,0,1,protocolo,1.0,"{""protocolo"": 9}",0,False,False
+source,dosspre,9,0,1,fuente,1.0,"{""fuente"": 9}",0,False,False
+web application,dosspre,9,0,1,aplicación web,1.0,"{""aplicación web"": 9}",0,False,False
+SSL,dosspre,8,0,1,ssl,1.0,"{""ssl"": 8}",8,False,True
+STB,secreq,8,0,1,stb,1.0,"{""stb"": 8}",8,False,True
+baby,dosspre,8,0,1,bebé,1.0,"{""bebé"": 8}",0,False,False
+block,secreq,8,0,1,bloque,1.0,"{""bloque"": 8}",0,False,False
+capability,secreq,8,0,1,capacidad,1.0,"{""capacidad"": 8}",0,False,False
+classifier,dosspre,8,0,1,clasificador,1.0,"{""clasificador"": 8}",0,False,False
+client,secreq,8,0,1,cliente,1.0,"{""cliente"": 8}",0,False,False
+count,secreq,8,1,1,contador,1.0,"{""contador"": 7}",0,False,False
+date,dosspre,8,0,1,fecha,1.0,"{""fecha"": 8}",0,False,False
+extraction,dosspre,8,0,1,extracción,1.0,"{""extracción"": 8}",0,False,False
+fund,secreq,8,0,1,fondo,1.0,"{""fondo"": 8}",0,False,False
+graphical user,dosspre,8,0,1,gráfica de usuario,1.0,"{""gráfica de usuario"": 8}",0,False,False
+graphical user interface,dosspre,8,0,1,interfaz gráfica de usuario,1.0,"{""interfaz gráfica de usuario"": 8}",0,False,False
+hash,dosspre,8,1,1,hash,1.0,"{""hash"": 7}",5,False,True
+individual,dosspre,8,0,1,persona,1.0,"{""persona"": 8}",0,False,False
+learning,dosspre,8,0,1,aprendizaje,1.0,"{""aprendizaje"": 8}",0,False,False
+method,secreq,8,0,1,método,1.0,"{""método"": 8}",0,False,False
+mother,dosspre,8,0,1,madre,1.0,"{""madre"": 8}",0,False,False
+name,dosspre,8,0,1,nombre,1.0,"{""nombre"": 8}",0,False,False
+qos,secreq,8,0,1,qos,1.0,"{""qos"": 8}",8,False,True
+rogue,dosspre,8,0,1,rogue,1.0,"{""rogue"": 8}",8,False,True
+rogue node,dosspre,8,0,1,nodo rogue,1.0,"{""nodo rogue"": 8}",0,False,False
+selection restriction,secreq,8,0,1,restricción de selección,1.0,"{""restricción de selección"": 8}",0,False,False
+speed,dosspre,8,0,1,velocidad,1.0,"{""velocidad"": 8}",0,False,False
+tolerance,dosspre,8,0,1,tolerancia,1.0,"{""tolerancia"": 8}",0,False,False
+vehicle,dosspre,8,0,1,vehículo,1.0,"{""vehículo"": 8}",0,False,False
+KYC,dosspre,7,0,1,kyc,1.0,"{""kyc"": 7}",7,False,True
+PIN verification,secreq,7,0,1,verificación de pin,1.0,"{""verificación de pin"": 7}",0,False,False
+S1,secreq,7,0,1,s1,1.0,"{""s1"": 7}",0,False,False
+audit,dosspre,7,0,1,auditoría,1.0,"{""auditoría"": 7}",0,False,False
+behaviour,dosspre,7,0,1,comportamiento,1.0,"{""comportamiento"": 7}",0,False,False
+bluetooth,dosspre,7,0,1,bluetooth,1.0,"{""bluetooth"": 7}",7,False,True
+communication,dosspre,7,0,1,comunicación,1.0,"{""comunicación"": 7}",0,False,False
+confidentiality,dosspre,7,0,1,confidencialidad,1.0,"{""confidencialidad"": 7}",0,False,False
+cost,dosspre,7,1,1,coste,1.0,"{""coste"": 6}",0,False,False
+current card interface,secreq,7,0,1,interfaz actual de la tarjeta,1.0,"{""interfaz actual de la tarjeta"": 7}",0,False,False
+doctor,dosspre,7,0,1,médico,1.0,"{""médico"": 7}",0,False,False
+employee,dosspre,7,0,1,empleado,1.0,"{""empleado"": 7}",0,False,False
+encryption key,dosspre,7,0,1,clave de cifrado,1.0,"{""clave de cifrado"": 7}",0,False,False
+guidance,dosspre,7,0,1,orientación,1.0,"{""orientación"": 7}",0,False,False
+last purchase,secreq,7,0,1,última compra,1.0,"{""última compra"": 7}",0,False,False
+layer,secreq,7,0,1,capa,1.0,"{""capa"": 7}",0,False,False
+level,secreq,7,0,1,nivel,1.0,"{""nivel"": 7}",0,False,False
+licence,dosspre,7,0,1,licencia,1.0,"{""licencia"": 7}",0,False,False
+manual,dosspre,7,0,1,manual,1.0,"{""manual"": 7}",7,False,True
+mechanism,dosspre,7,0,1,mecanismo,1.0,"{""mecanismo"": 7}",0,False,False
+mobile device,dosspre,7,0,1,dispositivo móvil,1.0,"{""dispositivo móvil"": 7}",0,False,False
+motion,dosspre,7,0,1,movimiento,1.0,"{""movimiento"": 7}",0,False,False
+packet,dosspre,7,0,1,paquete,1.0,"{""paquete"": 7}",0,False,False
+practice,dosspre,7,0,1,práctica,1.0,"{""práctica"": 7}",0,False,False
+principle,dosspre,7,0,1,principio,1.0,"{""principio"": 7}",0,False,False
+priority,secreq,7,0,1,prioridad,1.0,"{""prioridad"": 7}",0,False,False
+processor,secreq,7,0,1,procesador,1.0,"{""procesador"": 7}",0,False,False
+recovery,dosspre,7,0,1,recuperación,1.0,"{""recuperación"": 7}",0,False,False
+reliability,dosspre,7,0,1,fiabilidad,1.0,"{""fiabilidad"": 7}",0,False,False
+search,dosspre,7,0,1,búsqueda,1.0,"{""búsqueda"": 7}",0,False,False
+subscription,secreq,7,0,1,suscripción,1.0,"{""suscripción"": 7}",0,False,False
+update,dosspre,7,0,1,actualización,1.0,"{""actualización"": 7}",0,False,False
+usage,secreq,7,1,1,uso,1.0,"{""uso"": 6}",0,False,False
+validation,dosspre,7,0,1,validación,1.0,"{""validación"": 7}",0,False,False
+API,dosspre,6,0,1,api,1.0,"{""api"": 6}",6,False,True
+IMS,secreq,6,1,1,ims,1.0,"{""ims"": 5}",5,False,True
+IPTV,secreq,6,0,1,iptv,1.0,"{""iptv"": 6}",6,False,True
+NGN service,secreq,6,0,1,servicio ngn,1.0,"{""servicio ngn"": 6}",0,False,False
+PDP,dosspre,6,0,1,pdp,1.0,"{""pdp"": 6}",6,False,True
+S2,secreq,6,0,1,s2,1.0,"{""s2"": 6}",0,False,False
+SQL,dosspre,6,0,1,sql,1.0,"{""sql"": 6}",6,False,True
+UICC,secreq,6,0,1,uicc,1.0,"{""uicc"": 6}",6,False,True
+android,dosspre,6,0,1,android,1.0,"{""android"": 6}",6,False,True
+application privilege,secreq,6,0,1,privilegio de aplicación,1.0,"{""privilegio de aplicación"": 6}",0,False,False
+blood,dosspre,6,0,1,sangre,1.0,"{""sangre"": 6}",0,False,False
+card,dosspre,6,0,1,tarjeta,1.0,"{""tarjeta"": 6}",0,False,False
+classification,secreq,6,1,1,clasificación,1.0,"{""clasificación"": 5}",0,False,False
+communication service,secreq,6,0,1,servicio de comunicación,1.0,"{""servicio de comunicación"": 6}",0,False,False
+connection,secreq,6,0,1,conexión,1.0,"{""conexión"": 6}",0,False,False
+controlling,secreq,6,0,1,control,1.0,"{""control"": 6}",0,False,False
+controlling authority,secreq,6,0,1,autoridad de control,1.0,"{""autoridad de control"": 6}",0,False,False
+copy,dosspre,6,0,1,copia,1.0,"{""copia"": 6}",0,False,False
+cryptography,secreq,6,0,1,criptografía,1.0,"{""criptografía"": 6}",0,False,False
+efficiency,dosspre,6,0,1,eficiencia,1.0,"{""eficiencia"": 6}",0,False,False
+emergency,dosspre,6,0,1,emergencia,1.0,"{""emergencia"": 6}",0,False,False
+explicit selection,secreq,6,0,1,selección explícita,1.0,"{""selección explícita"": 6}",0,False,False
+factor,dosspre,6,0,1,factor,1.0,"{""factor"": 6}",0,False,False
+final application,secreq,6,0,1,aplicación final,1.0,"{""aplicación final"": 6}",0,False,False
+final application privilege,secreq,6,0,1,privilegio de aplicación final,1.0,"{""privilegio de aplicación final"": 6}",0,False,False
+framework,secreq,6,0,1,marco,1.0,"{""marco"": 6}",0,False,False
+high rate,dosspre,6,0,1,alta tasa,1.0,"{""alta tasa"": 6}",0,False,False
+identification,secreq,6,0,1,identificación,1.0,"{""identificación"": 6}",0,False,False
+implicit selection,secreq,6,0,1,selección implícita,1.0,"{""selección implícita"": 6}",0,False,False
+linux,dosspre,6,0,1,linux,1.0,"{""linux"": 6}",6,False,True
+member,dosspre,6,0,1,miembro,1.0,"{""miembro"": 6}",0,False,False
+new supplementary,secreq,6,0,1,nuevo canal lógico suplementario,1.0,"{""nuevo canal lógico suplementario"": 6}",0,False,False
+new supplementary logical,secreq,6,0,1,nuevo canal lógico suplementario,1.0,"{""nuevo canal lógico suplementario"": 6}",0,False,False
+new supplementary logical channel,secreq,6,0,1,nuevo canal lógico suplementario,1.0,"{""nuevo canal lógico suplementario"": 6}",0,False,False
+option,dosspre,6,0,1,opción,1.0,"{""opción"": 6}",0,False,False
+plane,secreq,6,1,1,plano,1.0,"{""plano"": 5}",0,False,False
+protection,secreq,6,0,1,protección,1.0,"{""protección"": 6}",0,False,False
+remote management,secreq,6,0,1,gestión remota,1.0,"{""gestión remota"": 6}",0,False,False
+section,secreq,6,0,1,sección,1.0,"{""sección"": 6}",0,False,False
+security policy,secreq,6,0,1,política de seguridad,1.0,"{""política de seguridad"": 6}",0,False,False
+selectable application,secreq,6,0,1,aplicación seleccionable,1.0,"{""aplicación seleccionable"": 6}",0,False,False
+sequence,secreq,6,0,1,secuencia,1.0,"{""secuencia"": 6}",0,False,False
+service provider,secreq,6,0,1,proveedor de servicio,1.0,"{""proveedor de servicio"": 6}",0,False,False
+size,dosspre,6,0,1,tamaño,1.0,"{""tamaño"": 6}",0,False,False
+specification,secreq,6,0,1,especificación,1.0,"{""especificación"": 6}",0,False,False
+system user,dosspre,6,0,1,usuario del sistema,1.0,"{""usuario del sistema"": 6}",0,False,False
+threat,dosspre,6,0,1,amenaza,1.0,"{""amenaza"": 6}",0,False,False
+traffic,secreq,6,1,1,tráfico,1.0,"{""tráfico"": 5}",0,False,False
+trusted,secreq,6,0,1,confianza,1.0,"{""confianza"": 6}",0,False,False
+trusted framework,secreq,6,0,1,marco de confianza,1.0,"{""marco de confianza"": 6}",0,False,False
+tweet,dosspre,6,1,1,tuit,1.0,"{""tuit"": 5}",0,False,False
+version,dosspre,6,0,1,versión,1.0,"{""versión"": 6}",0,False,False
+workload,dosspre,6,1,1,trabajo,1.0,"{""trabajo"": 5}",0,False,False
+IEC,secreq,5,0,1,iec,1.0,"{""iec"": 5}",5,False,True
+IP,secreq,5,0,1,ip,1.0,"{""ip"": 5}",0,False,False
+ISO,secreq,5,0,1,iso,1.0,"{""iso"": 5}",5,False,True
+LAN,secreq,5,0,1,lan,1.0,"{""lan"": 5}",5,False,True
+POS transaction,secreq,5,0,1,transacción pos,1.0,"{""transacción pos"": 5}",0,False,False
+RFID,dosspre,5,0,1,rfid,1.0,"{""rfid"": 5}",5,False,True
+TS,secreq,5,0,1,ts,1.0,"{""ts"": 5}",0,False,False
+UGC,secreq,5,0,1,ugc,1.0,"{""ugc"": 5}",5,False,True
+WAN,secreq,5,0,1,wan,1.0,"{""wan"": 5}",5,False,True
+application session,secreq,5,0,1,sesión de aplicación,1.0,"{""sesión de aplicación"": 5}",0,False,False
+architecture,dosspre,5,0,1,arquitectura,1.0,"{""arquitectura"": 5}",0,False,False
+association,secreq,5,0,1,asociación,1.0,"{""asociación"": 5}",0,False,False
+attacker,dosspre,5,0,1,atacante,1.0,"{""atacante"": 5}",0,False,False
+attempt,dosspre,5,0,1,intento,1.0,"{""intento"": 5}",0,False,False
+audio file,dosspre,5,0,1,archivo de audio,1.0,"{""archivo de audio"": 5}",0,False,False
+author,dosspre,5,0,1,autor,1.0,"{""autor"": 5}",0,False,False
+authorised user,dosspre,5,0,1,usuario autorizados,1.0,"{""usuario autorizados"": 5}",0,False,False
+blockchain,dosspre,5,0,1,blockchain,1.0,"{""blockchain"": 5}",5,False,True
+central server,dosspre,5,0,1,servidor central,1.0,"{""servidor central"": 5}",0,False,False
+certificate,secreq,5,0,1,certificado,1.0,"{""certificado"": 5}",0,False,False
+coding,dosspre,5,0,1,codificación,1.0,"{""codificación"": 5}",0,False,False
+connectivity,secreq,5,1,1,conectividad,1.0,"{""conectividad"": 4}",0,False,False
+curve,dosspre,5,0,1,curva,1.0,"{""curva"": 5}",0,False,False
+data transmission,dosspre,5,0,1,transmisión de dato,1.0,"{""transmisión de dato"": 5}",0,False,False
+dataset,dosspre,5,1,1,dato,1.0,"{""dato"": 4}",0,False,False
+decryption,dosspre,5,2,1,descifrado,1.0,"{""descifrado"": 3}",0,False,False
+direction,secreq,5,0,1,dirección,1.0,"{""dirección"": 5}",0,False,False
+dispute,secreq,5,1,1,disputa,1.0,"{""disputa"": 4}",0,False,False
+extradition,secreq,5,0,1,extradición,1.0,"{""extradición"": 5}",0,False,False
+false negative,dosspre,5,0,1,falsos negativos,1.0,"{""falsos negativos"": 5}",0,False,False
+flow,dosspre,5,0,1,flujo,1.0,"{""flujo"": 5}",0,False,False
+harmful website,dosspre,5,0,1,sitio web nocivos,1.0,"{""sitio web nocivos"": 5}",0,False,False
+host,secreq,5,0,1,host,1.0,"{""host"": 5}",5,False,True
+interaction,dosspre,5,0,1,interacción,1.0,"{""interacción"": 5}",0,False,False
+internet connection,dosspre,5,0,1,conexión a internet,1.0,"{""conexión a internet"": 5}",0,False,False
+link,dosspre,5,0,1,enlace,1.0,"{""enlace"": 5}",0,False,False
+mail,dosspre,5,0,1,correo,1.0,"{""correo"": 5}",0,False,False
+manipulation,dosspre,5,0,1,manipulación,1.0,"{""manipulación"": 5}",0,False,False
+maturity,dosspre,5,0,1,madurez,1.0,"{""madurez"": 5}",0,False,False
+mode,secreq,5,0,1,modo,1.0,"{""modo"": 5}",0,False,False
+movement,dosspre,5,0,1,movimiento,1.0,"{""movimiento"": 5}",0,False,False
+negative,dosspre,5,0,1,negativos,1.0,"{""negativos"": 5}",0,False,False
+network configuration,secreq,5,0,1,configuración de red,1.0,"{""configuración de red"": 5}",0,False,False
+op_ready state,secreq,5,0,1,estado op_ready,1.0,"{""estado op_ready"": 5}",0,False,False
+order,secreq,5,4,1,fin,1.0,"{""fin"": 1}",0,False,False
+output,dosspre,5,0,1,salida,1.0,"{""salida"": 5}",0,False,False
+practitioner,dosspre,5,4,1,profesional,1.0,"{""profesional"": 1}",0,False,False
+privacy,dosspre,5,0,1,privacidad,1.0,"{""privacidad"": 5}",0,False,False
+provider,dosspre,5,0,1,proveedor,1.0,"{""proveedor"": 5}",0,False,False
+purpose,secreq,5,0,1,fin,1.0,"{""fin"": 5}",0,False,False
+retrieval,dosspre,5,0,1,recuperación,1.0,"{""recuperación"": 5}",0,False,False
+reversal,secreq,5,0,1,reversión,1.0,"{""reversión"": 5}",0,False,False
+section,dosspre,5,0,1,sección,1.0,"{""sección"": 5}",0,False,False
+secure memory,secreq,5,0,1,segura de la memoria,1.0,"{""segura de la memoria"": 5}",0,False,False
+secure memory management,secreq,5,0,1,gestión segura de la memoria,1.0,"{""gestión segura de la memoria"": 5}",0,False,False
+session key,secreq,5,0,1,clave de sesión,1.0,"{""clave de sesión"": 5}",0,False,False
+speech,dosspre,5,0,1,voz,1.0,"{""voz"": 5}",0,False,False
+tag,dosspre,5,0,1,etiqueta,1.0,"{""etiqueta"": 5}",0,False,False
+technology,dosspre,5,0,1,tecnología,1.0,"{""tecnología"": 5}",0,False,False
+throughput,dosspre,5,3,1,rendimiento,1.0,"{""rendimiento"": 2}",0,False,False
+tool,dosspre,5,0,1,herramienta,1.0,"{""herramienta"": 5}",0,False,False
+type of application,dosspre,5,0,1,tipo de aplicación,1.0,"{""tipo de aplicación"": 5}",0,False,False
+updating,dosspre,5,1,1,actualización,1.0,"{""actualización"": 4}",0,False,False
+warning,dosspre,5,1,1,advertencia,1.0,"{""advertencia"": 4}",0,False,False
+AES algorithm,dosspre,4,0,1,algoritmo aes,1.0,"{""algoritmo aes"": 4}",0,False,False
+API,secreq,4,0,1,api,1.0,"{""api"": 4}",4,False,True
+CEP application,secreq,4,0,1,aplicación cep,1.0,"{""aplicación cep"": 4}",0,False,False
+CHANNEL command,secreq,4,0,1,comando manage channel,1.0,"{""comando manage channel"": 4}",0,False,False
+CPN user,secreq,4,0,1,usuario de la cpn,1.0,"{""usuario de la cpn"": 4}",0,False,False
+H2H,secreq,4,0,1,h2h,1.0,"{""h2h"": 4}",4,False,True
+IP,dosspre,4,0,1,ip,1.0,"{""ip"": 4}",0,False,False
+IP address,dosspre,4,0,1,dirección ip,1.0,"{""dirección ip"": 4}",0,False,False
+MANAGE CHANNEL command,secreq,4,0,1,comando manage channel,1.0,"{""comando manage channel"": 4}",0,False,False
+RSA,secreq,4,0,1,rsa,1.0,"{""rsa"": 4}",4,False,True
+S4,secreq,4,0,1,s4,1.0,"{""s4"": 4}",0,False,False
+S4 MAC,secreq,4,0,1,mac s4,1.0,"{""mac s4"": 4}",4,False,True
+URL,dosspre,4,0,1,url,1.0,"{""url"": 4}",4,False,True
+WAN interface,secreq,4,0,1,interfaz wan,1.0,"{""interfaz wan"": 4}",0,False,False
+account,secreq,4,0,1,cuenta,1.0,"{""cuenta"": 4}",0,False,False
+accountability,dosspre,4,0,1,cuenta,1.0,"{""cuenta"": 4}",0,False,False
+administration,dosspre,4,0,1,administración,1.0,"{""administración"": 4}",0,False,False
+administrator,secreq,4,0,1,administrador,1.0,"{""administrador"": 4}",0,False,False
+aggregation,secreq,4,1,1,agregación,1.0,"{""agregación"": 3}",0,False,False
+agreement,secreq,4,0,1,acuerdo,1.0,"{""acuerdo"": 4}",0,False,False
+alert message,dosspre,4,0,1,mensaje de alerta,1.0,"{""mensaje de alerta"": 4}",0,False,False
+algorithm,secreq,4,0,1,algoritmo,1.0,"{""algoritmo"": 4}",0,False,False
+anti,dosspre,4,3,1,contra,1.0,"{""contra"": 1}",0,False,False
+app,dosspre,4,0,1,aplicación,1.0,"{""aplicación"": 4}",0,False,False
+authenticity,secreq,4,0,1,autenticidad,1.0,"{""autenticidad"": 4}",0,False,False
+block,dosspre,4,0,1,bloque,1.0,"{""bloque"": 4}",0,False,False
+bottleneck,dosspre,4,0,1,cuello,1.0,"{""cuello"": 4}",0,False,False
+browser,dosspre,4,0,1,navegador,1.0,"{""navegador"": 4}",0,False,False
+bus,dosspre,4,0,1,autobús,1.0,"{""autobús"": 4}",0,False,False
+camera,dosspre,4,0,1,cámara,1.0,"{""cámara"": 4}",0,False,False
+capacity,dosspre,4,0,1,capacidad,1.0,"{""capacidad"": 4}",0,False,False
+channel,dosspre,4,0,1,canal,1.0,"{""canal"": 4}",0,False,False
+commission,dosspre,4,0,1,comisión,1.0,"{""comisión"": 4}",0,False,False
+concept,secreq,4,1,1,concepto,1.0,"{""concepto"": 3}",0,False,False
+configuration,dosspre,4,0,1,configuración,1.0,"{""configuración"": 4}",0,False,False
+correct life,secreq,4,0,1,vida correcto,1.0,"{""vida correcto"": 4}",0,False,False
+correct life cycle,secreq,4,0,1,ciclo de vida correcto,1.0,"{""ciclo de vida correcto"": 4}",0,False,False
+correct life cycle state,secreq,4,0,1,estado de ciclo de vida correcto,1.0,"{""estado de ciclo de vida correcto"": 4}",0,False,False
+credential,secreq,4,0,1,credencial,1.0,"{""credencial"": 4}",0,False,False
+customer,dosspre,4,0,1,cliente,1.0,"{""cliente"": 4}",0,False,False
+desktop,dosspre,4,0,1,escritorio,1.0,"{""escritorio"": 4}",0,False,False
+detection,secreq,4,1,1,detecte,1.0,"{""detecte"": 3}",0,False,False
+difficulty,dosspre,4,0,1,dificultad,1.0,"{""dificultad"": 4}",0,False,False
+digit,dosspre,4,0,1,dígito,1.0,"{""dígito"": 4}",0,False,False
+downloader,dosspre,4,0,1,descargador,1.0,"{""descargador"": 4}",0,False,False
+electronic value,secreq,4,0,1,valor electrónico,1.0,"{""valor electrónico"": 4}",0,False,False
+element,dosspre,4,0,1,elemento,1.0,"{""elemento"": 4}",0,False,False
+engineer,dosspre,4,0,1,ingeniero,1.0,"{""ingeniero"": 4}",0,False,False
+entertainment,secreq,4,0,1,entretenimiento,1.0,"{""entretenimiento"": 4}",0,False,False
+entry,dosspre,4,0,1,entrada,1.0,"{""entrada"": 4}",0,False,False
+estimate,dosspre,4,0,1,estimación,1.0,"{""estimación"": 4}",0,False,False
+ethereum,dosspre,4,0,1,ethereum,1.0,"{""ethereum"": 4}",4,False,True
+execution,dosspre,4,0,1,ejecución,1.0,"{""ejecución"": 4}",0,False,False
+function,dosspre,4,0,1,función,1.0,"{""función"": 4}",0,False,False
+global,secreq,4,0,1,globales,1.0,"{""globales"": 4}",0,False,False
+global services,secreq,4,0,1,servicios globales,1.0,"{""servicios globales"": 4}",0,False,False
+global services application,secreq,4,0,1,aplicación de servicios globales,1.0,"{""aplicación de servicios globales"": 4}",0,False,False
+globalplatform environment,secreq,4,0,1,globalplatform,1.0,"{""globalplatform"": 4}",0,False,False
+goal,dosspre,4,0,1,objetivo,1.0,"{""objetivo"": 4}",0,False,False
+growth,dosspre,4,0,1,crecimiento,1.0,"{""crecimiento"": 4}",0,False,False
+handling,secreq,4,2,1,gestión,1.0,"{""gestión"": 2}",0,False,False
+identity,dosspre,4,0,1,identidad,1.0,"{""identidad"": 4}",0,False,False
+imaging,dosspre,4,0,1,imagen,1.0,"{""imagen"": 4}",0,False,False
+install,dosspre,4,0,1,instalación,1.0,"{""instalación"": 4}",0,False,False
+install,secreq,4,0,1,instalación,1.0,"{""instalación"": 4}",0,False,False
+install ability,dosspre,4,0,1,capacidad de instalación,1.0,"{""capacidad de instalación"": 4}",0,False,False
+instruction,dosspre,4,0,1,instrucción,1.0,"{""instrucción"": 4}",0,False,False
+invisible digital watermark,dosspre,4,0,1,agua digital invisible,1.0,"{""agua digital invisible"": 4}",0,False,False
+item,dosspre,4,1,1,elemento,1.0,"{""elemento"": 3}",0,False,False
+knowledge,dosspre,4,0,1,conocimiento,1.0,"{""conocimiento"": 4}",0,False,False
+later date,dosspre,4,0,1,fecha posterior,1.0,"{""fecha posterior"": 4}",0,False,False
+learning curve,dosspre,4,0,1,curva de aprendizaje,1.0,"{""curva de aprendizaje"": 4}",0,False,False
+licence owner,dosspre,4,0,1,titular de la licencia,1.0,"{""titular de la licencia"": 4}",0,False,False
+line,dosspre,4,0,1,línea,1.0,"{""línea"": 4}",0,False,False
+list,dosspre,4,0,1,lista,1.0,"{""lista"": 4}",0,False,False
+list,secreq,4,1,1,lista,1.0,"{""lista"": 3}",0,False,False
+load,dosspre,4,0,1,carga,1.0,"{""carga"": 4}",0,False,False
+load transaction,secreq,4,0,1,transacción de carga,1.0,"{""transacción de carga"": 4}",0,False,False
+location,secreq,4,0,1,ubicación,1.0,"{""ubicación"": 4}",0,False,False
+locking,secreq,4,1,1,bloqueo,1.0,"{""bloqueo"": 3}",0,False,False
+login page,dosspre,4,0,1,página de inicio de sesión,1.0,"{""página de inicio de sesión"": 4}",0,False,False
+management system,secreq,4,0,1,sistema de gestión,1.0,"{""sistema de gestión"": 4}",0,False,False
+memory,dosspre,4,0,1,memoria,1.0,"{""memoria"": 4}",0,False,False
+method,dosspre,4,0,1,método,1.0,"{""método"": 4}",0,False,False
+mobile,dosspre,4,0,1,móvil,1.0,"{""móvil"": 4}",0,False,False
+panel,dosspre,4,0,1,panel,1.0,"{""panel"": 4}",4,False,True
+permission,dosspre,4,0,1,permiso,1.0,"{""permiso"": 4}",0,False,False
+personnel,dosspre,4,0,1,personal,1.0,"{""personal"": 4}",0,False,False
+presentation,dosspre,4,0,1,presentación,1.0,"{""presentación"": 4}",0,False,False
+probability,dosspre,4,0,1,probabilidad,1.0,"{""probabilidad"": 4}",0,False,False
+procedure,dosspre,4,0,1,procedimiento,1.0,"{""procedimiento"": 4}",0,False,False
+programming,dosspre,4,0,1,programación,1.0,"{""programación"": 4}",0,False,False
+purchase,dosspre,4,0,1,compra,1.0,"{""compra"": 4}",0,False,False
+purse,secreq,4,0,1,monedero,1.0,"{""monedero"": 4}",0,False,False
+query,dosspre,4,0,1,consulta,1.0,"{""consulta"": 4}",0,False,False
+queue,secreq,4,0,1,cola,1.0,"{""cola"": 4}",0,False,False
+recognition,dosspre,4,0,1,reconocimiento,1.0,"{""reconocimiento"": 4}",0,False,False
+record,secreq,4,1,1,registro,1.0,"{""registro"": 3}",0,False,False
+remote management system,secreq,4,0,1,sistema de gestión remota,1.0,"{""sistema de gestión remota"": 4}",0,False,False
+remote server,dosspre,4,0,1,servidor remoto,1.0,"{""servidor remoto"": 4}",0,False,False
+reset,secreq,4,1,1,reinicio,1.0,"{""reinicio"": 3}",0,False,False
+resolution,secreq,4,2,1,resolución,1.0,"{""resolución"": 2}",0,False,False
+responsibility,secreq,4,0,1,responsabilidad,1.0,"{""responsabilidad"": 4}",0,False,False
+route,dosspre,4,0,1,ruta,1.0,"{""ruta"": 4}",0,False,False
+scalability,dosspre,4,0,1,escalabilidad,1.0,"{""escalabilidad"": 4}",0,False,False
+server,secreq,4,0,1,servidor,1.0,"{""servidor"": 4}",0,False,False
+service usage,secreq,4,0,1,uso de servicio,1.0,"{""uso de servicio"": 4}",0,False,False
+services application,secreq,4,0,1,aplicación de servicios,1.0,"{""aplicación de servicios"": 4}",0,False,False
+session data,secreq,4,0,1,dato transitorios de sesión,1.0,"{""dato transitorios de sesión"": 4}",0,False,False
+signalling,secreq,4,1,1,señalización,1.0,"{""señalización"": 3}",0,False,False
+spam detection,dosspre,4,0,1,detección de spam,1.0,"{""detección de spam"": 4}",0,False,False
+structure,dosspre,4,0,1,estructura,1.0,"{""estructura"": 4}",0,False,False
+system component,dosspre,4,0,1,componente del sistema,1.0,"{""componente del sistema"": 4}",0,False,False
+system database,dosspre,4,0,1,base de dato del sistema,1.0,"{""base de dato del sistema"": 4}",0,False,False
+system user interface,dosspre,4,0,1,interfaz de usuario del sistema,1.0,"{""interfaz de usuario del sistema"": 4}",0,False,False
+transient session,secreq,4,0,1,transitorios de sesión,1.0,"{""transitorios de sesión"": 4}",0,False,False
+transient session data,secreq,4,0,1,dato transitorios de sesión,1.0,"{""dato transitorios de sesión"": 4}",0,False,False
+use,secreq,4,1,1,uso,1.0,"{""uso"": 3}",0,False,False
+user manual,dosspre,4,0,1,manual de usuario,1.0,"{""manual de usuario"": 4}",0,False,False
+user name,dosspre,4,0,1,nombre de usuario,1.0,"{""nombre de usuario"": 4}",0,False,False
+validation,secreq,4,0,1,validación,1.0,"{""validación"": 4}",0,False,False
+value,dosspre,4,0,1,valor,1.0,"{""valor"": 4}",0,False,False
+viewing,dosspre,4,0,1,visualización,1.0,"{""visualización"": 4}",0,False,False
+voice,secreq,4,0,1,voz,1.0,"{""voz"": 4}",0,False,False
+wireless connection,dosspre,4,0,1,conexión inalámbrica,1.0,"{""conexión inalámbrica"": 4}",0,False,False
+AID selection,secreq,3,0,1,selección parcial de aid,1.0,"{""selección parcial de aid"": 3}",0,False,False
+CA,secreq,3,0,1,ca,1.0,"{""ca"": 3}",0,False,False
+DES,secreq,3,0,1,des,1.0,"{""des"": 3}",3,False,True
+HMAC,dosspre,3,0,1,hmac,1.0,"{""hmac"": 3}",3,False,True
+HTTPS,dosspre,3,0,1,https,1.0,"{""https"": 3}",3,False,True
+IP address,secreq,3,0,1,dirección ip,1.0,"{""dirección ip"": 3}",0,False,False
+IPTV flow,secreq,3,0,1,flujo iptv,1.0,"{""flujo iptv"": 3}",0,False,False
+QR,dosspre,3,0,1,qr,1.0,"{""qr"": 3}",0,False,False
+QR code,dosspre,3,0,1,código qr,1.0,"{""código qr"": 3}",0,False,False
+S2 MAC,secreq,3,0,1,mac s2,1.0,"{""mac s2"": 3}",3,False,True
+S5,secreq,3,0,1,s5,1.0,"{""s5"": 3}",0,False,False
+S5 MAC,secreq,3,0,1,mac s5,1.0,"{""mac s5"": 3}",3,False,True
+SAG,dosspre,3,0,1,sag,1.0,"{""sag"": 3}",3,False,True
+SAG system,dosspre,3,0,1,sistema sag,1.0,"{""sistema sag"": 3}",0,False,False
+XSS,dosspre,3,0,1,xss,1.0,"{""xss"": 3}",3,False,True
+accordance,secreq,3,0,1,acuerdo,1.0,"{""acuerdo"": 3}",0,False,False
+accountability purpose,dosspre,3,0,1,efecto de autenticación y rendición de cuenta,1.0,"{""efecto de autenticación y rendición de cuenta"": 3}",0,False,False
+acquisition,dosspre,3,0,1,adquisición,1.0,"{""adquisición"": 3}",0,False,False
+activation,secreq,3,0,1,activación,1.0,"{""activación"": 3}",0,False,False
+actual signer,dosspre,3,0,1,firmante real,1.0,"{""firmante real"": 3}",0,False,False
+address,secreq,3,0,1,dirección,1.0,"{""dirección"": 3}",0,False,False
+adjustment,dosspre,3,0,1,ajuste,1.0,"{""ajuste"": 3}",0,False,False
+aggregation record,secreq,3,1,1,registro de agregación,1.0,"{""registro de agregación"": 2}",0,False,False
+anomaly detection,dosspre,3,0,1,detección de anomalía,1.0,"{""detección de anomalía"": 3}",0,False,False
+application for processing,secreq,3,0,1,aplicación seleccionada para su procesamiento,1.0,"{""aplicación seleccionada para su procesamiento"": 3}",0,False,False
+applications,secreq,3,0,1,aplicaciones,1.0,"{""aplicaciones"": 3}",0,False,False
+appropriate security,secreq,3,0,1,seguridad correspondiente,1.0,"{""seguridad correspondiente"": 3}",0,False,False
+appropriate security domain,secreq,3,0,1,dominio de seguridad correspondiente,1.0,"{""dominio de seguridad correspondiente"": 3}",0,False,False
+audio,dosspre,3,0,1,audio,1.0,"{""audio"": 3}",3,False,True
+authentication server,dosspre,3,0,1,servidor de autenticación,1.0,"{""servidor de autenticación"": 3}",0,False,False
+authorization request,secreq,3,0,1,solicitud de autorización,1.0,"{""solicitud de autorización"": 3}",0,False,False
+backup,dosspre,3,0,1,copia,1.0,"{""copia"": 3}",0,False,False
+bitcoin,dosspre,3,0,1,bitcoin,1.0,"{""bitcoin"": 3}",3,False,True
+block hash,secreq,3,0,1,hash del bloque,1.0,"{""hash del bloque"": 3}",0,False,False
+cancellation,secreq,3,0,1,cancelación,1.0,"{""cancelación"": 3}",0,False,False
+card content change,secreq,3,0,1,cambio en el contenido de la tarjeta,1.0,"{""cambio en el contenido de la tarjeta"": 3}",0,False,False
+certification,secreq,3,0,1,certificación,1.0,"{""certificación"": 3}",0,False,False
+certification authority,secreq,3,0,1,autoridad de certificación,1.0,"{""autoridad de certificación"": 3}",0,False,False
+channel support,secreq,3,0,1,canal,1.0,"{""canal"": 3}",0,False,False
+child device,dosspre,3,0,1,dispositivo infantil,1.0,"{""dispositivo infantil"": 3}",0,False,False
+classification algorithm,dosspre,3,0,1,algoritmo de clasificación,1.0,"{""algoritmo de clasificación"": 3}",0,False,False
+classification process,dosspre,3,0,1,proceso de clasificación,1.0,"{""proceso de clasificación"": 3}",0,False,False
+clause,secreq,3,0,1,cláusula,1.0,"{""cláusula"": 3}",0,False,False
+clear presentation,dosspre,3,0,1,presentación clara,1.0,"{""presentación clara"": 3}",0,False,False
+codec,secreq,3,0,1,códecs,1.0,"{""códecs"": 3}",0,False,False
+communication channel,dosspre,3,0,1,canal de comunicación,1.0,"{""canal de comunicación"": 3}",0,False,False
+compression,dosspre,3,0,1,compresión,1.0,"{""compresión"": 3}",0,False,False
+concept,dosspre,3,0,1,concepto,1.0,"{""concepto"": 3}",0,False,False
+confidentiality,secreq,3,0,1,confidencialidad,1.0,"{""confidencialidad"": 3}",0,False,False
+confirmation,dosspre,3,0,1,confirmación,1.0,"{""confirmación"": 3}",0,False,False
+contact,dosspre,3,0,1,contacto,1.0,"{""contacto"": 3}",0,False,False
+contact,secreq,3,0,1,contacto,1.0,"{""contacto"": 3}",0,False,False
+content change,secreq,3,0,1,cambio en el contenido,1.0,"{""cambio en el contenido"": 3}",0,False,False
+copyright,dosspre,3,0,1,derecho,1.0,"{""derecho"": 3}",0,False,False
+creation,dosspre,3,0,1,creación,1.0,"{""creación"": 3}",0,False,False
+crime,dosspre,3,0,1,delito,1.0,"{""delito"": 3}",0,False,False
+cryptographic protection,secreq,3,0,1,protección criptográfica,1.0,"{""protección criptográfica"": 3}",0,False,False
+damage,dosspre,3,0,1,daño,1.0,"{""daño"": 3}",0,False,False
+data block hash,secreq,3,0,1,hash del bloque de datos,1.0,"{""hash del bloque de datos"": 3}",0,False,False
+data from twitter,dosspre,3,0,1,dato brutos de twitter,1.0,"{""dato brutos de twitter"": 3}",0,False,False
+decision,dosspre,3,0,1,decisión,1.0,"{""decisión"": 3}",0,False,False
+decision,secreq,3,1,1,decisión,1.0,"{""decisión"": 2}",0,False,False
+different device,dosspre,3,0,1,diferentes dispositivo,1.0,"{""diferentes dispositivo"": 3}",0,False,False
+different screen,dosspre,3,0,1,diferentes tamaño de pantalla,1.0,"{""diferentes tamaño de pantalla"": 3}",0,False,False
+different screen size,dosspre,3,0,1,diferentes tamaño de pantalla,1.0,"{""diferentes tamaño de pantalla"": 3}",0,False,False
+dispatching,secreq,3,0,1,despacho,1.0,"{""despacho"": 3}",0,False,False
+django,dosspre,3,0,1,django,1.0,"{""django"": 3}",3,False,True
+donor,dosspre,3,0,1,donante,1.0,"{""donante"": 3}",0,False,False
+download,dosspre,3,0,1,descarga,1.0,"{""descarga"": 3}",0,False,False
+downloading,dosspre,3,0,1,descarga,1.0,"{""descarga"": 3}",0,False,False
+end user,dosspre,3,0,1,usuario final,1.0,"{""usuario final"": 3}",0,False,False
+eventuality,secreq,3,3,0,,,{},0,False,False
+examiner,dosspre,3,0,1,examinador,1.0,"{""examinador"": 3}",0,False,False
+experiment,dosspre,3,0,1,experimento,1.0,"{""experimento"": 3}",0,False,False
+explicit,secreq,3,0,1,explícita,1.0,"{""explícita"": 3}",0,False,False
+facial recognition,dosspre,3,0,1,reconocimiento facial,1.0,"{""reconocimiento facial"": 3}",0,False,False
+file data block hash,secreq,3,0,1,hash del bloque de datos del archivo,1.0,"{""hash del bloque de datos del archivo"": 3}",0,False,False
+firmware,secreq,3,0,1,firmware,1.0,"{""firmware"": 3}",3,False,True
+functional account,dosspre,3,0,1,cuenta funcional,1.0,"{""cuenta funcional"": 3}",0,False,False
+future scalability,dosspre,3,0,1,futuros problema de escalabilidad,1.0,"{""futuros problema de escalabilidad"": 3}",0,False,False
+future scalability problem,dosspre,3,0,1,futuros problema de escalabilidad,1.0,"{""futuros problema de escalabilidad"": 3}",0,False,False
+general user,dosspre,3,0,1,usuario generales,1.0,"{""usuario generales"": 3}",0,False,False
+generation,dosspre,3,0,1,generación,1.0,"{""generación"": 3}",0,False,False
+good quality online service,dosspre,3,0,1,servicio en línea de buena calidad,1.0,"{""servicio en línea de buena calidad"": 3}",0,False,False
+graphical,dosspre,3,0,1,gráfica,1.0,"{""gráfica"": 3}",0,False,False
+hash,secreq,3,0,1,hash,1.0,"{""hash"": 3}",3,False,True
+hashing,dosspre,3,0,1,hashing,1.0,"{""hashing"": 3}",3,False,True
+honeypot,dosspre,3,0,1,honeypot,1.0,"{""honeypot"": 3}",3,False,True
+incident,dosspre,3,0,1,incidente,1.0,"{""incidente"": 3}",0,False,False
+interaction,secreq,3,0,1,interacción,1.0,"{""interacción"": 3}",0,False,False
+lag,dosspre,3,0,1,retraso,1.0,"{""retraso"": 3}",0,False,False
+licence number,dosspre,3,0,1,número de licencia,1.0,"{""número de licencia"": 3}",0,False,False
+limit,dosspre,3,0,1,límite,1.0,"{""límite"": 3}",0,False,False
+loading,secreq,3,0,1,carga,1.0,"{""carga"": 3}",0,False,False
+main screen,dosspre,3,0,1,pantalla principal,1.0,"{""pantalla principal"": 3}",0,False,False
+margin,dosspre,3,0,1,margen,1.0,"{""margen"": 3}",0,False,False
+medical practitioner,dosspre,3,0,1,médico,1.0,"{""médico"": 3}",0,False,False
+menu,dosspre,3,0,1,menú,1.0,"{""menú"": 3}",0,False,False
+mouse,dosspre,3,0,1,ratón,1.0,"{""ratón"": 3}",0,False,False
+multicast,secreq,3,0,1,multicast,1.0,"{""multicast"": 3}",3,False,True
+multimedia,secreq,3,0,1,multimedia,1.0,"{""multimedia"": 3}",3,False,True
+open supplementary,secreq,3,0,1,suplementario abierto,1.0,"{""suplementario abierto"": 3}",0,False,False
+open supplementary logical,secreq,3,0,1,lógico suplementario abierto,1.0,"{""lógico suplementario abierto"": 3}",0,False,False
+open supplementary logical channel,secreq,3,0,1,canal lógico suplementario abierto,1.0,"{""canal lógico suplementario abierto"": 3}",0,False,False
+operational performance bottleneck,dosspre,3,0,1,cuello de botella de rendimiento operativo,1.0,"{""cuello de botella de rendimiento operativo"": 3}",0,False,False
+organisation,dosspre,3,0,1,organización,1.0,"{""organización"": 3}",0,False,False
+organization,dosspre,3,0,1,organización,1.0,"{""organización"": 3}",0,False,False
+original supplementary,secreq,3,0,1,suplementario original,1.0,"{""suplementario original"": 3}",0,False,False
+original supplementary logical,secreq,3,0,1,lógico suplementario original,1.0,"{""lógico suplementario original"": 3}",0,False,False
+original supplementary logical channel,secreq,3,0,1,canal lógico suplementario original,1.0,"{""canal lógico suplementario original"": 3}",0,False,False
+parameter,dosspre,3,0,1,parámetro,1.0,"{""parámetro"": 3}",0,False,False
+partial AID selection,secreq,3,0,1,selección parcial de aid,1.0,"{""selección parcial de aid"": 3}",0,False,False
+patch,dosspre,3,0,1,parche,1.0,"{""parche"": 3}",0,False,False
+performance bottleneck,dosspre,3,0,1,cuello de botella de rendimiento,1.0,"{""cuello de botella de rendimiento"": 3}",0,False,False
+periodic log,dosspre,3,0,1,registro periódicos,1.0,"{""registro periódicos"": 3}",0,False,False
+personal detail,dosspre,3,0,1,dato personales,1.0,"{""dato personales"": 3}",0,False,False
+platform,secreq,3,0,1,plataforma,1.0,"{""plataforma"": 3}",0,False,False
+plutomail,dosspre,3,0,1,plutomail,1.0,"{""plutomail"": 3}",3,False,True
+policy,dosspre,3,0,1,política,1.0,"{""política"": 3}",0,False,False
+potential operational performance,dosspre,3,0,1,posibles cuello de botella de rendimiento operativo,1.0,"{""posibles cuello de botella de rendimiento operativo"": 3}",0,False,False
+potential operational performance bottleneck,dosspre,3,0,1,posibles cuello de botella de rendimiento operativo,1.0,"{""posibles cuello de botella de rendimiento operativo"": 3}",0,False,False
+presentation of element,dosspre,3,0,1,presentación clara de los elemento,1.0,"{""presentación clara de los elemento"": 3}",0,False,False
+privacy,secreq,3,0,1,privacidad,1.0,"{""privacidad"": 3}",0,False,False
+privilege,dosspre,3,0,1,privilegio,1.0,"{""privilegio"": 3}",0,False,False
+procedure,secreq,3,0,1,procedimiento,1.0,"{""procedimiento"": 3}",0,False,False
+profile,secreq,3,0,1,perfil,1.0,"{""perfil"": 3}",0,False,False
+protection,dosspre,3,0,1,protección,1.0,"{""protección"": 3}",0,False,False
+provision,dosspre,3,0,1,prestación,1.0,"{""prestación"": 3}",0,False,False
+quality online service,dosspre,3,0,1,servicio en línea de buena calidad,1.0,"{""servicio en línea de buena calidad"": 3}",0,False,False
+radiologist,dosspre,3,0,1,radiólogo,1.0,"{""radiólogo"": 3}",0,False,False
+raw data,dosspre,3,0,1,dato brutos,1.0,"{""dato brutos"": 3}",0,False,False
+reaction,dosspre,3,0,1,reacción,1.0,"{""reacción"": 3}",0,False,False
+real vulnerability,dosspre,3,0,1,vulnerabilidad reales,1.0,"{""vulnerabilidad reales"": 3}",0,False,False
+reception,secreq,3,0,1,reciba,1.0,"{""reciba"": 3}",0,False,False
+reference,secreq,3,0,1,referencia,1.0,"{""referencia"": 3}",0,False,False
+responsiveness,dosspre,3,0,1,respuesta,1.0,"{""respuesta"": 3}",0,False,False
+reversal command,secreq,3,0,1,comando de reversión,1.0,"{""comando de reversión"": 3}",0,False,False
+scalability problem,dosspre,3,0,1,problema de escalabilidad,1.0,"{""problema de escalabilidad"": 3}",0,False,False
+scanner,dosspre,3,0,1,escáner,1.0,"{""escáner"": 3}",0,False,False
+scope,secreq,3,0,1,alcance,1.0,"{""alcance"": 3}",0,False,False
+screen size,dosspre,3,0,1,tamaño de pantalla,1.0,"{""tamaño de pantalla"": 3}",0,False,False
+search,secreq,3,0,1,búsqueda,1.0,"{""búsqueda"": 3}",0,False,False
+search query,dosspre,3,0,1,consulta de búsqueda,1.0,"{""consulta de búsqueda"": 3}",0,False,False
+secret key,secreq,3,0,1,clave secreta,1.0,"{""clave secreta"": 3}",0,False,False
+secure database,dosspre,3,0,1,base de dato segura,1.0,"{""base de dato segura"": 3}",0,False,False
+selection,dosspre,3,0,1,selección,1.0,"{""selección"": 3}",0,False,False
+sequence,dosspre,3,0,1,secuencia,1.0,"{""secuencia"": 3}",0,False,False
+session,dosspre,3,0,1,sesión,1.0,"{""sesión"": 3}",0,False,False
+size without difficulty,dosspre,3,0,1,tamaño de pantalla sin dificultad,1.0,"{""tamaño de pantalla sin dificultad"": 3}",0,False,False
+sm,dosspre,3,2,1,sms,1.0,"{""sms"": 1}",0,False,False
+stream,secreq,3,0,1,flujo,1.0,"{""flujo"": 3}",0,False,False
+system module,dosspre,3,0,1,módulo del sistema,1.0,"{""módulo del sistema"": 3}",0,False,False
+system server,dosspre,3,0,1,servidor del sistema,1.0,"{""servidor del sistema"": 3}",0,False,False
+theintrusiond,dosspre,3,0,1,intrusiond,1.0,"{""intrusiond"": 3}",0,False,False
+total count,secreq,3,0,1,contador total,1.0,"{""contador total"": 3}",0,False,False
+traffic data,dosspre,3,0,1,dato de tráfico,1.0,"{""dato de tráfico"": 3}",0,False,False
+type of device,secreq,3,0,1,tipo de dispositivo,1.0,"{""tipo de dispositivo"": 3}",0,False,False
+unauthorised user,dosspre,3,0,1,usuario no,1.0,"{""usuario no"": 3}",0,False,False
+unauthorized access,dosspre,3,0,1,acceso no autorizado,1.0,"{""acceso no autorizado"": 3}",0,False,False
+unicast,secreq,3,0,1,unicast,1.0,"{""unicast"": 3}",3,False,True
+unlocking,secreq,3,1,1,desbloqueo,1.0,"{""desbloqueo"": 2}",0,False,False
+unstructured data,dosspre,3,0,1,dato no estructurados,1.0,"{""dato no estructurados"": 3}",0,False,False
+update,secreq,3,0,1,actualización,1.0,"{""actualización"": 3}",0,False,False
+usability,dosspre,3,2,1,usabilidad,1.0,"{""usabilidad"": 1}",0,False,False
+utilization,dosspre,3,0,1,utilización,1.0,"{""utilización"": 3}",0,False,False
+various functionality,dosspre,3,0,1,diversas funcionalidad,1.0,"{""diversas funcionalidad"": 3}",0,False,False
+video content,dosspre,3,0,1,contenido de vídeo,1.0,"{""contenido de vídeo"": 3}",0,False,False
+way authentication,secreq,3,0,1,autenticación,1.0,"{""autenticación"": 3}",0,False,False
+web interface,dosspre,3,0,1,interfaz web,1.0,"{""interfaz web"": 3}",0,False,False
+window,dosspre,3,1,1,ventana,1.0,"{""ventana"": 2}",0,False,False
+AES encryption,dosspre,2,0,1,cifrado aes,1.0,"{""cifrado aes"": 2}",0,False,False
+AES encryption key,dosspre,2,0,1,clave de cifrado aes,1.0,"{""clave de cifrado aes"": 2}",0,False,False
+AVS,dosspre,2,0,1,avs,1.0,"{""avs"": 2}",2,False,True
+CPN communication,secreq,2,0,1,comunicación dentro de la cpn,1.0,"{""comunicación dentro de la cpn"": 2}",0,False,False
+CPN subscription,secreq,2,0,1,suscripción cpn,1.0,"{""suscripción cpn"": 2}",0,False,False
+DES session,secreq,2,0,1,sesión des,1.0,"{""sesión des"": 2}",0,False,False
+DES session key,secreq,2,0,1,clave de sesión des,1.0,"{""clave de sesión des"": 2}",0,False,False
+ECC,dosspre,2,0,1,ecc,1.0,"{""ecc"": 2}",2,False,True
+EMS,dosspre,2,0,1,sme,1.0,"{""sme"": 2}",0,False,False
+EMV,secreq,2,0,1,emv,1.0,"{""emv"": 2}",2,False,True
+GPS,dosspre,2,0,1,gps,1.0,"{""gps"": 2}",2,False,True
+GSM,dosspre,2,0,1,gsm,1.0,"{""gsm"": 2}",2,False,True
+HELP,dosspre,2,0,1,ayuda,1.0,"{""ayuda"": 2}",0,False,False
+IDS,dosspre,2,0,1,ids,1.0,"{""ids"": 2}",2,False,True
+IMPU,secreq,2,0,1,impu,1.0,"{""impu"": 2}",2,False,True
+IP multimedia,secreq,2,0,1,ip multimedia,1.0,"{""ip multimedia"": 2}",2,False,True
+IP multimedia session,secreq,2,0,1,sesión ip multimedia,1.0,"{""sesión ip multimedia"": 2}",0,False,False
+ISIM,secreq,2,0,1,isim,1.0,"{""isim"": 2}",2,False,True
+LAN port,secreq,2,0,1,puerto lan,1.0,"{""puerto lan"": 2}",0,False,False
+LAN traffic,secreq,2,0,1,tráfico interno de la lan,1.0,"{""tráfico interno de la lan"": 2}",0,False,False
+MAC,dosspre,2,0,1,mac,1.0,"{""mac"": 2}",2,False,True
+NGN for service,secreq,2,0,1,ngn con fin de uso de servicio,1.0,"{""ngn con fin de uso de servicio"": 2}",0,False,False
+NGN network function,secreq,2,0,1,función de red de la ngn,1.0,"{""función de red de la ngn"": 2}",0,False,False
+NGN service usage,secreq,2,0,1,uso de servicio ngn,1.0,"{""uso de servicio ngn"": 2}",0,False,False
+NGN side,secreq,2,0,1,lado ngn,1.0,"{""lado ngn"": 2}",0,False,False
+NGN terminal,secreq,2,0,1,terminal ngn,1.0,"{""terminal ngn"": 2}",2,False,True
+OSPF,dosspre,2,0,1,ospf,1.0,"{""ospf"": 2}",2,False,True
+OTP,dosspre,2,0,1,otp,1.0,"{""otp"": 2}",2,False,True
+PDP functionality,dosspre,2,0,1,funcionalidad pdp,1.0,"{""funcionalidad pdp"": 2}",0,False,False
+PGP,dosspre,2,0,1,pgp,1.0,"{""pgp"": 2}",2,False,True
+PII,dosspre,2,0,1,iip,1.0,"{""iip"": 2}",0,False,False
+PIN encryption,secreq,2,0,1,cifrado de pin,1.0,"{""cifrado de pin"": 2}",0,False,False
+S1 MAC,secreq,2,0,1,mac s1,1.0,"{""mac s1"": 2}",2,False,True
+SSID,dosspre,2,0,1,ssid,1.0,"{""ssid"": 2}",2,False,True
+TCP,dosspre,2,0,1,tcp,1.0,"{""tcp"": 2}",2,False,True
+TLS,dosspre,2,0,1,tls,1.0,"{""tls"": 2}",2,False,True
+TOTP,dosspre,2,0,1,totp,1.0,"{""totp"": 2}",2,False,True
+USD,dosspre,2,0,1,usd,1.0,"{""usd"": 2}",2,False,True
+WIFI,dosspre,2,0,1,wifi,1.0,"{""wifi"": 2}",2,False,True
+WIFI network,dosspre,2,0,1,red wifi,1.0,"{""red wifi"": 2}",0,False,False
+XSS vulnerability,dosspre,2,0,1,vulnerabilidad sql inyection y xss,1.0,"{""vulnerabilidad sql inyection y xss"": 2}",0,False,False
+acceptance,secreq,2,0,1,aceptación,1.0,"{""aceptación"": 2}",0,False,False
+access device,secreq,2,0,1,dispositivo de acceso,1.0,"{""dispositivo de acceso"": 2}",0,False,False
+access rule,secreq,2,0,1,regla de acceso,1.0,"{""regla de acceso"": 2}",0,False,False
+accurate result,dosspre,2,0,1,resultado precisos,1.0,"{""resultado precisos"": 2}",0,False,False
+acquirer S5,secreq,2,0,1,s5 del adquirente,1.0,"{""s5 del adquirente"": 2}",0,False,False
+acquirer S5 MAC,secreq,2,0,1,mac s5 del adquirente,1.0,"{""mac s5 del adquirente"": 2}",0,False,False
+active batch,secreq,2,0,1,lote activo,1.0,"{""lote activo"": 2}",0,False,False
+adequate resource,dosspre,2,0,1,recurso adecuados,1.0,"{""recurso adecuados"": 2}",0,False,False
+adequate resource level,dosspre,2,0,1,nivel mínimos de recurso adecuados,1.0,"{""nivel mínimos de recurso adecuados"": 2}",0,False,False
+admin console,dosspre,2,0,1,consola de administración,1.0,"{""consola de administración"": 2}",0,False,False
+adversary,dosspre,2,0,1,adversario,1.0,"{""adversario"": 2}",0,False,False
+alert through text,dosspre,2,0,1,alerta mediante texto,1.0,"{""alerta mediante texto"": 2}",0,False,False
+alphabetic currency,secreq,2,1,1,alfabético de divisa,1.0,"{""alfabético de divisa"": 1}",0,False,False
+analyser,dosspre,2,0,1,analizador,1.0,"{""analizador"": 2}",0,False,False
+analysis module,dosspre,2,0,1,módulo de análisis,1.0,"{""módulo de análisis"": 2}",0,False,False
+android application,dosspre,2,0,1,aplicación android,1.0,"{""aplicación android"": 2}",0,False,False
+android device,dosspre,2,0,1,dispositivo android,1.0,"{""dispositivo android"": 2}",0,False,False
+apache,dosspre,2,0,1,apache,1.0,"{""apache"": 2}",2,False,True
+applicant,dosspre,2,0,1,solicitante,1.0,"{""solicitante"": 2}",0,False,False
+application client,secreq,2,0,1,aplicación cliente,1.0,"{""aplicación cliente"": 2}",0,False,False
+arrangement,secreq,2,0,1,mecanismo,1.0,"{""mecanismo"": 2}",0,False,False
+assurance,dosspre,2,1,1,garantía,1.0,"{""garantía"": 1}",0,False,False
+asymmetric cryptography,secreq,2,0,1,criptografía asimétrica,1.0,"{""criptografía asimétrica"": 2}",0,False,False
+audit report,dosspre,2,0,1,informe de auditoría,1.0,"{""informe de auditoría"": 2}",0,False,False
+auditor,dosspre,2,0,1,auditor,1.0,"{""auditor"": 2}",1,False,True
+authentication process,secreq,2,0,1,proceso de autenticación,1.0,"{""proceso de autenticación"": 2}",0,False,False
+authentication service,dosspre,2,0,1,servicio de autenticación,1.0,"{""servicio de autenticación"": 2}",0,False,False
+authentication system,dosspre,2,0,1,sistema de autenticación,1.0,"{""sistema de autenticación"": 2}",0,False,False
+authorization management,secreq,2,0,1,gestión de autorización,1.0,"{""gestión de autorización"": 2}",0,False,False
+authorization management handling,secreq,2,0,1,gestión de autorización,1.0,"{""gestión de autorización"": 2}",0,False,False
+availability,secreq,2,0,1,disponibilidad,1.0,"{""disponibilidad"": 2}",0,False,False
+availability of data,dosspre,2,0,1,disponibilidad de dato,1.0,"{""disponibilidad de dato"": 2}",0,False,False
+avoidance,dosspre,2,0,1,evitación,1.0,"{""evitación"": 2}",0,False,False
+backend,dosspre,2,1,1,backend,1.0,"{""backend"": 1}",1,False,True
+bank server,dosspre,2,0,1,servidor bancario,1.0,"{""servidor bancario"": 2}",0,False,False
+baseline,dosspre,2,0,1,base,1.0,"{""base"": 2}",0,False,False
+batch,dosspre,2,0,1,lote,1.0,"{""lote"": 2}",0,False,False
+behalf,dosspre,2,0,1,nombre,1.0,"{""nombre"": 2}",0,False,False
+behalf,secreq,2,0,1,nombre,1.0,"{""nombre"": 2}",0,False,False
+behavior,secreq,2,1,1,comportamiento,1.0,"{""comportamiento"": 1}",0,False,False
+biometric,dosspre,2,0,1,biometría,1.0,"{""biometría"": 2}",0,False,False
+bit encryption,dosspre,2,0,1,cifrado de 256 bit,1.0,"{""cifrado de 256 bit"": 2}",0,False,False
+bit encryption key,dosspre,2,0,1,clave de cifrado de 256 bit,1.0,"{""clave de cifrado de 256 bit"": 2}",0,False,False
+bookmark,secreq,2,0,1,marcador,1.0,"{""marcador"": 2}",0,False,False
+breach,dosspre,2,0,1,violación,1.0,"{""violación"": 2}",0,False,False
+buying pattern,dosspre,2,0,1,patrón de compra,1.0,"{""patrón de compra"": 2}",0,False,False
+buzzer,dosspre,2,0,1,timbre,1.0,"{""timbre"": 2}",0,False,False
+call forking,secreq,2,0,1,desvío de llamada,1.0,"{""desvío de llamada"": 2}",0,False,False
+call notification,dosspre,2,0,1,notificación de llamada,1.0,"{""notificación de llamada"": 2}",0,False,False
+campus,dosspre,2,0,1,campus,1.0,"{""campus"": 2}",2,False,True
+capture,dosspre,2,0,1,captura,1.0,"{""captura"": 2}",0,False,False
+card verification,secreq,2,0,1,verificación de la tarjeta,1.0,"{""verificación de la tarjeta"": 2}",0,False,False
+cardholder authentication,secreq,2,0,1,autenticación del titular de la tarjeta,1.0,"{""autenticación del titular de la tarjeta"": 2}",0,False,False
+central database,dosspre,2,0,1,base de dato central,1.0,"{""base de dato central"": 2}",0,False,False
+central error,secreq,2,1,1,central de error,1.0,"{""central de error"": 1}",0,False,False
+centralized database,dosspre,2,0,1,base de dato centralizada,1.0,"{""base de dato centralizada"": 2}",0,False,False
+channel management,secreq,2,0,1,gestión opcional de canal,1.0,"{""gestión opcional de canal"": 2}",0,False,False
+channel protocol,secreq,2,0,1,protocolo de canal,1.0,"{""protocolo de canal"": 2}",0,False,False
+classification phase,secreq,2,1,1,fase de clasificación,1.0,"{""fase de clasificación"": 1}",0,False,False
+client re,dosspre,2,0,1,cliente,1.0,"{""cliente"": 2}",0,False,False
+cloud account,dosspre,2,0,1,cuenta en la nube,1.0,"{""cuenta en la nube"": 2}",0,False,False
+cloud data,dosspre,2,0,1,dato en la nube,1.0,"{""dato en la nube"": 2}",0,False,False
+cloud data owner,dosspre,2,0,1,propietario de dato en la nube,1.0,"{""propietario de dato en la nube"": 2}",0,False,False
+cloud user,dosspre,2,0,1,usuario de la nube,1.0,"{""usuario de la nube"": 2}",0,False,False
+coding principle,dosspre,2,0,1,principio de codificación,1.0,"{""principio de codificación"": 2}",0,False,False
+combination,dosspre,2,0,1,combinación,1.0,"{""combinación"": 2}",0,False,False
+command message,secreq,2,0,1,mensaje de comando,1.0,"{""mensaje de comando"": 2}",0,False,False
+complex computation,dosspre,2,0,1,cálculo complejos,1.0,"{""cálculo complejos"": 2}",0,False,False
+complexity,dosspre,2,0,1,complejidad,1.0,"{""complejidad"": 2}",0,False,False
+complexity avoidance,dosspre,2,0,1,evitación de la complejidad,1.0,"{""evitación de la complejidad"": 2}",0,False,False
+component,secreq,2,0,1,componente,1.0,"{""componente"": 2}",0,False,False
+compression ability,dosspre,2,0,1,capacidad de compresión,1.0,"{""capacidad de compresión"": 2}",0,False,False
+computation,dosspre,2,0,1,cálculo,1.0,"{""cálculo"": 2}",0,False,False
+computation,secreq,2,0,1,calcular,1.0,"{""calcular"": 2}",0,False,False
+concurrent service,secreq,2,0,1,servicio simultáneos,1.0,"{""servicio simultáneos"": 2}",0,False,False
+configuration information,secreq,2,0,1,información de configuración,1.0,"{""información de configuración"": 2}",0,False,False
+configuration management,dosspre,2,0,1,gestión de configuración,1.0,"{""gestión de configuración"": 2}",0,False,False
+configuration service,secreq,2,0,1,servicio de configuración,1.0,"{""servicio de configuración"": 2}",0,False,False
+configuration service function,secreq,2,0,1,función de servicio de configuración,1.0,"{""función de servicio de configuración"": 2}",0,False,False
+consequence,secreq,2,0,1,consiguiente,1.0,"{""consiguiente"": 2}",0,False,False
+consistent interface,dosspre,2,0,1,interfaz consistentes,1.0,"{""interfaz consistentes"": 2}",0,False,False
+consistent interface format,dosspre,2,0,1,formato de interfaz consistentes,1.0,"{""formato de interfaz consistentes"": 2}",0,False,False
+console,dosspre,2,0,1,consola,1.0,"{""consola"": 2}",0,False,False
+consumer,secreq,2,0,1,consumidor,1.0,"{""consumidor"": 2}",0,False,False
+contact card,secreq,2,0,1,tarjeta con contacto,1.0,"{""tarjeta con contacto"": 2}",0,False,False
+contactless card,secreq,2,0,1,tarjeta,1.0,"{""tarjeta"": 2}",0,False,False
+continuous sequence,dosspre,2,0,1,secuencia continua,1.0,"{""secuencia continua"": 2}",0,False,False
+control plane,secreq,2,0,1,plano de control,1.0,"{""plano de control"": 2}",0,False,False
+control platform,secreq,2,0,1,plataforma de control,1.0,"{""plataforma de control"": 2}",0,False,False
+controller,dosspre,2,0,1,controlador,1.0,"{""controlador"": 2}",0,False,False
+corpus,dosspre,2,0,1,corpus,1.0,"{""corpus"": 2}",2,False,True
+cosine,dosspre,2,0,1,coseno,1.0,"{""coseno"": 2}",0,False,False
+credit,dosspre,2,0,1,crédito,1.0,"{""crédito"": 2}",0,False,False
+credit,secreq,2,0,1,crédito,1.0,"{""crédito"": 2}",0,False,False
+cryptogram,secreq,2,0,1,criptograma,1.0,"{""criptograma"": 2}",0,False,False
+cryptography,dosspre,2,0,1,criptografía,1.0,"{""criptografía"": 2}",0,False,False
+cryptojacking application,dosspre,2,0,1,aplicación de criptojacking,1.0,"{""aplicación de criptojacking"": 2}",0,False,False
+current location,dosspre,2,0,1,ubicación actual,1.0,"{""ubicación actual"": 2}",0,False,False
+current maximum number,dosspre,2,0,1,número máximo actual,1.0,"{""número máximo actual"": 2}",0,False,False
+customer device,secreq,2,0,1,dispositivo del cliente,1.0,"{""dispositivo del cliente"": 2}",0,False,False
+data administrator,dosspre,2,0,1,administrador de dato,1.0,"{""administrador de dato"": 2}",0,False,False
+data during transmission,dosspre,2,0,1,dato durante la transmisión,1.0,"{""dato durante la transmisión"": 2}",0,False,False
+data entry,dosspre,2,0,1,entrada y visualización de dato,1.0,"{""entrada y visualización de dato"": 2}",0,False,False
+data format,dosspre,2,0,1,formato de dato,1.0,"{""formato de dato"": 2}",0,False,False
+data integrity,dosspre,2,0,1,integridad de los dato,1.0,"{""integridad de los dato"": 2}",0,False,False
+data manipulation,dosspre,2,0,1,manipulación de los dato,1.0,"{""manipulación de los dato"": 2}",0,False,False
+data mining,dosspre,2,0,1,extracción de dato,1.0,"{""extracción de dato"": 2}",0,False,False
+data plane,secreq,2,0,1,plano de dato,1.0,"{""plano de dato"": 2}",0,False,False
+data usage,dosspre,2,0,1,uso de los dato,1.0,"{""uso de los dato"": 2}",0,False,False
+database,secreq,2,0,1,base,1.0,"{""base"": 2}",0,False,False
+database side,dosspre,2,0,1,lado de la base,1.0,"{""lado de la base"": 2}",0,False,False
+debit,dosspre,2,0,1,débito,1.0,"{""débito"": 2}",0,False,False
+decompression,dosspre,2,0,1,descompresión,1.0,"{""descompresión"": 2}",0,False,False
+decompression option,dosspre,2,0,1,opción de descompresión,1.0,"{""opción de descompresión"": 2}",0,False,False
+decoy,dosspre,2,1,1,señuelo,1.0,"{""señuelo"": 1}",0,False,False
+description,dosspre,2,0,1,descripción,1.0,"{""descripción"": 2}",0,False,False
+design,secreq,2,0,1,diseño,1.0,"{""diseño"": 2}",0,False,False
+device credential,secreq,2,0,1,credencial de usuario o de dispositivo,1.0,"{""credencial de usuario o de dispositivo"": 2}",0,False,False
+diagram,dosspre,2,0,1,diagrama,1.0,"{""diagrama"": 2}",0,False,False
+different layer,secreq,2,0,1,distintos parámetro de capa,1.0,"{""distintos parámetro de capa"": 2}",0,False,False
+different priority,secreq,2,0,1,distintas prioridad,1.0,"{""distintas prioridad"": 2}",0,False,False
+different user,dosspre,2,0,1,diferentes,1.0,"{""diferentes"": 2}",0,False,False
+digital watermark system,dosspre,2,0,1,sistema de marca de agua digital,1.0,"{""sistema de marca de agua digital"": 2}",0,False,False
+disclosure,secreq,2,0,1,divulgación,1.0,"{""divulgación"": 2}",0,False,False
+discrete cosine,dosspre,2,0,1,coseno discreto,1.0,"{""coseno discreto"": 2}",0,False,False
+dispatch,secreq,2,0,1,despacho,1.0,"{""despacho"": 2}",0,False,False
+dispute resolution,secreq,2,1,1,resolución de disputa,1.0,"{""resolución de disputa"": 1}",0,False,False
+distinct security,dosspre,2,0,1,distintas cuestión de seguridad,1.0,"{""distintas cuestión de seguridad"": 2}",0,False,False
+distinct security question,dosspre,2,0,1,distintas cuestión de seguridad,1.0,"{""distintas cuestión de seguridad"": 2}",0,False,False
+document on behalf,dosspre,2,0,1,documento en nombre,1.0,"{""documento en nombre"": 2}",0,False,False
+domain,dosspre,2,0,1,dominio,1.0,"{""dominio"": 2}",0,False,False
+easy maintenance,dosspre,2,0,1,fácil mantenimiento,1.0,"{""fácil mantenimiento"": 2}",0,False,False
+editing,dosspre,2,0,1,edición,1.0,"{""edición"": 2}",0,False,False
+element,secreq,2,0,1,elemento,1.0,"{""elemento"": 2}",0,False,False
+encryption of data,dosspre,2,0,1,cifrado de los dato,1.0,"{""cifrado de los dato"": 2}",0,False,False
+error condition,dosspre,2,0,1,condición de error,1.0,"{""condición de error"": 2}",0,False,False
+essential part,dosspre,2,0,1,parte esencial,1.0,"{""parte esencial"": 2}",0,False,False
+ethereum protocol,dosspre,2,0,1,protocolo ethereum,1.0,"{""protocolo ethereum"": 2}",0,False,False
+exception,secreq,2,1,1,excepción,1.0,"{""excepción"": 1}",0,False,False
+exchange of data,dosspre,2,0,1,intercambio de dato,1.0,"{""intercambio de dato"": 2}",0,False,False
+exchange price,dosspre,2,0,1,precio de cambio,1.0,"{""precio de cambio"": 2}",0,False,False
+executable,dosspre,2,0,1,ejecutable,1.0,"{""ejecutable"": 2}",0,False,False
+executable load files,secreq,2,0,1,archivos de carga ejecutables,1.0,"{""archivos de carga ejecutables"": 2}",0,False,False
+execution,secreq,2,0,1,ejecución,1.0,"{""ejecución"": 2}",0,False,False
+experience,secreq,2,0,1,experiencia,1.0,"{""experiencia"": 2}",0,False,False
+exponent,secreq,2,0,1,exponente,1.0,"{""exponente"": 2}",0,False,False
+fail,dosspre,2,1,1,fallo,1.0,"{""fallo"": 1}",0,False,False
+file for storage,dosspre,2,0,1,archivo para su almacenamiento,1.0,"{""archivo para su almacenamiento"": 2}",0,False,False
+file type,dosspre,2,0,1,tipo de archivo,1.0,"{""tipo de archivo"": 2}",0,False,False
+files,secreq,2,0,1,archivos,1.0,"{""archivos"": 2}",0,False,False
+filter,dosspre,2,0,1,filtro,1.0,"{""filtro"": 2}",0,False,False
+financial institution,secreq,2,0,1,institución financiera,1.0,"{""institución financiera"": 2}",0,False,False
+firewall,secreq,2,0,1,firewall,1.0,"{""firewall"": 2}",2,False,True
+firmware upgrade,secreq,2,0,1,actualización de firmware,1.0,"{""actualización de firmware"": 2}",0,False,False
+firmware upgrade purpose,secreq,2,0,1,fin de configuración monitorización y actualización de firmware,1.0,"{""fin de configuración monitorización y actualización de firmware"": 2}",0,False,False
+flow information,dosspre,2,0,1,información de flujo,1.0,"{""información de flujo"": 2}",0,False,False
+forensic,dosspre,2,0,1,forense,1.0,"{""forense"": 2}",0,False,False
+forensic process,dosspre,2,0,1,proceso forense,1.0,"{""proceso forense"": 2}",0,False,False
+forking,secreq,2,0,1,desvío,1.0,"{""desvío"": 2}",0,False,False
+forking towards customer,secreq,2,0,1,desvío de llamada hacia dispositivo del cliente,1.0,"{""desvío de llamada hacia dispositivo del cliente"": 2}",0,False,False
+form,secreq,2,0,1,forma,1.0,"{""forma"": 2}",0,False,False
+format,secreq,2,0,1,formato,1.0,"{""formato"": 2}",0,False,False
+formula,dosspre,2,0,1,fórmula,1.0,"{""fórmula"": 2}",0,False,False
+frequent update,dosspre,2,0,1,actualización frecuentes,1.0,"{""actualización frecuentes"": 2}",0,False,False
+friendly input,dosspre,2,0,1,entrada fáciles,1.0,"{""entrada fáciles"": 2}",0,False,False
+friendly input component,dosspre,2,0,1,componente de entrada fáciles,1.0,"{""componente de entrada fáciles"": 2}",0,False,False
+friendly interface design,dosspre,2,0,1,diseño de interfaz amigable,1.0,"{""diseño de interfaz amigable"": 2}",0,False,False
+friendly user,dosspre,2,0,1,usuario amigable,1.0,"{""usuario amigable"": 2}",0,False,False
+friendly user interface,dosspre,2,0,1,interfaz de usuario amigable,1.0,"{""interfaz de usuario amigable"": 2}",0,False,False
+gadget,dosspre,2,1,1,aparato,1.0,"{""aparato"": 1}",0,False,False
+globalplatform API,secreq,2,0,1,api de globalplatform,1.0,"{""api de globalplatform"": 2}",2,False,True
+google map,dosspre,2,0,1,mapa de google,1.0,"{""mapa de google"": 2}",0,False,False
+graph,dosspre,2,0,1,gráfico,1.0,"{""gráfico"": 2}",0,False,False
+group,secreq,2,0,1,grupo,1.0,"{""grupo"": 2}",0,False,False
+guideline,dosspre,2,0,1,directriz,1.0,"{""directriz"": 2}",0,False,False
+hardware,secreq,2,0,1,hardware,1.0,"{""hardware"": 2}",2,False,True
+hash value,dosspre,2,0,1,valor de hash,1.0,"{""valor de hash"": 2}",0,False,False
+header,secreq,2,0,1,cabecera,1.0,"{""cabecera"": 2}",0,False,False
+health practitioner,dosspre,2,1,1,profesional de la salud,1.0,"{""profesional de la salud"": 1}",0,False,False
+hidden folder,dosspre,2,0,1,carpeta oculta,1.0,"{""carpeta oculta"": 2}",0,False,False
+hostname,dosspre,2,0,1,host,1.0,"{""host"": 2}",0,False,False
+hostname of rogue,dosspre,2,0,1,host del nodo rogue,1.0,"{""host del nodo rogue"": 2}",0,False,False
+huge file,dosspre,2,0,1,archivo enormes,1.0,"{""archivo enormes"": 2}",0,False,False
+humidity,dosspre,2,0,1,humedad,1.0,"{""humedad"": 2}",0,False,False
+hundred,dosspre,2,0,1,cientos,1.0,"{""cientos"": 2}",0,False,False
+hypervisor,dosspre,2,0,1,hipervisor,1.0,"{""hipervisor"": 2}",0,False,False
+i.d number,dosspre,2,1,1,número,1.0,"{""número"": 1}",0,False,False
+id,secreq,2,0,1,identificador,1.0,"{""identificador"": 2}",0,False,False
+identifier,dosspre,2,0,1,identificador,1.0,"{""identificador"": 2}",0,False,False
+identity theft,dosspre,2,0,1,robo de identidad,1.0,"{""robo de identidad"": 2}",0,False,False
+illegal sharing,dosspre,2,0,1,intercambio ilegal,1.0,"{""intercambio ilegal"": 2}",0,False,False
+imaging ability,dosspre,2,0,1,capacidad de obtención de imagen,1.0,"{""capacidad de obtención de imagen"": 2}",0,False,False
+impairment,dosspre,2,0,1,deficiencia,1.0,"{""deficiencia"": 2}",0,False,False
+inaccurate data,dosspre,2,0,1,dato inexactos,1.0,"{""dato inexactos"": 2}",0,False,False
+inaccurate data format,dosspre,2,0,1,formato de dato inexactos,1.0,"{""formato de dato inexactos"": 2}",0,False,False
+increment,secreq,2,1,1,incremento,1.0,"{""incremento"": 1}",0,False,False
+incremental purchase,secreq,2,0,1,compra incremental,1.0,"{""compra incremental"": 2}",0,False,False
+independent path,dosspre,2,0,1,camino independientes,1.0,"{""camino independientes"": 2}",0,False,False
+information retrieval,dosspre,2,0,1,recuperación de información,1.0,"{""recuperación de información"": 2}",0,False,False
+initial load,dosspre,2,0,1,carga inicial,1.0,"{""carga inicial"": 2}",0,False,False
+initial load time,dosspre,2,0,1,tiempo de carga inicial,1.0,"{""tiempo de carga inicial"": 2}",0,False,False
+initialize,secreq,2,0,1,inicialización,1.0,"{""inicialización"": 2}",0,False,False
+initialize command,secreq,2,0,1,comando de inicialización,1.0,"{""comando de inicialización"": 2}",0,False,False
+input component,dosspre,2,0,1,componente de entrada,1.0,"{""componente de entrada"": 2}",0,False,False
+institution,secreq,2,0,1,institución,1.0,"{""institución"": 2}",0,False,False
+interface design,dosspre,2,0,1,diseño de interfaz,1.0,"{""diseño de interfaz"": 2}",0,False,False
+interface format,dosspre,2,0,1,formato de interfaz,1.0,"{""formato de interfaz"": 2}",0,False,False
+internal security,secreq,2,0,1,internas de seguridad,1.0,"{""internas de seguridad"": 2}",0,False,False
+internal security measure,secreq,2,0,1,medida internas de seguridad,1.0,"{""medida internas de seguridad"": 2}",0,False,False
+interval,dosspre,2,0,1,intervalo,1.0,"{""intervalo"": 2}",0,False,False
+intruder,dosspre,2,0,1,intruso,1.0,"{""intruso"": 2}",0,False,False
+intrusion attack,dosspre,2,0,1,ataque de intrusión,1.0,"{""ataque de intrusión"": 2}",0,False,False
+invalid transaction,secreq,2,0,1,transacción no válidas,1.0,"{""transacción no válidas"": 2}",0,False,False
+investigator,dosspre,2,0,1,investigador,1.0,"{""investigador"": 2}",0,False,False
+irrelevant document,dosspre,2,0,1,documento irrelevantes,1.0,"{""documento irrelevantes"": 2}",0,False,False
+issuance,secreq,2,1,1,emisión,1.0,"{""emisión"": 1}",0,False,False
+issuer host,secreq,2,0,1,host del emisor,1.0,"{""host del emisor"": 2}",0,False,False
+java,dosspre,2,0,1,java,1.0,"{""java"": 2}",2,False,True
+keyboard,dosspre,2,0,1,teclado,1.0,"{""teclado"": 2}",0,False,False
+keyword in SMS,dosspre,2,0,1,palabra clave en sms,1.0,"{""palabra clave en sms"": 2}",0,False,False
+keyword in database,dosspre,2,0,1,palabra clave existentes en la base,1.0,"{""palabra clave existentes en la base"": 2}",0,False,False
+lecturer,dosspre,2,0,1,profesor,1.0,"{""profesor"": 2}",0,False,False
+life,dosspre,2,0,1,vida,1.0,"{""vida"": 2}",0,False,False
+linux platform,dosspre,2,0,1,plataforma linux,1.0,"{""plataforma linux"": 2}",0,False,False
+load files,secreq,2,0,1,archivos de carga,1.0,"{""archivos de carga"": 2}",0,False,False
+load time,dosspre,2,0,1,tiempo de carga,1.0,"{""tiempo de carga"": 2}",0,False,False
+log,secreq,2,1,1,registro,1.0,"{""registro"": 1}",0,False,False
+logging,dosspre,2,0,1,registro,1.0,"{""registro"": 2}",0,False,False
+logical channel management,secreq,2,0,1,gestión opcional de canal lógicos,1.0,"{""gestión opcional de canal lógicos"": 2}",0,False,False
+logical channel number,secreq,2,0,1,número de canal lógico,1.0,"{""número de canal lógico"": 2}",0,False,False
+logical condition,dosspre,2,0,1,condición lógicas,1.0,"{""condición lógicas"": 2}",0,False,False
+login password,dosspre,2,0,1,contraseña de acceso,1.0,"{""contraseña de acceso"": 2}",0,False,False
+logistic,dosspre,2,0,1,logística,1.0,"{""logística"": 2}",0,False,False
+logout,dosspre,2,0,1,sesión,1.0,"{""sesión"": 2}",0,False,False
+logout capability,dosspre,2,0,1,capacidad de registro y cierre de sesión,1.0,"{""capacidad de registro y cierre de sesión"": 2}",0,False,False
+machine learning,dosspre,2,0,1,aprendizaje automático,1.0,"{""aprendizaje automático"": 2}",0,False,False
+macing,secreq,2,0,1,mac,1.0,"{""mac"": 2}",0,False,False
+macing key,secreq,2,0,1,clave mac,1.0,"{""clave mac"": 2}",0,False,False
+mail server,dosspre,2,0,1,servidor de correo,1.0,"{""servidor de correo"": 2}",0,False,False
+mailbox,dosspre,2,0,1,buzón,1.0,"{""buzón"": 2}",0,False,False
+malware family,dosspre,2,0,1,familia de malware,1.0,"{""familia de malware"": 2}",0,False,False
+management function,secreq,2,0,1,función de gestión,1.0,"{""función de gestión"": 2}",0,False,False
+management handling,secreq,2,0,1,gestión,1.0,"{""gestión"": 2}",0,False,False
+manner,secreq,2,0,1,manera,1.0,"{""manera"": 2}",0,False,False
+maximum availability,dosspre,2,0,1,máxima disponibilidad,1.0,"{""máxima disponibilidad"": 2}",0,False,False
+maximum number,dosspre,2,0,1,número máximo,1.0,"{""número máximo"": 2}",0,False,False
+meaningful information,dosspre,2,1,1,información significativa,1.0,"{""información significativa"": 1}",0,False,False
+measure,secreq,2,0,1,medida,1.0,"{""medida"": 2}",0,False,False
+media gateway,secreq,2,0,1,media gateway,1.0,"{""media gateway"": 2}",2,False,True
+memory acquisition,dosspre,2,0,1,adquisición de memoria,1.0,"{""adquisición de memoria"": 2}",0,False,False
+menu screen,dosspre,2,0,1,pantalla del menú,1.0,"{""pantalla del menú"": 2}",0,False,False
+merchant acquirer S5,secreq,2,0,1,s5 del adquirente del comercio,1.0,"{""s5 del adquirente del comercio"": 2}",0,False,False
+merchant acquirer S5 MAC,secreq,2,0,1,mac s5 del adquirente del comercio,1.0,"{""mac s5 del adquirente del comercio"": 2}",0,False,False
+metadata,dosspre,2,0,1,metadato,1.0,"{""metadato"": 2}",0,False,False
+microsoft,dosspre,2,0,1,microsoft,1.0,"{""microsoft"": 2}",2,False,True
+minimum adequate resource,dosspre,2,0,1,mínimos de recurso adecuados,1.0,"{""mínimos de recurso adecuados"": 2}",0,False,False
+minimum adequate resource level,dosspre,2,0,1,nivel mínimos de recurso adecuados,1.0,"{""nivel mínimos de recurso adecuados"": 2}",0,False,False
+minimum training,dosspre,2,0,1,formación mínima,1.0,"{""formación mínima"": 2}",0,False,False
+modification,dosspre,2,0,1,modificación,1.0,"{""modificación"": 2}",0,False,False
+modularity,dosspre,2,0,1,modularidad,1.0,"{""modularidad"": 2}",0,False,False
+monitoring,secreq,2,0,1,monitorización,1.0,"{""monitorización"": 2}",0,False,False
+monthly report,dosspre,2,0,1,informe mensuales,1.0,"{""informe mensuales"": 2}",0,False,False
+motion detection,dosspre,2,0,1,detección de movimiento,1.0,"{""detección de movimiento"": 2}",0,False,False
+mouse movement,dosspre,2,0,1,movimiento del ratón,1.0,"{""movimiento del ratón"": 2}",0,False,False
+movement map,dosspre,2,0,1,mapa de movimiento,1.0,"{""mapa de movimiento"": 2}",0,False,False
+multi,secreq,2,0,1,múltiple,1.0,"{""múltiple"": 2}",0,False,False
+multicast flow,secreq,2,0,1,flujo multicast,1.0,"{""flujo multicast"": 2}",0,False,False
+multimedia session,secreq,2,0,1,sesión ip multimedia,1.0,"{""sesión ip multimedia"": 2}",0,False,False
+multiple service provider,secreq,2,0,1,varios proveedor de servicio,1.0,"{""varios proveedor de servicio"": 2}",0,False,False
+multiple user,dosspre,2,0,1,múltiples usuario,1.0,"{""múltiples usuario"": 2}",0,False,False
+mutual authentication,secreq,2,0,1,autenticación mutua,1.0,"{""autenticación mutua"": 2}",0,False,False
+n signer,dosspre,2,0,1,n firmantes,1.0,"{""n firmantes"": 2}",0,False,False
+national ID,dosspre,2,0,1,identificación nacional,1.0,"{""identificación nacional"": 2}",0,False,False
+national i.d,dosspre,2,0,1,nacional,1.0,"{""nacional"": 2}",0,False,False
+netstat,dosspre,2,0,1,netstat,1.0,"{""netstat"": 2}",2,False,True
+network admin,dosspre,2,0,1,administrador de la red,1.0,"{""administrador de la red"": 2}",0,False,False
+network administrator,dosspre,2,0,1,administrador de la red,1.0,"{""administrador de la red"": 2}",0,False,False
+network configuration server,secreq,2,0,1,servidor de configuración de red,1.0,"{""servidor de configuración de red"": 2}",0,False,False
+network configuration service,secreq,2,0,1,servicio de configuración de red,1.0,"{""servicio de configuración de red"": 2}",0,False,False
+network configuration service function,secreq,2,0,1,función de servicio de configuración de red,1.0,"{""función de servicio de configuración de red"": 2}",0,False,False
+network function,secreq,2,0,1,función de red,1.0,"{""función de red"": 2}",0,False,False
+networked resource,dosspre,2,0,1,recurso en red,1.0,"{""recurso en red"": 2}",0,False,False
+new S4,secreq,2,0,1,nuevo mac s4,1.0,"{""nuevo mac s4"": 2}",0,False,False
+new S4 MAC,secreq,2,0,1,nuevo mac s4,1.0,"{""nuevo mac s4"": 2}",0,False,False
+new user,dosspre,2,0,1,nuevo usuario,1.0,"{""nuevo usuario"": 2}",0,False,False
+newer version,dosspre,2,0,1,versión más recientes,1.0,"{""versión más recientes"": 2}",0,False,False
+normal flow,dosspre,2,0,1,flujo normal,1.0,"{""flujo normal"": 2}",0,False,False
+normal flow information,dosspre,2,0,1,información de flujo normal,1.0,"{""información de flujo normal"": 2}",0,False,False
+note screen,dosspre,2,0,1,pantalla de la nota,1.0,"{""pantalla de la nota"": 2}",0,False,False
+notification,secreq,2,1,1,notificar,1.0,"{""notificar"": 1}",0,False,False
+number of tag,dosspre,2,0,1,número máximo actual de etiqueta,1.0,"{""número máximo actual de etiqueta"": 2}",0,False,False
+nursery,dosspre,2,0,1,vivero,1.0,"{""vivero"": 2}",0,False,False
+offence,dosspre,2,0,1,delito,1.0,"{""delito"": 2}",0,False,False
+online transaction,dosspre,2,0,1,transacción en línea,1.0,"{""transacción en línea"": 2}",0,False,False
+originator,dosspre,2,0,1,iniciador,1.0,"{""iniciador"": 2}",0,False,False
+other CND,secreq,2,0,1,otro cnd,1.0,"{""otro cnd"": 2}",0,False,False
+other command,secreq,2,0,1,demás comando,1.0,"{""demás comando"": 2}",0,False,False
+other critical information,secreq,2,0,1,otra información crítica,1.0,"{""otra información crítica"": 2}",0,False,False
+other different platform,dosspre,2,0,1,otras plataforma diferentes,1.0,"{""otras plataforma diferentes"": 2}",0,False,False
+other platform,dosspre,2,0,1,otras plataforma,1.0,"{""otras plataforma"": 2}",0,False,False
+packet priority,secreq,2,0,1,prioridad de los paquete,1.0,"{""prioridad de los paquete"": 2}",0,False,False
+parameter input,dosspre,2,0,1,entrada de parámetro,1.0,"{""entrada de parámetro"": 2}",0,False,False
+payload,dosspre,2,0,1,carga,1.0,"{""carga"": 2}",0,False,False
+percentage,dosspre,2,0,1,porcentaje,1.0,"{""porcentaje"": 2}",0,False,False
+performance target,dosspre,2,0,1,objetivo de tiempo de respuesta y rendimiento,1.0,"{""objetivo de tiempo de respuesta y rendimiento"": 2}",0,False,False
+phase,secreq,2,1,1,fase,1.0,"{""fase"": 1}",0,False,False
+phone location,dosspre,2,0,1,ubicación del teléfono,1.0,"{""ubicación del teléfono"": 2}",0,False,False
+phone to zimbabwe,dosspre,2,0,1,teléfono móvil a la comisión anticorrupción de zimbabue,1.0,"{""teléfono móvil a la comisión anticorrupción de zimbabue"": 2}",0,False,False
+pivoting,dosspre,2,0,1,pivote,1.0,"{""pivote"": 2}",0,False,False
+platform with ease,dosspre,2,0,1,plataforma con facilidad,1.0,"{""plataforma con facilidad"": 2}",0,False,False
+playback,dosspre,2,0,1,reproducción,1.0,"{""reproducción"": 2}",0,False,False
+policy for integrity,secreq,2,0,1,política de seguridad para garantizar la integridad,1.0,"{""política de seguridad para garantizar la integridad"": 2}",0,False,False
+port,secreq,2,0,1,puerto,1.0,"{""puerto"": 2}",0,False,False
+port scan,dosspre,2,0,1,escaneo de puerto,1.0,"{""escaneo de puerto"": 2}",0,False,False
+portability,dosspre,2,0,1,portabilidad,1.0,"{""portabilidad"": 2}",0,False,False
+portal,dosspre,2,0,1,portal,1.0,"{""portal"": 2}",2,False,True
+possible occurrence,dosspre,2,0,1,posible ocurrencia,1.0,"{""posible ocurrencia"": 2}",0,False,False
+practice in documentation,dosspre,2,0,1,práctica en materia de documentación,1.0,"{""práctica en materia de documentación"": 2}",0,False,False
+principle of authentication,dosspre,2,0,1,principio de autenticación,1.0,"{""principio de autenticación"": 2}",0,False,False
+privacy protection,secreq,2,0,1,protección de la privacidad,1.0,"{""protección de la privacidad"": 2}",0,False,False
+privacy protection policy,secreq,2,0,1,política de protección de la privacidad,1.0,"{""política de protección de la privacidad"": 2}",0,False,False
+private RSA,secreq,2,0,1,privada rsa,1.0,"{""privada rsa"": 2}",0,False,False
+private RSA key,secreq,2,0,1,clave privada rsa,1.0,"{""clave privada rsa"": 2}",0,False,False
+privilege usage,secreq,2,1,1,uso de privilegio,1.0,"{""uso de privilegio"": 1}",0,False,False
+program coding,dosspre,2,0,1,codificación del programa,1.0,"{""codificación del programa"": 2}",0,False,False
+proof,dosspre,2,0,1,prueba,1.0,"{""prueba"": 2}",0,False,False
+proper control,dosspre,2,0,1,control adecuados,1.0,"{""control adecuados"": 2}",0,False,False
+protection policy,secreq,2,0,1,política de protección,1.0,"{""política de protección"": 2}",0,False,False
+provider for configuration,secreq,2,0,1,proveedor de servicio gestionarlo de forma remota para fin de configuración,1.0,"{""proveedor de servicio gestionarlo de forma remota para fin de configuración"": 2}",0,False,False
+provider multiple client,secreq,2,0,1,proveedor de servicio pueden existir varios cliente,1.0,"{""proveedor de servicio pueden existir varios cliente"": 2}",0,False,False
+provisioning,secreq,2,0,1,aprovisionamiento,1.0,"{""aprovisionamiento"": 2}",0,False,False
+python programming,dosspre,2,0,1,programación de python,1.0,"{""programación de python"": 2}",0,False,False
+qos rule,secreq,2,0,1,regla de qos,1.0,"{""regla de qos"": 2}",0,False,False
+quick error,dosspre,2,0,1,rápida de error,1.0,"{""rápida de error"": 2}",0,False,False
+quick error recovery,dosspre,2,0,1,recuperación rápida de error,1.0,"{""recuperación rápida de error"": 2}",0,False,False
+reaction time,dosspre,2,0,1,tiempo de reacción,1.0,"{""tiempo de reacción"": 2}",0,False,False
+recent network,dosspre,2,0,1,red recientes,1.0,"{""red recientes"": 2}",0,False,False
+redirection,secreq,2,0,1,redirección,1.0,"{""redirección"": 2}",0,False,False
+redirection of IP,secreq,2,0,1,redirección de sesión ip,1.0,"{""redirección de sesión ip"": 2}",0,False,False
+reduced margin,dosspre,2,0,1,margen reducido,1.0,"{""margen reducido"": 2}",0,False,False
+redundancy,dosspre,2,0,1,redundancia,1.0,"{""redundancia"": 2}",0,False,False
+register,dosspre,2,0,1,registro,1.0,"{""registro"": 2}",0,False,False
+registration page,dosspre,2,0,1,página de registro,1.0,"{""página de registro"": 2}",0,False,False
+registration process,dosspre,2,0,1,proceso de registro,1.0,"{""proceso de registro"": 2}",0,False,False
+relation,dosspre,2,0,1,relación,1.0,"{""relación"": 2}",0,False,False
+remote access device,secreq,2,0,1,dispositivo de acceso remoto,1.0,"{""dispositivo de acceso remoto"": 2}",0,False,False
+reporter,dosspre,2,1,1,reportero,1.0,"{""reportero"": 1}",0,False,False
+repository,secreq,2,0,1,repositorio,1.0,"{""repositorio"": 2}",0,False,False
+resource level,dosspre,2,0,1,nivel mínimos de recurso,1.0,"{""nivel mínimos de recurso"": 2}",0,False,False
+respective family,dosspre,2,0,1,respectivas familia,1.0,"{""respectivas familia"": 2}",0,False,False
+reusability,dosspre,2,0,1,reutilizabilidad,1.0,"{""reutilizabilidad"": 2}",0,False,False
+right service control platform,secreq,2,0,1,plataforma de control de servicio correspondientes,1.0,"{""plataforma de control de servicio correspondientes"": 2}",0,False,False
+rogue note,dosspre,2,0,1,nota rogue,1.0,"{""nota rogue"": 2}",0,False,False
+rogue note screen,dosspre,2,0,1,pantalla de la nota rogue,1.0,"{""pantalla de la nota rogue"": 2}",0,False,False
+runtime behavior,secreq,2,1,1,comportamiento en tiempo de ejecución,1.0,"{""comportamiento en tiempo de ejecución"": 1}",0,False,False
+same subscription,secreq,2,0,1,misma suscripción,1.0,"{""misma suscripción"": 2}",0,False,False
+scalable speed,dosspre,2,0,1,velocidad escalable,1.0,"{""velocidad escalable"": 2}",0,False,False
+scan on university,dosspre,2,0,1,escaneo de puerto en la red wifi universitaria,1.0,"{""escaneo de puerto en la red wifi universitaria"": 2}",0,False,False
+scenario,secreq,2,0,1,escenario,1.0,"{""escenario"": 2}",0,False,False
+script,dosspre,2,0,1,script,1.0,"{""script"": 2}",2,False,True
+script,secreq,2,0,1,script,1.0,"{""script"": 2}",2,False,True
+script message,secreq,2,0,1,mensaje de script,1.0,"{""mensaje de script"": 2}",0,False,False
+secret key,dosspre,2,0,1,clave secreta,1.0,"{""clave secreta"": 2}",0,False,False
+section for verification,dosspre,2,0,1,sección para la verificación,1.0,"{""sección para la verificación"": 2}",0,False,False
+section on campus,dosspre,2,0,1,sección del campus,1.0,"{""sección del campus"": 2}",0,False,False
+secure,secreq,2,0,1,seguro,1.0,"{""seguro"": 2}",0,False,False
+secure authentication,secreq,2,0,1,autenticación y comunicación seguras,1.0,"{""autenticación y comunicación seguras"": 2}",0,False,False
+secure channel,secreq,2,0,1,canal seguro,1.0,"{""canal seguro"": 2}",0,False,False
+secure channel protocol,secreq,2,0,1,protocolo de canal seguro,1.0,"{""protocolo de canal seguro"": 2}",0,False,False
+secure protocol,dosspre,2,0,1,protocolo seguros,1.0,"{""protocolo seguros"": 2}",0,False,False
+secure storage,dosspre,2,0,1,almacenamiento seguro,1.0,"{""almacenamiento seguro"": 2}",0,False,False
+security measure,secreq,2,0,1,medida internas de seguridad,1.0,"{""medida internas de seguridad"": 2}",0,False,False
+security mechanism,secreq,2,0,1,mecanismo de seguridad,1.0,"{""mecanismo de seguridad"": 2}",0,False,False
+self,secreq,2,2,0,,,{},0,False,False
+self configuration,secreq,2,0,1,autoconfiguración,1.0,"{""autoconfiguración"": 2}",0,False,False
+sensitive information,dosspre,2,0,1,información sensible,1.0,"{""información sensible"": 2}",0,False,False
+sequence number,secreq,2,0,1,número de secuencia,1.0,"{""número de secuencia"": 2}",0,False,False
+service control platform,secreq,2,0,1,plataforma de control de servicio,1.0,"{""plataforma de control de servicio"": 2}",0,False,False
+service function,secreq,2,0,1,función de servicio,1.0,"{""función de servicio"": 2}",0,False,False
+service profile,secreq,2,0,1,perfil de servicio,1.0,"{""perfil de servicio"": 2}",0,False,False
+service provider multiple client,secreq,2,0,1,proveedor de servicio pueden existir varios cliente,1.0,"{""proveedor de servicio pueden existir varios cliente"": 2}",0,False,False
+service usage purpose,secreq,2,0,1,fin de uso de servicio,1.0,"{""fin de uso de servicio"": 2}",0,False,False
+several terminal,secreq,2,0,1,varios terminal,1.0,"{""varios terminal"": 2}",0,False,False
+sharing,dosspre,2,0,1,intercambio,1.0,"{""intercambio"": 2}",0,False,False
+signal,dosspre,2,0,1,señal,1.0,"{""señal"": 2}",0,False,False
+signal processing,dosspre,2,0,1,tratamiento de la señal,1.0,"{""tratamiento de la señal"": 2}",0,False,False
+signing,dosspre,2,1,1,registrarse,1.0,"{""registrarse"": 1}",0,False,False
+similarity,dosspre,2,1,1,similitud,1.0,"{""similitud"": 1}",0,False,False
+single client,secreq,2,0,1,único cliente,1.0,"{""único cliente"": 2}",0,False,False
+single customer,secreq,2,0,1,único dispositivo del cliente,1.0,"{""único dispositivo del cliente"": 2}",0,False,False
+single customer device,secreq,2,0,1,único dispositivo del cliente,1.0,"{""único dispositivo del cliente"": 2}",0,False,False
+single parameter,secreq,2,0,1,parámetro,1.0,"{""parámetro"": 2}",0,False,False
+slot maximum,secreq,2,0,1,máximos de las ranura,1.0,"{""máximos de las ranura"": 2}",0,False,False
+soil,dosspre,2,0,1,suelo,1.0,"{""suelo"": 2}",0,False,False
+source authenticity,secreq,2,0,1,autenticidad del origen,1.0,"{""autenticidad del origen"": 2}",0,False,False
+spam folder,dosspre,2,0,1,carpeta de spam,1.0,"{""carpeta de spam"": 2}",0,False,False
+specific private identity,secreq,2,0,1,identidad privada específica,1.0,"{""identidad privada específica"": 2}",0,False,False
+spike,dosspre,2,0,1,pico,1.0,"{""pico"": 2}",0,False,False
+stability,dosspre,2,0,1,estabilidad,1.0,"{""estabilidad"": 2}",0,False,False
+standard format,dosspre,2,0,1,formato estándar,1.0,"{""formato estándar"": 2}",0,False,False
+standard format,secreq,2,0,1,formato estándar,1.0,"{""formato estándar"": 2}",0,False,False
+start menu,dosspre,2,0,1,menú de inicio,1.0,"{""menú de inicio"": 2}",0,False,False
+start menu screen,dosspre,2,0,1,pantalla del menú de inicio,1.0,"{""pantalla del menú de inicio"": 2}",0,False,False
+static,dosspre,2,0,1,estático,1.0,"{""estático"": 2}",0,False,False
+static analysis,dosspre,2,0,1,análisis estático,1.0,"{""análisis estático"": 2}",0,False,False
+statistic,dosspre,2,0,1,estadística,1.0,"{""estadística"": 2}",0,False,False
+storage,secreq,2,0,1,almacenamiento,1.0,"{""almacenamiento"": 2}",0,False,False
+storage space,dosspre,2,0,1,espacio de almacenamiento,1.0,"{""espacio de almacenamiento"": 2}",0,False,False
+strategy,dosspre,2,0,1,estrategia,1.0,"{""estrategia"": 2}",0,False,False
+streaming,dosspre,2,0,1,streaming,1.0,"{""streaming"": 2}",2,False,True
+streaming API,dosspre,2,0,1,streaming api,1.0,"{""streaming api"": 2}",2,False,True
+student detail,dosspre,2,0,1,dato de los estudiante,1.0,"{""dato de los estudiante"": 2}",0,False,False
+subsequent command,secreq,2,0,1,comando posteriores,1.0,"{""comando posteriores"": 2}",0,False,False
+subsequent command dispatching,secreq,2,0,1,despacho de los comando posteriores,1.0,"{""despacho de los comando posteriores"": 2}",0,False,False
+summary,dosspre,2,0,1,resumen,1.0,"{""resumen"": 2}",0,False,False
+suspect,dosspre,2,0,1,sospechoso,1.0,"{""sospechoso"": 2}",0,False,False
+symmetric macing,secreq,2,0,1,mac simétrica,1.0,"{""mac simétrica"": 2}",0,False,False
+symmetric macing key,secreq,2,0,1,clave mac simétrica,1.0,"{""clave mac simétrica"": 2}",0,False,False
+system administrator,secreq,2,0,1,administrador del sistema,1.0,"{""administrador del sistema"": 2}",0,False,False
+system downloader,dosspre,2,0,1,descargador del sistema,1.0,"{""descargador del sistema"": 2}",0,False,False
+system interface,dosspre,2,0,1,interfaz del sistema,1.0,"{""interfaz del sistema"": 2}",0,False,False
+system software,dosspre,2,0,1,software del sistema,1.0,"{""software del sistema"": 2}",0,False,False
+technical user,dosspre,2,0,1,usuario no técnicos,1.0,"{""usuario no técnicos"": 2}",0,False,False
+template,dosspre,2,0,1,plantilla,1.0,"{""plantilla"": 2}",0,False,False
+term of responsiveness,dosspre,2,0,1,término de capacidad de respuesta,1.0,"{""término de capacidad de respuesta"": 2}",0,False,False
+term of throughput,dosspre,2,0,1,término de,1.0,"{""término de"": 2}",0,False,False
+test data source,dosspre,2,0,1,fuente de dato de ensayo,1.0,"{""fuente de dato de ensayo"": 2}",0,False,False
+testability,dosspre,2,0,1,testabilidad,1.0,"{""testabilidad"": 2}",0,False,False
+theft,dosspre,2,0,1,robo,1.0,"{""robo"": 2}",0,False,False
+timestamp,secreq,2,0,1,tiempo,1.0,"{""tiempo"": 2}",0,False,False
+token,secreq,2,0,1,token,1.0,"{""token"": 2}",1,False,True
+tracking,dosspre,2,0,1,seguimiento,1.0,"{""seguimiento"": 2}",0,False,False
+transaction information,dosspre,2,0,1,información sobre las transacción,1.0,"{""información sobre las transacción"": 2}",0,False,False
+transaction signature,secreq,2,0,1,firma de las transacción,1.0,"{""firma de las transacción"": 2}",0,False,False
+transformation,dosspre,2,0,1,transformación,1.0,"{""transformación"": 2}",0,False,False
+true owner,secreq,2,0,1,verdadero propietario,1.0,"{""verdadero propietario"": 2}",0,False,False
+twitter platform,dosspre,2,0,1,plataforma de twitter,1.0,"{""plataforma de twitter"": 2}",0,False,False
+twitter streaming,dosspre,2,0,1,twitter streaming,1.0,"{""twitter streaming"": 2}",2,False,True
+twitter streaming API,dosspre,2,0,1,twitter streaming api,1.0,"{""twitter streaming api"": 2}",2,False,True
+typing,dosspre,2,1,1,mecanografía,1.0,"{""mecanografía"": 1}",0,False,False
+unauthorised disclosure,secreq,2,0,1,divulgación no,1.0,"{""divulgación no"": 2}",0,False,False
+unauthorized access,secreq,2,0,1,acceso no,1.0,"{""acceso no"": 2}",0,False,False
+unauthorized use,dosspre,2,0,1,uso no autorizado,1.0,"{""uso no autorizado"": 2}",0,False,False
+unavailability,dosspre,2,0,1,disponibilidad,1.0,"{""disponibilidad"": 2}",0,False,False
+unique ID,dosspre,2,0,1,id,1.0,"{""id"": 2}",0,False,False
+unique identifier,dosspre,2,0,1,identificador únicos,1.0,"{""identificador únicos"": 2}",0,False,False
+university WIFI,dosspre,2,0,1,wifi universitaria,1.0,"{""wifi universitaria"": 2}",0,False,False
+university WIFI network,dosspre,2,0,1,red wifi universitaria,1.0,"{""red wifi universitaria"": 2}",0,False,False
+unnecessary file,dosspre,2,0,1,archivo innecesarios,1.0,"{""archivo innecesarios"": 2}",0,False,False
+unrealistic waiting,dosspre,2,0,1,espera poco,1.0,"{""espera poco"": 2}",0,False,False
+unrealistic waiting time,dosspre,2,0,1,tiempo de espera poco,1.0,"{""tiempo de espera poco"": 2}",0,False,False
+unusual activity,dosspre,2,0,1,actividad inusual,1.0,"{""actividad inusual"": 2}",0,False,False
+upgrade,secreq,2,0,1,actualización,1.0,"{""actualización"": 2}",0,False,False
+upgrade purpose,secreq,2,0,1,fin de configuración monitorización y actualización,1.0,"{""fin de configuración monitorización y actualización"": 2}",0,False,False
+upstream direction,secreq,2,0,1,dirección ascendente,1.0,"{""dirección ascendente"": 2}",0,False,False
+usage purpose,secreq,2,0,1,fin de uso,1.0,"{""fin de uso"": 2}",0,False,False
+user experience,secreq,2,0,1,experiencia del usuario,1.0,"{""experiencia del usuario"": 2}",0,False,False
+user for storage,dosspre,2,0,1,usuario cargará para su almacenamiento,1.0,"{""usuario cargará para su almacenamiento"": 2}",0,False,False
+user input validation,dosspre,2,0,1,validación de entrada de usuario,1.0,"{""validación de entrada de usuario"": 2}",0,False,False
+user interaction,secreq,2,0,1,interacción del usuario,1.0,"{""interacción del usuario"": 2}",0,False,False
+user password,dosspre,2,0,1,contraseña de usuario,1.0,"{""contraseña de usuario"": 2}",0,False,False
+user validation,dosspre,2,0,1,validación del usuario,1.0,"{""validación del usuario"": 2}",0,False,False
+various platform,dosspre,2,0,1,diversas plataforma,1.0,"{""diversas plataforma"": 2}",0,False,False
+vehicle information,dosspre,2,0,1,información sobre el vehículo,1.0,"{""información sobre el vehículo"": 2}",0,False,False
+verification method,secreq,2,0,1,método de verificación,1.0,"{""método de verificación"": 2}",0,False,False
+victim,dosspre,2,0,1,víctima,1.0,"{""víctima"": 2}",0,False,False
+victim of pivoting,dosspre,2,0,1,víctima del pivote,1.0,"{""víctima del pivote"": 2}",0,False,False
+video communication,secreq,2,0,1,comunicación de video,1.0,"{""comunicación de video"": 2}",0,False,False
+viewing format,dosspre,2,0,1,formato de entrada y visualización,1.0,"{""formato de entrada y visualización"": 2}",0,False,False
+virtual file,dosspre,2,0,1,archivo virtual,1.0,"{""archivo virtual"": 2}",0,False,False
+voice,dosspre,2,0,1,voz,1.0,"{""voz"": 2}",0,False,False
+voice communication,secreq,2,0,1,comunicación de voz,1.0,"{""comunicación de voz"": 2}",0,False,False
+warning script,dosspre,2,0,1,script de advertencia,1.0,"{""script de advertencia"": 2}",0,False,False
+watermark system,dosspre,2,0,1,sistema de marca de agua,1.0,"{""sistema de marca de agua"": 2}",0,False,False
+way authentication process,secreq,2,0,1,proceso de autenticación,1.0,"{""proceso de autenticación"": 2}",0,False,False
+web data,dosspre,2,0,1,dato web,1.0,"{""dato web"": 2}",0,False,False
+web data mining,dosspre,2,0,1,extracción de dato web,1.0,"{""extracción de dato web"": 2}",0,False,False
+web server,dosspre,2,0,1,servidor web,1.0,"{""servidor web"": 2}",0,False,False
+website against URL,dosspre,2,0,1,sitio web nocivos contra las dirección url,1.0,"{""sitio web nocivos contra las dirección url"": 2}",0,False,False
+whistle,dosspre,2,2,0,,,{},0,False,False
+yield,dosspre,2,0,1,rendimiento,1.0,"{""rendimiento"": 2}",0,False,False
+AKA,secreq,1,0,1,aka,1.0,"{""aka"": 1}",1,False,True
+APDU,secreq,1,0,1,apdu,1.0,"{""apdu"": 1}",1,False,True
+CEPS,secreq,1,0,1,ceps,1.0,"{""ceps"": 1}",1,False,True
+CRUD,dosspre,1,0,1,crud,1.0,"{""crud"": 1}",1,False,True
+CSCF,secreq,1,0,1,p-cscf,1.0,"{""p-cscf"": 1}",1,False,True
+CSS,dosspre,1,0,1,css,1.0,"{""css"": 1}",1,False,True
+CVM,secreq,1,0,1,cvm,1.0,"{""cvm"": 1}",1,False,True
+CVMI,secreq,1,0,1,cvmi,1.0,"{""cvmi"": 1}",1,False,True
+DCT,dosspre,1,0,1,dct,1.0,"{""dct"": 1}",1,False,True
+DECT,secreq,1,0,1,dect,1.0,"{""dect"": 1}",1,False,True
+DOS,dosspre,1,0,1,dos,1.0,"{""dos"": 1}",1,False,True
+DRM,secreq,1,0,1,drm,1.0,"{""drm"": 1}",1,False,True
+EGOVAUTH,dosspre,1,0,1,egovauth,1.0,"{""egovauth"": 1}",1,False,True
+ERC721,dosspre,1,0,1,erc721,1.0,"{""erc721"": 1}",1,False,True
+ES,secreq,1,0,1,es,1.0,"{""es"": 1}",0,False,False
+FXS,secreq,1,0,1,fxs,1.0,"{""fxs"": 1}",1,False,True
+HCI,dosspre,1,0,1,hci,1.0,"{""hci"": 1}",1,False,True
+HGI,secreq,1,0,1,hgi,1.0,"{""hgi"": 1}",1,False,True
+HID,dosspre,1,0,1,hid,1.0,"{""hid"": 1}",1,False,True
+HTTP,dosspre,1,0,1,http,1.0,"{""http"": 1}",1,False,True
+HTTP,secreq,1,0,1,http,1.0,"{""http"": 1}",1,False,True
+IMPI,secreq,1,0,1,impi,1.0,"{""impi"": 1}",1,False,True
+IPD,dosspre,1,0,1,ipd,1.0,"{""ipd"": 1}",1,False,True
+ISAAS,dosspre,1,0,1,isaas,1.0,"{""isaas"": 1}",1,False,True
+ISP,dosspre,1,0,1,isp,1.0,"{""isp"": 1}",1,False,True
+IT,dosspre,1,0,1,ti,1.0,"{""ti"": 1}",0,False,False
+JAVA,dosspre,1,0,1,java,1.0,"{""java"": 1}",1,False,True
+L2,secreq,1,0,1,l2,1.0,"{""l2"": 1}",0,False,False
+L3,secreq,1,0,1,l3,1.0,"{""l3"": 1}",0,False,False
+LAN,dosspre,1,0,1,red,1.0,"{""red"": 1}",0,False,False
+LBS,dosspre,1,0,1,lbs,1.0,"{""lbs"": 1}",1,False,True
+MD5,dosspre,1,0,1,md5,1.0,"{""md5"": 1}",1,False,True
+MMS,dosspre,1,0,1,mms,1.0,"{""mms"": 1}",1,False,True
+MPLS,dosspre,1,0,1,mpls,1.0,"{""mpls"": 1}",1,False,True
+NBA,secreq,1,0,1,nba,1.0,"{""nba"": 1}",1,False,True
+NIC,dosspre,1,0,1,nic,1.0,"{""nic"": 1}",1,False,True
+ODPF,dosspre,1,0,1,odpf,1.0,"{""odpf"": 1}",1,False,True
+PDF,dosspre,1,0,1,pdf,1.0,"{""pdf"": 1}",1,False,True
+PIN,dosspre,1,0,1,pin,1.0,"{""pin"": 1}",1,False,True
+PKI,dosspre,1,0,1,pki,1.0,"{""pki"": 1}",1,False,True
+POP3,dosspre,1,0,1,pop3,1.0,"{""pop3"": 1}",1,False,True
+RACS,secreq,1,0,1,racs,1.0,"{""racs"": 1}",1,False,True
+RAM,dosspre,1,0,1,ram,1.0,"{""ram"": 1}",1,False,True
+RRT,dosspre,1,0,1,rrt,1.0,"{""rrt"": 1}",1,False,True
+RSA,dosspre,1,0,1,rsa,1.0,"{""rsa"": 1}",1,False,True
+S6,secreq,1,0,1,s6,1.0,"{""s6"": 1}",0,False,False
+SAML,dosspre,1,0,1,saml,1.0,"{""saml"": 1}",1,False,True
+SECURE,secreq,1,0,1,secure,1.0,"{""secure"": 1}",1,False,True
+TISPAN,secreq,1,0,1,tispan,1.0,"{""tispan"": 1}",1,False,True
+UI,dosspre,1,0,1,interfaz,1.0,"{""interfaz"": 1}",0,False,False
+UPS,dosspre,1,0,1,ups,1.0,"{""ups"": 1}",1,False,True
+URLS,dosspre,1,0,1,urls,1.0,"{""urls"": 1}",1,False,True
+USB,secreq,1,0,1,usb,1.0,"{""usb"": 1}",1,False,True
+USSD,dosspre,1,0,1,ussd,1.0,"{""ussd"": 1}",1,False,True
+UUID,dosspre,1,0,1,uuid,1.0,"{""uuid"": 1}",1,False,True
+VM,dosspre,1,0,1,vm,1.0,"{""vm"": 1}",0,False,False
+WAVE,dosspre,1,0,1,wave,1.0,"{""wave"": 1}",1,False,True
+ZRP,dosspre,1,0,1,zrp,1.0,"{""zrp"": 1}",1,False,True
+access right,secreq,1,0,1,derecho de acceso,1.0,"{""derecho de acceso"": 1}",0,False,False
+activation,dosspre,1,0,1,activación,1.0,"{""activación"": 1}",0,False,False
+administration,secreq,1,0,1,administración,1.0,"{""administración"": 1}",0,False,False
+agent,secreq,1,0,1,agente,1.0,"{""agente"": 1}",0,False,False
+application access,dosspre,1,0,1,acceso de la aplicación,1.0,"{""acceso de la aplicación"": 1}",0,False,False
+architecture,secreq,1,0,1,arquitectura,1.0,"{""arquitectura"": 1}",0,False,False
+aspect,dosspre,1,0,1,aspecto,1.0,"{""aspecto"": 1}",0,False,False
+aspect,secreq,1,0,1,aspecto,1.0,"{""aspecto"": 1}",0,False,False
+association,dosspre,1,0,1,asociación,1.0,"{""asociación"": 1}",0,False,False
+attempt,secreq,1,0,1,intentar,1.0,"{""intentar"": 1}",0,False,False
+authentication process,dosspre,1,0,1,proceso de autenticación,1.0,"{""proceso de autenticación"": 1}",0,False,False
+authenticity,dosspre,1,0,1,autenticidad,1.0,"{""autenticidad"": 1}",0,False,False
+authority,dosspre,1,0,1,autoridad,1.0,"{""autoridad"": 1}",0,False,False
+authorization,dosspre,1,0,1,autorización,1.0,"{""autorización"": 1}",0,False,False
+authorized user,secreq,1,0,1,usuario autorizados,1.0,"{""usuario autorizados"": 1}",0,False,False
+balance,dosspre,1,0,1,saldo,1.0,"{""saldo"": 1}",0,False,False
+bandwidth,dosspre,1,0,1,banda,1.0,"{""banda"": 1}",0,False,False
+basis,dosspre,1,0,1,base,1.0,"{""base"": 1}",0,False,False
+behavior,dosspre,1,0,1,comportamiento,1.0,"{""comportamiento"": 1}",0,False,False
+bootstrap,dosspre,1,0,1,bootstrap,1.0,"{""bootstrap"": 1}",1,False,True
+bootstrap,secreq,1,0,1,bootstrap,1.0,"{""bootstrap"": 1}",1,False,True
+camera,secreq,1,0,1,cámara,1.0,"{""cámara"": 1}",0,False,False
+capacity,secreq,1,0,1,capacidad,1.0,"{""capacidad"": 1}",0,False,False
+client application,dosspre,1,0,1,aplicación cliente,1.0,"{""aplicación cliente"": 1}",0,False,False
+client application,secreq,1,0,1,aplicación cliente,1.0,"{""aplicación cliente"": 1}",0,False,False
+collection,secreq,1,0,1,recopilación,1.0,"{""recopilación"": 1}",0,False,False
+completion,dosspre,1,0,1,completar,1.0,"{""completar"": 1}",0,False,False
+completion,secreq,1,0,1,finalización,1.0,"{""finalización"": 1}",0,False,False
+complexity,secreq,1,0,1,complejidad,1.0,"{""complejidad"": 1}",0,False,False
+content management,dosspre,1,0,1,gestión de contenido,1.0,"{""gestión de contenido"": 1}",0,False,False
+conversion,dosspre,1,0,1,conversión,1.0,"{""conversión"": 1}",0,False,False
+conversion,secreq,1,0,1,conversión,1.0,"{""conversión"": 1}",0,False,False
+cost,secreq,1,0,1,coste,1.0,"{""coste"": 1}",0,False,False
+critical information,dosspre,1,0,1,información crítica,1.0,"{""información crítica"": 1}",0,False,False
+currency,dosspre,1,0,1,divisa,1.0,"{""divisa"": 1}",0,False,False
+data integrity,secreq,1,0,1,integridad de dato,1.0,"{""integridad de dato"": 1}",0,False,False
+debit,secreq,1,0,1,débito,1.0,"{""débito"": 1}",0,False,False
+decryption,secreq,1,1,0,,,{},0,False,False
+delay,secreq,1,0,1,retardo,1.0,"{""retardo"": 1}",0,False,False
+delivery,dosspre,1,0,1,prestación,1.0,"{""prestación"": 1}",0,False,False
+delivery,secreq,1,0,1,entrega,1.0,"{""entrega"": 1}",0,False,False
+deployment,dosspre,1,0,1,despliegue,1.0,"{""despliegue"": 1}",0,False,False
+deployment,secreq,1,0,1,despliegue,1.0,"{""despliegue"": 1}",0,False,False
+digest,secreq,1,0,1,digest,1.0,"{""digest"": 1}",1,False,True
+digital signature,secreq,1,0,1,firma digitales,1.0,"{""firma digitales"": 1}",0,False,False
+dispatching,dosspre,1,0,1,envío,1.0,"{""envío"": 1}",0,False,False
+downloading,secreq,1,0,1,descarga,1.0,"{""descarga"": 1}",0,False,False
+emergency,secreq,1,0,1,emergencia,1.0,"{""emergencia"": 1}",0,False,False
+emergency service,dosspre,1,0,1,servicio de emergencia,1.0,"{""servicio de emergencia"": 1}",0,False,False
+emergency service,secreq,1,0,1,servicio de emergencia,1.0,"{""servicio de emergencia"": 1}",0,False,False
+encryption standard,dosspre,1,0,1,estándar de cifrado,1.0,"{""estándar de cifrado"": 1}",0,False,False
+encryption standard,secreq,1,0,1,encryption standard,1.0,"{""encryption standard"": 1}",1,False,True
+eventuality,dosspre,1,0,1,eventualidad,1.0,"{""eventualidad"": 1}",0,False,False
+exception,dosspre,1,0,1,excepción,1.0,"{""excepción"": 1}",0,False,False
+facility,secreq,1,1,0,,,{},0,False,False
+feature,secreq,1,0,1,función,1.0,"{""función"": 1}",0,False,False
+firewall,dosspre,1,0,1,cortafuegos,1.0,"{""cortafuegos"": 1}",0,False,False
+firmware,dosspre,1,0,1,firmware,1.0,"{""firmware"": 1}",1,False,True
+flexibility,dosspre,1,0,1,flexibilidad,1.0,"{""flexibilidad"": 1}",0,False,False
+flexibility,secreq,1,0,1,flexibilidad,1.0,"{""flexibilidad"": 1}",0,False,False
+goal,secreq,1,0,1,objetivo,1.0,"{""objetivo"": 1}",0,False,False
+huge amount,secreq,1,0,1,gran cantidad,1.0,"{""gran cantidad"": 1}",0,False,False
+identification,dosspre,1,0,1,identificación,1.0,"{""identificación"": 1}",0,False,False
+identifier,secreq,1,0,1,identificador,1.0,"{""identificador"": 1}",0,False,False
+impact,secreq,1,0,1,impacto,1.0,"{""impacto"": 1}",0,False,False
+implementation,dosspre,1,0,1,aplicación,1.0,"{""aplicación"": 1}",0,False,False
+indicator,dosspre,1,0,1,indicador,1.0,"{""indicador"": 1}",0,False,False
+indicator,secreq,1,0,1,indicador,1.0,"{""indicador"": 1}",0,False,False
+installation,dosspre,1,0,1,instalación,1.0,"{""instalación"": 1}",0,False,False
+installation,secreq,1,0,1,instalación,1.0,"{""instalación"": 1}",0,False,False
+internet,secreq,1,0,1,internet,1.0,"{""internet"": 1}",1,False,True
+key exchange,dosspre,1,0,1,intercambio de clave,1.0,"{""intercambio de clave"": 1}",0,False,False
+key exchange,secreq,1,0,1,intercambio de clave,1.0,"{""intercambio de clave"": 1}",0,False,False
+knowledge,secreq,1,0,1,conozca,1.0,"{""conozca"": 1}",0,False,False
+layer,dosspre,1,0,1,capa,1.0,"{""capa"": 1}",0,False,False
+link,secreq,1,0,1,enlace,1.0,"{""enlace"": 1}",0,False,False
+loading,dosspre,1,0,1,carga,1.0,"{""carga"": 1}",0,False,False
+locking,dosspre,1,0,1,bloqueo,1.0,"{""bloqueo"": 1}",0,False,False
+logging,secreq,1,0,1,registro,1.0,"{""registro"": 1}",0,False,False
+logic,secreq,1,0,1,lógicas,1.0,"{""lógicas"": 1}",0,False,False
+management system,dosspre,1,0,1,sistema de gestión,1.0,"{""sistema de gestión"": 1}",0,False,False
+measure,dosspre,1,0,1,medida,1.0,"{""medida"": 1}",0,False,False
+network administrator,secreq,1,0,1,administrador de la red,1.0,"{""administrador de la red"": 1}",0,False,False
+node,secreq,1,0,1,nodo,1.0,"{""nodo"": 1}",0,False,False
+objective,dosspre,1,0,1,objetivo,1.0,"{""objetivo"": 1}",0,False,False
+objective,secreq,1,0,1,objetivo,1.0,"{""objetivo"": 1}",0,False,False
+option,secreq,1,0,1,elección,1.0,"{""elección"": 1}",0,False,False
+patch,secreq,1,0,1,parche,1.0,"{""parche"": 1}",0,False,False
+pattern,secreq,1,0,1,patrón,1.0,"{""patrón"": 1}",0,False,False
+payment,dosspre,1,0,1,pago,1.0,"{""pago"": 1}",0,False,False
+performance,secreq,1,0,1,rendimiento,1.0,"{""rendimiento"": 1}",0,False,False
+period,secreq,1,0,1,periodo,1.0,"{""periodo"": 1}",0,False,False
+phase,dosspre,1,0,1,fase,1.0,"{""fase"": 1}",0,False,False
+plain text,dosspre,1,0,1,texto plano,1.0,"{""texto plano"": 1}",0,False,False
+plain text,secreq,1,0,1,texto plano,1.0,"{""texto plano"": 1}",0,False,False
+presence,dosspre,1,0,1,presencia,1.0,"{""presencia"": 1}",0,False,False
+presentation,secreq,1,0,1,presentación,1.0,"{""presentación"": 1}",0,False,False
+principle,secreq,1,0,1,principio,1.0,"{""principio"": 1}",0,False,False
+programming,secreq,1,0,1,programación,1.0,"{""programación"": 1}",0,False,False
+progress,secreq,1,0,1,curso,1.0,"{""curso"": 1}",0,False,False
+proof,secreq,1,0,1,prueba,1.0,"{""prueba"": 1}",0,False,False
+proxy,secreq,1,0,1,proxy,1.0,"{""proxy"": 1}",1,False,True
+qos,dosspre,1,0,1,qos,1.0,"{""qos"": 1}",1,False,True
+quality,secreq,1,0,1,calidad,1.0,"{""calidad"": 1}",0,False,False
+rate,secreq,1,1,0,,,{},0,False,False
+reader,dosspre,1,0,1,lector,1.0,"{""lector"": 1}",0,False,False
+reader,secreq,1,0,1,lector,1.0,"{""lector"": 1}",0,False,False
+receiver,dosspre,1,0,1,receptor,1.0,"{""receptor"": 1}",0,False,False
+receiver,secreq,1,0,1,receptor,1.0,"{""receptor"": 1}",0,False,False
+recovery,secreq,1,0,1,recuperación,1.0,"{""recuperación"": 1}",0,False,False
+register,secreq,1,0,1,registro,1.0,"{""registro"": 1}",0,False,False
+relation,secreq,1,1,0,,,{},0,False,False
+removal,dosspre,1,0,1,eliminación,1.0,"{""eliminación"": 1}",0,False,False
+request for access,dosspre,1,0,1,solicitud de acceso,1.0,"{""solicitud de acceso"": 1}",0,False,False
+request for access,secreq,1,0,1,solicitud válida es decir autorizada de acceso,1.0,"{""solicitud válida es decir autorizada de acceso"": 1}",0,False,False
+reset,dosspre,1,0,1,restablecimiento,1.0,"{""restablecimiento"": 1}",0,False,False
+responsibility,dosspre,1,0,1,responsabilidad,1.0,"{""responsabilidad"": 1}",0,False,False
+restriction,dosspre,1,0,1,restricción,1.0,"{""restricción"": 1}",0,False,False
+reversal,dosspre,1,1,0,,,{},0,False,False
+routing,dosspre,1,0,1,enrutamiento,1.0,"{""enrutamiento"": 1}",0,False,False
+routing,secreq,1,0,1,enrutamiento,1.0,"{""enrutamiento"": 1}",0,False,False
+rule,dosspre,1,0,1,regla,1.0,"{""regla"": 1}",0,False,False
+scheme,dosspre,1,0,1,esquema,1.0,"{""esquema"": 1}",0,False,False
+screen,secreq,1,0,1,pantalla,1.0,"{""pantalla"": 1}",0,False,False
+secure channel,dosspre,1,0,1,canal seguro,1.0,"{""canal seguro"": 1}",0,False,False
+secure storage,secreq,1,0,1,almacenamiento seguro,1.0,"{""almacenamiento seguro"": 1}",0,False,False
+security mechanism,dosspre,1,0,1,mecanismo de seguridad,1.0,"{""mecanismo de seguridad"": 1}",0,False,False
+security principle,dosspre,1,0,1,principio de seguridad,1.0,"{""principio de seguridad"": 1}",0,False,False
+security principle,secreq,1,0,1,principio de seguridad,1.0,"{""principio de seguridad"": 1}",0,False,False
+separation,dosspre,1,0,1,separación,1.0,"{""separación"": 1}",0,False,False
+separation,secreq,1,0,1,separación,1.0,"{""separación"": 1}",0,False,False
+service provider,dosspre,1,0,1,proveedor de servicio,1.0,"{""proveedor de servicio"": 1}",0,False,False
+system failure,dosspre,1,0,1,falla del sistema,1.0,"{""falla del sistema"": 1}",0,False,False
+system failure,secreq,1,0,1,fallo o discontinuidad del sistema,1.0,"{""fallo o discontinuidad del sistema"": 1}",0,False,False
+technology,secreq,1,0,1,tecnología,1.0,"{""tecnología"": 1}",0,False,False
+text,secreq,1,0,1,texto,1.0,"{""texto"": 1}",0,False,False
+timing,dosspre,1,0,1,cronometría,1.0,"{""cronometría"": 1}",0,False,False
+timing,secreq,1,0,1,momento,1.0,"{""momento"": 1}",0,False,False
+transaction data,dosspre,1,0,1,dato de transacción,1.0,"{""dato de transacción"": 1}",0,False,False
+transaction data,secreq,1,0,1,dato clave de la transacción,1.0,"{""dato clave de la transacción"": 1}",0,False,False
+unauthorized user,secreq,1,0,1,usuario no,1.0,"{""usuario no"": 1}",0,False,False
+unique identifier,secreq,1,0,1,identificador únicos,1.0,"{""identificador únicos"": 1}",0,False,False
+version,secreq,1,0,1,versión,1.0,"{""versión"": 1}",0,False,False
+warning,secreq,1,0,1,advertencia,1.0,"{""advertencia"": 1}",0,False,False
+way authentication,dosspre,1,0,1,autenticación,1.0,"{""autenticación"": 1}",0,False,False

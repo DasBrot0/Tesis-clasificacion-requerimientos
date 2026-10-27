@@ -1,0 +1,17 @@
+{
+  "model_source": "Buzzeitor/roberta-base-bne",
+  "subset_size": 48,
+  "epochs": 50,
+  "learning_rate": 5e-05,
+  "max_length": 64,
+  "used_weighted_bce": true,
+  "final": {
+    "epoch": 50,
+    "train_loss": 0.7162960569063822,
+    "train_macro_f1": 0.49440237633514944,
+    "train_subset_accuracy": 0.020833333333333332
+  },
+  "minimum_train_loss": 0.7099138100941976,
+  "maximum_train_macro_f1": 0.5332247117961403,
+  "maximum_train_subset_accuracy": 0.22916666666666666
+}

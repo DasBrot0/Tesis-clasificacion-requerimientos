@@ -1,0 +1,8 @@
+﻿label,precision,recall,f1,support
+Security,0.0,0.0,0.0,39
+Confidentiality,0.0,0.0,0.0,11
+Integrity,0.0,0.0,0.0,8
+Non_repudiation,0.0,0.0,0.0,2
+Accountability,0.0,0.0,0.0,3
+Authenticity,0.0,0.0,0.0,13
+Resistance,0.0,0.0,0.0,5

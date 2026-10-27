@@ -1,0 +1,23 @@
+{
+  "config": {
+    "embedding_dim": 64,
+    "hidden_units": 32,
+    "num_layers": 2,
+    "batch_size": 50,
+    "epochs": 50,
+    "dropout": 0.3,
+    "learning_rate": 0.0018574215369056267,
+    "pos_weight": true
+  },
+  "final_training_epochs": 35,
+  "thresholds_by_label": {
+    "Security": 0.5250000000000001,
+    "Confidentiality": 0.4750000000000001,
+    "Integrity": 0.42500000000000004,
+    "Non_repudiation": 0.5,
+    "Accountability": 0.5,
+    "Authenticity": 0.5000000000000001,
+    "Resistance": 0.5000000000000001
+  },
+  "selected_from": "OOF only"
+}

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "embedding_dim": 64,
+    "num_filters": 100,
+    "kernel_size": 3,
+    "batch_size": 32,
+    "epochs": 50,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "threshold": 0.5,
+    "thresholds_by_label": {
+      "Security": 0.5000000000000001,
+      "Confidentiality": 0.4750000000000001,
+      "Integrity": 0.4,
+      "Non_repudiation": 0.4,
+      "Accountability": 0.4,
+      "Authenticity": 0.4,
+      "Resistance": 0.4
+    }
+  },
+  "best_epoch": 39,
+  "val_macro_f1": 0.21612673041244473,
+  "val_security_recall": 0.7948717948717948
+}

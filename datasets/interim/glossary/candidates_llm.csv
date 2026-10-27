@@ -1,0 +1,1619 @@
+﻿cand_id,term,freq,category,category_votes,is_security_term,is_security_term_votes,iso25010_subchar,iso25010_subchar_votes,boundary_ok,boundary_ok_votes,suggested_form,rationale
+c0001,system,1401,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado en este corpus.
+c0002,user,449,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado propio.
+c0003,card,311,Common,3,False,3,none,3,True,3,,Objeto central del dominio de tarjetas que el público general también conoce.
+c0004,application,252,Common,3,False,3,none,3,True,3,,Término de software de uso general que también designa aplicaciones en la tarjeta.
+c0005,data,212,Common,2,False,3,none,3,True,3,,Palabra general sin sentido especializado por sí sola.
+c0006,CNG,126,NE,3,False,3,none,3,True,3,,Sigla de un componente propio de la especificación de redes domésticas (Customer Network Gateway).
+c0007,interface,106,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0008,issuer,104,Specific,3,False,3,none,3,True,2,card issuer,Rol del dominio de pagos con tarjeta (emisor).
+c0009,transaction,120,Common,3,False,3,none,3,True,3,,Concepto de pagos conocido por el público general.
+c0010,logical channel,101,Specific,3,False,3,none,3,True,3,,Concepto técnico de comunicación con tarjetas inteligentes.
+c0011,card issuer,68,Specific,3,False,3,none,3,True,3,,Rol del dominio de pagos con tarjeta; no es un concepto de seguridad en sí.
+c0012,device,96,Common,3,False,3,none,3,True,3,,Término tecnológico de uso general.
+c0013,security,115,Common,3,True,3,none,3,True,3,,"Concepto general de seguridad, sin una subcaracterística específica."
+c0014,channel,107,Common,2,False,3,none,3,True,3,,Término de comunicaciones de uso general.
+c0015,authentication,57,Common,3,True,3,Authenticity,3,True,3,,Concepto de seguridad conocido por el público; verifica la identidad de un sujeto.
+c0016,file,83,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0017,information,117,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0018,CND,50,NE,3,False,3,none,3,True,3,,Sigla de un componente propio de la especificación de redes domésticas (Customer Network Device).
+c0019,globalplatform,47,NE,3,False,3,none,3,True,3,,Nombre de una especificación/organización; no se traduce.
+c0020,command,80,Common,2,False,3,none,3,True,3,,"Término informático general, también usado en comandos a la tarjeta."
+c0021,security domain,56,Specific,3,True,3,Confidentiality,3,True,3,,Componente de GlobalPlatform que gestiona claves y servicios criptográficos aislados por proveedor.
+c0022,load,67,Specific,2,False,3,none,3,True,3,,"Palabra general y ambigua (carga de CPU, carga de valor) sin sentido terminológico propio."
+c0023,CEP card,45,Specific,3,False,3,none,3,True,3,,Tarjeta de monedero electrónico del dominio de pagos con tarjeta.
+c0024,service,110,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0025,network,79,Common,3,False,3,none,3,True,3,,Término de redes de uso general.
+c0026,access,78,Common,3,True,3,Confidentiality,3,True,3,,"Concepto de control de acceso a recursos, relacionado con permitir solo a autorizados."
+c0027,logical,72,NotTerm,3,False,3,none,3,False,3,logical channel,Fragmento mal segmentado de logical channel.
+c0028,CPN,43,NE,3,False,3,none,3,True,3,,Sigla de un componente propio de la especificación de redes domésticas (Customer Premises Network).
+c0029,domain,59,Specific,2,False,3,none,3,True,3,,"Palabra ambigua en los contextos, sin sentido terminológico unívoco."
+c0030,key,82,Specific,3,True,3,Confidentiality,3,True,3,,Concepto criptográfico para proteger datos frente a no autorizados.
+c0031,CEP,51,NE,3,False,3,none,3,True,3,,Sigla de una especificación de monedero electrónico; no se traduce.
+c0032,server,56,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0033,web,58,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0034,database,51,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0035,password,44,Common,3,True,3,Authenticity,3,True,3,,Secreto conocido por el público usado para demostrar identidad.
+c0036,acquirer,36,Specific,3,False,3,none,3,True,2,load acquirer,Rol del dominio de pagos con tarjeta (adquirente).
+c0037,supplementary logical channel,39,Specific,3,False,3,none,3,True,3,,Tipo de canal lógico definido en ISO 7816-4 para tarjetas inteligentes.
+c0038,NGN,32,Specific,2,False,3,none,3,True,3,,Sigla de telecomunicaciones (red de próxima generación) propia del dominio de redes.
+c0039,environment,55,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0040,supplementary logical,39,NotTerm,3,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado de supplementary logical channel.
+c0041,platform,49,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0042,basic logical channel,33,Specific,3,False,3,none,3,True,3,,Canal lógico por defecto en tarjetas inteligentes según ISO 7816-4.
+c0043,email,53,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0044,administrator,38,Common,3,False,3,none,3,True,3,,Rol de sistemas conocido por el público general.
+c0045,globalplatform registry,23,NE,3,False,3,none,3,True,3,,Componente propio de la especificación GlobalPlatform.
+c0046,provider,39,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0047,client,46,Common,3,False,3,none,3,True,3,,Término informático/comercial de uso general.
+c0048,watermark,32,Specific,3,True,3,Authenticity,2,True,3,,Marca incrustada en una imagen para demostrar su autoría o procedencia.
+c0049,error,44,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0050,software,49,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0051,merchant acquirer,26,Specific,3,False,3,none,3,True,3,,Rol del dominio de pagos con tarjeta.
+c0052,functionality,31,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0053,user interface,29,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0054,OPEN,63,NE,3,False,3,none,3,True,3,,Nombre de un componente propio del entorno GlobalPlatform; no se traduce.
+c0055,module,33,NotTerm,2,False,3,none,3,True,3,,Palabra general sin sentido especializado por sí sola.
+c0056,mechanism,36,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0057,management,50,NotTerm,3,False,3,none,3,True,3,,Palabra general; el sentido depende del sustantivo que acompaña.
+c0058,message,51,Common,3,False,3,none,3,True,3,,Término de comunicaciones de uso general.
+c0059,PSAM,31,Specific,3,True,3,Authenticity,2,True,3,,Módulo seguro del terminal que autentica la tarjeta en transacciones de pago.
+c0060,verification,33,Common,3,True,3,Authenticity,3,True,3,,Comprobación de identidad o derechos de un usuario o recurso.
+c0061,encryption,30,Common,3,True,3,Confidentiality,3,True,3,,Cifrado de datos para que solo accedan los autorizados.
+c0062,supplementary,38,NotTerm,3,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado de supplementary logical channel.
+c0063,signature,32,Specific,3,True,3,Non_repudiation,3,True,3,,Firma digital que prueba el origen de un mensaje y evita su negación.
+c0064,detail,31,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0065,registry,27,Specific,2,False,3,none,3,True,3,,"Término general de registro de información, sin sentido de seguridad en estos contextos."
+c0066,entity,35,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0067,card entity,23,NotTerm,3,False,3,none,3,False,3,off-card entity,Segmentación errónea de card and off-card entities.
+c0068,POS device,22,Specific,3,False,3,none,3,True,3,,Dispositivo de punto de venta del dominio de pagos.
+c0069,algorithm,28,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0070,issuer security domain,19,NE,2,True,3,Confidentiality,3,True,3,,Dominio de seguridad del emisor de la tarjeta que gestiona sus claves.
+c0071,integrity,29,Common,3,True,3,Integrity,3,True,3,,Propiedad de seguridad que impide modificaciones no autorizadas de datos.
+c0072,exchange,37,NotTerm,3,False,3,none,3,True,3,,"Palabra general y ambigua (casa de cambio, intercambio de datos)."
+c0073,life cycle,25,Specific,2,False,3,none,3,True,3,,Concepto general de ciclo de vida aplicado a tarjetas y aplicaciones.
+c0074,communication,32,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0075,merchant,34,Common,3,False,3,none,3,True,3,,Rol de pagos conocido por el público (comercio).
+c0076,resource,29,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0077,image,35,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0078,log,27,Specific,2,True,3,Accountability,3,True,3,,Registro de eventos que permite rastrear acciones.
+c0079,parameter,27,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0080,currency,43,NotTerm,2,False,3,none,3,True,3,,Palabra general (moneda) sin significado especializado.
+c0081,content,37,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0082,POS,27,Specific,3,False,3,none,3,True,3,,Sigla de punto de venta del dominio de pagos.
+c0083,request,29,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0084,session,30,Specific,2,False,3,none,3,True,3,,Término informático de uso general.
+c0085,basic,33,NotTerm,3,False,3,none,3,False,3,basic logical channel,Fragmento cortado de basic logical channel.
+c0086,detection,23,Common,2,False,2,none,3,True,3,,Concepto de seguridad (detección de ataques) pero también general; sin subcaracterística clara.
+c0087,runtime environment,15,Specific,3,False,3,none,3,True,3,,Componente técnico de la arquitectura de tarjetas GlobalPlatform.
+c0088,occurrence,28,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0089,issuer security,19,NotTerm,3,False,3,none,3,False,3,issuer security domain,Fragmento cortado de issuer security domain.
+c0090,traffic,30,Common,3,False,3,none,3,True,3,,Término de redes (tráfico de red) de uso general.
+c0091,selection,28,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0092,input,23,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0093,performance,34,NotTerm,2,False,3,none,3,True,3,,"Palabra general de calidad, sin sentido especializado propio."
+c0094,spam,22,Common,3,False,2,none,3,True,3,,Término conocido por el público general; correo no deseado.
+c0095,registration,22,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0096,MAC,25,Specific,3,True,3,Integrity,3,True,3,,Código de autenticación de mensaje que detecta modificaciones; en un contexto aparece como sistema operativo.
+c0097,cycle,25,NotTerm,3,False,3,none,3,False,3,life cycle,Fragmento cortado de life cycle.
+c0098,requirement,22,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado en este corpus.
+c0099,runtime,18,NotTerm,3,False,3,none,3,False,3,runtime environment,Fragmento cortado de runtime environment.
+c0100,report,38,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0101,time,133,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0102,appropriate error,16,NotTerm,3,False,3,none,3,False,3,,Combinación libre con adjetivo sobrante; no es un término.
+c0103,customer,25,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0104,identity,27,Common,3,True,3,Authenticity,3,True,3,,Concepto de identidad cuya verificación demuestra quién es un sujeto.
+c0105,purchase,27,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0106,process,35,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0107,purchase transaction,17,Specific,3,False,3,none,3,True,3,,Tipo de transacción del monedero electrónico CEP.
+c0108,capability,19,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0109,connection,24,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0110,only occurrence,13,NotTerm,3,False,3,none,3,False,3,first or only occurrence,Fragmento de la opción first or only occurrence del comando SELECT.
+c0111,configuration,18,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0112,protocol,22,Common,2,False,3,none,3,True,3,,Término de comunicaciones de uso técnico general.
+c0113,operation,27,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0114,partial match,20,Specific,3,False,3,none,3,True,3,,Concepto de la selección de aplicaciones por AID parcial en GlobalPlatform.
+c0115,globalplatform card,10,Specific,2,False,3,none,3,True,3,,Tipo de tarjeta conforme a la especificación GlobalPlatform.
+c0116,account,32,Common,3,False,3,none,3,True,3,,Término de uso general (cuenta de usuario o bancaria).
+c0117,activity,25,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0118,packet,19,Specific,2,False,3,none,3,True,3,,Término de redes de uso técnico general.
+c0119,life cycle state,16,Specific,3,False,3,none,3,True,3,,Estado del ciclo de vida de tarjetas y aplicaciones en GlobalPlatform.
+c0120,response,28,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0121,framework,19,Common,1,False,3,none,3,True,3,,Término de desarrollo de software de uso técnico general.
+c0122,credential,15,Common,3,True,3,Authenticity,3,True,3,,Datos usados para demostrar la identidad de un usuario.
+c0123,batch,16,NotTerm,1,False,3,none,3,True,3,,Palabra general en los contextos (procesamiento por lotes).
+c0124,next occurrence,12,NotTerm,3,False,3,none,3,False,2,SELECT [next occurrence],Fragmento de la opción next occurrence del comando SELECT.
+c0125,hardware,18,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0126,availability,17,Common,3,True,3,Resistance,2,True,3,,Propiedad de seguridad (disponibilidad) que no es subcaracterística de seguridad en ISO 25010.
+c0127,application provider,13,Specific,3,False,3,none,3,True,3,,Rol de la arquitectura GlobalPlatform.
+c0128,login,14,Common,3,True,3,Authenticity,3,True,3,,Acto de identificarse ante el sistema para comprobar quién es el usuario.
+c0129,number,47,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0130,processing,19,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0131,ability,24,NotTerm,3,False,3,none,3,True,3,,Palabra general; fragmento de installability.
+c0132,vulnerability,14,Common,3,True,3,Resistance,3,True,3,,Debilidad explotable por un atacante; su detección apoya la resistencia a ataques.
+c0133,cryptojacking,12,Specific,3,True,3,Resistance,3,True,3,,Ataque de minería ilícita de criptomonedas que el sistema debe resistir.
+c0134,failure,22,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0135,transmission,17,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0136,usage,18,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0137,terminal,17,Specific,2,False,3,none,3,True,3,,Dispositivo de uso o pago conocido en general.
+c0138,privilege,16,Specific,3,True,3,Confidentiality,3,True,3,,Derecho de acceso concedido a un usuario o aplicación; limita lo accesible.
+c0139,SMS,13,Common,3,False,3,none,3,True,3,,Sigla de mensajería conocida por el público general.
+c0140,code,25,NotTerm,2,False,3,none,3,True,3,,Palabra general y ambigua sin sentido especializado propio.
+c0141,format,18,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0142,load device,12,Specific,3,False,3,none,3,True,3,,Dispositivo del monedero electrónico CEP que carga valor en la tarjeta.
+c0143,malware,14,Common,3,True,3,Resistance,3,True,3,,Software malicioso frente al cual el sistema debe seguir operando.
+c0144,digital watermark,10,Specific,3,True,3,Authenticity,2,True,3,,Marca digital que protege una obra y permite demostrar su autoría.
+c0145,cardholder,11,Common,2,False,3,none,3,True,3,,Rol del dominio de pagos con tarjeta (titular).
+c0146,authorization,13,Common,3,True,3,Confidentiality,3,True,3,,Concesión de permisos de acceso solo a quienes están autorizados.
+c0147,certificate,16,Specific,3,True,3,Authenticity,3,True,3,,Certificado digital que demuestra la identidad de un sujeto.
+c0148,function,19,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0149,amount,26,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0150,classification,15,OOD,3,False,3,none,3,True,3,,"Término de aprendizaje automático, ajeno al dominio central de la especificación."
+c0151,anomaly,12,Specific,2,True,3,Resistance,2,True,3,,"Concepto de detección de anomalías en seguridad, sin subcaracterística clara."
+c0152,load file,14,Specific,2,False,3,none,3,True,3,,Archivo de carga de aplicaciones en tarjetas GlobalPlatform.
+c0153,scheme provider,10,Specific,3,False,3,none,3,True,3,,Rol del dominio de pagos con tarjeta.
+c0154,restriction,12,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0155,graphical user interface,8,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0156,unload,12,Specific,3,False,3,none,3,True,3,,Operación del monedero CEP que retira valor de la tarjeta.
+c0157,storage,16,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0158,node,13,Specific,2,False,3,none,3,True,3,,Término de redes de uso técnico general.
+c0159,case,37,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0160,alert,14,Common,3,False,3,none,3,True,3,,Término de uso general (alerta o aviso).
+c0161,SELECT,16,Specific,2,False,3,none,3,True,3,,Nombre de comando ISO 7816-4; no se traduce.
+c0162,cycle state,16,NotTerm,3,False,3,none,3,False,3,life cycle state,Fragmento cortado de life cycle state.
+c0163,AES,10,NE,3,True,3,Confidentiality,3,True,3,,Estándar de cifrado simétrico; nombre de estándar que no se traduce.
+c0164,hash,11,Specific,3,True,3,Integrity,3,True,3,,Resumen criptográfico usado para detectar modificaciones de datos.
+c0165,flow,17,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0166,owner,18,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0167,keyword,10,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0168,qos,9,Specific,3,False,3,none,3,True,3,,Sigla de calidad de servicio en redes.
+c0169,notification,12,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0170,medium,15,NotTerm,3,False,3,none,3,True,2,media,Palabra general; en los contextos es lematización errónea de media.
+c0171,intrusion,10,Common,2,True,3,Resistance,3,True,3,,Ataque contra el que el sistema debe seguir operando y alertar.
+c0172,ease,14,NotTerm,3,False,3,none,3,True,2,ease of use,Palabra general sin significado especializado.
+c0173,confidentiality,10,Common,3,True,3,Confidentiality,3,True,3,,Propiedad de seguridad: datos accesibles solo a autorizados.
+c0174,result,23,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0175,currency exchange,15,Common,2,False,3,none,3,True,3,,Tipo de operación del monedero electrónico CEP.
+c0176,AID,18,Specific,3,False,3,none,3,True,3,,Identificador de aplicación en tarjetas inteligentes.
+c0177,location,18,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0178,rogue node,8,Specific,3,True,3,Resistance,3,True,3,,Nodo malicioso en la red frente al cual el sistema reacciona.
+c0179,machine,18,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0180,validation,11,Common,2,True,2,Integrity,2,True,3,,Palabra general cuyo sentido depende del sustantivo que acompaña.
+c0181,currency exchange transaction,9,Specific,3,False,3,none,3,True,3,,Tipo de transacción del monedero electrónico CEP.
+c0182,selection restriction,8,Specific,2,False,3,none,3,False,3,multi-selection restriction,"El contexto muestra la forma completa multi-selection restriction, concepto de GlobalPlatform."
+c0183,customer network,11,Specific,3,False,3,none,3,True,3,,Concepto de la especificación de redes domésticas.
+c0184,student,21,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0185,record,24,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0186,API,10,Common,3,False,3,none,3,True,3,,Sigla informática de uso técnico general.
+c0187,STB,8,Specific,3,False,3,none,3,True,3,,Sigla de decodificador (set-top box) del dominio de redes domésticas.
+c0188,scanning,10,Specific,2,False,2,none,2,True,3,,Palabra general por sí sola; el sentido de seguridad está en port scanning.
+c0189,username,10,Common,3,True,3,Authenticity,3,True,3,,Identificador usado junto con la contraseña para autenticar al usuario.
+c0190,scheme,14,NotTerm,3,False,3,none,3,True,3,,Palabra general; fragmento de PDP scheme o scheme provider.
+c0191,policy,22,NotTerm,1,True,2,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0192,component,12,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0193,load acquirer,7,Specific,3,False,3,none,3,True,3,,Rol del monedero electrónico CEP.
+c0194,web environment,10,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras sin sentido especializado propio.
+c0195,fault tolerance,8,Specific,2,False,3,none,3,True,3,,"Concepto de ingeniería de confiabilidad, no de seguridad de la información."
+c0196,patient,16,OOD,2,False,3,none,3,True,3,,Palabra general sin significado especializado en la especificación.
+c0197,button,13,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0198,website,20,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0199,SELECT command,9,Specific,2,False,3,none,3,True,3,,Nombre de comando ISO 7816-4; no se traduce.
+c0200,new supplementary logical channel,6,NotTerm,3,False,3,none,3,False,3,supplementary logical channel,Sobra el adjetivo new; el término es supplementary logical channel.
+c0201,entry,15,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0202,folder,9,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0203,match,23,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0204,classifier,8,OOD,3,False,3,none,3,True,3,,"Término de aprendizaje automático, ajeno al dominio central."
+c0205,phone,24,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0206,type,23,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0207,GUI,8,Common,3,False,3,none,3,True,3,,Sigla informática de uso general.
+c0208,remote access,9,Common,2,True,2,Confidentiality,2,True,3,,Término de redes de uso técnico general.
+c0209,PIN,14,Common,3,True,3,Authenticity,3,True,3,,Código secreto conocido por el público que verifica la identidad del titular.
+c0210,cryptography,8,Common,3,True,3,Confidentiality,3,True,3,,Disciplina para proteger datos frente a accesos no autorizados.
+c0211,current card interface,7,NotTerm,3,False,3,none,3,False,3,card I/O interface,Sobra el modificador current; el término es card I/O interface.
+c0212,SSL,8,NE,2,True,3,Confidentiality,3,True,3,,Protocolo que cifra comunicaciones para protegerlas de terceros.
+c0213,last purchase transaction,7,NotTerm,2,False,3,none,3,False,3,cancel last purchase transaction,Falta cancel; el término CEP es cancel last purchase transaction.
+c0214,o interface,11,NotTerm,3,False,3,none,3,False,3,card I/O interface,Fragmento mal segmentado de card I/O interface.
+c0215,line PIN verification,6,NotTerm,2,True,3,Authenticity,3,False,3,off-line PIN verification,Falta el prefijo off-; verifica la identidad del titular mediante PIN.
+c0216,web application,9,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0217,load file data block,8,Specific,2,False,3,none,3,True,3,,Bloque de datos de un archivo de carga en GlobalPlatform.
+c0218,IP,9,Common,3,False,3,none,3,True,3,,Sigla de redes de uso técnico general.
+c0219,computer,16,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0220,IP address,7,Common,3,False,3,none,3,True,3,,Término de redes de uso técnico general.
+c0221,address,15,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado por sí sola.
+c0222,SSL certificate,6,Specific,3,True,3,Authenticity,3,True,3,,Certificado que demuestra la identidad de un sitio o servidor.
+c0223,IMS capable CND,5,NotTerm,2,False,3,none,3,False,3,non-IMS capable CND,Los contextos muestran non-IMS capable CNDs; el prefijo non- fue cortado.
+c0224,system administrator,7,Common,3,False,3,none,3,True,3,,Rol de sistemas conocido en general.
+c0225,extraction,8,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0226,screen,14,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0227,KYC,7,Specific,2,True,2,Authenticity,2,True,3,,Sigla del dominio financiero (conozca a su cliente).
+c0228,encryption key,7,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica que mantiene datos accesibles solo a autorizados.
+c0229,card content,11,Specific,3,False,3,none,3,True,3,,Concepto de gestión de contenido de tarjetas GlobalPlatform.
+c0230,fault,12,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0231,rogue,8,NotTerm,3,False,3,none,3,False,3,rogue node,Fragmento cortado de rogue node.
+c0232,handling,10,NotTerm,3,False,3,none,3,True,2,error handling,Palabra general sin significado especializado.
+c0233,memory,14,Common,3,False,3,none,3,True,3,,Término informático de uso general.
+c0234,executable load file,5,Specific,2,False,3,none,3,True,3,,Componente de GlobalPlatform con el código de aplicaciones.
+c0235,mobile phone,10,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0236,slot,14,Specific,3,False,3,none,3,True,3,,Espacio de valor en la tarjeta de monedero electrónico CEP.
+c0237,op_ready state,5,NE,2,False,3,none,3,True,3,,Estado del ciclo de vida definido en GlobalPlatform.
+c0238,documentation,9,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0239,selectable application,6,Specific,3,False,3,none,3,True,2,implicitly selectable application,Aplicación seleccionable en la tarjeta según GlobalPlatform.
+c0240,cloud,10,Common,3,False,3,none,3,True,3,,Término informático conocido por el público general.
+c0241,name,34,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0242,profile,13,Common,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0243,decryption,6,Common,3,True,3,Confidentiality,3,True,3,,Operación inversa al cifrado que permite acceso a datos solo a autorizados.
+c0244,gateway,8,Specific,2,False,3,none,3,True,3,,Término de redes de uso técnico general.
+c0245,analysis,14,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0246,MANAGE CHANNEL,9,Specific,2,False,3,none,3,True,3,,Nombre de comando ISO 7816-4; no se traduce.
+c0247,tolerance,8,NotTerm,3,False,3,none,3,False,3,fault tolerance,Fragmento cortado de fault tolerance.
+c0248,port scanning,6,Specific,3,True,3,Resistance,3,True,3,,Técnica de reconocimiento de ataque que el sistema debe detectar y bloquear.
+c0249,card i,15,NotTerm,3,False,3,none,3,False,3,card I/O interface,Fragmento mal segmentado de card I/O interface.
+c0250,laptop,9,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0251,sequence,9,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0252,level,25,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0253,task,11,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0254,NGN service,6,Specific,3,False,3,none,3,True,3,,Servicio de la red de próxima generación del dominio de redes domésticas.
+c0255,multiple client,8,NotTerm,3,False,3,none,3,False,3,client,Combinación libre con modificador sobrante.
+c0256,bluetooth,7,NE,2,False,3,none,3,True,3,,Tecnología inalámbrica conocida por el público general.
+c0257,host,12,Common,2,False,3,none,3,True,3,,Término de redes de uso técnico general.
+c0258,install,8,NotTerm,3,False,3,none,3,True,2,installability,Palabra general; fragmento de install ability.
+c0259,executable load,7,NotTerm,3,False,3,none,3,False,3,executable load file,Fragmento cortado de executable load file.
+c0260,token,7,Specific,3,True,3,Authenticity,3,True,3,,Credencial de acceso (token) que demuestra autorización de una aplicación.
+c0261,PDP,6,Specific,3,True,3,Integrity,3,True,3,,Esquema de prueba de posesión de datos para comprobar su integridad en servidores no confiables.
+c0262,windows,12,NE,3,False,3,none,3,True,3,,Nombre de producto (Microsoft Windows); no se traduce.
+c0263,UICC,6,Specific,3,False,3,none,3,True,3,,Sigla de tarjeta inteligente universal de circuito integrado en telecomunicaciones.
+c0264,explicit selection,6,Specific,3,False,3,none,3,True,3,,Modo de selección de aplicaciones definido en GlobalPlatform.
+c0265,manner,10,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0266,line PIN,9,NotTerm,3,True,2,Authenticity,2,False,3,off-line PIN,Fragmento cortado de on-line/off-line PIN.
+c0267,connectivity,7,NotTerm,2,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c0268,public key,12,Specific,3,True,3,Authenticity,2,True,3,,Clave criptográfica asimétrica usada para cifrar y verificar firmas.
+c0269,reliability,7,Common,3,False,3,none,3,True,3,,"Característica de calidad general, no de seguridad de la información."
+c0270,admin,7,Common,3,False,3,none,3,True,3,,"Abreviatura de administrador, rol de sistemas conocido."
+c0271,SQL,6,OOD,2,False,3,none,3,True,3,,"Lenguaje de consulta de bases de datos, término técnico del dominio de sistemas."
+c0272,recoverability,5,Specific,3,False,3,none,3,True,3,,"Atributo de calidad de fiabilidad, no una subcaracterística de seguridad."
+c0273,licence,7,NotTerm,2,False,3,none,3,True,3,,Palabra general (licencia de conducir) sin sentido técnico propio.
+c0274,workload,6,Common,2,False,3,none,3,True,3,,"Carga de trabajo del sistema, concepto de rendimiento de uso general."
+c0275,feature,12,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado en este corpus.
+c0276,pattern,10,NotTerm,3,False,3,none,3,True,3,,"Palabra general; el término real sería más específico (typing pattern, pattern recognition)."
+c0277,agent,12,Specific,3,False,3,none,3,True,3,,"Agente de software móvil que recorre hosts de la red, sentido técnico en el contexto."
+c0278,S2,6,Specific,3,True,3,Authenticity,3,True,3,,Criptograma generado por el emisor para que la tarjeta valide su autenticidad.
+c0279,false positive,8,Specific,3,True,3,none,3,True,3,,"Resultado de detección erróneo, concepto de sistemas de detección de seguridad sin subcaracterística clara."
+c0280,fingerprint,6,Common,3,True,3,Authenticity,3,True,3,,Huella usada para autenticar identidad; concepto conocido por el público.
+c0281,IPTV,6,Specific,3,False,3,none,3,True,3,,Servicio de televisión sobre IP en redes domésticas.
+c0282,interaction,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0283,current card,11,NotTerm,3,False,3,none,3,False,2,card,"Combinación libre con adjetivo de ubicación, no un término."
+c0284,audit,7,Common,3,True,3,Accountability,3,True,3,,Revisión de registros que permite rastrear acciones hasta su autor.
+c0285,implicit selection,6,Specific,3,False,3,none,3,True,3,,Mecanismo de GlobalPlatform para seleccionar una aplicación por defecto en un canal lógico.
+c0286,final application privilege,6,Specific,3,False,2,none,3,True,3,,Privilegio de aplicación de GlobalPlatform ligado al estado de bloqueo de la tarjeta.
+c0287,smartphone,7,Common,3,False,3,none,3,True,3,,Dispositivo de uso cotidiano.
+c0288,document,9,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0289,method,12,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0290,resource behaviour,6,Specific,3,False,3,none,3,True,3,,Subcaracterística de eficiencia de desempeño (comportamiento de recursos).
+c0291,executable,6,Common,2,False,3,none,3,True,3,,"Archivo ejecutable, término informático ampliamente conocido."
+c0292,identifiable information,5,Specific,3,True,3,Confidentiality,3,False,3,personally identifiable information,"Cortado: el término completo es personally identifiable information, dato personal a proteger."
+c0293,port,11,Specific,3,False,3,none,3,True,3,,"Puerto de red, sentido técnico de redes."
+c0294,legitimate user,6,Specific,3,True,3,Authenticity,3,True,3,,Usuario cuya identidad se distingue de un impostor.
+c0295,principle,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0296,privacy,8,Common,3,True,3,Confidentiality,3,True,3,,Protección de datos del usuario frente a divulgación.
+c0297,invisible digital watermark,4,Specific,3,True,3,Integrity,2,True,3,,Marca oculta que permite demostrar la autoría de una imagen.
+c0298,UGC,5,Specific,3,False,3,none,3,True,3,,Siglas de contenido generado por el usuario en servicios NGN.
+c0299,mobile device,7,Common,3,False,3,none,3,True,3,,"Dispositivo móvil, término de uso general."
+c0300,S1,7,Specific,3,True,3,Authenticity,3,True,3,,Criptograma que el emisor valida para autenticar la tarjeta y los datos.
+c0301,trusted framework,6,Specific,2,True,3,Confidentiality,2,True,3,,Componente propio de GlobalPlatform que aplica reglas de seguridad entre aplicaciones.
+c0302,signer,5,Specific,3,True,3,Non_repudiation,3,True,3,,"Quien produce una firma digital, base del no repudio."
+c0303,twitter,12,NE,3,False,3,none,3,True,3,,Nombre de plataforma; no se traduce.
+c0304,unauthorized access,5,Common,3,True,3,Confidentiality,3,True,3,,"Acceso por quien no está autorizado, amenaza básica a la confidencialidad."
+c0305,authorised user,5,Common,2,True,3,Confidentiality,3,True,3,,Usuario con permiso de acceso a los datos.
+c0306,specification,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0307,authority,12,Specific,2,True,2,Authenticity,2,False,3,certificate authority,Cortado: en los contextos se refiere a certificate/certification authority.
+c0308,email address,7,Common,3,False,3,none,3,True,3,,Dato de uso cotidiano.
+c0309,response time,11,Common,2,False,3,none,3,True,3,,Métrica de rendimiento conocida.
+c0310,attribute,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0311,rule,13,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0312,service provider,7,Common,2,False,3,none,3,True,3,,"Proveedor de servicios, término de uso general."
+c0313,operating system,8,Common,3,False,3,none,3,True,3,,"Sistema operativo, término informático conocido."
+c0314,RFID,5,Specific,3,False,3,none,3,True,3,,Tecnología de identificación por radiofrecuencia.
+c0315,maintenance,9,Common,3,False,3,none,3,True,3,,"Mantenimiento de software, término general."
+c0316,python,6,NE,2,False,3,none,3,True,3,,Nombre de lenguaje de programación.
+c0317,line,26,NotTerm,3,False,3,none,3,False,2,line of security,Palabra general (line of security).
+c0318,update,10,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0319,globalplatform environment,4,NE,3,False,3,none,3,True,3,,Componente propio de la especificación GlobalPlatform (OPEN).
+c0320,parent,9,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0321,subscription,7,Common,3,False,3,none,3,True,3,,"Suscripción a servicios, término de uso general."
+c0322,dataset,5,OOD,2,False,3,none,3,True,3,,"Conjunto de datos, término común en análisis de datos."
+c0323,log file,6,Specific,2,True,3,Accountability,3,True,3,,Registro de eventos que permite rastrear acciones hasta su origen.
+c0324,MANAGE,9,NE,2,False,3,none,3,False,3,MANAGE CHANNEL command,Cortado: forma parte del comando MANAGE CHANNEL.
+c0325,control,22,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0326,value,16,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0327,payment,10,Common,3,False,3,none,3,True,3,,"Pago, concepto del dominio conocido por el público."
+c0328,interactive interface,5,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0329,throughput,5,Specific,2,False,3,none,3,True,3,,Métrica técnica de rendimiento.
+c0330,ham,7,Specific,2,False,3,none,3,True,3,,"Correo legítimo en filtrado de spam, sentido técnico específico."
+c0331,reversal,6,Specific,3,False,3,none,3,True,3,,Anulación de transacción en pagos con tarjeta.
+c0332,receipt,6,Specific,3,False,2,none,2,True,3,,Acuse devuelto tras operaciones de carga/instalación en GlobalPlatform.
+c0333,file data block,8,Specific,3,False,2,none,2,False,3,load file data block,Cortado: falta load; el bloque se firma para integridad.
+c0334,security domain key,6,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica de un dominio de seguridad de la tarjeta.
+c0335,attack,15,Common,3,True,3,Resistance,3,True,3,,Acción maliciosa contra el sistema.
+c0336,extradition,5,Specific,3,False,3,none,3,True,3,,Operación de GlobalPlatform que traslada una aplicación a otro dominio de seguridad.
+c0337,internet,14,Common,3,False,3,none,3,True,3,,Término de uso general.
+c0338,processor,7,Specific,3,False,3,none,3,True,3,,Procesador de pagos entre emisores y adquirentes.
+c0339,retrieval,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0340,POS transaction,5,Specific,3,False,3,none,3,True,3,,Transacción en punto de venta con tarjeta.
+c0341,identification,7,Common,3,True,3,Authenticity,3,True,3,,Determinación de la identidad de una persona o transacción.
+c0342,linux,6,NE,2,False,3,none,3,True,3,,Nombre de sistema operativo.
+c0343,block,12,Specific,2,False,3,none,3,True,3,,Bloque de una cadena de bloques (blockchain).
+c0344,CPU,9,Common,2,False,3,none,3,True,3,,"Procesador central, sigla conocida."
+c0345,balance,11,Common,3,False,3,none,3,True,3,,Saldo de una cuenta o tarjeta.
+c0346,manual,7,NotTerm,3,False,3,none,3,True,2,user manual,Palabra general.
+c0347,IMS capable device,4,Specific,3,False,3,none,3,True,3,,Dispositivo compatible con IP Multimedia Subsystem.
+c0348,guidance,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0349,maintainability,4,Specific,2,False,3,none,3,True,3,,"Característica de calidad de ISO 25010, no de seguridad."
+c0350,executable module,4,Specific,3,False,3,none,3,True,3,,Elemento de contenido de tarjeta GlobalPlatform.
+c0351,purpose,11,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0352,monitoring,7,Common,3,False,3,none,3,True,3,,"Monitoreo, término general de sistemas."
+c0353,layer,8,NotTerm,2,False,3,none,3,True,3,,"Palabra general sin especificar (layer of defense, layer 1)."
+c0354,attacker,5,Common,3,True,3,Resistance,3,True,3,,Actor malicioso contra el que el sistema debe resistir.
+c0355,authenticity,5,Common,2,True,3,Authenticity,3,True,3,,Propiedad de ser quien dice ser.
+c0356,downloader,4,NotTerm,1,False,3,none,3,True,3,,Nombre genérico de un módulo del sistema.
+c0357,authorized user,5,Common,2,True,3,Confidentiality,3,True,3,,Usuario con permiso de acceso.
+c0358,AES algorithm,4,Specific,3,True,3,Confidentiality,3,True,2,AES,"Sobra la palabra algorithm; el término es AES, cifrado simétrico."
+c0359,practitioner,5,OOD,2,False,3,none,3,True,3,,Palabra general (health practitioner).
+c0360,behaviour,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0361,KYC information,6,Specific,3,True,2,Confidentiality,2,True,3,,"Información de conocimiento del cliente, término del dominio financiero."
+c0362,use,39,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0363,blockchain,5,Common,2,False,3,none,3,True,3,,Tecnología de registro distribuido; los contextos no la vinculan a una propiedad de seguridad.
+c0364,TS,5,NE,3,False,3,none,3,False,3,TS 181 005,Cortado: es la referencia a una especificación técnica ETSI.
+c0365,RSA,5,Specific,3,True,3,Confidentiality,3,True,3,,Algoritmo criptográfico de clave pública.
+c0366,symmetric key,4,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica usada para proteger la confidencialidad.
+c0367,eventuality,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0368,controlling authority,5,Specific,3,True,2,none,3,True,3,,Rol de GlobalPlatform que gestiona claves y dominios de seguridad.
+c0369,scalability,4,Specific,2,False,3,none,3,True,3,,Atributo de calidad de sistemas.
+c0370,number of queue,4,NotTerm,3,False,3,none,3,False,3,queue,Combinación libre; el término es queue.
+c0371,zimbabwe,5,NE,3,False,3,none,3,True,3,,Nombre de país.
+c0372,dispatching,4,Specific,3,False,3,none,3,False,2,command dispatching,Cortado: en GlobalPlatform es command dispatching.
+c0373,SQL injection,4,Specific,3,True,3,Resistance,3,True,3,,Ataque contra bases de datos al que el sistema debe resistir.
+c0374,recovery,8,Common,3,False,3,none,3,True,3,,"Recuperación de cuenta o sistema, término general."
+c0375,IMS,4,Specific,3,False,3,none,3,True,3,,"IP Multimedia Subsystem, arquitectura de telecomunicaciones."
+c0376,priority,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0377,LAN,6,Common,3,False,3,none,3,True,3,,"Red de área local, sigla conocida."
+c0378,secure memory management,5,Specific,3,True,3,Confidentiality,3,True,3,,Protege código y datos de aplicaciones frente a acceso no autorizado dentro de la tarjeta.
+c0379,WAN,5,Common,3,False,3,none,3,True,3,,"Red de área amplia, sigla conocida."
+c0380,ID,8,Common,3,False,2,Authenticity,2,True,3,,"Identificador, abreviatura de uso general."
+c0381,coding,5,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0382,CPN user,4,Specific,3,False,3,none,3,True,3,,Usuario de la red doméstica del cliente (Customer Premises Network).
+c0383,bottleneck,4,Common,3,False,3,none,3,True,3,,Cuello de botella de rendimiento.
+c0384,operating,9,NotTerm,2,False,3,none,3,False,3,operating system,Cortado: falta system.
+c0385,condition,10,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0386,procedure,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0387,login page,4,Common,3,True,2,Authenticity,2,True,3,,"Página de inicio de sesión, término web conocido."
+c0388,reset,5,Common,2,False,3,none,3,True,3,,Palabra general.
+c0389,client KYC information,3,Specific,3,True,2,Confidentiality,2,False,3,KYC information,Sobra client; el término es KYC information.
+c0390,CEP application,4,Specific,3,False,3,none,3,True,3,,Aplicación de monedero electrónico (Common Electronic Purse) en la tarjeta.
+c0391,potential operational performance bottleneck,3,NotTerm,3,False,3,none,3,False,3,performance bottleneck,Le sobran modificadores; el término es performance bottleneck.
+c0392,manipulation,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0393,card content management,6,Specific,3,False,3,none,3,True,3,,Función de GlobalPlatform para cargar y gestionar contenido de la tarjeta.
+c0394,file data block signature,4,Specific,3,True,3,Integrity,3,False,3,load file data block signature,Cortado: falta load; la firma protege integridad y autenticidad de origen.
+c0395,data owner,7,Specific,3,True,2,Confidentiality,2,True,3,,Propietario de los datos en la nube.
+c0396,extraction module,4,Specific,2,False,3,none,3,True,3,,Nombre genérico de un módulo del sistema.
+c0397,maturity,5,Specific,3,False,3,none,3,True,3,,Subcaracterística de fiabilidad (madurez).
+c0398,upgrade,6,Common,2,False,3,none,3,True,3,,Palabra general.
+c0399,ethereum,4,NE,3,False,3,none,3,True,3,,Nombre de plataforma blockchain.
+c0400,system user interface,4,NotTerm,3,False,3,none,3,False,3,user interface,Sobra system; el término es user interface.
+c0401,access control,8,Common,3,True,3,Confidentiality,3,True,3,,Restringe el acceso a usuarios autorizados.
+c0402,firmware,4,Common,3,False,3,none,3,True,3,,"Software embebido, término informático conocido."
+c0403,maximum balance,7,Specific,3,False,3,none,3,True,3,,Límite de saldo de un monedero electrónico definido por el emisor.
+c0404,future scalability problem,3,NotTerm,3,False,3,none,3,False,3,scalability problem,Combinación libre con modificador temporal.
+c0405,audio file,5,Common,3,False,3,none,3,True,3,,"Archivo de audio, término cotidiano."
+c0406,public identity,6,Specific,3,False,3,none,3,True,3,,Identidad pública de usuario en IMS.
+c0407,WAN interface,4,Specific,3,False,3,none,3,True,3,,Interfaz de la pasarela hacia la red de acceso.
+c0408,communication service,6,NotTerm,2,False,3,none,3,True,3,,Combinación general de palabras.
+c0409,section,11,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0410,network traffic,6,Common,3,False,3,none,3,True,3,,"Tráfico de red, término general de redes."
+c0411,use of password,4,NotTerm,2,False,2,none,2,False,3,password,"Sobran palabras; el término es password, usado para autenticar."
+c0412,user detail,5,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0413,recipient,5,OOD,2,False,3,none,3,True,3,,Palabra general.
+c0414,consecutive wrong attempt,4,Specific,2,True,2,Resistance,2,True,2,wrong attempt,Combinación libre con modificador.
+c0415,theintrusiond,3,NE,3,False,3,none,3,True,2,IntrusionD,Nombre de producto con artículo pegado por error de segmentación.
+c0416,plutomail,3,NE,3,False,3,none,3,True,3,,Nombre de producto de filtrado de spam.
+c0417,S4,4,Specific,3,True,3,Integrity,3,True,3,,MAC que protege el conteo y monto del lote de transacciones.
+c0418,execution,6,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0419,computation,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0420,zimbabwe anti,4,NE,3,False,3,none,3,False,3,Zimbabwe Anti-Corruption Commission,Cortado: nombre de organización incompleto.
+c0421,digital watermark agency,3,Specific,3,False,3,none,3,True,3,,Componente del sistema que despacha agentes para buscar marcas de agua.
+c0422,central server,5,Common,3,False,3,none,3,True,3,,"Servidor central, término informático general."
+c0423,trusted,6,NotTerm,2,False,2,none,3,False,3,Trusted Framework,Cortado: forma parte del componente Trusted Framework.
+c0424,source,13,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0425,spam detection,4,Specific,3,True,2,Resistance,2,True,3,,Función de filtrado de correo no deseado.
+c0426,original supplementary logical channel,3,Specific,2,False,3,none,3,False,3,supplementary logical channel,Sobra original; el término es supplementary logical channel.
+c0427,open supplementary logical channel,3,Specific,2,False,3,none,3,False,3,supplementary logical channel,Sobra open (adjetivo de estado).
+c0428,H2H,4,Specific,3,False,3,none,3,True,3,,"Home to Home, servicio de comunicación entre redes domésticas."
+c0429,medium gateway,4,NotTerm,2,False,3,none,3,False,3,media gateway,Error de lematización: el término es media gateway.
+c0430,employee,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0431,protection,9,NotTerm,2,False,2,none,3,True,3,,Palabra general sin especificar.
+c0432,private identity,6,Specific,3,False,3,none,3,True,3,,Identidad privada de usuario en IMS.
+c0433,false negative,5,Specific,3,True,3,none,3,True,3,,Amenaza no detectada por un sistema de detección.
+c0434,HMAC,3,Specific,3,True,3,Integrity,3,True,3,,Código de autenticación de mensaje con hash usado para integridad.
+c0435,IEC,5,NE,3,False,3,none,3,False,3,ISO/IEC 7816-4,Cortado: nombre de organización/estándar fragmentado.
+c0436,MANAGE CHANNEL command,4,Specific,3,False,3,none,3,True,3,,Comando de tarjeta para abrir o cerrar canales lógicos.
+c0437,efficiency,6,Common,3,False,3,none,3,True,3,,"Eficiencia, concepto general."
+c0438,system player,8,NotTerm,2,False,3,none,3,True,2,player,Nombre genérico de componente.
+c0439,CHANNEL,9,Specific,1,False,3,none,3,False,3,MANAGE CHANNEL command,Cortado: parte del comando MANAGE CHANNEL.
+c0440,vehicle,8,OOD,2,False,3,none,3,True,3,,Palabra general.
+c0441,licence owner,4,NotTerm,2,False,3,none,3,True,3,,Combinación libre de palabras.
+c0442,delay,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0443,unicast,3,Specific,3,False,3,none,3,True,3,,Modo de transmisión de red punto a punto.
+c0444,card interface,9,Specific,3,False,3,none,3,True,3,,Interfaz de E/S de una tarjeta inteligente.
+c0445,scan,5,Common,3,False,3,none,3,True,3,,"Escaneo, término informático general."
+c0446,XSS,3,Specific,3,True,3,Resistance,3,True,3,,Vulnerabilidad web de cross-site scripting contra la que el sistema debe resistir.
+c0447,application session,5,Specific,3,False,3,none,3,True,3,,Sesión de una aplicación seleccionada en una tarjeta GlobalPlatform.
+c0448,watermarking,3,Specific,3,True,3,Integrity,2,True,3,,Técnica de marca de agua para demostrar autoría.
+c0449,architecture,6,Common,2,False,3,none,3,True,3,,Palabra general sin especificar.
+c0450,android,6,NE,3,False,3,none,3,True,3,,Nombre de sistema operativo.
+c0451,agency,9,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0452,file data block hash,3,Specific,3,True,3,Integrity,3,False,3,load file data block hash,Cortado: falta load; el hash verifica la integridad del bloque.
+c0453,basic logical,33,Specific,2,False,3,none,3,False,3,basic logical channel,Cortado: falta channel.
+c0454,query,4,Common,3,False,3,none,3,True,3,,"Consulta de búsqueda, término informático conocido."
+c0455,curve,5,NotTerm,3,False,3,none,3,False,2,learning curve,Palabra general (learning curve).
+c0456,correct life cycle state,4,Specific,2,False,3,none,3,False,3,life cycle state,Sobra correct; el término es life cycle state.
+c0457,element,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0458,search,10,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0459,remote management system,4,Specific,3,False,3,none,3,True,3,,Sistema que administra la pasarela doméstica de forma remota.
+c0460,rate,12,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0461,controlling,5,NotTerm,2,False,3,none,3,False,3,controlling authority,Cortado: falta authority.
+c0462,action,14,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0463,updating,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0464,ease of use,4,Common,2,False,3,none,3,True,3,,"Facilidad de uso, concepto de usabilidad conocido."
+c0465,install ability,4,Specific,3,False,3,none,3,False,2,installability,"Error de segmentación: es una sola palabra, installability."
+c0466,downloading,4,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0467,cryptojacking activity,3,Specific,3,True,3,Resistance,3,True,2,cryptojacking,"Sobra activity; el término es cryptojacking, ataque que el sistema detecta."
+c0468,wireless connection,4,Common,3,False,3,none,3,True,3,,"Conexión inalámbrica, término general."
+c0469,digest,4,Specific,3,True,3,Integrity,3,False,3,message digest,Cortado: falta message; resumen criptográfico para integridad.
+c0470,video,18,Common,2,False,3,none,3,True,3,,Palabra general.
+c0471,group public key,6,Specific,3,True,3,Authenticity,2,True,3,,Clave que permite verificar que una firma proviene del grupo.
+c0472,registration number,6,NotTerm,2,False,3,none,3,True,3,,Combinación general de palabras.
+c0473,hashing,3,Specific,3,True,3,Integrity,3,True,3,,Cálculo de hash usado para integridad.
+c0474,proxy,4,Specific,3,False,3,none,3,True,3,,Intermediario de red.
+c0475,remote server,4,Common,3,False,3,none,3,True,3,,"Servidor remoto, término informático general."
+c0476,smart contract,5,Specific,2,False,3,none,3,True,3,,Programa en blockchain que valida transacciones.
+c0477,radiologist,3,OOD,3,False,3,none,3,True,3,,"Profesional médico, dominio ajeno a la especificación."
+c0478,user interaction,4,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0479,software requirement,4,Common,2,False,3,none,3,True,3,,"Requisito de software, término de ingeniería general."
+c0480,set of parameter,3,NotTerm,3,False,3,none,3,False,3,parameter,Combinación libre de palabras.
+c0481,internet connection,5,Common,3,False,3,none,3,True,3,,Término de uso cotidiano.
+c0482,codec,3,Specific,3,False,3,none,3,True,3,,Codificador/decodificador de medios en sesiones multimedia.
+c0483,friendly interface,5,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0484,application life cycle,4,Specific,3,False,3,none,3,True,3,,Modelo de estados de ciclo de vida de aplicaciones en GlobalPlatform.
+c0485,user manual,4,Common,3,False,3,none,3,True,3,,"Manual de usuario, término general."
+c0486,type of application,5,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0487,modification,4,NotTerm,2,False,2,none,2,False,3,unauthorised modification,Palabra general; en seguridad el término sería unauthorised modification.
+c0488,private key,6,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica que debe mantenerse secreta.
+c0489,queue,4,Specific,3,False,3,none,3,True,3,,Cola de paquetes por prioridad en la pasarela.
+c0490,transient session data,4,Specific,3,True,3,Confidentiality,3,True,3,,Datos de sesión que deben protegerse del acceso no autorizado en la tarjeta.
+c0491,emergency,7,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0492,signalling,4,Specific,3,False,3,none,3,True,3,,Mensajes de control en telecomunicaciones.
+c0493,future upgrade,4,NotTerm,3,False,3,none,3,False,3,upgrade,Combinación libre con modificador temporal.
+c0494,digital watermarking,3,Specific,3,True,3,Integrity,2,True,3,,Técnica de marcas de agua para demostrar autoría.
+c0495,locking,5,Specific,3,True,2,Resistance,2,True,2,card locking,Cortado: en el contexto es card locking de GlobalPlatform.
+c0496,motion,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0497,application code,5,Specific,2,False,3,none,3,True,3,,Código de aplicación cargado en la tarjeta.
+c0498,watermarked image,3,Specific,3,True,2,Authenticity,1,True,3,,Imagen con marca de agua que acredita autoría.
+c0499,virtual machine,4,Common,3,False,3,none,3,True,3,,"Máquina virtual, término informático conocido."
+c0500,activation,4,Common,2,False,3,none,3,True,3,,Palabra general.
+c0501,unmanaged service,3,Specific,3,False,3,none,3,True,3,,"Servicio NGN no gestionado por el operador, en contraste con managed service."
+c0502,network configuration,5,Common,3,False,3,none,3,True,3,,"Configuración de red, término general."
+c0503,player,12,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0504,selenium,3,NE,3,False,3,none,3,True,3,,Nombre de herramienta de automatización web.
+c0505,md5 hash,3,Specific,3,True,3,Integrity,3,True,3,,Valor hash MD5 usado para verificar integridad.
+c0506,ISO,5,NE,3,False,3,none,3,False,3,ISO/IEC 7816-4,Cortado: nombre de estándar fragmentado.
+c0507,corruption commission,4,NE,3,False,3,none,3,False,3,Zimbabwe Anti-Corruption Commission,Cortado: nombre de organización incompleto.
+c0508,URL,4,Common,3,False,3,none,3,True,3,,"Dirección web, sigla conocida."
+c0509,presentation,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0510,browser,4,Common,3,False,3,none,3,True,3,,"Navegador web, término conocido."
+c0511,secure data exchange protocol,3,Specific,3,True,3,Confidentiality,3,True,3,,Protocolo para intercambiar datos de forma protegida.
+c0512,IPTV flow,3,Specific,3,False,3,none,3,True,3,,Flujo de medios de IPTV gestionado por la pasarela.
+c0513,accountability,4,Common,2,True,3,Accountability,3,True,3,,Propiedad de rastrear acciones hasta una entidad.
+c0514,system database,4,NotTerm,3,False,3,none,3,False,3,database,Sobra system; el término es database.
+c0515,receipt for load,3,Specific,3,False,2,none,2,False,2,receipt,Sobra for load; el término es receipt.
+c0516,usability,3,Common,2,False,3,none,3,True,3,,"Usabilidad, característica de calidad conocida."
+c0517,batch total count,3,Specific,3,False,3,none,3,True,3,,"Total de transacciones de un lote, protegido por un MAC."
+c0518,data block,8,Specific,2,False,3,none,3,True,2,load file data block,Bloque de datos de un archivo de carga de tarjeta.
+c0519,desktop,4,Common,3,False,3,none,3,True,3,,"Computador de escritorio, término conocido."
+c0520,imaging,4,OOD,2,False,3,none,3,True,3,,Copia forense de un dispositivo.
+c0521,NGN network,4,Specific,3,False,3,none,3,True,3,,Red de nueva generación de telecomunicaciones.
+c0522,warning,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0523,corruption,5,NotTerm,3,False,3,none,3,False,2,Zimbabwe Anti-Corruption Commission,"Fragmento del nombre de una organización, no un término."
+c0524,actual signer,3,NotTerm,2,False,2,none,2,False,3,signer,Sobra actual; el término es signer.
+c0525,system component,4,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0526,responsiveness,3,Common,2,False,3,none,3,True,3,,"Capacidad de respuesta, concepto general de rendimiento."
+c0527,fund,8,Common,2,False,3,none,3,True,3,,Palabra general.
+c0528,secret key,5,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica mantenida en secreto por su titular.
+c0529,load transaction,4,Specific,3,False,3,none,3,True,3,,Transacción de carga de valor en un monedero electrónico.
+c0530,threat,6,Common,3,True,3,Resistance,3,True,3,,Amenaza contra la red o el sistema.
+c0531,cryptographic protection,3,Specific,3,True,3,Confidentiality,3,True,3,,Protección de mensajes mediante criptografía.
+c0532,purse,4,Specific,3,False,3,none,3,True,3,,Monedero electrónico de la tarjeta.
+c0533,QR,3,Common,3,False,3,none,3,False,3,QR code,Cortado: falta code.
+c0534,unstructured data,3,OOD,2,False,3,none,3,True,3,,"Datos sin estructura, término de procesamiento de datos."
+c0535,django,3,NE,3,False,3,none,3,True,3,,Nombre de framework web.
+c0536,programming,5,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0537,count,8,NotTerm,3,False,3,none,3,True,2,transaction count,Palabra general.
+c0538,concept,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0539,real time,12,Common,3,False,3,none,3,True,3,,"Tiempo real, expresión técnica de uso general."
+c0540,error recovery,5,Specific,2,False,3,none,3,True,3,,"Capacidad de recuperarse de fallos, atributo de fiabilidad."
+c0541,identifier,3,Specific,2,True,2,Accountability,2,True,3,,Identificador único de un nodo/entidad que permite rastrear acciones hasta él.
+c0542,testing,7,NotTerm,3,False,3,none,3,True,3,,Palabra general de ingeniería de software sin sentido especializado propio aquí.
+c0543,symmetric macing key signature,2,Specific,3,True,3,Integrity,3,False,3,symmetric MACing key,Término criptográfico de clave MAC simétrica para integridad; 'signature' sobra o es una combinación forzada.
+c0544,data transmission,5,Common,3,False,3,none,3,True,3,,Concepto de comunicaciones conocido por el público general.
+c0545,injection,4,Specific,3,True,3,Integrity,3,False,3,SQL injection,Ataque de inyección que permite modificar o acceder a datos sin autorización; el contexto muestra 'SQL injection'.
+c0546,standard format,4,NotTerm,3,False,3,none,3,True,3,,Expresión general sin significado especializado.
+c0547,state,30,NotTerm,3,False,3,none,3,True,3,,Palabra general ambigua sin sentido técnico propio por sí sola.
+c0548,learning,8,NotTerm,3,False,3,none,3,False,3,learning curve,"Fragmento de 'learning curve', que además es una expresión general de usabilidad."
+c0549,downtime,3,Common,3,False,3,none,3,True,3,,Término de disponibilidad de sistemas usado también por el público general.
+c0550,probability,4,NotTerm,3,False,3,none,3,True,3,,Palabra general matemática sin sentido especializado en el corpus.
+c0551,option,7,NotTerm,3,False,3,none,3,True,3,,Palabra general de interfaz.
+c0552,unauthorised user,3,Common,3,True,3,Confidentiality,3,True,3,,Usuario sin autorización de acceso; concepto de seguridad comprensible para el público general.
+c0553,design,11,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0554,dispute,5,Specific,3,False,3,none,3,True,3,,Proceso de disputa de transacciones en esquemas de pago con tarjeta.
+c0555,S5,3,Specific,2,False,2,none,2,False,3,S5 MAC,Etiqueta de un MAC de la especificación de pagos; el candidato está cortado.
+c0556,harmful website,5,Common,3,True,3,Resistance,3,True,3,,Sitio web malicioso bloqueado por filtrado; concepto de seguridad de uso general.
+c0557,PIN verification,7,Specific,3,True,3,Authenticity,3,True,3,,"Verificación del titular mediante PIN, que demuestra su identidad."
+c0558,firewall,3,Common,3,True,3,Resistance,3,True,3,,Cortafuegos conocido por el público general; protege la red frente a tráfico malicioso.
+c0559,QR code,3,Common,3,False,3,none,3,True,3,,Código conocido por el público general; no es en sí un concepto de seguridad.
+c0560,security policy,6,Common,3,True,3,none,3,True,3,,Concepto general de seguridad que no se asocia a una única subcaracterística.
+c0561,SAG,3,NE,3,False,3,none,3,True,2,SAG system,Nombre propio del sistema descrito.
+c0562,application selection,4,Specific,3,False,3,none,3,True,3,,Operación de selección de aplicación en tarjetas inteligentes (GlobalPlatform).
+c0563,unique identifier,3,Specific,2,True,3,Accountability,3,True,3,,Identificador único que permite rastrear acciones hasta una entidad.
+c0564,cost engineer,4,OOD,3,False,3,none,3,True,3,,"Rol del dominio de ingeniería de construcción, ajeno a los dominios de la especificación."
+c0565,graphical user,8,NotTerm,3,False,3,none,3,False,3,graphical user interface,Fragmento cortado de 'graphical user interface'.
+c0566,output,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0567,viewing,4,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c0568,electronic value,4,Specific,3,False,3,none,3,True,3,,Valor monetario almacenado en la tarjeta en sistemas de monedero electrónico.
+c0569,tag,5,Specific,2,False,3,none,3,True,3,,Etiqueta RFID en el contexto de lectores; sentido técnico de identificación.
+c0570,high throughput,3,Common,2,False,3,none,3,True,3,,Requisito de rendimiento; no es de seguridad.
+c0571,factor,6,NotTerm,3,False,3,none,3,False,3,authentication factor,Palabra general o fragmento de 'two-factor authentication'.
+c0572,logical channel support,3,Specific,3,False,3,none,3,True,2,logical channel,Soporte de canales lógicos en tarjetas inteligentes.
+c0573,loading,4,Specific,1,False,3,none,3,True,3,,"En el corpus de tarjetas designa la carga de valor o archivos en la tarjeta, aunque es ambiguo."
+c0574,presentation of element,3,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras de usabilidad.
+c0575,other application,5,NotTerm,3,False,3,none,3,True,2,application,"Expresión general con determinante, no un término."
+c0576,S4 MAC,4,Specific,2,True,3,Integrity,3,True,3,,Código de autenticación de mensaje que protege el conteo y monto del lote.
+c0577,high rate,6,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0578,SAG system,3,NE,3,False,3,none,3,True,3,,Nombre propio del sistema descrito.
+c0579,dashboard,3,Common,3,False,3,none,3,True,3,,Panel de control conocido por el público general.
+c0580,way authentication,4,Specific,3,True,3,Authenticity,3,False,3,two-way authentication,Autenticación mutua; el candidato está cortado.
+c0581,period,11,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0582,digit,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0583,certain keyword,3,NotTerm,3,False,3,none,3,False,3,keyword,'certain' sobra; es una palabra general.
+c0584,instruction,4,NotTerm,3,False,3,none,3,True,3,,Palabra general (probable error por 'intrusions' en un contexto).
+c0585,data item,4,Common,2,False,3,none,3,True,3,,Elemento de datos de intercambio entre sistemas; término técnico de sistemas de información.
+c0586,appropriate security domain,3,Specific,3,True,3,Integrity,2,False,3,security domain,'appropriate' sobra; el dominio de seguridad verifica firmas y tokens.
+c0587,global services application,4,NE,3,False,3,none,3,True,3,,Nombre de componente propio de la especificación GlobalPlatform.
+c0588,authentication server,3,Specific,3,True,3,Authenticity,3,True,3,,Servidor que verifica la identidad de los usuarios.
+c0589,remote management,6,Specific,3,False,3,none,3,True,3,,Gestión remota de la pasarela en redes domésticas.
+c0590,factor authentication,3,Specific,2,True,3,Authenticity,3,False,3,two-factor authentication,Candidato cortado; se refiere a autenticación de múltiples factores.
+c0591,user authentication,3,Common,3,True,3,Authenticity,3,True,3,,Verificación de la identidad del usuario.
+c0592,merchant acquirer S5 MAC,2,Specific,3,True,3,Integrity,3,False,2,S5 MAC,MAC generado para la transacción por el adquirente; protege su integridad.
+c0593,vehicle registration number,3,OOD,2,False,3,none,3,True,3,,"Número de matrícula, concepto de uso general."
+c0594,positive,8,NotTerm,2,False,3,none,3,False,3,false positive,Fragmento de 'false positive'.
+c0595,glitch,3,NotTerm,2,False,3,none,3,True,3,,Palabra coloquial general.
+c0596,domain key,6,Specific,3,True,3,Confidentiality,3,False,3,security domain key,"Fragmento de 'Security Domain keys', claves criptográficas de dominios de seguridad."
+c0597,exchange transaction,9,Specific,3,False,3,none,3,False,3,currency exchange transaction,Transacción de cambio de divisa en monederos electrónicos; falta 'currency'.
+c0598,graphical,3,NotTerm,3,False,3,none,3,False,3,graphical user interface,Fragmento de 'graphical user interface'.
+c0599,card session,4,Specific,3,False,3,none,3,True,3,,Sesión de comunicación con una tarjeta inteligente.
+c0600,S2 MAC,3,Specific,2,True,3,Integrity,2,True,3,,MAC calculado por el PSAM sobre comandos hacia la tarjeta; protege integridad.
+c0601,speed,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0602,individual,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0603,utilization,3,NotTerm,3,False,3,none,3,True,3,,Palabra general de uso de recursos.
+c0604,good performance,6,NotTerm,3,False,3,none,3,True,3,,Expresión valorativa general.
+c0605,clear secure data exchange,3,NotTerm,3,False,3,none,3,False,3,secure data exchange protocol,'clear' sobra y falta 'protocol'; combinación libre de palabras.
+c0606,input validation,4,Specific,3,True,3,Integrity,3,True,3,,Control que impide entradas maliciosas que alteren datos o programas.
+c0607,examiner,3,OOD,3,False,3,none,3,True,3,,"Rol de examinador de conducción, de otro dominio."
+c0608,fraudulent transaction,3,Common,2,True,3,none,3,True,3,,"Transacción fraudulenta, concepto de seguridad conocido; no mapea a una subcaracterística concreta."
+c0609,low false positive rate,3,Specific,2,False,3,none,3,False,3,false positive rate,'low' sobra; el término es 'false positive rate'.
+c0610,patch,4,Common,3,True,2,Resistance,2,True,3,,"Parche de software, conocido por el público; corrige vulnerabilidades."
+c0611,new supplementary logical,6,Specific,2,False,3,none,3,False,3,supplementary logical channel,Candidato cortado; 'new' sobra y falta 'channel'.
+c0612,user account,4,Common,3,True,3,Accountability,3,True,3,,"Cuenta de usuario, concepto general ligado a identificar al usuario."
+c0613,reversal command,3,Specific,3,False,3,none,3,True,3,,Comando de reversión de compra enviado a la tarjeta CEP.
+c0614,unauthorized user,3,Common,3,True,3,Confidentiality,3,True,3,,"Usuario sin autorización, concepto de seguridad general."
+c0615,new supplementary,6,NotTerm,2,False,3,none,3,False,3,supplementary logical channel,Fragmento mal segmentado de 'supplementary logical channel'.
+c0616,size without difficulty,3,NotTerm,3,False,3,none,3,False,2,,Fragmento mal segmentado sin sentido como término.
+c0617,text,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0618,periodic log,3,NotTerm,2,False,2,none,2,True,2,log,Combinación libre de adjetivo y 'log'.
+c0619,PC,5,Common,3,False,3,none,3,True,3,,"Abreviatura de computadora personal, de uso general."
+c0620,multimedia,3,Common,3,False,3,none,3,True,3,,Término conocido por el público general.
+c0621,discrete,3,NotTerm,3,False,3,none,3,False,3,Discrete Cosine Transformation,Fragmento de nombres de transformadas como Discrete Cosine/Wavelet Transformation.
+c0622,scanner,3,Common,2,True,3,none,2,True,2,vulnerability scanner,Escáner de vulnerabilidades en el contexto; herramienta de seguridad sin subcaracterística clara.
+c0623,client KYC,4,Specific,3,False,2,none,2,False,3,KYC,KYC (conozca a su cliente) es término financiero; 'client' sobra.
+c0624,NGN service usage,2,NotTerm,3,False,3,none,3,False,2,NGN,Combinación libre que contiene la sigla NGN.
+c0625,NGN network function,2,NotTerm,3,False,3,none,3,False,2,NGN,Combinación libre que contiene la sigla NGN.
+c0626,NGN for service,2,NotTerm,3,False,3,none,3,False,2,NGN,Fragmento mal segmentado que contiene la sigla NGN.
+c0627,event,10,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0628,downstream direction,3,Specific,3,False,3,none,3,True,3,,Sentido de tráfico desde WAN hacia la red doméstica.
+c0629,quality,9,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0630,background,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0631,medical practitioner,3,OOD,3,False,3,none,3,True,3,,"Rol del dominio médico, ajeno a la especificación."
+c0632,search query,3,Common,3,False,3,none,3,True,3,,"Consulta de búsqueda, de uso general."
+c0633,capable CND,5,NotTerm,2,False,3,none,3,False,3,non-IMS capable CND,Fragmento mal segmentado; CND es el dispositivo de red del cliente.
+c0634,hostname of rogue,2,NotTerm,2,False,2,none,2,False,3,hostname,Fragmento cortado de 'hostname of rogue node'.
+c0635,session key,5,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica temporal para proteger una sesión de comunicación.
+c0636,malicious activity,3,Common,3,True,3,Resistance,3,True,3,,"Actividad de un actor malicioso, concepto de seguridad general."
+c0637,tool,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0638,bandwidth,3,Common,3,False,3,none,3,True,3,,"Ancho de banda, término de redes conocido por el público."
+c0639,debit,3,Common,3,False,3,none,3,False,3,debit card,Fragmento de 'debit card'; concepto bancario de uso general.
+c0640,additional functionality,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0641,user name,4,Common,3,True,3,Authenticity,3,True,3,,"Nombre de usuario usado para autenticación, conocido por el público."
+c0642,application for processing,3,NotTerm,3,False,3,none,3,False,2,application,Fragmento mal segmentado de una oración.
+c0643,various functionality,3,NotTerm,3,False,3,none,3,True,2,functionality,Expresión general.
+c0644,message digest,3,Specific,3,True,3,Integrity,3,True,3,,Resumen criptográfico que permite verificar la integridad de un mensaje.
+c0645,user experience,5,Common,3,False,3,none,3,True,3,,Concepto de usabilidad conocido por el público general.
+c0646,real vulnerability,3,NotTerm,1,True,2,Resistance,2,False,3,vulnerability,'real' es un modificador; el término es 'vulnerability'.
+c0647,authorization request,3,Specific,3,False,3,none,3,True,3,,Mensaje de solicitud de autorización de una transacción de pago.
+c0648,form of cardholder,2,NotTerm,3,False,3,none,3,False,3,cardholder verification,Fragmento mal segmentado de 'a form of cardholder verification'.
+c0649,activation sequence,3,Specific,3,False,3,none,3,True,3,,Secuencia de activación de tarjetas sin contacto según ISO/IEC 14443.
+c0650,experience,11,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0651,lag,3,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0652,IMPU,2,Specific,2,False,2,none,2,True,3,,"Identidad pública de usuario IMS, usada para identificar al suscriptor."
+c0653,classification algorithm,3,OOD,2,False,3,none,3,True,3,,"Término de aprendizaje automático, ajeno al dominio de la especificación."
+c0654,card reset,3,Specific,3,False,3,none,3,True,3,,"Reinicio de tarjeta inteligente, evento técnico de ISO 7816."
+c0655,facility,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0656,sm,3,NotTerm,3,False,3,none,3,False,3,SMS,Error de lematización de 'sms'.
+c0657,load file data,8,Specific,3,False,3,none,3,False,3,load file data block,Falta 'block'; bloque de datos de archivo de carga en GlobalPlatform.
+c0658,data structure,4,Common,3,False,3,none,3,True,3,,Término informático general.
+c0659,issuer security domain key,2,Specific,3,True,3,Confidentiality,3,True,3,,Clave criptográfica del dominio de seguridad del emisor.
+c0660,logging,3,Common,2,True,3,Accountability,3,True,3,,Registro de actividad que permite rastrear acciones hasta el usuario.
+c0661,capturing,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0662,cancellation,3,Specific,2,False,3,none,3,True,3,,Operación de cancelación de compra en tarjetas de monedero electrónico.
+c0663,target,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0664,normal web search,3,NotTerm,3,False,3,none,3,True,2,web search,'normal' sobra; combinación libre de palabras.
+c0665,mode,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0666,accountability purpose,3,NotTerm,2,False,2,none,2,False,3,accountability,'purpose' sobra; el concepto es 'accountability'.
+c0667,sequence of expletive,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0668,difficulty,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0669,forking towards customer,2,NotTerm,2,False,3,none,3,False,3,call forking,Fragmento mal segmentado de 'call forking towards customer non-IMS capable devices'.
+c0670,email account,4,Common,3,False,3,none,3,True,3,,"Cuenta de correo, conocida por el público general."
+c0671,system module,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0672,redirection of IP,2,NotTerm,2,False,3,none,3,False,3,redirection of IP Multimedia sessions,Fragmento cortado.
+c0673,card life cycle,3,Specific,3,False,3,none,3,True,3,,Ciclo de vida de la tarjeta definido en GlobalPlatform.
+c0674,mode of operation,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0675,honeypot,3,Specific,3,True,3,Resistance,3,True,3,,Señuelo que engaña y registra a atacantes; apoya la operación bajo ataque.
+c0676,victim of pivoting,2,NotTerm,2,False,2,none,2,False,3,pivoting,'pivoting' es el término de seguridad; el resto es combinación libre.
+c0677,compression,3,Common,3,False,3,none,3,True,3,,"Compresión de datos, conocida por el público."
+c0678,macing,2,Specific,2,True,2,Integrity,2,False,3,MACing,Se refiere al cálculo de MAC; forma lematizada deficiente.
+c0679,transaction count,4,Specific,3,False,2,none,2,True,3,,Contador del PSAM usado en las conversaciones con la tarjeta para evitar manipulación o repetición.
+c0680,system user,6,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0681,self,10,NotTerm,3,False,3,none,3,False,2,,Fragmento de 'self-explanatory'.
+c0682,netstat,2,Specific,2,False,3,none,3,True,3,,"Comando de administración de redes, nombre de herramienta."
+c0683,file data,8,NotTerm,3,False,3,none,3,False,3,load file data block,Fragmento de 'load file data block'.
+c0684,attempt,6,NotTerm,3,False,3,none,3,True,2,password attempt,Palabra general.
+c0685,ISIM,2,NE,2,False,2,none,2,True,3,,Módulo de identidad IMS definido por 3GPP; sirve para autenticar al abonado.
+c0686,user credential registration,2,Common,2,True,3,Authenticity,3,True,2,user credential,Registro de credenciales del usuario para su posterior autenticación.
+c0687,facial recognition,3,Common,3,True,3,Authenticity,3,True,3,,Reconocimiento facial biométrico conocido por el público; verifica identidad.
+c0688,licence number,3,OOD,2,False,3,none,3,True,3,,"Número de licencia de conducir, uso general."
+c0689,executable load files,2,Specific,3,False,3,none,3,True,3,,Archivo de carga ejecutable en GlobalPlatform.
+c0690,subsequent command dispatching,2,NotTerm,2,False,3,none,3,False,3,command dispatching,'subsequent' sobra.
+c0691,learning curve,4,Common,3,False,3,none,3,True,3,,"Curva de aprendizaje, expresión conocida por el público."
+c0692,TLS web traffic,2,NotTerm,2,False,2,none,2,False,3,TLS,Combinación libre; el término es TLS.
+c0693,partial AID selection,3,Specific,3,False,3,none,3,True,3,,Selección de aplicación por AID parcial en tarjetas inteligentes.
+c0694,aggregation,4,Specific,3,False,3,none,3,True,3,,Agregación de transacciones en el PSAM según reglas de negocio.
+c0695,end,21,NotTerm,3,False,3,none,3,False,2,,"Fragmento de 'front end', 'back end' o 'lower end'."
+c0696,AES encryption key,2,Specific,3,True,3,Confidentiality,3,True,3,,Clave AES de cifrado que protege la confidencialidad de datos.
+c0697,basis,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0698,national i.d number,2,OOD,2,False,3,none,3,True,3,,"Número de documento nacional de identidad, uso general."
+c0699,testability,2,Common,3,False,3,none,3,True,3,,Subcaracterística de mantenibilidad en calidad de software; no es de seguridad.
+c0700,page,9,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0701,program,10,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0702,web interface,3,Common,3,False,3,none,3,True,3,,"Interfaz web, conocida por el público."
+c0703,network administrator,3,Common,3,False,3,none,3,True,3,,Rol de administración de redes de uso general.
+c0704,digital watermark system,2,Specific,3,True,3,Integrity,3,False,3,digital watermark,'system' sobra; la marca de agua digital protege contra manipulación y redistribución.
+c0705,partial AID,5,Specific,3,False,3,none,3,True,3,,Identificador de aplicación parcial en tarjetas inteligentes.
+c0706,behalf,4,NotTerm,3,False,3,none,3,False,2,,Fragmento de 'on behalf of'.
+c0707,type of device,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0708,service subscription,3,Common,3,False,3,none,3,True,3,,"Suscripción a servicios, concepto de uso general."
+c0709,TOTP,2,Specific,3,True,3,Authenticity,3,True,3,,Contraseña de un solo uso basada en tiempo usada para autenticar.
+c0710,standard,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0711,term of responsiveness,2,NotTerm,3,False,3,none,3,False,2,responsiveness,Fragmento de 'in terms of responsiveness'.
+c0712,application privilege,6,Specific,3,True,3,Integrity,2,True,3,,Privilegio de aplicación en GlobalPlatform que controla qué operaciones puede realizar.
+c0713,capacity,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0714,user input,4,Common,3,False,3,none,3,True,3,,"Entrada del usuario, término informático general."
+c0715,order,14,NotTerm,3,False,3,none,3,False,2,,Fragmento de 'in order to'.
+c0716,different screen size,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0717,private RSA key,2,Specific,3,True,3,Authenticity,2,True,3,,Clave privada RSA usada para firmar y demostrar la identidad del PSAM.
+c0718,keyword in SMS,2,NotTerm,3,False,3,none,3,True,2,keyword,Combinación libre de palabras.
+c0719,service usage,4,NotTerm,3,False,3,none,3,True,2,NGN for service usage,Fragmento de expresión general.
+c0720,recognition,4,NotTerm,3,False,3,none,3,False,2,facial recognition,Fragmento de 'facial recognition' o 'pattern recognition'.
+c0721,OSPF,2,Specific,2,False,3,none,3,True,3,,"Protocolo de enrutamiento de redes (Open Shortest Path First), término técnico de redes."
+c0722,explicit,3,NotTerm,3,False,3,none,3,False,3,explicit selection,Fragmento de 'Explicit Selection'.
+c0723,high availability,3,Common,3,False,3,none,3,True,3,,Requisito de disponibilidad; no es subcaracterística de seguridad de ISO 25010.
+c0724,term of throughput,2,NotTerm,3,False,3,none,3,False,2,throughput,Fragmento de 'in terms of throughput'.
+c0725,firmware upgrade purpose,2,NotTerm,3,False,3,none,3,False,3,firmware upgrade,'purpose' sobra.
+c0726,child,10,NotTerm,2,False,3,none,3,True,3,,Palabra general.
+c0727,implicit selection parameter,2,Specific,3,False,3,none,3,True,3,,Parámetro de GlobalPlatform para selección implícita de aplicaciones.
+c0728,good quality online service,3,NotTerm,3,False,3,none,3,True,3,,Expresión valorativa general.
+c0729,life,30,NotTerm,3,False,3,none,3,True,2,life cycle,Palabra general.
+c0730,confidentiality through encryption,2,NotTerm,3,False,2,none,2,False,3,encryption,Combinación libre de dos términos; los términos son 'confidentiality' y 'encryption'.
+c0731,multithreading,2,OOD,2,False,3,none,3,True,3,,Término de programación general.
+c0732,secure database,3,Common,3,True,3,Confidentiality,3,True,3,,Base de datos protegida contra acceso no autorizado.
+c0733,picture,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0734,classification process,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0735,hostname,2,Specific,3,False,3,none,3,True,3,,Nombre de host de un equipo en una red.
+c0736,clause,3,NotTerm,3,False,3,none,3,True,3,,Palabra general (cláusula del documento).
+c0737,digital signature,3,Specific,2,True,3,Non_repudiation,3,True,3,,Mecanismo criptográfico que prueba el origen y evita el repudio.
+c0738,reusability,2,Common,3,False,3,none,3,True,3,,"Subcaracterística de mantenibilidad, no de seguridad."
+c0739,card content change,3,Specific,3,True,3,Integrity,3,True,3,,"Cambios al contenido de la tarjeta que deben ser autorizados, protegiendo su integridad."
+c0740,keyword in database,2,NotTerm,3,False,3,none,3,True,2,keyword,Combinación libre de palabras.
+c0741,command dispatching,3,Specific,3,False,3,none,3,True,3,,Función de despacho de comandos del OPEN en GlobalPlatform.
+c0742,alert message,4,Common,3,False,3,none,3,True,3,,"Mensaje de alerta, de uso general."
+c0743,SSID,2,Specific,3,False,3,none,3,True,3,,Identificador de red inalámbrica.
+c0744,CPU utilization percentage,2,Common,2,False,3,none,3,True,2,CPU utilization,Métrica general de uso de CPU.
+c0745,new S4 MAC,2,Specific,3,True,3,Integrity,3,False,3,S4 MAC,'new' sobra; MAC que protege conteo y monto del lote.
+c0746,estimate,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0747,responsibility,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0748,data integrity,3,Common,2,True,3,Integrity,3,True,3,,Propiedad de que los datos no se modifiquen sin autorización.
+c0749,line transaction,3,Specific,3,False,3,none,3,False,3,on-line transaction,Candidato cortado; faltan 'on-' u 'off-' (transacciones en línea o fuera de línea).
+c0750,engineer,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0751,permission,4,Common,3,True,3,Confidentiality,3,True,3,,Permiso de acceso a datos; restringe el acceso a usuarios autorizados.
+c0752,logout,2,Common,3,True,2,none,2,True,3,,"Cierre de sesión, concepto conocido; relacionado con gestión de sesiones sin subcaracterística clara."
+c0753,principle of authentication,2,NotTerm,3,False,2,none,2,False,3,authentication,Combinación libre; el término es 'authentication'.
+c0754,functional account,3,NotTerm,3,False,3,none,3,False,3,account,'functional' es un modificador general.
+c0755,authorization management handling policy,2,Specific,3,True,3,Confidentiality,2,True,3,,Política de gestión de autorización de acceso en la pasarela CNG.
+c0756,version,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0757,hypervisor,2,Specific,2,False,3,none,3,True,3,,Componente de virtualización.
+c0758,analyser,2,NotTerm,3,False,3,none,3,False,2,malware analyser,Palabra general; en el contexto es el analizador de malware.
+c0759,doctor,7,OOD,3,False,3,none,3,True,3,,"Rol del dominio médico, ajeno a la especificación."
+c0760,EMV,2,NE,3,False,3,none,3,True,3,,Estándar de pagos con tarjeta; nombre propio.
+c0761,globalplatform API,2,NE,3,False,3,none,3,True,3,,Nombre de la API de la especificación GlobalPlatform.
+c0762,map,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0763,security mechanism,3,Common,3,True,3,none,2,True,3,,Mecanismo de protección que impide eludir la seguridad del entorno.
+c0764,complexity,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0765,way authentication process,2,Specific,3,True,3,Authenticity,3,False,3,two-way authentication,Candidato cortado; autenticación mutua entre tarjeta y terminal.
+c0766,data from twitter,3,NotTerm,3,False,3,none,3,False,3,,"Combinación libre de palabras, no un término."
+c0767,copy,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0768,PII,2,Specific,2,True,3,Confidentiality,3,True,3,,"Información de identificación personal, que debe protegerse de accesos no autorizados."
+c0769,access right,4,Common,3,True,3,Confidentiality,3,True,3,,Derecho de acceso de un usuario a datos o recursos.
+c0770,time anomaly detection,2,NotTerm,2,False,2,none,2,False,3,anomaly detection,Fragmento de 'real time anomaly detection'.
+c0771,clear presentation,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0772,blockchain land registry,2,NE,3,False,3,none,3,True,3,,Nombre propio del sistema/contrato inteligente descrito.
+c0773,imago,2,NotTerm,3,False,3,none,3,False,3,image,Error de lematización de 'imagines' (images).
+c0774,IP multimedia session,2,Specific,3,False,3,none,3,True,3,,Sesión multimedia sobre IP en redes NGN/IMS.
+c0775,later date,4,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0776,tweet,6,Common,3,False,3,none,3,True,3,,"Mensaje de Twitter, de uso general."
+c0777,negative,5,NotTerm,2,False,3,none,3,False,3,false negative,Fragmento de 'false negative'.
+c0778,modularity,2,Common,3,False,3,none,3,True,3,,"Subcaracterística de mantenibilidad, no de seguridad."
+c0779,practice,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0780,confirmation,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0781,fast response time,3,NotTerm,3,False,3,none,3,True,2,response time,'fast' sobra; es un modificador valorativo.
+c0782,S5 MAC,3,Specific,2,True,3,Integrity,3,True,3,,MAC generado por el PSAM para la transacción del adquirente; protege integridad.
+c0783,panel,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0784,line PIN encryption,2,Specific,3,True,3,Confidentiality,3,False,3,on-line PIN encryption,Candidato cortado; cifrado del PIN para proteger su confidencialidad.
+c0785,content management,7,Specific,3,False,3,none,3,False,2,card content management,En el corpus es la gestión de contenido de la tarjeta (GlobalPlatform); falta 'card'.
+c0786,minimum adequate resource level,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0787,email client,3,Common,3,False,3,none,3,True,3,,"Cliente de correo, de uso general."
+c0788,secure storage,3,Common,3,True,3,Confidentiality,3,True,3,,Almacenamiento protegido de datos frente a acceso no autorizado.
+c0789,memory management,6,Common,2,False,3,none,3,True,3,,"Gestión de memoria, concepto informático general."
+c0790,last purchase,7,NotTerm,2,False,3,none,3,False,3,cancel last purchase,Fragmento de 'cancel last purchase' (transacción).
+c0791,deliverable,2,NotTerm,3,False,3,none,3,True,3,,Palabra general de gestión de proyectos.
+c0792,script,4,Common,2,False,3,none,3,True,3,,Término informático general; en el corpus también aparece como mensajes de script EMV.
+c0793,OS,3,Common,3,False,3,none,3,True,3,,Abreviatura de sistema operativo.
+c0794,file type filtering,2,Specific,2,False,3,none,3,True,3,,"Filtrado de archivos por tipo, función técnica del sistema."
+c0795,personnel,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0796,unrealistic waiting time,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c0797,contact,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0798,link,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0799,mail,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0800,bit encryption key,2,Specific,3,True,3,Confidentiality,3,False,3,256-bit encryption key,Candidato cortado; falta el número de bits.
+c0801,network configuration service function,2,Specific,2,False,3,none,3,True,3,,Componente propio de la especificación de redes NGN.
+c0802,scalability problem,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0803,future scalability,3,NotTerm,3,False,3,none,3,False,2,scalability,'future' sobra.
+c0804,item,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0805,twitter streaming API,2,NE,3,False,3,none,3,True,3,,Nombre de la API de un producto de Twitter.
+c0806,alphabetic currency code,2,Specific,3,False,3,none,3,True,3,,Código alfabético de moneda usado en mensajes de monedero electrónico.
+c0807,generation,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0808,encryption of data,2,Common,2,True,3,Confidentiality,3,False,2,encryption,Cifrado de datos para mantenerlos accesibles solo a autorizados; término muy conocido.
+c0809,accordance,3,NotTerm,3,False,3,none,3,False,2,,Fragmento de 'in accordance with'.
+c0810,date,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0811,SMS alert message,2,Common,3,False,3,none,3,True,3,,"Mensaje de alerta por SMS, concepto comprensible para el público general."
+c0812,user input validation,2,Specific,3,True,3,Integrity,3,True,3,,Control que evita la modificación o inyección no autorizada mediante entradas de usuario.
+c0813,cosine,2,OOD,3,False,3,none,3,False,3,discrete cosine transform,Término matemático cortado de la transformada discreta del coseno usada en marcas de agua.
+c0814,tempering,2,Specific,3,True,3,Integrity,3,False,3,software tampering,"Error de escritura de tampering (manipulación indebida), al que le falta el modificador software."
+c0815,group,15,NotTerm,3,False,3,none,3,True,3,,Palabra general; el término real sería group signature o group public key.
+c0816,provision,3,NotTerm,3,False,3,none,3,True,3,,Palabra general usada con sentido de suministro de servicios.
+c0817,association,6,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado propio en los contextos.
+c0818,expletive,2,NotTerm,2,False,3,none,3,True,3,,"Palabra del lenguaje común (improperio), no técnica."
+c0819,inaccurate data format,2,NotTerm,3,False,3,none,3,True,2,data format,"Combinación libre de palabras, no un término establecido."
+c0820,PGP,2,NE,2,True,3,Confidentiality,3,True,3,,Herramienta criptográfica para proteger la confidencialidad de datos como los registros.
+c0821,stage,7,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c0822,authentication process,3,Common,3,True,3,Authenticity,3,True,3,,Proceso de verificación de identidad conocido por el público general.
+c0823,service provider multiple client,2,NotTerm,3,False,3,none,3,False,3,service provider,Fragmento mal segmentado que une dos expresiones.
+c0824,NGN authentication,2,Specific,3,True,3,Authenticity,3,True,3,,Autenticación frente a la red de nueva generación; verifica identidad de dispositivos.
+c0825,NGN terminal,2,Specific,3,False,3,none,3,True,3,,Dispositivo terminal de redes de nueva generación.
+c0826,forking,2,Specific,3,False,3,none,3,False,3,call forking,Término de telefonía IP cortado; el contexto muestra call forking.
+c0827,NGN side,2,NotTerm,3,False,3,none,3,True,2,NGN,"Expresión locativa general, no un concepto con entidad propia."
+c0828,plane,6,Specific,3,False,3,none,3,False,3,data plane,"Término de redes cortado; aparece como data plane, control plane, management plane."
+c0829,unlinked load,2,Specific,3,False,3,none,3,True,3,,Tipo de transacción de carga de monedero electrónico.
+c0830,anomaly detection,3,Specific,3,True,3,Resistance,3,True,3,,Detección de comportamiento anómalo que apoya la operación bajo ataque.
+c0831,multicast,2,Specific,3,False,3,none,3,True,3,,"Modo de transmisión de redes, propio del dominio."
+c0832,entertainment,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0833,redirection,2,Specific,3,False,3,none,3,True,3,,"Redirección de sesiones multimedia IP, concepto de redes."
+c0834,different OSPF,2,NotTerm,3,False,3,none,3,False,3,OSPF area,Sobra el adjetivo different; el término es OSPF area.
+c0835,operational performance bottleneck,3,Common,2,False,3,none,3,False,3,performance bottleneck,Sobra el modificador operational.
+c0836,operational performance,4,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0837,windows platform,3,NE,2,False,3,none,3,True,2,Windows,"Mención de plataforma de uso general, no término del dominio."
+c0838,watermark agency,3,Specific,3,False,2,none,2,False,2,digital watermark agency,"Componente del sistema de agentes, cortado; el contexto dice digital watermark agency."
+c0839,XSS vulnerability,2,Specific,3,True,3,Resistance,3,True,3,,Vulnerabilidad web explotable por atacantes; su detección apoya la resistencia.
+c0840,stress testing,3,Common,3,False,3,none,3,True,3,,"Prueba de carga extrema, término de ingeniería de software general."
+c0841,CPN subscription,2,Specific,3,False,3,none,3,True,3,,Suscripción de una red doméstica de cliente en el marco NGN.
+c0842,performance bottleneck,3,Common,3,False,3,none,3,True,3,,"Cuello de botella de rendimiento, concepto técnico de uso común."
+c0843,CPN communication,2,NotTerm,3,False,3,none,3,True,2,CPN,Combinación libre; el contexto es intra-CPN communication.
+c0844,different CPN,2,NotTerm,3,False,3,none,3,False,3,CPN,Sobra el adjetivo different.
+c0845,mother,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0846,section for verification,2,NotTerm,3,False,3,none,3,True,2,,Combinación libre de palabras.
+c0847,pivoting,2,Specific,3,True,3,Resistance,3,True,3,,Técnica de ataque para saltar entre máquinas comprometidas.
+c0848,timestamp,2,Specific,3,True,3,Integrity,3,True,3,,Marca temporal usada para detectar reenvíos de mensajes de gestión.
+c0849,authorization for load,2,Specific,3,True,3,Confidentiality,3,True,2,authorization,"Autorización previa de transacciones de carga, control de acceso a fondos."
+c0850,management information,4,Specific,2,False,3,none,3,True,3,,Información de gestión de tarjeta o dispositivo en estos sistemas.
+c0851,OTP,2,Specific,3,True,3,Authenticity,3,True,3,,Contraseña de un solo uso para verificar la identidad.
+c0852,customer environment,3,NotTerm,2,False,3,none,3,True,3,,Entorno de red doméstica del cliente en la especificación del CNG.
+c0853,easy maintainability,2,NotTerm,3,False,3,none,3,False,3,maintainability,Sobra el adjetivo easy.
+c0854,AVS,2,Specific,3,True,3,Authenticity,3,True,3,,Servicio de verificación de dirección usado para reverificar al usuario.
+c0855,system server,3,NotTerm,3,False,3,none,3,True,2,server,Combinación genérica de palabras.
+c0856,logout capability,2,NotTerm,2,False,3,none,3,True,2,logout,"Función de cierre de sesión, comprensible para el público general."
+c0857,currency code,4,Specific,3,False,3,none,3,True,3,,Código de moneda usado en mensajes de tarjetas de pago.
+c0858,phone to zimbabwe,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de una oración.
+c0859,form,9,NotTerm,3,False,3,none,3,True,3,,Palabra general ambigua.
+c0860,backup,3,Common,3,False,3,none,3,True,3,,"Copia de respaldo, concepto conocido por el público."
+c0861,provider for configuration,2,NotTerm,3,False,3,none,3,False,3,service provider,Fragmento mal segmentado de service provider for configuration.
+c0862,camera,5,Common,2,False,3,none,3,True,3,,Dispositivo de uso cotidiano.
+c0863,cardholder authentication,2,Specific,3,True,3,Authenticity,3,True,3,,Verificación de la identidad del titular de la tarjeta.
+c0864,provisioning,2,Specific,3,False,3,none,3,True,3,,Aprovisionamiento de servicios y configuración en redes.
+c0865,baby,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0866,communication channel,3,Common,2,False,3,none,3,True,3,,Canal por el que se transmiten datos entre componentes.
+c0867,reception,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0868,challenge,5,NotTerm,3,False,3,none,3,True,3,,"En los contextos significa dificultad, uso general."
+c0869,ECC,2,Specific,3,True,3,Confidentiality,3,True,3,,Criptografía de curva elíptica usada para cifrar claves.
+c0870,speech command,3,NotTerm,2,False,3,none,3,True,3,,"Comando de voz, concepto conocido."
+c0871,raw data,3,NotTerm,2,False,3,none,3,True,3,,"Datos sin procesar, término general de datos."
+c0872,bitcoin,3,NE,2,False,3,none,3,True,3,,Nombre de una criptomoneda; nombre propio.
+c0873,copyright,3,Common,3,False,3,none,3,True,3,,"Derecho de autor, concepto legal conocido; protección de propiedad intelectual."
+c0874,system downloader,2,NotTerm,3,False,3,none,3,True,3,,Combinación genérica de palabras.
+c0875,other CND,2,NotTerm,3,False,3,none,3,False,3,CND,Sobra el modificador other.
+c0876,DES,3,Specific,2,True,3,Confidentiality,3,True,3,,Algoritmo de cifrado simétrico (Data Encryption Standard).
+c0877,robustness,2,Common,3,False,3,none,3,True,3,,"Propiedad general de calidad, aquí de la marca de agua."
+c0878,rogue note screen,2,NotTerm,3,False,3,none,3,False,2,rogue node,Fragmento con error tipográfico; el concepto es rogue node.
+c0879,network configuration server,2,Specific,3,False,3,none,3,True,3,,Servidor que entrega parámetros de configuración de servicio.
+c0880,faceprint,2,Specific,3,True,3,Authenticity,3,True,3,,Plantilla biométrica facial para verificar identidad.
+c0881,website against URL,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de la oración.
+c0882,TLS,2,Specific,2,True,3,Confidentiality,3,True,3,,Protocolo que protege la confidencialidad de las comunicaciones.
+c0883,scope,3,NotTerm,3,False,3,none,3,True,3,,Palabra general (alcance).
+c0884,acquisition,3,Specific,2,False,3,none,3,False,3,forensic image acquisition,Término forense cortado; se refiere a adquisición de imágenes forenses o de memoria.
+c0885,menu,3,NotTerm,2,False,3,none,3,True,3,,Elemento de interfaz de uso común.
+c0886,backend,2,Common,3,False,3,none,3,True,3,,"Parte servidor de un sistema, término de software difundido."
+c0887,voice,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0888,consistent interface format,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0889,bootstrap,2,Specific,3,False,3,none,3,True,3,,Arranque/obtención inicial de configuración de red; el otro uso es el framework CSS.
+c0890,originator,2,NotTerm,3,False,3,none,3,True,3,,Palabra general usada como origen de datos.
+c0891,secure memory,5,Specific,3,True,3,Confidentiality,3,True,3,,Gestión de memoria que protege código y datos de accesos no autorizados.
+c0892,runtime behavior requirement,2,NotTerm,3,False,3,none,3,False,2,runtime behavioral requirement,Fragmento cortado de una frase de la especificación GlobalPlatform.
+c0893,test,7,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0894,route,4,NotTerm,3,False,3,none,3,True,3,,Palabra general en estos contextos (rutas de examen o buses).
+c0895,network connection,4,Common,3,False,3,none,3,True,3,,"Conexión de red, concepto conocido."
+c0896,security domain provider,2,Specific,3,True,2,none,3,True,3,,Entidad externa propietaria de políticas de un security domain de la tarjeta.
+c0897,web material,3,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0898,margin,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0899,life cycle information,3,Specific,3,False,3,none,3,True,3,,Información de estado de ciclo de vida mantenida en el registro GlobalPlatform.
+c0900,discrete cosine,2,OOD,3,False,3,none,3,False,3,discrete cosine transform,Término matemático/procesamiento de señal cortado.
+c0901,data exchange,5,Common,3,False,3,none,3,True,3,,"Intercambio de datos, concepto técnico general."
+c0902,portability,2,Common,3,False,3,none,3,True,3,,"Atributo de calidad general, no de seguridad."
+c0903,original supplementary logical,3,Specific,2,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado con modificador sobrante.
+c0904,access to admin,2,NotTerm,3,False,3,none,3,False,3,admin console,Fragmento mal segmentado de access to admin console.
+c0905,open supplementary logical,3,Specific,2,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado con open sobrante.
+c0906,software tempering,2,Specific,3,True,3,Integrity,3,False,3,software tampering,Error tipográfico de tampering; manipulación no autorizada del software.
+c0907,phone call notification,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0908,university WIFI network,2,NotTerm,3,False,3,none,3,False,2,WIFI network,"Sobra university, que es un complemento circunstancial."
+c0909,aggregation record,3,Specific,3,False,3,none,3,True,3,,Registro del PSAM para agregar transacciones por emisor.
+c0910,pin,3,Common,3,True,3,Authenticity,3,True,3,,Número secreto conocido por el público para autenticar al usuario.
+c0911,decompression,2,Common,3,False,3,none,3,True,3,,"Descompresión de archivos, concepto informático común."
+c0912,friendliness,2,NotTerm,3,False,3,none,3,False,2,user-friendliness,Fragmento de user-friendliness.
+c0913,relevant information,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0914,notification of child,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de notificaciones del dispositivo del niño.
+c0915,call forking,2,Specific,3,False,3,none,3,True,3,,Función de telefonía IMS que bifurca llamadas a varios dispositivos.
+c0916,exponent,2,Specific,3,False,3,none,3,False,3,currency exponent,En el contexto es el exponente de moneda; término cortado.
+c0917,technology,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0918,multicast flow,2,Specific,3,False,3,none,3,True,3,,Flujo de tráfico multicast en redes.
+c0919,data block signature,4,Specific,3,True,3,Integrity,3,False,2,load file data block signature,Firma que protege integridad y origen; el término completo incluye load file.
+c0920,direction,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0921,administration,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0922,interface for ease,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de interface for ease of use.
+c0923,practice in documentation,2,NotTerm,3,False,3,none,3,False,3,,Fragmento de best practices in documentation.
+c0924,qos rule,2,Specific,3,False,3,none,3,True,3,,Regla de calidad de servicio de redes.
+c0925,friendly user interface,2,NotTerm,3,False,3,none,3,True,2,user interface,Expresión valorativa general.
+c0926,original supplementary,3,NotTerm,2,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado.
+c0927,qos control,2,Specific,3,False,3,none,3,True,3,,Control de calidad de servicio en redes.
+c0928,open supplementary,3,NotTerm,2,False,3,none,3,False,3,supplementary logical channel,Fragmento cortado.
+c0929,speech,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0930,friendly input component,2,NotTerm,3,False,3,none,3,False,3,input component,Sobra el adjetivo friendly.
+c0931,biometric,2,Common,3,True,3,Authenticity,3,True,3,,"Rasgos biométricos para verificar identidad, concepto difundido."
+c0932,child device,3,NotTerm,3,False,3,none,3,True,3,,Combinación libre propia de una aplicación de control parental.
+c0933,contract,5,Specific,3,False,3,none,3,False,3,smart contract,En el contexto es smart contract de blockchain.
+c0934,cost,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0935,block signature,4,Specific,3,True,3,Integrity,3,False,3,load file data block signature,Fragmento de load file data block signature.
+c0936,relation,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0937,implementation,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0938,mouse,3,NotTerm,2,False,3,none,3,True,3,,Periférico de uso cotidiano.
+c0939,n signer,2,NotTerm,2,False,2,none,2,False,3,signer,"Sobra n, variable del esquema de firma de grupo."
+c0940,login credential,2,Common,3,True,3,Authenticity,3,True,3,,Datos de acceso que demuestran la identidad del usuario.
+c0941,logical channel(s,3,Specific,3,False,3,none,3,False,3,logical channel,Paréntesis residual de la forma plural logical channel(s).
+c0942,asymmetric cryptography,2,Specific,3,True,3,Confidentiality,3,True,3,,Criptografía de clave pública usada para proteger datos y autenticar.
+c0943,term,7,NotTerm,3,False,3,none,3,True,3,,Palabra general (in terms of).
+c0944,contactless card,2,Common,2,False,3,none,3,True,3,,"Tarjeta sin contacto, conocida por el público."
+c0945,decoy,2,Specific,3,True,3,Resistance,3,True,3,,Señuelo para engañar al atacante y mantener el sistema operativo bajo ataque.
+c0946,bookmark,2,Common,3,False,3,none,3,True,3,,Marcador web de uso común.
+c0947,secure channel protocol,2,Specific,3,True,3,Confidentiality,3,True,3,,Protocolo de canal seguro de GlobalPlatform para proteger comunicaciones.
+c0948,device credential,2,Specific,3,True,3,Authenticity,3,True,3,,Credencial que prueba la identidad de un dispositivo.
+c0949,friendly interface design,2,NotTerm,3,False,3,none,3,True,2,interface design,Expresión valorativa general.
+c0950,o interface(,3,Specific,3,False,3,none,3,False,3,card I/O interface,Fragmento mal segmentado de card I/O interface(s).
+c0951,author,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0952,configuration server,3,Specific,3,False,3,none,3,True,3,,Servidor de configuración de la red doméstica.
+c0953,different device,3,NotTerm,3,False,3,none,3,False,2,device,Sobra el adjetivo different.
+c0954,general user,3,NotTerm,3,False,3,none,3,True,2,user,Combinación general de palabras.
+c0955,cryptojacking application,2,Specific,2,True,3,Resistance,3,False,2,cryptojacking,"Sobra application; el concepto es cryptojacking, minería maliciosa."
+c0956,knowledge,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0957,logistic,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0958,CPU usage baseline,2,Specific,3,True,2,Resistance,2,True,3,,Línea base de uso de CPU para detectar desviaciones.
+c0959,end user,3,Common,3,False,3,none,3,True,3,,"Usuario final, término conocido."
+c0960,logical channel management,2,Specific,3,False,3,none,3,True,3,,Función del entorno GlobalPlatform para gestionar canales lógicos.
+c0961,multiple service provider,2,NotTerm,3,False,3,none,3,False,3,service provider,Sobra multiple.
+c0962,background process,3,Common,3,False,3,none,3,True,3,,"Proceso en segundo plano, concepto informático común."
+c0963,TCP,2,Specific,2,False,3,none,3,True,3,,Protocolo de transporte de redes.
+c0964,size,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0965,removal,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0966,movement,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0967,GSM,2,NE,2,False,3,none,3,True,3,,Nombre de un estándar de telefonía móvil.
+c0968,scan on university,2,NotTerm,3,False,3,none,3,False,3,port scan,Fragmento mal segmentado; el concepto es port scan.
+c0969,decompression option,2,NotTerm,3,False,3,none,3,False,3,decompression,Sobra option.
+c0970,scalable speed,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c0971,organisation,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0972,logic,3,NotTerm,3,False,3,none,3,True,2,application logic,Palabra general en estos contextos.
+c0973,currency exponent,2,Specific,3,False,3,none,3,True,3,,Campo de moneda en mensajes de tarjetas de pago.
+c0974,central error repository,2,Specific,2,False,3,none,3,True,3,,Repositorio del esquema de pago para transacciones con error de MAC.
+c0975,small learning curve,2,NotTerm,3,False,3,none,3,True,2,learning curve,Expresión valorativa general.
+c0976,data block hash,3,Specific,3,True,3,Integrity,3,False,2,load file data block hash,Hash para verificar integridad; el término completo incluye load file.
+c0977,list,8,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0978,new logical channel,2,NotTerm,2,False,3,none,3,False,3,logical channel,Sobra el adjetivo new.
+c0979,networked resource,2,NotTerm,2,False,3,none,3,True,3,,Combinación general de palabras.
+c0980,unauthorised disclosure,2,Specific,3,True,3,Confidentiality,3,True,3,,"Divulgación no autorizada, amenaza directa a la confidencialidad."
+c0981,block hash,3,Specific,3,True,3,Integrity,3,False,3,load file data block hash,Fragmento de load file data block hash.
+c0982,patient information,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0983,PDP functionality,2,Specific,2,True,3,Integrity,3,False,3,PDP,Sobra functionality; PDP verifica la integridad de datos almacenados.
+c0984,DES session key,2,Specific,3,True,3,Confidentiality,3,True,3,,Clave de sesión del algoritmo DES para proteger la transacción.
+c0985,cryptogram,2,Specific,3,True,3,Authenticity,3,True,3,,Valor criptográfico intercambiado para validar tarjeta y PSAM.
+c0986,experiment,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0987,availability of data,2,Common,2,True,2,none,3,True,2,availability,Disponibilidad no es subcaracterística de seguridad de ISO 25010 considerada aquí.
+c0988,fund issuer,2,Specific,3,False,3,none,3,True,3,,Rol del dominio de pagos que autoriza fondos.
+c0989,issuer host,2,Specific,3,False,3,none,3,True,3,,Sistema anfitrión del emisor en el dominio de tarjetas.
+c0990,guideline,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0991,main screen,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c0992,decision,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c0993,final application,6,Specific,3,False,3,none,3,False,2,final application privilege,Aplicación con privilegio Final Application en tarjetas GlobalPlatform.
+c0994,alert from PC,2,NotTerm,3,False,3,none,3,True,2,alert,Combinación libre de palabras.
+c0995,critical information,4,NotTerm,2,False,2,none,2,True,3,,Información sensible que debe protegerse de divulgación.
+c0996,service usage purpose,2,NotTerm,3,False,3,none,3,False,2,,Combinación libre de palabras.
+c0997,blower,2,Common,2,False,3,none,3,False,3,whistle-blower,Fragmento de whistle-blower (denunciante).
+c0998,response message,3,Specific,2,False,3,none,3,True,3,,Mensaje de respuesta en protocolos de autorización y comandos de tarjeta.
+c0999,start menu screen,2,NotTerm,3,False,3,none,3,True,3,,"Elemento de interfaz específico de un sistema, no un término."
+c1000,traffic data,3,Common,3,False,3,none,3,True,3,,"Datos de tráfico de red, concepto técnico general."
+c1001,training,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1002,adversary,2,Specific,3,True,3,Resistance,3,True,3,,Actor malicioso frente al cual el sistema debe resistir.
+c1003,document on behalf,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de sign a document on behalf of the group.
+c1004,ethereum protocol,2,NE,3,False,3,none,3,True,3,,Nombre propio de un protocolo de blockchain.
+c1005,blood,6,OOD,2,False,3,none,3,True,3,,Término médico ajeno al dominio de seguridad o sistemas.
+c1006,remote access device,2,Specific,3,False,3,none,3,True,3,,Dispositivo que accede remotamente a la red doméstica.
+c1007,mailbox,2,Common,3,False,3,none,3,True,3,,"Buzón de correo, concepto conocido."
+c1008,platform with ease,2,NotTerm,3,False,3,none,3,False,3,platform,Fragmento mal segmentado.
+c1009,policy for integrity,2,NotTerm,3,False,2,none,2,False,3,security policy,Fragmento de security policy for integrity and source authenticity.
+c1010,HTTPS,3,Specific,2,True,3,Confidentiality,3,True,3,,Protocolo web cifrado que protege la confidencialidad del tráfico.
+c1011,redundancy,2,Common,3,False,3,none,3,True,3,,"Concepto de ingeniería conocido, aquí sin foco de seguridad ISO."
+c1012,RSA key,3,Specific,3,True,3,Confidentiality,3,True,3,,Clave del algoritmo asimétrico RSA usada en autenticación y firmas.
+c1013,unintended usage,2,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c1014,quick error recovery,2,NotTerm,3,False,3,none,3,True,2,error recovery,Expresión valorativa general.
+c1015,privacy protection policy,2,Specific,3,True,3,Confidentiality,3,True,3,,Política que protege información privada y crítica del acceso indebido.
+c1016,playback,2,Common,2,False,3,none,3,True,3,,"Reproducción de medios, concepto común."
+c1017,distinct security question,2,Specific,2,True,3,Authenticity,3,False,3,security question,Sobra distinct; pregunta de seguridad para reverificar identidad.
+c1018,symmetric macing key,2,Specific,3,True,3,Integrity,3,False,2,symmetric MACing key signature,Clave simétrica para generar MAC que protege integridad de transacciones.
+c1019,symmetric macing,2,Specific,3,True,3,Integrity,3,False,3,symmetric MACing key,Fragmento cortado de symmetric MACing key.
+c1020,university PC register,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1021,macing key,2,Specific,3,True,3,Integrity,3,False,3,symmetric MACing key,Fragmento de symmetric MACing key.
+c1022,macing key signature,2,Specific,3,True,3,Integrity,3,False,3,symmetric MACing key,"Fragmento que incluye signature, que queda fuera del término."
+c1023,alert through text,2,NotTerm,3,False,3,none,3,True,2,,Combinación libre de palabras.
+c1024,mutual authentication,2,Specific,3,True,3,Authenticity,3,True,3,,Ambas partes demuestran su identidad entre sí.
+c1025,own security domain,2,Specific,2,False,2,none,3,False,3,security domain,Sobra own; security domain es el componente de seguridad de la tarjeta.
+c1026,adjustment,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1027,huge amount,3,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1028,EMS,2,OOD,3,False,3,none,3,True,3,,"Siglas de servicios médicos de emergencia, otro dominio."
+c1029,IDS,2,Specific,3,True,3,Resistance,3,True,3,,Sistema de detección de intrusiones que apoya la operación bajo ataque.
+c1030,payload,2,Specific,3,False,3,none,3,True,3,,"Carga útil de paquetes o mensajes, término técnico de redes."
+c1031,metadata,2,Common,3,False,3,none,3,True,3,,"Datos sobre datos, concepto informático difundido."
+c1032,short data transmission,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1033,bus,4,NotTerm,3,False,3,none,3,True,3,,"En el contexto es vehículo de transporte, palabra general."
+c1034,correct life cycle,4,NotTerm,3,False,3,none,3,False,3,life cycle state,Fragmento cortado de correct Life Cycle State.
+c1035,information retrieval,2,OOD,3,False,3,none,3,True,3,,"Disciplina de recuperación de información, ajena al dominio."
+c1036,secure authentication,2,Common,3,True,3,Authenticity,3,True,3,,"Autenticación segura de identidad, concepto conocido."
+c1037,intruder,2,Common,3,True,3,Resistance,3,True,3,,Actor no autorizado que ataca el sistema.
+c1038,authentication failure,2,Specific,3,True,3,Authenticity,3,True,3,,Evento de verificación de identidad fallida que dispara políticas de manejo.
+c1039,S1 MAC,2,Specific,3,True,3,Integrity,3,True,3,,Código de autenticación de mensaje de la transacción CEP.
+c1040,complex computation,2,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c1041,cloud data owner,2,Specific,3,False,3,none,3,True,3,,Rol del propietario de datos almacenados en la nube.
+c1042,line authentication,2,Specific,3,True,3,Authenticity,3,False,3,on-line authentication,Fragmento cortado de on-line/off-line authentication.
+c1043,authentication service,2,Specific,2,True,3,Authenticity,3,True,3,,Servicio que verifica la identidad de los usuarios.
+c1044,local authentication,2,Specific,3,True,3,Authenticity,3,True,3,,Autenticación realizada dentro de la red doméstica.
+c1045,structure,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1046,authentication system,2,Common,3,True,3,Authenticity,3,True,3,,Sistema que verifica la identidad del usuario.
+c1047,audio,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1048,data during transmission,2,NotTerm,3,False,2,none,2,False,2,data in transit,"Fragmento de frase, no un término establecido."
+c1049,incremental purchase,2,Specific,3,False,3,none,3,True,3,,Tipo de transacción de compra por pasos en tarjetas CEP.
+c1050,mobile,4,NotTerm,3,False,3,none,3,True,3,,Palabra general en estos contextos.
+c1051,buzzer,2,NotTerm,2,False,3,none,3,True,3,,Dispositivo de alarma de uso cotidiano.
+c1052,goal,5,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1053,batch total,3,Specific,3,False,3,none,3,True,3,,Total acumulado de transacciones de un lote en pagos con tarjeta.
+c1054,login password,2,Common,3,True,3,Authenticity,3,True,3,,Contraseña de acceso que demuestra la identidad del usuario.
+c1055,malware detection,2,Specific,3,True,3,Resistance,3,True,3,,Detección de software malicioso que apoya la resistencia a ataques.
+c1056,internal security measure,2,NotTerm,3,True,2,none,3,True,2,security measure,"Combinación libre de palabras, aunque aluda a seguridad."
+c1057,web data mining,2,OOD,3,False,3,none,3,True,3,,"Técnica de minería de datos, ajena al dominio de la especificación."
+c1058,donor,3,NotTerm,2,False,3,none,3,True,3,,Palabra general en contexto de donación de sangre.
+c1059,current card i,3,Specific,3,False,3,none,3,False,3,card I/O interface,Fragmento cortado de current card I/O interface.
+c1060,single customer device,2,NotTerm,3,False,3,none,3,False,3,customer device,Sobra single.
+c1061,video content,3,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c1062,right service control platform,2,NotTerm,3,False,3,none,3,False,3,service control platform,Sobra right.
+c1063,centralized database,2,Common,3,False,3,none,3,True,3,,"Base de datos centralizada, concepto informático conocido."
+c1064,intrusion attack,2,Specific,3,True,3,Resistance,3,True,3,,Ataque de intrusión ante el cual el sistema debe seguir operando.
+c1065,transient session,4,Specific,3,False,2,none,2,False,3,transient session data,Término cortado; datos de sesión transitorios protegidos por memoria segura.
+c1066,complexity avoidance,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1067,user for storage,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado de una oración.
+c1068,statistic,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1069,CPU usage,4,Common,3,False,3,none,3,True,3,,"Uso de procesador, concepto informático común."
+c1070,initial load time,2,NotTerm,3,False,3,none,3,True,3,,Combinación general de palabras.
+c1071,access to data,3,Common,2,True,3,Confidentiality,3,True,2,access control,Controlar el acceso a datos preserva la confidencialidad.
+c1072,efficiency in mind,2,NotTerm,3,False,3,none,3,False,3,,"Fragmento de frase, no un término."
+c1073,unknown malware,2,Common,2,True,3,Resistance,3,False,3,malware,Sobra unknown; malware es software malicioso.
+c1074,file for storage,2,NotTerm,3,False,3,none,3,False,3,,"Fragmento de frase, no un término."
+c1075,CHANNEL command,4,Specific,3,False,3,none,3,False,3,MANAGE CHANNEL command,Término cortado; el comando es MANAGE CHANNEL.
+c1076,certification authority,3,Specific,3,True,3,Authenticity,3,True,3,,Entidad que gestiona claves y certificados que acreditan identidades.
+c1077,malware activity,2,Specific,1,True,3,Resistance,3,False,2,malware,Comportamiento de software malicioso que el sistema debe detectar.
+c1078,agreement,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1079,auditor,2,Common,3,True,3,Accountability,3,True,3,,Rol que revisa registros para rastrear acciones.
+c1080,student personal detail,2,NotTerm,3,False,3,none,3,True,2,,Combinación libre de palabras.
+c1081,concurrent service,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras sin significado especializado propio.
+c1082,malware family,2,Specific,3,True,3,Resistance,2,True,3,,Agrupación de software malicioso usada para detectar y clasificar amenazas.
+c1083,parameter input,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de interfaz sin sentido técnico propio.
+c1084,TISPAN,1,NE,3,False,3,none,3,True,3,,Nombre de un organismo/proyecto de estandarización; no se traduce.
+c1085,ISAAS,1,NE,3,False,3,none,3,True,3,,Nombre propio del sistema descrito en la especificación.
+c1086,EGOVAUTH,1,NE,3,False,3,none,3,True,3,,Nombre propio del sistema descrito en la especificación.
+c1087,ERC721,1,NE,3,False,3,none,3,True,3,,Estándar de tokens de Ethereum; nombre propio que no se traduce.
+c1088,CVMI,1,Specific,3,True,3,Authenticity,3,True,3,,"Sigla de indicador del método de verificación del titular, ligado a la autenticación con PIN."
+c1089,APDU,1,Specific,3,False,3,none,3,True,3,,Unidad de datos de comandos de tarjetas inteligentes (ISO 7816).
+c1090,ODPF,1,NE,3,False,3,none,3,False,3,OSPF,"Aparente error tipográfico de OSPF, nombre de protocolo de enrutamiento."
+c1091,CSCF,1,Specific,3,False,3,none,3,True,2,P-CSCF,Sigla de función de control de sesiones de la red IMS.
+c1092,LAN interface,2,Specific,3,False,3,none,3,True,3,,Interfaz de red de área local de la pasarela doméstica.
+c1093,section on campus,2,NotTerm,3,False,3,none,3,False,3,,"Fragmento libre de oración, no es un término."
+c1094,tweet corpus,2,OOD,3,False,3,none,3,True,3,,"Término de procesamiento de lenguaje natural, ajeno al dominio de la especificación."
+c1095,initiation,2,NotTerm,3,False,3,none,3,True,3,,Palabra general; en contexto es parte de otras expresiones.
+c1096,incident,3,Common,3,True,3,none,3,True,3,,Concepto de gestión de seguridad conocido por el público general.
+c1097,reporting,3,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c1098,initialize command,2,Specific,3,False,3,none,3,True,3,,Comando que inicia una transacción en tarjetas de monedero electrónico.
+c1099,upstream direction,2,Specific,3,False,3,none,3,True,3,,"Sentido de tráfico de la red hacia el proveedor, concepto de redes."
+c1100,encryption standard,2,Specific,2,True,3,Confidentiality,3,True,2,Advanced Encryption Standard,"Fragmento del nombre de estándares criptográficos (AES, DES); falta el nombre completo."
+c1101,number of tag,2,NotTerm,3,False,3,none,3,False,2,,Fragmento libre sin sentido terminológico.
+c1102,internet connectivity,2,Common,2,False,3,none,3,True,3,,Expresión general sin sentido técnico especializado en este corpus.
+c1103,avoidance,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1104,presence,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1105,initialize,2,NotTerm,3,False,3,none,3,True,2,initialize command,Verbo aislado; el término completo es initialize command.
+c1106,specific private identity,2,Specific,3,False,2,none,2,False,3,private identity,Sobra el adjetivo specific; private identity es concepto de IMS.
+c1107,single parameter,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1108,commission,4,NotTerm,2,False,3,none,3,False,3,Zimbabwe Anti-Corruption Commission,Fragmento del nombre de una organización.
+c1109,risk of error,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1110,unlocking,3,Specific,3,True,3,none,3,True,3,,"Función de gestión de seguridad de GlobalPlatform (desbloqueo de dominios, aplicaciones, tarjeta)."
+c1111,different parameter,2,NotTerm,3,False,3,none,3,False,2,,Combinación libre de palabras.
+c1112,routing,2,Specific,2,False,3,none,3,True,3,,Concepto de redes (enrutamiento de paquetes).
+c1113,spam folder,2,Common,3,False,3,none,3,True,3,,Concepto de correo electrónico conocido por el público general.
+c1114,unauthorized use,2,Common,3,True,3,Integrity,2,True,3,,Concepto de seguridad comprensible para el público general.
+c1115,recent network connection,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1116,merchant acquirer S5,2,Specific,3,True,3,Integrity,3,False,3,merchant acquirer S5 MAC,Está cortado; el término es un MAC de integridad de transacciones.
+c1117,creation,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1118,mining,3,Specific,1,False,3,none,3,False,2,cryptocurrency mining,Aislado es ambiguo; en contexto se refiere a minería de criptomonedas.
+c1119,acquirer S5 MAC,2,Specific,3,True,3,Integrity,3,False,3,merchant acquirer S5 MAC,Falta merchant; es un código de autenticación de mensajes que protege la integridad.
+c1120,source authenticity,2,Specific,3,True,3,Authenticity,3,True,3,,Propiedad de poder demostrar el origen de los datos cargados.
+c1121,acquirer S5,2,Specific,3,True,3,Integrity,3,False,3,merchant acquirer S5 MAC,Está cortado; se refiere al MAC S5 del adquirente.
+c1122,filtering,2,NotTerm,3,False,3,none,3,True,2,file type filtering,Palabra general sin contexto especializado.
+c1123,data exchange protocol,3,Specific,3,False,3,none,3,True,3,,Protocolo de comunicación entre sistemas.
+c1124,LAN traffic,2,Specific,3,False,3,none,3,True,3,,Tráfico de red local clasificado por la pasarela.
+c1125,hash value,2,Specific,3,True,3,Integrity,3,True,3,,Resumen criptográfico usado para detectar modificaciones.
+c1126,health practitioner,2,OOD,2,False,3,none,3,True,3,,Término del dominio médico.
+c1127,normal flow information,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1128,unavailability,2,Common,3,False,2,none,3,True,3,,Concepto de seguridad (disponibilidad) que no es subcaracterística de seguridad en ISO 25010.
+c1129,application access rule,2,Specific,3,True,3,Confidentiality,3,True,3,,Regla de control de acceso entre aplicaciones según privilegios.
+c1130,capable device,4,Specific,3,False,3,none,3,False,3,IMS capable device,Cortado; falta el calificador IMS.
+c1131,exchange protocol,3,Specific,2,False,3,none,3,False,3,data exchange protocol,Fragmento de data exchange protocol.
+c1132,user validation,2,Common,2,True,3,Authenticity,3,True,3,,Verificación de que el usuario es quien dice ser.
+c1133,similarity,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1134,current maximum number,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1135,twitter API,2,NE,3,False,3,none,3,True,3,,Interfaz de un producto con nombre propio.
+c1136,child SMS,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1137,scanning tool,2,Specific,1,True,2,none,3,True,3,,Herramienta de análisis de seguridad (escaneo de vulnerabilidades o marcas).
+c1138,verification method,2,Specific,3,True,3,Authenticity,3,True,3,,Método de verificación del titular (PIN en línea o fuera de línea).
+c1139,register,3,NotTerm,3,False,3,none,3,True,3,,"Palabra general, aquí significa registro de equipos."
+c1140,hidden folder,2,Common,2,True,3,Confidentiality,3,True,3,,Carpeta oculta para proteger contenidos del acceso no autorizado.
+c1141,CA public key,2,Specific,3,True,3,Authenticity,3,True,3,,Clave pública de la autoridad certificadora para validar identidades.
+c1142,potential operational performance,3,NotTerm,3,False,3,none,3,False,3,operational performance bottleneck,Fragmento mal segmentado.
+c1143,handling policy,3,Specific,3,True,3,Authenticity,2,False,3,authentication failure handling policy,Cortado; se refiere a la política de manejo de fallos de autenticación/autorización.
+c1144,packet priority,2,Specific,3,False,3,none,3,True,3,,Concepto de calidad de servicio en redes.
+c1145,card verification,2,Specific,3,True,3,Authenticity,3,True,3,,"Verificación del titular de la tarjeta, servicio de seguridad."
+c1146,python programming,2,NotTerm,1,False,3,none,3,False,2,Python,Sobra programming; el nombre propio es Python.
+c1147,admin console,2,Common,2,False,3,none,3,True,3,,Consola de administración del sistema.
+c1148,coding principle,2,NotTerm,2,False,3,none,3,True,3,,Expresión general.
+c1149,command dispatch,2,Specific,3,False,3,none,3,True,3,,Función de GlobalPlatform OPEN de encaminar comandos.
+c1150,unique username,2,Common,2,True,3,Accountability,3,True,2,username,Identificador único que permite rastrear acciones hasta el usuario.
+c1151,forensic image,2,Specific,3,True,3,Accountability,2,True,3,,Copia forense de memoria para investigar intrusiones.
+c1152,stream,3,NotTerm,2,False,3,none,3,True,3,,Palabra general aislada.
+c1153,applicant,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1154,corpus,2,OOD,3,False,3,none,3,True,3,,"Término de lingüística computacional, ajeno al dominio."
+c1155,multiple logical channel,2,Specific,3,False,3,none,3,False,3,logical channel,Sobra multiple; el término es logical channel.
+c1156,collection,4,NotTerm,3,False,3,none,3,True,3,,Palabra general con sentidos dispares en los contextos.
+c1157,forensic process,2,Specific,3,True,3,none,3,True,3,,Proceso de análisis forense digital.
+c1158,card locking,2,Specific,3,True,3,none,3,True,3,,Función de gestión de seguridad que bloquea la tarjeta.
+c1159,quality attribute,2,Specific,1,False,3,none,3,True,3,,Concepto de ingeniería de software.
+c1160,possible occurrence,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1161,better user experience,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1162,extraction stage,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1163,logical channel number,2,Specific,3,False,3,none,3,True,3,,Identificador de canal lógico en tarjetas ISO 7816-4.
+c1164,expired card,2,Common,2,False,3,none,3,True,3,,Estado de tarjeta en el dominio de pagos.
+c1165,management system,5,NotTerm,3,False,3,none,3,True,3,,Expresión general con sentidos variados.
+c1166,vehicle registration,3,OOD,3,False,3,none,3,True,3,,"Término de tránsito/registro vehicular, ajeno al dominio."
+c1167,compression ability,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1168,request for access,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1169,program coding,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1170,member,6,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1171,applications,3,Specific,3,False,3,none,3,True,3,,Entidad de la arquitectura GlobalPlatform (aplicaciones en tarjeta).
+c1172,phase,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1173,batch processing,2,Common,3,False,3,none,3,True,3,,Concepto informático de procesamiento por lotes.
+c1174,media gateway,2,Specific,3,False,3,none,3,True,3,,Dispositivo de red que termina flujos multimedia.
+c1175,credit,4,NotTerm,3,False,3,none,3,False,3,credit card,Fragmento de credit card.
+c1176,template,2,Specific,3,True,3,Authenticity,3,True,2,fingerprint template,Plantilla biométrica almacenada para autenticar al usuario.
+c1177,admin panel,2,Common,2,False,3,none,3,True,3,,Panel de administración del sistema.
+c1178,measure,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1179,dispute resolution process,2,Specific,3,False,3,none,3,True,3,,Proceso del dominio de pagos para resolver transacciones inválidas.
+c1180,anti,4,NotTerm,3,False,3,none,3,False,3,Anti-Corruption Commission,Prefijo suelto de un nombre de organización.
+c1181,other different platform,2,NotTerm,3,False,3,none,3,True,2,,Combinación libre de palabras.
+c1182,data manipulation,2,Common,3,True,3,Integrity,3,True,3,,"Modificación de datos, amenaza a su integridad."
+c1183,lecturer,2,OOD,2,False,3,none,3,True,3,,Rol del dominio educativo.
+c1184,credential registration,2,Specific,3,True,3,Authenticity,3,True,3,,Registro de credenciales usadas para autenticar usuarios.
+c1185,analysis module,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1186,user credential,2,Specific,2,True,3,Authenticity,3,True,3,,Datos con que el usuario demuestra su identidad.
+c1187,electronic purse,2,Specific,3,False,3,none,3,True,3,,"Monedero electrónico en tarjetas, concepto de pagos."
+c1188,irrelevant document,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1189,active batch,2,Specific,3,False,3,none,3,True,3,,Lote de transacciones vigente en el dispositivo POS.
+c1190,growth,4,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1191,secure channel,3,Specific,3,True,3,Confidentiality,3,True,3,,Canal de comunicación protegido contra acceso no autorizado.
+c1192,network admin,2,Common,3,False,3,none,3,True,3,,Rol de administrador de red.
+c1193,case of emergency,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1194,TLS web,2,NE,2,True,3,Confidentiality,3,False,3,TLS,Sobra web; TLS es el protocolo de seguridad de transporte.
+c1195,CA,3,Specific,3,True,3,Authenticity,3,True,3,,Sigla de autoridad certificadora.
+c1196,forensic,2,Specific,2,True,3,none,3,True,3,,Adjetivo del análisis forense digital.
+c1197,imaging ability,2,NotTerm,3,False,3,none,3,True,2,imaging,Sobra ability; el concepto es imaging.
+c1198,incoming message,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1199,dispatch,2,NotTerm,3,False,3,none,3,False,3,command dispatch,Fragmento de command dispatch.
+c1200,AES encryption,2,Specific,3,True,3,Confidentiality,3,True,3,,Cifrado con el algoritmo AES para proteger la confidencialidad.
+c1201,download,3,Common,2,False,3,none,3,True,3,,Término informático de uso general.
+c1202,interval,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1203,linux platform,2,NE,3,False,3,none,3,False,3,Linux,Sobra platform; Linux es nombre propio.
+c1204,national i.d,2,Common,3,False,3,none,3,False,3,national I.D number,Cortado; falta number.
+c1205,i.d number,2,Common,3,False,3,none,3,False,2,national I.D number,Cortado; falta national.
+c1206,newer version,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1207,other critical information,2,NotTerm,3,False,3,none,3,True,2,critical information,Combinación libre de palabras.
+c1208,personal detail,3,Common,3,True,3,Confidentiality,3,True,3,,Datos personales cuya divulgación debe controlarse.
+c1209,affiliated risk,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1210,exchange of data,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1211,transaction signature,2,Specific,3,True,3,Integrity,3,True,3,,Firma que asegura la integridad extremo a extremo de la transacción.
+c1212,viewing format,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1213,specific card i,2,NotTerm,3,False,3,none,3,False,3,card I/O interface,Fragmento mal segmentado de card I/O interface.
+c1214,assurance,2,NotTerm,2,False,2,none,3,True,3,,Concepto de garantía/aseguramiento de seguridad y confiabilidad.
+c1215,configuration management,2,Specific,3,False,2,none,2,True,3,,Disciplina de ingeniería de software y control de sistemas.
+c1216,increment,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1217,proof,3,NotTerm,3,False,3,none,3,False,2,proof of identity,Palabra general; el concepto es proof of identity.
+c1218,test data source,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1219,watermark system,2,Specific,3,True,3,Authenticity,1,True,3,,Sistema de marca de agua digital para demostrar autoría de imágenes.
+c1220,app,4,Common,3,False,3,none,3,True,3,,Término de uso general.
+c1221,self configuration,2,Specific,3,False,3,none,3,True,3,,Función de autoconfiguración de dispositivos de red doméstica.
+c1222,motion detection,2,OOD,2,False,3,none,3,True,3,,Función de sensores de detección de movimiento.
+c1223,configuration information,2,Specific,2,False,3,none,3,True,3,,Datos de configuración de la pasarela con acceso restringido.
+c1224,investigator,2,NotTerm,2,False,3,none,3,True,3,,Rol del dominio policial/forense.
+c1225,humidity,2,OOD,3,False,3,none,3,True,3,,Magnitud física/agrícola ajena al dominio.
+c1226,path,3,NotTerm,3,False,3,none,3,True,2,secure path,Palabra general con sentidos dispares.
+c1227,accident,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1228,ZRP,1,NE,3,False,3,none,3,True,3,,Sigla de una organización (policía de Zimbabue).
+c1229,user password,2,Common,2,True,3,Authenticity,3,True,3,,Secreto con que el usuario demuestra su identidad.
+c1230,typing,2,NotTerm,3,False,3,none,3,True,2,keyboard typing pattern,Palabra suelta; el concepto biométrico es keyboard typing pattern.
+c1231,continuous sequence,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1232,slot maximum,2,NotTerm,2,False,3,none,3,False,3,slot maximum balance,Cortado; falta balance.
+c1233,diagram,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1234,port scan,2,Specific,3,True,3,Resistance,2,True,3,,Técnica de reconocimiento de puertos asociada a ataques.
+c1235,static analysis,2,Specific,3,False,2,none,3,True,3,,"Análisis de código sin ejecución, usado para detectar fallos."
+c1236,HGI,1,NE,3,False,3,none,3,True,3,,Sigla de una iniciativa/organización (Home Gateway Initiative).
+c1237,maximum availability,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1238,wrong attempt,4,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1239,stress,3,NotTerm,3,False,3,none,3,False,3,stress testing,Fragmento de stress testing.
+c1240,reaction,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1241,identity theft,2,Common,3,True,3,Authenticity,3,True,3,,"Suplantación de identidad, conocida por el público general."
+c1242,audit report,2,Specific,3,True,3,Accountability,3,True,3,,Informe de auditoría que permite rastrear acciones.
+c1243,private RSA,2,Specific,3,True,3,Confidentiality,3,False,3,private RSA key,Cortado; falta key.
+c1244,whistle,2,NotTerm,3,False,3,none,3,False,3,whistle-blower,Fragmento de whistle-blower.
+c1245,header,2,Common,2,False,3,none,3,True,3,,Término informático general (encabezado).
+c1246,IMPI,1,Specific,3,False,2,none,2,True,3,,Sigla de identidad privada IMS.
+c1247,RACS,1,NE,3,False,3,none,3,True,3,,Subsistema definido en una especificación ETSI; nombre propio.
+c1248,secure protocol,2,Specific,3,True,3,Confidentiality,3,True,3,,Protocolo que protege la comunicación frente a accesos no autorizados.
+c1249,correct life,4,NotTerm,2,False,3,none,3,False,3,Life Cycle State,Fragmento mal segmentado de correct Life Cycle State.
+c1250,reference,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1251,USSD,1,Specific,3,False,3,none,3,True,3,,Sigla de servicio de datos suplementarios de telefonía móvil.
+c1252,nursery,2,OOD,3,False,3,none,3,True,3,,Término agrícola/botánico.
+c1253,FXS,1,Specific,3,False,3,none,3,True,3,,Interfaz de telefonía analógica.
+c1254,firmware upgrade,2,Specific,3,False,3,none,3,True,3,,Actualización del firmware de dispositivos.
+c1255,classification phase,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1256,data administrator,2,Common,2,True,3,none,2,True,3,,Rol con permiso exclusivo para modificar permisos de acceso a datos.
+c1257,detail transaction,2,NotTerm,2,False,3,none,3,True,2,detail transaction,Transacción individual dentro de un lote en pagos.
+c1258,secure data exchange,3,Specific,3,True,3,Confidentiality,3,True,3,,Intercambio de datos protegido frente a acceso no autorizado.
+c1259,false positive rate,3,Specific,3,True,3,none,3,True,3,,Métrica de detección de intrusiones y malware.
+c1260,logical condition,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1261,transaction ID,2,Specific,3,False,2,none,2,True,3,,Identificador único de transacción en sistemas de pago.
+c1262,unnecessary file,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1263,UUID,1,Specific,3,False,3,none,3,True,3,,Sigla de identificador único universal.
+c1264,deployment,2,Common,2,False,3,none,3,True,3,,Término informático de despliegue de uso general.
+c1265,CPU utilization,2,Specific,2,False,3,none,3,True,3,,Métrica de sistemas usada para detectar cryptojacking.
+c1266,indicator,2,NotTerm,3,False,3,none,3,True,3,,Palabra general con sentidos dispares.
+c1267,data breach,2,Common,3,True,3,Confidentiality,3,True,3,,"Filtración de datos, conocida por el público general."
+c1268,system interface,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1269,different platform,3,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1270,CEPS,1,NE,3,False,3,none,3,True,3,,Nombre de la especificación Common Electronic Purse Specifications.
+c1271,progress,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1272,DECT,1,NE,3,False,3,none,3,True,3,,Nombre de un estándar de telefonía inalámbrica.
+c1273,new S4,2,Specific,3,True,3,Integrity,3,False,3,S4 MAC,Cortado y con modificador sobrante; el término es S4 MAC.
+c1274,POP3,1,Specific,2,False,3,none,3,True,3,,Protocolo de correo electrónico.
+c1275,reduced margin,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1276,meaningful information,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1277,WIFI,2,Common,3,False,3,none,3,True,3,,Tecnología de red inalámbrica conocida por el público general.
+c1278,frequent update,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1279,application life,4,Specific,3,False,3,none,3,False,3,application life cycle,Cortado; falta cycle.
+c1280,application access,3,NotTerm,3,False,3,none,3,True,2,application access rule,Combinación libre de palabras con sentidos dispares.
+c1281,strength,3,NotTerm,3,False,3,none,3,False,2,password strength,Palabra general; el concepto es password strength.
+c1282,memory acquisition,2,Specific,3,True,3,none,3,True,3,,Captura de memoria para análisis forense de intrusiones.
+c1283,warning script,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1284,global,4,NotTerm,3,False,3,none,3,False,2,Global Services Application,Fragmento de un nombre de componente.
+c1285,error handling,2,Common,3,False,3,none,3,True,3,,Concepto de programación de uso común.
+c1286,offence,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1287,student laptop,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1288,RRT,1,OOD,3,False,3,none,3,True,3,,Sigla de un equipo de respuesta médica/emergencia.
+c1289,online transaction,2,Common,3,False,3,none,3,True,3,,Concepto de pagos en línea conocido por el público.
+c1290,USD,2,NotTerm,1,False,3,none,3,True,3,,"Código de moneda, no término especializado."
+c1291,respective family,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1292,transaction data,2,Specific,2,False,3,none,3,True,3,,Datos de la transacción de pago cuya integridad se protege.
+c1293,virtual file,2,Specific,3,False,3,none,3,True,3,,Archivo temporal en memoria usado para reproducir contenido descifrado.
+c1294,transaction information,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1295,clear secure data,3,NotTerm,3,False,3,none,3,False,3,secure data exchange protocol,Fragmento mal segmentado.
+c1296,data usage,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1297,IP multimedia,2,Specific,3,False,3,none,3,False,3,IP Multimedia session,Cortado; el concepto completo incluye session.
+c1298,mouse movement,2,NotTerm,2,False,2,none,2,True,2,mouse movement biometrics,Expresión general; el concepto biométrico es mouse movement biometrics.
+c1299,android device,2,Common,2,False,3,none,3,True,3,,Combinación libre de palabras.
+c1300,CVM,1,Specific,3,True,3,Authenticity,3,True,3,,Sigla de método de verificación del titular de la tarjeta.
+c1301,LAN port,2,Specific,3,False,3,none,3,True,3,,Puerto físico de red local de la pasarela.
+c1302,utilization percentage,2,NotTerm,3,False,3,none,3,False,2,CPU utilization percentage,Cortado; falta CPU.
+c1303,signal processing,2,OOD,3,False,3,none,3,True,3,,Disciplina de ingeniería ajena al dominio.
+c1304,java,2,NE,3,False,3,none,3,True,3,,Nombre de un lenguaje de programación.
+c1305,portal,2,Common,3,False,3,none,3,True,3,,"Portal web, término de uso general."
+c1306,disclosure,2,Common,3,True,3,Confidentiality,3,True,3,,Divulgación no autorizada de información.
+c1307,time anomaly,2,Specific,2,True,2,none,3,False,3,real time anomaly detection,Fragmento mal segmentado de real time anomaly detection.
+c1308,cost estimate,2,OOD,3,False,3,none,3,True,3,,Término de ingeniería de costos de construcción.
+c1309,central database,2,Common,3,False,3,none,3,True,3,,"Base de datos centralizada, concepto informático común."
+c1310,exception,3,Common,2,False,3,none,3,True,3,,Concepto de programación (manejo de excepciones).
+c1311,issuance,2,Specific,3,False,3,none,3,True,3,,Fase de emisión de tarjetas (pre y post emisión).
+c1312,PIN encryption,2,Specific,3,True,3,Confidentiality,3,True,3,,Cifrado del PIN para proteger su confidencialidad.
+c1313,registration page,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1314,invalid transaction,2,Specific,3,False,3,none,3,True,3,,Transacción de pago no válida sujeta a resolución de disputas.
+c1315,flexibility,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1316,web search,3,Common,3,False,3,none,3,True,3,,"Búsqueda web, de uso general."
+c1317,cloud user,2,Specific,2,False,3,none,3,True,3,,Rol de usuario de servicios en la nube.
+c1318,multiple currency,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1319,unrealistic waiting,2,NotTerm,3,False,3,none,3,True,3,,Fragmento libre de oración.
+c1320,multimedia session,2,Specific,3,False,3,none,3,False,3,IP Multimedia session,Cortado; falta IP.
+c1321,selection parameter,2,Specific,3,False,3,none,3,False,3,Implicit Selection parameter,Cortado; falta Implicit.
+c1322,GPS,2,Common,3,False,3,none,3,True,3,,Sistema de posicionamiento conocido por el público general.
+c1323,registration process,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1324,services application,4,Specific,2,False,3,none,3,False,3,Global Services Application,Cortado; es el nombre de un componente de GlobalPlatform.
+c1325,several terminal,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1326,web server,2,Common,3,False,3,none,3,True,3,,"Servidor web, término informático común."
+c1327,crime,3,OOD,2,False,3,none,3,True,3,,Término jurídico/policial.
+c1328,normal web,3,NotTerm,3,False,3,none,3,False,2,web search,Fragmento libre de normal web search.
+c1329,security principle,2,Common,3,True,3,none,3,True,3,,"Concepto general de seguridad (autenticación, etc.)."
+c1330,database side,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1331,SAML,1,NE,3,True,3,Authenticity,3,True,3,,Estándar de aserciones de seguridad para autenticación federada.
+c1332,static,2,NotTerm,3,False,3,none,3,False,3,static analysis,Adjetivo suelto; fragmento de static analysis.
+c1333,graph,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1334,android application,2,Common,3,False,3,none,3,True,3,,"Aplicación móvil Android, conocida por el público."
+c1335,alphabetic currency,2,Specific,3,False,3,none,3,False,3,alphabetic currency code,Cortado; falta code.
+c1336,type filtering,2,NotTerm,3,False,3,none,3,False,3,file type filtering,Fragmento de file type filtering.
+c1337,appropriate security,3,Specific,3,True,3,none,3,False,3,Security Domain,Mal segmentado; el concepto es Security Domain de GlobalPlatform.
+c1338,damage,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1339,resolution,4,NotTerm,3,False,3,none,3,True,3,,Palabra general con sentidos dispares.
+c1340,bit encryption,2,Specific,3,True,3,Confidentiality,3,False,3,256-bit encryption,Cortado; falta la longitud de clave.
+c1341,secure data,3,NotTerm,3,False,3,none,3,False,3,secure data exchange,Fragmento de secure data exchange.
+c1342,unusual activity,2,Common,3,True,3,none,3,True,3,,Actividad anómala que se monitorea como indicio de ataque.
+c1343,medium stream,2,Specific,3,False,3,none,3,False,3,media stream,Lematización errónea de media streams; flujo multimedia.
+c1344,streaming API,2,NE,3,False,3,none,3,False,3,Twitter Streaming API,Cortado; es el nombre de una API de producto.
+c1345,parent device,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1346,SMS alert,2,Common,2,False,3,none,3,True,3,,"Alerta por mensaje de texto, de uso general."
+c1347,consequence,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1348,sequence number,2,Specific,3,True,3,Integrity,3,True,3,,Número usado para detectar repetición de mensajes.
+c1349,organization,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1350,impact,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1351,plain text,2,Common,2,True,3,Confidentiality,3,True,3,,Texto sin cifrar; concepto de seguridad conocido por el público general.
+c1352,IPD,1,Specific,2,True,2,Resistance,2,True,2,IPS,Sigla de sistema de prevención de intrusiones que mantiene operativo el servidor ante ataques DoS.
+c1353,repository,2,Common,3,False,3,none,3,True,3,,Almacén de datos de uso general en informática.
+c1354,buying pattern,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras sin significado especializado en este corpus.
+c1355,console,2,Common,3,False,3,none,3,True,2,admin console,Interfaz de administración; término informático de uso general.
+c1356,receiver,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado propio.
+c1357,gadget,2,NotTerm,3,False,3,none,3,True,3,,"Palabra general para dispositivo, sin significado técnico específico."
+c1358,authorization management handling,2,Specific,2,True,3,Integrity,2,False,3,authorization management handling policy,Política de gestión de autorización que impide accesos no autorizados; el candidato omite 'policy'.
+c1359,inaccurate data,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de adjetivo y sustantivo.
+c1360,application client,2,Specific,3,False,3,none,3,True,3,,Componente de la pasarela que permite gestión remota por proveedores de servicio.
+c1361,client application,2,Common,3,False,3,none,3,True,3,,Aplicación cliente; término informático de uso general.
+c1362,illegal sharing,2,NotTerm,3,False,3,none,3,True,3,,"Expresión general descriptiva, no un término establecido."
+c1363,user identity,2,Specific,3,True,3,Authenticity,3,True,3,,Identidad del usuario usada para verificar quién es el sujeto y controlar acceso.
+c1364,MD5,1,Specific,2,True,3,Integrity,3,True,3,,Algoritmo hash usado para comprobar la integridad de datos.
+c1365,blockchain land,2,NE,2,False,3,none,3,False,3,Blockchain Land Registry,Fragmento del nombre del sistema 'Blockchain Land Registry'.
+c1366,resource use,2,NotTerm,2,False,3,none,3,True,3,,Expresión general de rendimiento sin sentido especializado.
+c1367,unique ID,2,Specific,2,True,3,Accountability,3,True,3,,Identificador único que permite rastrear acciones o nodos hasta una entidad.
+c1368,different layer,2,NotTerm,3,False,3,none,3,False,3,layer 2,Fragmento con adjetivo general; el término real sería 'layer 2/layer 3 parameters'.
+c1369,global services,4,NE,2,False,3,none,3,False,2,Global Services Application,Nombre de componente de la especificación GlobalPlatform (Global Services Application).
+c1370,error condition,2,Common,3,False,3,none,3,True,3,,Condición de error; término de ingeniería de software de uso general.
+c1371,work handling,2,NotTerm,3,False,3,none,3,True,3,,Expresión general mal formada sin significado especializado.
+c1372,bank server,2,Specific,2,False,3,none,3,True,3,,Servidor del banco que verifica credenciales; componente del dominio de pagos.
+c1373,different priority,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1374,cloud account,2,Common,3,False,3,none,3,True,3,,Cuenta en la nube; término conocido por el público general.
+c1375,keyboard,2,Common,2,False,3,none,3,True,3,,Dispositivo de entrada de uso cotidiano.
+c1376,clock,3,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado en estos contextos.
+c1377,PKI,1,Specific,3,True,3,Authenticity,3,True,3,,Infraestructura de clave pública usada para autenticar.
+c1378,certification,3,Specific,2,True,3,Authenticity,2,False,3,certification authority,"El contexto remite a 'certification authority', entidad que avala identidades y claves."
+c1379,DCT,1,OOD,3,False,3,none,3,True,3,,"Transformada discreta del coseno, técnica de procesamiento de señales ajena al dominio."
+c1380,sensitive information,2,Common,3,True,3,Confidentiality,3,True,3,,Información cuyo acceso debe limitarse a personas autorizadas.
+c1381,controller,2,Common,2,False,3,none,3,True,3,,Dispositivo controlador genérico (p. ej. de puerta).
+c1382,theft,2,Common,2,True,3,Confidentiality,1,False,3,identity theft,"El contexto habla de 'identity theft', robo de identidad; el candidato está cortado."
+c1383,separation,2,Specific,2,True,3,Confidentiality,2,False,3,cryptographic key separation,En contexto de tarjetas se refiere a la separación de claves criptográficas; el candidato está cortado.
+c1384,breach,2,Common,2,True,3,Confidentiality,2,False,3,data breach,"Los contextos usan 'data breach', exposición de datos; el candidato está cortado."
+c1385,authorization management,2,Specific,2,True,3,Integrity,2,True,2,authorization management handling policy,Gestión de autorizaciones que impide accesos o modificaciones no autorizados.
+c1386,software platform,2,Common,3,False,3,none,3,True,3,,Plataforma de software; término informático de uso general.
+c1387,technical user,2,NotTerm,3,False,3,none,3,False,3,non-technical user,Los contextos dicen 'non-technical users'; fragmento mal segmentado y sin sentido especializado.
+c1388,attractive website,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo valorativo.
+c1389,screen size,3,Common,3,False,3,none,3,True,3,,Tamaño de pantalla; término de uso general.
+c1390,student detail,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras de un sistema particular.
+c1391,HCI,1,OOD,3,False,3,none,3,True,3,,"Interacción humano-computadora, disciplina ajena a la seguridad y a los dominios de la especificación."
+c1392,monthly report,2,NotTerm,3,False,3,none,3,True,3,,Expresión general sin significado especializado.
+c1393,twitter platform,2,NE,3,False,3,none,3,True,3,,Plataforma de un producto con nombre propio.
+c1394,apache,2,NE,3,False,3,none,3,True,3,,"Nombre de organización/software (Apache Kafka, Apache Storm); no se traduce."
+c1395,land registry,2,NE,2,False,3,none,3,False,3,Blockchain Land Registry,Parte del nombre del sistema 'Blockchain Land Registry'.
+c1396,total count,3,NotTerm,3,False,3,none,3,False,2,batch total count,"Fragmento de 'batch total count', expresión general de recuento."
+c1397,acceptance,2,Specific,2,False,3,none,3,True,3,,Aceptación de transacciones en el dominio de pagos con tarjeta.
+c1398,installation,2,Common,3,False,3,none,3,True,3,,Instalación de software; término de uso general.
+c1399,user profile,2,Common,3,False,3,none,3,True,3,,Perfil de usuario; término informático de uso general.
+c1400,privilege usage,2,Specific,3,True,3,Integrity,3,True,3,,Función de gestión de seguridad de GlobalPlatform que controla el uso de privilegios.
+c1401,client re,2,Specific,2,True,3,Authenticity,2,False,3,client re-verification,"Cortado por el guion; el término es 'client re-verification', reverificación de identidad."
+c1402,application communication,2,Specific,2,True,3,Integrity,2,False,3,inter-application communication,Los contextos hablan de 'inter-application communication' regida por reglas de seguridad del Trusted Framework.
+c1403,impairment,2,NotTerm,3,False,3,none,3,True,3,,Palabra general (discapacidad) sin sentido técnico propio aquí.
+c1404,accurate result,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1405,easy maintenance,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo valorativo.
+c1406,minimum adequate resource,2,NotTerm,3,False,3,none,3,False,3,minimum adequate resource level,Fragmento de 'minimum adequate resource levels'; expresión general.
+c1407,MPLS,1,Specific,3,False,3,none,3,True,3,,Tecnología de conmutación de redes (Multiprotocol Label Switching).
+c1408,storage space,2,Common,3,False,3,none,3,True,3,,Espacio de almacenamiento; término de uso general.
+c1409,scenario,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c1410,single client,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de adjetivo y sustantivo.
+c1411,multiple user,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1412,particular task,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1413,transformation,2,OOD,2,False,3,none,3,False,3,discrete cosine transformation,"Cortado; se refiere a transformadas de procesamiento de señales para marcas de agua, ajeno al dominio."
+c1414,rogue note,2,NotTerm,3,False,2,none,3,False,3,rogue note screen,"Fragmento de una pantalla específica del sistema, no un término establecido."
+c1415,independent path,2,OOD,3,False,3,none,3,True,3,,"Concepto de pruebas de software (cobertura de caminos), ajeno al dominio de la especificación."
+c1416,google map,2,NE,3,False,3,none,3,True,3,,Producto con nombre propio.
+c1417,random check,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1418,completion,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin significado especializado.
+c1419,streaming,2,Common,2,False,3,none,3,False,3,Twitter Streaming API,En contexto forma parte de 'Twitter Streaming API'; el término suelto es de uso general.
+c1420,adequate resource level,2,NotTerm,3,False,3,none,3,True,2,,Expresión general de rendimiento.
+c1421,runtime behavior,2,NotTerm,2,False,3,none,3,True,3,,Combinación general sin significado especializado en el corpus.
+c1422,application software,2,Common,3,False,3,none,3,True,3,,Software de aplicación; término de uso general.
+c1423,software application,2,Common,3,False,3,none,3,True,3,,Aplicación de software; término de uso general.
+c1424,specific device,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1425,adequate resource,2,NotTerm,3,False,3,none,3,True,2,,Fragmento de expresión general de rendimiento.
+c1426,button set,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de interfaz de usuario.
+c1427,command message,2,Specific,3,False,3,none,3,True,3,,Mensaje de comando enviado a la tarjeta (p. ej. SELECT) en el protocolo de tarjetas inteligentes.
+c1428,voice communication,2,Common,3,False,3,none,3,True,3,,Comunicación de voz; término de uso general.
+c1429,various platform,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1430,domain provider,2,Specific,2,False,2,none,2,False,3,security domain provider,Cortado; 'Security Domain Provider' es la entidad cuyas políticas de seguridad aplica el Security Domain.
+c1431,conversion,2,NotTerm,2,False,3,none,3,False,2,currency conversion,Palabra general (conversión de moneda) sin sentido especializado por sí sola.
+c1432,configuration service function,2,Specific,2,False,3,none,3,False,3,network configuration service function,Los contextos usan 'Network Configuration Service Function'; el candidato omite 'network'.
+c1433,positive rate,3,Specific,2,True,2,none,3,False,3,false positive rate,Cortado; 'false positive rate' es métrica de detección/clasificación.
+c1434,quality online service,3,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo valorativo.
+c1435,WIFI network,2,Common,3,False,3,none,3,True,3,,Red WiFi; término conocido por el público general.
+c1436,tracking,2,NotTerm,2,False,3,none,3,True,3,,Seguimiento (p. ej. GPS); término de uso general.
+c1437,movement map,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1438,call notification,2,NotTerm,2,False,3,none,3,True,3,,Notificación de llamada; término de uso general.
+c1439,national ID,2,Common,3,False,2,none,2,True,3,,"Documento de identidad nacional, conocido por el público general."
+c1440,channel support,3,Specific,2,False,3,none,3,False,3,logical channel support,Cortado; se refiere al soporte de canales lógicos en tarjetas inteligentes.
+c1441,provider multiple client,2,NotTerm,3,False,3,none,3,False,3,,Fragmento mal segmentado que cruza dos oraciones.
+c1442,minimum training,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1443,network configuration service,2,Specific,2,False,3,none,3,False,3,network configuration service function,Los contextos usan 'Network Configuration Service Function'; el candidato está cortado.
+c1444,fast response,3,NotTerm,3,False,3,none,3,True,2,fast response time,Expresión general de rendimiento.
+c1445,different screen,3,NotTerm,3,False,3,none,3,False,2,screen size,Fragmento con adjetivo general.
+c1446,university WIFI,2,NotTerm,3,False,3,none,3,False,3,university WIFI network,Combinación libre y cortada; el término de uso general es 'WIFI network'.
+c1447,huge file,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo valorativo.
+c1448,management plane,2,Specific,3,False,3,none,3,True,3,,Plano de gestión en arquitecturas de red.
+c1449,CRUD,1,Specific,2,False,3,none,3,True,3,,"Sigla de operaciones básicas sobre datos (crear, leer, actualizar, borrar)."
+c1450,user re,2,Specific,2,True,3,Authenticity,2,False,3,user re-verification,Cortado por el guion; reverificación de identidad del usuario.
+c1451,same subscription,2,NotTerm,3,False,3,none,3,True,2,subscription,Fragmento con determinante general.
+c1452,essential part,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1453,editing,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1454,data entry,2,Common,3,False,3,none,3,True,3,,Ingreso de datos; término informático de uso general.
+c1455,multiple application,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de cuantificador y sustantivo.
+c1456,user data,2,Common,3,True,3,Confidentiality,3,True,3,,Datos del usuario cuya privacidad debe garantizarse.
+c1457,configuration service,2,Specific,2,False,3,none,3,False,3,network configuration service function,Fragmento de 'Network Configuration Service Function'.
+c1458,interface format,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de interfaz de usuario.
+c1459,machine learning,2,OOD,3,False,3,none,3,True,3,,"Técnica de inteligencia artificial, ajena al dominio de la especificación."
+c1460,video communication,2,Common,3,False,3,none,3,True,3,,Comunicación por video; término de uso general.
+c1461,consistent interface,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo general.
+c1462,filter,2,Common,3,False,3,none,3,True,3,,Filtro (de spam); término de uso general.
+c1463,user information,2,Common,3,True,3,Confidentiality,3,True,3,,Información del usuario que debe protegerse mediante cifrado.
+c1464,management function,2,NotTerm,3,False,3,none,3,False,3,Card Content Management function,Fragmento de 'Card Content Management functions' / 'Security Management functions'; genérico por sí solo.
+c1465,baseline,2,Common,3,False,3,none,3,True,2,CPU usage baseline,Línea base de referencia para comparar mediciones.
+c1466,exception processing,2,Specific,3,False,3,none,3,True,3,,Procesamiento de excepciones en transacciones de pago.
+c1467,data plane,2,Specific,3,False,3,none,3,True,3,,Plano de datos en arquitecturas de red.
+c1468,proper control,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo valorativo.
+c1469,control plane,2,Specific,3,False,3,none,3,True,3,,Plano de control en arquitecturas de red.
+c1470,different user,2,NotTerm,3,False,3,none,3,False,2,user-friendly input component,Fragmento mal segmentado de 'different user-friendly input components'.
+c1471,timing,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1472,emergency service,2,Common,3,False,3,none,3,True,3,,Servicio de emergencia; término de uso general.
+c1473,performance target,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1474,other platform,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con determinante general.
+c1475,system failure,2,Common,3,False,3,none,3,True,3,,Falla del sistema; término de ingeniería de uso general.
+c1476,key exchange,2,Specific,3,True,3,Confidentiality,3,True,3,,Intercambio seguro de claves criptográficas para proteger la confidencialidad.
+c1477,stability,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1478,vehicle information,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1479,URLS,1,Common,3,False,3,none,3,True,3,,Direcciones web; término conocido por el público general.
+c1480,new user,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de adjetivo y sustantivo.
+c1481,other command,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con determinante general.
+c1482,exchange price,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1483,software system,2,Common,3,False,3,none,3,True,3,,Sistema de software; término de uso general.
+c1484,system software,2,Common,3,False,3,none,3,True,3,,Software de sistema; término informático de uso general.
+c1485,feedback,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1486,input component,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de interfaz gráfica.
+c1487,content change,3,Specific,2,True,3,Integrity,3,False,3,card content change,Cambios al contenido de la tarjeta que deben ser autorizados; el candidato omite 'card'.
+c1488,AID selection,3,Specific,3,False,3,none,3,True,3,,Selección de aplicaciones por identificador (AID) en tarjetas inteligentes.
+c1489,contact card,2,Specific,3,False,3,none,3,True,3,,"Tarjeta inteligente de contacto, opuesta a la sin contacto."
+c1490,current location,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1491,reaction time,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de rendimiento.
+c1492,L3,1,Specific,3,False,3,none,3,True,3,,Capa 3 (red) del modelo de redes.
+c1493,phone location,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1494,reader,2,Common,3,False,3,none,3,False,2,card reader,Lector (RFID o de tarjetas); dispositivo de uso general.
+c1495,true owner,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre de palabras.
+c1496,error repository,2,Specific,2,False,3,none,3,False,3,central error repository,Repositorio de errores MAC de un esquema de pago; el contexto lo califica como 'central'.
+c1497,service profile,2,Specific,3,False,3,none,3,True,3,,Perfil de servicio asociado a una identidad de suscripción en redes NGN.
+c1498,microsoft,2,NE,3,False,3,none,3,True,3,,Nombre de organización; no se traduce.
+c1499,objective,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1500,channel protocol,2,Specific,2,True,3,Confidentiality,3,False,3,secure channel protocol,Cortado; protocolo de canal seguro de GlobalPlatform.
+c1501,DRM,1,Specific,2,True,3,Confidentiality,3,True,3,,Gestión de derechos digitales que restringe el acceso a contenido protegido.
+c1502,interface design,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de usabilidad.
+c1503,MMS,1,Common,3,False,3,none,3,True,3,,"Mensajería multimedia, conocida por el público general."
+c1504,summary,2,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1505,session data,4,Specific,3,True,3,Confidentiality,3,True,3,,Datos transitorios de sesión que deben protegerse de accesos no autorizados.
+c1506,twitter streaming,2,NE,3,False,3,none,3,False,3,Twitter Streaming API,Fragmento del nombre de la API de un producto.
+c1507,DES session,2,Specific,3,True,3,Confidentiality,2,False,3,DES session key,Cortado; clave de sesión DES usada para autenticar y proteger la transacción.
+c1508,mail server,2,Common,3,False,3,none,3,True,3,,Servidor de correo; término de uso general.
+c1509,script message,2,Specific,3,False,3,none,3,True,3,,Mensaje de script EMV enviado del emisor a la tarjeta CEP.
+c1510,signing,2,NotTerm,3,False,3,none,3,False,3,signing up,"Fragmento de 'signing in/up' (registro o inicio de sesión), no el sentido de firma digital."
+c1511,usage purpose,2,NotTerm,3,False,3,none,3,True,2,service usage purposes,Fragmento de 'service usage purposes'.
+c1512,upgrade purpose,2,NotTerm,3,False,3,none,3,True,2,firmware upgrade,Fragmento de 'firmware upgrade purposes'.
+c1513,menu screen,2,NotTerm,3,False,3,none,3,True,3,,Expresión general de interfaz.
+c1514,aspect,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1515,friendly input,2,NotTerm,3,False,3,none,3,False,2,,Fragmento de 'user-friendly input components'.
+c1516,S6,1,Specific,3,True,3,Authenticity,2,False,3,S6 MAC,Código MAC con que la tarjeta CEP firma la transacción; el candidato omite 'MAC'.
+c1517,capture,2,NotTerm,3,False,3,none,3,True,3,,Palabra general en estos contextos.
+c1518,soil,2,OOD,3,False,3,none,3,True,3,,Término agrícola ajeno al dominio de la especificación.
+c1519,key signature,2,Specific,3,True,3,Integrity,3,True,2,MACing key signature,"El contexto habla de 'symmetric MACing key signature', valor de autenticación de mensajes."
+c1520,load files,2,Specific,3,False,3,none,3,False,3,executable load file,Concepto GlobalPlatform 'Executable Load File'; el candidato omite 'executable'.
+c1521,subsequent command,2,NotTerm,3,False,3,none,3,True,3,,Combinación libre con adjetivo general.
+c1522,usage baseline,2,NotTerm,2,False,2,none,2,False,3,CPU usage baseline,Línea base de uso de CPU para detectar cryptojacking; el candidato omite 'CPU'.
+c1523,financial institution,2,Common,3,False,3,none,3,True,3,,Institución financiera; término de uso general.
+c1524,start menu,2,Common,2,False,3,none,3,True,3,,Menú de inicio; término conocido por el público general.
+c1525,privacy protection,2,Common,3,True,3,Confidentiality,3,True,3,,Protección de información privada frente a accesos no autorizados.
+c1526,distinct security,2,NotTerm,2,False,2,none,2,False,3,security question,Fragmento de 'distinct security questions' usadas para reverificar la identidad.
+c1527,formula,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1528,behavior,3,NotTerm,3,False,3,none,3,True,3,,Palabra general sin sentido especializado.
+c1529,PC register,2,NotTerm,3,False,3,none,3,False,2,university PC register,"Expresión particular del sistema, no un término establecido."
+c1530,management handling policy,2,Specific,2,True,3,Integrity,2,False,3,authorization management handling policy,Cortado; política de gestión de autorización que impide accesos no autorizados.
+c1531,files,2,NotTerm,3,False,3,none,3,False,3,Executable Load File,"Palabra general, fragmento de 'Executable Load Files'."
+c1532,cycle information,3,Specific,2,False,3,none,3,False,3,life cycle information,Información de ciclo de vida del GlobalPlatform Registry; el candidato omite 'life'.
+c1533,L2,1,Specific,3,False,3,none,3,True,3,,Capa 2 (enlace) del modelo de redes.
+c1534,limit,3,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1535,healthcare,2,OOD,3,False,3,none,3,True,3,,"Dominio de salud, ajeno al de la especificación."
+c1536,percentage,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1537,improvement,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1538,spike,2,NotTerm,3,False,3,none,3,True,3,,Palabra general (pico de uso).
+c1539,management handling,2,NotTerm,3,False,3,none,3,False,3,authorization management handling policy,Fragmento mal segmentado de la política de gestión de autorización.
+c1540,customer device,2,Specific,3,False,3,none,3,True,3,,Dispositivo del cliente (CND) en la red doméstica NGN.
+c1541,initial load,2,NotTerm,3,False,3,none,3,False,3,initial load time,Fragmento de 'initial load time'.
+c1542,VM,1,Common,3,False,3,none,3,True,3,,Máquina virtual; sigla informática de uso general.
+c1543,campus,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1544,suspect,2,NotTerm,2,False,3,none,3,True,3,,Término policial/forense ajeno al dominio.
+c1545,resource level,2,NotTerm,3,False,3,none,3,True,2,,Expresión general de rendimiento.
+c1546,friendly user,2,NotTerm,3,False,3,none,3,False,2,friendly user interface,Fragmento de 'friendly user interface'.
+c1547,ISP,1,Common,3,False,3,none,3,True,3,,Proveedor de servicios de internet; sigla conocida.
+c1548,multi,2,NotTerm,3,False,3,none,3,False,2,,Fragmento mal segmentado (prefijo).
+c1549,cloud data,2,Common,2,False,3,none,3,True,3,,Datos en la nube; término de uso general.
+c1550,quick error,2,NotTerm,3,False,3,none,3,False,3,error recovery,Fragmento de 'quick error recovery'.
+c1551,data format,2,Common,3,False,3,none,3,True,3,,Formato de datos; término informático de uso general.
+c1552,consumer,2,Common,2,False,3,none,3,True,3,,"Consumidor, usuario de la tarjeta; término de uso general."
+c1553,victim,2,NotTerm,3,False,3,none,3,True,3,,Palabra general en estos contextos.
+c1554,delivery,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1555,window,3,NE,2,False,3,none,3,False,3,Windows,"Se refiere al sistema operativo Windows, producto con nombre propio."
+c1556,maximum,2,NotTerm,3,False,3,none,3,True,2,maximum balance,Palabra general; fragmento de 'maximum balance'.
+c1557,university PC,2,NotTerm,3,False,3,none,3,False,2,university PC register,Combinación libre propia del sistema.
+c1558,resolution process,3,Specific,2,False,3,none,3,False,3,dispute resolution process,Proceso de resolución de disputas en pagos; el candidato omite 'dispute'.
+c1559,NIC,1,Specific,2,False,3,none,3,True,3,,"Tarjeta de interfaz de red, componente de redes."
+c1560,fail,2,NotTerm,3,False,3,none,3,False,2,safe fail,Palabra general; fragmento de 'fail safe'.
+c1561,combination,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1562,web traffic,2,Common,3,False,3,none,3,True,3,,Tráfico web; término informático de uso general.
+c1563,CSS,1,OOD,3,False,3,none,3,True,3,,"Lenguaje de hojas de estilo web, ajeno al dominio."
+c1564,data mining,2,OOD,3,False,3,none,3,True,3,,"Técnica de análisis de datos, ajena al dominio de la especificación."
+c1565,signal,2,OOD,2,False,3,none,3,False,2,signal processing,Palabra general; fragmento de 'signal processing'.
+c1566,normal flow,2,NotTerm,3,False,3,none,3,True,2,normal flow information,Combinación libre de palabras.
+c1567,secure,2,NotTerm,3,False,2,none,3,False,3,secure channel protocol,Adjetivo suelto; fragmento de 'Secure Channel Protocol'.
+c1568,access device,2,Specific,2,False,3,none,3,False,3,remote access device,Los contextos hablan de 'remote access devices' de la red doméstica.
+c1569,sharing,2,NotTerm,3,False,3,none,3,True,2,,Palabra general.
+c1570,storm,2,Specific,2,True,2,Resistance,2,False,3,broadcast storm,"Tormenta de difusión, ataque de denegación de servicio; también nombre Apache Storm, pero el sentido de seguridad es 'broadcast storm'."
+c1571,security measure,2,Common,3,True,3,none,2,True,3,,"Medida de seguridad genérica, sin una subcaracterística específica."
+c1572,service control platform,2,Specific,3,False,3,none,3,True,3,,Plataforma de control de servicios en redes NGN.
+c1573,single customer,2,NotTerm,3,False,3,none,3,False,2,single customer device,Fragmento de 'single customer device'.
+c1574,internal security,2,NotTerm,3,False,2,none,3,False,3,internal security measure,Fragmento de 'internal security measures'.
+c1575,maximum number,2,NotTerm,3,False,3,none,3,True,3,,Expresión general.
+c1576,load time,2,Common,2,False,3,none,3,True,3,,Tiempo de carga; término informático de uso general.
+c1577,network function,2,Specific,3,False,3,none,3,True,3,,Función de red NGN en la que se basa el acceso remoto.
+c1578,yield,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1579,hundred,2,NotTerm,3,False,3,none,3,True,3,,Numeral general.
+c1580,control platform,2,NotTerm,2,False,3,none,3,False,3,service control platform,Fragmento de 'service control platform'.
+c1581,flow information,2,NotTerm,3,False,3,none,3,True,2,normal flow information,Fragmento de 'normal flow information'.
+c1582,description,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1583,dispute resolution,2,Specific,3,False,3,none,3,True,3,,Proceso de resolución de disputas entre participantes de un esquema de pagos.
+c1584,note screen,2,NotTerm,3,False,3,none,3,False,3,rogue note screen,Fragmento de una pantalla específica del sistema.
+c1585,strategy,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1586,file type,2,Common,3,False,3,none,3,True,3,,Tipo de archivo; término informático de uso general.
+c1587,low false positive,2,NotTerm,2,False,2,none,3,False,3,false positive rate,Métrica de detección; el candidato incluye 'low' y omite 'rate'.
+c1588,HTTP,2,Common,2,False,3,none,3,True,3,,Protocolo web conocido por el público general.
+c1589,web data,2,NotTerm,3,False,3,none,3,False,3,web data mining,Fragmento de 'web data mining'.
+c1590,better user,2,NotTerm,3,False,3,none,3,False,3,better user experience,Fragmento de 'better user experience'.
+c1591,HELP,2,NotTerm,3,False,3,none,3,True,3,,"Etiqueta de pestaña de interfaz, palabra general."
+c1592,UI,1,Common,3,False,3,none,3,True,3,,Interfaz de usuario; sigla de uso general.
+c1593,behavior requirement,2,NotTerm,3,False,3,none,3,True,3,,Expresión general mal segmentada.
+c1594,channel management,2,Specific,2,False,3,none,3,False,3,logical channel management,Función de GlobalPlatform; el candidato omite 'logical'.
+c1595,protection policy,2,Specific,2,True,3,Confidentiality,3,False,3,privacy protection policy,Política de protección de la privacidad de la pasarela; el candidato omite 'privacy'.
+c1596,access rule,2,Specific,3,True,3,Integrity,2,True,3,,Regla que determina qué aplicaciones pueden acceder a otras según sus privilegios.
+c1597,service function,2,Specific,2,False,3,none,3,False,3,network configuration service function,Fragmento de 'Network Configuration Service Function'.
+c1598,arrangement,2,NotTerm,3,False,3,none,3,False,2,payment arrangement,Palabra general; fragmento de 'payment arrangement'.
+c1599,recent network,2,NotTerm,3,False,3,none,3,False,3,recent network connection,Fragmento de 'recent network connections'.
+c1600,specific card,2,NotTerm,3,False,3,none,3,False,2,,Combinación libre con adjetivo general.
+c1601,DOS,1,Common,2,True,3,Resistance,3,True,3,,"Denegación de servicio, ataque ante el cual el sistema debe seguir operando."
+c1602,HID,1,NE,3,False,3,none,3,True,3,,Nombre del sistema descrito en el requisito; no se traduce.
+c1603,PDF,1,Common,3,False,3,none,3,True,3,,Formato de documento conocido por el público general.
+c1604,reporter,2,NotTerm,3,False,3,none,3,True,3,,Palabra general.
+c1605,ES,1,NE,3,False,3,none,3,False,3,ES 282 001,Fragmento del identificador de un estándar ETSI.
+c1606,institution,2,NotTerm,3,False,3,none,3,False,3,financial institution,Palabra general; fragmento de 'financial institution'.
+c1607,central error,2,NotTerm,3,False,3,none,3,False,3,central error repository,Fragmento de 'central error repository'.
+c1608,USB,1,Common,3,False,3,none,3,True,3,,Interfaz conocida por el público general.
+c1609,JAVA,1,NE,3,False,3,none,3,True,3,,Nombre de lenguaje/plataforma; no se traduce.
+c1610,LBS,1,Specific,2,True,2,Confidentiality,2,True,3,,Técnica de esteganografía para incrustar un mensaje cifrado en una imagen.
+c1611,AKA,1,Specific,3,True,3,Authenticity,3,True,3,,Método de autenticación y acuerdo de claves (Authentication and Key Agreement).
+c1612,RAM,1,Common,3,False,3,none,3,True,3,,"Memoria de acceso aleatorio, conocida por el público general."
+c1613,id,2,Specific,1,True,2,Accountability,2,False,2,session-id,"Fragmento de identificadores (session-id, user-id) que permiten rastrear sesiones hasta una entidad."
+c1614,NBA,1,Specific,3,True,3,Authenticity,3,True,3,,Método de autenticación de dispositivos sin ISIM/UICC en redes NGN.
+c1615,UPS,1,Common,2,False,3,none,3,True,3,,"Fuente de alimentación ininterrumpida, conocida por el público general."
+c1616,WAVE,1,Common,1,False,3,none,3,True,3,,Formato de archivo de audio de uso general.
+c1617,SECURE,1,Specific,2,False,2,none,2,True,3,,Nombre de estado del ciclo de vida de GlobalPlatform; no se traduce.
+c1618,IT,1,NotTerm,3,False,3,none,3,True,3,,"Sigla general de tecnologías de la información, sin sentido especializado aquí."
