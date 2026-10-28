@@ -5,7 +5,7 @@ que P6) y calcula las señales de calidad de P8 (exactitud terminológica, Comet
     python scripts/augmentation/g4_translate.py translate
     python scripts/augmentation/g4_translate.py qc
 
-Salidas en datasets/interim/augmentation/: translations.jsonl (respuesta cruda incluida),
+Salidas en inputs/interim/augmentation/: translations.jsonl (respuesta cruda incluida),
 qc_signals.csv (en, es, term_acc, cometkiwi, labse).
 """
 from __future__ import annotations
@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts" / "glossary"))
 import p6_deepl  # noqa: E402  (clave, glosario y parámetros de P6)
 import p8_qc  # noqa: E402
 
-A = ROOT / "datasets" / "interim" / "augmentation"
+A = ROOT / "inputs" / "interim" / "augmentation"
 OUT = A / "translations.jsonl"
 
 

@@ -8,7 +8,7 @@ Entra a P5 un candidato si cumple alguna de estas condiciones:
 
 Las traducciones previas no intervienen (el antiguo criterio D quedó en old/glossary_p4/).
 
-Salida: datasets/interim/glossary/p5_shortlist.csv
+Salida: inputs/interim/glossary/p5_shortlist.csv
 
 Uso:  python scripts/glossary/p3b_shortlist.py
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 
 import pandas as pd
 
-G = Path(__file__).resolve().parents[2] / "datasets" / "interim" / "glossary"
+G = Path(__file__).resolve().parents[2] / "inputs" / "interim" / "glossary"
 
 ranked = pd.read_csv(G / "candidates_ranked.csv", encoding="utf-8-sig")
 llm = pd.read_csv(G / "candidates_llm.csv", encoding="utf-8-sig")

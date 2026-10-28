@@ -19,7 +19,7 @@ import pandas as pd
 from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[2]
-G = ROOT / "datasets" / "interim" / "glossary"
+G = ROOT / "inputs" / "interim" / "glossary"
 P5 = G / "p5"
 PROMPT = P5 / "prompt_v1.md"
 BATCH = 29

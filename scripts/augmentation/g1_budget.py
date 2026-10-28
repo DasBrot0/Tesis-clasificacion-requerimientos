@@ -13,7 +13,7 @@ con dos subcategorías descuenta de ambas. Se prefieren las fuentes cuyas subcat
 faltan todas y, entre ellas, las de mayor peso de clase (Aldhafer et al., 2026, ec. 6). Máximo
 MAX_PER_SOURCE variantes aceptadas por fuente; se piden OVERGEN veces más (para G5 y G6).
 
-Salidas en datasets/interim/augmentation/:
+Salidas en inputs/interim/augmentation/:
     budget.csv            presupuesto por dataset y subcategoría
     sources.csv           una fila por fuente asignada
     gen_batches/batch_XX.jsonl  entrada de SON-G

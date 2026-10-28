@@ -201,8 +201,7 @@ def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool 
     aggregate = aggregate_rows(fold_rows)
     pd.DataFrame(fold_rows).to_csv(out_dir / "outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
     pooled_metrics["per_label"].to_csv(out_dir / "pooled_metrics_by_label.csv", index=False, encoding="utf-8-sig")
-    confusion = save_run_confusion(
-        out_dir, f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} ({condition})")
+    confusion = save_run_confusion(condition, dataset, model_name)
     for name in METRIC_NAMES:
         print(f"externos {name}: {aggregate[name]['mean']:.4f} ± {aggregate[name]['std']:.4f} | "
               f"agrupado {pooled_metrics[name]:.4f}")

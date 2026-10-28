@@ -5,11 +5,17 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ORIGINAL_DIR = ROOT / "datasets" / "original"
-INTERIM_DIR = ROOT / "datasets" / "interim"
-TRAINING_DIR = ROOT / "datasets" / "training"
-ARTIFACTS = ROOT / "artifacts"
-CHECKPOINTS = ROOT / "checkpoints"
+# inputs/: source datasets, the intermediate products of preprocessing and the training datasets.
+INPUTS = ROOT / "inputs"
+ORIGINAL_DIR = INPUTS / "original"
+INTERIM_DIR = INPUTS / "interim"
+TRAINING_DIR = INPUTS / "training"
+# outputs/: raw run files (machine-readable), readable reports, logs and optional checkpoints.
+OUTPUTS = ROOT / "outputs"
+OUTPUT_RAW = OUTPUTS / "output_raw"
+REPORTS = OUTPUTS / "reports"
+LOGS = OUTPUTS / "logs"
+CHECKPOINTS = OUTPUTS / "checkpoints"
 
 SEED = 42
 # Nested CV: N_OUTER folds estimate the performance (every requirement is tested exactly once);
@@ -38,7 +44,7 @@ SUBCATEGORY_DEFINITIONS = {
 MIN_POSITIVES_PER_LABEL = 10
 
 # Training conditions: C0 uses only real requirements; C1 adds the LLM-generated ones
-# (notas_sesion/PLAN_AUMENTO_DATOS.md) to the training parts only.
+# (docs/planes/PLAN_AUMENTO_DATOS.md) to the training parts only.
 CONDITIONS = ["c0_real", "c1_augmented"]
 AUGMENTATION_DIR = INTERIM_DIR / "augmentation"
 
@@ -51,6 +57,7 @@ DATASET_NAMES = {"promise": "PROMISE_exp", "secreq": "SecReq", "dosspre": "DOSSP
 MODELS = ["cnn", "bilstm", "beto", "roberta_bne"]
 MODEL_DISPLAY = {"cnn": "CNN", "bilstm": "BiLSTM", "beto": "BETO", "roberta_bne": "RoBERTa-BNE"}
 WORD_MODELS = {"cnn", "bilstm"}
+MODEL_FAMILY = {"cnn": "Deep Learning", "bilstm": "Deep Learning", "beto": "Transformers", "roberta_bne": "Transformers"}
 
 HF_SOURCES = {
     "beto": "dccuchile/bert-base-spanish-wwm-cased",
@@ -135,7 +142,7 @@ STAGE1_TRIALS = {"cnn": 15, "bilstm": 15, "beto": 6, "roberta_bne": 6}
 
 
 def run_dir(condition: str, dataset: str, model: str) -> Path:
-    return ARTIFACTS / condition / dataset / model
+    return OUTPUT_RAW / condition / dataset / model
 
 
 def checkpoint_dir(condition: str, dataset: str, model: str, outer: int) -> Path:

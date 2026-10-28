@@ -37,7 +37,7 @@ sys.path.insert(0, str(ROOT))
 from src.config import AUGMENTATION_DIR, DATASETS, LABEL_COLS, SUBCATEGORY_COLS, TEXT_COL  # noqa: E402
 
 A = AUGMENTATION_DIR
-REAL_QC = ROOT / "datasets" / "interim" / "translations" / "qc_signals_provisional.csv"
+REAL_QC = ROOT / "inputs" / "interim" / "translations" / "qc_signals_provisional.csv"
 LEAK_THRESHOLD = 0.90
 NEAR_COPY_THRESHOLD = 0.85
 N_RUNS = 3

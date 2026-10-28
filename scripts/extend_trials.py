@@ -21,8 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.config import CONDITIONS, DATASETS, MODELS, N_OUTER, run_dir  # noqa: E402
 
 RESULT_FILES = ["summary.json", "outer_fold_metrics.csv", "pooled_metrics_by_label.csv",
-                "pooled_outer_test_predictions.csv", "pooled_confusion_by_label.csv",
-                "pooled_confusion_matrices.png"]
+                "pooled_outer_test_predictions.csv", "pooled_confusion_by_label.csv"]
 OUTER_FILES = ["outer_result.json", "outer_test_predictions.csv", "optuna_trials.csv"]
 
 

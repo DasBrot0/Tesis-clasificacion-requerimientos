@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Construye los tres datasets de entrenamiento (uno por fuente, sin unirlos).
 
-    datasets/original/  ->  datasets/training/{promise,secreq,dosspre}.csv
+    inputs/original/  ->  inputs/training/{promise,secreq,dosspre}.csv
 
 Salida multietiqueta común (5 objetivos): Security + cuatro subcategorías ISO/IEC 25010
 (Non_repudiation y Accountability se descartaron el 25-10-2026 por falta de datos).
@@ -11,13 +11,13 @@ Salida multietiqueta común (5 objetivos): Security + cuatro subcategorías ISO/
 - SecReq: sec -> Security=1; nonsec -> Security=0.
 - DOSSPRE: Security sale de "2.0Binary" (SR/NSR) y la subcategoría de la clase de "1.0Original"
   (ver DOSSPRE_CLASS_MAP); Availability y Maintainability pasan a Security=0. El texto en español es la traducción DeepL + glosario (corrida
-  provisional): datasets/interim/translations/deepl_provisional.jsonl.
-- SecReq: texto en inglés de datasets/interim/glossary/source_en.csv + traducción DeepL.
+  provisional): inputs/interim/translations/deepl_provisional.jsonl.
+- SecReq: texto en inglés de inputs/interim/glossary/source_en.csv + traducción DeepL.
 - PROMISE: conserva el español del antecedente (Translation_source=promise_exp_translated).
 
 Subcategorías (corrida PROVISIONAL, sin validación de expertos): PROMISE y SecReq toman el voto
 mayoritario de 3 corridas de claude-sonnet-5-5 sobre el texto en INGLÉS
-(datasets/interim/labels/son_prelabels.csv), estado `llm_provisional`. Las expresiones regulares
+(inputs/interim/labels/son_prelabels.csv), estado `llm_provisional`. Las expresiones regulares
 PATTERNS (`legacy_regex_labels`) ya no generan etiquetas: solo sirven para
 `python scripts/prepare_datasets.py --report-regex-agreement`.
 La deduplicación se hace sobre el texto en inglés.

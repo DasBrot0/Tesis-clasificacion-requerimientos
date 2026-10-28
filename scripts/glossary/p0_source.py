@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""P0 del plan de traducción con glosario (ver notas_sesion/PLAN_TRADUCCION_GLOSARIO.md).
+"""P0 del plan de traducción con glosario (ver docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
 
 Consolida el corpus fuente en inglés de DOSSPRE y SecReq (ePurse-selective, GPS, CPN), con el
 origen de cada fila. Las traducciones previas (opus-mt y old/SecReq_es.csv) no se usan: quedaron
 como diagnóstico preliminar en old/glossary_p4/.
 
-Salida: datasets/interim/glossary/source_en.csv. La deduplicación se marca sobre el texto en
+Salida: inputs/interim/glossary/source_en.csv. La deduplicación se marca sobre el texto en
 inglés (columna Dup_group); no se eliminan filas aquí.
 
 Uso:  python scripts/glossary/p0_source.py

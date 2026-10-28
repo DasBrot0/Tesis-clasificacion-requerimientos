@@ -9,7 +9,7 @@ pareadas por requisito:
 - intervalo de confianza del 95 % del delta macro-F1 por bootstrap pareado (1 000 remuestreos);
 - Wilcoxon de rangos con signo del delta macro-F1 sobre todos los pares disponibles.
 
-Salidas: artifacts/condition_comparison.csv y artifacts/condition_comparison_by_label.csv
+Salidas: outputs/output_raw/condition_comparison.csv y outputs/output_raw/condition_comparison_by_label.csv
 """
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ import pandas as pd
 from scipy.stats import binomtest, wilcoxon
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.config import ARTIFACTS, DATASETS, LABEL_COLS, MODELS, SEED, run_dir  # noqa: E402
+from src.config import OUTPUT_RAW, DATASETS, LABEL_COLS, MODELS, SEED, run_dir  # noqa: E402
 from src.metrics import multilabel_metrics  # noqa: E402
 
 N_BOOT = 1000
@@ -77,8 +77,8 @@ def main() -> None:
     if not rows:
         raise SystemExit("No hay pares (dataset, modelo) entrenados en c0_real y c1_augmented.")
     table, labels = pd.DataFrame(rows), pd.DataFrame(label_rows)
-    table.to_csv(ARTIFACTS / "condition_comparison.csv", index=False, encoding="utf-8-sig")
-    labels.to_csv(ARTIFACTS / "condition_comparison_by_label.csv", index=False, encoding="utf-8-sig")
+    table.to_csv(OUTPUT_RAW / "condition_comparison.csv", index=False, encoding="utf-8-sig")
+    labels.to_csv(OUTPUT_RAW / "condition_comparison_by_label.csv", index=False, encoding="utf-8-sig")
     print(table.round(4).to_string(index=False))
     if len(table) >= 6 and table["delta"].ne(0).any():
         stat = wilcoxon(table["delta"])

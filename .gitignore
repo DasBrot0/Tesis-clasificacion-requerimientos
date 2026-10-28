@@ -7,9 +7,17 @@ venv/
 env/
 
 # Modelos entrenados (pesados; se regeneran con train.py --save-checkpoints)
-checkpoints/
+outputs/checkpoints/
 
 # Python
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Salidas temporales de la sincronización con Google Docs
+docs/reporte_tecnico/_sync/out/
+
+# Otros
+.claude
+docs/
+CLAUDE.md

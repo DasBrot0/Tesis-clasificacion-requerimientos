@@ -4,7 +4,7 @@
     python run_all_training.py --condition c1_augmented --models cnn roberta_bne
     python run_all_training.py --condition c0_real --datasets secreq --n-trials 5 --force
 
-Cada corrida escribe su salida en logs/<condición>_<dataset>_<modelo>.log. Las corridas ya
+Cada corrida escribe su salida en outputs/logs/<condición>_<dataset>_<modelo>.log. Las corridas ya
 completadas se omiten (salvo --force) y una interrumpida retoma desde el último fold externo
 terminado; dentro de ese fold, su estudio de Optuna continúa donde quedó.
 """
@@ -19,10 +19,9 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from src.config import CONDITIONS, DATASETS, MODELS
+from src.config import CONDITIONS, DATASETS, LOGS, MODELS
 
 ROOT = Path(__file__).resolve().parent
-LOGS = ROOT / "logs"
 os.environ.setdefault("MPLBACKEND", "Agg")
 os.environ.setdefault("PYTHONIOENCODING", "utf-8")
 
@@ -43,7 +42,7 @@ def parse_args():
 
 def main() -> int:
     args = parse_args()
-    LOGS.mkdir(exist_ok=True)
+    LOGS.mkdir(parents=True, exist_ok=True)
     extra = (["--n-trials", str(args.n_trials)] if args.n_trials else []) + (["--force"] if args.force else [])
     failed = []
     # Los modelos van en el bucle externo: primero terminan los rápidos (CNN, BiLSTM).

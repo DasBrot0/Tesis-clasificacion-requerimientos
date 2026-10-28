@@ -18,8 +18,8 @@ import pandas as pd
 import requests
 
 ROOT = Path(__file__).resolve().parents[2]
-G = ROOT / "datasets" / "interim" / "glossary"
-T = ROOT / "datasets" / "interim" / "translations"
+G = ROOT / "inputs" / "interim" / "glossary"
+T = ROOT / "inputs" / "interim" / "translations"
 API = "https://api-free.deepl.com"
 CONTEXT = "Software security requirements specification (ISO/IEC 25010 security)."
 TSV = G / "glossary_en_es_provisional.tsv"

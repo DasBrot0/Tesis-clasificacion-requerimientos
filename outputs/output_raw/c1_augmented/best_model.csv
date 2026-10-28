@@ -1,0 +1,4 @@
+﻿dataset,best_model,top_group,macro_f1,security_recall,reason,candidates
+PROMISE_exp,RoBERTa-BNE,BETO = RoBERTa-BNE,0.6186933765247018,0.8607594936708861,"mayor recall de Security del grupo superior; BETO tiene más macro-F1, pero la diferencia no es significativa","RoBERTa-BNE: macro-F1 0.619, recall Security 0.861; BETO: macro-F1 0.644, recall Security 0.797"
+SecReq,BETO,RoBERTa-BNE = CNN = BETO,0.6348122295127739,0.8926553672316384,"mayor recall de Security del grupo superior; RoBERTa-BNE tiene más macro-F1, pero la diferencia no es significativa","CNN: macro-F1 0.605, recall Security 0.893; BETO: macro-F1 0.635, recall Security 0.893; RoBERTa-BNE: macro-F1 0.671, recall Security 0.876"
+DOSSPRE,BETO,BETO = RoBERTa-BNE,0.6696763258281109,0.7931034482758621,mayor recall de Security del grupo superior (y mayor macro-F1),"BETO: macro-F1 0.670, recall Security 0.793; RoBERTa-BNE: macro-F1 0.669, recall Security 0.739"

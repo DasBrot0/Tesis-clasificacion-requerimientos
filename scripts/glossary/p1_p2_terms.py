@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P1 y P2 del plan de traducción con glosario (ver notas_sesion/PLAN_TRADUCCION_GLOSARIO.md).
+"""P1 y P2 del plan de traducción con glosario (ver docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
 
 P1. Extrae candidatos a término de los textos únicos en inglés (source_en.csv) con spaCy:
     - sintagmas nominales: (ADJ|NOUN|PROPN)* (NOUN|PROPN), de 1 a 4 tokens, incluidas las
@@ -10,7 +10,7 @@ P2. Calcula frecuencia, dispersión, C-value (multipalabra) y log-likelihood G2 
     general (frecuencias de wordfreq). Filtra por frecuencia >= 2 y G2 > 0 (las siglas pasan
     siempre).
 
-Salidas en datasets/interim/glossary/:
+Salidas en inputs/interim/glossary/:
     candidates_raw.csv     todos los candidatos con sus ocurrencias
     candidates_ranked.csv  candidatos que pasan el filtro, con métricas y ranking
     term_occurrences.csv   (término, Source_ID) para P3/P4
@@ -32,7 +32,7 @@ import spacy
 from wordfreq import word_frequency
 
 ROOT = Path(__file__).resolve().parents[2]
-GLOSSARY_DIR = ROOT / "datasets" / "interim" / "glossary"
+GLOSSARY_DIR = ROOT / "inputs" / "interim" / "glossary"
 MIN_FREQ = 2          # [Decisión propia] ver plan, P2
 MAX_LEN = 4
 REF_CORPUS_TOKENS = 1e9   # tamaño nominal del corpus de referencia para G2 (wordfreq da proporciones)

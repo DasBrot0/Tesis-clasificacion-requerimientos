@@ -1,8 +1,10 @@
-"""Reports built from finished runs: confusion matrices, comparison table and the Excel workbook.
+"""Reports built from finished runs: confusion matrices, comparison tables, Scott-Knott ESD, the
+analyses of src/analysis.py and the Excel workbook.
 
 Nothing here trains or imports torch: every file is rebuilt from what a run already saved
 (summary.json and pooled_outer_test_predictions.csv), so `scripts/build_report.py` can refresh the
-reports of finished runs.
+reports of finished runs. Machine-readable files go to outputs/output_raw/<condition>/ and the
+readable ones (Excel, figures) to outputs/reports/<condition>/.
 """
 
 from __future__ import annotations
@@ -10,12 +12,20 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
+from openpyxl import Workbook
+from openpyxl.formatting.rule import ColorScaleRule
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
 
-from .config import ARTIFACTS, DATASET_NAMES, DATASETS, LABEL_COLS, MODEL_DISPLAY, MODELS, run_dir
+from . import analysis
+from .config import (DATASET_NAMES, DATASETS, LABEL_COLS, MODEL_DISPLAY, MODELS, OUTPUT_RAW, REPORTS,
+                     SUBCATEGORY_COLS, run_dir)
+from .significance import scott_knott_esd
 
 CONFUSION_CSV = "pooled_confusion_by_label.csv"
-CONFUSION_PNG = "pooled_confusion_matrices.png"
+SCOTT_KNOTT_CSV = "scott_knott_esd.csv"
 
 # Spanish column titles for the workbook; the order is the order of the columns.
 METRIC_TITLES = {
@@ -64,11 +74,16 @@ def save_confusion_figure(confusion: pd.DataFrame, path: Path, title: str) -> No
     plt.close(fig)
 
 
-def save_run_confusion(out_dir: Path, title: str) -> pd.DataFrame:
+def save_run_confusion(condition: str, dataset: str, model_name: str) -> pd.DataFrame:
+    """CSV next to the run's raw files; figure in outputs/reports/<condition>/confusion_matrices/."""
+    out_dir = run_dir(condition, dataset, model_name)
     pooled = pd.read_csv(out_dir / "pooled_outer_test_predictions.csv", encoding="utf-8-sig", dtype={"ID": str})
     confusion = confusion_by_label(pooled)
     confusion.to_csv(out_dir / CONFUSION_CSV, index=False, encoding="utf-8-sig")
-    save_confusion_figure(confusion, out_dir / CONFUSION_PNG, title)
+    figures = REPORTS / condition / "confusion_matrices"
+    figures.mkdir(parents=True, exist_ok=True)
+    save_confusion_figure(confusion, figures / f"{dataset}_{model_name}.png",
+                          f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} ({condition})")
     return confusion
 
 
@@ -86,10 +101,29 @@ def finished_runs(condition: str) -> list[tuple[str, str, dict]]:
 
 
 def run_confusion(condition: str, dataset: str, model_name: str) -> pd.DataFrame:
-    out_dir = run_dir(condition, dataset, model_name)
-    if (out_dir / CONFUSION_CSV).exists():
-        return pd.read_csv(out_dir / CONFUSION_CSV, encoding="utf-8-sig")
-    return save_run_confusion(out_dir, f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} ({condition})")
+    path = run_dir(condition, dataset, model_name) / CONFUSION_CSV
+    if path.exists():
+        return pd.read_csv(path, encoding="utf-8-sig")
+    return save_run_confusion(condition, dataset, model_name)
+
+
+def update_scott_knott(condition: str) -> pd.DataFrame:
+    """Scott-Knott ESD of the models of each dataset over their outer-fold macro-F1."""
+    parts = []
+    runs = finished_runs(condition)
+    for dataset in DATASETS:
+        samples = {MODEL_DISPLAY[m]: [fold["test"]["macro_f1"] for fold in report["outer_folds"]]
+                   for d, m, report in runs if d == dataset}
+        if len(samples) < 2:
+            continue
+        ranking = scott_knott_esd(samples)
+        ranking.insert(0, "dataset", DATASET_NAMES[dataset])
+        parts.append(ranking.rename(columns={"treatment": "model"}))
+    table = pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
+    path = OUTPUT_RAW / condition / SCOTT_KNOTT_CSV
+    path.parent.mkdir(parents=True, exist_ok=True)
+    table.to_csv(path, index=False, encoding="utf-8-sig")
+    return table
 
 
 def update_comparison_table(condition: str) -> pd.DataFrame:
@@ -108,7 +142,7 @@ def update_comparison_table(condition: str) -> pd.DataFrame:
             "Sintéticos": report["synthetic_rows"], "Minutos": report["elapsed_minutes"],
         })
     table = pd.DataFrame(rows)
-    path = ARTIFACTS / condition / "model_comparison.csv"
+    path = OUTPUT_RAW / condition / "model_comparison.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False, encoding="utf-8-sig")
     return table
@@ -116,58 +150,70 @@ def update_comparison_table(condition: str) -> pd.DataFrame:
 
 # --------------------------------------------------------------------------- Excel workbook
 
-def export_excel(condition: str) -> Path | None:
-    """artifacts/<condition>/results_<condition>.xlsx: general metrics, metrics by class and
-    confusion matrices of every finished run, formatted to be read as is."""
-    from openpyxl import Workbook
-    from openpyxl.formatting.rule import ColorScaleRule
-    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-    from openpyxl.utils import get_column_letter
+header_fill = PatternFill("solid", fgColor="1F4E78")
+group_fill = PatternFill("solid", fgColor="D9E1F2")
+hit_fill = PatternFill("solid", fgColor="E2EFDA")
+miss_fill = PatternFill("solid", fgColor="FCE4D6")
+header_font = Font(bold=True, color="FFFFFF")
+thin = Side(style="thin", color="BFBFBF")
+border = Border(left=thin, right=thin, top=thin, bottom=thin)
+center = Alignment(horizontal="center", vertical="center", wrap_text=True)
+score_scale = dict(start_type="num", start_value=0, start_color="F8696B",
+                   mid_type="num", mid_value=0.5, mid_color="FFEB84",
+                   end_type="num", end_value=1, end_color="63BE7B")
 
+
+def write_table(ws, top: int, headers: list[str], rows: list[list], formats: dict[int, str]) -> int:
+    """Header + rows starting at `top`; returns the last row written."""
+    for col, title in enumerate(headers, start=1):
+        cell = ws.cell(top, col, title)
+        cell.fill, cell.font, cell.alignment, cell.border = header_fill, header_font, center, border
+    for r, values in enumerate(rows, start=top + 1):
+        for col, value in enumerate(values, start=1):
+            if isinstance(value, float) and np.isnan(value):
+                value = None
+            cell = ws.cell(r, col, value)
+            cell.border = border
+            cell.alignment = Alignment(horizontal="left" if isinstance(value, str) else "center")
+            if col in formats:
+                cell.number_format = formats[col]
+    ws.row_dimensions[top].height = 32
+    return top + len(rows)
+
+
+def bold_best(ws, first: int, last: int, col: int, key_col: int = 1, lower_is_better: bool = False) -> None:
+    """Bold the best value of `col` within each block of rows that share the value of `key_col`."""
+    blocks: dict[str, list[int]] = {}
+    for r in range(first, last + 1):
+        blocks.setdefault(ws.cell(r, key_col).value, []).append(r)
+    for rows in blocks.values():
+        pick = min if lower_is_better else max
+        best = pick(rows, key=lambda r: ws.cell(r, col).value)
+        ws.cell(best, col).font = Font(bold=True)
+
+
+def widths(ws, values: dict[int, float]) -> None:
+    for col, width in values.items():
+        ws.column_dimensions[get_column_letter(col)].width = width
+
+
+def sheet_title(ws, title: str, note: str = "", note_columns: str = "A2:K2", note_height: int = 32) -> None:
+    ws["A1"] = title
+    ws["A1"].font = Font(bold=True, size=14)
+    if note:
+        ws["A2"] = note
+        ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
+        ws.merge_cells(note_columns)
+        ws.row_dimensions[2].height = note_height
+
+
+def export_excel(condition: str) -> Path | None:
+    """outputs/reports/<condition>/results_<condition>.xlsx: general metrics, metrics by class,
+    confusion matrices, statistical comparisons and analyses of every finished run, formatted to
+    be read as is."""
     runs = finished_runs(condition)
     if not runs:
         return None
-
-    header_fill = PatternFill("solid", fgColor="1F4E78")
-    group_fill = PatternFill("solid", fgColor="D9E1F2")
-    hit_fill = PatternFill("solid", fgColor="E2EFDA")
-    miss_fill = PatternFill("solid", fgColor="FCE4D6")
-    header_font = Font(bold=True, color="FFFFFF")
-    thin = Side(style="thin", color="BFBFBF")
-    border = Border(left=thin, right=thin, top=thin, bottom=thin)
-    center = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    score_scale = dict(start_type="num", start_value=0, start_color="F8696B",
-                       mid_type="num", mid_value=0.5, mid_color="FFEB84",
-                       end_type="num", end_value=1, end_color="63BE7B")
-
-    def write_table(ws, top: int, headers: list[str], rows: list[list], formats: dict[int, str]) -> int:
-        """Header + rows starting at `top`; returns the last row written."""
-        for col, title in enumerate(headers, start=1):
-            cell = ws.cell(top, col, title)
-            cell.fill, cell.font, cell.alignment, cell.border = header_fill, header_font, center, border
-        for r, values in enumerate(rows, start=top + 1):
-            for col, value in enumerate(values, start=1):
-                cell = ws.cell(r, col, value)
-                cell.border = border
-                cell.alignment = Alignment(horizontal="left" if isinstance(value, str) else "center")
-                if col in formats:
-                    cell.number_format = formats[col]
-        ws.row_dimensions[top].height = 32
-        return top + len(rows)
-
-    def bold_best(ws, first: int, last: int, col: int, key_col: int = 1, lower_is_better: bool = False) -> None:
-        """Bold the best value of `col` within each block of rows that share the value of `key_col`."""
-        blocks: dict[str, list[int]] = {}
-        for r in range(first, last + 1):
-            blocks.setdefault(ws.cell(r, key_col).value, []).append(r)
-        for rows in blocks.values():
-            pick = min if lower_is_better else max
-            best = pick(rows, key=lambda r: ws.cell(r, col).value)
-            ws.cell(best, col).font = Font(bold=True)
-
-    def widths(ws, values: dict[int, float]) -> None:
-        for col, width in values.items():
-            ws.column_dimensions[get_column_letter(col)].width = width
 
     wb = Workbook()
 
@@ -280,6 +326,217 @@ def export_excel(condition: str) -> Path | None:
     widths(ws, {1: 14, 2: 14, 3: 11, **{c: 13 for c in range(4, 4 + len(names))}})
     ws.freeze_panes = "D4"
 
-    path = ARTIFACTS / condition / f"results_{condition}.xlsx"
+    # 6) Scott-Knott ESD of the models of each dataset (outer-fold macro-F1).
+    ranking = update_scott_knott(condition)
+    if not ranking.empty:
+        ws = wb.create_sheet("Scott-Knott ESD")
+        ws["A1"] = "Scott-Knott ESD por dataset (macro-F1 de los 5 folds externos)"
+        ws["A1"].font = Font(bold=True, size=14)
+        ws["A2"] = ("Rango 1 = grupo superior. Los modelos con el mismo rango no difieren de forma "
+                    "significativa (Kruskal-Wallis, α = 0,05) o su diferencia es despreciable "
+                    "(δ de Cliff < 0,147). δ, magnitud y p comparan el grupo con el siguiente.")
+        ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
+        ws.merge_cells("A2:K2")
+        ws.row_dimensions[2].height = 32
+        headers = ["Dataset", "Modelo", "Rango", "Grupo", "Mediana", "Media", "Desv.", "Folds",
+                   "δ de Cliff vs. siguiente", "Magnitud", "p vs. siguiente"]
+        rows = [[r.dataset, r.model, r.rank, r.group, r.median, r.mean, r.std, r.n,
+                 None if pd.isna(r.delta_vs_next_group) else r.delta_vs_next_group,
+                 r.magnitude_vs_next_group, None if pd.isna(r.p_vs_next_group) else r.p_vs_next_group]
+                for r in ranking.itertuples()]
+        last = write_table(ws, 4, headers, rows, {5: "0.000", 6: "0.000", 7: "0.000", 9: "0.000", 11: "0.0000"})
+        for r in range(5, last + 1):
+            if ws.cell(r, 3).value == 1:
+                for col in (2, 3):
+                    ws.cell(r, col).font = Font(bold=True)
+                    ws.cell(r, col).fill = hit_fill
+        widths(ws, {1: 14, 2: 14, 3: 8, 4: 36, 5: 10, 6: 10, 7: 10, 8: 8, 9: 14, 10: 13, 11: 13})
+        ws.freeze_panes = "C5"
+
+    analysis_sheets(wb, condition, runs, ranking)
+
+    path = REPORTS / condition / f"results_{condition}.xlsx"
+    path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(path)
     return path
+
+
+def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranking: pd.DataFrame) -> None:
+    """Sheets of src/analysis.py: model tests, subcategory confusion, misclassified requirements,
+    best model, Transformers vs Deep Learning and (C1) the diversity of the synthetics."""
+    significant_fill = PatternFill("solid", fgColor="C6EFCE")
+
+    # 7) Cochran's Q and pairwise McNemar between the models of each dataset.
+    omnibus, pairs = analysis.model_tests(condition)
+    if not omnibus.empty:
+        ws = wb.create_sheet("Cochran Q y McNemar")
+        sheet_title(ws, "Diferencias entre modelos por clase (predicciones externas agrupadas)",
+                    "Cochran Q: ¿los modelos del dataset difieren en sus aciertos en esa clase? Solo si "
+                    "p < 0,05 se interpretan las comparaciones por pares (McNemar exacto, p ajustado por "
+                    "Holm sobre los pares de esa clase y dataset). En verde, las diferencias significativas.",
+                    "A2:M2", 45)
+        accuracy_cols = [c for c in omnibus.columns if c.startswith("accuracy ")]
+        headers = ["Dataset", "Clase", "En el promedio", "Soporte", "Q de Cochran", "p", "Significativa",
+                   *(f"Exactitud {c.removeprefix('accuracy ')}" for c in accuracy_cols)]
+        rows = [[r["dataset"], r["label"], "Sí" if r["in_macro_average"] else "No", r["support"],
+                 r["cochran_q"], r["p"], "Sí" if r["significant"] else "No", *(r[c] for c in accuracy_cols)]
+                for r in omnibus.to_dict("records")]
+        ws.cell(4, 1, "Prueba ómnibus").font = Font(bold=True, size=12)
+        last = write_table(ws, 5, headers, rows,
+                           {5: "0.00", 6: "0.0000", **{c: "0.000" for c in range(8, 8 + len(accuracy_cols))}})
+        for r in range(6, last + 1):
+            if ws.cell(r, 7).value == "Sí":
+                for col in (5, 6, 7):
+                    ws.cell(r, col).fill = significant_fill
+        top = last + 3
+        ws.cell(top - 1, 1, "Comparaciones por pares (McNemar exacto con Holm)").font = Font(bold=True, size=12)
+        headers = ["Dataset", "Clase", "Modelo A", "Modelo B", "F1 A", "F1 B", "Solo A acierta",
+                   "Solo B acierta", "p", "p Holm", "Significativa", "Más aciertos"]
+        rows = [[r["dataset"], r["label"], r["model_a"], r["model_b"], r["f1_a"], r["f1_b"], r["only_a_right"],
+                 r["only_b_right"], r["p"], r["p_holm"], "Sí" if r["significant"] else "No", r["more_hits"]]
+                for r in pairs.to_dict("records")]
+        last = write_table(ws, top, headers, rows, {5: "0.000", 6: "0.000", 9: "0.0000", 10: "0.0000"})
+        for r in range(top + 1, last + 1):
+            if ws.cell(r, 11).value == "Sí":
+                for col in (10, 11, 12):
+                    ws.cell(r, col).fill = significant_fill
+        ws.auto_filter.ref = f"A{top}:L{last}"
+        widths(ws, {1: 14, 2: 16, 3: 14, 4: 14, **{c: 12 for c in range(5, 14)}})
+
+    # 8) Co-confusion between subcategories, one matrix per run.
+    confusion = analysis.confusion_tables(condition)
+    if not confusion.empty:
+        ws = wb.create_sheet("Confusión subcategorías")
+        sheet_title(ws, "Confusiones entre subcategorías (predicciones externas agrupadas)",
+                    "Filas: subcategoría real; columnas: subcategoría predicha. Diagonal (verde): acierto. "
+                    "Fuera de la diagonal (naranja): el modelo omitió la subcategoría de la fila y predijo la "
+                    "de la columna, que el requisito no tiene. Columna «Ninguna»: la omitió sin predecir otra. "
+                    "Fila «Ninguna»: requisitos sin subcategoría real; cuenta las subcategorías predichas de "
+                    "más, y en «Ninguna» los que quedaron correctamente sin subcategoría.",
+                    "A2:AB2", 48)
+        names = [*SUBCATEGORY_COLS, analysis.NO_SUBCATEGORY]
+        span = len(names) + 2
+        top = 4
+        for dataset in confusion["dataset"].unique():
+            part = confusion[confusion["dataset"] == dataset]
+            for k, model in enumerate(part["model"].unique()):
+                matrix = part[part["model"] == model].pivot(index="real", columns="predicted", values="count")
+                left = 1 + k * span
+                ws.cell(top, left, f"{dataset} — {model}").font = Font(bold=True, size=12)
+                corner = ws.cell(top + 1, left, "Real \\ Predicha")
+                corner.fill, corner.font, corner.alignment, corner.border = group_fill, Font(bold=True), center, border
+                for j, name in enumerate(names):
+                    for cell in (ws.cell(top + 1, left + 1 + j, name), ws.cell(top + 2 + j, left, name)):
+                        cell.fill, cell.font, cell.alignment, cell.border = group_fill, Font(bold=True), center, border
+                for i, real in enumerate(names):
+                    for j, predicted in enumerate(names):
+                        value = int(matrix.loc[real, predicted])
+                        cell = ws.cell(top + 2 + i, left + 1 + j, value)
+                        cell.border, cell.alignment = border, center
+                        if i == j:
+                            cell.fill = hit_fill
+                        elif value and predicted != analysis.NO_SUBCATEGORY:
+                            cell.fill = miss_fill
+            top += len(names) + 4
+        widths(ws, {c: (16 if c % span == 1 else 3 if c % span == 0 else 11) for c in range(1, 4 * span + 1)})
+
+    # 9) Misclassified requirements, for the manual error review.
+    errors = analysis.misclassified(condition)
+    if not errors.empty:
+        ws = wb.create_sheet("Errores para revisión")
+        sheet_title(ws, "Requisitos con al menos un error (predicciones externas agrupadas)",
+                    "Una fila por requisito real que algún modelo clasificó mal en alguna clase. Ordenado por "
+                    "el número de modelos que fallan: los primeros son los más difíciles o los que podrían "
+                    "estar mal etiquetados.", "A2:I2")
+        model_cols = [c for c in errors.columns if c not in ("dataset", "ID", "models_wrong", "real", "requirement")]
+        headers = ["Dataset", "ID", "Modelos que fallan", "Etiquetas reales", *model_cols, "Requisito"]
+        rows = [[r["dataset"], r["ID"], r["models_wrong"], r["real"], *(r[c] for c in model_cols), r["requirement"]]
+                for r in errors.to_dict("records")]
+        last = write_table(ws, 4, headers, rows, {})
+        for r in range(5, last + 1):
+            truth = ws.cell(r, 4).value
+            for col in range(5, 5 + len(model_cols)):
+                ws.cell(r, col).fill = hit_fill if ws.cell(r, col).value == truth else miss_fill
+            ws.cell(r, len(headers)).alignment = Alignment(wrap_text=True, vertical="top")
+        ws.auto_filter.ref = f"A4:{get_column_letter(len(headers))}{last}"
+        widths(ws, {1: 13, 2: 15, 3: 10, 4: 28, **{c: 28 for c in range(5, 5 + len(model_cols))},
+                    len(headers): 90})
+        ws.freeze_panes = "E5"
+
+    # 10) Best model of each dataset.
+    best = analysis.best_models(condition, ranking)
+    if not best.empty:
+        ws = wb.create_sheet("Mejor modelo")
+        sheet_title(ws, "Mejor modelo por dataset",
+                    "Regla (METODOLOGIA §4.3.2): los modelos del grupo superior de Scott-Knott ESD no "
+                    "difieren en macro-F1; entre ellos se elige el de mayor recall de Security (agrupado), "
+                    "porque omitir un requisito de seguridad es el error más costoso.",
+                    "A2:G2", 32)
+        headers = ["Dataset", "Mejor modelo", "Macro-F1", "Recall Security", "Motivo",
+                   "Grupo superior SK-ESD", "Candidatos (por recall de Security)"]
+        rows = [[r["dataset"], r["best_model"], r["macro_f1"], r["security_recall"], r["reason"], r["top_group"],
+                 r["candidates"]] for r in best.to_dict("records")]
+        last = write_table(ws, 4, headers, rows, {3: "0.000", 4: "0.000"})
+        for r in range(5, last + 1):
+            ws.cell(r, 2).font, ws.cell(r, 2).fill = Font(bold=True), hit_fill
+            for col in (5, 7):
+                ws.cell(r, col).alignment = Alignment(wrap_text=True, vertical="top")
+        widths(ws, {1: 14, 2: 15, 3: 10, 4: 11, 5: 45, 6: 30, 7: 70})
+
+    # 11) Transformers against Deep Learning.
+    by_dataset, by_label = analysis.family_comparison(condition, runs, ranking)
+    if not by_dataset.empty:
+        ws = wb.create_sheet("Transformers vs DL")
+        sheet_title(ws, "Transformers (BETO, RoBERTa-BNE) frente a Deep Learning (CNN, BiLSTM)",
+                    "Macro-F1 de cada familia: media de sus dos modelos (agrupado). δ de Cliff y Mann-Whitney "
+                    "comparan los 10 macro-F1 de folds externos de cada familia (2 modelos × 5 folds); δ > 0 "
+                    "favorece a los Transformers. Rango SK: el mejor rango Scott-Knott ESD de la familia.",
+                    "A2:L2", 45)
+        headers = ["Dataset", "Macro-F1 Transformers", "Macro-F1 Deep Learning", "Δ macro-F1",
+                   "Mejor Transformer", "Mejor DL", "δ de Cliff (folds)", "Magnitud", "p Mann-Whitney",
+                   "Rango SK Transformers", "Rango SK DL"]
+        keys = ["dataset", "macro_f1 Transformers (media agrupada)", "macro_f1 Deep Learning (media agrupada)",
+                "delta_macro_f1", "mejor Transformers", "mejor Deep Learning", "cliffs_delta_folds", "magnitude",
+                "mannwhitney_p", "mejor rango SK Transformers", "mejor rango SK Deep Learning"]
+        rows = [[r.get(k) for k in keys] for r in by_dataset.to_dict("records")]
+        last = write_table(ws, 4, headers, rows, {2: "0.000", 3: "0.000", 4: "+0.000;-0.000", 7: "+0.000;-0.000",
+                                                   9: "0.0000", 10: "0", 11: "0"})
+        for col in range(1, len(headers) + 1):
+            ws.cell(last, col).font = Font(bold=True)
+        top = last + 3
+        ws.cell(top - 1, 1, "F1 por clase (media de los dos modelos de cada familia)").font = Font(bold=True, size=12)
+        headers = ["Dataset", "Clase", "Soporte", "F1 Transformers", "F1 Deep Learning", "Δ F1"]
+        rows = [[r["dataset"], r["label"], r["support"], r["F1 Transformers"], r["F1 Deep Learning"], r["delta_f1"]]
+                for r in by_label.to_dict("records")]
+        last = write_table(ws, top, headers, rows, {3: "0", 4: "0.000", 5: "0.000", 6: "+0.000;-0.000"})
+        ws.conditional_formatting.add(f"D{top + 1}:E{last}", ColorScaleRule(**score_scale))
+        widths(ws, {1: 20, 2: 16, **{c: 14 for c in range(3, 12)}, 8: 28})
+
+    # 12) Diversity of the synthetics (C1 only).
+    if condition == "c1_augmented":
+        diversity = analysis.synthetic_diversity()
+        if not diversity.empty:
+            ws = wb.create_sheet("Diversidad sintéticos")
+            sheet_title(ws, "Diversidad de los sintéticos aceptados (similitud coseno LaBSE)",
+                        "Con su fuente y con el real más parecido: calculadas por el filtro G5 (umbrales: casi "
+                        "copia ≥ 0,85, fuga ≥ 0,90). Pares sintético-sintético, real-real y sintético-real: "
+                        "media sobre todos los pares, de scripts/augmentation/g9_diversity.py; si el valor "
+                        "sintético-sintético supera mucho al real-real, las variantes son repetitivas.",
+                        "A2:L2", 48)
+            titles = {
+                "dataset": "Dataset", "synthetics": "Sintéticos", "sources": "Fuentes",
+                "variants_per_source": "Variantes por fuente", "sim_source_mean": "Sim. con su fuente (media)",
+                "sim_source_max": "Sim. con su fuente (máx.)",
+                "sim_max_real_mean": "Sim. con el real más parecido (media)",
+                "sim_max_real_max": "Sim. con el real más parecido (máx.)", "real_security": "Reales de seguridad",
+                "sim_synthetic_synthetic": "Sintético-sintético (media)", "sim_real_real": "Real-real (media)",
+                "sim_synthetic_real": "Sintético-real (media)",
+            }
+            columns = [c for c in titles if c in diversity.columns]
+            rows = [[r[c] for c in columns] for r in diversity.to_dict("records")]
+            last = write_table(ws, 4, [titles[c] for c in columns], rows,
+                               {k + 1: "0.000" for k, c in enumerate(columns) if c.startswith(("sim", "variants"))})
+            if "sim_synthetic_synthetic" not in columns:
+                ws.cell(last + 2, 1, "Falta correr scripts/augmentation/g9_diversity.py para las similitudes "
+                                     "entre pares (necesita transformers y LaBSE).").font = Font(italic=True)
+            widths(ws, {k + 1: (14 if k == 0 else 16) for k in range(len(columns))})

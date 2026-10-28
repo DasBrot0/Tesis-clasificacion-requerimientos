@@ -3,10 +3,10 @@
     dataset -> N_OUTER multilabel-stratified outer folds (each requirement is tested once)
             -> inside every outer training part, N_INNER inner folds for Optuna
 
-All assignments are written to artifacts/splits/ and reused by the four models and by both
+All assignments are written to outputs/output_raw/splits/ and reused by the four models and by both
 conditions, so every model of a dataset sees exactly the same partitions.
 
-Condition c1_augmented adds LLM-generated requirements (datasets/interim/augmentation/
+Condition c1_augmented adds LLM-generated requirements (inputs/interim/augmentation/
 synthetic_<dataset>.csv) to training parts only: a synthetic row enters a training part only if
 the real requirement it was generated from (Anchor_ID) is in that part. Validation and test parts
 never contain synthetic rows.
@@ -20,11 +20,11 @@ import numpy as np
 import pandas as pd
 
 from .config import (
-    ARTIFACTS, AUGMENTATION_DIR, DATASETS, LABEL_COLS, MIN_POSITIVES_PER_LABEL, N_INNER, N_OUTER,
+    OUTPUT_RAW, AUGMENTATION_DIR, DATASETS, LABEL_COLS, MIN_POSITIVES_PER_LABEL, N_INNER, N_OUTER,
     SEED, SUBCATEGORY_COLS, TEXT_COL,
 )
 
-SPLITS_DIR = ARTIFACTS / "splits"
+SPLITS_DIR = OUTPUT_RAW / "splits"
 
 
 def _text_key(series: pd.Series) -> pd.Series:

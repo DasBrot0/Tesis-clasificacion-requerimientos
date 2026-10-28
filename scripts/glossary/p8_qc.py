@@ -17,8 +17,8 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-G = ROOT / "datasets" / "interim" / "glossary"
-T = ROOT / "datasets" / "interim" / "translations"
+G = ROOT / "inputs" / "interim" / "glossary"
+T = ROOT / "inputs" / "interim" / "translations"
 VENV = "C:/Users/Franco/.venvs/cometkiwi/Scripts/python.exe"
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verifica que las subcategorías de seguridad estén presentes en cada dataset de entrenamiento.
 
-Escribe datasets/training/subcategory_coverage.csv y termina con código 1 si alguna subcategoría
+Escribe inputs/training/subcategory_coverage.csv y termina con código 1 si alguna subcategoría
 está AUSENTE (0 positivos) o es INSUFICIENTE (< MIN_POSITIVES_PER_LABEL) en algún dataset.
 """
 
