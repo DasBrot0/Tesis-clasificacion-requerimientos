@@ -18,7 +18,8 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[2]
 G = ROOT / "inputs" / "interim" / "glossary"
 L = ROOT / "inputs" / "interim" / "labels"
-GUIDE = ROOT / "docs" / "contexto_sesion" / "guia_anotacion_subcategorias_v1_provisional.md"
+DOCS = ROOT.parent / "Tesis-clasificacion-requerimientos-docs"  # repo hermano de documentación
+GUIDE = DOCS / "contexto_sesion" / "guia_anotacion_subcategorias_v1_provisional.md"
 PROMPT = L / "prompt_v1.md"
 OLD_PROMISE = ROOT / "old" / "run_2026-10_regex_opusmt" / "datasets" / "training" / "promise.csv"
 COLS = ["Confidentiality", "Integrity", "Non_repudiation", "Accountability", "Authenticity", "Resistance"]

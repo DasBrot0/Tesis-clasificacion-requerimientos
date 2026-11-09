@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P1 y P2 del plan de traducción con glosario (ver docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
+"""P1 y P2 del plan de traducción con glosario (ver ../Tesis-clasificacion-requerimientos-docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
 
 P1. Extrae candidatos a término de los textos únicos en inglés (source_en.csv) con spaCy:
     - sintagmas nominales: (ADJ|NOUN|PROPN)* (NOUN|PROPN), de 1 a 4 tokens, incluidas las

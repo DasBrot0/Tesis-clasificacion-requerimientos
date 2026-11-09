@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "additionalDirectories": ["../Tesis-clasificacion-requerimientos-docs"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Antes de responder al primer mensaje, sincroniza el reporte técnico desde Google Docs: usa la skill sync-reporte (solo pull; nunca push sin pedido explícito). La documentación está en el repo hermano ../Tesis-clasificacion-requerimientos-docs/.'"
+          }
+        ]
+      }
+    ]
+  }
+}

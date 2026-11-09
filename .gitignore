@@ -14,10 +14,8 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Salidas temporales de la sincronización con Google Docs
-docs/reporte_tecnico/_sync/out/
+# Configuración local de Claude Code
+.claude/settings.local.json
 
-# Otros
-.claude
+# La documentación vive en el repo hermano ../Tesis-clasificacion-requerimientos-docs/
 docs/
-CLAUDE.md

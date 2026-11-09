@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P0 del plan de traducción con glosario (ver docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
+"""P0 del plan de traducción con glosario (ver ../Tesis-clasificacion-requerimientos-docs/planes/PLAN_TRADUCCION_GLOSARIO.md).
 
 Consolida el corpus fuente en inglés de DOSSPRE y SecReq (ePurse-selective, GPS, CPN), con el
 origen de cada fila. Las traducciones previas (opus-mt y old/SecReq_es.csv) no se usan: quedaron
