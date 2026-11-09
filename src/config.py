@@ -44,7 +44,7 @@ SUBCATEGORY_DEFINITIONS = {
 MIN_POSITIVES_PER_LABEL = 10
 
 # Training conditions: C0 uses only real requirements; C1 adds the LLM-generated ones
-# (docs/planes/PLAN_AUMENTO_DATOS.md) to the training parts only.
+# (../Tesis-clasificacion-requerimientos-docs/planes/PLAN_AUMENTO_DATOS.md) to the training parts only.
 CONDITIONS = ["c0_real", "c1_augmented"]
 AUGMENTATION_DIR = INTERIM_DIR / "augmentation"
 
@@ -89,7 +89,8 @@ DEFAULT_CONFIGS = {
         "weight_decay": 0.01, "optimizer": "AdamW", "warmup_ratio": 0.0, "pos_weight": False,
     },
 }
-# Not tuned: only 2 of the 2178 requirements exceed 128 subword tokens (the longest has 152).
+# Not tuned: only 4 of the 2483 real and synthetic requirements exceed 128 subword tokens, all
+# from SecReq (the longest has 170 with BETO).
 MAX_LENGTH = 128
 # Decision threshold while tuning; the per-label thresholds are chosen afterwards from OOF.
 DEFAULT_THRESHOLD = 0.50

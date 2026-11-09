@@ -1,4 +1,5 @@
-"""Multilabel metrics, per-label threshold selection and small serialization helpers."""
+"""Multilabel metrics, per-label threshold selection, the coherence rule and small serialization
+helpers."""
 
 from __future__ import annotations
 
@@ -8,14 +9,12 @@ from typing import Any, Iterable
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import accuracy_score, f1_score, hamming_loss, precision_recall_fscore_support
+from sklearn.metrics import f1_score, precision_recall_fscore_support
 
-from .config import LABEL_COLS
+from .config import LABEL_COLS, SUBCATEGORY_COLS
 
-METRIC_NAMES = [
-    "macro_f1", "weighted_f1", "micro_f1", "macro_precision", "macro_recall",
-    "security_recall", "subset_accuracy", "hamming_loss",
-]
+# The metrics of METODOLOGIA §4.3.1.
+METRIC_NAMES = ["macro_f1", "weighted_f1", "security_recall"]
 
 
 def multilabel_metrics(
@@ -43,11 +42,6 @@ def multilabel_metrics(
     return {
         "macro_f1": float(f1[active].mean()),
         "weighted_f1": float(f1_score(true_active, pred_active, average="weighted", zero_division=0)),
-        "micro_f1": float(f1_score(true_active, pred_active, average="micro", zero_division=0)),
-        "macro_precision": float(precision[active].mean()),
-        "macro_recall": float(recall[active].mean()),
-        "subset_accuracy": float(accuracy_score(true_active, pred_active)),
-        "hamming_loss": float(hamming_loss(true_active, pred_active)),
         "security_recall": float(recall[0]),
         "per_label": pd.DataFrame({
             "label": LABEL_COLS, "precision": precision, "recall": recall, "f1": f1,
@@ -123,6 +117,63 @@ def aggregate_rows(fold_rows: list[dict[str, Any]]) -> dict[str, dict[str, float
         values = np.asarray([row[metric] for row in fold_rows], dtype=float)
         aggregate[metric] = {"mean": float(values.mean()), "std": float(values.std(ddof=1))}
     return aggregate
+
+
+# --------------------------------------------------------------------------- coherence rule
+
+def apply_coherence(y_pred: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Security = 0 => every subcategory = 0 (METODOLOGIA §4.3.1).
+
+    Applied once, to the final test predictions, after tuning and threshold selection: the
+    subcategories are switched off rather than Security switched on (Patel et al., 2022; Yu et al.,
+    2022). Returns the corrected predictions and the (n, subcategories) mask of switched-off cells.
+    """
+    corrected = np.asarray(y_pred, dtype=int).copy()
+    changed = (corrected[:, :1] == 0) & (corrected[:, 1:] == 1)
+    corrected[:, 1:][changed] = 0
+    return corrected, changed
+
+
+def _pooled_scores(pooled: pd.DataFrame, kind: str, active: np.ndarray) -> tuple[dict, list[dict]]:
+    """(pooled metrics, per-outer-fold metrics) of the `kind` prediction columns."""
+    def score(part: pd.DataFrame) -> dict[str, Any]:
+        y_true = part[[f"{l}_true" for l in LABEL_COLS]].to_numpy(dtype=int)
+        y_pred = part[[f"{l}_{kind}" for l in LABEL_COLS]].to_numpy(dtype=float)
+        return multilabel_metrics(y_true, y_pred, 0.5, active)
+    folds = [{"outer": int(k), **{n: score(part)[n] for n in METRIC_NAMES}}
+             for k, part in pooled.groupby("outer", sort=True)]
+    return score(pooled), folds
+
+
+def rescore_pooled(report: dict[str, Any], pooled: pd.DataFrame, active: np.ndarray) -> pd.DataFrame:
+    """Apply the coherence rule to a run's pooled outer test predictions and rewrite its metrics.
+
+    The uncorrected predictions are kept as `<label>_pred_raw` (and are the source when they exist,
+    so this can be repeated); `<label>_pred` holds the corrected ones, which every report uses.
+    `report` gains the uncorrected metrics and the number of corrections, so both can be reported.
+    """
+    pooled = pooled.copy()
+    for label in LABEL_COLS:
+        if f"{label}_pred_raw" not in pooled:
+            pooled[f"{label}_pred_raw"] = pooled[f"{label}_pred"]
+    raw = pooled[[f"{l}_pred_raw" for l in LABEL_COLS]].to_numpy(dtype=int)
+    corrected, changed = apply_coherence(raw)
+    for j, label in enumerate(LABEL_COLS):
+        pooled[f"{label}_pred"] = corrected[:, j]
+
+    for kind, suffix in (("pred", ""), ("pred_raw", "_uncorrected")):
+        metrics, folds = _pooled_scores(pooled, kind, active)
+        report[f"pooled_outer_test{suffix}"] = {name: metrics[name] for name in METRIC_NAMES}
+        report[f"pooled_outer_test_per_label{suffix}"] = metrics["per_label"].to_dict("records")
+        report[f"outer_aggregate{suffix}"] = aggregate_rows(folds)
+        for fold_report, fold in zip(report["outer_folds"], folds):
+            fold_report[f"test{suffix}"] = {**{n: fold[n] for n in METRIC_NAMES},
+                                            **({"loss": fold_report["test"]["loss"]} if not suffix else {})}
+    report["coherence_corrections"] = {
+        "requirements": int(changed.any(axis=1).sum()), "predictions": int(changed.sum()),
+        "by_label": dict(zip(SUBCATEGORY_COLS, changed.sum(axis=0).astype(int).tolist())),
+    }
+    return pooled
 
 
 def json_ready(value: Any) -> Any:

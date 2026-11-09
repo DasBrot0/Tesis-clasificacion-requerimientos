@@ -31,11 +31,11 @@ from .data import (
     load_synthetic, partition_distribution, split_by_fold, with_synthetic,
 )
 from .metrics import (
-    METRIC_NAMES, aggregate_rows, multilabel_metrics, prediction_frame, save_json,
+    METRIC_NAMES, multilabel_metrics, prediction_frame, rescore_pooled, save_json,
     select_per_label_thresholds,
 )
 from .models import DEVICE
-from .reporting import export_excel, save_run_confusion, update_comparison_table
+from .reporting import export_excel, save_run_confusion, update_comparison_table, write_run_tables
 from .training import fit, predict, release_memory
 from .tuning import trial_paths, trials_frame, tune
 
@@ -193,18 +193,6 @@ def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool 
                        ignore_index=True)
     if sorted(pooled["ID"]) != sorted(data["ID"]):
         raise AssertionError("Las predicciones externas no cubren exactamente una vez todo el dataset.")
-    pooled.to_csv(out_dir / "pooled_outer_test_predictions.csv", index=False, encoding="utf-8-sig")
-    y_true = pooled[[f"{l}_true" for l in LABEL_COLS]].to_numpy(dtype=int)
-    y_pred = pooled[[f"{l}_pred" for l in LABEL_COLS]].to_numpy(dtype=int)
-    pooled_metrics = multilabel_metrics(y_true, y_pred.astype(float), 0.5, active)
-    fold_rows = [{"outer": r["outer"], **{name: r["test"][name] for name in METRIC_NAMES}} for r in outer_reports]
-    aggregate = aggregate_rows(fold_rows)
-    pd.DataFrame(fold_rows).to_csv(out_dir / "outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
-    pooled_metrics["per_label"].to_csv(out_dir / "pooled_metrics_by_label.csv", index=False, encoding="utf-8-sig")
-    confusion = save_run_confusion(condition, dataset, model_name)
-    for name in METRIC_NAMES:
-        print(f"externos {name}: {aggregate[name]['mean']:.4f} ± {aggregate[name]['std']:.4f} | "
-              f"agrupado {pooled_metrics[name]:.4f}")
 
     report: dict[str, Any] = {
         "condition": condition, "dataset": dataset, "model": model_name, "seed": SEED,
@@ -214,13 +202,22 @@ def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool 
         "labels_excluded_from_macro_average": [l for l in LABEL_COLS if l not in active_names],
         "label_positives": data[LABEL_COLS].sum().astype(int).to_dict(),
         "search_space": SEARCH_SPACES[model_name], "default_config": DEFAULT_CONFIGS[model_name],
-        "outer_folds": outer_reports, "outer_aggregate": aggregate,
-        "pooled_outer_test": {name: pooled_metrics[name] for name in METRIC_NAMES},
-        "pooled_outer_test_per_label": pooled_metrics["per_label"].to_dict("records"),
-        "pooled_outer_test_confusion": confusion.to_dict("records"),
+        "outer_folds": outer_reports,
         # Sum of the outer folds, so a resumed run still reports its full training time.
         "elapsed_minutes": round(sum(r["elapsed_minutes"] for r in outer_reports), 1),
     }
+    # The coherence rule runs here, once, on the final predictions; the metrics are computed with
+    # and without it.
+    pooled = rescore_pooled(report, pooled, active)
+    pooled.to_csv(out_dir / "pooled_outer_test_predictions.csv", index=False, encoding="utf-8-sig")
+    write_run_tables(report, out_dir)
+    report["pooled_outer_test_confusion"] = save_run_confusion(condition, dataset, model_name).to_dict("records")
+    aggregate, pooled_metrics = report["outer_aggregate"], report["pooled_outer_test"]
+    for name in METRIC_NAMES:
+        print(f"externos {name}: {aggregate[name]['mean']:.4f} ± {aggregate[name]['std']:.4f} | "
+              f"agrupado {pooled_metrics[name]:.4f}")
+    print(f"regla de coherencia: {report['coherence_corrections']['predictions']} predicciones corregidas "
+          f"en {report['coherence_corrections']['requirements']} requisitos")
     save_json(summary_path, report)
     update_comparison_table(condition)
     export_excel(condition)

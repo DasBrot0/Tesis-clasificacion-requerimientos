@@ -20,7 +20,13 @@ mayoritario de 3 corridas de claude-sonnet-5-5 sobre el texto en INGLÉS
 (inputs/interim/labels/son_prelabels.csv), estado `llm_provisional`. Las expresiones regulares
 PATTERNS (`legacy_regex_labels`) ya no generan etiquetas: solo sirven para
 `python scripts/prepare_datasets.py --report-regex-agreement`.
-La deduplicación se hace sobre el texto en inglés.
+Deduplicación en dos pasadas, cada una sobre el inglés y luego sobre el español:
+1. duplicados exactos (mayúsculas, tildes y espacios normalizados); después se asignan los ID;
+2. casi duplicados (`_dedup_key`: además sin puntuación y, en inglés, sin artículos), para que dos
+   copias de un requisito no queden en folds distintos. Se eliminan después de asignar los ID, de
+   modo que los requisitos que quedan conservan su ID (y el Anchor_ID de los sintéticos sigue
+   apuntando al mismo requisito); los eliminados dejan un hueco en la numeración.
+Las etiquetas contradictorias se tratan igual en las dos pasadas (ver `_deduplicate`).
 
 Uso:  python scripts/prepare_datasets.py [--report-regex-agreement]
 """
@@ -83,12 +89,49 @@ def _norm_text(value: object) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+_EN_ARTICLES = re.compile(r"\b(?:a|an|the)\b")
+
+
+def _dedup_key(value: object, drop_articles: bool = False) -> str:
+    """Clave de casi duplicados: _norm_text sin puntuación y, en inglés, sin artículos."""
+    s = re.sub(r"[^\w\s]", " ", _norm_text(value))
+    if drop_articles:
+        s = _EN_ARTICLES.sub(" ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def _clean_text(value: object) -> Optional[str]:
     if value is None or pd.isna(value):
         return None
     s = str(value).replace("﻿", " ")
     s = re.sub(r"\s+", " ", s).strip()
     return s or None
+
+
+_SECREQ_QUOTED = re.compile(r'^"\s*""(.*)"""$', re.S)
+_SECREQ_QUOTED_ES = re.compile(r'^(«\s*»\s*«|"\s*"")\s*')
+
+
+def _strip_stray_quotes(value: object) -> object:
+    # Quita comillas de exportación que envuelven el requisito entero. SecReq trae 37 requisitos
+    # entre comillas CSV escapadas dos veces (" ""texto"" + "), que DeepL convirtió en «»«texto»»»;
+    # en DOSSPRE el inglés acaba en un apóstrofo suelto que DeepL tradujo como «texto».
+    # Las comillas internas (p. ej. «OPEN») no se tocan.
+    if not isinstance(value, str):
+        return value
+    s = value
+    match = _SECREQ_QUOTED.match(s)
+    if match:
+        s = match.group(1)
+    elif _SECREQ_QUOTED_ES.match(s):
+        s = _SECREQ_QUOTED_ES.sub("", s)
+        s = re.sub(r'[«»"\s,]+$', "", s)
+        s += "»" * (s.count("«") - s.count("»"))
+    elif s.count("'") == 1 and re.search(r"[\w).,]'[.,]?$", s):
+        s = re.sub(r"'([.,]?)$", r"\1", s)
+    elif s.count("«") == 1 and s.count("»") == 1 and re.fullmatch(r"«[^«»]*»[.,]?", s):
+        s = re.sub(r"^«(.*)»([.,]?)$", r"\1\2", s)
+    return s.rstrip(" ,") if s != value else s
 
 
 def _find_col(df: pd.DataFrame, aliases: Iterable[str]) -> Optional[str]:
@@ -268,15 +311,21 @@ def legacy_regex_labels(text: str) -> tuple[dict[str, int], str]:
     return out, " | ".join(evidence)
 
 
-def _deduplicate(out: pd.DataFrame, name: str, merge_conflicts: bool = False, by_spanish: bool = False) -> pd.DataFrame:
-    """Drop exact duplicate texts.
+def _deduplicate(out: pd.DataFrame, name: str, merge_conflicts: bool = False, by_spanish: bool = False,
+                 near: bool = False) -> pd.DataFrame:
+    """Drop duplicate texts (exact, or near duplicates with near=True); keeps the first copy.
 
     A duplicated text with contradictory labels is an error, unless merge_conflicts is set: then
     the group keeps the union of its labels (DOSSPRE repeats requirements across projects under
     different classes, which is a legitimate multilabel case).
     """
     # clave: inglés; con by_spanish se deduplica además la traducción (inglés distinto, mismo español)
-    out["_key"] = (out[TEXT_COL] if by_spanish else out["Requirement_original"].fillna(out[TEXT_COL])).map(_norm_text)
+    text = out[TEXT_COL] if by_spanish else out["Requirement_original"].fillna(out[TEXT_COL])
+    if near:
+        # los artículos solo se quitan del inglés; en el español se deja la clave sin puntuación
+        out["_key"] = text.map(lambda value: _dedup_key(value, drop_articles=not by_spanish))
+    else:
+        out["_key"] = text.map(_norm_text)
     label_cols = [col for col in LABEL_COLS if col in out.columns]
     conflicts = out.groupby("_key")[label_cols].nunique().max(axis=1)
     bad_keys = set(conflicts[conflicts > 1].index)
@@ -288,22 +337,58 @@ def _deduplicate(out: pd.DataFrame, name: str, merge_conflicts: bool = False, by
         grouped = out.groupby("_key", sort=False)
         out[label_cols] = grouped[label_cols].transform("max")
         for col in ("Original_label", "Prelabel_evidence"):
-            out[col] = grouped[col].transform(lambda part: " | ".join(dict.fromkeys(v for v in part if v)))
+            if col not in out.columns:
+                continue
+            # se separan los valores ya fusionados en una pasada anterior para no repetirlos
+            out[col] = grouped[col].transform(
+                lambda part: " | ".join(dict.fromkeys(p for v in part if v for p in str(v).split(" | "))))
         out.loc[out["_key"].isin(bad_keys), "Subcategory_label_status"] = "class_mapped_merged_duplicates"
         print(f"{name}: {len(bad_keys)} textos duplicados con clases distintas fusionados (unión de etiquetas)")
     before = len(out)
+    dropped = out[out["_key"].duplicated(keep="first")]
+    if near and len(dropped):
+        kept = out.drop_duplicates("_key", keep="first").set_index("_key")
+        for key, row in dropped.set_index("_key").iterrows():
+            print(f"  casi duplicado: {row['ID']} se fusiona en {kept.at[key, 'ID']}"
+                  f" | {str(row['Requirement_original'])[:90]}")
     out = out.drop_duplicates("_key", keep="first").drop(columns="_key").copy()
-    print(f"{name}: {before - len(out)} duplicados exactos eliminados -> {len(out)} filas")
+    kind = "casi duplicados" if near else "duplicados exactos"
+    print(f"{name}: {before - len(out)} {kind} eliminados -> {len(out)} filas")
     return out
+
+
+def _assign_ids(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """ID correlativo tras quitar los duplicados exactos (la numeración de siempre)."""
+    out = out.reset_index(drop=True)
+    out.insert(0, "ID", [f"{dataset}_{i:04d}" for i in range(1, len(out) + 1)])
+    return out
+
+
+def _deduplicate_all(out: pd.DataFrame, dataset: str, merge_english_conflicts: bool) -> pd.DataFrame:
+    """Duplicados exactos -> ID -> casi duplicados, cada paso sobre el inglés y luego el español."""
+    out = _deduplicate(out, dataset, merge_conflicts=merge_english_conflicts)
+    out = _deduplicate(out, dataset + " (traducción idéntica)", merge_conflicts=True, by_spanish=True)
+    out = _assign_ids(out, dataset)
+    out = _deduplicate(out, dataset + " (casi duplicados)", merge_conflicts=merge_english_conflicts, near=True)
+    return _deduplicate(out, dataset + " (traducción casi idéntica)", merge_conflicts=True, by_spanish=True,
+                        near=True)
 
 
 def _finalize(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
     out = out.reset_index(drop=True)
+    # Al final, porque la traducción DeepL y las etiquetas SON se buscan por el inglés original.
+    for col in ("Requirement_original", TEXT_COL):
+        cleaned = out[col].map(_strip_stray_quotes)
+        changed = int((cleaned != out[col]).sum())
+        if changed:
+            print(f"{dataset}: {changed} textos de {col} sin comillas de exportación")
+        out[col] = cleaned
+    if out[TEXT_COL].map(_dedup_key).duplicated().any():
+        raise AssertionError(f"{dataset}: quitar las comillas dejó requisitos duplicados.")
     for col in LABEL_COLS:
         out[col] = pd.to_numeric(out[col], errors="raise").astype(int)
     if (out["Security"].eq(0) & out[SUBCATEGORY_COLS].any(axis=1)).any():
         raise AssertionError(f"{dataset}: hay subcategorías positivas con Security=0.")
-    out.insert(0, "ID", [f"{dataset}_{i:04d}" for i in range(1, len(out) + 1)])
     out.insert(1, "Dataset", dataset)
     ordered = ["ID", "Dataset", "Source_file", "Project", "Source_ID", "Requirement_original",
                TEXT_COL, "Translation_source", "Original_label", *LABEL_COLS, "Subcategory_label_status",
@@ -321,8 +406,7 @@ def _son_label_map() -> dict:
 
 def _build_llm_labelled(rows: list, dataset: str) -> pd.DataFrame:
     """PROMISE/SecReq: subcategorías = voto mayoritario de SON sobre el inglés (provisional)."""
-    out = _deduplicate(pd.DataFrame(rows), dataset)
-    out = _deduplicate(out, dataset + " (traducción idéntica)", merge_conflicts=True, by_spanish=True)
+    out = _deduplicate_all(pd.DataFrame(rows), dataset, merge_english_conflicts=False)
     son = _son_label_map()
     out["Prelabel_evidence"] = ""
     out["Subcategory_label_status"] = "structural_zero"
@@ -398,8 +482,7 @@ def build_dosspre() -> pd.DataFrame:
         out.at[idx, "Subcategory_label_status"] = "class_mapped" if evidence else "subcategory_dropped"
     out[TEXT_COL] = _dosspre_translation(out["Requirement_original"])
     out["Translation_source"] = TRANSLATION_SOURCE_DEEPL
-    out = _deduplicate(out, "dosspre", merge_conflicts=True)
-    out = _deduplicate(out, "dosspre (traducción idéntica)", merge_conflicts=True, by_spanish=True)
+    out = _deduplicate_all(out, "dosspre", merge_english_conflicts=True)
     return _finalize(out, "dosspre")
 
 

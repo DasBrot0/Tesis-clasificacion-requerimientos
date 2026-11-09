@@ -22,18 +22,42 @@ from openpyxl.utils import get_column_letter
 from . import analysis
 from .config import (DATASET_NAMES, DATASETS, LABEL_COLS, MODEL_DISPLAY, MODELS, OUTPUT_RAW, REPORTS,
                      SUBCATEGORY_COLS, run_dir)
+from .metrics import METRIC_NAMES, rescore_pooled, save_json
 from .significance import scott_knott_esd
 
 CONFUSION_CSV = "pooled_confusion_by_label.csv"
 SCOTT_KNOTT_CSV = "scott_knott_esd.csv"
+POOLED_CSV = "pooled_outer_test_predictions.csv"
 
 # Spanish column titles for the workbook; the order is the order of the columns.
-METRIC_TITLES = {
-    "macro_f1": "Macro-F1", "weighted_f1": "Weighted-F1", "micro_f1": "Micro-F1",
-    "macro_precision": "Macro-precisión", "macro_recall": "Macro-recall",
-    "security_recall": "Recall Security", "subset_accuracy": "Exactitud de subconjunto",
-    "hamming_loss": "Hamming loss",
-}
+METRIC_TITLES = {"macro_f1": "Macro-F1", "weighted_f1": "Weighted-F1", "security_recall": "Recall Security"}
+assert list(METRIC_TITLES) == METRIC_NAMES
+
+
+# --------------------------------------------------------------------------- coherence rule
+
+def write_run_tables(report: dict, out_dir: Path) -> None:
+    """Per-fold and per-label metrics of a run, with and without the coherence rule."""
+    for suffix in ("", "_uncorrected"):
+        pd.DataFrame([{"outer": fold["outer"], **{n: fold[f"test{suffix}"][n] for n in METRIC_NAMES}}
+                      for fold in report["outer_folds"]]).to_csv(
+            out_dir / f"outer_fold_metrics{suffix}.csv", index=False, encoding="utf-8-sig")
+        pd.DataFrame(report[f"pooled_outer_test_per_label{suffix}"]).to_csv(
+            out_dir / f"pooled_metrics_by_label{suffix}.csv", index=False, encoding="utf-8-sig")
+
+
+def rescore_run(condition: str, dataset: str, model_name: str) -> dict:
+    """Apply the coherence rule to a finished run from its saved predictions (no retraining)."""
+    out_dir = run_dir(condition, dataset, model_name)
+    report = json.loads((out_dir / "summary.json").read_text(encoding="utf-8"))
+    pooled = pd.read_csv(out_dir / POOLED_CSV, encoding="utf-8-sig", dtype={"ID": str})
+    active = np.array([label in report["labels_in_macro_average"] for label in LABEL_COLS])
+    pooled = rescore_pooled(report, pooled, active)
+    pooled.to_csv(out_dir / POOLED_CSV, index=False, encoding="utf-8-sig")
+    write_run_tables(report, out_dir)
+    report["pooled_outer_test_confusion"] = save_run_confusion(condition, dataset, model_name).to_dict("records")
+    save_json(out_dir / "summary.json", report)
+    return report
 
 
 # --------------------------------------------------------------------------- confusion matrices
@@ -77,7 +101,7 @@ def save_confusion_figure(confusion: pd.DataFrame, path: Path, title: str) -> No
 def save_run_confusion(condition: str, dataset: str, model_name: str) -> pd.DataFrame:
     """CSV next to the run's raw files; figure in outputs/reports/<condition>/confusion_matrices/."""
     out_dir = run_dir(condition, dataset, model_name)
-    pooled = pd.read_csv(out_dir / "pooled_outer_test_predictions.csv", encoding="utf-8-sig", dtype={"ID": str})
+    pooled = pd.read_csv(out_dir / POOLED_CSV, encoding="utf-8-sig", dtype={"ID": str})
     confusion = confusion_by_label(pooled)
     confusion.to_csv(out_dir / CONFUSION_CSV, index=False, encoding="utf-8-sig")
     figures = REPORTS / condition / "confusion_matrices"
@@ -130,13 +154,16 @@ def update_comparison_table(condition: str) -> pd.DataFrame:
     rows = []
     for dataset, model_name, report in finished_runs(condition):
         outer, pooled = report["outer_aggregate"], report["pooled_outer_test"]
+        raw = report["pooled_outer_test_uncorrected"]
         fmt = lambda name: f"{outer[name]['mean']:.4f} ± {outer[name]['std']:.4f}"
         rows.append({
             "Condición": condition, "Dataset": DATASET_NAMES[dataset], "Modelo": MODEL_DISPLAY[model_name],
             "Macro-F1 (5 folds externos)": fmt("macro_f1"), "Weighted-F1 (5 folds externos)": fmt("weighted_f1"),
             "Recall Security (5 folds externos)": fmt("security_recall"),
             "Macro-F1 agrupado": pooled["macro_f1"], "Weighted-F1 agrupado": pooled["weighted_f1"],
-            "Micro-F1 agrupado": pooled["micro_f1"], "Recall Security agrupado": pooled["security_recall"],
+            "Recall Security agrupado": pooled["security_recall"],
+            "Macro-F1 agrupado sin corrección": raw["macro_f1"],
+            "Predicciones corregidas": report["coherence_corrections"]["predictions"],
             **{f"F1 {row['label']}": row["f1"] for row in report["pooled_outer_test_per_label"]},
             "Etiquetas en el promedio": ", ".join(report["labels_in_macro_average"]),
             "Sintéticos": report["synthetic_rows"], "Minutos": report["elapsed_minutes"],
@@ -223,7 +250,8 @@ def export_excel(condition: str) -> Path | None:
     ws["A1"] = f"Métricas generales — condición {condition}"
     ws["A1"].font = Font(bold=True, size=14)
     ws["A2"] = ("Agrupado: predicciones de prueba de los 5 folds externos juntas (cada requisito real "
-                "una vez). Folds: media ± desviación estándar de los 5 folds externos. "
+                "una vez). Folds: media ± desviación estándar de los 5 folds externos. Con la regla de "
+                "coherencia aplicada (ver la hoja «Regla de coherencia»). "
                 "En negrita, el mejor modelo de cada dataset.")
     ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.merge_cells("A2:P2")
@@ -242,10 +270,9 @@ def export_excel(condition: str) -> Path | None:
         rows.append([DATASET_NAMES[dataset], MODEL_DISPLAY[model_name], *(pooled[n] for n in names),
                      *(f"{outer[n]['mean']:.3f} ± {outer[n]['std']:.3f}" for n in names)])
     last = write_table(ws, 5, headers, rows, {c: "0.000" for c in range(3, 3 + len(names))})
-    for offset, name in enumerate(names):
-        bold_best(ws, 6, last, 3 + offset, lower_is_better=name == "hamming_loss")
-    # Hamming loss (last pooled column) is better when lower: it stays out of the color scale.
-    ws.conditional_formatting.add(f"C6:{get_column_letter(2 + len(names) - 1)}{last}", ColorScaleRule(**score_scale))
+    for offset in range(len(names)):
+        bold_best(ws, 6, last, 3 + offset)
+    ws.conditional_formatting.add(f"C6:{get_column_letter(2 + len(names))}{last}", ColorScaleRule(**score_scale))
     widths(ws, {1: 14, 2: 14, **{c: 13 for c in range(3, 3 + 2 * len(names))}})
     ws.freeze_panes = "C6"
 
@@ -325,6 +352,28 @@ def export_excel(condition: str) -> Path | None:
     ws.auto_filter.ref = f"A3:{get_column_letter(len(headers))}{last}"
     widths(ws, {1: 14, 2: 14, 3: 11, **{c: 13 for c in range(4, 4 + len(names))}})
     ws.freeze_panes = "D4"
+
+    # 5b) Coherence rule: metrics with and without it, and how many predictions it changed.
+    ws = wb.create_sheet("Regla de coherencia")
+    sheet_title(ws, "Regla de coherencia (si Security = 0, las subcategorías pasan a 0)",
+                "Se aplica una sola vez, a las predicciones finales de prueba, después del ajuste de "
+                "hiperparámetros y de umbrales. Solo puede apagar subcategorías: su precisión se mantiene "
+                "o sube, su recall se mantiene o baja, y Security no cambia. Métricas agrupadas.",
+                "A2:N2", 45)
+    headers = ["Dataset", "Modelo", "Requisitos corregidos", "Predicciones corregidas",
+               *(f"Corregidas {l}" for l in SUBCATEGORY_COLS),
+               *(f"{METRIC_TITLES[n]} {when}" for n in ("macro_f1", "weighted_f1") for when in ("sin", "con"))]
+    rows = []
+    for dataset, model_name, report in runs:
+        fixes, raw, fixed = (report["coherence_corrections"], report["pooled_outer_test_uncorrected"],
+                             report["pooled_outer_test"])
+        rows.append([DATASET_NAMES[dataset], MODEL_DISPLAY[model_name], fixes["requirements"], fixes["predictions"],
+                     *(fixes["by_label"][l] for l in SUBCATEGORY_COLS),
+                     *(v[n] for n in ("macro_f1", "weighted_f1") for v in (raw, fixed))])
+    first_score = 5 + len(SUBCATEGORY_COLS)
+    write_table(ws, 4, headers, rows, {c: "0.000" for c in range(first_score, first_score + 4)})
+    widths(ws, {1: 14, 2: 14, **{c: 13 for c in range(3, first_score + 4)}})
+    ws.freeze_panes = "C5"
 
     # 6) Scott-Knott ESD of the models of each dataset (outer-fold macro-F1).
     ranking = update_scott_knott(condition)
@@ -488,19 +537,21 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
     if not by_dataset.empty:
         ws = wb.create_sheet("Transformers vs DL")
         sheet_title(ws, "Transformers (BETO, RoBERTa-BNE) frente a Deep Learning (CNN, BiLSTM)",
-                    "Macro-F1 de cada familia: media de sus dos modelos (agrupado). δ de Cliff y Mann-Whitney "
-                    "comparan los 10 macro-F1 de folds externos de cada familia (2 modelos × 5 folds); δ > 0 "
-                    "favorece a los Transformers. Rango SK: el mejor rango Scott-Knott ESD de la familia.",
+                    "Macro-F1 de cada familia: media de sus dos modelos (agrupado). En cada fold externo, cada familia "
+                    "vale la media de sus dos modelos; como comparten los folds, se comparan pareados. Folds "
+                    "ganados y δ de Cliff (δ > 0 favorece a los Transformers) por dataset; Wilcoxon de rangos "
+                    "con signo sobre los 15 pares (dataset, fold) en la última fila. Rango SK: el mejor rango "
+                    "Scott-Knott ESD de la familia.",
                     "A2:L2", 45)
         headers = ["Dataset", "Macro-F1 Transformers", "Macro-F1 Deep Learning", "Δ macro-F1",
-                   "Mejor Transformer", "Mejor DL", "δ de Cliff (folds)", "Magnitud", "p Mann-Whitney",
+                   "Mejor Transformer", "Mejor DL", "Folds ganados", "δ de Cliff (folds)", "Magnitud", "p Wilcoxon",
                    "Rango SK Transformers", "Rango SK DL"]
         keys = ["dataset", "macro_f1 Transformers (media agrupada)", "macro_f1 Deep Learning (media agrupada)",
-                "delta_macro_f1", "mejor Transformers", "mejor Deep Learning", "cliffs_delta_folds", "magnitude",
-                "mannwhitney_p", "mejor rango SK Transformers", "mejor rango SK Deep Learning"]
+                "delta_macro_f1", "mejor Transformers", "mejor Deep Learning", "folds_won", "cliffs_delta_folds",
+                "magnitude", "wilcoxon_p", "mejor rango SK Transformers", "mejor rango SK Deep Learning"]
         rows = [[r.get(k) for k in keys] for r in by_dataset.to_dict("records")]
-        last = write_table(ws, 4, headers, rows, {2: "0.000", 3: "0.000", 4: "+0.000;-0.000", 7: "+0.000;-0.000",
-                                                   9: "0.0000", 10: "0", 11: "0"})
+        last = write_table(ws, 4, headers, rows, {2: "0.000", 3: "0.000", 4: "+0.000;-0.000", 8: "+0.000;-0.000",
+                                                   10: "0.0000", 11: "0", 12: "0"})
         for col in range(1, len(headers) + 1):
             ws.cell(last, col).font = Font(bold=True)
         top = last + 3
@@ -510,7 +561,7 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
                 for r in by_label.to_dict("records")]
         last = write_table(ws, top, headers, rows, {3: "0", 4: "0.000", 5: "0.000", 6: "+0.000;-0.000"})
         ws.conditional_formatting.add(f"D{top + 1}:E{last}", ColorScaleRule(**score_scale))
-        widths(ws, {1: 20, 2: 16, **{c: 14 for c in range(3, 12)}, 8: 28})
+        widths(ws, {1: 20, 2: 16, **{c: 14 for c in range(3, 13)}, 9: 28})
 
     # 12) Diversity of the synthetics (C1 only).
     if condition == "c1_augmented":

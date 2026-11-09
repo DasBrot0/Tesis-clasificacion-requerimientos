@@ -5,7 +5,11 @@
     python scripts/build_report.py --condition c1_augmented
 
 A partir de lo que cada corrida ya guardó (summary.json y pooled_outer_test_predictions.csv):
-- outputs/output_raw/<condición>/<dataset>/<modelo>/pooled_confusion_by_label.csv
+- la regla de coherencia (Security = 0 => subcategorías = 0) sobre las predicciones de prueba: las
+  predicciones sin corregir quedan en las columnas <etiqueta>_pred_raw y summary.json guarda las
+  métricas con y sin corrección y el número de correcciones
+- outputs/output_raw/<condición>/<dataset>/<modelo>/pooled_confusion_by_label.csv,
+  outer_fold_metrics[_uncorrected].csv y pooled_metrics_by_label[_uncorrected].csv
 - outputs/output_raw/<condición>/model_comparison.csv y scott_knott_esd.csv
 - outputs/output_raw/<condición>/model_tests_cochran_q.csv y model_tests_mcnemar.csv
 - outputs/output_raw/<condición>/subcategory_confusion.csv y misclassified.csv
@@ -24,7 +28,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.config import CONDITIONS  # noqa: E402
-from src.reporting import export_excel, finished_runs, save_run_confusion, update_comparison_table  # noqa: E402
+from src.reporting import export_excel, finished_runs, rescore_run, update_comparison_table  # noqa: E402
 
 
 def main() -> None:
@@ -37,7 +41,9 @@ def main() -> None:
             print(f"{condition}: sin corridas terminadas")
             continue
         for dataset, model_name, _ in runs:
-            save_run_confusion(condition, dataset, model_name)
+            fixes = rescore_run(condition, dataset, model_name)["coherence_corrections"]
+            print(f"  {dataset}/{model_name}: {fixes['predictions']} predicciones corregidas "
+                  f"en {fixes['requirements']} requisitos")
         update_comparison_table(condition)
         print(f"{condition}: {len(runs)} corridas -> {export_excel(condition)}")
 

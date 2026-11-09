@@ -131,12 +131,7 @@
       "test": {
         "macro_f1": 0.6122222222222222,
         "weighted_f1": 0.6544600938967136,
-        "micro_f1": 0.6715328467153284,
-        "macro_precision": 0.7296969696969697,
-        "macro_recall": 0.5476190476190476,
         "security_recall": 0.8333333333333334,
-        "subset_accuracy": 0.5795454545454546,
-        "hamming_loss": 0.10227272727272728,
         "loss": 1.1864881678061052
       },
       "test_per_label": [
@@ -181,7 +176,12 @@
           "in_macro_average": true
         }
       ],
-      "elapsed_minutes": 1.8
+      "elapsed_minutes": 1.8,
+      "test_uncorrected": {
+        "macro_f1": 0.6122222222222222,
+        "weighted_f1": 0.6544600938967136,
+        "security_recall": 0.8333333333333334
+      }
     },
     {
       "outer": 1,
@@ -220,12 +220,7 @@
       "test": {
         "macro_f1": 0.5979840044125758,
         "weighted_f1": 0.6767084942084942,
-        "micro_f1": 0.6735751295336787,
-        "macro_precision": 0.4764389233954452,
-        "macro_recall": 0.8204761904761906,
         "security_recall": 0.9714285714285714,
-        "subset_accuracy": 0.4659090909090909,
-        "hamming_loss": 0.1431818181818182,
         "loss": 1.4339405623349277
       },
       "test_per_label": [
@@ -270,7 +265,12 @@
           "in_macro_average": true
         }
       ],
-      "elapsed_minutes": 1.8
+      "elapsed_minutes": 1.8,
+      "test_uncorrected": {
+        "macro_f1": 0.5979840044125758,
+        "weighted_f1": 0.6767084942084942,
+        "security_recall": 0.9714285714285714
+      }
     },
     {
       "outer": 2,
@@ -307,14 +307,9 @@
         "Resistance": 0.4750000000000001
       },
       "test": {
-        "macro_f1": 0.5338095238095237,
-        "weighted_f1": 0.653061224489796,
-        "micro_f1": 0.6764705882352942,
-        "macro_precision": 0.6896825396825397,
-        "macro_recall": 0.4833333333333334,
+        "macro_f1": 0.5237566137566138,
+        "weighted_f1": 0.6430083144368859,
         "security_recall": 0.8571428571428571,
-        "subset_accuracy": 0.625,
-        "hamming_loss": 0.1,
         "loss": 2.551006222863428
       },
       "test_per_label": [
@@ -359,7 +354,12 @@
           "in_macro_average": true
         }
       ],
-      "elapsed_minutes": 1.7
+      "elapsed_minutes": 1.7,
+      "test_uncorrected": {
+        "macro_f1": 0.5338095238095237,
+        "weighted_f1": 0.653061224489796,
+        "security_recall": 0.8571428571428571
+      }
     },
     {
       "outer": 3,
@@ -396,14 +396,9 @@
         "Resistance": 0.4
       },
       "test": {
-        "macro_f1": 0.6250853160298004,
-        "weighted_f1": 0.7353994475965573,
-        "micro_f1": 0.7285714285714285,
-        "macro_precision": 0.6430229419703104,
-        "macro_recall": 0.65,
+        "macro_f1": 0.6050853160298005,
+        "weighted_f1": 0.7267037954226442,
         "security_recall": 0.8571428571428571,
-        "subset_accuracy": 0.6931818181818182,
-        "hamming_loss": 0.08636363636363636,
         "loss": 2.7085522494532843
       },
       "test_per_label": [
@@ -448,7 +443,12 @@
           "in_macro_average": true
         }
       ],
-      "elapsed_minutes": 1.7
+      "elapsed_minutes": 1.7,
+      "test_uncorrected": {
+        "macro_f1": 0.6250853160298004,
+        "weighted_f1": 0.7353994475965573,
+        "security_recall": 0.8571428571428571
+      }
     },
     {
       "outer": 4,
@@ -487,12 +487,7 @@
       "test": {
         "macro_f1": 0.591727395411606,
         "weighted_f1": 0.7760960092539041,
-        "micro_f1": 0.7969924812030075,
-        "macro_precision": 0.6919047619047618,
-        "macro_recall": 0.5341269841269841,
         "security_recall": 0.9444444444444444,
-        "subset_accuracy": 0.7159090909090909,
-        "hamming_loss": 0.06136363636363636,
         "loss": 0.462028802965175
       },
       "test_per_label": [
@@ -537,54 +532,82 @@
           "in_macro_average": true
         }
       ],
-      "elapsed_minutes": 1.6
+      "elapsed_minutes": 1.6,
+      "test_uncorrected": {
+        "macro_f1": 0.591727395411606,
+        "weighted_f1": 0.7760960092539041,
+        "security_recall": 0.9444444444444444
+      }
     }
   ],
   "outer_aggregate": {
     "macro_f1": {
-      "mean": 0.5921656923771457,
-      "std": 0.03509078682476076
+      "mean": 0.5861551103665636,
+      "std": 0.03571551651980122
     },
     "weighted_f1": {
-      "mean": 0.6991450538890931,
-      "std": 0.05445111290547262
-    },
-    "micro_f1": {
-      "mean": 0.7094284948517474,
-      "std": 0.05440972150721042
-    },
-    "macro_precision": {
-      "mean": 0.6461492273300052,
-      "std": 0.09972500238773216
-    },
-    "macro_recall": {
-      "mean": 0.607111111111111,
-      "std": 0.13374513127995907
+      "mean": 0.6953953414437284,
+      "std": 0.05536720695841137
     },
     "security_recall": {
       "mean": 0.8926984126984128,
       "std": 0.06109152438122632
-    },
-    "subset_accuracy": {
-      "mean": 0.615909090909091,
-      "std": 0.09984492107494909
-    },
-    "hamming_loss": {
-      "mean": 0.09863636363636363,
-      "std": 0.029745824069720726
     }
   },
   "pooled_outer_test": {
-    "macro_f1": 0.6048207367320583,
-    "weighted_f1": 0.6988328779639276,
-    "micro_f1": 0.706359945872801,
-    "macro_precision": 0.6043336459985403,
-    "macro_recall": 0.6119719336613814,
-    "security_recall": 0.8926553672316384,
-    "subset_accuracy": 0.615909090909091,
-    "hamming_loss": 0.09863636363636363
+    "macro_f1": 0.5978654873722242,
+    "weighted_f1": 0.6947105583861758,
+    "security_recall": 0.8926553672316384
   },
   "pooled_outer_test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.6960352422907489,
+      "recall": 0.8926553672316384,
+      "f1": 0.7821782178217822,
+      "support": 177,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.5,
+      "recall": 0.45161290322580644,
+      "f1": 0.4745762711864407,
+      "support": 31,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.6538461538461539,
+      "recall": 0.5666666666666667,
+      "f1": 0.6071428571428571,
+      "support": 60,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.6956521739130435,
+      "recall": 0.6857142857142857,
+      "f1": 0.6906474820143885,
+      "support": 70,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.45454545454545453,
+      "recall": 0.4166666666666667,
+      "f1": 0.43478260869565216,
+      "support": 12,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 8.6,
+  "pooled_outer_test_uncorrected": {
+    "macro_f1": 0.6048207367320583,
+    "weighted_f1": 0.6988328779639276,
+    "security_recall": 0.8926553672316384
+  },
+  "pooled_outer_test_per_label_uncorrected": [
     {
       "label": "Security",
       "precision": 0.6960352422907489,
@@ -626,5 +649,65 @@
       "in_macro_average": true
     }
   ],
-  "elapsed_minutes": 8.6
+  "outer_aggregate_uncorrected": {
+    "macro_f1": {
+      "mean": 0.5921656923771457,
+      "std": 0.03509078682476076
+    },
+    "weighted_f1": {
+      "mean": 0.6991450538890931,
+      "std": 0.05445111290547262
+    },
+    "security_recall": {
+      "mean": 0.8926984126984128,
+      "std": 0.06109152438122632
+    }
+  },
+  "coherence_corrections": {
+    "requirements": 2,
+    "predictions": 2,
+    "by_label": {
+      "Confidentiality": 1,
+      "Integrity": 0,
+      "Authenticity": 1,
+      "Resistance": 0
+    }
+  },
+  "pooled_outer_test_confusion": [
+    {
+      "label": "Security",
+      "TP": 158,
+      "FP": 69,
+      "FN": 19,
+      "TN": 194
+    },
+    {
+      "label": "Confidentiality",
+      "TP": 14,
+      "FP": 14,
+      "FN": 17,
+      "TN": 395
+    },
+    {
+      "label": "Integrity",
+      "TP": 34,
+      "FP": 18,
+      "FN": 26,
+      "TN": 362
+    },
+    {
+      "label": "Authenticity",
+      "TP": 48,
+      "FP": 21,
+      "FN": 22,
+      "TN": 349
+    },
+    {
+      "label": "Resistance",
+      "TP": 5,
+      "FP": 6,
+      "FN": 7,
+      "TN": 422
+    }
+  ]
 }

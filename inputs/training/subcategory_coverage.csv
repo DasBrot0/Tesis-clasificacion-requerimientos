@@ -1,22 +1,16 @@
 ﻿dataset,label,positives,rows,prevalence,status,definition
-PROMISE_exp,Security,79,460,0.17173913043478262,OK,security requirement (general)
-PROMISE_exp,Confidentiality,37,460,0.08043478260869565,OK,protecting information from unauthorized disclosure
-PROMISE_exp,Integrity,14,460,0.030434782608695653,OK,preventing unauthorized modification of data
-PROMISE_exp,Non_repudiation,0,460,0.0,AUSENTE,ensuring actions and transactions cannot later be denied
-PROMISE_exp,Accountability,4,460,0.008695652173913044,INSUFICIENTE,enabling actions to be traced to responsible entities
-PROMISE_exp,Authenticity,18,460,0.0391304347826087,OK,"verifying the identities of users, systems, and services"
-PROMISE_exp,Resistance,10,460,0.021739130434782608,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
-SecReq,Security,177,440,0.4022727272727273,OK,security requirement (general)
-SecReq,Confidentiality,31,440,0.07045454545454545,OK,protecting information from unauthorized disclosure
-SecReq,Integrity,60,440,0.13636363636363635,OK,preventing unauthorized modification of data
-SecReq,Non_repudiation,2,440,0.004545454545454545,INSUFICIENTE,ensuring actions and transactions cannot later be denied
-SecReq,Accountability,4,440,0.00909090909090909,INSUFICIENTE,enabling actions to be traced to responsible entities
-SecReq,Authenticity,70,440,0.1590909090909091,OK,"verifying the identities of users, systems, and services"
-SecReq,Resistance,12,440,0.02727272727272727,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
-DOSSPRE,Security,406,1262,0.32171156893819336,OK,security requirement (general)
-DOSSPRE,Confidentiality,123,1262,0.09746434231378764,OK,protecting information from unauthorized disclosure
-DOSSPRE,Integrity,33,1262,0.026148969889064975,OK,preventing unauthorized modification of data
-DOSSPRE,Non_repudiation,0,1262,0.0,AUSENTE,ensuring actions and transactions cannot later be denied
-DOSSPRE,Accountability,38,1262,0.030110935023771792,OK,enabling actions to be traced to responsible entities
-DOSSPRE,Authenticity,92,1262,0.07290015847860538,OK,"verifying the identities of users, systems, and services"
-DOSSPRE,Resistance,120,1262,0.09508716323296355,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
+PROMISE_exp,Security,78,459,0.16993464052287582,OK,security requirement (general)
+PROMISE_exp,Confidentiality,37,459,0.08061002178649238,OK,protecting information from unauthorized disclosure
+PROMISE_exp,Integrity,14,459,0.030501089324618737,OK,preventing unauthorized modification of data
+PROMISE_exp,Authenticity,18,459,0.0392156862745098,OK,"verifying the identities of users, systems, and services"
+PROMISE_exp,Resistance,10,459,0.02178649237472767,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
+SecReq,Security,177,436,0.4059633027522936,OK,security requirement (general)
+SecReq,Confidentiality,31,436,0.07110091743119266,OK,protecting information from unauthorized disclosure
+SecReq,Integrity,60,436,0.13761467889908258,OK,preventing unauthorized modification of data
+SecReq,Authenticity,70,436,0.16055045871559634,OK,"verifying the identities of users, systems, and services"
+SecReq,Resistance,12,436,0.027522935779816515,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
+DOSSPRE,Security,406,1257,0.3229912490055688,OK,security requirement (general)
+DOSSPRE,Confidentiality,123,1257,0.09785202863961814,OK,protecting information from unauthorized disclosure
+DOSSPRE,Integrity,33,1257,0.026252983293556086,OK,preventing unauthorized modification of data
+DOSSPRE,Authenticity,92,1257,0.07319013524264122,OK,"verifying the identities of users, systems, and services"
+DOSSPRE,Resistance,120,1257,0.0954653937947494,OK,"withstanding, responding to, and recovering from attacks or malicious actions"

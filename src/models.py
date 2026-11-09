@@ -64,18 +64,24 @@ def _labels(frame: pd.DataFrame) -> torch.Tensor:
 
 
 class WordEncoder:
-    """Vocabulary and padding length come exclusively from the training partition."""
+    """Vocabulary and padding length come exclusively from the training partition.
+
+    The padding length is the longest training requirement, so no requirement is truncated; a
+    longer validation or test requirement widens the padding of its own partition instead.
+    """
 
     def __init__(self, train_frame: pd.DataFrame):
         self.vocab = build_vocab(train_frame[TEXT_COL])
-        lengths = np.array([max(1, len(tokenize(text))) for text in train_frame[TEXT_COL]])
-        self.max_len = max(5, min(256, int(np.ceil(np.percentile(lengths, 95)))))
+        lengths = [len(tokenize(text)) for text in train_frame[TEXT_COL]]
+        self.max_len = max(5, max(lengths))  # at least the widest CNN kernel
 
     def encode(self, frame: pd.DataFrame) -> EncodedData:
-        input_ids = np.full((len(frame), self.max_len), PAD_IDX, dtype=np.int64)
+        token_ids = [[self.vocab.get(token, UNK_IDX) for token in tokenize(text)] or [UNK_IDX]
+                     for text in frame[TEXT_COL]]
+        width = max(self.max_len, max(map(len, token_ids)))
+        input_ids = np.full((len(frame), width), PAD_IDX, dtype=np.int64)
         lengths = np.empty(len(frame), dtype=np.int64)
-        for row, text in enumerate(frame[TEXT_COL]):
-            ids = [self.vocab.get(token, UNK_IDX) for token in tokenize(text)][:self.max_len] or [UNK_IDX]
+        for row, ids in enumerate(token_ids):
             input_ids[row, :len(ids)] = ids
             lengths[row] = len(ids)
         inputs = {"input_ids": torch.tensor(input_ids, device=DEVICE), "lengths": torch.tensor(lengths, device=DEVICE)}

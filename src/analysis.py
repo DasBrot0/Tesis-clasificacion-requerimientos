@@ -17,7 +17,7 @@ from itertools import combinations
 
 import numpy as np
 import pandas as pd
-from scipy.stats import mannwhitneyu
+from scipy.stats import wilcoxon
 
 from .config import (AUGMENTATION_DIR, DATASET_NAMES, DATASETS, LABEL_COLS, MODEL_DISPLAY, MODEL_FAMILY,
                      MODELS, OUTPUT_RAW, SUBCATEGORY_COLS, TEXT_COL, run_dir)
@@ -235,18 +235,21 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
                       scott_knott: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Transformers (BETO, RoBERTa-BNE) against Deep Learning (CNN, BiLSTM).
 
-    By dataset: the 10 outer-fold macro-F1 of each family (2 models x 5 folds), compared with
-    Cliff's delta and Mann-Whitney U, plus each family's best Scott-Knott rank. By label: the mean
-    pooled F1 of each family. The last row of each table pools the three datasets."""
+    A family's score in an outer fold is the mean macro-F1 of its two models there. Both families
+    share the outer folds, so they are compared fold by fold: by dataset, the folds the Transformers
+    win and Cliff's delta (magnitude only; 5 pairs cannot reach p < 0.05), plus each family's best
+    Scott-Knott rank. The last row runs the Wilcoxon signed-rank test on the 15 (dataset, fold)
+    pairs. By label: the mean pooled F1 of each family; its last rows average the datasets."""
     transformers, deep = families = ["Transformers", "Deep Learning"]
-    by_dataset, by_label = [], []
+    by_dataset, by_label, paired = [], [], []
     for dataset in DATASETS:
         reports = {m: r for d, m, r in runs if d == dataset}
         members = {f: [m for m in reports if MODEL_FAMILY[m] == f] for f in families}
         if not all(members.values()):
             continue
-        folds = {f: np.array([fold["test"]["macro_f1"] for m in members[f] for fold in reports[m]["outer_folds"]])
-                 for f in families}
+        folds = {f: np.mean([[fold["test"]["macro_f1"] for fold in reports[m]["outer_folds"]] for m in members[f]],
+                            axis=0) for f in families}
+        paired.append(folds[transformers] - folds[deep])
         pooled = {f: [reports[m]["pooled_outer_test"]["macro_f1"] for m in members[f]] for f in families}
         delta = cliffs_delta(folds[transformers], folds[deep])
         ranks = scott_knott[scott_knott["dataset"] == DATASET_NAMES[dataset]].set_index("model")["rank"]
@@ -257,8 +260,8 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
             **{f"mejor {f}": MODEL_DISPLAY[max(members[f], key=lambda m: reports[m]["pooled_outer_test"]["macro_f1"])]
                for f in families},
             "delta_macro_f1": float(np.mean(pooled[transformers]) - np.mean(pooled[deep])),
+            "folds_won": f"{int((paired[-1] > 0).sum())} de {len(paired[-1])}",
             "cliffs_delta_folds": delta, "magnitude": delta_magnitude(delta),
-            "mannwhitney_p": float(mannwhitneyu(folds[transformers], folds[deep]).pvalue),
             **{f"mejor rango SK {f}": best_rank[f] for f in families},
         })
         per_label = {m: {r["label"]: r for r in reports[m]["pooled_outer_test_per_label"]} for m in reports}
@@ -273,11 +276,14 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
     by_dataset, by_label = pd.DataFrame(by_dataset), pd.DataFrame(by_label)
     if not by_dataset.empty:
         wins = int((by_dataset["delta_macro_f1"] > 0).sum())
+        diffs = np.concatenate(paired)
         by_dataset = pd.concat([by_dataset, pd.DataFrame([{
             "dataset": f"Los {len(by_dataset)} datasets",
             **{f"macro_f1 {f} (media agrupada)": by_dataset[f"macro_f1 {f} (media agrupada)"].mean() for f in families},
             "delta_macro_f1": by_dataset["delta_macro_f1"].mean(),
+            "folds_won": f"{int((diffs > 0).sum())} de {len(diffs)}",
             "magnitude": f"Transformers superiores en {wins} de {len(by_dataset)}",
+            "wilcoxon_p": float(wilcoxon(diffs).pvalue),
         }])], ignore_index=True)
         mean_by_label = by_label.groupby("label", sort=False)[[f"F1 {f}" for f in families] + ["delta_f1"]].mean()
         by_label = pd.concat([by_label, mean_by_label.reset_index().assign(

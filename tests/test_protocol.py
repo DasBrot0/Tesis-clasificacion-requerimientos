@@ -17,7 +17,7 @@ from src.data import (  # noqa: E402
     active_label_mask, get_inner_folds, get_outer_folds, load_dataset, load_synthetic, split_by_fold,
     synthetic_path, with_synthetic,
 )
-from src.metrics import multilabel_metrics, select_per_label_thresholds  # noqa: E402
+from src.metrics import apply_coherence, multilabel_metrics, select_per_label_thresholds  # noqa: E402
 
 
 class ProtocolTests(unittest.TestCase):
@@ -91,6 +91,14 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(metrics["per_label"]), len(LABEL_COLS))
         thresholds, _ = select_per_label_thresholds(y, y.astype(float), active)
         self.assertTrue((thresholds[~active] == 0.5).all())
+
+    def test_coherence_rule_only_switches_subcategories_off(self):
+        y_pred = np.array([[0, 1, 0, 1, 0], [1, 1, 0, 0, 1], [0, 0, 0, 0, 0]])
+        corrected, changed = apply_coherence(y_pred)
+        np.testing.assert_array_equal(corrected, [[0, 0, 0, 0, 0], [1, 1, 0, 0, 1], [0, 0, 0, 0, 0]])
+        self.assertEqual(int(changed.sum()), 2)
+        np.testing.assert_array_equal(corrected[:, 0], y_pred[:, 0])
+        self.assertTrue((corrected <= y_pred).all())
 
     def test_default_configs_lie_inside_the_search_spaces(self):
         self.assertEqual(set(DEFAULT_CONFIGS), set(MODELS))

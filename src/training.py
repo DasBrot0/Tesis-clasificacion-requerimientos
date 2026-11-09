@@ -39,11 +39,11 @@ def release_memory() -> None:
 
 
 def criterion_for(frame: pd.DataFrame, moderate_pos_weight: bool) -> nn.Module:
-    """Plain BCE, or BCE weighted by min(sqrt(N_neg/N_pos), 10) computed on the training frame."""
+    """Plain BCE, or BCE whose positive term is weighted by sqrt(N_neg/N_pos) computed on the training frame."""
     if not moderate_pos_weight:
         return nn.BCEWithLogitsLoss()
     positives = frame[LABEL_COLS].sum().to_numpy(dtype=float)
-    weights = np.minimum(np.sqrt((len(frame) - positives) / np.maximum(positives, 1.0)), 10.0)
+    weights = np.sqrt((len(frame) - positives) / np.maximum(positives, 1.0))
     return nn.BCEWithLogitsLoss(pos_weight=torch.tensor(weights, dtype=torch.float32, device=DEVICE))
 
 
