@@ -3,7 +3,7 @@
     dataset -> N_OUTER multilabel-stratified outer folds (each requirement is tested once)
             -> inside every outer training part, N_INNER inner folds for Optuna
 
-All assignments are written to outputs/output_raw/splits/ and reused by the four models and by both
+All assignments are written to outputs/output_raw/splits/ and reused by the five models and by both
 conditions, so every model of a dataset sees exactly the same partitions.
 
 Condition c1_augmented adds LLM-generated requirements (inputs/interim/augmentation/

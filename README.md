@@ -1,6 +1,6 @@
 # Clasificación multietiqueta de requisitos de seguridad
 
-Cuatro modelos (CNN, BiLSTM, BETO, RoBERTa-BNE) entrenados **por separado** sobre tres datasets
+Cinco modelos (CNN, BiLSTM, BETO, RoBERTa-BNE, DistilBETO) entrenados **por separado** sobre tres datasets
 (PROMISE_exp, SecReq, DOSSPRE), en dos condiciones: **C0** (`c0_real`, solo requisitos reales) y
 **C1** (`c1_augmented`, reales + sintéticos generados con LLM, solo en entrenamiento). Cada modelo
 predice `Security` y cuatro subcategorías de seguridad de ISO/IEC 25010 (`Confidentiality`,
@@ -89,7 +89,7 @@ guarda el modelo de cada fold externo en `outputs/checkpoints/` (no se guarda po
 - `Spanish_promise_exp_nfr_test_recovered.csv` se reconstruyó desde el antiguo dataset unido: el
   archivo original ya no estaba en el proyecto.
 - SecReq y DOSSPRE están en inglés; se tradujeron con DeepL + glosario (corrida provisional) porque
-  BETO y RoBERTa-BNE son modelos en español. Mapeo de clases de DOSSPRE: Confidentiality y
+  BETO, RoBERTa-BNE y DistilBETO son modelos en español. Mapeo de clases de DOSSPRE: Confidentiality y
   Authorisation -> Confidentiality; Integrity -> Integrity; Authentication e Identification ->
   Authenticity; Immunity, IntrusionD y Survivability -> Resistance. Auditing queda con
   `Security=1` y sin subcategoría (Accountability se descartó). Availability y Maintainability son
@@ -124,16 +124,17 @@ su `Anchor_ID`: el requisito real del que se generó. Detalle en
 [`planes/PLAN_AUMENTO_DATOS.md`](https://github.com/DasBrot0/Tesis-clasificacion-requerimientos-docs/blob/main/planes/PLAN_AUMENTO_DATOS.md)
 del repo de docs.
 
-## Protocolo (por dataset, idéntico para los cuatro modelos y las dos condiciones)
+## Protocolo (por dataset, idéntico para los cinco modelos y las dos condiciones)
 
 1. **Folds externos**: 5 folds con estratificación multietiqueta iterativa (semilla 42). Cada
    requisito real se evalúa exactamente una vez.
 2. **Folds internos**: dentro del entrenamiento de cada fold externo, 3 folds para Optuna.
 3. **Optuna** (TPE + poda por mediana): el objetivo es el macro-F1 medio de los folds internos con
    umbral 0.50. El trial 0 siempre es la configuración por defecto. Trials por fold externo
-   (`N_TRIALS`): 25 para CNN y BiLSTM, 12 para BETO y RoBERTa-BNE. Se alcanzan en dos etapas
-   (15/15/6/6 y luego `scripts/extend_trials.py`); la etapa anterior queda en `stage_<n>trials/`.
-   Estado de C1: BETO y RoBERTa-BNE con 12 trials; CNN y BiLSTM todavía con 15.
+   (`N_TRIALS`): 25 para CNN y BiLSTM, 12 para BETO, RoBERTa-BNE y DistilBETO. Se alcanzan en dos
+   etapas (15/15/6/6/6 y luego `scripts/extend_trials.py`); la etapa anterior queda en `stage_<n>trials/`.
+   Estado de C1: BETO y RoBERTa-BNE con 12 trials; CNN y BiLSTM todavía con 15; DistilBETO
+   sin entrenar.
 4. **Umbrales por etiqueta** (0.40–0.60): con las predicciones out-of-fold internas del ganador.
 5. **Modelo del fold externo**: se entrena con todo el entrenamiento externo durante la media de
    las mejores épocas internas y predice una vez el fold externo de prueba.
@@ -146,13 +147,14 @@ del repo de docs.
 ### Hiperparámetros
 
 Los valores por defecto son los `INITIAL_CONFIG` de los notebooks originales y los rangos de
-búsqueda son sus `SEARCH_SPACE` (ambos en `src/config.py`).
+búsqueda son sus `SEARCH_SPACE` (ambos en `src/config.py`). DistilBETO no tiene notebook original:
+toma el valor por defecto y el espacio de búsqueda de BETO y RoBERTa-BNE.
 
 | Modelo | Por defecto | Búsqueda |
 |---|---|---|
 | CNN | emb 64, filtros 100, kernel 3, batch 32, 50 épocas, dropout 0.2, lr 1e-3 | emb {64,100,128}, filtros {100,128}, kernel {3,4,5}, batch {16,32}, épocas {50,60}, dropout {0.2–0.5}, lr 1e-4–1e-2 |
 | BiLSTM | emb 100, hidden 64, 1 capa, batch 32, 30 épocas, dropout 0.2, lr 1e-3 | emb {64,100,128}, hidden {32,64,128}, capas {1,2}, batch {16,32,50}, épocas {20,30,50}, dropout {0.2,0.3,0.5}, lr 5e-4–2e-3 |
-| BETO / RoBERTa-BNE | lr 2e-5, batch 16, 5 épocas, dropout 0.1, weight decay 0.01, AdamW | lr 1e-5–5e-5, batch {8,16}, épocas {5,10,15,20}, dropout 0.1–0.5, weight decay 1e-8–0.3, optimizador {AdamW, Adam} |
+| BETO / RoBERTa-BNE / DistilBETO | lr 2e-5, batch 16, 5 épocas, dropout 0.1, weight decay 0.01, AdamW | lr 1e-5–5e-5, batch {8,16}, épocas {5,10,15,20}, dropout 0.1–0.5, weight decay 1e-8–0.3, optimizador {AdamW, Adam} |
 
 Diferencias respecto de los notebooks originales:
 
@@ -165,10 +167,13 @@ Diferencias respecto de los notebooks originales:
   validación o prueba es más largo, el relleno de esa partición se amplía), así que no se trunca
   ninguno; antes se cortaba en el percentil 95 del entrenamiento, lo que truncaba ~5 % de los
   requisitos.
-- En BETO y RoBERTa-BNE un fold se detiene tras 3 épocas sin mejora de macro-F1 ni de loss de
+- En BETO, RoBERTa-BNE y DistilBETO un fold se detiene tras 3 épocas sin mejora de macro-F1 ni de loss de
   validación; `epochs` actúa como máximo.
 - RoBERTa-BNE se carga desde el mirror `Buzzeitor/roberta-base-bne`, porque el repositorio oficial
   ya no publica los pesos.
+- DistilBETO (`dccuchile/distilbert-base-spanish-uncased`, BETO destilado a 6 capas) pasa a
+  minúsculas pero conserva las tildes; el dropout de su cabeza se fija con `seq_classif_dropout`,
+  porque DistilBERT ignora `classifier_dropout`.
 
 ## Archivos crudos de cada corrida (`outputs/output_raw/<condición>/<dataset>/<modelo>/`)
 
@@ -233,7 +238,7 @@ prueba solo separa diferencias grandes.
 ### Pruebas y análisis entre modelos
 
 - **Q de Cochran + McNemar:** sobre las predicciones externas agrupadas, por dataset y etiqueta.
-  Si la Q de Cochran de los 4 modelos es significativa, se comparan los 6 pares con McNemar
+  Si la Q de Cochran de los 5 modelos es significativa, se comparan los 10 pares con McNemar
   exacto y p ajustado por Holm (Limaylla-Lunarejo et al., 2026; Shafikuzzaman et al., 2025).
 - **Confusión entre subcategorías:** la celda (i, j) cuenta los requisitos con la subcategoría
   i que el modelo omitió y a los que asignó j, que no tienen; «Ninguna» recoge omisiones sin
@@ -241,7 +246,7 @@ prueba solo separa diferencias grandes.
 - **Mejor modelo:** los modelos del grupo superior de Scott-Knott ESD no difieren en macro-F1;
   entre ellos se elige el de mayor recall de Security agrupado (Petrillo et al., 2025: ante F1
   iguales, el recall distingue al modelo que omite menos requisitos de seguridad).
-- **Transformers vs. DL:** media de los dos modelos de cada familia; δ de Cliff y Mann-Whitney
+- **Transformers vs. DL:** media de los modelos de cada familia (3 Transformers, 2 DL); δ de Cliff y Mann-Whitney
   sobre los 10 macro-F1 de folds externos de cada familia.
 - **Diversidad de sintéticos (G9):** `python scripts/augmentation/g9_diversity.py` calcula con
   LaBSE la similitud media sintético-sintético, real-real y sintético-real (necesita

@@ -1,7 +1,7 @@
-"""The four architectures and the text encoders that feed them.
+"""The five architectures and the text encoders that feed them.
 
-CNN and BiLSTM use a word vocabulary built only from the training partition; BETO and
-RoBERTa-BNE use their pretrained subword tokenizers (no stemming, no stopword removal).
+CNN and BiLSTM use a word vocabulary built only from the training partition; BETO,
+RoBERTa-BNE and DistilBETO use their pretrained subword tokenizers (no stemming, no stopword removal).
 """
 
 from __future__ import annotations
@@ -161,8 +161,12 @@ def build_transformer(config, source):
     hf_config = AutoConfig.from_pretrained(source, revision=revision, num_labels=len(LABEL_COLS),
                                             problem_type="multi_label_classification")
     # Only the classification head takes the tuned dropout. The encoder keeps the dropout it was
-    # pretrained with (BETO 0.1, RoBERTa-BNE 0.0): RoBERTa-BNE stops learning with 0.1 or more.
-    hf_config.classifier_dropout = config["dropout"]
+    # pretrained with (BETO 0.1, RoBERTa-BNE 0.0, DistilBETO 0.1): RoBERTa-BNE stops learning with
+    # 0.1 or more. DistilBERT reads the head dropout from seq_classif_dropout.
+    if hf_config.model_type == "distilbert":
+        hf_config.seq_classif_dropout = config["dropout"]
+    else:
+        hf_config.classifier_dropout = config["dropout"]
     return AutoModelForSequenceClassification.from_pretrained(source, revision=revision, config=hf_config)
 
 

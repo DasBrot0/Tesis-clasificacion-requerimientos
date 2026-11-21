@@ -536,9 +536,9 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
     by_dataset, by_label = analysis.family_comparison(condition, runs, ranking)
     if not by_dataset.empty:
         ws = wb.create_sheet("Transformers vs DL")
-        sheet_title(ws, "Transformers (BETO, RoBERTa-BNE) frente a Deep Learning (CNN, BiLSTM)",
-                    "Macro-F1 de cada familia: media de sus dos modelos (agrupado). En cada fold externo, cada familia "
-                    "vale la media de sus dos modelos; como comparten los folds, se comparan pareados. Folds "
+        sheet_title(ws, "Transformers (BETO, RoBERTa-BNE, DistilBETO) frente a Deep Learning (CNN, BiLSTM)",
+                    "Macro-F1 de cada familia: media de sus modelos (agrupado). En cada fold externo, cada familia "
+                    "vale la media de sus modelos; como comparten los folds, se comparan pareados. Folds "
                     "ganados y δ de Cliff (δ > 0 favorece a los Transformers) por dataset; Wilcoxon de rangos "
                     "con signo sobre los 15 pares (dataset, fold) en la última fila. Rango SK: el mejor rango "
                     "Scott-Knott ESD de la familia.",
@@ -555,7 +555,7 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
         for col in range(1, len(headers) + 1):
             ws.cell(last, col).font = Font(bold=True)
         top = last + 3
-        ws.cell(top - 1, 1, "F1 por clase (media de los dos modelos de cada familia)").font = Font(bold=True, size=12)
+        ws.cell(top - 1, 1, "F1 por clase (media de los modelos de cada familia)").font = Font(bold=True, size=12)
         headers = ["Dataset", "Clase", "Soporte", "F1 Transformers", "F1 Deep Learning", "Δ F1"]
         rows = [[r["dataset"], r["label"], r["support"], r["F1 Transformers"], r["F1 Deep Learning"], r["delta_f1"]]
                 for r in by_label.to_dict("records")]

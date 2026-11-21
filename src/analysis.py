@@ -233,9 +233,9 @@ def best_models(condition: str, scott_knott: pd.DataFrame) -> pd.DataFrame:
 
 def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
                       scott_knott: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Transformers (BETO, RoBERTa-BNE) against Deep Learning (CNN, BiLSTM).
+    """Transformers (BETO, RoBERTa-BNE, DistilBETO) against Deep Learning (CNN, BiLSTM).
 
-    A family's score in an outer fold is the mean macro-F1 of its two models there. Both families
+    A family's score in an outer fold is the mean macro-F1 of its models there. Both families
     share the outer folds, so they are compared fold by fold: by dataset, the folds the Transformers
     win and Cliff's delta (magnitude only; 5 pairs cannot reach p < 0.05), plus each family's best
     Scott-Knott rank. The last row runs the Wilcoxon signed-rank test on the 15 (dataset, fold)
