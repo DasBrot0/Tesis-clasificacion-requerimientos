@@ -52,6 +52,12 @@ PROMISE_FILES = ["Balanced_promise_exp_nfr_train.csv", "Spanish_promise_exp_nfr_
 SOURCE_EN = INTERIM_DIR / "glossary" / "source_en.csv"
 DEEPL_TRANSLATION = INTERIM_DIR / "translations" / "deepl_provisional.jsonl"
 SON_LABELS = INTERIM_DIR / "labels" / "son_prelabels.csv"
+# Revisión de las traducciones (21-11-2026): ID, ES_anterior, ES_corregido, Tipo, Gravedad, Motivo.
+TRANSLATION_FIXES = INTERIM_DIR / "translations" / "correcciones_revision.csv"
+# Revisión de subcategorías (segunda preanotación, 21-11-2026): ID, Antes, Despues, Confianza, Motivo.
+LABEL_FIXES = INTERIM_DIR / "labels" / "correcciones_etiquetas.csv"
+# Casi duplicados que la clave automática no detecta: ID_eliminado, ID_conservado, Motivo (21-11-2026).
+MANUAL_DUPLICATES = INTERIM_DIR / "duplicados_manuales.csv"
 TRANSLATION_SOURCE_DEEPL = "deepl+glossary_provisional"
 TRANSLATION_SOURCE_PROMISE = "promise_exp_translated"
 DOSSPRE_ORIGINAL = "DOSSPRE 1.0Original.csv"
@@ -374,6 +380,98 @@ def _deduplicate_all(out: pd.DataFrame, dataset: str, merge_english_conflicts: b
                         near=True)
 
 
+def _merge_manual_duplicates(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Fusiona los casi duplicados que la clave automática no detecta (MANUAL_DUPLICATES).
+
+    La copia que se quita cede sus etiquetas a la que se conserva (unión), como en _deduplicate.
+    """
+    if not MANUAL_DUPLICATES.exists():
+        return out
+    table = pd.read_csv(MANUAL_DUPLICATES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    pairs = {r.ID_eliminado: r.ID_conservado for r in table.itertuples(index=False)
+             if r.ID_eliminado.startswith(f"{dataset}_")}
+    if not pairs:
+        return out
+    out = out.reset_index(drop=True)
+    pos = {id_: i for i, id_ in enumerate(out["ID"])}
+    missing = [id_ for pair in pairs.items() for id_ in pair if id_ not in pos]
+    if missing:
+        raise ValueError(f"{dataset}: MANUAL_DUPLICATES menciona IDs que no existen: {missing}")
+    label_cols = [col for col in LABEL_COLS if col in out.columns]
+    for drop, keep in pairs.items():
+        i, j = pos[keep], pos[drop]
+        out.loc[i, label_cols] = out.loc[[i, j], label_cols].astype(int).max()
+        print(f"  casi duplicado (manual): {drop} se fusiona en {keep} | {str(out.at[j, 'Requirement_original'])[:90]}")
+    out = out.drop(index=[pos[d] for d in pairs]).reset_index(drop=True)
+    print(f"{dataset}: {len(pairs)} casi duplicados manuales eliminados -> {len(out)} filas")
+    return out
+
+
+_LABEL_ABBR = {"CON": "Confidentiality", "INT": "Integrity", "AUT": "Authenticity", "RES": "Resistance"}
+
+
+def _abbr_labels(row: pd.Series) -> str:
+    return "/".join(a for a, col in _LABEL_ABBR.items() if int(row[col]) == 1) or "NINGUNA"
+
+
+def _apply_label_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Aplica la revisión de subcategorías (LABEL_FIXES), por ID; solo a requisitos de seguridad.
+
+    Igual que con las traducciones, cada corrección guarda las etiquetas que reemplaza y se rechaza
+    si ya no coinciden con las actuales.
+    """
+    if not LABEL_FIXES.exists():
+        return out
+    fixes = pd.read_csv(LABEL_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
+    pos = {id_: i for i, id_ in enumerate(out["ID"])}
+    stale = []
+    for fix in fixes.itertuples(index=False):
+        i = pos.get(fix.ID)
+        if i is None or int(out.at[i, "Security"]) != 1 or _abbr_labels(out.loc[i]) != fix.Antes:
+            stale.append(fix.ID)
+            continue
+        new = set() if fix.Despues == "NINGUNA" else set(fix.Despues.split("/"))
+        if new - set(_LABEL_ABBR):
+            raise ValueError(f"{dataset}: etiqueta desconocida en {LABEL_FIXES.name}: {fix.ID} {fix.Despues}")
+        for abbr, col in _LABEL_ABBR.items():
+            out.at[i, col] = int(abbr in new)
+        out.at[i, "Subcategory_label_status"] = "revision_v2"
+    if stale:
+        raise ValueError(f"{dataset}: {len(stale)} correcciones de etiquetas no coinciden con las actuales "
+                         f"({LABEL_FIXES.name}), p. ej. {stale[:5]}")
+    if len(fixes):
+        print(f"{dataset}: {len(fixes)} etiquetas de subcategoría corregidas ({LABEL_FIXES.name})")
+    return out
+
+
+def _apply_translation_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Aplica las correcciones de la revisión de traducciones (TRANSLATION_FIXES), por ID.
+
+    Cada corrección guarda el español que reemplaza; si no coincide con el actual, la traducción
+    de origen cambió y la corrección se debe revisar en vez de aplicarse a ciegas.
+    """
+    if not TRANSLATION_FIXES.exists():
+        return out
+    fixes = pd.read_csv(TRANSLATION_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
+    pos = {id_: i for i, id_ in enumerate(out["ID"])}
+    stale = []
+    for fix in fixes.itertuples(index=False):
+        i = pos.get(fix.ID)
+        if i is None or out.at[i, TEXT_COL] != fix.ES_anterior:
+            stale.append(fix.ID)
+            continue
+        out.at[i, TEXT_COL] = fix.ES_corregido
+        out.at[i, "Translation_source"] = f"{out.at[i, 'Translation_source']}+revisada"
+    if stale:
+        raise ValueError(f"{dataset}: {len(stale)} correcciones de traducción no coinciden con el texto "
+                         f"actual ({TRANSLATION_FIXES.name}), p. ej. {stale[:5]}")
+    if len(fixes):
+        print(f"{dataset}: {len(fixes)} traducciones corregidas ({TRANSLATION_FIXES.name})")
+    return out
+
+
 def _finalize(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
     out = out.reset_index(drop=True)
     # Al final, porque la traducción DeepL y las etiquetas SON se buscan por el inglés original.
@@ -383,6 +481,8 @@ def _finalize(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
         if changed:
             print(f"{dataset}: {changed} textos de {col} sin comillas de exportación")
         out[col] = cleaned
+    out = _apply_translation_fixes(out, dataset)
+    out = _apply_label_fixes(out, dataset)
     if out[TEXT_COL].map(_dedup_key).duplicated().any():
         raise AssertionError(f"{dataset}: quitar las comillas dejó requisitos duplicados.")
     for col in LABEL_COLS:
@@ -418,6 +518,7 @@ def _build_llm_labelled(rows: list, dataset: str) -> pd.DataFrame:
             out.at[idx, col] = int(getattr(row, col))
         out.at[idx, "Prelabel_evidence"] = "SON(claude-sonnet-5-5, 3 corridas): " + str(row.rationale)[:200]
         out.at[idx, "Subcategory_label_status"] = "llm_provisional"
+    out = _merge_manual_duplicates(out, dataset)
     return _finalize(out, dataset)
 
 
@@ -483,6 +584,7 @@ def build_dosspre() -> pd.DataFrame:
     out[TEXT_COL] = _dosspre_translation(out["Requirement_original"])
     out["Translation_source"] = TRANSLATION_SOURCE_DEEPL
     out = _deduplicate_all(out, "dosspre", merge_english_conflicts=True)
+    out = _merge_manual_duplicates(out, "dosspre")
     return _finalize(out, "dosspre")
 
 

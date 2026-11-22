@@ -1,0 +1,9 @@
+﻿ID,Requirement_original,Clase_origen,Motivo
+dosspre_0183,"The system shall be built to be compatible with many operating systems such as windows, android and linux.",Portability,NO_SEGURIDAD: portabilidad entre sistemas operativos.
+dosspre_0443,The static attributes of the system predict potential operational performance bottlenecks and future scalability problems early to allow for correction early.,Survivability,NO_SEGURIDAD: cuellos de botella de rendimiento y escalabilidad.
+dosspre_0462,The system shall be able to provide help in a short period of time.,Performance,NO_SEGURIDAD: tiempo de respuesta de ayuda.
+dosspre_0593,Use of a central database to enable real time data capturing and manipulation to facilitate access to laptop details from any computer connected to the database.,Integrity,"NO_SEGURIDAD: base de datos central para captura y acceso en tiempo real; «manipulation» es procesamiento, no alteración maliciosa."
+dosspre_0605,System must allow clients to run a separate routing protocol from one in ISP network.,Survivability,NO_SEGURIDAD: protocolo de encaminamiento separado; no menciona ataques. Duda: podría ser aislamiento de redes.
+dosspre_0780,The system shall allow a user to view content or dashboard.,Authorisation,"NO_SEGURIDAD: permitir ver contenido o el panel, sin restricción alguna. Duda por la clase Authorisation."
+dosspre_0824,The system shall allow Analysis of locations prevalent crime using crowd-sourced data and reports data.,Auditing,NO_SEGURIDAD: análisis de zonas de delitos.
+dosspre_0943,The system shall execute its tasks accurately when issued a command. Testing will ensure that all functions are properly included.,Integrity,"NO_SEGURIDAD: exactitud funcional y pruebas, no integridad de datos."

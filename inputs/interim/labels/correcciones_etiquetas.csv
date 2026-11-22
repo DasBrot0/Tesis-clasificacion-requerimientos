@@ -1,0 +1,153 @@
+﻿ID,Antes,Despues,Confianza,Motivo
+dosspre_0013,CON,CON/INT,MEDIA,"Claves para cifrado (CON) y para PDP, prueba de posesión/integridad de datos (INT)."
+dosspre_0039,CON/INT,INT/AUT,MEDIA,Firmar un documento con clave secreta: INT y AUT del firmante (regla 7); no hay restricción de lectura.
+dosspre_0041,AUT,INT/AUT,MEDIA,Verificar la firma (INT) y su origen (AUT) (regla 7).
+dosspre_0050,INT,INT/AUT,BAJA,Verificar la marca de agua para probar la autoría/propiedad; podría ser solo AUT.
+dosspre_0081,CON,AUT,MEDIA,Abrir la puerta cuando el PIN es correcto: verificación de identidad (regla 9); no protege información.
+dosspre_0127,RES,NINGUNA,MEDIA,"Fallo seguro ante fallas, sin mención de ataques (tolerancia a fallas no maliciosas)."
+dosspre_0128,RES,NINGUNA,ALTA,"Madurez, tolerancia a fallos y recuperabilidad: fiabilidad, no resistencia a ataques."
+dosspre_0134,RES,NINGUNA,ALTA,Tolerancia a fallos no maliciosa.
+dosspre_0155,AUT,INT/AUT,MEDIA,Contraseña exigida para modificar el correo: autenticación que protege la modificación.
+dosspre_0166,CON,INT,ALTA,Solo el usuario autorizado puede modificar el correo: restringe la modificación (regla 6).
+dosspre_0184,CON,CON/AUT,MEDIA,Verificar al usuario (AUT) y sus derechos de acceso (CON).
+dosspre_0211,CON,NINGUNA,MEDIA,«Base de datos segura» genérico (regla 13).
+dosspre_0212,AUT,AUT/RES,ALTA,Límite de intentos de contraseña (regla 4).
+dosspre_0223,INT,INT/AUT,ALTA,"Solo el usuario modifica, tras autenticarse."
+dosspre_0227,AUT,RES,ALTA,Cierre por inactividad (regla 1).
+dosspre_0243,CON,AUT,BAJA,"Redirección tras el inicio de sesión o para reintentarlo; flujo de login, casi funcional (podría ser NINGUNA)."
+dosspre_0246,CON,AUT,MEDIA,Validar credenciales de inicio de sesión; la búsqueda es funcional.
+dosspre_0256,CON,NINGUNA,MEDIA,«Base de datos segura» genérico (regla 13).
+dosspre_0266,CON,NINGUNA,BAJA,Solo almacena credenciales en una base central; no exige protección.
+dosspre_0285,AUT,INT/AUT,MEDIA,Clave por usuario para generar MAC: integridad y atribución del origen (regla 7).
+dosspre_0287,NINGUNA,CON/INT,BAJA,Captura de registros protegida con HMAC (INT) y PGP (CON); el objetivo principal es la integración.
+dosspre_0296,RES,NINGUNA,BAJA,"Procedimientos almacenados; podría implicar defensa contra inyección SQL, pero no lo dice."
+dosspre_0300,RES,NINGUNA,ALTA,Tolerancia a fallos no maliciosa.
+dosspre_0305,CON,CON/AUT,MEDIA,Inicio de sesión único (AUT) que da acceso solo a las aplicaciones autorizadas (CON).
+dosspre_0311,RES,NINGUNA,ALTA,"Tolerancia a fallos y salida segura, sin ataque."
+dosspre_0316,RES,NINGUNA,ALTA,"Recuperación ante errores, no ataques."
+dosspre_0318,INT/RES,INT,MEDIA,Validación de datos sin mención de ataques.
+dosspre_0337,INT,RES,BAJA,Fiabilidad del escaneo de detección (pocos falsos positivos); no trata la integridad de datos.
+dosspre_0341,CON,CON/INT/AUT,ALTA,Usuario y contraseña (AUT) para acceder (CON) y modificar (INT) datos.
+dosspre_0346,RES,NINGUNA,BAJA,Enunciado vago sobre límites operativos; no menciona ataques ni actor malicioso. Duda: clase origen Survivability.
+dosspre_0367,CON,CON/INT,MEDIA,Limita quién puede añadir (crear) información: INT (regla 6); el servidor cifrado mantiene CON.
+dosspre_0369,RES,NINGUNA,MEDIA,"Tolerancia a fallos del servidor central, no maliciosa: disponibilidad."
+dosspre_0370,RES,NINGUNA,MEDIA,Tolerancia a fallos no maliciosos: disponibilidad.
+dosspre_0389,CON,CON/AUT,ALTA,Solo autorizados acceden y deben iniciar sesión: CON + AUT (regla 9).
+dosspre_0401,RES,INT,BAJA,"Validación de entradas con fines de tolerancia a fallos y fiabilidad, no contra ataques; valida exactitud de datos (INT). Duda: podría ser NINGUNA."
+dosspre_0420,RES,INT/RES,ALTA,Protección de la base de datos contra inyección SQL: RES + INT (regla 10).
+dosspre_0424,AUT,INT/AUT,ALTA,Verificación de firma digital que demuestra el origen: INT + AUT (regla 7).
+dosspre_0442,RES,NINGUNA,ALTA,"Madurez, tolerancia a fallos y recuperabilidad: fiabilidad, no ataques."
+dosspre_0443,RES,NINGUNA,ALTA,NO_SEGURIDAD: cuellos de botella de rendimiento y escalabilidad.
+dosspre_0452,CON,AUT,MEDIA,Registro e inicio de sesión: AUT; no restringe qué información se ve.
+dosspre_0455,RES,INT/RES,BAJA,Validación de entradas genérica: valida exactitud (INT) y se mantiene RES por la clase Immunity; no menciona ataques explícitamente.
+dosspre_0470,CON,CON/RES,MEDIA,Hardening de servidores (resistencia a ataques) además de restringir el acceso externo.
+dosspre_0484,AUT,CON/AUT,ALTA,Autenticar para que no accedan no autorizados: AUT + CON (regla 9).
+dosspre_0500,RES,INT/RES,ALTA,Resistir la manipulación (tampering) del software: INT + RES (regla 5).
+dosspre_0501,CON,CON/AUT,ALTA,Autenticar a todos los usuarios y dar acceso solo a autorizados: CON + AUT.
+dosspre_0536,RES,CON/RES,BAJA,Impedir ingeniería inversa protege el código fuente de divulgación (CON) frente a un actor malicioso (RES).
+dosspre_0577,RES,NINGUNA,ALTA,Respaldos: NINGUNA.
+dosspre_0582,CON,CON/AUT,MEDIA,Control de acceso con contraseñas (AUT) y derechos de acceso (CON).
+dosspre_0584,CON,CON/INT,ALTA,Restringe qué datos se pueden ver o modificar: CON + INT (regla 6).
+dosspre_0590,AUT,CON/INT/AUT,MEDIA,"Contraseñas (AUT) para controlar acceso a datos, reducir corrupción (INT) y preservar confidencialidad (CON)."
+dosspre_0593,INT,NINGUNA,MEDIA,"NO_SEGURIDAD: base de datos central para captura y acceso en tiempo real; «manipulation» es procesamiento, no alteración maliciosa."
+dosspre_0594,RES,INT,MEDIA,"Errores de entrada del usuario, no ataques: validación de exactitud (INT)."
+dosspre_0596,CON,CON/AUT/RES,MEDIA,Contraseñas robustas: AUT + RES (regla 3); niveles de visualización: CON.
+dosspre_0598,CON,CON/AUT,MEDIA,Inicio de sesión (AUT) que limita funciones según responsabilidad (CON).
+dosspre_0599,RES,NINGUNA,ALTA,Respaldos ante fallos catastróficos: NINGUNA.
+dosspre_0605,RES,NINGUNA,BAJA,NO_SEGURIDAD: protocolo de encaminamiento separado; no menciona ataques. Duda: podría ser aislamiento de redes.
+dosspre_0627,NINGUNA,AUT,MEDIA,El administrador inicia sesión (AUT); la carga de datos no es auditoría.
+dosspre_0633,NINGUNA,AUT,MEDIA,Inspeccionar el certificado SSL es verificar la identidad de un recurso (AUT).
+dosspre_0661,RES,CON/RES,MEDIA,Impide que un atacante acceda al archivo completo: CON + RES.
+dosspre_0668,CON,INT,ALTA,"Restringe quién puede editar datos: INT (regla 6), no lectura."
+dosspre_0675,AUT,CON/AUT,ALTA,Validación en el login (AUT) y acceso solo a los datos permitidos (CON).
+dosspre_0676,RES,CON,BAJA,"Restringe el acceso de usuarios generales a la interfaz; control de acceso, no ataque. Duda sobre la etiqueta."
+dosspre_0681,RES,AUT,BAJA,Verificar la marca de agua demuestra la autoría u origen de la imagen (AUT). Duda: podría verse como INT.
+dosspre_0682,INT,INT/AUT,BAJA,La marca de agua protege la obra y permite demostrar su autoría (AUT); se mantiene INT.
+dosspre_0683,RES,AUT,MEDIA,Verificar el propietario legítimo de la imagen: AUT; no hay ataque al sistema.
+dosspre_0684,INT,INT/RES,ALTA,La marca de agua debe sobrevivir a manipulación maliciosa: INT + RES (regla 5).
+dosspre_0706,AUT,CON,MEDIA,Control de acceso a la interfaz sin exigir identificación explícita: CON (regla 9).
+dosspre_0707,RES,CON,ALTA,Canal seguro de comunicación: CON (regla 8).
+dosspre_0712,RES,NINGUNA,BAJA,Filtrado de tipos de archivo para no sobrecargar el flujo; no menciona actor malicioso.
+dosspre_0716,RES,NINGUNA,ALTA,Gestión de errores y fallos no maliciosos: fiabilidad.
+dosspre_0727,CON,NINGUNA,MEDIA,"Amenazas ambientales (físicas), no divulgación ni ataque."
+dosspre_0729,RES,NINGUNA,ALTA,"Resistencia al clima, no a ataques."
+dosspre_0743,RES,INT/RES,ALTA,"Fallos deliberados, validación de entradas y anti-manipulación de software: INT + RES (reglas 5 y 10)."
+dosspre_0744,CON,CON/AUT,ALTA,Autenticación (AUT) y autorización para impedir acceso a la consola (CON).
+dosspre_0769,RES,CON/RES,BAJA,"Algoritmos criptográficos (CON, regla 8) inquebrantables frente a ataques (RES). Duda sobre RES."
+dosspre_0770,AUT,CON/INT/AUT,MEDIA,Autenticación de dos factores (AUT); solo el usuario legítimo puede consultar (CON) o subir (INT) datos.
+dosspre_0772,INT,CON/INT/RES,MEDIA,Defensa contra un adversario (RES) que busca acceso no autorizado (CON) y comprometer la integridad (INT).
+dosspre_0775,NINGUNA,INT/RES,MEDIA,PDP para comprobar que un adversario no comprometió la integridad: INT (detectar alteraciones) + RES (regla 5); no es solo auditoría.
+dosspre_0778,CON,AUT,BAJA,Registro avalado por RR. HH. verifica la legitimidad del usuario (AUT); no restringe lectura.
+dosspre_0780,CON,NINGUNA,BAJA,"NO_SEGURIDAD: permitir ver contenido o el panel, sin restricción alguna. Duda por la clase Authorisation."
+dosspre_0781,CON,AUT,MEDIA,Gestión de la propia contraseña: AUT.
+dosspre_0786,RES,NINGUNA,ALTA,"Reducir fallos: fiabilidad, no ataques."
+dosspre_0819,CON,CON/RES,MEDIA,"Acceso solo a legítimos (CON) y resistir usuarios no autorizados (RES, como 0465)."
+dosspre_0832,RES,NINGUNA,MEDIA,Servidor seguro y respaldos contra pérdida de datos: NINGUNA.
+dosspre_0842,NINGUNA,AUT,BAJA,Recuperar identificadores únicos/huella del nodo para identificar el dispositivo (AUT). Duda: podría ser forense.
+dosspre_0852,NINGUNA,RES,MEDIA,Escucha de escaneos de puertos: RES (regla 11).
+dosspre_0872,CON,NINGUNA,ALTA,Genérico («es seguro»): NINGUNA.
+dosspre_0878,RES,NINGUNA,ALTA,Recuperación de errores no maliciosos.
+dosspre_0912,RES,NINGUNA,ALTA,"Fiabilidad, tolerancia a fallos y recuperabilidad."
+dosspre_0915,CON,CON/AUT,ALTA,Credenciales de inicio de sesión (AUT) y acceso a registros solo para autorizados (CON).
+dosspre_0930,INT,AUT,MEDIA,Verificar que el certificado SSL es válido y de confianza: AUT del recurso.
+dosspre_0935,AUT,AUT/RES,ALTA,Contraseña difícil de adivinar (robustez): AUT + RES (regla 3).
+dosspre_0943,INT,NINGUNA,MEDIA,"NO_SEGURIDAD: exactitud funcional y pruebas, no integridad de datos."
+dosspre_0944,RES,NINGUNA,MEDIA,"Fail-safe y gestión de excepciones ante errores, no ataques."
+dosspre_0946,AUT,AUT/RES,ALTA,Longitud de contraseña: AUT + RES (regla 3).
+dosspre_0954,RES,NINGUNA,ALTA,Replicación de datos: disponibilidad.
+dosspre_0974,AUT,INT/AUT,ALTA,Validación de firmas digitales: INT + AUT (regla 7).
+dosspre_0975,AUT,INT,MEDIA,"Validación de datos de la transacción: exactitud de datos (INT), no identidad."
+dosspre_1010,CON,AUT,MEDIA,Solo pide registrarse e iniciar sesión; no restringe qué se puede ver (regla 9).
+dosspre_1013,AUT,CON/AUT,MEDIA,Verifica identidad con preguntas y además restringe la descarga (lectura) de archivos a quien la supera.
+dosspre_1014,CON,INT,ALTA,Limita a usuarios autorizados actualizar y borrar datos: modificación (regla 6).
+dosspre_1019,CON,CON/RES,MEDIA,"Además de restringir el acceso, pide proteger los datos frente a intrusos (ataque)."
+dosspre_1021,CON,AUT,BAJA,Asignar recursos al estudiante real que pidió el servicio apunta a verificar identidad; texto ambiguo.
+dosspre_1023,AUT,CON/AUT,MEDIA,"Pide autenticación y también autorización (dos objetivos, regla 14)."
+dosspre_1060,CON,AUT,ALTA,Registro e inicio de sesión es autenticación; no restringe lectura.
+dosspre_1068,AUT,AUT/RES,MEDIA,Cambio de contraseña en un plazo determinado = caducidad (regla 3).
+dosspre_1074,CON,AUT,MEDIA,"La marca de agua demuestra la propiedad/origen del documento (autenticidad), no restringe lectura."
+dosspre_1076,CON,INT/AUT,BAJA,Solo un usuario autenticado puede modificar el documento insertando la marca; no restringe lectura.
+dosspre_1077,CON,INT/RES,MEDIA,Impedir la manipulación por usuarios no autorizados (regla 5 y 6: modificación por personas).
+dosspre_1104,CON,INT,MEDIA,Limita a quién puede hacer modificaciones (regla 6).
+dosspre_1107,CON,CON/AUT,MEDIA,Iniciar sesión (AUT) para poder ver los mensajes de advertencia (lectura restringida).
+dosspre_1123,CON,NINGUNA,MEDIA,"Genérico («seguridad de transacciones»), no exige ninguna de las cuatro (regla 13)."
+dosspre_1137,INT,INT/AUT,BAJA,«Copias auténticas»: no alteradas (INT) y genuinas en su origen (AUT); ambiguo.
+dosspre_1140,AUT,CON/AUT,MEDIA,Autenticación previa para conceder acceso a los servicios (regla 9).
+dosspre_1149,RES,NINGUNA,MEDIA,"Genérico (robustez y seguridad), sin ataque concreto."
+dosspre_1155,RES,INT/RES,MEDIA,Marca de agua íntegra frente a manipulación maliciosa (regla 5).
+dosspre_1159,CON,INT/AUT,BAJA,Solo agentes registrados pueden enviar reportes: limita quién crea datos y supone identificarlos; no restringe lectura.
+dosspre_1169,RES,NINGUNA,ALTA,Fiabilidad y tolerancia a fallos no maliciosos.
+dosspre_1179,AUT,INT/AUT,ALTA,Verificación de firma digital y de su origen (regla 7).
+dosspre_1193,RES,INT,MEDIA,Identificar entradas erróneas es validar exactitud de datos; no menciona ataques.
+dosspre_1199,RES,NINGUNA,ALTA,Fiabilidad y tolerancia a fallos no maliciosos.
+dosspre_1200,RES,INT/RES,BAJA,Validación de entradas genérica: valida datos (INT); RES solo si se entiende contra ataques (regla 10).
+dosspre_1208,CON,CON/INT,MEDIA,"Carga cifrada (CON) y firma del mensaje (INT, regla 7)."
+dosspre_1220,AUT,CON/AUT,MEDIA,Exigir login antes de acceder al sistema (regla 9).
+dosspre_1221,RES,NINGUNA,ALTA,"Manejo de errores, no de ataques."
+dosspre_1226,RES,NINGUNA,BAJA,"Filtrado para evitar sobrecarga con archivos innecesarios, no por actor malicioso."
+dosspre_1233,CON,CON/AUT,MEDIA,Iniciar sesión (AUT) para ver los mensajes de notificación (lectura restringida).
+dosspre_1252,RES,INT/RES,ALTA,Protección contra inyección SQL que protege los datos de la base (regla 10).
+dosspre_1256,NINGUNA,RES,MEDIA,"Analizar malware para identificar su tipo es parte de la detección de malware (regla 11), no auditoría."
+promise_0233,AUT,CON/AUT,MEDIA,"Solo usuarios aprobados acceden al producto (CON, regla 9) y exige inicio de sesión con ID aprobado (AUT)."
+promise_0239,AUT,CON/AUT,MEDIA,Solo usuarios autorizados inician sesión: CON por restringir el acceso y AUT por el login (regla 9).
+promise_0264,AUT,AUT/RES,ALTA,Caducidad de contraseña cada tres meses: AUT + RES (regla 3).
+promise_0412,CON/INT,INT,MEDIA,«Ingresar» el horario es crear/modificar (INT); no restringe la lectura. Coherente con promise_0254.
+promise_0420,AUT,CON/AUT,MEDIA,"Exige autenticación (AUT) y autorización, que restringe el acceso (CON)."
+promise_0434,AUT,AUT/RES,ALTA,Robustez mínima de contraseña: AUT + RES (regla 3).
+promise_0436,AUT,AUT/RES,ALTA,"Control de sesiones simultáneas: RES (regla 2), se conserva AUT (inicio de sesión)."
+promise_0442,INT,INT/RES,ALTA,Corrupción causada por sistemas y/o personas: INT + RES (regla 5).
+secreq_0008,AUT,CON/AUT,MEDIA,"Verifica al titular legítimo (AUT) mediante PIN cifrado (CON, regla 8); coherente con secreq_0077."
+secreq_0024,INT,INT/AUT,MEDIA,Verificar que es el mismo dispositivo POS es verificación de origen (AUT); igualdad de importes es INT.
+secreq_0036,AUT,INT/AUT,MEDIA,Firma con clave privada para validar el PSAM: INT + AUT por verificar el origen (regla 7).
+secreq_0055,AUT,INT/AUT,MEDIA,Autentica el PSAM con certificados y el S2 MAC: MAC implica INT (regla 7); coherente con secreq_0063.
+secreq_0060,AUT,INT/AUT,MEDIA,Autenticación de la tarjeta mediante el S1 MAC: INT + AUT (regla 7).
+secreq_0078,AUT,CON/AUT,MEDIA,"Exige PIN cifrado además de la verificación (CON, regla 8); coherente con secreq_0122."
+secreq_0112,CON,NINGUNA,BAJA,"Solo pide un entorno «seguro y certificado» para gestionar claves (regla 13); la confidencialidad de claves es implícita, no exigida."
+secreq_0143,AUT,INT/AUT,MEDIA,Autorizar criptográficamente quién carga o instala contenido limita la modificación (INT) y verifica al proveedor (AUT).
+secreq_0153,RES,INT/RES,MEDIA,Impedir que los mecanismos de seguridad sean eludidos o corrompidos: resistencia y además integridad de programas frente a manipulación (regla 5).
+secreq_0164,RES,INT/RES,MEDIA,Igual que secreq_0153: mecanismo no eludible ni corruptible.
+secreq_0195,INT,INT/AUT,MEDIA,Verificar firmas de la autoridad/proveedor confirma el origen (regla 7); coherente con secreq_0178.
+secreq_0202,INT/AUT,INT/AUT/RES,BAJA,«In the correct sequence» implica protección contra repetición (replay); no lo dice explícitamente.
+secreq_0302,RES,AUT/RES,MEDIA,Manejo de fallos de autenticación (regla 4); coherente con secreq_0303.
+secreq_0304,RES,AUT/RES,BAJA,"Detectar credenciales repetidas es replay (RES) y verificación de credenciales (AUT, regla 4)."
+secreq_0318,RES,NINGUNA,MEDIA,Fallas o discontinuidades del sistema sin mención de ataque: tolerancia a fallas no maliciosas.
