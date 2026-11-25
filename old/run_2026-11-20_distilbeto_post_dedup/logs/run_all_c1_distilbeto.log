@@ -1,0 +1,17 @@
+[2026-11-20T23:23:07] INICIO c1_augmented/promise/distilbeto
+[2026-11-20T23:53:02] FIN c1_augmented/promise/distilbeto (29.9 min)
+[2026-11-20T23:53:02] INICIO c1_augmented/secreq/distilbeto
+[2026-11-21T00:23:44] FIN c1_augmented/secreq/distilbeto (30.7 min)
+[2026-11-21T00:23:44] INICIO c1_augmented/dosspre/distilbeto
+[2026-11-21T01:28:36] FIN c1_augmented/dosspre/distilbeto (64.9 min)
+[2026-11-21T01:28:36] ENTRENAMIENTO COMPLETO
+C:\Users\Franco\Projects\ULima\SeminarioI\outputs\output_raw\c1_augmented\promise\distilbeto: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\outputs\output_raw\c1_augmented\secreq\distilbeto: etapa de 6 trials archivada en stage_6trials; lista para extender
+C:\Users\Franco\Projects\ULima\SeminarioI\outputs\output_raw\c1_augmented\dosspre\distilbeto: etapa de 6 trials archivada en stage_6trials; lista para extender
+[2026-11-21T01:28:36] INICIO c1_augmented/promise/distilbeto
+[2026-11-21T02:06:15] FIN c1_augmented/promise/distilbeto (37.7 min)
+[2026-11-21T02:06:15] INICIO c1_augmented/secreq/distilbeto
+[2026-11-21T02:45:05] FIN c1_augmented/secreq/distilbeto (38.8 min)
+[2026-11-21T02:45:05] INICIO c1_augmented/dosspre/distilbeto
+[2026-11-21T03:45:24] FIN c1_augmented/dosspre/distilbeto (60.3 min)
+[2026-11-21T03:45:24] ENTRENAMIENTO COMPLETO

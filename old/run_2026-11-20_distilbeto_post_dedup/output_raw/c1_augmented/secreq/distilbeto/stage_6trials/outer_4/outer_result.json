@@ -1,0 +1,84 @@
+{
+  "outer": 4,
+  "train_real_rows": 349,
+  "train_synthetic_rows": 72,
+  "test_rows": 87,
+  "optuna": {
+    "trials_finished": 6,
+    "trials_completed": 6,
+    "trials_pruned": 0
+  },
+  "default_config_inner_cv_macro_f1": 0.183729483264367,
+  "best_trial": {
+    "trial_id": 5,
+    "inner_cv_macro_f1_mean": 0.6333004459381766,
+    "inner_cv_macro_f1_std": 0.03262620793334189
+  },
+  "winning_config": {
+    "learning_rate": 4.5156321168792874e-05,
+    "batch_size": 8,
+    "epochs": 10,
+    "dropout": 0.11049689336879653,
+    "weight_decay": 0.003922592778170174,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": true
+  },
+  "final_training_epochs": 7,
+  "thresholds_by_label": {
+    "Security": 0.5750000000000002,
+    "Confidentiality": 0.45000000000000007,
+    "Integrity": 0.5250000000000001,
+    "Authenticity": 0.45000000000000007,
+    "Resistance": 0.5250000000000001
+  },
+  "test": {
+    "macro_f1": 0.560509337860781,
+    "weighted_f1": 0.7574321497994637,
+    "security_recall": 0.7714285714285715,
+    "loss": 0.3580569318474281
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 1.0,
+      "recall": 0.7714285714285715,
+      "f1": 0.8709677419354839,
+      "support": 35,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5,
+      "support": 6,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.8571428571428571,
+      "recall": 0.5,
+      "f1": 0.631578947368421,
+      "support": 12,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.9090909090909091,
+      "recall": 0.7142857142857143,
+      "f1": 0.8,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 6.3
+}

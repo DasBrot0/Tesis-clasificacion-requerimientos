@@ -1,0 +1,84 @@
+{
+  "outer": 2,
+  "train_real_rows": 349,
+  "train_synthetic_rows": 74,
+  "test_rows": 87,
+  "optuna": {
+    "trials_finished": 6,
+    "trials_completed": 6,
+    "trials_pruned": 0
+  },
+  "default_config_inner_cv_macro_f1": 0.23924148139837342,
+  "best_trial": {
+    "trial_id": 5,
+    "inner_cv_macro_f1_mean": 0.5938718524850084,
+    "inner_cv_macro_f1_std": 0.12055252743838439
+  },
+  "winning_config": {
+    "learning_rate": 4.5156321168792874e-05,
+    "batch_size": 8,
+    "epochs": 10,
+    "dropout": 0.11049689336879653,
+    "weight_decay": 0.003922592778170174,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": true
+  },
+  "final_training_epochs": 7,
+  "thresholds_by_label": {
+    "Security": 0.5250000000000001,
+    "Confidentiality": 0.4750000000000001,
+    "Integrity": 0.6000000000000002,
+    "Authenticity": 0.5000000000000001,
+    "Resistance": 0.5750000000000002
+  },
+  "test": {
+    "macro_f1": 0.530655624568668,
+    "weighted_f1": 0.6936231884057971,
+    "security_recall": 0.8285714285714286,
+    "loss": 0.4760241362255538
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.8529411764705882,
+      "recall": 0.8285714285714286,
+      "f1": 0.8405797101449275,
+      "support": 35,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.3333333333333333,
+      "recall": 0.16666666666666666,
+      "f1": 0.2222222222222222,
+      "support": 6,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 12,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571,
+      "f1": 0.8571428571428571,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "support": 3,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 6.0
+}

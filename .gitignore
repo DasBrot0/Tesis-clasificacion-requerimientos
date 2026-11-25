@@ -19,3 +19,6 @@ __pycache__/
 
 # La documentación vive en el repo hermano ../Tesis-clasificacion-requerimientos-docs/
 docs/
+
+# Modelos de corridas archivadas (pesados)
+old/*/checkpoints/

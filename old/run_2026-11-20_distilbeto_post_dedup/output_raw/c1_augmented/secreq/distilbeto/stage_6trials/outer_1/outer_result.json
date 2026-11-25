@@ -1,0 +1,84 @@
+{
+  "outer": 1,
+  "train_real_rows": 349,
+  "train_synthetic_rows": 73,
+  "test_rows": 87,
+  "optuna": {
+    "trials_finished": 6,
+    "trials_completed": 6,
+    "trials_pruned": 0
+  },
+  "default_config_inner_cv_macro_f1": 0.2629591628018337,
+  "best_trial": {
+    "trial_id": 5,
+    "inner_cv_macro_f1_mean": 0.6083560442404171,
+    "inner_cv_macro_f1_std": 0.046120683508773665
+  },
+  "winning_config": {
+    "learning_rate": 4.5156321168792874e-05,
+    "batch_size": 8,
+    "epochs": 10,
+    "dropout": 0.11049689336879653,
+    "weight_decay": 0.003922592778170174,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": true
+  },
+  "final_training_epochs": 8,
+  "thresholds_by_label": {
+    "Security": 0.4,
+    "Confidentiality": 0.4,
+    "Integrity": 0.5000000000000001,
+    "Authenticity": 0.4750000000000001,
+    "Resistance": 0.4
+  },
+  "test": {
+    "macro_f1": 0.5139201378331812,
+    "weighted_f1": 0.7139568942998215,
+    "security_recall": 0.8055555555555556,
+    "loss": 0.5394046713100297
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.8787878787878788,
+      "recall": 0.8055555555555556,
+      "f1": 0.8405797101449275,
+      "support": 36,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.5,
+      "recall": 0.2857142857142857,
+      "f1": 0.36363636363636365,
+      "support": 7,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.5714285714285714,
+      "recall": 0.6666666666666666,
+      "f1": 0.6153846153846154,
+      "support": 12,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.9,
+      "recall": 0.6428571428571429,
+      "f1": 0.75,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 6.5
+}
