@@ -1,85 +1,81 @@
 #!/usr/bin/env python3
-"""Construye los tres datasets de entrenamiento (uno por fuente, sin unirlos).
+"""Construye los datasets de entrenamiento a partir de los archivos fuente.
 
-    inputs/original/  ->  inputs/training/{promise,secreq,dosspre}.csv          (tabla completa)
-                      ->  inputs/training/<dataset>_binary.csv                  (tarea binaria)
-                      ->  inputs/training/<dataset>_subcategories.csv           (tarea de subcategorías)
+    python scripts/prepare_datasets.py
 
-Desde el 24-11-2026 hay dos entrenamientos separados (pedido del asesor), y cada dataset tiene dos
-archivos con el formato de las fuentes de DOSSPRE ("2.0Binary": todos los requisitos con SR/NSR;
-"3.0Multi-class": la categoría de seguridad):
-- <dataset>_binary.csv: todos los requisitos, con la etiqueta Security (1 seguridad, 0 no seguridad);
-- <dataset>_subcategories.csv: solo los requisitos con Security=1, con las cuatro subcategorías.
-Los dos se derivan de la tabla completa (mismos ID y textos), que se sigue escribiendo porque la leen
-la tarea conjunta anterior, la verificación de subcategorías y las planillas de validación.
+Por cada dataset (PROMISE_exp, SecReq, DOSSPRE) escribe en inputs/training/:
 
-Salida multietiqueta común (5 objetivos): Security + cuatro subcategorías ISO/IEC 25010
-(Non_repudiation y Accountability se descartaron el 25-10-2026 por falta de datos).
+    <dataset>.csv                 tabla completa: Security + cuatro subcategorías
+    <dataset>_binary.csv          tarea 1: todos los requisitos, etiqueta Security
+    <dataset>_subcategories.csv   tarea 2: solo los requisitos de seguridad, cuatro subcategorías
 
-- PROMISE_exp: SE -> Security=1; las demás categorías RNF -> Security=0. Se descartan las filas
-  sintéticas/prebalanceadas (ID o PROJECT originales vacíos, PROYECTO=CHATGPT).
-- SecReq: sec -> Security=1; nonsec -> Security=0.
-- DOSSPRE: Security sale de "2.0Binary" (SR/NSR) y la subcategoría de la clase de "1.0Original"
-  (ver DOSSPRE_CLASS_MAP); Availability y Maintainability pasan a Security=0. El texto en español es la traducción DeepL + glosario (corrida
-  provisional): inputs/interim/translations/deepl_provisional.jsonl.
-- SecReq: texto en inglés de inputs/interim/glossary/source_en.csv + traducción DeepL.
-- PROMISE: conserva el español del antecedente (Translation_source=promise_exp_translated).
+Los dos archivos por tarea siguen el formato de las fuentes de DOSSPRE ("2.0Binary" con SR/NSR y
+"3.0Multi-class" con la clase de seguridad) y tienen los mismos ID y textos que la tabla completa.
 
-Subcategorías (corrida PROVISIONAL, sin validación de expertos): PROMISE y SecReq toman el voto
-mayoritario de 3 corridas de claude-sonnet-5-5 sobre el texto en INGLÉS
-(inputs/interim/labels/son_prelabels.csv), estado `llm_provisional`. Las expresiones regulares
-PATTERNS (`legacy_regex_labels`) ya no generan etiquetas: solo sirven para
-`python scripts/prepare_datasets.py --report-regex-agreement`.
-Deduplicación en dos pasadas, cada una sobre el inglés y luego sobre el español:
-1. duplicados exactos (mayúsculas, tildes y espacios normalizados); después se asignan los ID;
-2. casi duplicados (`_dedup_key`: además sin puntuación y, en inglés, sin artículos), para que dos
-   copias de un requisito no queden en folds distintos. Se eliminan después de asignar los ID, de
-   modo que los requisitos que quedan conservan su ID (y el Anchor_ID de los sintéticos sigue
-   apuntando al mismo requisito); los eliminados dejan un hueco en la numeración.
-Las etiquetas contradictorias se tratan igual en las dos pasadas (ver `_deduplicate`).
-
-Uso:  python scripts/prepare_datasets.py [--report-regex-agreement]
+Pasos de cada dataset:
+  1. Leer la fuente y su texto en español:
+       PROMISE_exp  español del antecedente (Limaylla-Lunarejo et al.), sin las filas sintéticas de ChatGPT;
+       SecReq       inglés original + traducción DeepL con glosario;
+       DOSSPRE      inglés original + traducción DeepL con glosario; Security sale de "2.0Binary".
+  2. Etiqueta Security: SE / sec / SR -> 1, el resto -> 0. Availability y Maintainability de
+     DOSSPRE pasan a 0 porque en ISO/IEC 25010 no son Seguridad.
+  3. Quitar duplicados, primero exactos (y asignar los ID), luego casi duplicados, cada vez sobre
+     el inglés y después sobre el español. Un duplicado con etiquetas distintas es un error en
+     PROMISE y SecReq; en DOSSPRE se fusiona con la unión de sus etiquetas.
+  4. Subcategorías: PROMISE y SecReq toman el voto de 3 corridas de un LLM sobre el inglés
+     (inputs/interim/labels/son_prelabels.csv); DOSSPRE las mapea desde su clase (DOSSPRE_CLASS_MAP).
+  5. Casi duplicados que se fusionan a mano (inputs/interim/duplicados_manuales.csv).
+  6. Limpieza final: comillas de exportación, correcciones revisadas de traducción y de etiquetas.
+  7. Guardar la tabla completa y los dos archivos por tarea.
 """
 
 from __future__ import annotations
 
 import csv
+import json
 import re
 import sys
 import unicodedata
 from pathlib import Path
-from typing import Iterable, Optional
 
-import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config import (  # noqa: E402
-    DATASETS, INTERIM_DIR, LABEL_COLS, ORIGINAL_DIR, SUBCATEGORY_COLS, TASK_DATASETS, TEXT_COL,
+    DATASETS, INTERIM_DIR, LABEL_COLS, ORIGINAL_DIR, SUBCATEGORY_COLS, TEXT_COL, full_table_path, task_file_path,
 )
 
+# --------------------------------------------------------------------------- archivos
+
 PROMISE_FILES = ["Balanced_promise_exp_nfr_train.csv", "Spanish_promise_exp_nfr_test_recovered.csv"]
-SOURCE_EN = INTERIM_DIR / "glossary" / "source_en.csv"
-DEEPL_TRANSLATION = INTERIM_DIR / "translations" / "deepl_provisional.jsonl"
-SON_LABELS = INTERIM_DIR / "labels" / "son_prelabels.csv"
-# Revisión de las traducciones (21-11-2026): ID, ES_anterior, ES_corregido, Tipo, Gravedad, Motivo.
-TRANSLATION_FIXES = INTERIM_DIR / "translations" / "correcciones_revision.csv"
-# Revisión de subcategorías (segunda preanotación, 21-11-2026): ID, Antes, Despues, Confianza, Motivo.
-LABEL_FIXES = INTERIM_DIR / "labels" / "correcciones_etiquetas.csv"
-# Casi duplicados que la clave automática no detecta: ID_eliminado, ID_conservado, Motivo (21-11-2026).
-MANUAL_DUPLICATES = INTERIM_DIR / "duplicados_manuales.csv"
-TRANSLATION_SOURCE_DEEPL = "deepl+glossary_provisional"
-TRANSLATION_SOURCE_PROMISE = "promise_exp_translated"
 DOSSPRE_ORIGINAL = "DOSSPRE 1.0Original.csv"
 DOSSPRE_BINARY = "DOSSPRE 2.0Binary.csv"
+SOURCE_EN = INTERIM_DIR / "glossary" / "source_en.csv"                       # inglés de SecReq
+DEEPL_TRANSLATION = INTERIM_DIR / "translations" / "deepl_provisional.jsonl"  # inglés -> español
+LLM_LABELS = INTERIM_DIR / "labels" / "son_prelabels.csv"                    # subcategorías de PROMISE y SecReq
+MANUAL_DUPLICATES = INTERIM_DIR / "duplicados_manuales.csv"                  # ID_eliminado, ID_conservado
+TRANSLATION_FIXES = INTERIM_DIR / "translations" / "correcciones_revision.csv"  # ID, ES_anterior, ES_corregido
+LABEL_FIXES = INTERIM_DIR / "labels" / "correcciones_etiquetas.csv"          # ID, Antes, Despues
 
-# Clase DOSSPRE (minúsculas) -> subcategoría ISO/IEC 25010.
-DOSSPRE_CLASS_MAP: dict[str, Optional[str]] = {
+TRANSLATION_SOURCE_DEEPL = "deepl+glossary_provisional"
+TRANSLATION_SOURCE_PROMISE = "promise_exp_translated"
+
+COMMON_COLS = ["ID", "Dataset", "Source_file", "Project", "Source_ID", "Requirement_original", TEXT_COL,
+               "Translation_source", "Original_label"]
+OUTPUT_COLS = [*COMMON_COLS, *LABEL_COLS, "Subcategory_label_status", "Prelabel_evidence"]
+
+# --------------------------------------------------------------------------- etiquetas de origen
+
+# Etiquetas de seguridad de PROMISE y SecReq; cualquier otra categoría de RNF de PROMISE es Security=0.
+SECURITY_LABELS = {"se", "sec", "security", "seguridad"}
+NON_SECURITY_LABELS = {"nonsec", "nonsecurity", "noseguridad", "a", "po", "l", "ft", "sc", "mn", "lf", "pe", "o", "us"}
+
+# Clase de DOSSPRE (en minúsculas) -> subcategoría ISO/IEC 25010 (None: seguridad sin subcategoría).
+DOSSPRE_CLASS_MAP = {
     "confidentiality": "Confidentiality",
     "authorisation": "Confidentiality",
     "integrity": "Integrity",
-    # Accountability se descartó (25-10-2026): Auditing queda con Security=1 y sin subcategoría.
-    "auditing": None,
+    "auditing": None,  # Accountability se descartó el 25-10-2026 por falta de datos
     "authentication": "Authenticity",
     "identification": "Authenticity",
     "immunity": "Resistance",
@@ -87,502 +83,173 @@ DOSSPRE_CLASS_MAP: dict[str, Optional[str]] = {
     "detection": "Resistance",
     "survivability": "Resistance",
 }
-# SR en DOSSPRE (Kadebu et al., 2023), pero en ISO/IEC 25010 son Fiabilidad y Mantenibilidad, no
-# Seguridad: se fuerzan a Security=0, igual que A y MN en PROMISE.
+# SR en DOSSPRE (Kadebu et al., 2023), pero Fiabilidad y Mantenibilidad en ISO/IEC 25010: Security=0.
 DOSSPRE_OUT_OF_SECURITY = {"availability", "maintainability", "maintenability", "maintanability"}
 DOSSPRE_NON_SECURITY = {"functionality", "performance", "usability", "portability"}
 
+# Abreviaturas de las subcategorías en LABEL_FIXES.
+LABEL_ABBREVIATIONS = {"CON": "Confidentiality", "INT": "Integrity", "AUT": "Authenticity", "RES": "Resistance"}
 
-def _norm_name(value: object) -> str:
-    value = unicodedata.normalize("NFKD", str(value))
-    value = "".join(ch for ch in value if not unicodedata.combining(ch))
-    return re.sub(r"[^a-z0-9]+", "", value.lower())
-
-
-def _norm_text(value: object) -> str:
-    s = unicodedata.normalize("NFKD", str(value).lower())
-    s = "".join(ch for ch in s if not unicodedata.combining(ch))
-    return re.sub(r"\s+", " ", s).strip()
+# =========================================================================== normalización de texto
 
 
-_EN_ARTICLES = re.compile(r"\b(?:a|an|the)\b")
+def strip_accents(text: str) -> str:
+    text = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in text if not unicodedata.combining(ch))
 
 
-def _dedup_key(value: object, drop_articles: bool = False) -> str:
-    """Clave de casi duplicados: _norm_text sin puntuación y, en inglés, sin artículos."""
-    s = re.sub(r"[^\w\s]", " ", _norm_text(value))
+def norm_name(value) -> str:
+    """Nombre de columna o etiqueta comparable: minúsculas, sin tildes ni símbolos."""
+    return re.sub(r"[^a-z0-9]+", "", strip_accents(str(value)).lower())
+
+
+def norm_text(value) -> str:
+    """Clave de duplicados exactos: minúsculas, sin tildes y con los espacios normalizados."""
+    return re.sub(r"\s+", " ", strip_accents(str(value).lower())).strip()
+
+
+ENGLISH_ARTICLES = re.compile(r"\b(?:a|an|the)\b")
+
+
+def near_duplicate_key(value, drop_articles: bool = False) -> str:
+    """Clave de casi duplicados: norm_text sin puntuación y, en inglés, sin artículos."""
+    text = re.sub(r"[^\w\s]", " ", norm_text(value))
     if drop_articles:
-        s = _EN_ARTICLES.sub(" ", s)
-    return re.sub(r"\s+", " ", s).strip()
+        text = ENGLISH_ARTICLES.sub(" ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
-def _clean_text(value: object) -> Optional[str]:
+def clean_text(value) -> str | None:
     if value is None or pd.isna(value):
         return None
-    s = str(value).replace("﻿", " ")
-    s = re.sub(r"\s+", " ", s).strip()
-    return s or None
+    text = re.sub(r"\s+", " ", str(value).replace("﻿", " ")).strip()
+    return text or None
 
 
-_SECREQ_QUOTED = re.compile(r'^"\s*""(.*)"""$', re.S)
-_SECREQ_QUOTED_ES = re.compile(r'^(«\s*»\s*«|"\s*"")\s*')
+SECREQ_QUOTED_EN = re.compile(r'^"\s*""(.*)"""$', re.S)
+SECREQ_QUOTED_ES = re.compile(r'^(«\s*»\s*«|"\s*"")\s*')
 
 
-def _strip_stray_quotes(value: object) -> object:
-    # Quita comillas de exportación que envuelven el requisito entero. SecReq trae 37 requisitos
-    # entre comillas CSV escapadas dos veces (" ""texto"" + "), que DeepL convirtió en «»«texto»»»;
-    # en DOSSPRE el inglés acaba en un apóstrofo suelto que DeepL tradujo como «texto».
-    # Las comillas internas (p. ej. «OPEN») no se tocan.
+def strip_export_quotes(value):
+    """Quita las comillas de exportación que envuelven el requisito entero.
+
+    SecReq trae 37 requisitos entre comillas CSV escapadas dos veces, que DeepL convirtió en «»«texto»»»;
+    en DOSSPRE el inglés acaba en un apóstrofo suelto que DeepL tradujo como «texto». Las comillas
+    internas (p. ej. «OPEN») no se tocan.
+    """
     if not isinstance(value, str):
         return value
-    s = value
-    match = _SECREQ_QUOTED.match(s)
-    if match:
-        s = match.group(1)
-    elif _SECREQ_QUOTED_ES.match(s):
-        s = _SECREQ_QUOTED_ES.sub("", s)
-        s = re.sub(r'[«»"\s,]+$', "", s)
-        s += "»" * (s.count("«") - s.count("»"))
-    elif s.count("'") == 1 and re.search(r"[\w).,]'[.,]?$", s):
-        s = re.sub(r"'([.,]?)$", r"\1", s)
-    elif s.count("«") == 1 and s.count("»") == 1 and re.fullmatch(r"«[^«»]*»[.,]?", s):
-        s = re.sub(r"^«(.*)»([.,]?)$", r"\1\2", s)
-    return s.rstrip(" ,") if s != value else s
+    text = value
+    if match := SECREQ_QUOTED_EN.match(text):
+        text = match.group(1)
+    elif SECREQ_QUOTED_ES.match(text):
+        text = SECREQ_QUOTED_ES.sub("", text)
+        text = re.sub(r'[«»"\s,]+$', "", text)
+        text += "»" * (text.count("«") - text.count("»"))
+    elif text.count("'") == 1 and re.search(r"[\w).,]'[.,]?$", text):
+        text = re.sub(r"'([.,]?)$", r"\1", text)
+    elif text.count("«") == 1 and text.count("»") == 1 and re.fullmatch(r"«[^«»]*»[.,]?", text):
+        text = re.sub(r"^«(.*)»([.,]?)$", r"\1\2", text)
+    return text.rstrip(" ,") if text != value else text
 
 
-def _find_col(df: pd.DataFrame, aliases: Iterable[str]) -> Optional[str]:
-    normalized = {_norm_name(c): c for c in df.columns}
-    for alias in aliases:
-        if _norm_name(alias) in normalized:
-            return normalized[_norm_name(alias)]
-    return None
-
-
-def _read_csv_flexible(path: Path) -> pd.DataFrame:
-    attempts = [
-        ("utf-8-sig", ";"), ("utf-8-sig", ","),
-        ("cp1252", ";"), ("cp1252", ","),
-        ("latin1", ";"), ("latin1", ","),
-    ]
-    errors = []
-    for encoding, sep in attempts:
-        try:
-            df = pd.read_csv(path, sep=sep, encoding=encoding, engine="python")
-            if df.shape[1] >= 2:
-                return df
-        except Exception as exc:
-            errors.append(f"{encoding}/{sep}: {exc}")
-    raise ValueError(f"No se pudo leer {path}. Intentos: {' | '.join(errors[-4:])}")
-
-
-def _normalize_security_source_label(value: object) -> Optional[int]:
+def security_label(value) -> int | None:
+    """1 seguridad, 0 no seguridad, None si la etiqueta no es reconocible."""
     if value is None or pd.isna(value):
         return None
-    s = _norm_name(value)
-    if s in {"se", "sec", "security", "seguridad", "1", "true"}:
+    name = norm_name(value)
+    if name in SECURITY_LABELS or name in {"1", "true"}:
         return 1
-    if s in {"nonsec", "nonsecurity", "noseguridad", "0", "false"}:
-        return 0
-    # En PROMISE, cualquier otra etiqueta RNF actúa como negativo para la tarea Seguridad/No seguridad.
-    if s in {"a", "po", "l", "ft", "sc", "mn", "lf", "pe", "o", "us"}:
+    if name in NON_SECURITY_LABELS or name in {"0", "false"}:
         return 0
     return None
 
 
-def _is_preaugmented_promise_row(row: pd.Series, id_col: Optional[str], project_col: Optional[str], translated_project_col: Optional[str]) -> bool:
-    # El dataset balanceado publicado contiene ejemplos generados con ChatGPT con ID/PROJECT originales vacíos.
-    if id_col and pd.isna(row[id_col]):
-        return True
-    if project_col and pd.isna(row[project_col]):
-        return True
-    if translated_project_col:
-        p = _clean_text(row[translated_project_col])
-        if p and _norm_name(p) in {"chatgpt", "synthetic", "sintetico", "sintetica"}:
-            return True
-    return False
-
-
-def _promise_rows(path: Path) -> list[dict]:
-    df = _read_csv_flexible(path)
-    original_col = _find_col(df, ["REQUIREMENT", "Requirement_original", "Requirement"])
-    spanish_col = _find_col(df, ["REQUISITO", "Requirement_ES", "Requisito", "Spanish_requirement"])
-    label_col = _find_col(df, ["TIPO", "LABEL", "Original_label", "Label"])
-    project_col = _find_col(df, ["PROJECT", "Project"])
-    translated_project_col = _find_col(df, ["PROYECTO", "Proyecto"])
-    id_col = _find_col(df, ["ID", "Source_ID"])
-    if spanish_col is None or label_col is None:
-        raise ValueError(f"{path}: faltan las columnas REQUISITO y/o TIPO.")
-
-    rows: list[dict] = []
-    for idx, row in df.iterrows():
-        req_es = _clean_text(row[spanish_col])
-        sec = _normalize_security_source_label(row[label_col])
-        if not req_es or sec is None:
-            continue
-        if _is_preaugmented_promise_row(row, id_col, project_col, translated_project_col):
-            continue
-        rows.append({
-            "Source_file": path.name,
-            "Project": _clean_text(row[project_col]) if project_col else None,
-            "Source_ID": _clean_text(row[id_col]) if id_col else str(idx),
-            "Requirement_original": _clean_text(row[original_col]) if original_col else None,
-            TEXT_COL: req_es,
-            "Original_label": _clean_text(row[label_col]),
-            "Security": sec,
-            "Translation_source": TRANSLATION_SOURCE_PROMISE,
-        })
-    return rows
-
-
-def _deepl_map() -> dict:
-    """Texto EN normalizado -> traducción ES de DeepL (P6)."""
-    import json
+def deepl_translations() -> dict[str, str]:
+    """Inglés normalizado -> traducción DeepL con glosario."""
     with open(DEEPL_TRANSLATION, encoding="utf-8") as fh:
-        return {_norm_text(r["en"]): r["es"] for r in map(json.loads, fh)}
+        return {norm_text(row["en"]): row["es"] for row in map(json.loads, fh)}
 
 
-def _secreq_rows() -> list:
-    src = pd.read_csv(SOURCE_EN, encoding="utf-8-sig")
-    src = src[src["Dataset"] == "secreq"]
-    deepl = _deepl_map()
-    rows = []
-    for r in src.itertuples():
-        rows.append({
-            "Source_file": f"SecReq/{r.Spec}",
-            "Project": r.Spec,
-            "Source_ID": r.Source_ID,
-            "Requirement_original": _clean_text(r.Requirement_en),
-            TEXT_COL: _clean_text(deepl[_norm_text(r.Requirement_en)]),
-            "Original_label": r.Label,
-            "Security": _normalize_security_source_label(r.Label),
-            "Translation_source": TRANSLATION_SOURCE_DEEPL,
-        })
-    return rows
+# =========================================================================== paso 1-2: leer las fuentes
 
 
-# -------- LEGADO: preanotación por expresiones regulares sobre el español --------
-# Ya no genera etiquetas; solo se usa en --report-regex-agreement.
-PATTERNS: dict[str, list[str]] = {
-    "Confidentiality": [
-        r"confidencial", r"privacidad", r"informacion privada", r"datos privados", r"divulg", r"revel",
-        r"solo .*?(?:acced|ver|consult|usar|modific|actualiz|realiz|ingresar|buscar|transmit)",
-        r"unicamente .*?(?:acced|ver|consult|usar|modific|actualiz|realiz|ingresar|buscar|transmit)",
-        r"unicas? personas .*?acceso", r"unico usuario autorizado", r"usuarios? no autoriz", r"entidades? no autoriz",
-        r"personal autorizado", r"usuarios? autoriz", r"entidades? autoriz", r"remitente es un administrador",
-        r"acceso .*?autoriz", r"acceso .*?limit", r"restriccion(?:es)? de acceso", r"derechos? de acceso",
-        r"permisos?", r"privilegios?", r"control de acceso", r"visibilidad .*?limit",
-        r"cifrad", r"encript", r"ssl\b", r"canal seguro", r"comunicacion segura",
-        r"almacenamiento seguro", r"almacenar.*?segur", r"base de datos segura", r"base de datos protegida",
-        r"no .*?mostrar.*?contrasena", r"no .*?mostrar.*?tarjeta", r"separacion .*?claves?",
-        r"protegidos? frente al acceso no autorizado", r"proteger.*?divulgacion no autorizada",
-    ],
-    "Integrity": [
-        r"integridad", r"sin alteraciones", r"no hayan sido alterad", r"manipul", r"corrup",
-        r"datos? valid", r"datos? invalid", r"datos? correct", r"datos .*?correspondan", r"misma informacion",
-        r"verificar.*?mac", r"validar.*?mac", r"\bmac\b", r"\bhash\b",
-        r"firma(?:s)? digital", r"firma(?:s)? de .*?transaccion", r"firmad[oa]", r"firmar",
-        r"coherente", r"conciliable", r"cambios .*?autoriz", r"actualiz.*?autoriz",
-        r"transmision correcta", r"validacion", r"verificacion de firmas", r"verificacion de .*?certificad",
-    ],
-    "Non_repudiation": [
-        r"no[- ]?repudio", r"repudio", r"evitar el repudio", r"prueba de que", r"comprobante",
-        r"evidencia", r"disputa", r"reembolso", r"liquidar", r"resolucion de disputas",
-    ],
-    "Accountability": [
-        r"auditor", r"trazab", r"\blogs?\b", r"registrar", r"registrad", r"registro de .*?transaccion",
-        r"informe de usuario", r"marca de tiempo", r"numero de secuencia", r"contador de transacciones",
-        r"identificador unico", r"identificacion unica", r"historial", r"repositorio .*?errores",
-        r"seguimiento de transacciones", r"registro de eventos",
-    ],
-    "Authenticity": [
-        r"autentic", r"identidad", r"identificacion", r"iniciar sesion", r"inicio de sesion", r"login",
-        r"nombre de usuario", r"contrasena", r"\bpin\b", r"credencial", r"certificad", r"genuin",
-        r"clave publica", r"clave privada", r"autoridad de certificacion", r"autenticidad del origen",
-        r"verificacion del titular", r"verificacion de pin",
-    ],
-    "Resistance": [
-        r"ataque", r"malicios", r"abuso intencional", r"abusos intencionales", r"firewall", r"antivirus", r"amenaza",
-        r"reutiliz.*?credencial", r"reproduccion", r"replay", r"bloquear", r"bloquead", r"deshabilit",
-        r"estado seguro", r"entorno seguro", r"seguro y certificado", r"no pueda ser elud", r"no pueden ser elud",
-        r"sortead", r"fallo de autenticacion", r"multiples intentos", r"intentos repetid", r"inactividad",
-        r"expiracion", r"recuperacion de memoria", r"impedir el acceso", r"rechazar .*?solicitud",
-        r"cerrar .*?sesion", r"cierre .*?sesion", r"descartar .*?mensaje", r"protegerse", r"proteccion antivirus",
-    ],
-}
-
-
-def legacy_regex_labels(text: str) -> tuple[dict[str, int], str]:
-    norm = _norm_text(text)
-    out: dict[str, int] = {}
-    evidence: list[str] = []
-    for label, pats in PATTERNS.items():
-        matches = []
-        for pat in pats:
-            m = re.search(pat, norm)
-            if m:
-                matches.append(m.group(0)[:80])
-        out[label] = int(bool(matches))
-        if matches:
-            evidence.append(f"{label}: {', '.join(matches[:3])}")
-    return out, " | ".join(evidence)
-
-
-def _deduplicate(out: pd.DataFrame, name: str, merge_conflicts: bool = False, by_spanish: bool = False,
-                 near: bool = False) -> pd.DataFrame:
-    """Drop duplicate texts (exact, or near duplicates with near=True); keeps the first copy.
-
-    A duplicated text with contradictory labels is an error, unless merge_conflicts is set: then
-    the group keeps the union of its labels (DOSSPRE repeats requirements across projects under
-    different classes, which is a legitimate multilabel case).
-    """
-    # clave: inglés; con by_spanish se deduplica además la traducción (inglés distinto, mismo español)
-    text = out[TEXT_COL] if by_spanish else out["Requirement_original"].fillna(out[TEXT_COL])
-    if near:
-        # los artículos solo se quitan del inglés; en el español se deja la clave sin puntuación
-        out["_key"] = text.map(lambda value: _dedup_key(value, drop_articles=not by_spanish))
-    else:
-        out["_key"] = text.map(_norm_text)
-    label_cols = [col for col in LABEL_COLS if col in out.columns]
-    conflicts = out.groupby("_key")[label_cols].nunique().max(axis=1)
-    bad_keys = set(conflicts[conflicts > 1].index)
-    if bad_keys and not merge_conflicts:
-        examples = out[out["_key"].isin(bad_keys)][[TEXT_COL, "Original_label", *label_cols]]
-        raise ValueError(f"{name}: textos duplicados con etiquetas contradictorias:\n"
-                         + examples.head(20).to_string(index=False))
-    if bad_keys:
-        grouped = out.groupby("_key", sort=False)
-        out[label_cols] = grouped[label_cols].transform("max")
-        for col in ("Original_label", "Prelabel_evidence"):
-            if col not in out.columns:
+def read_csv_any_format(path: Path) -> pd.DataFrame:
+    """Lee un CSV probando las codificaciones y separadores con que vienen las fuentes."""
+    for encoding in ("utf-8-sig", "cp1252", "latin1"):
+        for sep in (";", ","):
+            try:
+                df = pd.read_csv(path, sep=sep, encoding=encoding, engine="python")
+            except Exception:
                 continue
-            # se separan los valores ya fusionados en una pasada anterior para no repetirlos
-            out[col] = grouped[col].transform(
-                lambda part: " | ".join(dict.fromkeys(p for v in part if v for p in str(v).split(" | "))))
-        out.loc[out["_key"].isin(bad_keys), "Subcategory_label_status"] = "class_mapped_merged_duplicates"
-        print(f"{name}: {len(bad_keys)} textos duplicados con clases distintas fusionados (unión de etiquetas)")
-    before = len(out)
-    dropped = out[out["_key"].duplicated(keep="first")]
-    if near and len(dropped):
-        kept = out.drop_duplicates("_key", keep="first").set_index("_key")
-        for key, row in dropped.set_index("_key").iterrows():
-            print(f"  casi duplicado: {row['ID']} se fusiona en {kept.at[key, 'ID']}"
-                  f" | {str(row['Requirement_original'])[:90]}")
-    out = out.drop_duplicates("_key", keep="first").drop(columns="_key").copy()
-    kind = "casi duplicados" if near else "duplicados exactos"
-    print(f"{name}: {before - len(out)} {kind} eliminados -> {len(out)} filas")
-    return out
+            if df.shape[1] >= 2:
+                return df
+    raise ValueError(f"No se pudo leer {path}.")
 
 
-def _assign_ids(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
-    """ID correlativo tras quitar los duplicados exactos (la numeración de siempre)."""
-    out = out.reset_index(drop=True)
-    out.insert(0, "ID", [f"{dataset}_{i:04d}" for i in range(1, len(out) + 1)])
-    return out
+def find_column(df: pd.DataFrame, *aliases: str) -> str | None:
+    columns = {norm_name(c): c for c in df.columns}
+    return next((columns[norm_name(a)] for a in aliases if norm_name(a) in columns), None)
 
 
-def _deduplicate_all(out: pd.DataFrame, dataset: str, merge_english_conflicts: bool) -> pd.DataFrame:
-    """Duplicados exactos -> ID -> casi duplicados, cada paso sobre el inglés y luego el español."""
-    out = _deduplicate(out, dataset, merge_conflicts=merge_english_conflicts)
-    out = _deduplicate(out, dataset + " (traducción idéntica)", merge_conflicts=True, by_spanish=True)
-    out = _assign_ids(out, dataset)
-    out = _deduplicate(out, dataset + " (casi duplicados)", merge_conflicts=merge_english_conflicts, near=True)
-    return _deduplicate(out, dataset + " (traducción casi idéntica)", merge_conflicts=True, by_spanish=True,
-                        near=True)
+def read_promise() -> pd.DataFrame:
+    """PROMISE_exp en español, sin las filas generadas con ChatGPT del dataset balanceado publicado
+    (ID o PROJECT originales vacíos, o PROYECTO = CHATGPT)."""
+    rows = []
+    for name in PROMISE_FILES:
+        df = read_csv_any_format(ORIGINAL_DIR / name)
+        english = find_column(df, "REQUIREMENT", "Requirement_original", "Requirement")
+        spanish = find_column(df, "REQUISITO", "Requirement_ES", "Requisito", "Spanish_requirement")
+        label = find_column(df, "TIPO", "LABEL", "Original_label", "Label")
+        project = find_column(df, "PROJECT", "Project")
+        translated_project = find_column(df, "PROYECTO", "Proyecto")
+        source_id = find_column(df, "ID", "Source_ID")
+        for idx, row in df.iterrows():
+            text, security = clean_text(row[spanish]), security_label(row[label])
+            if not text or security is None:
+                continue
+            is_synthetic = ((source_id and pd.isna(row[source_id])) or (project and pd.isna(row[project]))
+                            or (translated_project and norm_name(clean_text(row[translated_project]) or "")
+                                in {"chatgpt", "synthetic", "sintetico", "sintetica"}))
+            if is_synthetic:
+                continue
+            rows.append({
+                "Source_file": name,
+                "Project": clean_text(row[project]) if project else None,
+                "Source_ID": clean_text(row[source_id]) if source_id else str(idx),
+                "Requirement_original": clean_text(row[english]) if english else None,
+                TEXT_COL: text,
+                "Original_label": clean_text(row[label]),
+                "Security": security,
+                "Translation_source": TRANSLATION_SOURCE_PROMISE,
+            })
+    return pd.DataFrame(rows)
 
 
-def _merge_manual_duplicates(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
-    """Fusiona los casi duplicados que la clave automática no detecta (MANUAL_DUPLICATES).
-
-    La copia que se quita cede sus etiquetas a la que se conserva (unión), como en _deduplicate.
-    """
-    if not MANUAL_DUPLICATES.exists():
-        return out
-    table = pd.read_csv(MANUAL_DUPLICATES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
-    pairs = {r.ID_eliminado: r.ID_conservado for r in table.itertuples(index=False)
-             if r.ID_eliminado.startswith(f"{dataset}_")}
-    if not pairs:
-        return out
-    out = out.reset_index(drop=True)
-    pos = {id_: i for i, id_ in enumerate(out["ID"])}
-    missing = [id_ for pair in pairs.items() for id_ in pair if id_ not in pos]
-    if missing:
-        raise ValueError(f"{dataset}: MANUAL_DUPLICATES menciona IDs que no existen: {missing}")
-    label_cols = [col for col in LABEL_COLS if col in out.columns]
-    for drop, keep in pairs.items():
-        i, j = pos[keep], pos[drop]
-        out.loc[i, label_cols] = out.loc[[i, j], label_cols].astype(int).max()
-        print(f"  casi duplicado (manual): {drop} se fusiona en {keep} | {str(out.at[j, 'Requirement_original'])[:90]}")
-    out = out.drop(index=[pos[d] for d in pairs]).reset_index(drop=True)
-    print(f"{dataset}: {len(pairs)} casi duplicados manuales eliminados -> {len(out)} filas")
-    return out
+def read_secreq() -> pd.DataFrame:
+    source = pd.read_csv(SOURCE_EN, encoding="utf-8-sig")
+    source = source[source["Dataset"] == "secreq"]
+    spanish = deepl_translations()
+    return pd.DataFrame([{
+        "Source_file": f"SecReq/{r.Spec}",
+        "Project": r.Spec,
+        "Source_ID": r.Source_ID,
+        "Requirement_original": clean_text(r.Requirement_en),
+        TEXT_COL: clean_text(spanish[norm_text(r.Requirement_en)]),
+        "Original_label": r.Label,
+        "Security": security_label(r.Label),
+        "Translation_source": TRANSLATION_SOURCE_DEEPL,
+    } for r in source.itertuples()])
 
 
-_LABEL_ABBR = {"CON": "Confidentiality", "INT": "Integrity", "AUT": "Authenticity", "RES": "Resistance"}
-
-
-def _abbr_labels(row: pd.Series) -> str:
-    return "/".join(a for a, col in _LABEL_ABBR.items() if int(row[col]) == 1) or "NINGUNA"
-
-
-def _apply_label_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
-    """Aplica la revisión de subcategorías (LABEL_FIXES), por ID; solo a requisitos de seguridad.
-
-    Igual que con las traducciones, cada corrección guarda las etiquetas que reemplaza y se rechaza
-    si ya no coinciden con las actuales.
-    """
-    if not LABEL_FIXES.exists():
-        return out
-    fixes = pd.read_csv(LABEL_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
-    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
-    pos = {id_: i for i, id_ in enumerate(out["ID"])}
-    stale = []
-    for fix in fixes.itertuples(index=False):
-        i = pos.get(fix.ID)
-        if i is None or int(out.at[i, "Security"]) != 1 or _abbr_labels(out.loc[i]) != fix.Antes:
-            stale.append(fix.ID)
-            continue
-        new = set() if fix.Despues == "NINGUNA" else set(fix.Despues.split("/"))
-        if new - set(_LABEL_ABBR):
-            raise ValueError(f"{dataset}: etiqueta desconocida en {LABEL_FIXES.name}: {fix.ID} {fix.Despues}")
-        for abbr, col in _LABEL_ABBR.items():
-            out.at[i, col] = int(abbr in new)
-        out.at[i, "Subcategory_label_status"] = "revision_v2"
-    if stale:
-        raise ValueError(f"{dataset}: {len(stale)} correcciones de etiquetas no coinciden con las actuales "
-                         f"({LABEL_FIXES.name}), p. ej. {stale[:5]}")
-    if len(fixes):
-        print(f"{dataset}: {len(fixes)} etiquetas de subcategoría corregidas ({LABEL_FIXES.name})")
-    return out
-
-
-def _apply_translation_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
-    """Aplica las correcciones de la revisión de traducciones (TRANSLATION_FIXES), por ID.
-
-    Cada corrección guarda el español que reemplaza; si no coincide con el actual, la traducción
-    de origen cambió y la corrección se debe revisar en vez de aplicarse a ciegas.
-    """
-    if not TRANSLATION_FIXES.exists():
-        return out
-    fixes = pd.read_csv(TRANSLATION_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
-    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
-    pos = {id_: i for i, id_ in enumerate(out["ID"])}
-    stale = []
-    for fix in fixes.itertuples(index=False):
-        i = pos.get(fix.ID)
-        if i is None or out.at[i, TEXT_COL] != fix.ES_anterior:
-            stale.append(fix.ID)
-            continue
-        out.at[i, TEXT_COL] = fix.ES_corregido
-        out.at[i, "Translation_source"] = f"{out.at[i, 'Translation_source']}+revisada"
-    if stale:
-        raise ValueError(f"{dataset}: {len(stale)} correcciones de traducción no coinciden con el texto "
-                         f"actual ({TRANSLATION_FIXES.name}), p. ej. {stale[:5]}")
-    if len(fixes):
-        print(f"{dataset}: {len(fixes)} traducciones corregidas ({TRANSLATION_FIXES.name})")
-    return out
-
-
-def _finalize(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
-    out = out.reset_index(drop=True)
-    # Al final, porque la traducción DeepL y las etiquetas SON se buscan por el inglés original.
-    for col in ("Requirement_original", TEXT_COL):
-        cleaned = out[col].map(_strip_stray_quotes)
-        changed = int((cleaned != out[col]).sum())
-        if changed:
-            print(f"{dataset}: {changed} textos de {col} sin comillas de exportación")
-        out[col] = cleaned
-    out = _apply_translation_fixes(out, dataset)
-    out = _apply_label_fixes(out, dataset)
-    if out[TEXT_COL].map(_dedup_key).duplicated().any():
-        raise AssertionError(f"{dataset}: quitar las comillas dejó requisitos duplicados.")
-    for col in LABEL_COLS:
-        out[col] = pd.to_numeric(out[col], errors="raise").astype(int)
-    if (out["Security"].eq(0) & out[SUBCATEGORY_COLS].any(axis=1)).any():
-        raise AssertionError(f"{dataset}: hay subcategorías positivas con Security=0.")
-    out.insert(1, "Dataset", dataset)
-    ordered = ["ID", "Dataset", "Source_file", "Project", "Source_ID", "Requirement_original",
-               TEXT_COL, "Translation_source", "Original_label", *LABEL_COLS, "Subcategory_label_status",
-               "Prelabel_evidence"]
-    path = DATASETS[dataset]
-    path.parent.mkdir(parents=True, exist_ok=True)
-    out[ordered].to_csv(path, index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
-    write_task_files(out[ordered], dataset)
-    return out[ordered]
-
-
-_COMMON_COLS = ["ID", "Dataset", "Source_file", "Project", "Source_ID", "Requirement_original", TEXT_COL,
-                "Translation_source", "Original_label"]
-
-
-def task_frames(full: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """(binary, subcategories) tables of one dataset, derived from its full table.
-
-    binary: every requirement and its Security label (like DOSSPRE 2.0Binary).
-    subcategories: the Security=1 requirements and their four subcategories (like DOSSPRE
-    3.0Multi-class, which only details the security classes), with the label status and evidence.
-    """
-    binary = full[[*_COMMON_COLS, "Security"]].copy()
-    security = full[full["Security"].eq(1)]
-    subcategories = security[[*_COMMON_COLS, *SUBCATEGORY_COLS, "Subcategory_label_status",
-                              "Prelabel_evidence"]].copy()
-    return binary.reset_index(drop=True), subcategories.reset_index(drop=True)
-
-
-def write_task_files(full: pd.DataFrame, dataset: str) -> None:
-    for task, frame in zip(("binary", "subcategories"), task_frames(full)):
-        path = TASK_DATASETS[task][dataset]
-        frame.to_csv(path, index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
-
-
-def _son_label_map() -> dict:
-    son = pd.read_csv(SON_LABELS, encoding="utf-8-sig")
-    return {(r.dataset, _norm_text(r.text)): r for r in son.itertuples()}
-
-
-def _build_llm_labelled(rows: list, dataset: str) -> pd.DataFrame:
-    """PROMISE/SecReq: subcategorías = voto mayoritario de SON sobre el inglés (provisional)."""
-    out = _deduplicate_all(pd.DataFrame(rows), dataset, merge_english_conflicts=False)
-    son = _son_label_map()
-    out["Prelabel_evidence"] = ""
-    out["Subcategory_label_status"] = "structural_zero"
-    for col in SUBCATEGORY_COLS:
-        out[col] = 0
-    for idx in out.index[out["Security"].eq(1)]:
-        row = son[(dataset, _norm_text(out.at[idx, "Requirement_original"]))]
-        for col in SUBCATEGORY_COLS:
-            out.at[idx, col] = int(getattr(row, col))
-        out.at[idx, "Prelabel_evidence"] = "SON(claude-sonnet-5-5, 3 corridas): " + str(row.rationale)[:200]
-        out.at[idx, "Subcategory_label_status"] = "llm_provisional"
-    out = _merge_manual_duplicates(out, dataset)
-    return _finalize(out, dataset)
-
-
-def build_promise() -> pd.DataFrame:
-    rows = [row for name in PROMISE_FILES for row in _promise_rows(ORIGINAL_DIR / name)]
-    return _build_llm_labelled(rows, "promise")
-
-
-def build_secreq() -> pd.DataFrame:
-    return _build_llm_labelled(_secreq_rows(), "secreq")
-
-
-def _dosspre_text(value: object) -> str:
-    # Los requisitos vienen entre comillas simples y con comillas tipográficas de cp1252.
+def dosspre_english(value) -> str:
+    """Los requisitos vienen entre comillas simples y con comillas tipográficas de cp1252."""
     text = str(value).strip().strip("'").replace("’", "'").replace("‘", "'")
     return re.sub(r"\s+", " ", text.replace("“", '"').replace("”", '"')).strip()
 
 
-def _dosspre_translation(texts: pd.Series) -> pd.Series:
-    """Traducción DeepL + glosario (P6) por texto en inglés."""
-    deepl = _deepl_map()
-    keys = texts.map(_norm_text)
-    missing = sorted(set(keys) - set(deepl))
-    if missing:
-        raise ValueError(f"dosspre: {len(missing)} textos sin traducción DeepL, p. ej. {missing[:3]}")
-    return keys.map(deepl)
-
-
-def build_dosspre() -> pd.DataFrame:
+def read_dosspre() -> pd.DataFrame:
+    """DOSSPRE con Security de "2.0Binary" y la subcategoría mapeada desde la clase de "1.0Original"."""
     original = pd.read_csv(ORIGINAL_DIR / DOSSPRE_ORIGINAL, encoding="cp1252")
     binary = pd.read_csv(ORIGINAL_DIR / DOSSPRE_BINARY, encoding="cp1252")
     if len(original) != len(binary) or not original["Project ID"].equals(binary["Project ID"]):
@@ -591,7 +258,7 @@ def build_dosspre() -> pd.DataFrame:
         "Source_file": DOSSPRE_ORIGINAL,
         "Project": original["Project ID"].astype(str),
         "Source_ID": (original.index + 1).astype(str),
-        "Requirement_original": original["Requirement"].map(_dosspre_text),
+        "Requirement_original": original["Requirement"].map(dosspre_english),
         "Original_label": original["Class"].str.strip(),
         "Security": binary["Class"].str.strip().map({"SR": 1, "NSR": 0}),
     })
@@ -601,60 +268,249 @@ def build_dosspre() -> pd.DataFrame:
     unknown = set(classes) - set(DOSSPRE_CLASS_MAP) - DOSSPRE_NON_SECURITY - DOSSPRE_OUT_OF_SECURITY
     if unknown:
         raise ValueError(f"Clases DOSSPRE sin mapear: {sorted(unknown)}")
-    for col in SUBCATEGORY_COLS:
-        out[col] = 0
+
+    # paso 2: Availability y Maintainability salen de Seguridad
+    out[SUBCATEGORY_COLS] = 0
     out["Prelabel_evidence"] = ""
     out["Subcategory_label_status"] = "structural_zero"
-    excluded = classes.isin(DOSSPRE_OUT_OF_SECURITY) & out["Security"].eq(1)
-    out.loc[excluded, "Security"] = 0
-    out.loc[excluded, "Prelabel_evidence"] = "Security=0: SR en DOSSPRE, fuera de Seguridad en ISO/IEC 25010"
+    out_of_security = classes.isin(DOSSPRE_OUT_OF_SECURITY) & out["Security"].eq(1)
+    out.loc[out_of_security, "Security"] = 0
+    out.loc[out_of_security, "Prelabel_evidence"] = "Security=0: SR en DOSSPRE, fuera de Seguridad en ISO/IEC 25010"
+
+    # paso 4 (en DOSSPRE va antes de los duplicados, que se fusionan con la unión de etiquetas)
     for idx in out.index[out["Security"].eq(1)]:
         target = DOSSPRE_CLASS_MAP.get(classes[idx])
-        evidence = []
         if target:
             out.at[idx, target] = 1
-            evidence.append(f"{target}: clase DOSSPRE '{out.at[idx, 'Original_label']}'")
-        out.at[idx, "Prelabel_evidence"] = " | ".join(evidence)
-        out.at[idx, "Subcategory_label_status"] = "class_mapped" if evidence else "subcategory_dropped"
-    out[TEXT_COL] = _dosspre_translation(out["Requirement_original"])
+            out.at[idx, "Prelabel_evidence"] = f"{target}: clase DOSSPRE '{out.at[idx, 'Original_label']}'"
+        out.at[idx, "Subcategory_label_status"] = "class_mapped" if target else "subcategory_dropped"
+
+    spanish = deepl_translations()
+    keys = out["Requirement_original"].map(norm_text)
+    missing = sorted(set(keys) - set(spanish))
+    if missing:
+        raise ValueError(f"dosspre: {len(missing)} textos sin traducción DeepL, p. ej. {missing[:3]}")
+    out[TEXT_COL] = keys.map(spanish)
     out["Translation_source"] = TRANSLATION_SOURCE_DEEPL
-    out = _deduplicate_all(out, "dosspre", merge_english_conflicts=True)
-    out = _merge_manual_duplicates(out, "dosspre")
-    return _finalize(out, "dosspre")
+    return out
 
 
-def report_regex_agreement() -> None:
-    """Compara las etiquetas actuales con las de las antiguas expresiones regulares (sobre el español)."""
-    for name in ("promise", "secreq"):
-        df = pd.read_csv(DATASETS[name], encoding="utf-8-sig")
-        sec = df[df["Security"] == 1]
-        regex = pd.DataFrame([legacy_regex_labels(t)[0] for t in sec[TEXT_COL]], index=sec.index)
-        print(f"\n{name}: {len(sec)} requisitos de seguridad")
-        changed = 0
+# =========================================================================== paso 3: duplicados
+
+
+def drop_duplicates(out: pd.DataFrame, name: str, merge_conflicts: bool, spanish: bool = False,
+                    near: bool = False) -> pd.DataFrame:
+    """Deja la primera copia de cada texto repetido (exacto, o casi duplicado con near=True).
+
+    spanish=False compara el inglés original; spanish=True, la traducción (dos inglés distintos
+    pueden dar el mismo español). Si las copias tienen etiquetas distintas: error, salvo con
+    merge_conflicts, en cuyo caso se conserva la unión de sus etiquetas (DOSSPRE repite requisitos
+    entre proyectos con clases distintas, un caso multietiqueta legítimo).
+    """
+    text = out[TEXT_COL] if spanish else out["Requirement_original"].fillna(out[TEXT_COL])
+    out["_key"] = text.map(lambda v: near_duplicate_key(v, drop_articles=not spanish)) if near else text.map(norm_text)
+    labels = [col for col in LABEL_COLS if col in out.columns]
+    conflicts = out.groupby("_key")[labels].nunique().max(axis=1)
+    conflict_keys = set(conflicts[conflicts > 1].index)
+    if conflict_keys and not merge_conflicts:
+        examples = out[out["_key"].isin(conflict_keys)][[TEXT_COL, "Original_label", *labels]]
+        raise ValueError(f"{name}: textos duplicados con etiquetas contradictorias:\n"
+                         + examples.head(20).to_string(index=False))
+    if conflict_keys:
+        groups = out.groupby("_key", sort=False)
+        out[labels] = groups[labels].transform("max")
+        for col in ("Original_label", "Prelabel_evidence"):
+            if col in out.columns:  # sin repetir valores ya fusionados en una pasada anterior
+                out[col] = groups[col].transform(
+                    lambda part: " | ".join(dict.fromkeys(p for v in part if v for p in str(v).split(" | "))))
+        out.loc[out["_key"].isin(conflict_keys), "Subcategory_label_status"] = "class_mapped_merged_duplicates"
+        print(f"{name}: {len(conflict_keys)} textos duplicados con clases distintas fusionados (unión de etiquetas)")
+    before = len(out)
+    if near:
+        kept = out.drop_duplicates("_key").set_index("_key")
+        for key, row in out[out["_key"].duplicated()].set_index("_key").iterrows():
+            print(f"  casi duplicado: {row['ID']} se fusiona en {kept.at[key, 'ID']} | "
+                  f"{str(row['Requirement_original'])[:90]}")
+    out = out.drop_duplicates("_key").drop(columns="_key").copy()
+    print(f"{name}: {before - len(out)} {'casi duplicados' if near else 'duplicados exactos'} eliminados "
+          f"-> {len(out)} filas")
+    return out
+
+
+def remove_duplicates(out: pd.DataFrame, dataset: str, merge_conflicts: bool) -> pd.DataFrame:
+    """Duplicados exactos -> ID correlativos -> casi duplicados. Los ID se asignan antes de quitar
+    los casi duplicados, así los requisitos que quedan conservan su ID (y los sintéticos su Anchor_ID)."""
+    out = drop_duplicates(out, dataset, merge_conflicts)
+    out = drop_duplicates(out, f"{dataset} (traducción idéntica)", True, spanish=True)
+    out = out.reset_index(drop=True)
+    out.insert(0, "ID", [f"{dataset}_{i:04d}" for i in range(1, len(out) + 1)])
+    out = drop_duplicates(out, f"{dataset} (casi duplicados)", merge_conflicts, near=True)
+    return drop_duplicates(out, f"{dataset} (traducción casi idéntica)", True, spanish=True, near=True)
+
+
+def merge_manual_duplicates(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Casi duplicados que la clave automática no detecta: la copia eliminada cede sus etiquetas."""
+    table = pd.read_csv(MANUAL_DUPLICATES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    pairs = {r.ID_eliminado: r.ID_conservado for r in table.itertuples() if r.ID_eliminado.startswith(f"{dataset}_")}
+    if not pairs:
+        return out
+    out = out.reset_index(drop=True)
+    position = {id_: i for i, id_ in enumerate(out["ID"])}
+    missing = [id_ for pair in pairs.items() for id_ in pair if id_ not in position]
+    if missing:
+        raise ValueError(f"{dataset}: {MANUAL_DUPLICATES.name} menciona ID que no existen: {missing}")
+    labels = [col for col in LABEL_COLS if col in out.columns]
+    for drop, keep in pairs.items():
+        i, j = position[keep], position[drop]
+        out.loc[i, labels] = out.loc[[i, j], labels].astype(int).max()
+        print(f"  casi duplicado (manual): {drop} se fusiona en {keep} | {str(out.at[j, 'Requirement_original'])[:90]}")
+    out = out.drop(index=[position[d] for d in pairs]).reset_index(drop=True)
+    print(f"{dataset}: {len(pairs)} casi duplicados manuales eliminados -> {len(out)} filas")
+    return out
+
+
+# =========================================================================== paso 4: subcategorías por LLM
+
+
+def add_llm_subcategories(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """PROMISE y SecReq: subcategorías = voto mayoritario de 3 corridas del LLM sobre el inglés."""
+    votes = pd.read_csv(LLM_LABELS, encoding="utf-8-sig")
+    votes = {(r.dataset, norm_text(r.text)): r for r in votes.itertuples()}
+    out["Prelabel_evidence"] = ""
+    out["Subcategory_label_status"] = "structural_zero"
+    out[SUBCATEGORY_COLS] = 0
+    for idx in out.index[out["Security"].eq(1)]:
+        vote = votes[(dataset, norm_text(out.at[idx, "Requirement_original"]))]
         for col in SUBCATEGORY_COLS:
-            new, old = sec[col].astype(int), regex[col].astype(int)
-            diff = int((new != old).sum())
-            changed += diff
-            print(f"  {col:16s} nuevo={int(new.sum()):3d} regex={int(old.sum()):3d} cambian={diff:3d} ({diff / len(sec):.1%})")
-        total = len(sec) * len(SUBCATEGORY_COLS)
-        print(f"  etiquetas cambiadas: {changed}/{total} ({changed / total:.1%})")
+            out.at[idx, col] = int(getattr(vote, col))
+        out.at[idx, "Prelabel_evidence"] = "SON(claude-sonnet-5-5, 3 corridas): " + str(vote.rationale)[:200]
+        out.at[idx, "Subcategory_label_status"] = "llm_provisional"
+    return out
+
+
+# =========================================================================== paso 6: revisiones manuales
+
+
+def apply_translation_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Correcciones de la revisión de traducciones. Cada una guarda el español que reemplaza; si ya no
+    coincide, la traducción de origen cambió y la corrección se debe revisar en vez de aplicarse."""
+    fixes = pd.read_csv(TRANSLATION_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
+    position = {id_: i for i, id_ in enumerate(out["ID"])}
+    stale = []
+    for fix in fixes.itertuples():
+        i = position.get(fix.ID)
+        if i is None or out.at[i, TEXT_COL] != fix.ES_anterior:
+            stale.append(fix.ID)
+            continue
+        out.at[i, TEXT_COL] = fix.ES_corregido
+        out.at[i, "Translation_source"] += "+revisada"
+    if stale:
+        raise ValueError(f"{dataset}: {len(stale)} correcciones de traducción no coinciden con el texto actual "
+                         f"({TRANSLATION_FIXES.name}), p. ej. {stale[:5]}")
+    if len(fixes):
+        print(f"{dataset}: {len(fixes)} traducciones corregidas ({TRANSLATION_FIXES.name})")
+    return out
+
+
+def label_abbreviation(row: pd.Series) -> str:
+    return "/".join(a for a, col in LABEL_ABBREVIATIONS.items() if int(row[col]) == 1) or "NINGUNA"
+
+
+def apply_label_fixes(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    """Correcciones de la revisión de subcategorías (solo requisitos de seguridad). Igual que con las
+    traducciones, cada una guarda las etiquetas que reemplaza y se rechaza si ya no coinciden."""
+    fixes = pd.read_csv(LABEL_FIXES, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    fixes = fixes[fixes["ID"].str.startswith(f"{dataset}_")]
+    position = {id_: i for i, id_ in enumerate(out["ID"])}
+    stale = []
+    for fix in fixes.itertuples():
+        i = position.get(fix.ID)
+        if i is None or int(out.at[i, "Security"]) != 1 or label_abbreviation(out.loc[i]) != fix.Antes:
+            stale.append(fix.ID)
+            continue
+        new = set() if fix.Despues == "NINGUNA" else set(fix.Despues.split("/"))
+        if new - set(LABEL_ABBREVIATIONS):
+            raise ValueError(f"{dataset}: etiqueta desconocida en {LABEL_FIXES.name}: {fix.ID} {fix.Despues}")
+        for abbreviation, col in LABEL_ABBREVIATIONS.items():
+            out.at[i, col] = int(abbreviation in new)
+        out.at[i, "Subcategory_label_status"] = "revision_v2"
+    if stale:
+        raise ValueError(f"{dataset}: {len(stale)} correcciones de etiquetas no coinciden con las actuales "
+                         f"({LABEL_FIXES.name}), p. ej. {stale[:5]}")
+    if len(fixes):
+        print(f"{dataset}: {len(fixes)} etiquetas de subcategoría corregidas ({LABEL_FIXES.name})")
+    return out
+
+
+def final_cleanup(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
+    out = out.reset_index(drop=True)
+    # Las comillas se quitan al final porque la traducción y las etiquetas del LLM se buscan por el inglés.
+    for col in ("Requirement_original", TEXT_COL):
+        cleaned = out[col].map(strip_export_quotes)
+        changed = int((cleaned != out[col]).sum())
+        if changed:
+            print(f"{dataset}: {changed} textos de {col} sin comillas de exportación")
+        out[col] = cleaned
+    out = apply_translation_fixes(out, dataset)
+    out = apply_label_fixes(out, dataset)
+    if out[TEXT_COL].map(near_duplicate_key).duplicated().any():
+        raise AssertionError(f"{dataset}: quitar las comillas dejó requisitos duplicados.")
+    for col in LABEL_COLS:
+        out[col] = pd.to_numeric(out[col], errors="raise").astype(int)
+    if (out["Security"].eq(0) & out[SUBCATEGORY_COLS].any(axis=1)).any():
+        raise AssertionError(f"{dataset}: hay subcategorías positivas con Security=0.")
+    out.insert(1, "Dataset", dataset)
+    return out[OUTPUT_COLS]
+
+
+# =========================================================================== paso 7: guardar
+
+
+def task_tables(full: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """(binaria, subcategorías) de un dataset, derivadas de su tabla completa.
+
+    binaria: todos los requisitos y su etiqueta Security (como DOSSPRE 2.0Binary).
+    subcategorías: solo Security=1, con las cuatro subcategorías (como DOSSPRE 3.0Multi-class).
+    """
+    binary = full[[*COMMON_COLS, "Security"]]
+    security = full[full["Security"].eq(1)]
+    subcategories = security[[*COMMON_COLS, *SUBCATEGORY_COLS, "Subcategory_label_status", "Prelabel_evidence"]]
+    return binary.reset_index(drop=True), subcategories.reset_index(drop=True)
+
+
+def save(full: pd.DataFrame, dataset: str) -> None:
+    full_table_path(dataset).parent.mkdir(parents=True, exist_ok=True)
+    full.to_csv(full_table_path(dataset), index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
+    binary, subcategories = task_tables(full)
+    binary.to_csv(task_file_path(dataset, "binary"), index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
+    subcategories.to_csv(task_file_path(dataset, "subcategories"), index=False, encoding="utf-8-sig",
+                         quoting=csv.QUOTE_MINIMAL)
+    empty = int((~subcategories[SUBCATEGORY_COLS].any(axis=1)).sum())
+    print(f"{dataset}: {len(full)} filas | positivos {full[LABEL_COLS].sum().to_dict()}\n"
+          f"  binaria: {len(binary)} filas; subcategorías: {len(subcategories)} filas ({empty} sin subcategoría)")
+
+
+# =========================================================================== flujo por dataset
+
+
+def build(dataset: str) -> pd.DataFrame:
+    if dataset == "dosspre":
+        table = read_dosspre()                                        # pasos 1, 2 y 4
+        table = remove_duplicates(table, dataset, merge_conflicts=True)  # paso 3
+    else:
+        table = read_promise() if dataset == "promise" else read_secreq()  # pasos 1 y 2
+        table = remove_duplicates(table, dataset, merge_conflicts=False)   # paso 3
+        table = add_llm_subcategories(table, dataset)                      # paso 4
+    table = merge_manual_duplicates(table, dataset)                   # paso 5
+    return final_cleanup(table, dataset)                              # paso 6
 
 
 def main() -> None:
-    for name, builder in (("promise", build_promise), ("secreq", build_secreq), ("dosspre", build_dosspre)):
-        frame = builder()
-        counts = frame[LABEL_COLS].sum().to_dict()
-        print(f"{name}: {len(frame)} filas -> {DATASETS[name]}\n  positivos: {counts}")
-        empty = int((frame["Security"].eq(1) & ~frame[SUBCATEGORY_COLS].any(axis=1)).sum())
-        print(f"  binaria: {len(frame)} filas -> {TASK_DATASETS['binary'][name].name}; "
-              f"subcategorías: {int(frame['Security'].sum())} filas ({empty} sin subcategoría) "
-              f"-> {TASK_DATASETS['subcategories'][name].name}")
+    for dataset in DATASETS:
+        save(build(dataset), dataset)                                 # paso 7
     print("\nVerifique la cobertura con: python scripts/verify_subcategories.py")
 
 
 if __name__ == "__main__":
-    np.random.seed(0)
-    if "--report-regex-agreement" in sys.argv:
-        report_regex_agreement()
-    else:
-        main()
+    main()

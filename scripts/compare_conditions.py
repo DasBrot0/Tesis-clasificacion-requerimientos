@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
-"""G9 (PLAN_AUMENTO_DATOS.md): compara C0 (solo reales) y C1 (reales + sintéticos).
+"""G9 (PLAN_AUMENTO_DATOS.md): compara C0 (solo reales) y C1 (reales + sintéticos) en la tarea de
+subcategorías, la única que tiene las dos condiciones.
 
-    python scripts/compare_conditions.py                       # tarea conjunta (corridas anteriores)
-    python scripts/compare_conditions.py --task subcategories  # o --task binary
+    python scripts/compare_conditions.py
 
 Usa las predicciones externas agrupadas de cada (dataset, modelo) presente en las dos condiciones,
 pareadas por requisito:
 - McNemar exacto por etiqueta (aciertos de C0 frente a C1);
-- intervalo de confianza del 95 % del delta del objetivo de la tarea (macro-F1; F1 de Security en la
-  binaria) por bootstrap pareado (1 000 remuestreos);
+- intervalo de confianza del 95 % del delta de macro-F1 por bootstrap pareado (1 000 remuestreos);
 - Wilcoxon de rangos con signo de ese delta sobre todos los pares disponibles.
 
-Salidas: <raw_root(tarea)>/condition_comparison.csv y condition_comparison_by_label.csv
-(outputs/output_raw/ en la tarea conjunta, outputs/output_raw/<tarea>/ en las otras).
+Salidas: outputs/output_raw/subcategories/condition_comparison.csv y condition_comparison_by_label.csv.
 """
 from __future__ import annotations
 
-import argparse
 import json
 import sys
 from pathlib import Path
@@ -26,56 +23,53 @@ import pandas as pd
 from scipy.stats import binomtest, wilcoxon
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.config import DATASETS, MODELS, SEED, TASKS, raw_root, run_dir, task_spec  # noqa: E402
-from src.metrics import multilabel_metrics  # noqa: E402
+from src.config import DATASETS, MODELS, SEED, get_task, raw_root, run_dir  # noqa: E402
+from src.metrics import compute_metrics  # noqa: E402
 
+TASK = "subcategories"
 N_BOOT = 1000
 
 
-def load(condition: str, dataset: str, model: str, task: str):
-    path = run_dir(condition, dataset, model, task) / "pooled_outer_test_predictions.csv"
+def load(condition: str, dataset: str, model: str):
+    path = run_dir(TASK, condition, dataset, model) / "pooled_outer_test_predictions.csv"
     if not path.exists():
         return None
     df = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str}).sort_values("ID").reset_index(drop=True)
     summary = json.loads((path.parent / "summary.json").read_text(encoding="utf-8"))
-    active = np.array([label in summary["labels_in_macro_average"] for label in task_spec(task).labels])
+    active = np.array([label in summary["labels_in_macro_average"] for label in get_task(TASK).labels])
     return df, active
 
 
+def macro_f1(y_true, y_pred, active) -> float:
+    return compute_metrics(TASK, y_true, y_pred.astype(float), 0.5, active)["macro_f1"]
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--task", choices=TASKS, default="joint")
-    task = parser.parse_args().task
-    label_cols = list(task_spec(task).labels)
-    objective = task_spec(task).objective
-
-    def macro_f1(y_true, y_pred, active) -> float:  # the task's objective
-        return multilabel_metrics(y_true, y_pred.astype(float), 0.5, active, task)[objective]
-
+    labels = list(get_task(TASK).labels)
     rng = np.random.default_rng(SEED)
     rows, label_rows = [], []
     for dataset in DATASETS:
         for model in MODELS:
-            c0, c1 = load("c0_real", dataset, model, task), load("c1_augmented", dataset, model, task)
+            c0, c1 = load("c0_real", dataset, model), load("c1_augmented", dataset, model)
             if c0 is None or c1 is None:
                 continue
             (p0, active), (p1, _) = c0, c1
             if not p0["ID"].equals(p1["ID"]):
                 raise AssertionError(f"{dataset}/{model}: las condiciones no evaluaron los mismos requisitos")
-            y = p0[[f"{l}_true" for l in label_cols]].to_numpy(int)
-            y0 = p0[[f"{l}_pred" for l in label_cols]].to_numpy(int)
-            y1 = p1[[f"{l}_pred" for l in label_cols]].to_numpy(int)
+            y = p0[[f"{l}_true" for l in labels]].to_numpy(int)
+            y0 = p0[[f"{l}_pred" for l in labels]].to_numpy(int)
+            y1 = p1[[f"{l}_pred" for l in labels]].to_numpy(int)
             f0, f1 = macro_f1(y, y0, active), macro_f1(y, y1, active)
             boots = []
             for _ in range(N_BOOT):
                 idx = rng.integers(0, len(y), len(y))
                 boots.append(macro_f1(y[idx], y1[idx], active) - macro_f1(y[idx], y0[idx], active))
             lo, hi = np.percentile(boots, [2.5, 97.5])
-            rows.append({"dataset": dataset, "model": model, f"{objective}_c0": f0, f"{objective}_c1": f1,
+            rows.append({"dataset": dataset, "model": model, "macro_f1_c0": f0, "macro_f1_c1": f1,
                          "delta": f1 - f0, "ci95_low": lo, "ci95_high": hi})
-            m0 = multilabel_metrics(y, y0.astype(float), 0.5, active, task)["per_label"]
-            m1 = multilabel_metrics(y, y1.astype(float), 0.5, active, task)["per_label"]
-            for j, label in enumerate(label_cols):
+            m0 = compute_metrics(TASK, y, y0.astype(float), 0.5, active)["per_label"]
+            m1 = compute_metrics(TASK, y, y1.astype(float), 0.5, active)["per_label"]
+            for j, label in enumerate(labels):
                 right0, right1 = y0[:, j] == y[:, j], y1[:, j] == y[:, j]
                 b, c = int((right0 & ~right1).sum()), int((~right0 & right1).sum())
                 p = binomtest(b, b + c, 0.5).pvalue if b + c else 1.0
@@ -85,10 +79,11 @@ def main() -> None:
                                    "in_macro_average": bool(active[j])})
     if not rows:
         raise SystemExit("No hay pares (dataset, modelo) entrenados en c0_real y c1_augmented.")
-    table, labels = pd.DataFrame(rows), pd.DataFrame(label_rows)
-    raw_root(task).mkdir(parents=True, exist_ok=True)
-    table.to_csv(raw_root(task) / "condition_comparison.csv", index=False, encoding="utf-8-sig")
-    labels.to_csv(raw_root(task) / "condition_comparison_by_label.csv", index=False, encoding="utf-8-sig")
+    table, by_label = pd.DataFrame(rows), pd.DataFrame(label_rows)
+    out = raw_root(TASK)
+    out.mkdir(parents=True, exist_ok=True)
+    table.to_csv(out / "condition_comparison.csv", index=False, encoding="utf-8-sig")
+    by_label.to_csv(out / "condition_comparison_by_label.csv", index=False, encoding="utf-8-sig")
     print(table.round(4).to_string(index=False))
     if len(table) >= 6 and table["delta"].ne(0).any():
         stat = wilcoxon(table["delta"])

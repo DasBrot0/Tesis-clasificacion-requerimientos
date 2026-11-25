@@ -1,13 +1,11 @@
-"""Ejecuta secuencialmente los entrenamientos de una condición (tareas x 3 datasets x 5 modelos).
+"""Ejecuta en secuencia todas las corridas del experimento.
 
-    python run_all_training.py --condition c1_augmented                  # binary y subcategories
-    python run_all_training.py --condition c1_augmented --tasks subcategories --models cnn roberta_bne
-    python run_all_training.py --condition c0_real --datasets secreq --n-trials 5 --force
-    python run_all_training.py --condition c0_real --tasks joint         # modelo conjunto anterior
+    python run_all_training.py                                   # todo: binary C0 + subcategories C0 y C1
+    python run_all_training.py --tasks subcategories --conditions c1_augmented
+    python run_all_training.py --models cnn bilstm --datasets secreq
 
-Cada corrida escribe su salida en outputs/logs/<tarea>_<condición>_<dataset>_<modelo>.log (sin el
-prefijo de tarea en joint). Las corridas ya
-completadas se omiten (salvo --force) y una interrumpida retoma desde el último fold externo
+Cada corrida escribe su salida en outputs/logs/<tarea>_<condición>_<dataset>_<modelo>.log. Las
+corridas terminadas se omiten (salvo --force) y una interrumpida retoma desde el último fold externo
 terminado; dentro de ese fold, su estudio de Optuna continúa donde quedó.
 """
 
@@ -21,8 +19,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from src.config import CONDITIONS, DATASETS, LOGS, MODELS, NEW_TASKS, TASKS, log_name
-from src.data import task_uses_synthetic
+from src.config import CONDITIONS, DATASETS, LOGS, MODELS, TASKS, log_name
 
 ROOT = Path(__file__).resolve().parent
 os.environ.setdefault("MPLBACKEND", "Agg")
@@ -35,9 +32,9 @@ def stamp(message: str) -> None:
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--condition", choices=CONDITIONS, required=True)
-    parser.add_argument("--tasks", nargs="+", choices=TASKS, default=NEW_TASKS)
-    parser.add_argument("--datasets", nargs="+", choices=sorted(DATASETS), default=list(DATASETS))
+    parser.add_argument("--tasks", nargs="+", choices=list(TASKS), default=list(TASKS))
+    parser.add_argument("--conditions", nargs="+", choices=CONDITIONS, default=CONDITIONS)
+    parser.add_argument("--datasets", nargs="+", choices=DATASETS, default=DATASETS)
     parser.add_argument("--models", nargs="+", choices=MODELS, default=MODELS)
     parser.add_argument("--n-trials", type=int, default=None)
     parser.add_argument("--force", action="store_true")
@@ -48,30 +45,27 @@ def main() -> int:
     args = parse_args()
     LOGS.mkdir(parents=True, exist_ok=True)
     extra = (["--n-trials", str(args.n_trials)] if args.n_trials else []) + (["--force"] if args.force else [])
+    # Los modelos van en el bucle externo para que terminen primero los rápidos (CNN, BiLSTM).
+    runs = [(task, condition, dataset, model)
+            for model in args.models for task in args.tasks for condition in args.conditions
+            if condition in TASKS[task].conditions for dataset in args.datasets]
     failed = []
-    # Los modelos van en el bucle externo: primero terminan los rápidos (CNN, BiLSTM).
-    for model in args.models:
-        for task in args.tasks:
-            if args.condition == "c1_augmented" and not task_uses_synthetic(task):
-                stamp(f"OMITIDA {task}/{args.condition}: la tarea no usa sintéticos (BINARY_USE_SYNTHETIC)")
-                continue
-            for dataset in args.datasets:
-                name = f"{task}/{args.condition}/{dataset}/{model}"
-                stamp(f"INICIO {name}")
-                started = time.time()
-                log_path = LOGS / log_name(args.condition, dataset, model, task)
-                with open(log_path, "a", encoding="utf-8") as log:
-                    completed = subprocess.run(
-                        [sys.executable, str(ROOT / "train.py"), "--task", task, "--condition", args.condition,
-                         "--dataset", dataset, "--model", model, *extra],
-                        cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
-                    )
-                minutes = (time.time() - started) / 60
-                if completed.returncode:
-                    failed.append(name)
-                    stamp(f"ERROR {name} ({minutes:.1f} min; ver {log_path.name})")
-                else:
-                    stamp(f"FIN {name} ({minutes:.1f} min)")
+    for task, condition, dataset, model in runs:
+        name = f"{task}/{condition}/{dataset}/{model}"
+        stamp(f"INICIO {name}")
+        started = time.time()
+        log_path = LOGS / log_name(task, condition, dataset, model)
+        with open(log_path, "a", encoding="utf-8") as log:
+            completed = subprocess.run(
+                [sys.executable, str(ROOT / "train.py"), "--task", task, "--condition", condition,
+                 "--dataset", dataset, "--model", model, *extra],
+                cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
+        minutes = (time.time() - started) / 60
+        if completed.returncode:
+            failed.append(name)
+            stamp(f"ERROR {name} ({minutes:.1f} min; ver {log_path.name})")
+        else:
+            stamp(f"FIN {name} ({minutes:.1f} min)")
     stamp("ENTRENAMIENTO COMPLETO" if not failed else f"TERMINADO CON ERRORES: {failed}")
     return 1 if failed else 0
 

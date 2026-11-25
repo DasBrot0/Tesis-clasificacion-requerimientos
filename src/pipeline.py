@@ -1,196 +1,151 @@
-"""End-to-end nested-CV run for one (task, condition, dataset, model).
+"""Corrida completa de una (tarea, condición, dataset, modelo) con validación cruzada anidada.
 
-For each of the N_OUTER outer folds:
-1. Optuna tunes the hyperparameters on the N_INNER inner folds of the outer training part
-   (trial 0 = default configuration).
-2. Per-label thresholds come only from the winner's inner out-of-fold predictions.
-3. The model is retrained on the whole outer training part and predicts the outer test fold once.
+Para cada uno de los 5 folds externos:
+  1. Optuna ajusta los hiperparámetros con los 3 folds internos del entrenamiento externo.
+  2. El umbral de cada etiqueta se elige con las predicciones fuera de fold del mejor trial.
+  3. Se reentrena con todo el entrenamiento externo (tantas épocas como la media de las mejores
+     épocas internas) y se predice una sola vez el fold de prueba.
 
-The outer test folds cover every real requirement of the task exactly once; their pooled
-predictions give the reported metrics. In c1_augmented the synthetic rows join the training parts
-(inner and outer) only through their anchors; no synthetic row is ever validated or tested.
+Los 5 folds de prueba cubren cada requisito real una vez; sus predicciones juntas dan las métricas
+que se reportan. En c1_augmented los sintéticos solo entran en las particiones de entrenamiento.
 
-Tasks (src/config.py): binary (every requirement, Security only), subcategories (Security
-requirements only, four subcategories) and joint (the former five-output model with the coherence
-rule). The subcategory task also predicts, with each outer-fold model, the non-security
-requirements of the dataset (never part of its training), so that src/cascade.py can evaluate the
-binary -> subcategories cascade end to end.
+En la tarea de subcategorías, el modelo de cada fold externo predice también los requisitos sin
+seguridad de ese mismo fold de prueba (nunca entrena con ellos). src/cascade.py usa esas
+predicciones para evaluar la cascada binary -> subcategories de extremo a extremo.
 """
 
 from __future__ import annotations
 
 import json
+import shutil
 import time
 from pathlib import Path
-from typing import Any
 
 import numpy as np
 import pandas as pd
 import torch
 
 from .config import (
-    CONDITIONS, DATASET_NAMES, DEFAULT_CONFIGS, MAX_LENGTH, MODEL_DISPLAY, N_INNER, N_OUTER, N_TRIALS,
-    SEARCH_SPACES, SEED, WORD_MODELS, checkpoint_dir, run_dir, splits_dir, task_spec,
+    DATASET_NAMES, DEFAULT_CONFIGS, MAX_LENGTH, MODEL_DISPLAY, N_INNER, N_OUTER, N_TRIALS, NONSECURITY_CSV,
+    SEARCH_SPACES, SEED,
+    SPLITS_DIR, TEXT_COL, WORD_MODELS, checkpoint_dir, get_task, run_dir,
 )
-from .cascade import NONSECURITY_CSV
 from .data import (
-    active_label_mask, get_inner_folds, get_outer_folds, label_coverage, load_dataset, load_synthetic,
-    partition_distribution, split_by_fold, task_uses_synthetic, with_synthetic,
+    active_labels, add_synthetic, inner_folds, label_coverage, load_synthetic, load_task_data, outer_folds, split,
 )
-from .metrics import (
-    metric_names, multilabel_metrics, prediction_frame, rescore_pooled, save_json, select_per_label_thresholds,
-)
+from .metrics import add_pooled_scores, compute_metrics, metric_names, prediction_frame, save_json, select_thresholds
 from .models import DEVICE
-from .reporting import export_excel, save_run_confusion, update_comparison_table, write_run_tables
-from .training import fit, predict, release_memory
-from .tuning import trial_columns, trial_paths, trials_frame, tune
+from .reporting import (
+    export_excel, save_inner_curves, save_run_confusion, update_comparison_table, write_run_tables,
+)
+from .training import fit, make_loader, predict, release_memory
+from .tuning import trial_files, trials_table, tune
 
 
-def load_protocol(condition: str, dataset: str, task: str = "joint"):
-    """Dataset, outer folds, scored labels and (for c1_augmented) the synthetic rows of a task."""
-    if condition not in CONDITIONS:
-        raise ValueError(f"Condición desconocida: {condition}")
-    if condition == "c1_augmented" and not task_uses_synthetic(task):
-        raise ValueError(f"La tarea {task} no tiene condición c1_augmented (BINARY_USE_SYNTHETIC = False).")
-    data = load_dataset(dataset, task)
-    outer_folds = get_outer_folds(data, dataset, task)
-    synthetic = load_synthetic(dataset, data, task) if condition == "c1_augmented" else None
-    splits = splits_dir(task)
-    label_coverage(data, task).to_csv(splits / f"{dataset}_label_coverage.csv", index=False, encoding="utf-8-sig")
-    partition_distribution(data, dataset, synthetic, task).to_csv(
-        splits / f"{dataset}_{condition}_partition_label_distribution.csv", index=False, encoding="utf-8-sig")
-    return data, outer_folds, synthetic, active_label_mask(data, task)
 
 
-def save_curves(history: pd.DataFrame, path: Path, title: str, task: str = "joint") -> None:
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
-    objective = task_spec(task).objective
-    fig, (loss_ax, f1_ax) = plt.subplots(1, 2, figsize=(11, 4))
-    for fold, part in history.groupby("fold"):
-        loss_ax.plot(part["epoch"], part["train_loss"], color="tab:blue", alpha=0.6,
-                     label="train" if fold == 0 else None)
-        loss_ax.plot(part["epoch"], part["val_loss"], color="tab:orange", alpha=0.6,
-                     label="validation" if fold == 0 else None)
-        f1_ax.plot(part["epoch"], part[f"val_{objective}"], alpha=0.8, label=f"fold interno {fold + 1}")
-    loss_ax.set(title="BCE loss por fold interno", xlabel="época", ylabel="loss")
-    f1_ax.set(title=f"{objective} de validación (umbral 0.50)", xlabel="época", ylabel=objective)
-    loss_ax.legend(); f1_ax.legend()
-    fig.suptitle(title)
-    fig.tight_layout()
-    fig.savefig(path, dpi=130)
-    plt.close(fig)
+def nonsecurity_requirements(dataset: str) -> pd.DataFrame:
+    """Requisitos con Security = 0. El modelo de subcategorías nunca entrena con ellos."""
+    binary = load_task_data(dataset, "binary")
+    return binary.loc[binary["Security"].eq(0), ["ID", TEXT_COL]].reset_index(drop=True)
 
 
-def save_checkpoint(model_name: str, result, config: dict, thresholds: np.ndarray,
-                    active: np.ndarray, directory: Path, task: str = "joint") -> None:
-    labels = list(task_spec(task).labels)
+def predict_frame(result, model_name: str, frame: pd.DataFrame, labels: list[str], batch_size: int):
+    loader = make_loader(frame, labels, result.collator, batch_size)
+    use_amp = DEVICE.type == "cuda" and model_name not in WORD_MODELS
+    probabilities, loss = predict(result.model, loader, result.loss_fn, use_amp)
+    return loader.dataset.ids, probabilities, loss
+
+
+def save_checkpoint(result, model_name: str, config: dict, thresholds, labels, directory: Path) -> None:
     directory.mkdir(parents=True, exist_ok=True)
-    meta = {"task": task, "config": config, "thresholds_by_label": dict(zip(labels, thresholds.tolist())),
-            "label_cols": labels, "labels_in_macro_average": dict(zip(labels, active.tolist())),
-            "seed": SEED}
+    meta = {"config": config, "labels": labels, "thresholds": dict(zip(labels, thresholds.tolist())), "seed": SEED}
     if model_name in WORD_MODELS:
-        torch.save({"model_state_dict": result.model.state_dict(), "vocab": result.encoder.vocab,
-                    "max_len": result.encoder.max_len, **meta}, directory / "model.pt")
+        torch.save({"state_dict": result.model.state_dict(), "vocab": result.collator.vocab,
+                    "max_len": result.collator.max_len, **meta}, directory / "model.pt")
     else:
-        result.model.save_pretrained(directory)
-        result.encoder.tokenizer.save_pretrained(directory)
-        meta.update({"model_source_used": result.encoder.source, "max_length": MAX_LENGTH})
+        result.model.hf.save_pretrained(directory)
+        result.collator.tokenizer.save_pretrained(directory)
+        meta.update({"source": result.collator.source, "max_length": MAX_LENGTH})
     save_json(directory / "metrics_config.json", meta)
 
 
-def nonsecurity_frame(dataset: str) -> pd.DataFrame:
-    """Requirements with Security = 0 (from the binary file): the subcategory models never train on
-    them, so any outer-fold model can predict them without leakage."""
-    binary = load_dataset(dataset, "binary")
-    return binary[binary["Security"].eq(0)].reset_index(drop=True)
-
-
-def run_outer_fold(condition: str, dataset: str, model_name: str, outer: int, data: pd.DataFrame,
-                   outer_folds: pd.DataFrame, synthetic: pd.DataFrame | None, active: np.ndarray,
-                   n_trials: int, out_dir: Path, save_checkpoints: bool, task: str = "joint") -> dict[str, Any]:
-    spec = task_spec(task)
+def run_outer_fold(task: str, condition: str, dataset: str, model_name: str, outer: int,
+                   data: pd.DataFrame, folds: pd.DataFrame, synthetic: pd.DataFrame | None,
+                   active: np.ndarray, n_trials: int, out_dir: Path, save_checkpoints: bool) -> dict:
+    spec = get_task(task)
     labels = list(spec.labels)
-    mean_col, std_col, _ = trial_columns(task)
     fold_dir = out_dir / f"outer_{outer}"
     result_path = fold_dir / "outer_result.json"
-    if result_path.exists():
+    if result_path.exists():  # fold ya terminado en una corrida anterior
         print(f"  externo {outer + 1}/{N_OUTER}: ya completado", flush=True)
         return json.loads(result_path.read_text(encoding="utf-8"))
     started = time.time()
-    outer_train, outer_test = split_by_fold(data, outer_folds, outer)
-    inner_folds = get_inner_folds(outer_train, dataset, outer, task)
-    print(f"\n--- externo {outer + 1}/{N_OUTER}: entrenamiento={len(outer_train)} reales"
-          f"{'' if synthetic is None else f' + {len(with_synthetic(outer_train, synthetic)) - len(outer_train)} sintéticos'}"
-          f" | prueba={len(outer_test)} ---", flush=True)
 
-    # 1) Optuna over the inner CV.
-    study = tune(dataset, model_name, outer_train, inner_folds, active, fold_dir, n_trials, synthetic, task)
-    trials = trials_frame(study, model_name, task)
+    outer_train, outer_test = split(data, folds, outer)
+    n_synthetic = len(add_synthetic(outer_train, synthetic)) - len(outer_train)
+    print(f"\n--- externo {outer + 1}/{N_OUTER}: entrenamiento={len(outer_train)} reales + {n_synthetic} "
+          f"sintéticos | prueba={len(outer_test)} ---", flush=True)
+
+    # 1) Optuna sobre los folds internos
+    folds_inner = inner_folds(outer_train, dataset, task, outer)
+    study = tune(task, dataset, model_name, outer_train, folds_inner, active, fold_dir, n_trials, synthetic)
+    trials = trials_table(study, model_name)
     trials.to_csv(fold_dir / "optuna_trials.csv", index=False, encoding="utf-8-sig")
     winner = trials.iloc[0]
     winner_id = int(winner["trial_id"])
     config = {**DEFAULT_CONFIGS[model_name], **study.trials[winner_id].params}
-    default_row = trials[trials["is_default_config"]].iloc[0]
 
-    # 2) Inner OOF of the winner -> per-label thresholds.
-    oof_path, history_path = trial_paths(fold_dir, winner_id)
-    stored = np.load(oof_path)
-    if sorted(stored["ids"].tolist()) != sorted(outer_train["ID"].tolist()):
-        raise AssertionError("El OOF interno no cubre exactamente una vez el entrenamiento externo.")
-    thresholds, threshold_search = select_per_label_thresholds(
-        stored["y_true"].astype(int), stored["y_prob"], active, task=task)
+    # 2) umbrales por etiqueta con las predicciones fuera de fold del mejor trial
+    oof_path, history_path = trial_files(fold_dir, winner_id)
+    oof = np.load(oof_path)
+    if sorted(oof["ids"].tolist()) != sorted(outer_train["ID"].tolist()):
+        raise AssertionError("Las predicciones internas no cubren exactamente el entrenamiento externo.")
+    thresholds, threshold_search = select_thresholds(task, oof["y_true"], oof["y_prob"], active)
     threshold_search.to_csv(fold_dir / "inner_oof_threshold_search.csv", index=False, encoding="utf-8-sig")
     history = pd.read_csv(history_path, encoding="utf-8-sig")
     history.to_csv(fold_dir / "inner_cv_history.csv", index=False, encoding="utf-8-sig")
-    save_curves(history, fold_dir / "inner_cv_curves.png",
-                f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} — externo {outer + 1} ({task}, {condition})",
-                task)
+    save_inner_curves(task, history, fold_dir / "inner_cv_curves.png",
+                      f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} — externo {outer + 1} ({task}, {condition})")
 
-    # 3) Retrain on the whole outer training part; the test fold is encoded only afterwards.
-    final_epochs = max(1, int(round(float(stored["best_epochs"].mean()))))
-    train_frame = with_synthetic(outer_train, synthetic)
-    print(f"  modelo del externo {outer + 1}: {final_epochs} épocas sobre {len(train_frame)} filas, "
-          f"config={config}", flush=True)
-    result = fit(model_name, config, train_frame, SEED + 100 + outer, stop_epoch=final_epochs, keep_model=True,
-                 task=task)
+    # 3) modelo final con todo el entrenamiento externo, y una predicción del fold de prueba
+    final_epochs = max(1, int(round(float(oof["best_epochs"].mean()))))
+    train = add_synthetic(outer_train, synthetic)
+    print(f"  modelo final: {final_epochs} épocas sobre {len(train)} filas, config={config}", flush=True)
+    result = fit(task, model_name, config, train, SEED + 100 + outer, epochs=final_epochs, keep_model=True)
     if save_checkpoints:
-        save_checkpoint(model_name, result, {**config, "final_training_epochs": final_epochs},
-                        thresholds, active, checkpoint_dir(condition, dataset, model_name, outer, task), task)
-    test_data = result.encoder.encode(outer_test)
-    test_prob, test_loss = predict(result.model, model_name, test_data, result.criterion, config["batch_size"])
+        save_checkpoint(result, model_name, {**config, "epochs": final_epochs}, thresholds, labels,
+                        checkpoint_dir(task, condition, dataset, model_name, outer))
+
+    ids, test_prob, test_loss = predict_frame(result, model_name, outer_test, labels, config["batch_size"])
     test_true = outer_test[labels].to_numpy(dtype=int)
-    metrics = multilabel_metrics(test_true, test_prob, thresholds, active, task)
-    predictions = prediction_frame(test_data.ids, test_true, test_prob, metrics["y_pred"], task)
+    scores = compute_metrics(task, test_true, test_prob, thresholds, active)
+    predictions = prediction_frame(task, ids, test_true, test_prob, scores["y_pred"])
     predictions.insert(1, "outer", outer)
     predictions.to_csv(fold_dir / "outer_test_predictions.csv", index=False, encoding="utf-8-sig")
-    if task == "subcategories":
-        others = nonsecurity_frame(dataset)
-        other_data = result.encoder.encode(others)
-        other_prob, _ = predict(result.model, model_name, other_data, result.criterion, config["batch_size"])
-        other_pred = (other_prob >= thresholds.reshape(1, -1)).astype(int)
-        other = prediction_frame(other_data.ids, None, other_prob, other_pred, task)
+
+    if task == "subcategories":  # requisitos sin seguridad del mismo fold de prueba, para la cascada
+        others = nonsecurity_requirements(dataset)
+        others = others[others["ID"].isin(folds.loc[folds["fold"] == outer, "ID"])]
+        ids, prob, _ = predict_frame(result, model_name, others, labels, config["batch_size"])
+        other = prediction_frame(task, ids, None, prob, (prob >= thresholds).astype(int))
         other.insert(1, "outer", outer)
         other.to_csv(fold_dir / NONSECURITY_CSV, index=False, encoding="utf-8-sig")
-        del other_data
-    del result, test_data
+    del result
     release_memory()
 
-    objective = spec.objective
+    default_row = trials[trials["is_default_config"]].iloc[0]
     report = {
-        "task": task, "outer": outer, "train_real_rows": len(outer_train),
-        "train_synthetic_rows": len(train_frame) - len(outer_train), "test_rows": len(outer_test),
-        "optuna": {"trials_finished": len(trials), "trials_completed": int(trials["state"].eq("COMPLETE").sum()),
-                   "trials_pruned": int(trials["state"].eq("PRUNED").sum())},
-        f"default_config_inner_cv_{objective}": float(default_row[mean_col]),
-        "best_trial": {"trial_id": winner_id, f"inner_cv_{objective}_mean": float(winner[mean_col]),
-                       f"inner_cv_{objective}_std": float(winner[std_col])},
+        "task": task, "outer": outer, "train_real_rows": len(outer_train), "train_synthetic_rows": n_synthetic,
+        "test_rows": len(outer_test),
+        "optuna": {"trials_finished": len(trials), "trials_pruned": int(trials["state"].eq("PRUNED").sum())},
+        "default_config_inner_cv_objective": float(default_row["cv_objective_mean"]),
+        "best_trial": {"trial_id": winner_id, "inner_cv_objective_mean": float(winner["cv_objective_mean"]),
+                       "inner_cv_objective_std": float(winner["cv_objective_std"])},
         "winning_config": config, "final_training_epochs": final_epochs,
         "thresholds_by_label": dict(zip(labels, thresholds.tolist())),
-        "test": {**{name: metrics[name] for name in metric_names(task)}, "loss": test_loss},
-        "test_per_label": metrics["per_label"].to_dict("records"),
+        "test": {**{name: scores[name] for name in metric_names(task)}, "loss": test_loss},
+        "test_per_label": scores["per_label"].to_dict("records"),
         "elapsed_minutes": round((time.time() - started) / 60, 1),
     }
     print(f"  externo {outer + 1} prueba:", {k: round(v, 4) for k, v in report["test"].items()}, flush=True)
@@ -198,63 +153,64 @@ def run_outer_fold(condition: str, dataset: str, model_name: str, outer: int, da
     return report
 
 
-def run(dataset: str, model_name: str, n_trials: int | None = None, force: bool = False,
-        condition: str = "c0_real", save_checkpoints: bool = False, task: str = "joint") -> dict[str, Any]:
-    spec = task_spec(task)
+def run(task: str, condition: str, dataset: str, model_name: str, n_trials: int | None = None,
+        force: bool = False, save_checkpoints: bool = False) -> dict:
+    spec = get_task(task)
+    if condition not in spec.conditions:
+        raise ValueError(f"La tarea {task} no tiene la condición {condition} (solo {list(spec.conditions)}).")
     labels = list(spec.labels)
-    out_dir = run_dir(condition, dataset, model_name, task)
+    out_dir = run_dir(task, condition, dataset, model_name)
     summary_path = out_dir / "summary.json"
     if summary_path.exists() and not force:
-        print(f"{task}/{condition}/{dataset}/{model_name}: ya completado ({summary_path}); use --force para repetirlo.")
+        print(f"{task}/{condition}/{dataset}/{model_name}: ya completado; use --force para repetirlo.")
         return json.loads(summary_path.read_text(encoding="utf-8"))
     if force and out_dir.exists():
-        import shutil
         shutil.rmtree(out_dir)
     n_trials = n_trials or N_TRIALS[model_name]
-    data, outer_folds, synthetic, active = load_protocol(condition, dataset, task)
-    active_names = [label for label, keep in zip(labels, active) if keep]
-    print(f"\n=== tarea {task} | {condition} | {DATASET_NAMES[dataset]} / {MODEL_DISPLAY[model_name]} | device={DEVICE} ===")
-    print(f"filas reales={len(data)} | sintéticos={0 if synthetic is None else len(synthetic)} | "
-          f"CV anidada {N_OUTER}x{N_INNER} | trials por externo={n_trials} | etiquetas evaluadas={active_names} | "
-          f"objetivo={spec.objective}", flush=True)
 
-    outer_reports = [run_outer_fold(condition, dataset, model_name, outer, data, outer_folds, synthetic,
-                                    active, n_trials, out_dir, save_checkpoints, task) for outer in range(N_OUTER)]
+    # datos, folds y etiquetas evaluadas
+    data = load_task_data(dataset, task)
+    folds = outer_folds(dataset)
+    synthetic = load_synthetic(dataset, data) if condition == "c1_augmented" else None
+    active = active_labels(data, task)
+    (SPLITS_DIR / task).mkdir(parents=True, exist_ok=True)
+    label_coverage(data, task).to_csv(SPLITS_DIR / task / f"{dataset}_label_coverage.csv", index=False,
+                                      encoding="utf-8-sig")
+    scored = [label for label, keep in zip(labels, active) if keep]
+    print(f"\n=== {task} | {condition} | {DATASET_NAMES[dataset]} / {MODEL_DISPLAY[model_name]} | {DEVICE} ===")
+    print(f"reales={len(data)} | sintéticos={0 if synthetic is None else len(synthetic)} | "
+          f"CV anidada {N_OUTER}x{N_INNER} | trials por externo={n_trials} | etiquetas evaluadas={scored}",
+          flush=True)
 
-    # Pool the five outer test folds: every real requirement is predicted exactly once, each with
-    # the thresholds of its own outer fold.
-    pooled = pd.concat([pd.read_csv(out_dir / f"outer_{k}" / "outer_test_predictions.csv",
-                                    encoding="utf-8-sig", dtype={"ID": str}) for k in range(N_OUTER)],
-                       ignore_index=True)
+    outer_reports = [run_outer_fold(task, condition, dataset, model_name, k, data, folds, synthetic, active,
+                                    n_trials, out_dir, save_checkpoints) for k in range(N_OUTER)]
+
+    # predicciones de los 5 folds de prueba juntas: cada requisito real aparece una vez
+    pooled = pd.concat([pd.read_csv(out_dir / f"outer_{k}" / "outer_test_predictions.csv", encoding="utf-8-sig",
+                                    dtype={"ID": str}) for k in range(N_OUTER)], ignore_index=True)
     if sorted(pooled["ID"]) != sorted(data["ID"]):
         raise AssertionError("Las predicciones externas no cubren exactamente una vez todo el dataset.")
+    pooled.to_csv(out_dir / "pooled_outer_test_predictions.csv", index=False, encoding="utf-8-sig")
 
-    report: dict[str, Any] = {
+    report = {
         "task": task, "condition": condition, "dataset": dataset, "model": model_name, "seed": SEED,
         "n_outer": N_OUTER, "n_inner": N_INNER, "n_trials_per_outer": n_trials,
         "objective": spec.objective, "tiebreak": spec.tiebreak, "label_cols": labels,
         "rows": len(data), "synthetic_rows": 0 if synthetic is None else len(synthetic),
-        "labels_in_macro_average": active_names,
-        "labels_excluded_from_macro_average": [l for l in labels if l not in active_names],
+        "labels_in_macro_average": scored,
+        "labels_excluded_from_macro_average": [label for label in labels if label not in scored],
         "label_positives": data[labels].sum().astype(int).to_dict(),
         "search_space": SEARCH_SPACES[model_name], "default_config": DEFAULT_CONFIGS[model_name],
         "outer_folds": outer_reports,
-        # Sum of the outer folds, so a resumed run still reports its full training time.
         "elapsed_minutes": round(sum(r["elapsed_minutes"] for r in outer_reports), 1),
     }
-    # Joint task: the coherence rule runs here, once, on the final predictions; the metrics are
-    # computed with and without it. The other tasks are scored as they are.
-    pooled = rescore_pooled(report, pooled, active, task)
-    pooled.to_csv(out_dir / "pooled_outer_test_predictions.csv", index=False, encoding="utf-8-sig")
+    add_pooled_scores(task, report, pooled, active)
     write_run_tables(report, out_dir, task)
     report["pooled_outer_test_confusion"] = save_run_confusion(condition, dataset, model_name, task).to_dict("records")
-    aggregate, pooled_metrics = report["outer_aggregate"], report["pooled_outer_test"]
     for name in metric_names(task):
-        print(f"externos {name}: {aggregate[name]['mean']:.4f} ± {aggregate[name]['std']:.4f} | "
-              f"agrupado {pooled_metrics[name]:.4f}")
-    if spec.coherence:
-        print(f"regla de coherencia: {report['coherence_corrections']['predictions']} predicciones corregidas "
-              f"en {report['coherence_corrections']['requirements']} requisitos")
+        summary = report["outer_aggregate"][name]
+        print(f"{name}: externos {summary['mean']:.4f} ± {summary['std']:.4f} | agrupado "
+              f"{report['pooled_outer_test'][name]:.4f}")
     save_json(summary_path, report)
     update_comparison_table(condition, task)
     export_excel(condition, task)

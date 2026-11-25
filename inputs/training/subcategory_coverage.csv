@@ -1,16 +1,16 @@
-﻿dataset,label,positives,rows,prevalence,status,definition
-PROMISE_exp,Security,77,456,0.16885964912280702,OK,security requirement (general)
-PROMISE_exp,Confidentiality,39,456,0.08552631578947369,OK,protecting information from unauthorized disclosure
-PROMISE_exp,Integrity,14,456,0.03070175438596491,OK,preventing unauthorized modification of data
-PROMISE_exp,Authenticity,18,456,0.039473684210526314,OK,"verifying the identities of users, systems, and services"
-PROMISE_exp,Resistance,13,456,0.02850877192982456,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
-SecReq,Security,177,433,0.40877598152424943,OK,security requirement (general)
-SecReq,Confidentiality,32,433,0.07390300230946882,OK,protecting information from unauthorized disclosure
-SecReq,Integrity,66,433,0.15242494226327943,OK,preventing unauthorized modification of data
-SecReq,Authenticity,74,433,0.17090069284064666,OK,"verifying the identities of users, systems, and services"
-SecReq,Resistance,12,433,0.02771362586605081,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
-DOSSPRE,Security,391,1185,0.329957805907173,OK,security requirement (general)
-DOSSPRE,Confidentiality,112,1185,0.09451476793248945,OK,protecting information from unauthorized disclosure
-DOSSPRE,Integrity,61,1185,0.05147679324894515,OK,preventing unauthorized modification of data
-DOSSPRE,Authenticity,121,1185,0.1021097046413502,OK,"verifying the identities of users, systems, and services"
-DOSSPRE,Resistance,92,1185,0.07763713080168777,OK,"withstanding, responding to, and recovering from attacks or malicious actions"
+﻿dataset,label,positives,rows,prevalence,scored,definition
+PROMISE_exp,Security,77,456,0.16885964912280702,True,security requirement (general)
+PROMISE_exp,Confidentiality,39,77,0.5064935064935064,True,protecting information from unauthorized disclosure
+PROMISE_exp,Integrity,14,77,0.18181818181818182,True,preventing unauthorized modification of data
+PROMISE_exp,Authenticity,18,77,0.23376623376623376,True,"verifying the identities of users, systems, and services"
+PROMISE_exp,Resistance,13,77,0.16883116883116883,True,"withstanding, responding to, and recovering from attacks or malicious actions"
+SecReq,Security,177,433,0.40877598152424943,True,security requirement (general)
+SecReq,Confidentiality,32,177,0.1807909604519774,True,protecting information from unauthorized disclosure
+SecReq,Integrity,66,177,0.3728813559322034,True,preventing unauthorized modification of data
+SecReq,Authenticity,74,177,0.4180790960451977,True,"verifying the identities of users, systems, and services"
+SecReq,Resistance,12,177,0.06779661016949153,True,"withstanding, responding to, and recovering from attacks or malicious actions"
+DOSSPRE,Security,391,1185,0.329957805907173,True,security requirement (general)
+DOSSPRE,Confidentiality,112,391,0.2864450127877238,True,protecting information from unauthorized disclosure
+DOSSPRE,Integrity,61,391,0.15601023017902813,True,preventing unauthorized modification of data
+DOSSPRE,Authenticity,121,391,0.309462915601023,True,"verifying the identities of users, systems, and services"
+DOSSPRE,Resistance,92,391,0.23529411764705882,True,"withstanding, responding to, and recovering from attacks or malicious actions"

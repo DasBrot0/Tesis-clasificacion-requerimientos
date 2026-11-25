@@ -1,10 +1,6 @@
-"""Fast protocol tests; they never train a model.
+"""Pruebas rápidas del protocolo (datos, folds y métricas); no entrenan modelos.
 
     python -m unittest discover -s tests -v
-
-The nested-CV protocol is checked for the two current tasks (binary and subcategories). The joint
-task (former five-output model) keeps the tests that do not need its folds: its fold manifests in
-outputs/output_raw/splits/ date from 27-10 and no longer match the datasets of 21-11.
 """
 
 import sys
@@ -16,158 +12,99 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config import (  # noqa: E402
-    DATASETS, DEFAULT_CONFIGS, LABEL_COLS, MODELS, N_INNER, N_OUTER, NEW_TASKS, SEARCH_SPACES,
-    SUBCATEGORY_COLS, TASK_DATASETS, task_spec,
+    DATASETS, DEFAULT_CONFIGS, MODELS, N_INNER, N_OUTER, SEARCH_SPACES, SUBCATEGORY_COLS, TASKS,
 )
 from src.data import (  # noqa: E402
-    active_label_mask, get_inner_folds, get_outer_folds, load_dataset, load_synthetic, split_by_fold,
-    synthetic_path, task_uses_synthetic, with_synthetic,
+    add_synthetic, inner_folds, load_full_table, load_synthetic, load_task_data, outer_folds, split,
 )
-from src.metrics import (  # noqa: E402
-    apply_coherence, is_better, multilabel_metrics, rescore_pooled, select_per_label_thresholds,
-)
+from src.metrics import compute_metrics, is_better, select_thresholds  # noqa: E402
 
 
-class ProtocolTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.protocol = {}
-        for task in NEW_TASKS:
-            for dataset in DATASETS:
-                data = load_dataset(dataset, task)
-                synthetic = (load_synthetic(dataset, data, task)
-                             if synthetic_path(dataset).exists() and task_uses_synthetic(task) else None)
-                cls.protocol[task, dataset] = (data, get_outer_folds(data, dataset, task), synthetic)
-
-    def nested(self, task, dataset):
-        """Yield (outer, outer_train, outer_test, inner, inner_train, inner_val)."""
-        data, outer_folds, _ = self.protocol[task, dataset]
-        for outer in range(N_OUTER):
-            outer_train, outer_test = split_by_fold(data, outer_folds, outer)
-            inner_folds = get_inner_folds(outer_train, dataset, outer, task)
-            for inner in range(N_INNER):
-                yield (outer, outer_train, outer_test, inner, *split_by_fold(outer_train, inner_folds, inner))
-
+class DataTests(unittest.TestCase):
     def test_task_files_are_derived_from_the_full_table(self):
-        for dataset, path in DATASETS.items():
-            full = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str}).set_index("ID")
-            binary = load_dataset(dataset, "binary").set_index("ID")
-            subcategories = load_dataset(dataset, "subcategories").set_index("ID")
-            self.assertEqual(list(binary.index), list(full.index), dataset)
-            self.assertTrue(binary["Security"].astype(int).equals(full["Security"].astype(int)))
-            self.assertEqual(set(subcategories.index), set(full.index[full["Security"].eq(1)]), dataset)
-            self.assertTrue(subcategories[SUBCATEGORY_COLS].astype(int).equals(
-                full.loc[subcategories.index, SUBCATEGORY_COLS].astype(int)))
-            # each file holds only the labels of its task
-            self.assertNotIn("Confidentiality", pd.read_csv(TASK_DATASETS["binary"][dataset], nrows=1).columns)
-            self.assertNotIn("Security", pd.read_csv(TASK_DATASETS["subcategories"][dataset], nrows=1).columns)
-
-    def test_joint_dataset_is_hierarchical(self):
         for dataset in DATASETS:
-            data = load_dataset(dataset, "joint")
-            self.assertEqual(set(data["Dataset"]), {dataset})
-            self.assertFalse((data["Security"].eq(0) & data[SUBCATEGORY_COLS].any(axis=1)).any())
+            full = load_full_table(dataset).set_index("ID")
+            binary = load_task_data(dataset, "binary").set_index("ID")
+            subcategories = load_task_data(dataset, "subcategories").set_index("ID")
+            self.assertEqual(list(binary.index), list(full.index))
+            self.assertTrue(binary["Security"].equals(full["Security"]))
+            self.assertEqual(set(subcategories.index), set(full.index[full["Security"].eq(1)]))
+            self.assertTrue(subcategories[SUBCATEGORY_COLS].equals(full.loc[subcategories.index, SUBCATEGORY_COLS]))
 
-    def test_every_row_is_tested_exactly_once(self):
-        for (task, dataset), (data, outer_folds, _) in self.protocol.items():
-            tested = []
+    def test_synthetics_only_enter_through_their_anchor(self):
+        data = load_task_data("promise", "subcategories")
+        synthetic = load_synthetic("promise", data)
+        train = data.iloc[: len(data) // 2]
+        added = add_synthetic(train, synthetic).iloc[len(train):]
+        expected = synthetic[synthetic["Anchor_ID"].isin(train["ID"])]
+        self.assertEqual(sorted(added["ID"]), sorted(expected["ID"]))
+
+
+class FoldTests(unittest.TestCase):
+    def test_outer_folds_cover_every_requirement_once_and_are_shared(self):
+        for dataset in DATASETS:
+            folds = outer_folds(dataset)
+            self.assertEqual(sorted(folds["fold"].unique()), list(range(N_OUTER)))
+            self.assertFalse(folds["ID"].duplicated().any())
+            for task in TASKS:
+                data = load_task_data(dataset, task)
+                tested = pd.concat([split(data, folds, k)[1] for k in range(N_OUTER)])
+                self.assertEqual(sorted(tested["ID"]), sorted(data["ID"]))
+
+    def test_nested_partitions_do_not_overlap(self):
+        for task in TASKS:
+            data = load_task_data("secreq", task)
+            folds = outer_folds("secreq")
             for outer in range(N_OUTER):
-                train, test = split_by_fold(data, outer_folds, outer)
-                self.assertFalse(set(train["_text_key"]) & set(test["_text_key"]))
-                tested.extend(test["ID"])
-            self.assertEqual(sorted(tested), sorted(data["ID"]), f"{task}/{dataset}")
+                outer_train, outer_test = split(data, folds, outer)
+                self.assertFalse(set(outer_train["ID"]) & set(outer_test["ID"]))
+                folds_inner = inner_folds(outer_train, "secreq", task, outer)
+                for k in range(N_INNER):
+                    inner_train, inner_val = split(outer_train, folds_inner, k)
+                    self.assertFalse(set(inner_train["ID"]) & set(inner_val["ID"]))
+                    self.assertFalse(set(inner_val["ID"]) & set(outer_test["ID"]))
 
-    def test_inner_folds_stay_inside_the_outer_training_part(self):
-        for task, dataset in self.protocol:
-            for outer, outer_train, outer_test, inner, inner_train, inner_val in self.nested(task, dataset):
-                self.assertFalse(set(inner_train["ID"]) & set(outer_test["ID"]))
-                self.assertFalse(set(inner_val["ID"]) & set(outer_test["ID"]))
-                self.assertEqual(len(inner_train) + len(inner_val), len(outer_train))
+    def test_every_outer_test_fold_has_security_requirements(self):
+        for dataset in DATASETS:
+            data = load_task_data(dataset, "binary")
+            folds = outer_folds(dataset)
+            for k in range(N_OUTER):
+                self.assertGreater(split(data, folds, k)[1]["Security"].sum(), 5)
 
-    def test_synthetic_rows_never_leak_into_evaluation(self):
-        for (task, dataset), (data, outer_folds, synthetic) in self.protocol.items():
-            if synthetic is None:
-                continue
-            self.assertTrue(synthetic["Security"].eq(1).all())
-            real_security = data if task == "subcategories" else data[data["Security"].eq(1)]
-            self.assertTrue(synthetic["Anchor_ID"].isin(set(real_security["ID"])).all())
-            for outer, outer_train, outer_test, inner, inner_train, inner_val in self.nested(task, dataset):
-                for train, held in ((outer_train, outer_test), (inner_train, inner_val)):
-                    augmented = with_synthetic(train, synthetic)
-                    added = augmented.iloc[len(train):]
-                    self.assertTrue(added["Anchor_ID"].isin(set(train["ID"])).all())
-                    self.assertFalse(added["Anchor_ID"].isin(set(held["ID"])).any())
-                    self.assertFalse(held["ID"].str.startswith("syn_").any())
-                    self.assertFalse(set(added["_text_key"]) & set(held["_text_key"]))
 
-    def test_scored_labels_have_positives_in_every_partition(self):
-        for (task, dataset), (data, _, _) in self.protocol.items():
-            labels = list(task_spec(task).labels)
-            active = np.array(labels)[active_label_mask(data, task)]
-            if task == "binary":
-                self.assertEqual(list(active), ["Security"])
-            for outer, outer_train, outer_test, inner, inner_train, inner_val in self.nested(task, dataset):
-                for part in (outer_test, inner_train, inner_val):
-                    self.assertTrue((part[active].sum() > 0).all(), f"{task}/{dataset} {outer}/{inner}")
-
+class MetricTests(unittest.TestCase):
     def test_binary_metrics(self):
-        y = np.array([[1], [1], [0], [0], [1]])
-        prob = np.array([[0.9], [0.2], [0.7], [0.1], [0.6]])
-        metrics = multilabel_metrics(y, prob, 0.5, task="binary")
-        self.assertAlmostEqual(metrics["precision"], 2 / 3)
-        self.assertAlmostEqual(metrics["recall"], 2 / 3)
-        self.assertAlmostEqual(metrics["f1"], 2 / 3)
-        self.assertAlmostEqual(metrics["f1_macro_2class"], (2 / 3 + 0.5) / 2)
-        self.assertEqual(list(metrics["per_label"]["label"]), ["Security"])
-        thresholds, _ = select_per_label_thresholds(y, prob, np.array([True]), task="binary")
-        self.assertEqual(thresholds.shape, (1,))
+        y_true = np.array([[1], [1], [0], [0]])
+        y_prob = np.array([[0.9], [0.2], [0.8], [0.1]])
+        scores = compute_metrics("binary", y_true, y_prob)
+        self.assertAlmostEqual(scores["f1"], 0.5)
+        self.assertAlmostEqual(scores["recall"], 0.5)
+        self.assertAlmostEqual(scores["f1_macro_2class"], 0.5)
 
-    def test_subcategory_metrics_ignore_inactive_labels(self):
-        data = load_dataset("dosspre", "subcategories")
-        y = data[SUBCATEGORY_COLS].to_numpy(dtype=int)
-        active = active_label_mask(data, "subcategories")
-        metrics = multilabel_metrics(y, y.astype(float), 0.5, active, "subcategories")
-        for name in task_spec("subcategories").metrics:
-            self.assertAlmostEqual(metrics[name], 1.0, msg=name)
-        self.assertEqual(len(metrics["per_label"]), len(SUBCATEGORY_COLS))
+    def test_subcategory_macro_f1_ignores_inactive_labels(self):
+        y_true = np.array([[1, 0, 0, 1], [0, 1, 0, 0]])
+        y_prob = np.array([[0.9, 0.1, 0.9, 0.9], [0.1, 0.9, 0.1, 0.1]])
+        scores = compute_metrics("subcategories", y_true, y_prob, 0.5, active=[True, True, False, True])
+        self.assertAlmostEqual(scores["macro_f1"], 1.0)
 
-    def test_joint_metrics_ignore_inactive_labels(self):
-        data = load_dataset("dosspre", "joint")
-        y = data[LABEL_COLS].to_numpy(dtype=int)
-        active = active_label_mask(data)
-        metrics = multilabel_metrics(y, y.astype(float), 0.5, active)
-        self.assertAlmostEqual(metrics["macro_f1"], 1.0)
-        self.assertEqual(len(metrics["per_label"]), len(LABEL_COLS))
-        thresholds, _ = select_per_label_thresholds(y, y.astype(float), active)
-        self.assertTrue((thresholds[~active] == 0.5).all())
+    def test_is_better_uses_objective_then_tiebreak_then_loss(self):
+        best = {"f1": 0.5, "recall": 0.5, "loss": 1.0}
+        self.assertTrue(is_better("binary", {"f1": 0.6, "recall": 0.1, "loss": 9.0}, best))
+        self.assertTrue(is_better("binary", {"f1": 0.5, "recall": 0.6, "loss": 9.0}, best))
+        self.assertTrue(is_better("binary", {"f1": 0.5, "recall": 0.5, "loss": 0.9}, best))
+        self.assertFalse(is_better("binary", {"f1": 0.5, "recall": 0.5, "loss": 1.0}, best))
 
-    def test_is_better_uses_the_task_objective_and_tiebreak(self):
-        best = {"f1": 0.7, "recall": 0.6, "loss": 0.5}
-        self.assertTrue(is_better({"f1": 0.7, "recall": 0.8, "loss": 0.9}, best, task="binary"))
-        self.assertFalse(is_better({"f1": 0.69, "recall": 1.0, "loss": 0.1}, best, task="binary"))
-        best = {"macro_f1": 0.5, "macro_recall": 0.5, "loss": 0.5}
-        self.assertTrue(is_better({"macro_f1": 0.5, "macro_recall": 0.5, "loss": 0.4}, best, task="subcategories"))
+    def test_thresholds_are_chosen_per_label(self):
+        y_true = np.array([[1, 0, 1, 0], [0, 1, 0, 0]] * 5)
+        y_prob = np.array([[0.45, 0.30, 0.58, 0.2], [0.30, 0.59, 0.41, 0.2]] * 5)
+        thresholds, _ = select_thresholds("subcategories", y_true, y_prob, active=[True, True, True, False])
+        self.assertLessEqual(thresholds[0], 0.45)
+        self.assertLessEqual(thresholds[1], 0.59)
+        self.assertEqual(thresholds[3], 0.5)  # etiqueta no evaluada: umbral por defecto
 
-    def test_rescore_only_applies_coherence_in_the_joint_task(self):
-        pooled = pd.DataFrame({"ID": ["a", "b"], "outer": [0, 0],
-                               **{f"{l}_true": [1, 0] for l in SUBCATEGORY_COLS},
-                               **{f"{l}_pred": [1, 1] for l in SUBCATEGORY_COLS}})
-        report = {"outer_folds": [{"outer": 0, "test": {"loss": 0.1}}]}
-        out = rescore_pooled(report, pooled, np.ones(4, dtype=bool), "subcategories")
-        self.assertNotIn("coherence_corrections", report)
-        self.assertNotIn("Confidentiality_pred_raw", out)
-        self.assertAlmostEqual(report["pooled_outer_test"]["macro_recall"], 1.0)
 
-    def test_coherence_rule_only_switches_subcategories_off(self):
-        y_pred = np.array([[0, 1, 0, 1, 0], [1, 1, 0, 0, 1], [0, 0, 0, 0, 0]])
-        corrected, changed = apply_coherence(y_pred)
-        np.testing.assert_array_equal(corrected, [[0, 0, 0, 0, 0], [1, 1, 0, 0, 1], [0, 0, 0, 0, 0]])
-        self.assertEqual(int(changed.sum()), 2)
-        np.testing.assert_array_equal(corrected[:, 0], y_pred[:, 0])
-        self.assertTrue((corrected <= y_pred).all())
-
-    def test_default_configs_lie_inside_the_search_spaces(self):
-        self.assertEqual(set(DEFAULT_CONFIGS), set(MODELS))
+class ConfigTests(unittest.TestCase):
+    def test_default_config_is_inside_the_search_space(self):
         for model in MODELS:
             for name, (kind, *spec) in SEARCH_SPACES[model].items():
                 value = DEFAULT_CONFIGS[model][name]

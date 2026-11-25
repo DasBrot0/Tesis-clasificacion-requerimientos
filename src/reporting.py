@@ -4,9 +4,8 @@ analyses of src/analysis.py and the Excel workbook.
 Nothing here trains or imports torch: every file is rebuilt from what a run already saved
 (summary.json and pooled_outer_test_predictions.csv), so `scripts/build_report.py` can refresh the
 reports of finished runs. Machine-readable files go to <raw_root(task)>/<condition>/ and the
-readable ones (Excel, figures) to <reports_root(task)>/<condition>/: outputs/output_raw/<condition>/
-and outputs/reports/<condition>/ for the joint task (earlier runs), outputs/output_raw/<task>/... and
-outputs/reports/<task>/... for the binary and subcategory tasks.
+readable ones (Excel, figures) to <reports_root(task)>/<condition>/, that is,
+outputs/output_raw/<task>/<condition>/ and outputs/reports/<task>/<condition>/.
 """
 
 from __future__ import annotations
@@ -23,52 +22,73 @@ from openpyxl.utils import get_column_letter
 
 from . import analysis
 from .config import (DATASET_NAMES, DATASETS, MODEL_DISPLAY, MODELS, SUBCATEGORY_COLS, raw_root, reports_root,
-                     run_dir, task_spec)
-from .metrics import metric_names, rescore_pooled, save_json
+                     run_dir, get_task)
+from .metrics import add_pooled_scores, metric_names, save_json
 from .significance import scott_knott_esd
 
 CONFUSION_CSV = "pooled_confusion_by_label.csv"
 SCOTT_KNOTT_CSV = "scott_knott_esd.csv"
 POOLED_CSV = "pooled_outer_test_predictions.csv"
 
-# Spanish column titles for the workbook; each task reports its own subset (task_spec(task).metrics).
-METRIC_TITLES = {"macro_f1": "Macro-F1", "weighted_f1": "Weighted-F1", "security_recall": "Recall Security",
+# Spanish column titles for the workbook; each task reports its own subset (get_task(task).metrics).
+METRIC_TITLES = {"macro_f1": "Macro-F1", "weighted_f1": "Weighted-F1",
                  "f1": "F1 Security", "precision": "Precisión Security", "recall": "Recall Security",
                  "f1_macro_2class": "Macro-F1 (2 clases)", "micro_f1": "Micro-F1", "macro_recall": "Macro-recall"}
-TASK_TITLES = {"binary": "binaria (seguridad / no seguridad)", "subcategories": "subcategorías de seguridad",
-               "joint": "conjunta (Security + subcategorías)"}
+TASK_TITLES = {"binary": "binaria (seguridad / no seguridad)", "subcategories": "subcategorías de seguridad"}
 
 
 def task_labels(task: str) -> list[str]:
-    return list(task_spec(task).labels)
+    return list(get_task(task).labels)
 
 
 def titles(task: str) -> dict[str, str]:
     return {name: METRIC_TITLES[name] for name in metric_names(task)}
 
 
-# --------------------------------------------------------------------------- coherence rule
+# --------------------------------------------------------------------------- per-run tables
 
-def write_run_tables(report: dict, out_dir: Path, task: str = "joint") -> None:
-    """Per-fold and per-label metrics of a run (joint task: with and without the coherence rule)."""
+def write_run_tables(report: dict, out_dir: Path, task: str) -> None:
+    """Per-fold and per-label metrics of a run."""
     names = metric_names(task)
-    for suffix in ("", "_uncorrected") if task_spec(task).coherence else ("",):
-        pd.DataFrame([{"outer": fold["outer"], **{n: fold[f"test{suffix}"][n] for n in names}}
-                      for fold in report["outer_folds"]]).to_csv(
-            out_dir / f"outer_fold_metrics{suffix}.csv", index=False, encoding="utf-8-sig")
-        pd.DataFrame(report[f"pooled_outer_test_per_label{suffix}"]).to_csv(
-            out_dir / f"pooled_metrics_by_label{suffix}.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame([{"outer": fold["outer"], **{n: fold["test"][n] for n in names}}
+                  for fold in report["outer_folds"]]).to_csv(
+        out_dir / "outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(report["pooled_outer_test_per_label"]).to_csv(
+        out_dir / "pooled_metrics_by_label.csv", index=False, encoding="utf-8-sig")
 
 
-def rescore_run(condition: str, dataset: str, model_name: str, task: str = "joint") -> dict:
-    """Rescore a finished run from its saved predictions (no retraining); in the joint task this
-    applies the coherence rule."""
-    out_dir = run_dir(condition, dataset, model_name, task)
+def save_inner_curves(task: str, history: pd.DataFrame, path: Path, title: str) -> None:
+    """Training/validation loss and validation objective per epoch of each inner fold."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    objective = get_task(task).objective
+    fig, (loss_ax, score_ax) = plt.subplots(1, 2, figsize=(11, 4))
+    for fold, part in history.groupby("fold"):
+        loss_ax.plot(part["epoch"], part["train_loss"], color="tab:blue", alpha=0.6,
+                     label="entrenamiento" if fold == 0 else None)
+        loss_ax.plot(part["epoch"], part["val_loss"], color="tab:orange", alpha=0.6,
+                     label="validación" if fold == 0 else None)
+        score_ax.plot(part["epoch"], part[f"val_{objective}"], alpha=0.8, label=f"fold interno {fold + 1}")
+    loss_ax.set(title="Pérdida BCE por fold interno", xlabel="época", ylabel="pérdida")
+    score_ax.set(title=f"{METRIC_TITLES[objective]} de validación (umbral 0,50)", xlabel="época",
+                 ylabel=METRIC_TITLES[objective])
+    loss_ax.legend()
+    score_ax.legend()
+    fig.suptitle(title)
+    fig.tight_layout()
+    fig.savefig(path, dpi=130)
+    plt.close(fig)
+
+
+def rescore_run(condition: str, dataset: str, model_name: str, task: str) -> dict:
+    """Rescore a finished run from its saved predictions (no retraining)."""
+    out_dir = run_dir(task, condition, dataset, model_name)
     report = json.loads((out_dir / "summary.json").read_text(encoding="utf-8"))
     pooled = pd.read_csv(out_dir / POOLED_CSV, encoding="utf-8-sig", dtype={"ID": str})
     active = np.array([label in report["labels_in_macro_average"] for label in task_labels(task)])
-    pooled = rescore_pooled(report, pooled, active, task)
-    pooled.to_csv(out_dir / POOLED_CSV, index=False, encoding="utf-8-sig")
+    add_pooled_scores(task, report, pooled, active)
     write_run_tables(report, out_dir, task)
     report["pooled_outer_test_confusion"] = save_run_confusion(condition, dataset, model_name, task).to_dict("records")
     save_json(out_dir / "summary.json", report)
@@ -77,7 +97,7 @@ def rescore_run(condition: str, dataset: str, model_name: str, task: str = "join
 
 # --------------------------------------------------------------------------- confusion matrices
 
-def confusion_by_label(pooled: pd.DataFrame, task: str = "joint") -> pd.DataFrame:
+def confusion_by_label(pooled: pd.DataFrame, task: str) -> pd.DataFrame:
     """One 2x2 matrix per label (TP, FP, FN, TN) from the pooled outer test predictions."""
     rows = []
     for label in task_labels(task):
@@ -113,15 +133,15 @@ def save_confusion_figure(confusion: pd.DataFrame, path: Path, title: str) -> No
     plt.close(fig)
 
 
-def save_run_confusion(condition: str, dataset: str, model_name: str, task: str = "joint") -> pd.DataFrame:
+def save_run_confusion(condition: str, dataset: str, model_name: str, task: str) -> pd.DataFrame:
     """CSV next to the run's raw files; figure in <reports_root(task)>/<condition>/confusion_matrices/."""
-    out_dir = run_dir(condition, dataset, model_name, task)
+    out_dir = run_dir(task, condition, dataset, model_name)
     pooled = pd.read_csv(out_dir / POOLED_CSV, encoding="utf-8-sig", dtype={"ID": str})
     confusion = confusion_by_label(pooled, task)
     confusion.to_csv(out_dir / CONFUSION_CSV, index=False, encoding="utf-8-sig")
     figures = reports_root(task) / condition / "confusion_matrices"
     figures.mkdir(parents=True, exist_ok=True)
-    suffix = condition if task == "joint" else f"{task}, {condition}"
+    suffix = f"{task}, {condition}"
     save_confusion_figure(confusion, figures / f"{dataset}_{model_name}.png",
                           f"{DATASET_NAMES[dataset]} — {MODEL_DISPLAY[model_name]} ({suffix})")
     return confusion
@@ -129,30 +149,30 @@ def save_run_confusion(condition: str, dataset: str, model_name: str, task: str 
 
 # --------------------------------------------------------------------------- finished runs
 
-def finished_runs(condition: str, task: str = "joint") -> list[tuple[str, str, dict]]:
+def finished_runs(condition: str, task: str) -> list[tuple[str, str, dict]]:
     """(dataset, model, summary) of every finished run of a (task, condition), in the canonical order."""
     runs = []
     for dataset in DATASETS:
         for model_name in MODELS:
-            path = run_dir(condition, dataset, model_name, task) / "summary.json"
+            path = run_dir(task, condition, dataset, model_name) / "summary.json"
             if path.exists():
                 runs.append((dataset, model_name, json.loads(path.read_text(encoding="utf-8"))))
     return runs
 
 
-def run_confusion(condition: str, dataset: str, model_name: str, task: str = "joint") -> pd.DataFrame:
-    path = run_dir(condition, dataset, model_name, task) / CONFUSION_CSV
+def run_confusion(condition: str, dataset: str, model_name: str, task: str) -> pd.DataFrame:
+    path = run_dir(task, condition, dataset, model_name) / CONFUSION_CSV
     if path.exists():
         return pd.read_csv(path, encoding="utf-8-sig")
     return save_run_confusion(condition, dataset, model_name, task)
 
 
-def update_scott_knott(condition: str, task: str = "joint") -> pd.DataFrame:
+def update_scott_knott(condition: str, task: str) -> pd.DataFrame:
     """Scott-Knott ESD of the models of each dataset over the task's objective in the outer folds
-    (macro-F1 in the joint and subcategory tasks, F1 of Security in the binary task)."""
+    (macro-F1 in the subcategory task, F1 of Security in the binary task)."""
     parts = []
     runs = finished_runs(condition, task)
-    objective = task_spec(task).objective
+    objective = get_task(task).objective
     for dataset in DATASETS:
         samples = {MODEL_DISPLAY[m]: [fold["test"][objective] for fold in report["outer_folds"]]
                    for d, m, report in runs if d == dataset}
@@ -168,22 +188,17 @@ def update_scott_knott(condition: str, task: str = "joint") -> pd.DataFrame:
     return table
 
 
-def update_comparison_table(condition: str, task: str = "joint") -> pd.DataFrame:
+def update_comparison_table(condition: str, task: str) -> pd.DataFrame:
     rows = []
     names = titles(task)
     for dataset, model_name, report in finished_runs(condition, task):
         outer, pooled = report["outer_aggregate"], report["pooled_outer_test"]
         fmt = lambda name: f"{outer[name]['mean']:.4f} ± {outer[name]['std']:.4f}"
-        coherence = {}
-        if task_spec(task).coherence:
-            coherence = {"Macro-F1 agrupado sin corrección": report["pooled_outer_test_uncorrected"]["macro_f1"],
-                         "Predicciones corregidas": report["coherence_corrections"]["predictions"]}
         rows.append({
-            **({} if task == "joint" else {"Tarea": task}),
+            "Tarea": task,
             "Condición": condition, "Dataset": DATASET_NAMES[dataset], "Modelo": MODEL_DISPLAY[model_name],
             **{f"{title} (5 folds externos)": fmt(name) for name, title in names.items()},
             **{f"{title} agrupado": pooled[name] for name, title in names.items()},
-            **coherence,
             **{f"F1 {row['label']}": row["f1"] for row in report["pooled_outer_test_per_label"]},
             "Etiquetas en el promedio": ", ".join(report["labels_in_macro_average"]),
             "Sintéticos": report["synthetic_rows"], "Minutos": report["elapsed_minutes"],
@@ -254,19 +269,18 @@ def sheet_title(ws, title: str, note: str = "", note_columns: str = "A2:K2", not
         ws.row_dimensions[2].height = note_height
 
 
-def excel_path(condition: str, task: str = "joint") -> Path:
-    name = f"results_{condition}.xlsx" if task == "joint" else f"results_{task}_{condition}.xlsx"
-    return reports_root(task) / condition / name
+def excel_path(condition: str, task: str) -> Path:
+    return reports_root(task) / condition / f"results_{task}_{condition}.xlsx"
 
 
-def export_excel(condition: str, task: str = "joint") -> Path | None:
+def export_excel(condition: str, task: str) -> Path | None:
     """<reports_root(task)>/<condition>/results_[<task>_]<condition>.xlsx: general metrics, metrics by
     class, confusion matrices, statistical comparisons and analyses of every finished run, formatted
     to be read as is."""
     runs = finished_runs(condition, task)
     if not runs:
         return None
-    spec = task_spec(task)
+    spec = get_task(task)
     labels = task_labels(task)
     metric_titles = titles(task)
     objective_title = METRIC_TITLES[spec.objective]
@@ -280,8 +294,6 @@ def export_excel(condition: str, task: str = "joint") -> Path | None:
     ws["A1"].font = Font(bold=True, size=14)
     ws["A2"] = ("Agrupado: predicciones de prueba de los 5 folds externos juntas (cada requisito real "
                 "una vez). Folds: media ± desviación estándar de los 5 folds externos. "
-                + ("Con la regla de coherencia aplicada (ver la hoja «Regla de coherencia»). "
-                   if spec.coherence else "")
                 + "En negrita, el mejor modelo de cada dataset.")
     ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.merge_cells("A2:P2")
@@ -383,10 +395,6 @@ def export_excel(condition: str, task: str = "joint") -> Path | None:
     widths(ws, {1: 14, 2: 14, 3: 11, **{c: 13 for c in range(4, 4 + len(names))}})
     ws.freeze_panes = "D4"
 
-    # 5b) Coherence rule (joint task only): metrics with and without it, and how many predictions it changed.
-    if spec.coherence:
-        coherence_sheet(wb, runs)
-
     # 6) Scott-Knott ESD of the models of each dataset (outer-fold objective).
     ranking = update_scott_knott(condition, task)
     if not ranking.empty:
@@ -422,31 +430,8 @@ def export_excel(condition: str, task: str = "joint") -> Path | None:
     return path
 
 
-def coherence_sheet(wb, runs: list[tuple[str, str, dict]]) -> None:
-    ws = wb.create_sheet("Regla de coherencia")
-    sheet_title(ws, "Regla de coherencia (si Security = 0, las subcategorías pasan a 0)",
-                "Se aplica una sola vez, a las predicciones finales de prueba, después del ajuste de "
-                "hiperparámetros y de umbrales. Solo puede apagar subcategorías: su precisión se mantiene "
-                "o sube, su recall se mantiene o baja, y Security no cambia. Métricas agrupadas.",
-                "A2:N2", 45)
-    headers = ["Dataset", "Modelo", "Requisitos corregidos", "Predicciones corregidas",
-               *(f"Corregidas {l}" for l in SUBCATEGORY_COLS),
-               *(f"{METRIC_TITLES[n]} {when}" for n in ("macro_f1", "weighted_f1") for when in ("sin", "con"))]
-    rows = []
-    for dataset, model_name, report in runs:
-        fixes, raw, fixed = (report["coherence_corrections"], report["pooled_outer_test_uncorrected"],
-                             report["pooled_outer_test"])
-        rows.append([DATASET_NAMES[dataset], MODEL_DISPLAY[model_name], fixes["requirements"], fixes["predictions"],
-                     *(fixes["by_label"][l] for l in SUBCATEGORY_COLS),
-                     *(v[n] for n in ("macro_f1", "weighted_f1") for v in (raw, fixed))])
-    first_score = 5 + len(SUBCATEGORY_COLS)
-    write_table(ws, 4, headers, rows, {c: "0.000" for c in range(first_score, first_score + 4)})
-    widths(ws, {1: 14, 2: 14, **{c: 13 for c in range(3, first_score + 4)}})
-    ws.freeze_panes = "C5"
-
-
 def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranking: pd.DataFrame,
-                    task: str = "joint") -> None:
+                    task: str) -> None:
     """Sheets of src/analysis.py: model tests, subcategory confusion, misclassified requirements,
     best model, Transformers vs Deep Learning and (C1) the diversity of the synthetics."""
     significant_fill = PatternFill("solid", fgColor="C6EFCE")
@@ -551,14 +536,14 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
     # 10) Best model of each dataset.
     best = analysis.best_models(condition, ranking, task)
     if not best.empty:
-        spec = task_spec(task)
+        spec = get_task(task)
         objective_title, tiebreak_title = METRIC_TITLES[spec.objective], METRIC_TITLES[spec.tiebreak]
         ws = wb.create_sheet("Mejor modelo")
         sheet_title(ws, "Mejor modelo por dataset",
                     f"Regla (METODOLOGIA §4.3.2): los modelos del grupo superior de Scott-Knott ESD no "
                     f"difieren en {objective_title}; entre ellos se elige el de mayor {tiebreak_title} (agrupado)"
                     + (", porque omitir un requisito de seguridad es el error más costoso."
-                       if spec.tiebreak in ("security_recall", "recall") else "."),
+                       if spec.tiebreak == "recall" else "."),
                     "A2:G2", 32)
         headers = ["Dataset", "Mejor modelo", objective_title, tiebreak_title, "Motivo",
                    "Grupo superior SK-ESD", f"Candidatos (por {tiebreak_title})"]
@@ -574,7 +559,7 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
     # 11) Transformers against Deep Learning.
     by_dataset, by_label = analysis.family_comparison(condition, runs, ranking, task)
     if not by_dataset.empty:
-        objective = task_spec(task).objective
+        objective = get_task(task).objective
         title = METRIC_TITLES[objective]
         ws = wb.create_sheet("Transformers vs DL")
         sheet_title(ws, "Transformers (BETO, RoBERTa-BNE, DistilBETO) frente a Deep Learning (CNN, BiLSTM)",
@@ -605,7 +590,7 @@ def analysis_sheets(wb, condition: str, runs: list[tuple[str, str, dict]], ranki
         widths(ws, {1: 20, 2: 16, **{c: 14 for c in range(3, 13)}, 9: 28})
 
     # 12) Diversity of the synthetics (C1 only).
-    if condition == "c1_augmented" and task == "joint":
+    if condition == "c1_augmented":
         diversity = analysis.synthetic_diversity()
         if not diversity.empty:
             ws = wb.create_sheet("Diversidad sintéticos")

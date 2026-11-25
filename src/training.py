@@ -1,4 +1,12 @@
-"""One training routine shared by the CV folds and by the final model."""
+"""Entrenamiento de un modelo: el mismo procedimiento para los folds internos y para el modelo final.
+
+    fit(...)
+      ├─ prepara datos (collator + DataLoader), modelo, función de pérdida y optimizador
+      └─ por cada época:
+           train_one_epoch(...)       un recorrido por el entrenamiento
+           predict(...)               probabilidades y pérdida de validación (si hay validación)
+           parada temprana            si pasan `patience` épocas sin mejorar el objetivo ni la pérdida
+"""
 
 from __future__ import annotations
 
@@ -6,29 +14,30 @@ import gc
 import os
 import random
 from dataclasses import dataclass, field
-from typing import Any
 
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+from torch.utils.data import DataLoader
 
-from .config import DEFAULT_THRESHOLD, EARLY_STOPPING_PATIENCE, LABEL_COLS, SEED, WORD_MODELS, task_spec
-from .metrics import is_better, multilabel_metrics
-from .models import DEVICE, EncodedData, build_encoder, build_model, forward
+from .config import DEFAULT_THRESHOLD, MAX_EPOCHS, PATIENCE, SEED, WORD_MODELS, get_task
+from .metrics import compute_metrics, is_better
+from .models import DEVICE, RequirementsDataset, build_collator, build_model
 
-# Required by cuBLAS for deterministic GPU runs; must be set before the first CUDA call.
+# cuBLAS lo necesita para que el entrenamiento en GPU sea determinista (antes de usar CUDA).
 os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 
+# --------------------------------------------------------------------------- utilidades
 
-def seed_everything(seed: int = SEED) -> None:
+
+def seed_everything(seed: int) -> None:
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
-    if torch.backends.cudnn.is_available():
-        torch.backends.cudnn.deterministic = True
-        torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
     torch.use_deterministic_algorithms(True, warn_only=True)
 
 
@@ -38,125 +47,157 @@ def release_memory() -> None:
         torch.cuda.empty_cache()
 
 
-def criterion_for(frame: pd.DataFrame, moderate_pos_weight: bool, labels: list[str] = LABEL_COLS) -> nn.Module:
-    """Plain BCE, or BCE whose positive term is weighted by sqrt(N_neg/N_pos) computed on the training frame."""
-    if not moderate_pos_weight:
+def make_loader(frame: pd.DataFrame, labels: list[str], collator, batch_size: int,
+                shuffle: bool = False, seed: int = SEED) -> DataLoader:
+    generator = torch.Generator().manual_seed(seed) if shuffle else None
+    return DataLoader(RequirementsDataset(frame, labels), batch_size=batch_size, shuffle=shuffle,
+                      generator=generator, collate_fn=collator)
+
+
+def make_loss(train_frame: pd.DataFrame, labels: list[str], use_pos_weight: bool) -> nn.Module:
+    """Entropía cruzada binaria. Con pos_weight, el término positivo de cada etiqueta se pondera
+    por sqrt(negativos / positivos) de la partición de entrenamiento."""
+    if not use_pos_weight:
         return nn.BCEWithLogitsLoss()
-    positives = frame[list(labels)].sum().to_numpy(dtype=float)
-    weights = np.sqrt((len(frame) - positives) / np.maximum(positives, 1.0))
+    positives = train_frame[labels].sum().to_numpy(dtype=float)
+    weights = np.sqrt((len(train_frame) - positives) / np.maximum(positives, 1.0))
     return nn.BCEWithLogitsLoss(pos_weight=torch.tensor(weights, dtype=torch.float32, device=DEVICE))
 
 
-def build_optimizer(model_name: str, config: dict, model: nn.Module, steps_per_epoch: int):
+def make_optimizer(model_name: str, config: dict, model: nn.Module, total_steps: int):
+    """Adam para CNN y BiLSTM; Adam o AdamW con calentamiento lineal opcional para los Transformers."""
     if model_name in WORD_MODELS:
         return torch.optim.Adam(model.parameters(), lr=config["learning_rate"]), None
-    optimizer_cls = torch.optim.AdamW if config["optimizer"] == "AdamW" else torch.optim.Adam
-    optimizer = optimizer_cls(model.parameters(), lr=config["learning_rate"],
-                              weight_decay=config["weight_decay"])
+    optimizer_class = torch.optim.AdamW if config["optimizer"] == "AdamW" else torch.optim.Adam
+    optimizer = optimizer_class(model.parameters(), lr=config["learning_rate"],
+                                weight_decay=config["weight_decay"])
     if not config["warmup_ratio"]:
-        return optimizer, None  # constant learning rate, as in the original notebooks
+        return optimizer, None  # tasa de aprendizaje constante
     from transformers import get_linear_schedule_with_warmup
-    total_steps = steps_per_epoch * config["epochs"]
-    scheduler = get_linear_schedule_with_warmup(
-        optimizer, int(round(config["warmup_ratio"] * total_steps)), total_steps)
-    return optimizer, scheduler
+    warmup_steps = int(round(config["warmup_ratio"] * total_steps))
+    return optimizer, get_linear_schedule_with_warmup(optimizer, warmup_steps, total_steps)
 
 
-def predict(model: nn.Module, model_name: str, data: EncodedData, criterion: nn.Module,
-            batch_size: int) -> tuple[np.ndarray, float]:
-    """Return sigmoid probabilities and the mean loss over `data`."""
+def to_device(batch: dict) -> tuple[dict, torch.Tensor]:
+    inputs = {name: tensor.to(DEVICE) for name, tensor in batch["inputs"].items()}
+    return inputs, batch["labels"].to(DEVICE)
+
+
+# --------------------------------------------------------------------------- una época
+
+
+def train_one_epoch(model, loader, loss_fn, optimizer, scheduler, scaler, use_amp, clip_gradients) -> float:
+    model.train()
+    total_loss, n_rows = 0.0, 0
+    for batch in loader:
+        inputs, labels = to_device(batch)
+        optimizer.zero_grad(set_to_none=True)
+        with torch.autocast(device_type=DEVICE.type, dtype=torch.float16, enabled=use_amp):
+            logits = model(**inputs)
+        loss = loss_fn(logits.float(), labels)
+        scaler.scale(loss).backward()
+        if clip_gradients:
+            scaler.unscale_(optimizer)
+            nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        scaler.step(optimizer)
+        scaler.update()
+        if scheduler is not None:
+            scheduler.step()
+        total_loss += loss.item() * len(labels)
+        n_rows += len(labels)
+    return total_loss / n_rows
+
+
+@torch.no_grad()
+def predict(model, loader, loss_fn, use_amp: bool) -> tuple[np.ndarray, float]:
+    """Probabilidades sigmoides (filas, etiquetas) y pérdida media sobre `loader`."""
     model.eval()
-    probs, total = [], 0.0
-    use_amp = DEVICE.type == "cuda" and model_name not in WORD_MODELS
-    with torch.no_grad():
-        for batch in data.batches(batch_size):
-            with torch.autocast(device_type=DEVICE.type, dtype=torch.float16, enabled=use_amp):
-                logits = forward(model, model_name, batch["inputs"])
-            logits = logits.float()
-            total += criterion(logits, batch["labels"]).item() * len(batch["labels"])
-            probs.append(torch.sigmoid(logits).cpu().numpy())
-    return np.vstack(probs), total / len(data)
+    probabilities, total_loss, n_rows = [], 0.0, 0
+    for batch in loader:
+        inputs, labels = to_device(batch)
+        with torch.autocast(device_type=DEVICE.type, dtype=torch.float16, enabled=use_amp):
+            logits = model(**inputs).float()
+        total_loss += loss_fn(logits, labels).item() * len(labels)
+        n_rows += len(labels)
+        probabilities.append(torch.sigmoid(logits).cpu().numpy())
+    return np.vstack(probabilities), total_loss / n_rows
+
+
+# --------------------------------------------------------------------------- entrenamiento completo
 
 
 @dataclass
 class FitResult:
-    history: list[dict[str, Any]] = field(default_factory=list)
+    history: list[dict] = field(default_factory=list)  # una fila por época
     best_epoch: int = 0
     val_ids: list[str] = field(default_factory=list)
     val_true: np.ndarray | None = None
-    val_prob: np.ndarray | None = None  # probabilities at the best epoch
-    model: nn.Module | None = None
-    encoder: Any = None
-    criterion: nn.Module | None = None
+    val_prob: np.ndarray | None = None   # probabilidades de validación en la mejor época
+    model: nn.Module | None = None       # solo con keep_model=True
+    collator: object = None
+    loss_fn: nn.Module | None = None
 
 
-def fit(model_name: str, config: dict, train_frame: pd.DataFrame, seed: int,
-        validation_frame: pd.DataFrame | None = None, active: np.ndarray | None = None,
-        stop_epoch: int | None = None, keep_model: bool = False, task: str = "joint") -> FitResult:
-    """Train `model_name` with `config` on the labels of `task`.
+def fit(task: str, model_name: str, config: dict, train_frame: pd.DataFrame, seed: int,
+        val_frame: pd.DataFrame | None = None, active: np.ndarray | None = None,
+        epochs: int | None = None, keep_model: bool = False) -> FitResult:
+    """Entrena `model_name` con `config` sobre las etiquetas de `task`.
 
-    With a validation frame, every epoch is scored and the probabilities of the best epoch
-    (the task's objective, then its tie-break, then loss; joint: macro-F1, then Security recall)
-    are returned; transformers stop early after
-    EARLY_STOPPING_PATIENCE epochs in which neither that score nor the loss improves. Without it (final model) training simply
-    runs for `stop_epoch` epochs; the learning-rate schedule still spans config["epochs"].
+    Con `val_frame` (folds internos): evalúa cada época, se queda con las probabilidades de la mejor
+    (objetivo de la tarea, luego su desempate y luego la pérdida) y aplica la parada temprana.
+    Sin `val_frame` (modelo final de un fold externo): entrena exactamente `epochs` épocas.
     """
-    spec = task_spec(task)
+    spec = get_task(task)
+    labels = list(spec.labels)
+    max_epochs = MAX_EPOCHS[task][model_name]
+    patience = PATIENCE[task][model_name]
     seed_everything(seed)
-    encoder = build_encoder(model_name, train_frame, list(spec.labels))
-    train_data = encoder.encode(train_frame)
-    val_data = encoder.encode(validation_frame) if validation_frame is not None else None
-    model = build_model(model_name, config, encoder)
-    criterion = criterion_for(train_frame, config["pos_weight"], list(spec.labels))
-    batch_size = config["batch_size"]
-    steps_per_epoch = int(np.ceil(len(train_data) / batch_size))
-    optimizer, scheduler = build_optimizer(model_name, config, model, steps_per_epoch)
-    use_amp = DEVICE.type == "cuda" and model_name not in WORD_MODELS
-    scaler = torch.amp.GradScaler(enabled=use_amp)
-    clip_gradients = model_name != "cnn"
-    patience = None if model_name in WORD_MODELS else EARLY_STOPPING_PATIENCE
-    generator = torch.Generator().manual_seed(seed)
 
-    result = FitResult(encoder=encoder, criterion=criterion)
-    if val_data is not None:
-        result.val_ids, result.val_true = val_data.ids, val_data.labels.cpu().numpy()
+    # 1) datos
+    collator = build_collator(model_name, train_frame)
+    batch_size = config["batch_size"]
+    train_loader = make_loader(train_frame, labels, collator, batch_size, shuffle=True, seed=seed)
+    val_loader = make_loader(val_frame, labels, collator, batch_size) if val_frame is not None else None
+
+    # 2) modelo, pérdida y optimizador
+    model = build_model(model_name, config, len(labels), collator)
+    loss_fn = make_loss(train_frame, labels, config["pos_weight"])
+    optimizer, scheduler = make_optimizer(model_name, config, model, len(train_loader) * max_epochs)
+    use_amp = DEVICE.type == "cuda" and model_name not in WORD_MODELS  # precisión mixta, por los 4 GB de VRAM
+    scaler = torch.amp.GradScaler(enabled=use_amp)
+    clip_gradients = model_name != "cnn"  # el notebook original de la CNN no recortaba gradientes
+
+    result = FitResult(collator=collator, loss_fn=loss_fn)
+    if val_frame is not None:
+        result.val_ids = val_loader.dataset.ids
+        result.val_true = val_loader.dataset.labels.astype(int)
+
+    # 3) épocas
     best, best_loss, best_loss_epoch = None, float("inf"), 0
-    for epoch in range(1, (stop_epoch or config["epochs"]) + 1):
-        model.train()
-        total = 0.0
-        for batch in train_data.batches(batch_size, generator):
-            optimizer.zero_grad(set_to_none=True)
-            with torch.autocast(device_type=DEVICE.type, dtype=torch.float16, enabled=use_amp):
-                logits = forward(model, model_name, batch["inputs"])
-            loss = criterion(logits.float(), batch["labels"])
-            scaler.scale(loss).backward()
-            if clip_gradients:
-                scaler.unscale_(optimizer)
-                nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            scaler.step(optimizer)
-            scaler.update()
-            if scheduler is not None:
-                scheduler.step()
-            total += loss.item() * len(batch["labels"])
-        row = {"epoch": epoch, "train_loss": total / len(train_data)}
-        if val_data is not None:
-            y_prob, val_loss = predict(model, model_name, val_data, criterion, batch_size)
-            current = multilabel_metrics(result.val_true, y_prob, DEFAULT_THRESHOLD, active, task)
-            row.update({"val_loss": val_loss, **{f"val_{name}": current[name] for name in spec.metrics}})
-            current["loss"] = val_loss
-            if is_better(current, best, task=task):
-                best = {name: current[name] for name in (spec.objective, spec.tiebreak, "loss")}
-                result.best_epoch, result.val_prob = epoch, y_prob
+    for epoch in range(1, (epochs or max_epochs) + 1):
+        train_loss = train_one_epoch(model, train_loader, loss_fn, optimizer, scheduler, scaler,
+                                     use_amp, clip_gradients)
+        row = {"epoch": epoch, "train_loss": train_loss}
+
+        if val_loader is not None:
+            val_prob, val_loss = predict(model, val_loader, loss_fn, use_amp)
+            scores = compute_metrics(task, result.val_true, val_prob, DEFAULT_THRESHOLD, active)
+            scores["loss"] = val_loss
+            row.update({"val_loss": val_loss, **{f"val_{name}": scores[name] for name in spec.metrics}})
+            if is_better(task, scores, best):
+                best = scores
+                result.best_epoch, result.val_prob = epoch, val_prob
             if val_loss < best_loss:
                 best_loss, best_loss_epoch = val_loss, epoch
+            # Parada temprana: ni el objetivo ni la pérdida mejoraron en las últimas `patience` épocas.
+            if epoch - max(result.best_epoch, best_loss_epoch) >= patience:
+                result.history.append(row)
+                break
         result.history.append(row)
-        # A model whose objective is still flat but whose loss keeps falling has not converged yet.
-        if val_data is not None and patience and epoch - max(result.best_epoch, best_loss_epoch) >= patience:
-            break
 
     if keep_model:
         result.model = model
     else:
-        del model, optimizer, train_data, val_data
+        del model, optimizer
         release_memory()
     return result

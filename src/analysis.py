@@ -4,12 +4,11 @@ Everything is computed from the pooled outer test predictions that the runs alre
 needs no training and no torch:
 - Cochran's Q and pairwise exact McNemar (Holm) between the models of a dataset, per label;
 - co-confusion between subcategories and the list of misclassified requirements;
-- the best model of each dataset (top Scott-Knott ESD group + Security recall);
+- the best model of each dataset (top Scott-Knott ESD group + the task's tie-break);
 - Transformers against Deep Learning models across the three datasets;
 - the diversity of the synthetic requirements (C1).
-Each function takes the task (binary | subcategories | joint), writes its CSV to
-<raw_root(task)>/<condition>/ and returns the table for the workbook. "Security recall" and
-"macro-F1" stand for the task's tie-break and objective (src/config.py: TASK_SPECS).
+Each function takes the task (binary | subcategories), writes its CSV to
+<raw_root(task)>/<condition>/ and returns the table for the workbook.
 """
 
 from __future__ import annotations
@@ -22,7 +21,7 @@ import pandas as pd
 from scipy.stats import wilcoxon
 
 from .config import (AUGMENTATION_DIR, DATASET_NAMES, DATASETS, MODEL_DISPLAY, MODEL_FAMILY, MODELS, OUTPUT_RAW,
-                     SUBCATEGORY_COLS, TASK_DATASETS, TEXT_COL, raw_root, run_dir, task_spec)
+                     SUBCATEGORY_COLS, TEXT_COL, get_task, raw_root, run_dir, task_file_path)
 from .significance import cliffs_delta, cochran_q, delta_magnitude, holm, mcnemar_exact
 
 ALPHA = 0.05
@@ -30,8 +29,8 @@ NO_SUBCATEGORY = "Ninguna"
 SYNTHETIC_DIVERSITY_CSV = "synthetic_diversity.csv"
 
 
-def load_pooled(condition: str, dataset: str, model_name: str, task: str = "joint") -> pd.DataFrame | None:
-    path = run_dir(condition, dataset, model_name, task) / "pooled_outer_test_predictions.csv"
+def load_pooled(condition: str, dataset: str, model_name: str, task: str) -> pd.DataFrame | None:
+    path = run_dir(task, condition, dataset, model_name) / "pooled_outer_test_predictions.csv"
     if not path.exists():
         return None
     frame = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str})
@@ -39,14 +38,14 @@ def load_pooled(condition: str, dataset: str, model_name: str, task: str = "join
 
 
 def _labels(task: str) -> list[str]:
-    return list(task_spec(task).labels)
+    return list(get_task(task).labels)
 
 
 def _matrix(pooled: pd.DataFrame, kind: str, labels: list[str]) -> np.ndarray:
     return pooled[[f"{label}_{kind}" for label in labels]].to_numpy(dtype=int)
 
 
-def _dataset_predictions(condition: str, dataset: str, task: str = "joint") -> dict[str, pd.DataFrame]:
+def _dataset_predictions(condition: str, dataset: str, task: str) -> dict[str, pd.DataFrame]:
     """Pooled predictions of every finished model of a dataset, checked to cover the same IDs."""
     frames = {m: f for m in MODELS if (f := load_pooled(condition, dataset, m, task)) is not None}
     reference = next(iter(frames.values()), None)
@@ -56,8 +55,8 @@ def _dataset_predictions(condition: str, dataset: str, task: str = "joint") -> d
     return frames
 
 
-def _active(condition: str, dataset: str, model_name: str, task: str = "joint") -> np.ndarray:
-    summary = json.loads((run_dir(condition, dataset, model_name, task) / "summary.json").read_text(encoding="utf-8"))
+def _active(condition: str, dataset: str, model_name: str, task: str) -> np.ndarray:
+    summary = json.loads((run_dir(task, condition, dataset, model_name) / "summary.json").read_text(encoding="utf-8"))
     return np.array([label in summary["labels_in_macro_average"] for label in _labels(task)])
 
 
@@ -76,7 +75,7 @@ def _save(table: pd.DataFrame, path) -> pd.DataFrame:
 
 # --------------------------------------------------------------------------- Cochran Q + McNemar
 
-def model_tests(condition: str, task: str = "joint") -> tuple[pd.DataFrame, pd.DataFrame]:
+def model_tests(condition: str, task: str) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Per dataset and label: Cochran's Q over the hits of every model and, below it, exact McNemar
     for each pair of models with Holm's correction over the pairs of that dataset and label.
     A pair is significant only when Q is (p < 0.05) and its Holm-adjusted p is below 0.05."""
@@ -131,8 +130,8 @@ def subcategory_confusion(pooled: pd.DataFrame) -> pd.DataFrame:
     Diagonal: the real subcategory was predicted (TP). Off the diagonal (i, j): the requirement has
     i and not j, the model missed i and predicted j instead, i.e. it took i for j. Column "Ninguna":
     i was missed and no wrong subcategory was predicted in its place. Row "Ninguna": requirements
-    without any real subcategory (non-security ones in the joint task; security ones without a
-    subcategory in the subcategory task); there each cell counts a wrongly predicted subcategory and
+    without any real subcategory (security requirements without one); there each cell counts a
+    wrongly predicted subcategory and
     "Ninguna" the requirements correctly left without one.
     """
     true, pred = _matrix(pooled, "true", SUBCATEGORY_COLS), _matrix(pooled, "pred", SUBCATEGORY_COLS)
@@ -153,7 +152,7 @@ def subcategory_confusion(pooled: pd.DataFrame) -> pd.DataFrame:
     return table
 
 
-def confusion_tables(condition: str, task: str = "joint") -> pd.DataFrame:
+def confusion_tables(condition: str, task: str) -> pd.DataFrame:
     """Long table (dataset, model, real, predicted, count) of every run's subcategory confusion."""
     parts = []
     for dataset in DATASETS:
@@ -171,16 +170,17 @@ def _label_text(row: np.ndarray, labels: list[str]) -> str:
     return ", ".join(label for label, value in zip(labels, row) if value) or "—"
 
 
-def misclassified(condition: str, task: str = "joint") -> pd.DataFrame:
+def misclassified(condition: str, task: str) -> pd.DataFrame:
     """One row per real requirement that at least one model got wrong in some label, with the real
     labels, each model's prediction and the text, for the manual error review of §4.3.2."""
     rows = []
     labels = _labels(task)
-    for dataset, path in TASK_DATASETS[task].items():
+    for dataset in DATASETS:
         frames = _dataset_predictions(condition, dataset, task)
         if not frames:
             continue
-        texts = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str}).set_index("ID")[TEXT_COL]
+        texts = pd.read_csv(task_file_path(dataset, task), encoding="utf-8-sig",
+                            dtype={"ID": str}).set_index("ID")[TEXT_COL]
         any_frame = next(iter(frames.values()))
         y = _matrix(any_frame, "true", labels)
         preds = {m: _matrix(f, "pred", labels) for m, f in frames.items()}
@@ -201,53 +201,12 @@ def misclassified(condition: str, task: str = "joint") -> pd.DataFrame:
 
 # --------------------------------------------------------------------------- best model
 
-def best_models(condition: str, scott_knott: pd.DataFrame, task: str = "joint") -> pd.DataFrame:
-    """Rule of METODOLOGIA §4.3.2: the models of the top Scott-Knott ESD group do not differ in
-    macro-F1 (Binkhonain & Alfayez, 2025); among them, the one with the highest pooled Security
-    recall is preferred, because missing a security requirement costs more than a false alarm
-    (Petrillo et al., 2025). Macro-F1 breaks an exact tie in recall.
-
-    Other tasks: their objective and tie-break, read from the pooled metrics of each run
-    (binary: F1 and recall of Security; subcategories: macro-F1 and macro recall)."""
-    if task != "joint":
-        return _best_models_by_summary(condition, scott_knott, task)
-    labels = _labels(task)
-    rows = []
-    for dataset in DATASETS:
-        frames = _dataset_predictions(condition, dataset, task)
-        ranking = scott_knott[scott_knott["dataset"] == DATASET_NAMES[dataset]] if not scott_knott.empty else None
-        if not frames or ranking is None or ranking.empty:
-            continue
-        display_to_model = {MODEL_DISPLAY[m]: m for m in frames}
-        candidates = [display_to_model[name] for name in ranking.loc[ranking["rank"] == 1, "model"]]
-        any_model = next(iter(frames))
-        y, active = _matrix(frames[any_model], "true", labels), _active(condition, dataset, any_model, task)
-        preds = {m: _matrix(frames[m], "pred", labels) for m in candidates}
-        macro = {m: float(_f1(y, preds[m])[active].mean()) for m in candidates}
-        recall = {m: float((y[:, 0] & preds[m][:, 0]).sum() / max(y[:, 0].sum(), 1)) for m in candidates}
-        best = max(candidates, key=lambda m: (recall[m], macro[m]))
-        leader = max(candidates, key=lambda m: (macro[m], recall[m]))
-        if len(candidates) == 1:
-            reason = "único modelo del grupo superior de Scott-Knott ESD"
-        elif best == leader:
-            reason = "mayor recall de Security del grupo superior (y mayor macro-F1)"
-        else:
-            reason = (f"mayor recall de Security del grupo superior; {MODEL_DISPLAY[leader]} tiene más macro-F1, "
-                      "pero la diferencia no es significativa")
-        rows.append({
-            "dataset": DATASET_NAMES[dataset], "best_model": MODEL_DISPLAY[best],
-            "top_group": " = ".join(MODEL_DISPLAY[m] for m in candidates),
-            "macro_f1": macro[best], "security_recall": recall[best], "reason": reason,
-            "candidates": "; ".join(f"{MODEL_DISPLAY[m]}: macro-F1 {macro[m]:.3f}, recall Security {recall[m]:.3f}"
-                                    for m in sorted(candidates, key=lambda m: -recall[m])),
-        })
-    return _save(pd.DataFrame(rows), raw_root(task) / condition / "best_model.csv")
-
-
-def _best_models_by_summary(condition: str, scott_knott: pd.DataFrame, task: str) -> pd.DataFrame:
-    """Same rule as best_models for the binary and subcategory tasks: within the top Scott-Knott ESD
-    group, the highest pooled tie-break wins; the objective breaks an exact tie."""
-    spec = task_spec(task)
+def best_models(condition: str, scott_knott: pd.DataFrame, task: str) -> pd.DataFrame:
+    """Rule of METODOLOGIA §4.3.2: the models of the top Scott-Knott ESD group do not differ in the
+    task's objective (Binkhonain & Alfayez, 2025); among them, the one with the highest pooled
+    tie-break wins (binary: Security recall, because missing a security requirement costs more than
+    a false alarm; subcategories: macro recall). The objective breaks an exact tie."""
+    spec = get_task(task)
     objective, tiebreak = spec.objective, spec.tiebreak
     rows = []
     for dataset in DATASETS:
@@ -258,7 +217,7 @@ def _best_models_by_summary(condition: str, scott_knott: pd.DataFrame, task: str
         candidates = [display_to_model[name] for name in ranking.loc[ranking["rank"] == 1, "model"]]
         pooled = {}
         for m in candidates:
-            summary = json.loads((run_dir(condition, dataset, m, task) / "summary.json").read_text(encoding="utf-8"))
+            summary = json.loads((run_dir(task, condition, dataset, m) / "summary.json").read_text(encoding="utf-8"))
             pooled[m] = summary["pooled_outer_test"]
         best = max(candidates, key=lambda m: (pooled[m][tiebreak], pooled[m][objective]))
         leader = max(candidates, key=lambda m: (pooled[m][objective], pooled[m][tiebreak]))
@@ -283,16 +242,16 @@ def _best_models_by_summary(condition: str, scott_knott: pd.DataFrame, task: str
 # --------------------------------------------------------------------------- Transformers vs DL
 
 def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
-                      scott_knott: pd.DataFrame, task: str = "joint") -> tuple[pd.DataFrame, pd.DataFrame]:
+                      scott_knott: pd.DataFrame, task: str) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Transformers (BETO, RoBERTa-BNE, DistilBETO) against Deep Learning (CNN, BiLSTM).
 
-    A family's score in an outer fold is the mean macro-F1 of its models there. Both families
+    A family's score in an outer fold is the mean objective of its models there. Both families
     share the outer folds, so they are compared fold by fold: by dataset, the folds the Transformers
     win and Cliff's delta (magnitude only; 5 pairs cannot reach p < 0.05), plus each family's best
     Scott-Knott rank. The last row runs the Wilcoxon signed-rank test on the 15 (dataset, fold)
     pairs. By label: the mean pooled F1 of each family; its last rows average the datasets."""
     transformers, deep = families = ["Transformers", "Deep Learning"]
-    objective = task_spec(task).objective
+    objective = get_task(task).objective
     by_dataset, by_label, paired = [], [], []
     for dataset in DATASETS:
         reports = {m: r for d, m, r in runs if d == dataset}

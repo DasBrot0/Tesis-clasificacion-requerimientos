@@ -1,122 +1,99 @@
-"""The five architectures and the text encoders that feed them.
+"""Representación del texto y arquitecturas.
 
-CNN and BiLSTM use a word vocabulary built only from the training partition; BETO,
-RoBERTa-BNE and DistilBETO use their pretrained subword tokenizers (no stemming, no stopword removal).
-Every model has one sigmoid output per label of its task: 1 (binary), 4 (subcategories) or 5 (joint).
+Flujo de un lote:
+
+    DataFrame -> RequirementsDataset -> DataLoader(collate_fn=collator) -> {"inputs", "labels"} -> modelo -> logits
+
+- CNN y BiLSTM: el texto se pasa a minúsculas, se divide en palabras y se convierte en índices de
+  un vocabulario construido solo con la partición de entrenamiento. Todas las secuencias se
+  rellenan hasta la longitud del requisito de entrenamiento más largo, para no truncar ninguno.
+- BETO, RoBERTa-BNE y DistilBETO: su tokenizador de subpalabras, con un máximo de 128 tokens.
+
+Cada modelo tiene una salida sigmoide por etiqueta de la tarea: 1 en binary y 4 en subcategories.
 """
 
 from __future__ import annotations
 
 import re
 from collections import Counter
-from dataclasses import dataclass
 from functools import lru_cache
-from typing import Iterator
 
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+from torch.utils.data import Dataset
 
-from .config import HF_REVISIONS, HF_SOURCES, LABEL_COLS, MAX_LENGTH, ROBERTA_MIRROR, TEXT_COL, WORD_MODELS
+from .config import HF_REVISIONS, HF_SOURCES, MAX_LENGTH, ROBERTA_MIRROR, TEXT_COL, WORD_MODELS
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-TOKEN_PATTERN = re.compile(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+(?:['’-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+)?")
+
+# --------------------------------------------------------------------------- dataset
+
+
+class RequirementsDataset(Dataset):
+    """Pares (texto, vector de etiquetas) de una partición."""
+
+    def __init__(self, frame: pd.DataFrame, labels: list[str]):
+        self.ids = frame["ID"].astype(str).tolist()
+        self.texts = frame[TEXT_COL].astype(str).tolist()
+        if set(labels) <= set(frame.columns):
+            self.labels = frame[labels].to_numpy(dtype=np.float32)
+        else:  # filas sin etiqueta (p. ej. los requisitos sin seguridad que predice la tarea 2)
+            self.labels = np.zeros((len(frame), len(labels)), dtype=np.float32)
+
+    def __len__(self) -> int:
+        return len(self.texts)
+
+    def __getitem__(self, i: int):
+        return self.texts[i], self.labels[i]
+
+
+# --------------------------------------------------------------------------- CNN y BiLSTM: palabras
+
 PAD_IDX, UNK_IDX = 0, 1
+WORD_PATTERN = re.compile(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+(?:['’-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+)?")
 
 
 def tokenize(text: str) -> list[str]:
-    return TOKEN_PATTERN.findall(str(text).lower())
+    return WORD_PATTERN.findall(str(text).lower())
 
 
-def build_vocab(texts: pd.Series) -> dict[str, int]:
+def build_vocab(texts: list[str]) -> dict[str, int]:
+    """Palabra -> índice, de la más frecuente a la menos frecuente."""
     counts = Counter(token for text in texts for token in tokenize(text))
     vocab = {"<PAD>": PAD_IDX, "<UNK>": UNK_IDX}
     for token, _ in counts.most_common():
-        vocab.setdefault(token, len(vocab))
+        vocab[token] = len(vocab)
     return vocab
 
 
-@dataclass
-class EncodedData:
-    """A partition encoded once and kept on DEVICE; the datasets are small enough for that."""
+class WordCollator:
+    """Convierte un lote de textos en índices de palabras rellenados con <PAD>."""
 
-    ids: list[str]
-    inputs: dict[str, torch.Tensor]
-    labels: torch.Tensor
+    def __init__(self, train_texts: list[str]):
+        self.vocab = build_vocab(train_texts)
+        # longitud del requisito de entrenamiento más largo (al menos 5, el kernel más ancho de la CNN)
+        self.max_len = max(5, max(len(tokenize(text)) for text in train_texts))
 
-    def __len__(self) -> int:
-        return len(self.ids)
-
-    def batches(self, batch_size: int, generator: torch.Generator | None = None) -> Iterator[dict]:
-        """Yield batches; shuffled when a generator is given."""
-        order = torch.randperm(len(self), generator=generator) if generator is not None else torch.arange(len(self))
-        for start in range(0, len(self), batch_size):
-            index = order[start:start + batch_size].to(DEVICE)
-            batch = {key: value[index] for key, value in self.inputs.items()}
-            if "attention_mask" in batch:  # dynamic padding: trim to the longest text of the batch
-                width = int(batch["attention_mask"].sum(dim=1).max())
-                batch = {key: value[:, :width] for key, value in batch.items()}
-            yield {"inputs": batch, "labels": self.labels[index]}
-
-
-def _labels(frame: pd.DataFrame, labels: list[str]) -> torch.Tensor:
-    """(n, len(labels)) targets; a frame without the label columns (unlabelled rows) gets zeros."""
-    if not set(labels) <= set(frame.columns):
-        return torch.zeros((len(frame), len(labels)), dtype=torch.float32, device=DEVICE)
-    return torch.tensor(frame[labels].to_numpy(dtype=np.float32), device=DEVICE)
-
-
-class WordEncoder:
-    """Vocabulary and padding length come exclusively from the training partition.
-
-    The padding length is the longest training requirement, so no requirement is truncated; a
-    longer validation or test requirement widens the padding of its own partition instead.
-    """
-
-    def __init__(self, train_frame: pd.DataFrame, labels: list[str] = LABEL_COLS):
-        self.labels = list(labels)
-        self.vocab = build_vocab(train_frame[TEXT_COL])
-        lengths = [len(tokenize(text)) for text in train_frame[TEXT_COL]]
-        self.max_len = max(5, max(lengths))  # at least the widest CNN kernel
-
-    def encode(self, frame: pd.DataFrame) -> EncodedData:
-        token_ids = [[self.vocab.get(token, UNK_IDX) for token in tokenize(text)] or [UNK_IDX]
-                     for text in frame[TEXT_COL]]
-        width = max(self.max_len, max(map(len, token_ids)))
-        input_ids = np.full((len(frame), width), PAD_IDX, dtype=np.int64)
-        lengths = np.empty(len(frame), dtype=np.int64)
-        for row, ids in enumerate(token_ids):
-            input_ids[row, :len(ids)] = ids
-            lengths[row] = len(ids)
-        inputs = {"input_ids": torch.tensor(input_ids, device=DEVICE), "lengths": torch.tensor(lengths, device=DEVICE)}
-        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame, self.labels))
-
-
-class TransformerEncoder:
-    def __init__(self, model_name: str, labels: list[str] = LABEL_COLS):
-        from transformers import AutoTokenizer
-
-        self.labels = list(labels)
-        self.source = transformer_source(model_name)
-        self.tokenizer = AutoTokenizer.from_pretrained(self.source, revision=HF_REVISIONS.get(self.source))
-
-    def encode(self, frame: pd.DataFrame) -> EncodedData:
-        encoded = self.tokenizer(frame[TEXT_COL].astype(str).tolist(), truncation=True, padding=True,
-                                 max_length=MAX_LENGTH, return_tensors="pt")
-        inputs = {key: value.to(DEVICE) for key, value in encoded.items()}
-        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame, self.labels))
-
-
-def build_encoder(model_name: str, train_frame: pd.DataFrame,
-                  labels: list[str] = LABEL_COLS) -> WordEncoder | TransformerEncoder:
-    if model_name in WORD_MODELS:
-        return WordEncoder(train_frame, labels)
-    return TransformerEncoder(model_name, labels)
+    def __call__(self, batch):
+        texts, labels = zip(*batch)
+        sequences = [[self.vocab.get(token, UNK_IDX) for token in tokenize(text)] or [UNK_IDX]
+                     for text in texts]
+        # un requisito de prueba más largo que todos los de entrenamiento ensancha su propio lote
+        width = max(self.max_len, max(map(len, sequences)))
+        input_ids = torch.full((len(sequences), width), PAD_IDX, dtype=torch.long)
+        for row, sequence in enumerate(sequences):
+            input_ids[row, :len(sequence)] = torch.tensor(sequence)
+        lengths = torch.tensor([len(sequence) for sequence in sequences])
+        inputs = {"input_ids": input_ids, "lengths": lengths}
+        return {"inputs": inputs, "labels": torch.tensor(np.stack(labels))}
 
 
 class TextCNN(nn.Module):
-    def __init__(self, config, vocab_size, n_labels=len(LABEL_COLS)):
+    """Embedding -> Conv1d -> ReLU -> max pooling -> dropout -> lineal."""
+
+    def __init__(self, config: dict, vocab_size: int, n_labels: int):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, config["embedding_dim"], padding_idx=PAD_IDX)
         self.conv = nn.Conv1d(config["embedding_dim"], config["num_filters"], config["kernel_size"])
@@ -124,73 +101,103 @@ class TextCNN(nn.Module):
         self.classifier = nn.Linear(config["num_filters"], n_labels)
 
     def forward(self, input_ids, lengths=None):
-        x = self.embedding(input_ids).transpose(1, 2)
-        x = torch.relu(self.conv(x)).amax(dim=2)
-        return self.classifier(self.dropout(x))
+        x = self.embedding(input_ids)            # (lote, palabras, embedding)
+        x = x.transpose(1, 2)                    # (lote, embedding, palabras) para Conv1d
+        x = torch.relu(self.conv(x))             # (lote, filtros, posiciones)
+        x = x.amax(dim=2)                        # max pooling sobre las posiciones
+        return self.classifier(self.dropout(x))  # logits (lote, etiquetas)
 
 
 class BiLSTMClassifier(nn.Module):
-    def __init__(self, config, vocab_size, n_labels=len(LABEL_COLS)):
+    """Embedding -> LSTM bidireccional -> últimos estados de ambas direcciones -> dropout -> lineal."""
+
+    def __init__(self, config: dict, vocab_size: int, n_labels: int):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, config["embedding_dim"], padding_idx=PAD_IDX)
-        lstm_dropout = config["dropout"] if config["num_layers"] > 1 else 0.0
         self.lstm = nn.LSTM(config["embedding_dim"], config["hidden_units"],
-                            num_layers=config["num_layers"], batch_first=True,
-                            bidirectional=True, dropout=lstm_dropout)
+                            num_layers=config["num_layers"], batch_first=True, bidirectional=True,
+                            dropout=config["dropout"] if config["num_layers"] > 1 else 0.0)
         self.dropout = nn.Dropout(config["dropout"])
-        self.classifier = nn.Linear(config["hidden_units"] * 2, n_labels)
+        self.classifier = nn.Linear(2 * config["hidden_units"], n_labels)
 
     def forward(self, input_ids, lengths):
-        embedded = self.embedding(input_ids)
-        packed = nn.utils.rnn.pack_padded_sequence(embedded, lengths.cpu(), batch_first=True,
-                                                   enforce_sorted=False)
+        x = self.embedding(input_ids)
+        # pack_padded_sequence hace que la LSTM ignore el relleno
+        packed = nn.utils.rnn.pack_padded_sequence(x, lengths.cpu(), batch_first=True, enforce_sorted=False)
         _, (hidden, _) = self.lstm(packed)
-        representation = torch.cat((hidden[-2], hidden[-1]), dim=1)
-        return self.classifier(self.dropout(representation))
+        last = torch.cat((hidden[-2], hidden[-1]), dim=1)  # última capa: adelante y atrás
+        return self.classifier(self.dropout(last))
+
+
+# --------------------------------------------------------------------------- Transformers: subpalabras
 
 
 @lru_cache(maxsize=None)
 def transformer_source(model_name: str) -> str:
+    """Repositorio de Hugging Face del modelo (RoBERTa-BNE cae al espejo si el oficial no tiene pesos)."""
+    source = HF_SOURCES[model_name]
     if model_name != "roberta_bne":
-        return HF_SOURCES[model_name]
+        return source
     from huggingface_hub import list_repo_files
     try:
-        if "config.json" in set(list_repo_files(HF_SOURCES[model_name])):
-            return HF_SOURCES[model_name]
+        if "config.json" in list_repo_files(source):
+            return source
     except Exception:
         pass
-    print(f"AVISO: se usa el mirror explícito {ROBERTA_MIRROR} porque el repositorio BNE no publica pesos.")
     return ROBERTA_MIRROR
 
 
-def build_transformer(config, source, n_labels=len(LABEL_COLS)):
-    from transformers import AutoConfig, AutoModelForSequenceClassification, logging
-    logging.set_verbosity_error()  # silence the "newly initialized classifier" report of every fold
-    revision = HF_REVISIONS.get(source)
-    hf_config = AutoConfig.from_pretrained(source, revision=revision, num_labels=n_labels,
-                                            problem_type="multi_label_classification")
-    # Only the classification head takes the tuned dropout. The encoder keeps the dropout it was
-    # pretrained with (BETO 0.1, RoBERTa-BNE 0.0, DistilBETO 0.1): RoBERTa-BNE stops learning with
-    # 0.1 or more. DistilBERT reads the head dropout from seq_classif_dropout.
-    if hf_config.model_type == "distilbert":
-        hf_config.seq_classif_dropout = config["dropout"]
-    else:
-        hf_config.classifier_dropout = config["dropout"]
-    return AutoModelForSequenceClassification.from_pretrained(source, revision=revision, config=hf_config)
+class TransformerCollator:
+    """Tokeniza un lote con el tokenizador del modelo, rellenando hasta el texto más largo del lote."""
+
+    def __init__(self, model_name: str):
+        from transformers import AutoTokenizer
+        self.source = transformer_source(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.source, revision=HF_REVISIONS.get(self.source))
+
+    def __call__(self, batch):
+        texts, labels = zip(*batch)
+        inputs = self.tokenizer(list(texts), truncation=True, max_length=MAX_LENGTH, padding=True,
+                                return_tensors="pt")
+        return {"inputs": dict(inputs), "labels": torch.tensor(np.stack(labels))}
 
 
-def build_model(model_name: str, config: dict, encoder) -> nn.Module:
-    n_labels = len(encoder.labels)
-    if model_name == "cnn":
-        model = TextCNN(config, len(encoder.vocab), n_labels)
-    elif model_name == "bilstm":
-        model = BiLSTMClassifier(config, len(encoder.vocab), n_labels)
-    else:
-        model = build_transformer(config, encoder.source, n_labels)
-    return model.to(DEVICE)
+class TransformerClassifier(nn.Module):
+    """Modelo preentrenado con una cabeza de clasificación; devuelve solo los logits."""
+
+    def __init__(self, config: dict, source: str, n_labels: int):
+        super().__init__()
+        from transformers import AutoConfig, AutoModelForSequenceClassification, logging
+        logging.set_verbosity_error()  # oculta el aviso de "cabeza recién inicializada" de cada fold
+        revision = HF_REVISIONS.get(source)
+        hf_config = AutoConfig.from_pretrained(source, revision=revision, num_labels=n_labels,
+                                               problem_type="multi_label_classification")
+        # Solo la cabeza toma el dropout ajustado; el codificador conserva el de su preentrenamiento
+        # (BETO 0.1, RoBERTa-BNE 0.0, DistilBETO 0.1). DistilBERT lo lee de seq_classif_dropout.
+        if hf_config.model_type == "distilbert":
+            hf_config.seq_classif_dropout = config["dropout"]
+        else:
+            hf_config.classifier_dropout = config["dropout"]
+        self.hf = AutoModelForSequenceClassification.from_pretrained(source, revision=revision, config=hf_config)
+
+    def forward(self, **inputs):
+        return self.hf(**inputs).logits
 
 
-def forward(model: nn.Module, model_name: str, inputs: dict[str, torch.Tensor]) -> torch.Tensor:
+# --------------------------------------------------------------------------- fábrica
+
+
+def build_collator(model_name: str, train_frame: pd.DataFrame):
     if model_name in WORD_MODELS:
-        return model(inputs["input_ids"], inputs["lengths"])
-    return model(**inputs).logits
+        return WordCollator(train_frame[TEXT_COL].astype(str).tolist())
+    return TransformerCollator(model_name)
+
+
+def build_model(model_name: str, config: dict, n_labels: int, collator) -> nn.Module:
+    if model_name == "cnn":
+        model = TextCNN(config, len(collator.vocab), n_labels)
+    elif model_name == "bilstm":
+        model = BiLSTMClassifier(config, len(collator.vocab), n_labels)
+    else:
+        model = TransformerClassifier(config, collator.source, n_labels)
+    return model.to(DEVICE)
