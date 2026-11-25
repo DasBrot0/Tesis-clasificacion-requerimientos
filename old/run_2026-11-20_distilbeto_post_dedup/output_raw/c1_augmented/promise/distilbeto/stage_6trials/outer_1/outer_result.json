@@ -1,0 +1,84 @@
+{
+  "outer": 1,
+  "train_real_rows": 367,
+  "train_synthetic_rows": 76,
+  "test_rows": 92,
+  "optuna": {
+    "trials_finished": 6,
+    "trials_completed": 6,
+    "trials_pruned": 0
+  },
+  "default_config_inner_cv_macro_f1": 0.14114509246088194,
+  "best_trial": {
+    "trial_id": 5,
+    "inner_cv_macro_f1_mean": 0.5687572466519836,
+    "inner_cv_macro_f1_std": 0.12120827653146533
+  },
+  "winning_config": {
+    "learning_rate": 4.5156321168792874e-05,
+    "batch_size": 8,
+    "epochs": 10,
+    "dropout": 0.11049689336879653,
+    "weight_decay": 0.003922592778170174,
+    "optimizer": "AdamW",
+    "warmup_ratio": 0.0,
+    "pos_weight": true
+  },
+  "final_training_epochs": 8,
+  "thresholds_by_label": {
+    "Security": 0.42500000000000004,
+    "Confidentiality": 0.45000000000000007,
+    "Integrity": 0.4750000000000001,
+    "Authenticity": 0.5500000000000002,
+    "Resistance": 0.5750000000000002
+  },
+  "test": {
+    "macro_f1": 0.4712250712250713,
+    "weighted_f1": 0.6072971234261557,
+    "security_recall": 0.625,
+    "loss": 0.3661694771853154
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.9090909090909091,
+      "recall": 0.625,
+      "f1": 0.7407407407407407,
+      "support": 16,
+      "in_macro_average": true
+    },
+    {
+      "label": "Confidentiality",
+      "precision": 0.6666666666666666,
+      "recall": 0.5714285714285714,
+      "f1": 0.6153846153846154,
+      "support": 7,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 2,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333333333333333,
+      "support": 4,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 5.8
+}
