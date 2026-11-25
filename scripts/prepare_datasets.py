@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 """Construye los tres datasets de entrenamiento (uno por fuente, sin unirlos).
 
-    inputs/original/  ->  inputs/training/{promise,secreq,dosspre}.csv
+    inputs/original/  ->  inputs/training/{promise,secreq,dosspre}.csv          (tabla completa)
+                      ->  inputs/training/<dataset>_binary.csv                  (tarea binaria)
+                      ->  inputs/training/<dataset>_subcategories.csv           (tarea de subcategorías)
+
+Desde el 24-11-2026 hay dos entrenamientos separados (pedido del asesor), y cada dataset tiene dos
+archivos con el formato de las fuentes de DOSSPRE ("2.0Binary": todos los requisitos con SR/NSR;
+"3.0Multi-class": la categoría de seguridad):
+- <dataset>_binary.csv: todos los requisitos, con la etiqueta Security (1 seguridad, 0 no seguridad);
+- <dataset>_subcategories.csv: solo los requisitos con Security=1, con las cuatro subcategorías.
+Los dos se derivan de la tabla completa (mismos ID y textos), que se sigue escribiendo porque la leen
+la tarea conjunta anterior, la verificación de subcategorías y las planillas de validación.
 
 Salida multietiqueta común (5 objetivos): Security + cuatro subcategorías ISO/IEC 25010
 (Non_repudiation y Accountability se descartaron el 25-10-2026 por falta de datos).
@@ -45,7 +55,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config import (  # noqa: E402
-    DATASETS, INTERIM_DIR, LABEL_COLS, ORIGINAL_DIR, SUBCATEGORY_COLS, TEXT_COL,
+    DATASETS, INTERIM_DIR, LABEL_COLS, ORIGINAL_DIR, SUBCATEGORY_COLS, TASK_DATASETS, TEXT_COL,
 )
 
 PROMISE_FILES = ["Balanced_promise_exp_nfr_train.csv", "Spanish_promise_exp_nfr_test_recovered.csv"]
@@ -496,7 +506,32 @@ def _finalize(out: pd.DataFrame, dataset: str) -> pd.DataFrame:
     path = DATASETS[dataset]
     path.parent.mkdir(parents=True, exist_ok=True)
     out[ordered].to_csv(path, index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
+    write_task_files(out[ordered], dataset)
     return out[ordered]
+
+
+_COMMON_COLS = ["ID", "Dataset", "Source_file", "Project", "Source_ID", "Requirement_original", TEXT_COL,
+                "Translation_source", "Original_label"]
+
+
+def task_frames(full: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """(binary, subcategories) tables of one dataset, derived from its full table.
+
+    binary: every requirement and its Security label (like DOSSPRE 2.0Binary).
+    subcategories: the Security=1 requirements and their four subcategories (like DOSSPRE
+    3.0Multi-class, which only details the security classes), with the label status and evidence.
+    """
+    binary = full[[*_COMMON_COLS, "Security"]].copy()
+    security = full[full["Security"].eq(1)]
+    subcategories = security[[*_COMMON_COLS, *SUBCATEGORY_COLS, "Subcategory_label_status",
+                              "Prelabel_evidence"]].copy()
+    return binary.reset_index(drop=True), subcategories.reset_index(drop=True)
+
+
+def write_task_files(full: pd.DataFrame, dataset: str) -> None:
+    for task, frame in zip(("binary", "subcategories"), task_frames(full)):
+        path = TASK_DATASETS[task][dataset]
+        frame.to_csv(path, index=False, encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL)
 
 
 def _son_label_map() -> dict:
@@ -610,6 +645,10 @@ def main() -> None:
         frame = builder()
         counts = frame[LABEL_COLS].sum().to_dict()
         print(f"{name}: {len(frame)} filas -> {DATASETS[name]}\n  positivos: {counts}")
+        empty = int((frame["Security"].eq(1) & ~frame[SUBCATEGORY_COLS].any(axis=1)).sum())
+        print(f"  binaria: {len(frame)} filas -> {TASK_DATASETS['binary'][name].name}; "
+              f"subcategorías: {int(frame['Security'].sum())} filas ({empty} sin subcategoría) "
+              f"-> {TASK_DATASETS['subcategories'][name].name}")
     print("\nVerifique la cobertura con: python scripts/verify_subcategories.py")
 
 

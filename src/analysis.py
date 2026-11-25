@@ -7,7 +7,9 @@ needs no training and no torch:
 - the best model of each dataset (top Scott-Knott ESD group + Security recall);
 - Transformers against Deep Learning models across the three datasets;
 - the diversity of the synthetic requirements (C1).
-Each function writes its CSV to outputs/output_raw/ and returns the table for the workbook.
+Each function takes the task (binary | subcategories | joint), writes its CSV to
+<raw_root(task)>/<condition>/ and returns the table for the workbook. "Security recall" and
+"macro-F1" stand for the task's tie-break and objective (src/config.py: TASK_SPECS).
 """
 
 from __future__ import annotations
@@ -19,8 +21,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
 
-from .config import (AUGMENTATION_DIR, DATASET_NAMES, DATASETS, LABEL_COLS, MODEL_DISPLAY, MODEL_FAMILY,
-                     MODELS, OUTPUT_RAW, SUBCATEGORY_COLS, TEXT_COL, run_dir)
+from .config import (AUGMENTATION_DIR, DATASET_NAMES, DATASETS, MODEL_DISPLAY, MODEL_FAMILY, MODELS, OUTPUT_RAW,
+                     SUBCATEGORY_COLS, TASK_DATASETS, TEXT_COL, raw_root, run_dir, task_spec)
 from .significance import cliffs_delta, cochran_q, delta_magnitude, holm, mcnemar_exact
 
 ALPHA = 0.05
@@ -28,21 +30,25 @@ NO_SUBCATEGORY = "Ninguna"
 SYNTHETIC_DIVERSITY_CSV = "synthetic_diversity.csv"
 
 
-def load_pooled(condition: str, dataset: str, model_name: str) -> pd.DataFrame | None:
-    path = run_dir(condition, dataset, model_name) / "pooled_outer_test_predictions.csv"
+def load_pooled(condition: str, dataset: str, model_name: str, task: str = "joint") -> pd.DataFrame | None:
+    path = run_dir(condition, dataset, model_name, task) / "pooled_outer_test_predictions.csv"
     if not path.exists():
         return None
     frame = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str})
     return frame.sort_values("ID").reset_index(drop=True)
 
 
-def _matrix(pooled: pd.DataFrame, kind: str, labels: list[str] = LABEL_COLS) -> np.ndarray:
+def _labels(task: str) -> list[str]:
+    return list(task_spec(task).labels)
+
+
+def _matrix(pooled: pd.DataFrame, kind: str, labels: list[str]) -> np.ndarray:
     return pooled[[f"{label}_{kind}" for label in labels]].to_numpy(dtype=int)
 
 
-def _dataset_predictions(condition: str, dataset: str) -> dict[str, pd.DataFrame]:
+def _dataset_predictions(condition: str, dataset: str, task: str = "joint") -> dict[str, pd.DataFrame]:
     """Pooled predictions of every finished model of a dataset, checked to cover the same IDs."""
-    frames = {m: f for m in MODELS if (f := load_pooled(condition, dataset, m)) is not None}
+    frames = {m: f for m in MODELS if (f := load_pooled(condition, dataset, m, task)) is not None}
     reference = next(iter(frames.values()), None)
     for model_name, frame in frames.items():
         if not frame["ID"].equals(reference["ID"]):
@@ -50,9 +56,9 @@ def _dataset_predictions(condition: str, dataset: str) -> dict[str, pd.DataFrame
     return frames
 
 
-def _active(condition: str, dataset: str, model_name: str) -> np.ndarray:
-    summary = json.loads((run_dir(condition, dataset, model_name) / "summary.json").read_text(encoding="utf-8"))
-    return np.array([label in summary["labels_in_macro_average"] for label in LABEL_COLS])
+def _active(condition: str, dataset: str, model_name: str, task: str = "joint") -> np.ndarray:
+    summary = json.loads((run_dir(condition, dataset, model_name, task) / "summary.json").read_text(encoding="utf-8"))
+    return np.array([label in summary["labels_in_macro_average"] for label in _labels(task)])
 
 
 def _f1(y_true: np.ndarray, y_pred: np.ndarray) -> np.ndarray:
@@ -70,21 +76,22 @@ def _save(table: pd.DataFrame, path) -> pd.DataFrame:
 
 # --------------------------------------------------------------------------- Cochran Q + McNemar
 
-def model_tests(condition: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+def model_tests(condition: str, task: str = "joint") -> tuple[pd.DataFrame, pd.DataFrame]:
     """Per dataset and label: Cochran's Q over the hits of every model and, below it, exact McNemar
     for each pair of models with Holm's correction over the pairs of that dataset and label.
     A pair is significant only when Q is (p < 0.05) and its Holm-adjusted p is below 0.05."""
     omnibus, pairs = [], []
+    labels = _labels(task)
     for dataset in DATASETS:
-        frames = _dataset_predictions(condition, dataset)
+        frames = _dataset_predictions(condition, dataset, task)
         if len(frames) < 2:
             continue
         names = list(frames)
-        y = _matrix(frames[names[0]], "true")
-        active = _active(condition, dataset, names[0])
-        hits = {m: _matrix(f, "pred") == y for m, f in frames.items()}
-        f1 = {m: _f1(y, _matrix(f, "pred")) for m, f in frames.items()}
-        for j, label in enumerate(LABEL_COLS):
+        y = _matrix(frames[names[0]], "true", labels)
+        active = _active(condition, dataset, names[0], task)
+        hits = {m: _matrix(f, "pred", labels) == y for m, f in frames.items()}
+        f1 = {m: _f1(y, _matrix(f, "pred", labels)) for m, f in frames.items()}
+        for j, label in enumerate(labels):
             if len(names) >= 3:
                 q, p_q = cochran_q(np.column_stack([hits[m][:, j] for m in names]))
             else:  # with two models McNemar is already the omnibus test
@@ -111,8 +118,8 @@ def model_tests(condition: str) -> tuple[pd.DataFrame, pd.DataFrame]:
                                     row["model_b"] if row["only_b_right"] > row["only_a_right"] else "empate")
             pairs.extend(block)
     omnibus, pairs = pd.DataFrame(omnibus), pd.DataFrame(pairs)
-    _save(omnibus, OUTPUT_RAW / condition / "model_tests_cochran_q.csv")
-    _save(pairs, OUTPUT_RAW / condition / "model_tests_mcnemar.csv")
+    _save(omnibus, raw_root(task) / condition / "model_tests_cochran_q.csv")
+    _save(pairs, raw_root(task) / condition / "model_tests_mcnemar.csv")
     return omnibus, pairs
 
 
@@ -124,8 +131,9 @@ def subcategory_confusion(pooled: pd.DataFrame) -> pd.DataFrame:
     Diagonal: the real subcategory was predicted (TP). Off the diagonal (i, j): the requirement has
     i and not j, the model missed i and predicted j instead, i.e. it took i for j. Column "Ninguna":
     i was missed and no wrong subcategory was predicted in its place. Row "Ninguna": requirements
-    without any real subcategory (including non-security ones); there each cell counts a wrongly
-    predicted subcategory and "Ninguna" the requirements correctly left without one.
+    without any real subcategory (non-security ones in the joint task; security ones without a
+    subcategory in the subcategory task); there each cell counts a wrongly predicted subcategory and
+    "Ninguna" the requirements correctly left without one.
     """
     true, pred = _matrix(pooled, "true", SUBCATEGORY_COLS), _matrix(pooled, "pred", SUBCATEGORY_COLS)
     wrong = (pred == 1) & (true == 0)
@@ -145,69 +153,76 @@ def subcategory_confusion(pooled: pd.DataFrame) -> pd.DataFrame:
     return table
 
 
-def confusion_tables(condition: str) -> pd.DataFrame:
+def confusion_tables(condition: str, task: str = "joint") -> pd.DataFrame:
     """Long table (dataset, model, real, predicted, count) of every run's subcategory confusion."""
     parts = []
     for dataset in DATASETS:
-        for model_name, pooled in _dataset_predictions(condition, dataset).items():
+        for model_name, pooled in _dataset_predictions(condition, dataset, task).items():
             long = subcategory_confusion(pooled).rename_axis("real").reset_index().melt(
                 id_vars="real", var_name="predicted", value_name="count")
             long.insert(0, "model", MODEL_DISPLAY[model_name])
             long.insert(0, "dataset", DATASET_NAMES[dataset])
             parts.append(long)
     table = pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
-    return _save(table, OUTPUT_RAW / condition / "subcategory_confusion.csv")
+    return _save(table, raw_root(task) / condition / "subcategory_confusion.csv")
 
 
-def _label_text(row: np.ndarray) -> str:
-    return ", ".join(label for label, value in zip(LABEL_COLS, row) if value) or "—"
+def _label_text(row: np.ndarray, labels: list[str]) -> str:
+    return ", ".join(label for label, value in zip(labels, row) if value) or "—"
 
 
-def misclassified(condition: str) -> pd.DataFrame:
+def misclassified(condition: str, task: str = "joint") -> pd.DataFrame:
     """One row per real requirement that at least one model got wrong in some label, with the real
     labels, each model's prediction and the text, for the manual error review of §4.3.2."""
     rows = []
-    for dataset, path in DATASETS.items():
-        frames = _dataset_predictions(condition, dataset)
+    labels = _labels(task)
+    for dataset, path in TASK_DATASETS[task].items():
+        frames = _dataset_predictions(condition, dataset, task)
         if not frames:
             continue
         texts = pd.read_csv(path, encoding="utf-8-sig", dtype={"ID": str}).set_index("ID")[TEXT_COL]
         any_frame = next(iter(frames.values()))
-        y = _matrix(any_frame, "true")
-        preds = {m: _matrix(f, "pred") for m, f in frames.items()}
+        y = _matrix(any_frame, "true", labels)
+        preds = {m: _matrix(f, "pred", labels) for m, f in frames.items()}
         wrong_models = sum((p != y).any(axis=1).astype(int) for p in preds.values())
         for k in np.flatnonzero(wrong_models):
             rid = any_frame.at[k, "ID"]
             rows.append({
                 "dataset": DATASET_NAMES[dataset], "ID": rid, "models_wrong": int(wrong_models[k]),
-                "real": _label_text(y[k]),
-                **{MODEL_DISPLAY[m]: _label_text(p[k]) for m, p in preds.items()},
+                "real": _label_text(y[k], labels),
+                **{MODEL_DISPLAY[m]: _label_text(p[k], labels) for m, p in preds.items()},
                 "requirement": texts.get(rid, ""),
             })
     table = pd.DataFrame(rows)
     if not table.empty:
         table = table.sort_values(["dataset", "models_wrong", "ID"], ascending=[True, False, True])
-    return _save(table, OUTPUT_RAW / condition / "misclassified.csv")
+    return _save(table, raw_root(task) / condition / "misclassified.csv")
 
 
 # --------------------------------------------------------------------------- best model
 
-def best_models(condition: str, scott_knott: pd.DataFrame) -> pd.DataFrame:
+def best_models(condition: str, scott_knott: pd.DataFrame, task: str = "joint") -> pd.DataFrame:
     """Rule of METODOLOGIA §4.3.2: the models of the top Scott-Knott ESD group do not differ in
     macro-F1 (Binkhonain & Alfayez, 2025); among them, the one with the highest pooled Security
     recall is preferred, because missing a security requirement costs more than a false alarm
-    (Petrillo et al., 2025). Macro-F1 breaks an exact tie in recall."""
+    (Petrillo et al., 2025). Macro-F1 breaks an exact tie in recall.
+
+    Other tasks: their objective and tie-break, read from the pooled metrics of each run
+    (binary: F1 and recall of Security; subcategories: macro-F1 and macro recall)."""
+    if task != "joint":
+        return _best_models_by_summary(condition, scott_knott, task)
+    labels = _labels(task)
     rows = []
     for dataset in DATASETS:
-        frames = _dataset_predictions(condition, dataset)
+        frames = _dataset_predictions(condition, dataset, task)
         ranking = scott_knott[scott_knott["dataset"] == DATASET_NAMES[dataset]] if not scott_knott.empty else None
         if not frames or ranking is None or ranking.empty:
             continue
         display_to_model = {MODEL_DISPLAY[m]: m for m in frames}
         candidates = [display_to_model[name] for name in ranking.loc[ranking["rank"] == 1, "model"]]
         any_model = next(iter(frames))
-        y, active = _matrix(frames[any_model], "true"), _active(condition, dataset, any_model)
-        preds = {m: _matrix(frames[m], "pred") for m in candidates}
+        y, active = _matrix(frames[any_model], "true", labels), _active(condition, dataset, any_model, task)
+        preds = {m: _matrix(frames[m], "pred", labels) for m in candidates}
         macro = {m: float(_f1(y, preds[m])[active].mean()) for m in candidates}
         recall = {m: float((y[:, 0] & preds[m][:, 0]).sum() / max(y[:, 0].sum(), 1)) for m in candidates}
         best = max(candidates, key=lambda m: (recall[m], macro[m]))
@@ -226,13 +241,49 @@ def best_models(condition: str, scott_knott: pd.DataFrame) -> pd.DataFrame:
             "candidates": "; ".join(f"{MODEL_DISPLAY[m]}: macro-F1 {macro[m]:.3f}, recall Security {recall[m]:.3f}"
                                     for m in sorted(candidates, key=lambda m: -recall[m])),
         })
-    return _save(pd.DataFrame(rows), OUTPUT_RAW / condition / "best_model.csv")
+    return _save(pd.DataFrame(rows), raw_root(task) / condition / "best_model.csv")
+
+
+def _best_models_by_summary(condition: str, scott_knott: pd.DataFrame, task: str) -> pd.DataFrame:
+    """Same rule as best_models for the binary and subcategory tasks: within the top Scott-Knott ESD
+    group, the highest pooled tie-break wins; the objective breaks an exact tie."""
+    spec = task_spec(task)
+    objective, tiebreak = spec.objective, spec.tiebreak
+    rows = []
+    for dataset in DATASETS:
+        ranking = scott_knott[scott_knott["dataset"] == DATASET_NAMES[dataset]] if not scott_knott.empty else None
+        if ranking is None or ranking.empty:
+            continue
+        display_to_model = {MODEL_DISPLAY[m]: m for m in MODELS}
+        candidates = [display_to_model[name] for name in ranking.loc[ranking["rank"] == 1, "model"]]
+        pooled = {}
+        for m in candidates:
+            summary = json.loads((run_dir(condition, dataset, m, task) / "summary.json").read_text(encoding="utf-8"))
+            pooled[m] = summary["pooled_outer_test"]
+        best = max(candidates, key=lambda m: (pooled[m][tiebreak], pooled[m][objective]))
+        leader = max(candidates, key=lambda m: (pooled[m][objective], pooled[m][tiebreak]))
+        if len(candidates) == 1:
+            reason = "único modelo del grupo superior de Scott-Knott ESD"
+        elif best == leader:
+            reason = f"mayor {tiebreak} del grupo superior (y mayor {objective})"
+        else:
+            reason = (f"mayor {tiebreak} del grupo superior; {MODEL_DISPLAY[leader]} tiene más {objective}, "
+                      "pero la diferencia no es significativa")
+        rows.append({
+            "dataset": DATASET_NAMES[dataset], "best_model": MODEL_DISPLAY[best],
+            "top_group": " = ".join(MODEL_DISPLAY[m] for m in candidates),
+            objective: pooled[best][objective], tiebreak: pooled[best][tiebreak], "reason": reason,
+            "candidates": "; ".join(f"{MODEL_DISPLAY[m]}: {objective} {pooled[m][objective]:.3f}, "
+                                    f"{tiebreak} {pooled[m][tiebreak]:.3f}"
+                                    for m in sorted(candidates, key=lambda m: -pooled[m][tiebreak])),
+        })
+    return _save(pd.DataFrame(rows), raw_root(task) / condition / "best_model.csv")
 
 
 # --------------------------------------------------------------------------- Transformers vs DL
 
 def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
-                      scott_knott: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+                      scott_knott: pd.DataFrame, task: str = "joint") -> tuple[pd.DataFrame, pd.DataFrame]:
     """Transformers (BETO, RoBERTa-BNE, DistilBETO) against Deep Learning (CNN, BiLSTM).
 
     A family's score in an outer fold is the mean macro-F1 of its models there. Both families
@@ -241,31 +292,32 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
     Scott-Knott rank. The last row runs the Wilcoxon signed-rank test on the 15 (dataset, fold)
     pairs. By label: the mean pooled F1 of each family; its last rows average the datasets."""
     transformers, deep = families = ["Transformers", "Deep Learning"]
+    objective = task_spec(task).objective
     by_dataset, by_label, paired = [], [], []
     for dataset in DATASETS:
         reports = {m: r for d, m, r in runs if d == dataset}
         members = {f: [m for m in reports if MODEL_FAMILY[m] == f] for f in families}
         if not all(members.values()):
             continue
-        folds = {f: np.mean([[fold["test"]["macro_f1"] for fold in reports[m]["outer_folds"]] for m in members[f]],
+        folds = {f: np.mean([[fold["test"][objective] for fold in reports[m]["outer_folds"]] for m in members[f]],
                             axis=0) for f in families}
         paired.append(folds[transformers] - folds[deep])
-        pooled = {f: [reports[m]["pooled_outer_test"]["macro_f1"] for m in members[f]] for f in families}
+        pooled = {f: [reports[m]["pooled_outer_test"][objective] for m in members[f]] for f in families}
         delta = cliffs_delta(folds[transformers], folds[deep])
         ranks = scott_knott[scott_knott["dataset"] == DATASET_NAMES[dataset]].set_index("model")["rank"]
         best_rank = {f: int(min(ranks[MODEL_DISPLAY[m]] for m in members[f])) for f in families}
         by_dataset.append({
             "dataset": DATASET_NAMES[dataset],
-            **{f"macro_f1 {f} (media agrupada)": float(np.mean(pooled[f])) for f in families},
-            **{f"mejor {f}": MODEL_DISPLAY[max(members[f], key=lambda m: reports[m]["pooled_outer_test"]["macro_f1"])]
+            **{f"{objective} {f} (media agrupada)": float(np.mean(pooled[f])) for f in families},
+            **{f"mejor {f}": MODEL_DISPLAY[max(members[f], key=lambda m: reports[m]["pooled_outer_test"][objective])]
                for f in families},
-            "delta_macro_f1": float(np.mean(pooled[transformers]) - np.mean(pooled[deep])),
+            f"delta_{objective}": float(np.mean(pooled[transformers]) - np.mean(pooled[deep])),
             "folds_won": f"{int((paired[-1] > 0).sum())} de {len(paired[-1])}",
             "cliffs_delta_folds": delta, "magnitude": delta_magnitude(delta),
             **{f"mejor rango SK {f}": best_rank[f] for f in families},
         })
         per_label = {m: {r["label"]: r for r in reports[m]["pooled_outer_test_per_label"]} for m in reports}
-        for label in LABEL_COLS:
+        for label in _labels(task):
             f1 = {f: [per_label[m][label]["f1"] for m in members[f]] for f in families}
             by_label.append({
                 "dataset": DATASET_NAMES[dataset], "label": label,
@@ -275,12 +327,13 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
             })
     by_dataset, by_label = pd.DataFrame(by_dataset), pd.DataFrame(by_label)
     if not by_dataset.empty:
-        wins = int((by_dataset["delta_macro_f1"] > 0).sum())
+        wins = int((by_dataset[f"delta_{objective}"] > 0).sum())
         diffs = np.concatenate(paired)
         by_dataset = pd.concat([by_dataset, pd.DataFrame([{
             "dataset": f"Los {len(by_dataset)} datasets",
-            **{f"macro_f1 {f} (media agrupada)": by_dataset[f"macro_f1 {f} (media agrupada)"].mean() for f in families},
-            "delta_macro_f1": by_dataset["delta_macro_f1"].mean(),
+            **{f"{objective} {f} (media agrupada)": by_dataset[f"{objective} {f} (media agrupada)"].mean()
+               for f in families},
+            f"delta_{objective}": by_dataset[f"delta_{objective}"].mean(),
             "folds_won": f"{int((diffs > 0).sum())} de {len(diffs)}",
             "magnitude": f"Transformers superiores en {wins} de {len(by_dataset)}",
             "wilcoxon_p": float(wilcoxon(diffs).pvalue),
@@ -288,8 +341,8 @@ def family_comparison(condition: str, runs: list[tuple[str, str, dict]],
         mean_by_label = by_label.groupby("label", sort=False)[[f"F1 {f}" for f in families] + ["delta_f1"]].mean()
         by_label = pd.concat([by_label, mean_by_label.reset_index().assign(
             dataset=f"Media de los {by_dataset.shape[0] - 1} datasets")], ignore_index=True)
-    _save(by_dataset, OUTPUT_RAW / condition / "family_comparison.csv")
-    _save(by_label, OUTPUT_RAW / condition / "family_comparison_by_label.csv")
+    _save(by_dataset, raw_root(task) / condition / "family_comparison.csv")
+    _save(by_label, raw_root(task) / condition / "family_comparison_by_label.csv")
     return by_dataset, by_label
 
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -48,6 +49,8 @@ MIN_POSITIVES_PER_LABEL = 10
 CONDITIONS = ["c0_real", "c1_augmented"]
 AUGMENTATION_DIR = INTERIM_DIR / "augmentation"
 
+# Full table of each dataset (Security + subcategories). It is the source of the two task files
+# below and the table that the joint task and the labelling tools read.
 DATASETS = {
     "promise": TRAINING_DIR / "promise.csv",
     "secreq": TRAINING_DIR / "secreq.csv",
@@ -152,9 +155,92 @@ N_TRIALS = {"cnn": 25, "bilstm": 25, "beto": 12, "roberta_bne": 12, "distilbeto"
 STAGE1_TRIALS = {"cnn": 15, "bilstm": 15, "beto": 6, "roberta_bne": 6, "distilbeto": 6}
 
 
-def run_dir(condition: str, dataset: str, model: str) -> Path:
-    return OUTPUT_RAW / condition / dataset / model
+# --------------------------------------------------------------------------- tasks
+# Since 2026-11-24 (advisor's request) the problem is split in two separately trained tasks, each
+# with the same five models, conditions and nested CV:
+#   binary         Security vs. not Security over every requirement (one sigmoid output);
+#   subcategories  only the Security requirements, multilabel over the four subcategories.
+# "joint" is the former single model with five sigmoid outputs and the coherence rule; it is kept
+# so that the earlier runs (outputs/output_raw/<condition>/...) can still be read and rebuilt.
+TASKS = ["binary", "subcategories", "joint"]
+NEW_TASKS = ["binary", "subcategories"]
 
 
-def checkpoint_dir(condition: str, dataset: str, model: str, outer: int) -> Path:
-    return CHECKPOINTS / condition / dataset / model / f"outer_{outer}"
+@dataclass(frozen=True)
+class TaskSpec:
+    name: str
+    labels: tuple[str, ...]
+    # Reported metrics, in order. `objective` is what Optuna maximizes on the inner CV and what
+    # Scott-Knott ESD ranks; `tiebreak` breaks ties between epochs, trials and models.
+    metrics: tuple[str, ...]
+    objective: str
+    tiebreak: str
+    coherence: bool  # the hierarchical rule only exists inside the joint model
+
+
+TASK_SPECS = {
+    # [Decisión propia, configurable] binary: F1 of the Security class as objective and its recall
+    # as tie-break, mirroring the joint task (macro-F1 + Security recall). f1_macro_2class (mean F1 of
+    # both classes) is reported too because part of the literature reports it for binary tasks.
+    "binary": TaskSpec("binary", ("Security",), ("f1", "precision", "recall", "f1_macro_2class"),
+                       "f1", "recall", False),
+    # [Decisión propia, configurable] subcategories: macro-F1 as in the joint task; the tie-break
+    # becomes the macro recall of the subcategories, since there is no Security output any more.
+    "subcategories": TaskSpec("subcategories", tuple(SUBCATEGORY_COLS),
+                              ("macro_f1", "weighted_f1", "micro_f1", "macro_recall"),
+                              "macro_f1", "macro_recall", False),
+    "joint": TaskSpec("joint", tuple(LABEL_COLS), ("macro_f1", "weighted_f1", "security_recall"),
+                      "macro_f1", "security_recall", True),
+}
+
+# Training file of each (dataset, task), written by scripts/prepare_datasets.py from DATASETS, in
+# the format of DOSSPRE's source files ("2.0Binary" and "3.0Multi-class"): one binary file with every
+# requirement and one subcategory file with the security requirements only.
+TASK_DATASETS = {
+    task: {name: TRAINING_DIR / f"{name}_{task}.csv" for name in DATASETS} for task in NEW_TASKS
+}
+TASK_DATASETS["joint"] = DATASETS
+
+# [Decisión propia, configurable; pendiente de confirmar con el asesor] In c1_augmented the
+# synthetic requirements (all of them Security = 1) join the training parts of
+#   - subcategories: always (they were generated for the scarce subcategories);
+#   - binary: as extra Security positives when True; with False, c1_augmented is not run for the
+#     binary task (it would equal c0_real).
+BINARY_USE_SYNTHETIC = True
+# [Decisión propia, configurable] Security requirements without any of the four subcategories
+# (e.g. DOSSPRE Auditing, or PROMISE/SecReq ones the annotators left without one: 9/44/69) stay in
+# the subcategory task as all-zero rows. With False they are dropped when the task is loaded.
+SUBCATEGORY_KEEP_EMPTY = True
+
+
+def task_spec(task: str) -> TaskSpec:
+    if task not in TASK_SPECS:
+        raise ValueError(f"Tarea desconocida: {task} (opciones: {TASKS})")
+    return TASK_SPECS[task]
+
+
+def raw_root(task: str = "joint") -> Path:
+    """outputs/output_raw/ for the joint task (earlier runs); outputs/output_raw/<task>/ otherwise."""
+    return OUTPUT_RAW if task == "joint" else OUTPUT_RAW / task_spec(task).name
+
+
+def reports_root(task: str = "joint") -> Path:
+    return REPORTS if task == "joint" else REPORTS / task_spec(task).name
+
+
+def splits_dir(task: str = "joint") -> Path:
+    return raw_root(task) / "splits"
+
+
+def run_dir(condition: str, dataset: str, model: str, task: str = "joint") -> Path:
+    return raw_root(task) / condition / dataset / model
+
+
+def checkpoint_dir(condition: str, dataset: str, model: str, outer: int, task: str = "joint") -> Path:
+    base = CHECKPOINTS if task == "joint" else CHECKPOINTS / task
+    return base / condition / dataset / model / f"outer_{outer}"
+
+
+def log_name(condition: str, dataset: str, model: str, task: str = "joint") -> str:
+    prefix = "" if task == "joint" else f"{task}_"
+    return f"{prefix}{condition}_{dataset}_{model}.log"

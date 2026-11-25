@@ -2,10 +2,51 @@
 
 Cinco modelos (CNN, BiLSTM, BETO, RoBERTa-BNE, DistilBETO) entrenados **por separado** sobre tres datasets
 (PROMISE_exp, SecReq, DOSSPRE), en dos condiciones: **C0** (`c0_real`, solo requisitos reales) y
-**C1** (`c1_augmented`, reales + sintéticos generados con LLM, solo en entrenamiento). Cada modelo
-predice `Security` y cuatro subcategorías de seguridad de ISO/IEC 25010 (`Confidentiality`,
-`Integrity`, `Authenticity`, `Resistance`). `Non_repudiation` y `Accountability` se descartaron el
-25-10-2026 por falta de datos.
+**C1** (`c1_augmented`, reales + sintéticos generados con LLM, solo en entrenamiento). Desde el
+24-11-2026 (pedido del asesor) el problema se divide en **dos entrenamientos separados**, con los
+mismos modelos, condiciones y CV anidada (ver «Dos tareas» abajo):
+
+1. **Binaria** (`--task binary`): seguridad vs. no seguridad sobre todos los requisitos (1 salida).
+2. **Subcategorías** (`--task subcategories`): solo los requisitos de seguridad, multietiqueta sobre
+   las cuatro subcategorías de ISO/IEC 25010 (`Confidentiality`, `Integrity`, `Authenticity`,
+   `Resistance`; 4 salidas).
+
+El modelo anterior (una red con 5 salidas, `Security` + subcategorías, con regla de coherencia) sigue
+disponible como `--task joint` para leer y regenerar las corridas previas. `Non_repudiation` y
+`Accountability` se descartaron el 25-10-2026 por falta de datos.
+
+## Dos tareas (replanteo del 24-11-2026)
+
+- **Datos.** `scripts/prepare_datasets.py` escribe, además de la tabla completa `<dataset>.csv`, dos
+  archivos por dataset con el formato de las fuentes de DOSSPRE (*2.0Binary*: todos los requisitos
+  con SR/NSR; *3.0Multi-class*: la clase de seguridad): `<dataset>_binary.csv` (todos los requisitos,
+  columna `Security`) y `<dataset>_subcategories.csv` (solo `Security=1`, las cuatro subcategorías,
+  su estado y evidencia). Mismos ID y textos que la tabla completa. Filas: PROMISE 456 / 77,
+  SecReq 433 / 177, DOSSPRE 1185 / 391.
+- **Folds.** Cada tarea tiene los suyos en `outputs/output_raw/<tarea>/splits/`: `StratifiedKFold`
+  sobre `Security` en la binaria y estratificación multietiqueta iterativa en subcategorías.
+- **Métricas y objetivo** (`TASK_SPECS` en `src/config.py`). Binaria: F1, precisión y recall de
+  Security, y macro-F1 de las dos clases; Optuna maximiza F1 de Security y desempata por su recall.
+  Subcategorías: macro-F1, weighted-F1, micro-F1 y macro-recall; Optuna maximiza macro-F1 y desempata
+  por macro-recall. **[Decisión propia]**, configurable: replica la lógica de la tarea conjunta
+  (macro-F1 + recall de Security).
+- **Regla de coherencia.** Ya no se aplica dentro de un modelo. La combinación de las dos tareas se
+  evalúa como **cascada** (`src/cascade.py`, `scripts/build_report.py`): Security de la binaria y, si
+  es 1, las subcategorías del modelo de subcategorías; si es 0, ninguna. Para los falsos positivos de
+  la binaria, el entrenamiento de subcategorías guarda en cada fold externo la predicción de los
+  requisitos sin seguridad (`nonsecurity_predictions.csv`), que nunca entran en su entrenamiento. La
+  cascada se mide con las métricas de la tarea conjunta, para compararla con el modelo anterior.
+  Salida: `outputs/output_raw/cascade/<condición>/`.
+- **Sintéticos (C1).** Todos son requisitos de seguridad. En subcategorías entran como siempre (por su
+  `Anchor_ID`); en la binaria entran como positivos de Security si `BINARY_USE_SYNTHETIC = True` (por
+  defecto); con `False`, la binaria no tiene C1. **[Decisión propia, pendiente de confirmar.]**
+- **Requisitos de seguridad sin subcategoría** (9 / 44 / 69): quedan en la tarea de subcategorías como
+  filas sin etiqueta (`SUBCATEGORY_KEEP_EMPTY = True`). **[Decisión propia, configurable.]**
+- **Salidas.** `outputs/output_raw/<tarea>/<condición>/<dataset>/<modelo>/`,
+  `outputs/reports/<tarea>/<condición>/results_<tarea>_<condición>.xlsx` y
+  `outputs/logs/<tarea>_<condición>_<dataset>_<modelo>.log`. Las corridas anteriores (joint) quedan
+  donde estaban (`outputs/output_raw/<condición>/...`). Los folds de joint en
+  `outputs/output_raw/splits/` son del 27-10 y ya no coinciden con los datos del 21-11.
 
 ## Estructura
 
@@ -13,9 +54,12 @@ predice `Security` y cuatro subcategorías de seguridad de ISO/IEC 25010 (`Confi
 inputs/                    datos de entrada: lo que se preprocesa y lo que se entrena
   original/     archivos fuente, sin modificar
   interim/      glosario, traducciones, preanotaciones y aumento (augmentation/)
-  training/     promise.csv, secreq.csv, dosspre.csv  <- los datos reales que leen los modelos
+  training/     <dataset>_binary.csv y <dataset>_subcategories.csv  <- lo que leen los modelos
+                <dataset>.csv (tabla completa: tarea joint, verificación y planillas)
 outputs/                   todo lo que generan el entrenamiento y los reportes
   output_raw/   datos crudos (CSV/JSON/estudios de Optuna) para procesar por programa
+    binary/, subcategories/         lo mismo que abajo, por tarea (splits/, <condición>/...)
+    cascade/<condición>/            evaluación de extremo a extremo binaria -> subcategorías
     splits/                         folds externos e internos y distribución de etiquetas
     <condición>/<dataset>/<modelo>/ métricas, trials, predicciones, curvas internas, matriz de confusión (CSV)
     <condición>/model_comparison.csv, scott_knott_esd.csv y los análisis entre modelos (ver abajo)
@@ -32,7 +76,8 @@ src/
   models.py     arquitecturas y codificación del texto
   training.py   rutina de entrenamiento
   tuning.py     estudio de Optuna sobre los folds internos
-  pipeline.py   corrida completa de un trío (condición, dataset, modelo)
+  pipeline.py   corrida completa de (tarea, condición, dataset, modelo)
+  cascade.py    cascada binaria -> subcategorías con las métricas de la tarea conjunta
   reporting.py  matrices de confusión, tabla comparativa y Excel de resultados (sin reentrenar)
   significance.py  Scott-Knott ESD no paramétrico, Q de Cochran, McNemar exacto y Holm
   analysis.py   pruebas entre modelos, confusión entre subcategorías, errores, mejor modelo,
@@ -45,8 +90,8 @@ scripts/
   compare_conditions.py    pruebas estadísticas C0 vs. C1 (requiere las dos condiciones)
   glossary/                flujo de PLAN_TRADUCCION_GLOSARIO.md (P0-P8, E2)
   augmentation/            flujo de PLAN_AUMENTO_DATOS.md (G1, G3, G4, G5-G7; g9_diversity.py)
-train.py                   una corrida: --condition C --dataset X --model Y
-run_all_training.py        las corridas de una condición
+train.py                   una corrida: --task T --condition C --dataset X --model Y
+run_all_training.py        las corridas de una condición (por defecto, las tareas binary y subcategories)
 tests/                     pruebas rápidas del protocolo (no entrenan)
 old/                       código y corridas anteriores (ver old/run_2026-10-19_sonnet_deepl_holdout/)
 ```
@@ -64,9 +109,12 @@ pip install -r requirements.txt
 python scripts/prepare_datasets.py       # reconstruye inputs/training/
 python scripts/verify_subcategories.py
 python -m unittest discover -s tests -v
-python run_all_training.py --condition c1_augmented --models cnn roberta_bne
-python train.py --condition c0_real --dataset secreq --model beto
-python scripts/build_report.py           # reportes de corridas ya terminadas, sin reentrenar
+python run_all_training.py --condition c0_real                       # binary + subcategories
+python run_all_training.py --condition c1_augmented --tasks subcategories --models cnn roberta_bne
+python train.py --task binary --condition c0_real --dataset secreq --model beto
+python train.py --task subcategories --condition c0_real --dataset secreq --model beto
+python scripts/build_report.py           # reportes (y cascada) de corridas ya terminadas, sin reentrenar
+python scripts/compare_conditions.py --task subcategories
 ```
 
 Una corrida interrumpida se retoma desde el último fold externo terminado. `--save-checkpoints`
@@ -110,7 +158,7 @@ guarda el modelo de cada fold externo en `outputs/checkpoints/` (no se guarda po
 Una etiqueta con menos de 10 positivos queda fuera de los promedios (macro-F1 y weighted-F1);
 hoy las cinco son evaluables en los tres datasets.
 
-Las métricas (macro-F1, weighted-F1 y recall de Security) se calculan después de la regla de
+En la tarea joint, las métricas (macro-F1, weighted-F1 y recall de Security) se calculan después de la regla de
 coherencia: si Security se predice 0, las subcategorías pasan a 0. Se aplica una sola vez a las
 predicciones de prueba, y los reportes también dan las métricas sin corregir y el número de
 correcciones (hoja «Regla de coherencia»).

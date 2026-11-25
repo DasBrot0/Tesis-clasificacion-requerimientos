@@ -2,6 +2,7 @@
 
 CNN and BiLSTM use a word vocabulary built only from the training partition; BETO,
 RoBERTa-BNE and DistilBETO use their pretrained subword tokenizers (no stemming, no stopword removal).
+Every model has one sigmoid output per label of its task: 1 (binary), 4 (subcategories) or 5 (joint).
 """
 
 from __future__ import annotations
@@ -59,8 +60,11 @@ class EncodedData:
             yield {"inputs": batch, "labels": self.labels[index]}
 
 
-def _labels(frame: pd.DataFrame) -> torch.Tensor:
-    return torch.tensor(frame[LABEL_COLS].to_numpy(dtype=np.float32), device=DEVICE)
+def _labels(frame: pd.DataFrame, labels: list[str]) -> torch.Tensor:
+    """(n, len(labels)) targets; a frame without the label columns (unlabelled rows) gets zeros."""
+    if not set(labels) <= set(frame.columns):
+        return torch.zeros((len(frame), len(labels)), dtype=torch.float32, device=DEVICE)
+    return torch.tensor(frame[labels].to_numpy(dtype=np.float32), device=DEVICE)
 
 
 class WordEncoder:
@@ -70,7 +74,8 @@ class WordEncoder:
     longer validation or test requirement widens the padding of its own partition instead.
     """
 
-    def __init__(self, train_frame: pd.DataFrame):
+    def __init__(self, train_frame: pd.DataFrame, labels: list[str] = LABEL_COLS):
+        self.labels = list(labels)
         self.vocab = build_vocab(train_frame[TEXT_COL])
         lengths = [len(tokenize(text)) for text in train_frame[TEXT_COL]]
         self.max_len = max(5, max(lengths))  # at least the widest CNN kernel
@@ -85,13 +90,14 @@ class WordEncoder:
             input_ids[row, :len(ids)] = ids
             lengths[row] = len(ids)
         inputs = {"input_ids": torch.tensor(input_ids, device=DEVICE), "lengths": torch.tensor(lengths, device=DEVICE)}
-        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame))
+        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame, self.labels))
 
 
 class TransformerEncoder:
-    def __init__(self, model_name: str):
+    def __init__(self, model_name: str, labels: list[str] = LABEL_COLS):
         from transformers import AutoTokenizer
 
+        self.labels = list(labels)
         self.source = transformer_source(model_name)
         self.tokenizer = AutoTokenizer.from_pretrained(self.source, revision=HF_REVISIONS.get(self.source))
 
@@ -99,20 +105,23 @@ class TransformerEncoder:
         encoded = self.tokenizer(frame[TEXT_COL].astype(str).tolist(), truncation=True, padding=True,
                                  max_length=MAX_LENGTH, return_tensors="pt")
         inputs = {key: value.to(DEVICE) for key, value in encoded.items()}
-        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame))
+        return EncodedData(frame["ID"].astype(str).tolist(), inputs, _labels(frame, self.labels))
 
 
-def build_encoder(model_name: str, train_frame: pd.DataFrame) -> WordEncoder | TransformerEncoder:
-    return WordEncoder(train_frame) if model_name in WORD_MODELS else TransformerEncoder(model_name)
+def build_encoder(model_name: str, train_frame: pd.DataFrame,
+                  labels: list[str] = LABEL_COLS) -> WordEncoder | TransformerEncoder:
+    if model_name in WORD_MODELS:
+        return WordEncoder(train_frame, labels)
+    return TransformerEncoder(model_name, labels)
 
 
 class TextCNN(nn.Module):
-    def __init__(self, config, vocab_size):
+    def __init__(self, config, vocab_size, n_labels=len(LABEL_COLS)):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, config["embedding_dim"], padding_idx=PAD_IDX)
         self.conv = nn.Conv1d(config["embedding_dim"], config["num_filters"], config["kernel_size"])
         self.dropout = nn.Dropout(config["dropout"])
-        self.classifier = nn.Linear(config["num_filters"], len(LABEL_COLS))
+        self.classifier = nn.Linear(config["num_filters"], n_labels)
 
     def forward(self, input_ids, lengths=None):
         x = self.embedding(input_ids).transpose(1, 2)
@@ -121,7 +130,7 @@ class TextCNN(nn.Module):
 
 
 class BiLSTMClassifier(nn.Module):
-    def __init__(self, config, vocab_size):
+    def __init__(self, config, vocab_size, n_labels=len(LABEL_COLS)):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, config["embedding_dim"], padding_idx=PAD_IDX)
         lstm_dropout = config["dropout"] if config["num_layers"] > 1 else 0.0
@@ -129,7 +138,7 @@ class BiLSTMClassifier(nn.Module):
                             num_layers=config["num_layers"], batch_first=True,
                             bidirectional=True, dropout=lstm_dropout)
         self.dropout = nn.Dropout(config["dropout"])
-        self.classifier = nn.Linear(config["hidden_units"] * 2, len(LABEL_COLS))
+        self.classifier = nn.Linear(config["hidden_units"] * 2, n_labels)
 
     def forward(self, input_ids, lengths):
         embedded = self.embedding(input_ids)
@@ -154,11 +163,11 @@ def transformer_source(model_name: str) -> str:
     return ROBERTA_MIRROR
 
 
-def build_transformer(config, source):
+def build_transformer(config, source, n_labels=len(LABEL_COLS)):
     from transformers import AutoConfig, AutoModelForSequenceClassification, logging
     logging.set_verbosity_error()  # silence the "newly initialized classifier" report of every fold
     revision = HF_REVISIONS.get(source)
-    hf_config = AutoConfig.from_pretrained(source, revision=revision, num_labels=len(LABEL_COLS),
+    hf_config = AutoConfig.from_pretrained(source, revision=revision, num_labels=n_labels,
                                             problem_type="multi_label_classification")
     # Only the classification head takes the tuned dropout. The encoder keeps the dropout it was
     # pretrained with (BETO 0.1, RoBERTa-BNE 0.0, DistilBETO 0.1): RoBERTa-BNE stops learning with
@@ -171,12 +180,13 @@ def build_transformer(config, source):
 
 
 def build_model(model_name: str, config: dict, encoder) -> nn.Module:
+    n_labels = len(encoder.labels)
     if model_name == "cnn":
-        model = TextCNN(config, len(encoder.vocab))
+        model = TextCNN(config, len(encoder.vocab), n_labels)
     elif model_name == "bilstm":
-        model = BiLSTMClassifier(config, len(encoder.vocab))
+        model = BiLSTMClassifier(config, len(encoder.vocab), n_labels)
     else:
-        model = build_transformer(config, encoder.source)
+        model = build_transformer(config, encoder.source, n_labels)
     return model.to(DEVICE)
 
 

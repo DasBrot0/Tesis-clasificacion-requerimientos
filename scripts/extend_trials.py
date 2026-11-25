@@ -3,6 +3,7 @@
 
     python scripts/extend_trials.py --condition c1_augmented --models roberta_bne
     python train.py --condition c1_augmented --dataset promise --model roberta_bne --n-trials 12
+    python scripts/extend_trials.py --task binary --condition c0_real --models cnn   # tareas nuevas
 
 Conserva los estudios de Optuna (outer_<k>/optuna_study.db y outer_<k>/trials/), así que la corrida
 siguiente solo ejecuta los trials que faltan y vuelve a entrenar el modelo de cada fold externo.
@@ -18,7 +19,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from src.config import CONDITIONS, DATASETS, MODELS, N_OUTER, run_dir  # noqa: E402
+from src.config import CONDITIONS, DATASETS, MODELS, N_OUTER, TASKS, run_dir  # noqa: E402
 
 RESULT_FILES = ["summary.json", "outer_fold_metrics.csv", "pooled_metrics_by_label.csv",
                 "pooled_outer_test_predictions.csv", "pooled_confusion_by_label.csv"]
@@ -27,13 +28,15 @@ OUTER_FILES = ["outer_result.json", "outer_test_predictions.csv", "optuna_trials
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--task", choices=TASKS, default="joint",
+                        help="binary | subcategories | joint (corridas anteriores, por defecto)")
     parser.add_argument("--condition", choices=CONDITIONS, required=True)
     parser.add_argument("--models", nargs="+", choices=MODELS, required=True)
     parser.add_argument("--datasets", nargs="+", choices=sorted(DATASETS), default=list(DATASETS))
     args = parser.parse_args()
     for model in args.models:
         for dataset in args.datasets:
-            out = run_dir(args.condition, dataset, model)
+            out = run_dir(args.condition, dataset, model, args.task)
             summary = out / "summary.json"
             if not summary.exists():
                 print(f"{out}: sin summary.json; no hay etapa terminada que extender")

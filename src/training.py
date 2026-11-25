@@ -13,7 +13,7 @@ import pandas as pd
 import torch
 import torch.nn as nn
 
-from .config import DEFAULT_THRESHOLD, EARLY_STOPPING_PATIENCE, LABEL_COLS, SEED, WORD_MODELS
+from .config import DEFAULT_THRESHOLD, EARLY_STOPPING_PATIENCE, LABEL_COLS, SEED, WORD_MODELS, task_spec
 from .metrics import is_better, multilabel_metrics
 from .models import DEVICE, EncodedData, build_encoder, build_model, forward
 
@@ -38,11 +38,11 @@ def release_memory() -> None:
         torch.cuda.empty_cache()
 
 
-def criterion_for(frame: pd.DataFrame, moderate_pos_weight: bool) -> nn.Module:
+def criterion_for(frame: pd.DataFrame, moderate_pos_weight: bool, labels: list[str] = LABEL_COLS) -> nn.Module:
     """Plain BCE, or BCE whose positive term is weighted by sqrt(N_neg/N_pos) computed on the training frame."""
     if not moderate_pos_weight:
         return nn.BCEWithLogitsLoss()
-    positives = frame[LABEL_COLS].sum().to_numpy(dtype=float)
+    positives = frame[list(labels)].sum().to_numpy(dtype=float)
     weights = np.sqrt((len(frame) - positives) / np.maximum(positives, 1.0))
     return nn.BCEWithLogitsLoss(pos_weight=torch.tensor(weights, dtype=torch.float32, device=DEVICE))
 
@@ -92,20 +92,22 @@ class FitResult:
 
 def fit(model_name: str, config: dict, train_frame: pd.DataFrame, seed: int,
         validation_frame: pd.DataFrame | None = None, active: np.ndarray | None = None,
-        stop_epoch: int | None = None, keep_model: bool = False) -> FitResult:
-    """Train `model_name` with `config`.
+        stop_epoch: int | None = None, keep_model: bool = False, task: str = "joint") -> FitResult:
+    """Train `model_name` with `config` on the labels of `task`.
 
     With a validation frame, every epoch is scored and the probabilities of the best epoch
-    (macro-F1, then Security recall, then loss) are returned; transformers stop early after
+    (the task's objective, then its tie-break, then loss; joint: macro-F1, then Security recall)
+    are returned; transformers stop early after
     EARLY_STOPPING_PATIENCE epochs in which neither that score nor the loss improves. Without it (final model) training simply
     runs for `stop_epoch` epochs; the learning-rate schedule still spans config["epochs"].
     """
+    spec = task_spec(task)
     seed_everything(seed)
-    encoder = build_encoder(model_name, train_frame)
+    encoder = build_encoder(model_name, train_frame, list(spec.labels))
     train_data = encoder.encode(train_frame)
     val_data = encoder.encode(validation_frame) if validation_frame is not None else None
     model = build_model(model_name, config, encoder)
-    criterion = criterion_for(train_frame, config["pos_weight"])
+    criterion = criterion_for(train_frame, config["pos_weight"], list(spec.labels))
     batch_size = config["batch_size"]
     steps_per_epoch = int(np.ceil(len(train_data) / batch_size))
     optimizer, scheduler = build_optimizer(model_name, config, model, steps_per_epoch)
@@ -139,18 +141,16 @@ def fit(model_name: str, config: dict, train_frame: pd.DataFrame, seed: int,
         row = {"epoch": epoch, "train_loss": total / len(train_data)}
         if val_data is not None:
             y_prob, val_loss = predict(model, model_name, val_data, criterion, batch_size)
-            current = multilabel_metrics(result.val_true, y_prob, DEFAULT_THRESHOLD, active)
-            row.update({"val_loss": val_loss, "val_macro_f1": current["macro_f1"],
-                        "val_weighted_f1": current["weighted_f1"],
-                        "val_security_recall": current["security_recall"]})
+            current = multilabel_metrics(result.val_true, y_prob, DEFAULT_THRESHOLD, active, task)
+            row.update({"val_loss": val_loss, **{f"val_{name}": current[name] for name in spec.metrics}})
             current["loss"] = val_loss
-            if is_better(current, best):
-                best = {name: current[name] for name in ("macro_f1", "security_recall", "loss")}
+            if is_better(current, best, task=task):
+                best = {name: current[name] for name in (spec.objective, spec.tiebreak, "loss")}
                 result.best_epoch, result.val_prob = epoch, y_prob
             if val_loss < best_loss:
                 best_loss, best_loss_epoch = val_loss, epoch
         result.history.append(row)
-        # A model whose macro-F1 is still flat but whose loss keeps falling has not converged yet.
+        # A model whose objective is still flat but whose loss keeps falling has not converged yet.
         if val_data is not None and patience and epoch - max(result.best_epoch, best_loss_epoch) >= patience:
             break
 

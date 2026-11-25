@@ -67,5 +67,21 @@ class NearDuplicateTests(unittest.TestCase):
                 self.assertFalse(keys.duplicated().any(), f"{dataset}: casi duplicados en {col}")
 
 
+class TaskFileTests(unittest.TestCase):
+    def test_task_frames_split_binary_and_subcategories(self):
+        cols = {c: "x" for c in prep._COMMON_COLS}
+        full = pd.DataFrame([
+            {**cols, "ID": "a", "Security": 1, "Confidentiality": 1, "Integrity": 0, "Authenticity": 0,
+             "Resistance": 0, "Subcategory_label_status": "llm_provisional", "Prelabel_evidence": "e"},
+            {**cols, "ID": "b", "Security": 0, "Confidentiality": 0, "Integrity": 0, "Authenticity": 0,
+             "Resistance": 0, "Subcategory_label_status": "structural_zero", "Prelabel_evidence": ""},
+        ])
+        binary, subcategories = prep.task_frames(full)
+        self.assertEqual(list(binary["ID"]), ["a", "b"])
+        self.assertEqual(binary.columns[-1], "Security")
+        self.assertEqual(list(subcategories["ID"]), ["a"])
+        self.assertNotIn("Security", subcategories.columns)
+
+
 if __name__ == "__main__":
     unittest.main()
