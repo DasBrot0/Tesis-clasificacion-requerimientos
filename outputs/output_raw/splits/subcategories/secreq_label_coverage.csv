@@ -1,0 +1,5 @@
+﻿label,positives,rows,prevalence,scored
+Confidentiality,32,177,0.1807909604519774,True
+Integrity,66,177,0.3728813559322034,True
+Authenticity,74,177,0.4180790960451977,True
+Resistance,12,177,0.06779661016949153,True

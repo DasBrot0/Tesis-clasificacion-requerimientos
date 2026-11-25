@@ -1,0 +1,4 @@
+﻿Tarea,Condición,Dataset,Modelo,F1 Security (5 folds externos),Precisión Security (5 folds externos),Recall Security (5 folds externos),Macro-F1 (2 clases) (5 folds externos),F1 Security agrupado,Precisión Security agrupado,Recall Security agrupado,Macro-F1 (2 clases) agrupado,F1 Security,Etiquetas en el promedio,Sintéticos,Minutos
+binary,c0_real,PROMISE_exp,DistilBETO,0.8316 ± 0.0742,0.8786 ± 0.1059,0.7942 ± 0.0773,0.8994 ± 0.0448,0.8299319727891157,0.8714285714285714,0.7922077922077922,0.8986261171135121,0.8299319727891157,Security,0,59.8
+binary,c0_real,SecReq,DistilBETO,0.8600 ± 0.0511,0.8710 ± 0.0678,0.8527 ± 0.0658,0.8825 ± 0.0424,0.8603988603988604,0.867816091954023,0.8531073446327684,0.8826266146654496,0.8603988603988604,Security,0,65.3
+binary,c0_real,DOSSPRE,DistilBETO,0.7412 ± 0.0215,0.7960 ± 0.1032,0.7085 ± 0.0796,0.8108 ± 0.0160,0.7416331994645248,0.7780898876404494,0.7084398976982097,0.8113588055240061,0.7416331994645248,Security,0,119.7
