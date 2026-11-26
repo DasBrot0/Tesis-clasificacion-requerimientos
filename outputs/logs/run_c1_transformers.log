@@ -15,3 +15,10 @@
 [2026-11-26T08:42:16] INICIO subcategories/c1_augmented/secreq/roberta_bne
 [2026-11-26T10:43:25] FIN subcategories/c1_augmented/secreq/roberta_bne (121.1 min)
 [2026-11-26T10:43:25] INICIO subcategories/c1_augmented/dosspre/roberta_bne
+[2026-11-26T13:20:51] FIN subcategories/c1_augmented/dosspre/roberta_bne (157.4 min)
+[2026-11-26T13:20:51] ENTRENAMIENTO COMPLETO
+binary/c0_real: 3 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\binary\c0_real\results_binary_c0_real.xlsx
+subcategories/c0_real: 3 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c0_real\results_subcategories_c0_real.xlsx
+subcategories/c1_augmented: 9 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c1_augmented\results_subcategories_c1_augmented.xlsx
+cascada/c0_real: 3 pares evaluados
+cascada/c1_augmented: 3 pares evaluados
