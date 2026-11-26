@@ -1,0 +1,59 @@
+{
+  "condition": "c1_augmented",
+  "dataset": "secreq",
+  "binary_model": "distilbeto",
+  "subcategory_model": "distilbeto",
+  "rows": 433,
+  "security": {
+    "f1": 0.8603988603988604,
+    "precision": 0.867816091954023,
+    "recall": 0.8531073446327684,
+    "f1_macro_2class": 0.8826266146654496
+  },
+  "end_to_end": {
+    "macro_f1": 0.6124401280795998,
+    "weighted_f1": 0.6996107677987728,
+    "micro_f1": 0.7103825136612022,
+    "macro_recall": 0.5907427313677315
+  },
+  "subcategories_only": {
+    "macro_f1": 0.6615616011242123,
+    "weighted_f1": 0.7529167370731339,
+    "micro_f1": 0.7621621621621621,
+    "macro_recall": 0.643664260851761
+  },
+  "per_label": [
+    {
+      "label": "Confidentiality",
+      "precision": 0.6666666666666666,
+      "recall": 0.4375,
+      "f1": 0.5283018867924528,
+      "support": 32,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.6666666666666666,
+      "recall": 0.7272727272727273,
+      "f1": 0.6956521739130435,
+      "support": 66,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.7901234567901234,
+      "recall": 0.8648648648648649,
+      "f1": 0.8258064516129032,
+      "support": 74,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4,
+      "support": 12,
+      "in_macro_average": true
+    }
+  ]
+}
