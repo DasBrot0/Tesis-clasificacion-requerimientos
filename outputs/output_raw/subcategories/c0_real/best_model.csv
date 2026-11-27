@@ -1,1 +1,4 @@
-﻿
+﻿dataset,best_model,top_group,macro_f1,macro_recall,reason,candidates
+PROMISE_exp,RoBERTa-BNE,RoBERTa-BNE = BETO = DistilBETO = BiLSTM,0.6104010905071668,0.5511294261294262,mayor macro_recall del grupo superior (y mayor macro_f1),"RoBERTa-BNE: macro_f1 0.610, macro_recall 0.551; BETO: macro_f1 0.536, macro_recall 0.549; BiLSTM: macro_f1 0.491, macro_recall 0.484; DistilBETO: macro_f1 0.504, macro_recall 0.451"
+SecReq,RoBERTa-BNE,RoBERTa-BNE = BETO,0.6728341223323651,0.6188702907452908,mayor macro_recall del grupo superior (y mayor macro_f1),"RoBERTa-BNE: macro_f1 0.673, macro_recall 0.619; BETO: macro_f1 0.649, macro_recall 0.592"
+DOSSPRE,RoBERTa-BNE,RoBERTa-BNE = BETO = DistilBETO,0.820255209987794,0.8027774908464826,mayor macro_recall del grupo superior (y mayor macro_f1),"RoBERTa-BNE: macro_f1 0.820, macro_recall 0.803; BETO: macro_f1 0.801, macro_recall 0.776; DistilBETO: macro_f1 0.770, macro_recall 0.734"

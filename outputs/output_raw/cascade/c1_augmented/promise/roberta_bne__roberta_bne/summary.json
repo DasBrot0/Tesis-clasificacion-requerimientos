@@ -1,0 +1,59 @@
+{
+  "condition": "c1_augmented",
+  "dataset": "promise",
+  "binary_model": "roberta_bne",
+  "subcategory_model": "roberta_bne",
+  "rows": 456,
+  "security": {
+    "f1": 0.8502994011976048,
+    "precision": 0.7888888888888889,
+    "recall": 0.922077922077922,
+    "f1_macro_2class": 0.9083711771088696
+  },
+  "end_to_end": {
+    "macro_f1": 0.575782450076805,
+    "weighted_f1": 0.6292238131811865,
+    "micro_f1": 0.6298342541436464,
+    "macro_recall": 0.5940170940170941
+  },
+  "subcategories_only": {
+    "macro_f1": 0.6686565614617941,
+    "weighted_f1": 0.712985484891631,
+    "micro_f1": 0.718562874251497,
+    "macro_recall": 0.638888888888889
+  },
+  "per_label": [
+    {
+      "label": "Confidentiality",
+      "precision": 0.6111111111111112,
+      "recall": 0.8461538461538461,
+      "f1": 0.7096774193548387,
+      "support": 39,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.9285714285714286,
+      "recall": 0.7222222222222222,
+      "f1": 0.8125,
+      "support": 18,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.5,
+      "recall": 0.3076923076923077,
+      "f1": 0.38095238095238093,
+      "support": 13,
+      "in_macro_average": true
+    }
+  ]
+}

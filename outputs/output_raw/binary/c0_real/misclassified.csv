@@ -1,268 +1,646 @@
-﻿dataset,ID,models_wrong,real,DistilBETO,requirement
-DOSSPRE,dosspre_0001,1,Security,—,El sistema deberá detectar vulnerabilidades de inyección SQL y XSS en un sitio web o una aplicación web determinados.
-DOSSPRE,dosspre_0002,1,—,Security,El sistema deberá analizar la vulnerabilidad detectada
-DOSSPRE,dosspre_0029,1,Security,—,El sistema deberá generar un informe en el que se describa el efecto que ha tenido el malware durante su ejecución en un entorno aislado.
-DOSSPRE,dosspre_0030,1,Security,—,El sistema deberá mostrar un informe con los resultados detallados obtenidos de los archivos enviados para su análisis e indicará claramente qué archivos son maliciosos y cuáles son inofensivos.
-DOSSPRE,dosspre_0033,1,Security,—,"El sistema estará aislado del usuario y la aplicación no requiere interacción por parte de este, por lo que las posibilidades de que los usuarios lo dañen son muy limitadas."
-DOSSPRE,dosspre_0038,1,Security,—,El sistema deberá permitir que un miembro forme espontáneamente un grupo de n firmantes utilizando claves públicas de grupo que asocien a los miembros del grupo.
-DOSSPRE,dosspre_0048,1,—,Security,"El sistema deberá permitir que un autor que desee proteger su obra contra el uso no autorizado suba una imagen con su marca de agua digital visible, junto con el número de registro."
-DOSSPRE,dosspre_0050,1,Security,—,"El sistema deberá permitir la verificación de imágenes con marca de agua que hayan sido enviadas dos o más veces por diferentes autores, con el fin de proteger los derechos de autor del propietario."
-DOSSPRE,dosspre_0055,1,—,Security,"El sistema permitirá, de forma opcional, que el usuario elimine los ficheros con los datos del sospechoso o los guarde para futuros registros en una base de datos segura."
-DOSSPRE,dosspre_0057,1,—,Security,El sistema deberá poder recuperar antecedentes penales de la base de datos a partir de las fotografías tomadas
-DOSSPRE,dosspre_0081,1,Security,—,El sistema deberá poder abrir la puerta cuando el PIN sea correcto.
-DOSSPRE,dosspre_0088,1,—,Security,El sistema deberá permitir que los sistemas de bloqueo de datos Bluetooth generen los mismos resultados repetidamente.
-DOSSPRE,dosspre_0089,1,—,Security,"El sistema deberá permitir que, en caso de que el teléfono móvil no esté disponible, el usuario realice ciertas autenticaciones para obtener acceso al sistema."
-DOSSPRE,dosspre_0103,1,—,Security,El sistema deberá tener acceso a la lista de contactos del dispositivo del menor.
-DOSSPRE,dosspre_0108,1,—,Security,El sistema deberá impedir que se instalen o desinstalen aplicaciones.
-DOSSPRE,dosspre_0109,1,Security,—,El sistema deberá ser capaz de generar y enviar registros periódicos al smartphone de los padres.
-DOSSPRE,dosspre_0152,1,Security,—,"El sistema deberá supervisar el uso de la CPU para detectar picos en dicho uso provocados por el cryptojacking, leyendo constantemente el porcentaje de utilización de la CPU del ordenador y comparándolo con la línea base de uso de CPU, así como detectar los picos extremos o las desviaciones respecto a la línea base de uso de CPU debidos a la actividad de cryptojacking."
-DOSSPRE,dosspre_0154,1,—,Security,El sistema deberá enviar automáticamente alertas por correo electrónico cuando se detecte actividad de criptojacking.
-DOSSPRE,dosspre_0155,1,Security,—,"El sistema deberá permitir al usuario establecer una contraseña para el cambio de correo electrónico, de modo que se le solicite posteriormente cuando intente modificar la dirección de correo electrónico del usuario en cuestión."
-DOSSPRE,dosspre_0157,1,Security,—,"El sistema deberá permitir el registro del dominio o la aplicación de cryptojacking detectados, junto con la fecha y la hora de la detección."
-DOSSPRE,dosspre_0158,1,—,Security,El sistema debería ser capaz de detectar el cryptojacking de forma rápida y oportuna.
-DOSSPRE,dosspre_0163,1,Security,—,El sistema debería ser fiable a la hora de detectar la actividad de malware de criptojacking conocida.
-DOSSPRE,dosspre_0176,1,—,Security,"El sistema se someterá a diversas pruebas, como pruebas de estrés, para garantizar que no se produzcan errores en la verificación del usuario."
-DOSSPRE,dosspre_0177,1,—,Security,"El sistema deberá garantizar que las interrupciones en el servicio de Internet no afecten a su disponibilidad, ya que se podrá seguir concediendo o denegando el acceso al sistema a cualquier usuario."
-DOSSPRE,dosspre_0179,1,Security,—,El sistema deberá ser capaz de distinguir al usuario legítimo del ilegítimo mediante el uso de datos biométricos de comportamiento únicos.
-DOSSPRE,dosspre_0183,1,Security,—,"El sistema deberá diseñarse de forma que sea compatible con numerosos sistemas operativos, como Windows, Android y Linux."
-DOSSPRE,dosspre_0194,1,—,Security,El sistema deberá permitir introducir el nombre de la persona cuyos datos y PII se vayan a buscar.
-DOSSPRE,dosspre_0196,1,—,Security,El sistema deberá permitir que Selenium extraiga la información de identificación personal de un individuo.
-DOSSPRE,dosspre_0205,1,Security,—,El sistema deberá facilitar el seguimiento de las actividades de una persona tras la comisión de un delito.
-DOSSPRE,dosspre_0212,1,Security,—,El sistema debería limitar los intentos de introducción de la contraseña a tres únicamente.
-DOSSPRE,dosspre_0219,1,Security,—,Los usuarios deberán poder tener acceso al sistema a través de un portal web HTTPS.
-DOSSPRE,dosspre_0227,1,Security,—,El sistema debería desconectarse automáticamente tras un periodo determinado de inactividad.
-DOSSPRE,dosspre_0232,1,—,Security,El sistema debería garantizar que los mensajes de error se comuniquen al usuario o al administrador.
-DOSSPRE,dosspre_0240,1,Security,—,El sistema deberá permitir a los usuarios introducir sus nombres de usuario y contraseñas.
-DOSSPRE,dosspre_0246,1,Security,—,"El sistema deberá ser capaz de determinar si las credenciales de inicio de sesión son válidas o no, y buscar resultados que coincidan con el titular de la licencia en cuestión o con la información del vehículo."
-DOSSPRE,dosspre_0269,1,Security,—,El sistema nunca mostrará la contraseña de un usuario. Siempre se mostrará con caracteres especiales que representen los caracteres tecleados.
-DOSSPRE,dosspre_0271,1,—,Security,El sistema debería ser capaz de capturar archivos de registro de Windows independientemente del sistema operativo Windows.
-DOSSPRE,dosspre_0275,1,Security,—,El sistema debería poder generar un resumen del informe de auditoría para enviarlo al usuario del sistema.
-DOSSPRE,dosspre_0278,1,Security,—,El sistema deberá garantizar la disponibilidad del informe de auditoría para los usuarios.
-DOSSPRE,dosspre_0282,1,Security,—,"El sistema deberá permitir que la captura de registros se realice en segundo plano, lo que facilitará considerablemente el trabajo del auditor."
-DOSSPRE,dosspre_0285,1,Security,—,"El sistema deberá permitir a los usuarios disponer de su propia clave específica, generada por la máquina y añadida a la lista de claves para el proceso de generación de MAC."
-DOSSPRE,dosspre_0288,1,Security,—,El sistema deberá garantizar que se establezca una interfaz segura y eficaz para reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
-DOSSPRE,dosspre_0290,1,Security,—,El sistema deberá permitir la implementación de protocolos claros y seguros de intercambio de datos y documentar las interfaces y los protocolos que se utilicen.
-DOSSPRE,dosspre_0296,1,Security,—,El sistema utiliza procedimientos almacenados.
-DOSSPRE,dosspre_0316,1,Security,—,"El sistema debería estar preparado para todas las situaciones, de modo que tenga capacidad de recuperación en cualquier condición de error."
-DOSSPRE,dosspre_0338,1,Security,—,El sistema deberá tener la capacidad de recuperación de todos los historiales de escaneo en caso de interrupción del sistema.
-DOSSPRE,dosspre_0350,1,—,Security,El sistema deberá permitir que un usuario pueda recuperar información de la base de datos.
-DOSSPRE,dosspre_0353,1,Security,—,"El sistema deberá ofrecer autenticación por Bluetooth, de modo que los usuarios no tengan que desactivar la autenticación del ordenador portátil, ya que tienen que realizar el proceso de desbloqueo con frecuencia durante la jornada laboral."
-DOSSPRE,dosspre_0359,1,—,Security,El sistema debería almacenar la información básica de los pacientes y los permisos en un servidor central.
-DOSSPRE,dosspre_0361,1,—,Security,El sistema captura y almacena la plantilla de huella dactilar de los usuarios en el momento del inicio de sesión inicial.
-DOSSPRE,dosspre_0364,1,Security,—,El sistema debería permitir el acceso de los centros médicos certificados a la información crítica de los pacientes cuando sea necesario.
-DOSSPRE,dosspre_0365,1,Security,—,El sistema deberá conservar los historiales médicos completos de los pacientes en formato cifrado en un servidor.
-DOSSPRE,dosspre_0369,1,Security,—,El sistema deberá permitir que los servidores de cada instalación no se vean afectados en caso de fallo del servidor central.
-DOSSPRE,dosspre_0374,1,Security,—,El sistema debería ser capaz de capturar (sniffing) el tráfico entrante y saliente de la red en tiempo real.
-DOSSPRE,dosspre_0376,1,—,Security,El sistema debería ser capaz de alertar a los responsables de la red sobre la posible ocurrencia de un ataque de intrusión y proporcionar información relativa a dicho ataque.
-DOSSPRE,dosspre_0391,1,Security,—,El sistema deberá disponer de una pantalla de inicio de sesión que permita al administrador de la red acceder al sistema.
-DOSSPRE,dosspre_0393,1,Security,—,"El sistema mostrará mensajes de alerta en caso de que se detecte una anomalía y, además, mostrará un panel con los registros de eventos de la anomalía detectada."
-DOSSPRE,dosspre_0396,1,—,Security,"El sistema deberá disponer de capacidad de creación de imágenes para realizar una copia de la información contenida en el dispositivo móvil, que se utilizará durante el proceso forense como fuente de datos de prueba."
-DOSSPRE,dosspre_0417,1,—,Security,El sistema deberá permitir la minería de datos web de Twitter; la Twitter API ofrece diferentes niveles de acceso a los datos a través de su programa Twitter Data Grants.
-DOSSPRE,dosspre_0422,1,Security,—,El sistema deberá permitir al usuario firmar un documento
-DOSSPRE,dosspre_0432,1,—,Security,El sistema deberá ser capaz de desfragmentar los paquetes capturados.
-DOSSPRE,dosspre_0443,1,Security,—,"Los atributos estáticos del sistema permiten detectar con antelación posibles cuellos de botella en el rendimiento operativo y futuros problemas de escalabilidad, lo que permite corregirlos a tiempo."
-DOSSPRE,dosspre_0450,1,—,Security,"El sistema deberá permitir que, cuando el médico o el hospital realicen una solicitud, se abra una sesión y se genere una clave de confirmación que se envíe al médico o al paciente por correo electrónico, la cual utilizarán tras recibir la sangre solicitada correcta."
-DOSSPRE,dosspre_0455,1,Security,—,El sistema deberá ser capaz de realizar la validación de entradas
-DOSSPRE,dosspre_0462,1,Security,—,El sistema deberá ser capaz de proporcionar ayuda en un breve espacio de tiempo.
-DOSSPRE,dosspre_0469,1,—,Security,El sistema funciona bien a la hora de reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
-DOSSPRE,dosspre_0471,1,—,Security,"El sistema deberá ser capaz de crear y aplicar prácticas de codificación seguras a lo largo de todo el proceso de desarrollo, identificando de forma rigurosa el origen de los datos requeridos y reconociendo los elementos y estructuras de datos necesarios para el intercambio."
-DOSSPRE,dosspre_0472,1,—,Security,El sistema deberá implementar protocolos claros y seguros de intercambio de datos; lo ideal es implementar protocolos seguros y documentar las interfaces y los protocolos que se utilicen.
-DOSSPRE,dosspre_0476,1,—,Security,"El sistema deberá poder generar un registro del número de aprobados y suspendidos, en relación con el examinador."
-DOSSPRE,dosspre_0492,1,Security,—,El sistema debería ser capaz de comparar la huella facial actual con las huellas faciales de la base de datos.
-DOSSPRE,dosspre_0493,1,Security,—,El sistema debería ser capaz de cotejar el identificador de la tarjeta o etiqueta RFID con el identificador facial o personal del usuario para conceder el acceso.
-DOSSPRE,dosspre_0500,1,Security,—,"El sistema deberá incorporar controles adecuados para las validaciones de la entrada del usuario y la gestión de la configuración, con el fin de impedir la manipulación de software."
-DOSSPRE,dosspre_0502,1,Security,—,El sistema deberá permitir el registro de eventos para cada actividad de los usuarios.
-DOSSPRE,dosspre_0511,1,—,Security,El sistema debe alertar al usuario sobre actividades maliciosas y recomendarle las medidas que debe tomar.
-DOSSPRE,dosspre_0513,1,—,Security,"El sistema deberá garantizar que, en caso de que se detecten nuevos atributos, se active el módulo de detección de anomalías, el cual, basándose en la información de la que ya dispone el sistema, realice una predicción sobre los nuevos datos."
-DOSSPRE,dosspre_0521,1,—,Security,El sistema deberá garantizar que el rendimiento del IDS sea suficiente para detectar intrusiones en tiempo real (por «tiempo real» se entiende que una intrusión debe detectarse antes de que se produzcan daños significativos).
-DOSSPRE,dosspre_0523,1,—,Security,El sistema deberá permitir al usuario salir del programa una vez que este se haya iniciado.
-DOSSPRE,dosspre_0540,1,Security,—,El sistema deberá enviar una contraseña de un solo uso al teléfono del usuario para completar el proceso de inicio de sesión.
-DOSSPRE,dosspre_0541,1,—,Security,"El sistema deberá permitir la generación de claves públicas y privadas. Estas claves se utilizarán para el cifrado y descifrado de la clave simétrica AES, con el fin de garantizar un intercambio de claves más seguro."
-DOSSPRE,dosspre_0545,1,—,Security,El sistema funciona correctamente en entornos web y permite el inicio de sesión de varios clientes y la comunicación al mismo tiempo.
-DOSSPRE,dosspre_0569,1,—,Security,El sistema contará con una página de inicio que se encargará de realizar la redirección del usuario a la página deseada; esta puede ser una página de inicio de sesión en la que el usuario acceda a su cuenta de correo electrónico o una página de registro en la que el usuario cree una cuenta de correo electrónico.
-DOSSPRE,dosspre_0570,1,—,Security,"El sistema deberá disponer de una página de registro para recopilar y verificar los datos del nuevo usuario, con el fin de comprobar si la información facilitada cumple con los requisitos del sistema."
-DOSSPRE,dosspre_0572,1,Security,—,"El sistema deberá contar con un campo opcional de correo electrónico para la recuperación; en caso de que se olvide la contraseña, se enviará a ese correo electrónico un enlace de restablecimiento con las instrucciones correspondientes."
-DOSSPRE,dosspre_0585,1,Security,—,"El sistema debería poder realizar la validación de los datos introducidos, reduciendo así la redundancia y la duplicación en la base de datos."
-DOSSPRE,dosspre_0593,1,Security,—,Uso de una base de datos central que permita la captura y la manipulación de datos en tiempo real para facilitar el acceso a la información de los ordenadores portátiles desde cualquier ordenador conectado a la base de datos.
-DOSSPRE,dosspre_0594,1,Security,—,El sistema debería ser capaz de identificar y detectar los errores en las entradas del usuario.
-DOSSPRE,dosspre_0603,1,Security,—,El sistema deberá exigir una contraseña para el inicio de sesión en los routers del proveedor.
-DOSSPRE,dosspre_0605,1,Security,—,El sistema debe permitir a los clientes ejecutar un protocolo de encaminamiento distinto al de la red del proveedor de servicios de Internet.
-DOSSPRE,dosspre_0607,1,Security,—,El sistema deberá garantizar que un dispositivo situado en un área ODPF no se comunique con otro situado en un área OSPF diferente.
-DOSSPRE,dosspre_0610,1,—,Security,El sistema deberá garantizar que el servidor de autenticación se comunique con el controlador de la puerta para abrirla y cerrarla.
-DOSSPRE,dosspre_0611,1,—,Security,El sistema deberá disponer de una base de datos para almacenar las cuentas de usuario y los datos de los usuarios registrados.
-DOSSPRE,dosspre_0617,1,Security,—,"El sistema funciona como un IDS/IPD y ayuda a aliviar el tráfico dirigido al servidor, en caso de que se produzca un ataque DOS distribuido y el servidor se vea saturado de solicitudes."
-DOSSPRE,dosspre_0632,1,Security,—,El sistema deberá ser capaz de identificar una tasa baja de falsos positivos y aceptable.
-DOSSPRE,dosspre_0633,1,Security,—,El sistema deberá ser capaz de verificar el certificado SSL.
-DOSSPRE,dosspre_0634,1,Security,—,El sistema deberá ser capaz de generar un informe sobre las vulnerabilidades detectadas y analizadas.
-DOSSPRE,dosspre_0637,1,Security,—,El escáner del sistema puede aceptar un determinado número de URL para comprobar si presentan las vulnerabilidades seleccionadas.
-DOSSPRE,dosspre_0648,1,Security,—,El reproductor del sistema se encargará del cálculo de hash para los nombres de las partes recortadas.
-DOSSPRE,dosspre_0650,1,—,Security,El reproductor del sistema localiza la carpeta oculta.
-DOSSPRE,dosspre_0651,1,—,Security,El reproductor del sistema deberá enviar los contenidos a la carpeta oculta.
-DOSSPRE,dosspre_0652,1,—,Security,El reproductor del sistema deberá localizar y recuperar los contenidos necesarios de la carpeta oculta.
-DOSSPRE,dosspre_0664,1,—,Security,El sistema deberá permitir el inicio de sesión para un usuario.
-DOSSPRE,dosspre_0671,1,Security,—,El sistema deberá utilizar un «honeypot» que registre y analice los paquetes que circulan por la red. Un «honeypot» es un sistema señuelo que se utiliza para hacer creer al atacante que está atacando el sistema deseado.
-DOSSPRE,dosspre_0672,1,—,Security,El sistema deberá garantizar que el honeypot registre las actividades del atacante y avise a los administradores del sistema en caso de que se produzca una amenaza para el sistema protegido.
-DOSSPRE,dosspre_0679,1,—,Security,"El sistema deberá incorporar principios de seguridad, como la autenticación."
-DOSSPRE,dosspre_0692,1,Security,—,El sistema deberá capturar el tráfico de red entre el hipervisor y la máquina virtual objeto de supervisión.
-DOSSPRE,dosspre_0693,1,—,Security,El sistema deberá almacenar los datos de tráfico capturados durante un período predeterminado.
-DOSSPRE,dosspre_0699,1,—,Security,"El sistema deberá proporcionar informes sobre las intrusiones, su clasificación y las medidas adoptadas."
-DOSSPRE,dosspre_0707,1,Security,—,El sistema deberá proporcionar un canal seguro de comunicación entre el sistema back-end y la interfaz de usuario web.
-DOSSPRE,dosspre_0727,1,Security,—,"El sistema deberá contar con medidas de seguridad contra las amenazas ambientales, lo cual constituye una de sus funciones principales."
-DOSSPRE,dosspre_0728,1,—,Security,"El sistema puede utilizarse en otras plataformas, como circuitos de conmutación, o integrarse en sistemas de seguridad doméstica."
-DOSSPRE,dosspre_0729,1,Security,—,"Los componentes del sistema no se verán afectados por cambios climáticos como el calor o la humedad, ya que la carcasa se diseñará para adaptarse a las condiciones climáticas predominantes."
-DOSSPRE,dosspre_0731,1,Security,—,"El sistema deberá responder rápidamente ante las intrusiones, con el fin de contribuir a frenar la gravedad de los daños o a mitigar el riesgo."
-DOSSPRE,dosspre_0739,1,—,Security,El sistema deberá ser capaz de reconocer los rostros detectados en la imagen.
-DOSSPRE,dosspre_0774,1,Security,—,El sistema deberá poder mostrar una sección en la que se indique la última vez que un usuario inició sesión en el sistema y un resumen de las actividades que realizó en el sistema tras iniciar sesión.
-DOSSPRE,dosspre_0778,1,Security,—,El sistema deberá permitir que un usuario se registre mediante el patrocinio del departamento de Recursos Humanos correspondiente.
-DOSSPRE,dosspre_0780,1,Security,—,El sistema deberá permitir al usuario visualizar el contenido o el panel de control.
-DOSSPRE,dosspre_0781,1,Security,—,El sistema deberá permitir que el usuario gestione su propia contraseña.
-DOSSPRE,dosspre_0783,1,—,Security,El sistema deberá permitir al usuario realizar operaciones CRUD sobre los registros.
-DOSSPRE,dosspre_0788,1,—,Security,El sistema deberá proporcionar redundancia para evitar un único punto de fallo y reducir las interrupciones que puedan dejar el sistema inutilizable.
-DOSSPRE,dosspre_0796,1,—,Security,PlutoMail ofrece una rápida puesta en marcha y una alta tasa de detección de spam mediante el análisis bayesiano y otros métodos: no requiere configuración y presenta una tasa baja de falsos positivos gracias a su lista blanca automática.
-DOSSPRE,dosspre_0815,1,Security,—,El sistema deberá permitir al radiólogo realizar el cifrado y subir las imágenes a la nube.
-DOSSPRE,dosspre_0824,1,Security,—,El sistema deberá permitir el análisis de los lugares donde se cometen más delitos utilizando datos de colaboración ciudadana e informes.
-DOSSPRE,dosspre_0833,1,—,Security,El sistema deberá limitar el acceso al mismo por parte de la policía únicamente a los agentes que hayan recibido la autorización correspondiente.
-DOSSPRE,dosspre_0842,1,Security,—,"El sistema deberá permitir al usuario recuperar los identificadores únicos del nodo que se utilizaron para generar el identificador único o la huella dactilar del nodo en el momento del registro, cuando el titular se matriculó o se incorporó a la universidad con dicho nodo."
-DOSSPRE,dosspre_0852,1,Security,—,La escucha del sistema para el escaneo se lleva a cabo mientras se supervisan las actividades del sistema operativo.
-DOSSPRE,dosspre_0855,1,Security,—,"El software analizará el escaneo de puertos únicamente en el host en el que se vaya a implementar, lo que dedicará toda la atención a una parte de las numerosas políticas de un ordenador."
-DOSSPRE,dosspre_0861,1,—,Security,El sistema permitirá el registro de las credenciales de usuario.
-DOSSPRE,dosspre_0864,1,Security,—,El sistema deberá permitir que las anomalías se contengan tras su detección.
-DOSSPRE,dosspre_0878,1,Security,—,El sistema debería permitir una rápida recuperación de errores.
-DOSSPRE,dosspre_0903,1,—,Security,El sistema deberá conservar los registros de todos los bebés que tenga posteriormente una madre.
-DOSSPRE,dosspre_0925,1,—,Security,El sistema deberá ofrecer un escáner de vulnerabilidades de scripts SQL y XSS para aplicaciones web seguras.
-DOSSPRE,dosspre_0926,1,—,Security,El sistema deberá ser capaz de comprobar el certificado SSL de una aplicación web o un sitio web determinados.
-DOSSPRE,dosspre_0928,1,Security,—,"El sistema detecta indicadores (patrones, atributos) de vulnerabilidades cuya existencia se conoce, o que permiten aprovecharlas, en los servicios o versiones de software detectados."
-DOSSPRE,dosspre_0931,1,Security,—,"El sistema se conecta al servidor de aplicaciones web y muestra los resultados de la conexión SSL, incluyendo qué certificado SSL está instalado y si este proporciona los certificados intermedios correctos."
-DOSSPRE,dosspre_0937,1,Security,—,El sistema deberá ofrecer al usuario la opción de cifrar y descifrar datos.
-DOSSPRE,dosspre_0943,1,Security,—,El sistema deberá ejecutar sus tareas con precisión cuando se le envíe un comando. Las pruebas garantizarán que todas las funciones estén correctamente incluidas.
-DOSSPRE,dosspre_0946,1,Security,—,Los empleados deberán identificarse mediante una contraseña de 6 caracteres.
-DOSSPRE,dosspre_0947,1,—,Security,El sistema deberá poner en marcha un reloj cuando un empleado inicie sesión y detenerlo cuando el empleado cierre la sesión.
-DOSSPRE,dosspre_0950,1,—,Security,El sistema deberá permitir que un cliente se registre
-DOSSPRE,dosspre_0954,1,Security,—,El sistema deberá permitir la replicación múltiple de datos.
-DOSSPRE,dosspre_0964,1,Security,—,El sistema deberá poder mostrar la información KYC de los clientes a los usuarios autorizados.
-DOSSPRE,dosspre_0969,1,—,Security,El sistema deberá permitir el registro del identificador nacional de la persona a cuyo nombre se expide el puesto.
-DOSSPRE,dosspre_0972,1,—,Security,El sistema se comunicará con la API de Django para obtener la dirección de Ethereum correspondiente al identificador nacional introducido.
-DOSSPRE,dosspre_0973,1,—,Security,El sistema deberá crear una transacción que se envíe al protocolo Ethereum.
-DOSSPRE,dosspre_0981,1,Security,—,El sistema deberá permitir al administrador asignar roles a los usuarios.
-DOSSPRE,dosspre_0982,1,—,Security,El sistema deberá aplicar una supervisión en tiempo real de los datos a los que se realiza el acceso.
-DOSSPRE,dosspre_0985,1,Security,—,El sistema deberá permitir que los datos introducidos en el mismo se cifren antes de enviarse a la instancia de la base de datos en nuestro servidor en la nube para su almacenamiento.
-DOSSPRE,dosspre_0986,1,Security,—,"El sistema deberá permitir a los usuarios recuperar los datos cuando lo soliciten, incluso en casos de emergencia, en los que dichos datos deberían recuperarse y estar descifrados antes de que el profesional sanitario pueda acceder a ellos."
-DOSSPRE,dosspre_0997,1,—,Security,Los datos del registro del sistema se conservarán sin que ello suponga una carga para los usuarios.
-DOSSPRE,dosspre_1001,1,Security,—,El sistema deberá permitir el reconocimiento facial.
-DOSSPRE,dosspre_1002,1,Security,—,"El sistema deberá permitir la identificación facial a través de los datos de dicha persona, si se trata de un empleado."
-DOSSPRE,dosspre_1007,1,—,Security,El sistema deberá ser capaz de identificar correctamente las huellas faciales con márgenes de error mínimos.
-DOSSPRE,dosspre_1013,1,Security,—,"El sistema permitirá a los usuarios descargar archivos cuando deseen utilizarlos, tras responder correctamente a las preguntas generadas aleatoriamente a partir de sus perfiles."
-DOSSPRE,dosspre_1020,1,Security,—,El sistema deberá permitir al estudiante disfrutar de un inicio de sesión único en todos los servicios web de la universidad.
-DOSSPRE,dosspre_1021,1,Security,—,El sistema deberá poder asignar recursos al estudiante concreto que haya solicitado el servicio.
-DOSSPRE,dosspre_1040,1,Security,—,El sistema deberá procesar los datos recibidos y generar un hash MD5 de los mismos.
-DOSSPRE,dosspre_1041,1,—,Security,El sistema deberá generar un código QR con el hash MD5.
-DOSSPRE,dosspre_1051,1,Security,—,"El sistema deberá garantizar que la información personal no se muestre al público, sino que quede codificada en un código QR."
-DOSSPRE,dosspre_1057,1,Security,—,El sistema deberá aplicar el cálculo de hash a las contraseñas utilizando HMAC
-DOSSPRE,dosspre_1058,1,Security,—,El sistema deberá generar contraseñas basadas en el tiempo mediante la aplicación Google Authenticator.
-DOSSPRE,dosspre_1060,1,Security,—,El sistema deberá permitir que un usuario se registre e inicie sesión.
-DOSSPRE,dosspre_1061,1,Security,—,El sistema deberá realizar la validación de las contraseñas de usuario.
-DOSSPRE,dosspre_1067,1,Security,—,El TOTP generado por el sistema deberá ser un código de acceso único que cambie cada 30 segundos.
-DOSSPRE,dosspre_1068,1,Security,—,El sistema deberá permitir el cambio de contraseña en un plazo determinado.
-DOSSPRE,dosspre_1074,1,Security,—,"El sistema deberá disponer de una plataforma que permita seleccionar una marca de agua única que se insertará en un documento para proteger los datos, atribuyendo la propiedad a sus legítimos titulares."
-DOSSPRE,dosspre_1084,1,—,Security,El sistema deberá poder realizar comprobaciones aleatorias de la conexión.
-DOSSPRE,dosspre_1089,1,—,Security,El sistema deberá proporcionar orientación sobre cómo garantizar la seguridad de un archivo.
-DOSSPRE,dosspre_1100,1,Security,—,El sistema deberá permitir al administrador visualizar la dirección IP.
-DOSSPRE,dosspre_1104,1,Security,—,El sistema deberá permitir al administrador realizar modificaciones.
-DOSSPRE,dosspre_1105,1,Security,—,El sistema se instalará en el dispositivo móvil de cada representante para supervisar las aplicaciones del dispositivo y registrar las actividades realizadas en el mismo.
-DOSSPRE,dosspre_1106,1,—,Security,"El sistema deberá analizar las actividades detectadas, comprobar si se trata de un uso autorizado y, posteriormente, enviar una advertencia al administrador del sistema mediante la transmisión de los datos a través de Internet."
-DOSSPRE,dosspre_1128,1,—,Security,"El sistema deberá garantizar que el identificador de transacción, el UUID y el número de serie de almacenamiento se utilicen para el cifrado por parte del servidor y el descifrado por parte del cliente."
-DOSSPRE,dosspre_1129,1,—,Security,El sistema deberá garantizar que el cliente genere la clave simétrica utilizada por el servidor para el cifrado.
-DOSSPRE,dosspre_1137,1,Security,—,El sistema deberá distribuir copias auténticas de cada vídeo suministrado.
-DOSSPRE,dosspre_1146,1,—,Security,El sistema deberá tener disponibilidad para garantizar la seguridad de los archivos frente a usuarios no autorizados.
-DOSSPRE,dosspre_1149,1,Security,—,"El sistema deberá integrar factores relacionados con cálculos complejos, robustez y seguridad."
-DOSSPRE,dosspre_1154,1,—,Security,El sistema deberá exigir a los agentes que comuniquen las imágenes detectadas a la base de datos de la agencia.
-DOSSPRE,dosspre_1159,1,Security,—,El sistema deberá garantizar que la comunicación entre los agentes y la agencia o el servidor sea tal que solo los agentes registrados puedan informar a la agencia.
-DOSSPRE,dosspre_1163,1,Security,—,El sistema deberá ser capaz de alertar al administrador de la red sobre la posible aparición de un ataque de intrusión y proporcionar información relativa a dicho ataque.
-DOSSPRE,dosspre_1188,1,—,Security,El sistema deberá permitir el acceso simultáneo de varios usuarios.
-DOSSPRE,dosspre_1213,1,—,Security,El sistema deberá garantizar que la clave pública permanezca abierta y con acceso al dominio público.
-DOSSPRE,dosspre_1214,1,Security,—,El sistema deberá ser capaz de detectar transacciones fraudulentas en tiempo real.
-DOSSPRE,dosspre_1231,1,—,Security,El sistema se instalará en el teléfono móvil de cada empleado para supervisar las aplicaciones del dispositivo y registrar las actividades que se realicen en él.
-DOSSPRE,dosspre_1236,1,Security,—,"El sistema deberá recopilar y analizar los datos que el niño esté escribiendo y, si detecta determinadas palabras clave o una secuencia continua de palabrotas, debería enviar una alerta por mensaje de texto a los padres."
-DOSSPRE,dosspre_1237,1,—,Security,El sistema deberá impedir la instalación o la eliminación de cualquier aplicación.
-DOSSPRE,dosspre_1239,1,Security,—,El sistema deberá impedir que se envíen o reciban archivos multimedia a través de Bluetooth.
-DOSSPRE,dosspre_1240,1,Security,—,"El sistema deberá ser capaz de generar registros periódicos, así como de recopilar y analizar datos para alertar a los padres cada vez que se escriban determinadas palabras clave."
-DOSSPRE,dosspre_1253,1,Security,—,El sistema deberá ser capaz de realizar la detección de malware y clasificar tanto el malware conocido como el desconocido en sus respectivas familias de malware.
-DOSSPRE,dosspre_1254,1,Security,—,El sistema deberá ser capaz de detectar y combatir tanto el malware existente como el nuevo.
-DOSSPRE,dosspre_1256,1,Security,—,El sistema deberá disponer de un analizador que ejecute los archivos de malware para inspeccionar el tipo
-DOSSPRE,dosspre_1257,1,—,Security,El analizador de malware del sistema deberá enviar todos los archivos y sus registros al servidor principal al finalizar el proceso de análisis.
-DOSSPRE,dosspre_1258,1,—,Security,El proceso de clasificación del sistema deberá clasificar el malware identificado en sus respectivas familias de malware.
-DOSSPRE,dosspre_1259,1,—,Security,El proceso de clasificación del sistema deberá generar un informe sobre los efectos de la actividad de malware durante su ejecución.
-PROMISE_exp,promise_0052,1,—,Security,Debería dar una vista detallada de todos los datos en el registro médico después de iniciar sesión.
-PROMISE_exp,promise_0100,1,—,Security,El Sistema no requerirá licencias adicionales de terceros que resulten en tarifas de regalías.
-PROMISE_exp,promise_0102,1,—,Security,El producto debe ser independiente de la plataforma. El producto debe permitir el acceso a cualquier tipo de entorno y plataforma de desarrollo
-PROMISE_exp,promise_0106,1,—,Security,El sistema podrá realizar copias de seguridad automáticas de los datos comerciales y restaurarlos a pedido
-PROMISE_exp,promise_0113,1,—,Security,La aplicación Disputas debe interactuar con la Base de datos de información del titular de la tarjeta. La base de datos de información del titular de la tarjeta proporciona información detallada con respecto a un titular de la tarjeta. Toda la información detallada del titular de la tarjeta debe obtenerse de la base de datos de información del titular de la tarjeta.
-PROMISE_exp,promise_0158,1,—,Security,"Mientras se transmite una película, el almacenamiento en búfer solo debería ocurrir si hay latencia en la conexión del usuario"
-PROMISE_exp,promise_0185,1,—,Security,El sistema permitirá que los clientes cancelen su cuenta. El proceso no llevará más de 2 minutos. La base de datos marcará la cuenta como inactiva y el usuario no podrá iniciar sesión en el sitio web.
-PROMISE_exp,promise_0226,1,Security,—,El producto debe tener capacidad de auditoría. El producto debe almacenar mensajes durante un mínimo de un año para fines de auditoría y seguimiento de transacciones
-PROMISE_exp,promise_0227,1,Security,—,Todas las adiciones de nuevos usuarios y las modificaciones al acceso de los usuarios se registrarán en el Informe de usuario
-PROMISE_exp,promise_0231,1,Security,—,El sistema se construirá de manera que sea lo más seguro posible frente a interferencias maliciosas.
-PROMISE_exp,promise_0240,1,Security,—,El producto debe garantizar que los datos de la base de datos se correspondan con los datos introducidos por el usuario. Cada reserva de sala de conferencias en el sistema contendrá la misma información que ingresó el usuario.
-PROMISE_exp,promise_0244,1,Security,—,Un cliente solo puede transmitir una película si la compró y está dentro del período de visualización de 2 días
-PROMISE_exp,promise_0262,1,Security,—,El sistema usará una base de datos segura
-PROMISE_exp,promise_0263,1,Security,—,El acceso de los usuarios debería limitarse a los permisos otorgados a su(s) rol(es). A cada nivel en la jerarquía del PCG se le asignará un rol y los usuarios serán asignados a estos roles. El acceso a la funcionalidad dentro del sistema RFS depende de los privilegios/permisos asignados al rol.
-PROMISE_exp,promise_0265,1,Security,—,El Sistema de Disputas generará un Informe de Usuario que detalla cualquier nuevo usuario que se haya agregado y cualquier cambio en el nivel de acceso de un usuario existente. El informe se revisará con fines de auditoría.
-PROMISE_exp,promise_0266,1,Security,—,El sitio web debe informar a sus usuarios de sus prácticas de información antes de recopilar datos de ellos a través de una Política de privacidad accesible en todas las páginas del sitio web.
-PROMISE_exp,promise_0268,1,Security,—,El Comisionado será el único usuario autorizado por liga para ajustar la configuración de la liga
-PROMISE_exp,promise_0273,1,Security,—,El sistema notificará a los clientes los cambios en su política de información.
-PROMISE_exp,promise_0279,1,Security,—,Criterio de adecuación: la Dra. Susan Poslusny y Karen Sysol son las únicas personas que tendrán acceso a la programación de la sección final de la clase para el sistema que interactúa con CampusConnect.
-PROMISE_exp,promise_0283,1,Security,—,"Para evitar ataques, el sistema debería generar una palabra aleatoria y pedirle al usuario que la ingrese correctamente para múltiples intentos."
-PROMISE_exp,promise_0379,1,—,Security,El sistema marcará las tabletas que no envíen mensajes de mantenimiento de conexión oportunos como no operativas y desasociará al camarero asignado de la tableta.
-PROMISE_exp,promise_0381,1,—,Security,El producto y/o las bases de datos/sistemas de archivos dependientes permanecerán operativos como resultado de la entrada de datos maliciosos. El producto y/o las bases de datos/sistemas de archivos dependientes no se bloquearán el 100% del tiempo que se ingresen datos maliciosos en el producto.
-PROMISE_exp,promise_0434,1,Security,—,La contraseña de un camarero utilizada para el inicio de sesión de la tableta debe tener una robustez de al menos 64 bits.
-PROMISE_exp,promise_0452,1,Security,—,El navegador web del cliente nunca mostrará el número de tarjeta de crédito del cliente después de recuperarlo de la base de datos. Siempre se mostrará con solo los últimos 4 dígitos del número de la tarjeta de crédito.
-PROMISE_exp,promise_0455,1,Security,—,El sistema utilizará el software de protección antivirus estándar de la organización para ayudar a monitorear las amenazas a sí mismo
-SecReq,secreq_0011,1,Security,—,El dispositivo de carga envía S1 en una solicitud de autorización al emisor
-SecReq,secreq_0014,1,Security,—,El emisor envía S2 al adquirente de carga en el mensaje de respuesta de autorización.
-SecReq,secreq_0015,1,Security,—,Las descargas solo están permitidas en una cuenta controlada por el emisor de la tarjeta y se realizan únicamente en un dispositivo de carga bajo el control del emisor de la tarjeta.
-SecReq,secreq_0041,1,—,Security,Asegurarse de que cada lote de transacciones se compense y se liquide una sola vez.
-SecReq,secreq_0046,1,—,Security,"Si un proveedor de esquema compatible dispone de un proceso de resolución de disputas, participar en dicho proceso junto con los procesadores de pagos conectados para resolver cualquier problema relacionado con transacciones no válidas. Estos procesos de resolución deberían incluir un mecanismo para el reembolso de los fondos asociados a las transacciones no válidas."
-SecReq,secreq_0048,1,Security,—,"Si el emisor de la tarjeta detecta errores en el MAC del emisor de la tarjeta durante el procesamiento de las transacciones, podrá recurrirse a un mecanismo de resolución de disputas, establecido por el proveedor de esquema, para obtener el reembolso del importe."
-SecReq,secreq_0049,1,Security,—,"Si un proveedor de esquema establece un repositorio central de errores, todas las transacciones del esquema que presenten errores de MAC deberán enviarse a dicho repositorio central de errores, independientemente de que se sometan o no al proceso de resolución de disputas."
-SecReq,secreq_0053,1,Security,—,El importe que se va a anular es el importe del último paso de la transacción. El comando de anulación enviado a la tarjeta CEP contiene un S2 MAC calculado por el PSAM.
-SecReq,secreq_0056,1,—,Security,La tarjeta CEP envía una respuesta al comando de anulación al dispositivo de punto de venta. La reversión se considera realizada con éxito incluso en caso de respuesta negativa o de falta de respuesta por parte de la tarjeta CEP.
-SecReq,secreq_0057,1,—,Security,"Una vez insertada la tarjeta CEP en el dispositivo de punto de venta, este inicia la transacción de cancelación de la última compra."
-SecReq,secreq_0066,1,—,Security,El adquirente del comercio realiza la validación del lote para asegurarse de que se ha transmitido correctamente y lo registra en el registro.
-SecReq,secreq_0074,1,—,Security,"Una transacción que supere las validaciones del adquirente del comercio y se remita al emisor de la tarjeta será abonada por este último. Si la transacción no supera las validaciones del emisor de la tarjeta, este podrá seguir los procedimientos de resolución de disputas del proveedor de esquema."
-SecReq,secreq_0075,1,Security,—,"El pago por detalle es la modalidad de pago predeterminada que utilizan las entidades adquirentes para abonar a sus comerciantes. En esta modalidad, la entidad adquirente se basa en el MAC S5 de la transacción en punto de venta (TPV) para determinar la aceptación. A los comerciantes solo se les abona por las transacciones válidas en punto de venta."
-SecReq,secreq_0076,1,—,Security,Las transacciones en punto de venta (TPV) cuyo pago haya sido rechazado por el adquirente del comercio se marcan con un código de error que indica el tipo de fallo de validación y se remiten al emisor de la tarjeta únicamente con fines de información sobre el historial de la tarjeta CEP.
-SecReq,secreq_0080,1,Security,—,"Dado que estas transacciones se realizan en línea con el emisor, este tiene la posibilidad de realizar el bloqueo de la tarjeta o la aplicación. Estas transacciones no están disponibles para una tarjeta que ya haya sido bloqueada."
-SecReq,secreq_0083,1,—,Security,"La aplicación CEP debe contener datos que indiquen la presencia de una entidad financiera vinculada. Si se establece una entidad financiera vinculada para la aplicación CEP, deben permitirse las cargas vinculadas y los datos de la aplicación deben indicar si se admiten dichas cargas."
-SecReq,secreq_0091,1,—,Security,Todos los mensajes en línea deben poder incluir datos discrecionales del emisor de la tarjeta procedentes de la tarjeta CEP.
-SecReq,secreq_0118,1,Security,—,"Los emisores de fondos deben aceptar las solicitudes de autorización de fondos, independientemente del tipo de moneda de carga, según lo permitido."
-SecReq,secreq_0125,1,Security,—,Todas las aplicaciones incluidas en GlobalPlatform deberán implementarse en un entorno de ejecución seguro e independiente del hardware.
-SecReq,secreq_0132,1,Security,—,El OPEN deberá ser responsable de hacer cumplir los principios de seguridad definidos para la gestión del contenido de la tarjeta.
-SecReq,secreq_0134,1,Security,—,"La GlobalPlatform API deberá proporcionar servicios a la aplicación, tales como la verificación de la tarjeta y servicios de seguridad."
-SecReq,secreq_0135,1,—,Security,"La GlobalPlatform API deberá proporcionar servicios para la gestión del contenido de la tarjeta, tales como el bloqueo de la tarjeta y la actualización del estado del ciclo de vida de la aplicación."
-SecReq,secreq_0139,1,Security,—,"El emisor de la tarjeta es responsable de hacer cumplir las normas y políticas aplicables a los proveedores de aplicaciones, que regulan todos los aspectos de las aplicaciones que se vayan a proporcionar al emisor de la tarjeta o que se vayan a utilizar en las tarjetas de este"
-SecReq,secreq_0140,1,—,Security,El emisor de la tarjeta es responsable de colaborar con los proveedores de aplicaciones para crear e inicializar dominios de seguridad distintos del dominio de seguridad del emisor
-SecReq,secreq_0146,1,—,Security,"El proveedor de aplicaciones es responsable de proporcionar aplicaciones que cumplan con las normas y políticas de seguridad del emisor de la tarjeta,"
-SecReq,secreq_0165,1,Security,—,"OPEN deberá comprobar las reglas de acceso de la aplicación de acuerdo con los privilegios de aplicación,"
-SecReq,secreq_0190,1,Security,—,"Cuando estén disponibles, las aplicaciones deberán poder disponer de servicios para cifrar y descifrar cualquier tipo de datos utilizando estos algoritmos."
-SecReq,secreq_0193,1,Security,—,El hash del bloque de datos del archivo de carga se utiliza en el cálculo de la firma del bloque de datos del archivo de carga.
-SecReq,secreq_0194,1,—,Security,El hash del bloque de datos del archivo de carga se utiliza en el cálculo del token de carga.
-SecReq,secreq_0198,1,—,Security,Una tarjeta GlobalPlatform puede proporcionar servicios de seguridad relacionados con la información intercambiada entre la tarjeta y una entidad externa a la misma.
-SecReq,secreq_0199,1,—,Security,"El nivel de seguridad de la comunicación con una entidad externa a la tarjeta no se aplica necesariamente a cada mensaje individual que se transmite, sino que solo puede aplicarse al entorno y/o al contexto en el que se transmiten los mensajes."
-SecReq,secreq_0204,1,Security,—,"Los modelos de ciclo de vida son responsables de la funcionalidad y la seguridad de la tarjeta, los archivos de carga ejecutables, los módulos ejecutables, los dominios de seguridad y las aplicaciones."
-SecReq,secreq_0233,1,—,Security,"En el caso del despacho de comandos a una aplicación, es responsabilidad de esta rechazar correctamente aquellos que no reconozca, no espere o no pueda procesar."
-SecReq,secreq_0306,1,Security,—,"El CNG deberá aplicar una política de protección de la privacidad que especifique, como mínimo, qué información es privada y qué información es crítica."
-SecReq,secreq_0310,1,Security,—,"Cuando un CND inicie una sesión en el CNG, este último deberá registrar la asociación entre el identificador de sesión, la identidad del dispositivo iniciador y el identificador de usuario iniciador."
-SecReq,secreq_0311,1,Security,—,"Al transmitir información de gestión desde el CNG a un CND, el CNG deberá añadir una marca de tiempo o un número de secuencia al mensaje saliente."
-SecReq,secreq_0317,1,Security,—,"Al recibir una solicitud válida (es decir, autorizada) de acceso a un servicio o una aplicación alojados en la CNG, esta deberá proporcionar el servicio o la aplicación solicitados al usuario solicitante."
-SecReq,secreq_0322,1,Security,—,El CNG deberá admitir mecanismos de autenticación de los CND inalámbricos para la conectividad local. También podrán implementarse mecanismos similares para dispositivos no inalámbricos.
-SecReq,secreq_0323,1,Security,—,El CNG y el CPN deberán admitir mecanismos que impidan el acceso a la red por parte de usuarios no autorizados.
-SecReq,secreq_0325,1,Security,—,El CNG y el CPN deberán implementar mecanismos para limitar la visibilidad de la red y los recursos del lado de la WAN a las entidades con autorización.
-SecReq,secreq_0327,1,Security,—,"El entorno CPN deberá protegerse mediante una función de cortafuegos con seguimiento de estado, que podrá implementarse en el CNG."
-SecReq,secreq_0328,1,Security,—,El CNG y el CPN deberán ser capaces de admitir funcionalidades relacionadas con el control parental que limiten el uso de la conexión de banda ancha en función del usuario o del tiempo. Las limitaciones basadas en el contenido podrán compartirse con servidores de red específicos.
-SecReq,secreq_0338,1,—,Security,"El CNG y la red del cliente garantizarán la confidencialidad y la integridad de los flujos de señalización, control, medios y gestión."
-SecReq,secreq_0343,1,—,Security,"Para establecer la conectividad de acceso remoto se debería utilizar la autenticación, el encaminamiento y la conectividad estándar de las redes NGN."
-SecReq,secreq_0345,1,—,Security,El CNG podrá permitir la apertura dinámica y segura del cortafuegos para dispositivos de acceso remoto basándose en las funciones de autenticación NGN.
-SecReq,secreq_0348,1,—,Security,"Si se presta el servicio de comunicación «Home to Home» (H2H), cada CNG deberá garantizar que las sesiones de servicios de emergencia que se originen en su CPN estén asociadas a la información de ubicación y/o a la identidad de la persona que realiza la llamada correspondientes."
-SecReq,secreq_0399,1,—,Security,El CNG deberá admitir mecanismos de autenticación segura y comunicación con el sistema de gestión remota.
-SecReq,secreq_0408,1,—,Security,Se implementarán mecanismos de protección para evitar que un cliente de gestión pueda tener acceso y modificar parámetros cuya configuración no esté permitida.
-SecReq,secreq_0421,1,—,Security,El CND deberá facilitar su identidad de registro cuando solicite el registro en la red.
+﻿dataset,ID,models_wrong,real,CNN,BiLSTM,BETO,RoBERTa-BNE,DistilBETO,requirement
+DOSSPRE,dosspre_0001,3,Security,—,—,,,—,El sistema deberá detectar vulnerabilidades de inyección SQL y XSS en un sitio web o una aplicación web determinados.
+DOSSPRE,dosspre_0002,3,—,Security,Security,,,Security,El sistema deberá analizar la vulnerabilidad detectada
+DOSSPRE,dosspre_0029,3,Security,—,—,,,—,El sistema deberá generar un informe en el que se describa el efecto que ha tenido el malware durante su ejecución en un entorno aislado.
+DOSSPRE,dosspre_0033,3,Security,—,—,,,—,"El sistema estará aislado del usuario y la aplicación no requiere interacción por parte de este, por lo que las posibilidades de que los usuarios lo dañen son muy limitadas."
+DOSSPRE,dosspre_0048,3,—,Security,Security,,,Security,"El sistema deberá permitir que un autor que desee proteger su obra contra el uso no autorizado suba una imagen con su marca de agua digital visible, junto con el número de registro."
+DOSSPRE,dosspre_0050,3,Security,—,—,,,—,"El sistema deberá permitir la verificación de imágenes con marca de agua que hayan sido enviadas dos o más veces por diferentes autores, con el fin de proteger los derechos de autor del propietario."
+DOSSPRE,dosspre_0081,3,Security,—,—,,,—,El sistema deberá poder abrir la puerta cuando el PIN sea correcto.
+DOSSPRE,dosspre_0103,3,—,Security,Security,,,Security,El sistema deberá tener acceso a la lista de contactos del dispositivo del menor.
+DOSSPRE,dosspre_0108,3,—,Security,Security,,,Security,El sistema deberá impedir que se instalen o desinstalen aplicaciones.
+DOSSPRE,dosspre_0109,3,Security,—,—,,,—,El sistema deberá ser capaz de generar y enviar registros periódicos al smartphone de los padres.
+DOSSPRE,dosspre_0152,3,Security,—,—,,,—,"El sistema deberá supervisar el uso de la CPU para detectar picos en dicho uso provocados por el cryptojacking, leyendo constantemente el porcentaje de utilización de la CPU del ordenador y comparándolo con la línea base de uso de CPU, así como detectar los picos extremos o las desviaciones respecto a la línea base de uso de CPU debidos a la actividad de cryptojacking."
+DOSSPRE,dosspre_0157,3,Security,—,—,,,—,"El sistema deberá permitir el registro del dominio o la aplicación de cryptojacking detectados, junto con la fecha y la hora de la detección."
+DOSSPRE,dosspre_0158,3,—,Security,Security,,,Security,El sistema debería ser capaz de detectar el cryptojacking de forma rápida y oportuna.
+DOSSPRE,dosspre_0163,3,Security,—,—,,,—,El sistema debería ser fiable a la hora de detectar la actividad de malware de criptojacking conocida.
+DOSSPRE,dosspre_0179,3,Security,—,—,,,—,El sistema deberá ser capaz de distinguir al usuario legítimo del ilegítimo mediante el uso de datos biométricos de comportamiento únicos.
+DOSSPRE,dosspre_0183,3,Security,—,—,,,—,"El sistema deberá diseñarse de forma que sea compatible con numerosos sistemas operativos, como Windows, Android y Linux."
+DOSSPRE,dosspre_0219,3,Security,—,—,,,—,Los usuarios deberán poder tener acceso al sistema a través de un portal web HTTPS.
+DOSSPRE,dosspre_0232,3,—,Security,Security,,,Security,El sistema debería garantizar que los mensajes de error se comuniquen al usuario o al administrador.
+DOSSPRE,dosspre_0275,3,Security,—,—,,,—,El sistema debería poder generar un resumen del informe de auditoría para enviarlo al usuario del sistema.
+DOSSPRE,dosspre_0282,3,Security,—,—,,,—,"El sistema deberá permitir que la captura de registros se realice en segundo plano, lo que facilitará considerablemente el trabajo del auditor."
+DOSSPRE,dosspre_0285,3,Security,—,—,,,—,"El sistema deberá permitir a los usuarios disponer de su propia clave específica, generada por la máquina y añadida a la lista de claves para el proceso de generación de MAC."
+DOSSPRE,dosspre_0288,3,Security,—,—,,,—,El sistema deberá garantizar que se establezca una interfaz segura y eficaz para reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
+DOSSPRE,dosspre_0290,3,Security,—,—,,,—,El sistema deberá permitir la implementación de protocolos claros y seguros de intercambio de datos y documentar las interfaces y los protocolos que se utilicen.
+DOSSPRE,dosspre_0338,3,Security,—,—,,,—,El sistema deberá tener la capacidad de recuperación de todos los historiales de escaneo en caso de interrupción del sistema.
+DOSSPRE,dosspre_0353,3,Security,—,—,,,—,"El sistema deberá ofrecer autenticación por Bluetooth, de modo que los usuarios no tengan que desactivar la autenticación del ordenador portátil, ya que tienen que realizar el proceso de desbloqueo con frecuencia durante la jornada laboral."
+DOSSPRE,dosspre_0361,3,—,Security,Security,,,Security,El sistema captura y almacena la plantilla de huella dactilar de los usuarios en el momento del inicio de sesión inicial.
+DOSSPRE,dosspre_0364,3,Security,—,—,,,—,El sistema debería permitir el acceso de los centros médicos certificados a la información crítica de los pacientes cuando sea necesario.
+DOSSPRE,dosspre_0374,3,Security,—,—,,,—,El sistema debería ser capaz de capturar (sniffing) el tráfico entrante y saliente de la red en tiempo real.
+DOSSPRE,dosspre_0376,3,—,Security,Security,,,Security,El sistema debería ser capaz de alertar a los responsables de la red sobre la posible ocurrencia de un ataque de intrusión y proporcionar información relativa a dicho ataque.
+DOSSPRE,dosspre_0443,3,Security,—,—,,,—,"Los atributos estáticos del sistema permiten detectar con antelación posibles cuellos de botella en el rendimiento operativo y futuros problemas de escalabilidad, lo que permite corregirlos a tiempo."
+DOSSPRE,dosspre_0462,3,Security,—,—,,,—,El sistema deberá ser capaz de proporcionar ayuda en un breve espacio de tiempo.
+DOSSPRE,dosspre_0469,3,—,Security,Security,,,Security,El sistema funciona bien a la hora de reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
+DOSSPRE,dosspre_0472,3,—,Security,Security,,,Security,El sistema deberá implementar protocolos claros y seguros de intercambio de datos; lo ideal es implementar protocolos seguros y documentar las interfaces y los protocolos que se utilicen.
+DOSSPRE,dosspre_0521,3,—,Security,Security,,,Security,El sistema deberá garantizar que el rendimiento del IDS sea suficiente para detectar intrusiones en tiempo real (por «tiempo real» se entiende que una intrusión debe detectarse antes de que se produzcan daños significativos).
+DOSSPRE,dosspre_0541,3,—,Security,Security,,,Security,"El sistema deberá permitir la generación de claves públicas y privadas. Estas claves se utilizarán para el cifrado y descifrado de la clave simétrica AES, con el fin de garantizar un intercambio de claves más seguro."
+DOSSPRE,dosspre_0585,3,Security,—,—,,,—,"El sistema debería poder realizar la validación de los datos introducidos, reduciendo así la redundancia y la duplicación en la base de datos."
+DOSSPRE,dosspre_0605,3,Security,—,—,,,—,El sistema debe permitir a los clientes ejecutar un protocolo de encaminamiento distinto al de la red del proveedor de servicios de Internet.
+DOSSPRE,dosspre_0607,3,Security,—,—,,,—,El sistema deberá garantizar que un dispositivo situado en un área ODPF no se comunique con otro situado en un área OSPF diferente.
+DOSSPRE,dosspre_0610,3,—,Security,Security,,,Security,El sistema deberá garantizar que el servidor de autenticación se comunique con el controlador de la puerta para abrirla y cerrarla.
+DOSSPRE,dosspre_0617,3,Security,—,—,,,—,"El sistema funciona como un IDS/IPD y ayuda a aliviar el tráfico dirigido al servidor, en caso de que se produzca un ataque DOS distribuido y el servidor se vea saturado de solicitudes."
+DOSSPRE,dosspre_0634,3,Security,—,—,,,—,El sistema deberá ser capaz de generar un informe sobre las vulnerabilidades detectadas y analizadas.
+DOSSPRE,dosspre_0637,3,Security,—,—,,,—,El escáner del sistema puede aceptar un determinado número de URL para comprobar si presentan las vulnerabilidades seleccionadas.
+DOSSPRE,dosspre_0650,3,—,Security,Security,,,Security,El reproductor del sistema localiza la carpeta oculta.
+DOSSPRE,dosspre_0664,3,—,Security,Security,,,Security,El sistema deberá permitir el inicio de sesión para un usuario.
+DOSSPRE,dosspre_0671,3,Security,—,—,,,—,El sistema deberá utilizar un «honeypot» que registre y analice los paquetes que circulan por la red. Un «honeypot» es un sistema señuelo que se utiliza para hacer creer al atacante que está atacando el sistema deseado.
+DOSSPRE,dosspre_0672,3,—,Security,Security,,,Security,El sistema deberá garantizar que el honeypot registre las actividades del atacante y avise a los administradores del sistema en caso de que se produzca una amenaza para el sistema protegido.
+DOSSPRE,dosspre_0679,3,—,Security,Security,,,Security,"El sistema deberá incorporar principios de seguridad, como la autenticación."
+DOSSPRE,dosspre_0692,3,Security,—,—,,,—,El sistema deberá capturar el tráfico de red entre el hipervisor y la máquina virtual objeto de supervisión.
+DOSSPRE,dosspre_0707,3,Security,—,—,,,—,El sistema deberá proporcionar un canal seguro de comunicación entre el sistema back-end y la interfaz de usuario web.
+DOSSPRE,dosspre_0729,3,Security,—,—,,,—,"Los componentes del sistema no se verán afectados por cambios climáticos como el calor o la humedad, ya que la carcasa se diseñará para adaptarse a las condiciones climáticas predominantes."
+DOSSPRE,dosspre_0778,3,Security,—,—,,,—,El sistema deberá permitir que un usuario se registre mediante el patrocinio del departamento de Recursos Humanos correspondiente.
+DOSSPRE,dosspre_0780,3,Security,—,—,,,—,El sistema deberá permitir al usuario visualizar el contenido o el panel de control.
+DOSSPRE,dosspre_0824,3,Security,—,—,,,—,El sistema deberá permitir el análisis de los lugares donde se cometen más delitos utilizando datos de colaboración ciudadana e informes.
+DOSSPRE,dosspre_0842,3,Security,—,—,,,—,"El sistema deberá permitir al usuario recuperar los identificadores únicos del nodo que se utilizaron para generar el identificador único o la huella dactilar del nodo en el momento del registro, cuando el titular se matriculó o se incorporó a la universidad con dicho nodo."
+DOSSPRE,dosspre_0852,3,Security,—,—,,,—,La escucha del sistema para el escaneo se lleva a cabo mientras se supervisan las actividades del sistema operativo.
+DOSSPRE,dosspre_0861,3,—,Security,Security,,,Security,El sistema permitirá el registro de las credenciales de usuario.
+DOSSPRE,dosspre_0864,3,Security,—,—,,,—,El sistema deberá permitir que las anomalías se contengan tras su detección.
+DOSSPRE,dosspre_0878,3,Security,—,—,,,—,El sistema debería permitir una rápida recuperación de errores.
+DOSSPRE,dosspre_0926,3,—,Security,Security,,,Security,El sistema deberá ser capaz de comprobar el certificado SSL de una aplicación web o un sitio web determinados.
+DOSSPRE,dosspre_0928,3,Security,—,—,,,—,"El sistema detecta indicadores (patrones, atributos) de vulnerabilidades cuya existencia se conoce, o que permiten aprovecharlas, en los servicios o versiones de software detectados."
+DOSSPRE,dosspre_0943,3,Security,—,—,,,—,El sistema deberá ejecutar sus tareas con precisión cuando se le envíe un comando. Las pruebas garantizarán que todas las funciones estén correctamente incluidas.
+DOSSPRE,dosspre_0947,3,—,Security,Security,,,Security,El sistema deberá poner en marcha un reloj cuando un empleado inicie sesión y detenerlo cuando el empleado cierre la sesión.
+DOSSPRE,dosspre_0964,3,Security,—,—,,,—,El sistema deberá poder mostrar la información KYC de los clientes a los usuarios autorizados.
+DOSSPRE,dosspre_0969,3,—,Security,Security,,,Security,El sistema deberá permitir el registro del identificador nacional de la persona a cuyo nombre se expide el puesto.
+DOSSPRE,dosspre_1002,3,Security,—,—,,,—,"El sistema deberá permitir la identificación facial a través de los datos de dicha persona, si se trata de un empleado."
+DOSSPRE,dosspre_1007,3,—,Security,Security,,,Security,El sistema deberá ser capaz de identificar correctamente las huellas faciales con márgenes de error mínimos.
+DOSSPRE,dosspre_1021,3,Security,—,—,,,—,El sistema deberá poder asignar recursos al estudiante concreto que haya solicitado el servicio.
+DOSSPRE,dosspre_1041,3,—,Security,Security,,,Security,El sistema deberá generar un código QR con el hash MD5.
+DOSSPRE,dosspre_1051,3,Security,—,—,,,—,"El sistema deberá garantizar que la información personal no se muestre al público, sino que quede codificada en un código QR."
+DOSSPRE,dosspre_1058,3,Security,—,—,,,—,El sistema deberá generar contraseñas basadas en el tiempo mediante la aplicación Google Authenticator.
+DOSSPRE,dosspre_1067,3,Security,—,—,,,—,El TOTP generado por el sistema deberá ser un código de acceso único que cambie cada 30 segundos.
+DOSSPRE,dosspre_1074,3,Security,—,—,,,—,"El sistema deberá disponer de una plataforma que permita seleccionar una marca de agua única que se insertará en un documento para proteger los datos, atribuyendo la propiedad a sus legítimos titulares."
+DOSSPRE,dosspre_1105,3,Security,—,—,,,—,El sistema se instalará en el dispositivo móvil de cada representante para supervisar las aplicaciones del dispositivo y registrar las actividades realizadas en el mismo.
+DOSSPRE,dosspre_1106,3,—,Security,Security,,,Security,"El sistema deberá analizar las actividades detectadas, comprobar si se trata de un uso autorizado y, posteriormente, enviar una advertencia al administrador del sistema mediante la transmisión de los datos a través de Internet."
+DOSSPRE,dosspre_1129,3,—,Security,Security,,,Security,El sistema deberá garantizar que el cliente genere la clave simétrica utilizada por el servidor para el cifrado.
+DOSSPRE,dosspre_1146,3,—,Security,Security,,,Security,El sistema deberá tener disponibilidad para garantizar la seguridad de los archivos frente a usuarios no autorizados.
+DOSSPRE,dosspre_1159,3,Security,—,—,,,—,El sistema deberá garantizar que la comunicación entre los agentes y la agencia o el servidor sea tal que solo los agentes registrados puedan informar a la agencia.
+DOSSPRE,dosspre_1163,3,Security,—,—,,,—,El sistema deberá ser capaz de alertar al administrador de la red sobre la posible aparición de un ataque de intrusión y proporcionar información relativa a dicho ataque.
+DOSSPRE,dosspre_1188,3,—,Security,Security,,,Security,El sistema deberá permitir el acceso simultáneo de varios usuarios.
+DOSSPRE,dosspre_1213,3,—,Security,Security,,,Security,El sistema deberá garantizar que la clave pública permanezca abierta y con acceso al dominio público.
+DOSSPRE,dosspre_1237,3,—,Security,Security,,,Security,El sistema deberá impedir la instalación o la eliminación de cualquier aplicación.
+DOSSPRE,dosspre_1239,3,Security,—,—,,,—,El sistema deberá impedir que se envíen o reciban archivos multimedia a través de Bluetooth.
+DOSSPRE,dosspre_0014,2,—,Security,Security,,,—,El sistema deberá permitir al usuario cargar y descargar archivos almacenados.
+DOSSPRE,dosspre_0022,2,—,Security,Security,,,—,El sistema deberá permitir el inicio de sesión de varios clientes y el almacenamiento de sus archivos en el servidor remoto.
+DOSSPRE,dosspre_0038,2,Security,Security,—,,,—,El sistema deberá permitir que un miembro forme espontáneamente un grupo de n firmantes utilizando claves públicas de grupo que asocien a los miembros del grupo.
+DOSSPRE,dosspre_0055,2,—,—,Security,,,Security,"El sistema permitirá, de forma opcional, que el usuario elimine los ficheros con los datos del sospechoso o los guarde para futuros registros en una base de datos segura."
+DOSSPRE,dosspre_0087,2,—,Security,Security,,,—,El sistema deberá permitir la transmisión de datos de corta duración entre el ordenador y el smartphone a través de Bluetooth.
+DOSSPRE,dosspre_0088,2,—,—,Security,,,Security,El sistema deberá permitir que los sistemas de bloqueo de datos Bluetooth generen los mismos resultados repetidamente.
+DOSSPRE,dosspre_0089,2,—,—,Security,,,Security,"El sistema deberá permitir que, en caso de que el teléfono móvil no esté disponible, el usuario realice ciertas autenticaciones para obtener acceso al sistema."
+DOSSPRE,dosspre_0139,2,Security,—,—,,,Security,El sistema conservará los registros de vídeo en los que solo se detecte movimiento.
+DOSSPRE,dosspre_0154,2,—,Security,—,,,Security,El sistema deberá enviar automáticamente alertas por correo electrónico cuando se detecte actividad de criptojacking.
+DOSSPRE,dosspre_0155,2,Security,Security,—,,,—,"El sistema deberá permitir al usuario establecer una contraseña para el cambio de correo electrónico, de modo que se le solicite posteriormente cuando intente modificar la dirección de correo electrónico del usuario en cuestión."
+DOSSPRE,dosspre_0166,2,Security,—,—,,,Security,El sistema debería garantizar que solo el usuario autorizado pueda modificar la dirección de correo electrónico registrada para recibir alertas de cryptojacking.
+DOSSPRE,dosspre_0167,2,—,Security,Security,,,—,El sistema debería ofrecer una función de evaluación de la solidez de las contraseñas para sugerir al usuario mejoras en la seguridad de las mismas.
+DOSSPRE,dosspre_0168,2,Security,—,—,,,Security,"El sistema no debería infringir la legislación, respetando la privacidad de la información de usuario sensible y los derechos de propiedad intelectual."
+DOSSPRE,dosspre_0176,2,—,Security,—,,,Security,"El sistema se someterá a diversas pruebas, como pruebas de estrés, para garantizar que no se produzcan errores en la verificación del usuario."
+DOSSPRE,dosspre_0196,2,—,—,Security,,,Security,El sistema deberá permitir que Selenium extraiga la información de identificación personal de un individuo.
+DOSSPRE,dosspre_0205,2,Security,Security,—,,,—,El sistema deberá facilitar el seguimiento de las actividades de una persona tras la comisión de un delito.
+DOSSPRE,dosspre_0206,2,Security,—,—,,,Security,"El sistema deberá tener acceso a información de identificación personal para permitir a los investigadores reconstruir un hecho delictivo una vez que haya tenido lugar, asegurando así las pruebas."
+DOSSPRE,dosspre_0208,2,—,Security,Security,,,—,El sistema debería ser capaz de generar códigos USSD para la transacción.
+DOSSPRE,dosspre_0212,2,Security,Security,—,,,—,El sistema debería limitar los intentos de introducción de la contraseña a tres únicamente.
+DOSSPRE,dosspre_0223,2,Security,—,—,,,Security,La información introducida solo puede ser modificada por el usuario una vez que se haya realizado la autenticación para verificarla.
+DOSSPRE,dosspre_0234,2,Security,—,—,,,Security,El sistema propuesto deberá establecer permisos de acceso de tal forma que los datos de la aplicación solo puedan ser modificados por el administrador de datos del sistema y que los datos almacenados en la base de datos se sometan al cálculo de hash.
+DOSSPRE,dosspre_0246,2,Security,Security,—,,,—,"El sistema deberá ser capaz de determinar si las credenciales de inicio de sesión son válidas o no, y buscar resultados que coincidan con el titular de la licencia en cuestión o con la información del vehículo."
+DOSSPRE,dosspre_0266,2,Security,—,—,,,Security,El sistema deberá almacenar automáticamente la información de credenciales en una base de datos central.
+DOSSPRE,dosspre_0268,2,Security,—,—,,,Security,El sistema deberá utilizar una vía segura para enviar todas las credenciales válidas a la plataforma.
+DOSSPRE,dosspre_0278,2,Security,Security,—,,,—,El sistema deberá garantizar la disponibilidad del informe de auditoría para los usuarios.
+DOSSPRE,dosspre_0308,2,—,Security,Security,,,—,El sistema deberá permitir que los usuarios generales solo tengan acceso a través de la interfaz de usuario.
+DOSSPRE,dosspre_0311,2,Security,—,—,,,Security,El sistema deberá tener tolerancia a fallos y deberá poder salir del programa de forma segura si se produce algún problema.
+DOSSPRE,dosspre_0312,2,—,Security,Security,,,—,El sistema deberá permitir al usuario el acceso a la pantalla del menú de inicio.
+DOSSPRE,dosspre_0316,2,Security,—,Security,,,—,"El sistema debería estar preparado para todas las situaciones, de modo que tenga capacidad de recuperación en cualquier condición de error."
+DOSSPRE,dosspre_0319,2,—,Security,Security,,,—,El sistema debería mantenerse adecuadamente para que pueda resolver cualquier conflicto de datos y seguir funcionando en cualquier circunstancia.
+DOSSPRE,dosspre_0328,2,—,Security,Security,,,—,El sistema deberá mostrar interfaces que describan las operaciones realizadas durante los procesos.
+DOSSPRE,dosspre_0330,2,—,Security,Security,,,—,"El sistema debe generar informes (fecha, hora, hash del archivo, estado) u otros resultados una vez que se haya realizado el escaneo del archivo."
+DOSSPRE,dosspre_0337,2,Security,—,—,,,Security,"Los resultados del proceso de escaneo deben ser fiables, lo que significa que debe haber un número mínimo de falsos positivos o ninguno."
+DOSSPRE,dosspre_0342,2,—,Security,Security,,,—,"El sistema deberá permitir el almacenamiento, la recuperación y la manipulación de datos de forma sencilla."
+DOSSPRE,dosspre_0346,2,Security,—,—,,,Security,"El sistema funciona dentro de sus límites, que también establecen restricciones a su funcionamiento, y dichos límites constituyen las restricciones."
+DOSSPRE,dosspre_0363,2,—,Security,Security,,,—,"El sistema debería permitir a los usuarios almacenar información crítica, como alergias y afecciones, en un servidor central."
+DOSSPRE,dosspre_0365,2,Security,Security,—,,,—,El sistema deberá conservar los historiales médicos completos de los pacientes en formato cifrado en un servidor.
+DOSSPRE,dosspre_0391,2,Security,Security,—,,,—,El sistema deberá disponer de una pantalla de inicio de sesión que permita al administrador de la red acceder al sistema.
+DOSSPRE,dosspre_0398,2,—,Security,Security,,,—,"El sistema deberá disponer de un módulo de análisis que utilice los metadatos contenidos en la información extraída para detectar datos de localización, con el fin de crear un mapa de desplazamientos a partir de dicha información."
+DOSSPRE,dosspre_0409,2,—,Security,Security,,,—,El sistema se diseñará de tal forma que sea compatible con otras arquitecturas de sistema.
+DOSSPRE,dosspre_0417,2,—,Security,—,,,Security,El sistema deberá permitir la minería de datos web de Twitter; la Twitter API ofrece diferentes niveles de acceso a los datos a través de su programa Twitter Data Grants.
+DOSSPRE,dosspre_0422,2,Security,Security,—,,,—,El sistema deberá permitir al usuario firmar un documento
+DOSSPRE,dosspre_0431,2,—,Security,Security,,,—,El sistema deberá ser capaz de capturar paquetes de datos
+DOSSPRE,dosspre_0437,2,—,Security,Security,,,—,El sistema debe permitir la escalabilidad para poder realizar modificaciones legítimas de los datos de usuario.
+DOSSPRE,dosspre_0439,2,Security,—,—,,,Security,El sistema deberá ser capaz de bloquear cualquier detección ilegítima con el fin de utilizar de manera eficiente los recursos del sistema.
+DOSSPRE,dosspre_0440,2,—,Security,Security,,,—,El sistema deberá ser capaz de minimizar los falsos positivos y los falsos negativos.
+DOSSPRE,dosspre_0452,2,Security,—,—,,,Security,El sistema deberá permitir que un usuario se registre y acceda al sistema en nombre del receptor de sangre.
+DOSSPRE,dosspre_0475,2,—,Security,Security,,,—,El sistema deberá poder asignar a un examinador una ruta que deberá seguir una vez que haya finalizado la prueba de un alumno de autoescuela en el recinto.
+DOSSPRE,dosspre_0492,2,Security,—,Security,,,—,El sistema debería ser capaz de comparar la huella facial actual con las huellas faciales de la base de datos.
+DOSSPRE,dosspre_0493,2,Security,Security,—,,,—,El sistema debería ser capaz de cotejar el identificador de la tarjeta o etiqueta RFID con el identificador facial o personal del usuario para conceder el acceso.
+DOSSPRE,dosspre_0500,2,Security,Security,—,,,—,"El sistema deberá incorporar controles adecuados para las validaciones de la entrada del usuario y la gestión de la configuración, con el fin de impedir la manipulación de software."
+DOSSPRE,dosspre_0502,2,Security,—,Security,,,—,El sistema deberá permitir el registro de eventos para cada actividad de los usuarios.
+DOSSPRE,dosspre_0505,2,—,Security,Security,,,—,"En este sistema, el sistema RFID debería estar vinculado al sistema de reconocimiento facial, de modo que funcione como un único sistema de seguridad de control de acceso. Funcionalidad"
+DOSSPRE,dosspre_0511,2,—,—,Security,,,Security,El sistema debe alertar al usuario sobre actividades maliciosas y recomendarle las medidas que debe tomar.
+DOSSPRE,dosspre_0517,2,Security,—,—,,,Security,"El sistema deberá detectar ataques de denegación de servicio, incluyendo sobrecargas del servicio, tormentas de difusión y también inundaciones de mensajes."
+DOSSPRE,dosspre_0520,2,—,Security,Security,,,—,El sistema deberá supervisar y realizar el escaneo del host
+DOSSPRE,dosspre_0523,2,—,—,Security,,,Security,El sistema deberá permitir al usuario salir del programa una vez que este se haya iniciado.
+DOSSPRE,dosspre_0536,2,Security,—,—,,,Security,El sistema no deberá permitir la ingeniería inversa de su código fuente.
+DOSSPRE,dosspre_0544,2,Security,—,—,,,Security,El sistema deberá permitir al usuario incrustar el mensaje cifrado y recuperarlo de la imagen mediante la técnica LBS.
+DOSSPRE,dosspre_0556,2,Security,—,—,,,Security,El sistema deberá ser capaz de detectar mensajes de spam y enviarlos a la carpeta de spam en tiempo real.
+DOSSPRE,dosspre_0569,2,—,Security,—,,,Security,El sistema contará con una página de inicio que se encargará de realizar la redirección del usuario a la página deseada; esta puede ser una página de inicio de sesión en la que el usuario acceda a su cuenta de correo electrónico o una página de registro en la que el usuario cree una cuenta de correo electrónico.
+DOSSPRE,dosspre_0570,2,—,—,Security,,,Security,"El sistema deberá disponer de una página de registro para recopilar y verificar los datos del nuevo usuario, con el fin de comprobar si la información facilitada cumple con los requisitos del sistema."
+DOSSPRE,dosspre_0572,2,Security,Security,—,,,—,"El sistema deberá contar con un campo opcional de correo electrónico para la recuperación; en caso de que se olvide la contraseña, se enviará a ese correo electrónico un enlace de restablecimiento con las instrucciones correspondientes."
+DOSSPRE,dosspre_0594,2,Security,—,Security,,,—,El sistema debería ser capaz de identificar y detectar los errores en las entradas del usuario.
+DOSSPRE,dosspre_0595,2,Security,—,—,,,Security,El sistema no deberá permitir la introducción de datos de tipo incorrecto.
+DOSSPRE,dosspre_0603,2,Security,Security,—,,,—,El sistema deberá exigir una contraseña para el inicio de sesión en los routers del proveedor.
+DOSSPRE,dosspre_0611,2,—,—,Security,,,Security,El sistema deberá disponer de una base de datos para almacenar las cuentas de usuario y los datos de los usuarios registrados.
+DOSSPRE,dosspre_0612,2,Security,—,—,,,Security,El sistema deberá permitir la consulta de los usuarios registrados si así lo solicita el servidor de autenticación.
+DOSSPRE,dosspre_0631,2,Security,—,—,,,Security,El sistema deberá ser capaz de analizar la vulnerabilidad detectada.
+DOSSPRE,dosspre_0632,2,Security,Security,—,,,—,El sistema deberá ser capaz de identificar una tasa baja de falsos positivos y aceptable.
+DOSSPRE,dosspre_0635,2,Security,—,—,,,Security,"El sistema tendrá una tasa baja de falsos positivos, de modo que pueda identificar correctamente las alertas de falsos positivos y diferenciarlas de las que indican una vulnerabilidad real."
+DOSSPRE,dosspre_0648,2,Security,—,Security,,,—,El reproductor del sistema se encargará del cálculo de hash para los nombres de las partes recortadas.
+DOSSPRE,dosspre_0653,2,—,Security,Security,,,—,El reproductor del sistema deberá reorganizar correctamente las partes de las canciones recortadas aleatoriamente.
+DOSSPRE,dosspre_0663,2,—,Security,Security,,,—,El sistema deberá permitir que un usuario cree una cuenta.
+DOSSPRE,dosspre_0666,2,—,Security,Security,,,—,El sistema deberá generar un informe de supresión.
+DOSSPRE,dosspre_0669,2,—,Security,Security,,,—,El sistema deberá realizar un análisis de la carga útil del tráfico de red en toda la red de la organización.
+DOSSPRE,dosspre_0670,2,Security,—,—,,,Security,El sistema deberá analizar y registrar las firmas de paquetes sospechosos y detectar una anomalía si los datos de los paquetes siguientes coinciden con las firmas registradas relacionadas con amenazas.
+DOSSPRE,dosspre_0678,2,—,Security,Security,,,—,"El sistema deberá proporcionar marcas de agua digitales invisibles diseñadas mediante la transformación coseno discreta, que integra factores de cálculos complejos y robustez."
+DOSSPRE,dosspre_0683,2,Security,—,—,,,Security,"En caso de que una imagen con marca de agua sea enviada dos o más veces por diferentes autores, el administrador deberá poder verificar quién es el propietario legítimo de la imagen para proteger los derechos de autor."
+DOSSPRE,dosspre_0696,2,Security,—,—,,,Security,El sistema deberá obtener automáticamente una imagen forense de la memoria principal de la máquina virtual comprometida en cuanto se detecte una intrusión grave.
+DOSSPRE,dosspre_0706,2,Security,—,—,,,Security,El sistema deberá proporcionar control de acceso a la interfaz de usuario.
+DOSSPRE,dosspre_0727,2,Security,—,Security,,,—,"El sistema deberá contar con medidas de seguridad contra las amenazas ambientales, lo cual constituye una de sus funciones principales."
+DOSSPRE,dosspre_0728,2,—,—,Security,,,Security,"El sistema puede utilizarse en otras plataformas, como circuitos de conmutación, o integrarse en sistemas de seguridad doméstica."
+DOSSPRE,dosspre_0731,2,Security,—,Security,,,—,"El sistema deberá responder rápidamente ante las intrusiones, con el fin de contribuir a frenar la gravedad de los daños o a mitigar el riesgo."
+DOSSPRE,dosspre_0743,2,Security,—,—,,,Security,"El sistema deberá estar protegido contra fallos deliberados e intrusivos procedentes de fuentes internas y externas, ya que cuenta con controles adecuados, tales como las validaciones de la entrada del usuario y medidas contra la manipulación de software."
+DOSSPRE,dosspre_0748,2,—,Security,Security,,,—,"El sistema deberá ser capaz de identificar claramente los protocolos de intercambio de datos pertinentes, así como documentar o hacer referencia a los requisitos técnicos para dicho intercambio, incluyendo: la fuente, los elementos de datos, las estructuras de datos, el método de sincronización y los protocolos."
+DOSSPRE,dosspre_0761,2,—,Security,Security,,,—,"La interfaz web se ha desarrollado utilizando CSS y Bootstrap, lo que permite utilizar el sistema en teléfonos móviles."
+DOSSPRE,dosspre_0763,2,—,Security,Security,,,—,"El PDP reduce el tiempo y el esfuerzo computacional que se necesitarían si los propietarios de los datos tuvieran que descargarlos y, a continuación, comprobar manualmente si han sido modificados."
+DOSSPRE,dosspre_0774,2,Security,Security,—,,,—,El sistema deberá poder mostrar una sección en la que se indique la última vez que un usuario inició sesión en el sistema y un resumen de las actividades que realizó en el sistema tras iniciar sesión.
+DOSSPRE,dosspre_0781,2,Security,Security,—,,,—,El sistema deberá permitir que el usuario gestione su propia contraseña.
+DOSSPRE,dosspre_0796,2,—,—,Security,,,Security,PlutoMail ofrece una rápida puesta en marcha y una alta tasa de detección de spam mediante el análisis bayesiano y otros métodos: no requiere configuración y presenta una tasa baja de falsos positivos gracias a su lista blanca automática.
+DOSSPRE,dosspre_0815,2,Security,Security,—,,,—,El sistema deberá permitir al radiólogo realizar el cifrado y subir las imágenes a la nube.
+DOSSPRE,dosspre_0828,2,—,Security,Security,,,—,El sistema deberá permitir a los usuarios realizar un seguimiento de la evolución de los casos notificados anteriormente.
+DOSSPRE,dosspre_0850,2,Security,—,—,,,Security,"El software es crítico para la seguridad y se utiliza como última línea de defensa frente a ataques, ya que los defectos en el software crítico para la seguridad pueden provocar graves interrupciones del servicio o tiempos de inactividad del servidor."
+DOSSPRE,dosspre_0853,2,—,Security,Security,,,—,"El sistema no interactúa de forma continua con la base de datos, sino que solo consulta la información de los estudiantes en la base de datos de la universidad cuando el administrador lo solicita."
+DOSSPRE,dosspre_0894,2,—,Security,Security,,,—,El sistema deberá poder aceptar datos de proyectos anteriores para el proceso de aprendizaje.
+DOSSPRE,dosspre_0925,2,—,Security,—,,,Security,El sistema deberá ofrecer un escáner de vulnerabilidades de scripts SQL y XSS para aplicaciones web seguras.
+DOSSPRE,dosspre_0929,2,—,Security,Security,,,—,"El sistema deberá informar de los resultados, tras detectar y analizar las vulnerabilidades."
+DOSSPRE,dosspre_0930,2,Security,—,—,,,Security,"El sistema deberá verificar el certificado SSL de un servidor web determinado para asegurarse de que está correctamente instalado, es válido, es de confianza y no da lugar a ningún error para ninguno de los usuarios."
+DOSSPRE,dosspre_0931,2,Security,Security,—,,,—,"El sistema se conecta al servidor de aplicaciones web y muestra los resultados de la conexión SSL, incluyendo qué certificado SSL está instalado y si este proporciona los certificados intermedios correctos."
+DOSSPRE,dosspre_0936,2,Security,—,—,,,Security,El sistema garantiza que el usuario esté debidamente autenticado en cada acceso al sistema.
+DOSSPRE,dosspre_0952,2,—,Security,Security,,,—,El sistema deberá permitir la verificación y validación de los documentos.
+DOSSPRE,dosspre_0954,2,Security,—,Security,,,—,El sistema deberá permitir la replicación múltiple de datos.
+DOSSPRE,dosspre_0972,2,—,—,Security,,,Security,El sistema se comunicará con la API de Django para obtener la dirección de Ethereum correspondiente al identificador nacional introducido.
+DOSSPRE,dosspre_0985,2,Security,—,Security,,,—,El sistema deberá permitir que los datos introducidos en el mismo se cifren antes de enviarse a la instancia de la base de datos en nuestro servidor en la nube para su almacenamiento.
+DOSSPRE,dosspre_0986,2,Security,—,Security,,,—,"El sistema deberá permitir a los usuarios recuperar los datos cuando lo soliciten, incluso en casos de emergencia, en los que dichos datos deberían recuperarse y estar descifrados antes de que el profesional sanitario pueda acceder a ellos."
+DOSSPRE,dosspre_0993,2,Security,—,—,,,Security,El sistema deberá garantizar que los registros del sistema se cifren y se almacenen en la nube como texto cifrado.
+DOSSPRE,dosspre_1001,2,Security,Security,—,,,—,El sistema deberá permitir el reconocimiento facial.
+DOSSPRE,dosspre_1014,2,Security,—,—,,,Security,"El sistema deberá permitir a los usuarios autorizados gestionar sus archivos, es decir, actualizar y eliminar datos de sus cuentas."
+DOSSPRE,dosspre_1040,2,Security,Security,—,,,—,El sistema deberá procesar los datos recibidos y generar un hash MD5 de los mismos.
+DOSSPRE,dosspre_1050,2,Security,—,—,,,Security,El sistema deberá garantizar la confidencialidad de la información personal esencial recopilada en todos los controladores del sistema.
+DOSSPRE,dosspre_1065,2,Security,—,—,,,Security,El sistema deberá permitir que el servidor bancario verifique las credenciales de los usuarios al iniciar sesión durante un breve periodo de tiempo.
+DOSSPRE,dosspre_1089,2,—,—,Security,,,Security,El sistema deberá proporcionar orientación sobre cómo garantizar la seguridad de un archivo.
+DOSSPRE,dosspre_1095,2,Security,—,—,,,Security,El sistema deberá poder bloquear los sitios web que figuren en la base de datos.
+DOSSPRE,dosspre_1104,2,Security,Security,—,,,—,El sistema deberá permitir al administrador realizar modificaciones.
+DOSSPRE,dosspre_1130,2,Security,—,—,,,Security,El sistema deberá permitir al cliente descifrar el contenido de vídeo en un archivo virtual y enviar la ubicación a los reproductores multimedia.
+DOSSPRE,dosspre_1136,2,Security,—,—,,,Security,El sistema deberá denegar el acceso a usuarios no autorizados para que no puedan redistribuir la copia que hayan adquirido legalmente.
+DOSSPRE,dosspre_1137,2,Security,Security,—,,,—,El sistema deberá distribuir copias auténticas de cada vídeo suministrado.
+DOSSPRE,dosspre_1150,2,—,Security,Security,,,—,"El sistema deberá garantizar que la agencia de marcas de agua digitales pueda realizar el despacho de agentes, recopilar y comunicar la información procesada procedente de los hosts visitados dentro de la red."
+DOSSPRE,dosspre_1157,2,Security,—,—,,,Security,El sistema deberá proporcionar autenticación garantizando que los agentes comparen las claves de marca de agua de las imágenes detectadas con las claves ya almacenadas en la base de datos de la agencia.
+DOSSPRE,dosspre_1208,2,Security,—,—,,,Security,El sistema deberá generar una carga útil cifrada y la firma del mensaje.
+DOSSPRE,dosspre_1221,2,Security,—,—,,,Security,El sistema deberá ofrecer capacidades de gestión de errores.
+DOSSPRE,dosspre_1228,2,—,Security,Security,,,—,El sistema deberá ser ligero
+DOSSPRE,dosspre_1236,2,Security,—,Security,,,—,"El sistema deberá recopilar y analizar los datos que el niño esté escribiendo y, si detecta determinadas palabras clave o una secuencia continua de palabrotas, debería enviar una alerta por mensaje de texto a los padres."
+DOSSPRE,dosspre_1246,2,Security,—,—,,,Security,El sistema deberá permitir que un usuario que tenga una cuenta de Twitter cree una aplicación para tener acceso a los tokens.
+DOSSPRE,dosspre_1254,2,Security,Security,—,,,—,El sistema deberá ser capaz de detectar y combatir tanto el malware existente como el nuevo.
+DOSSPRE,dosspre_1256,2,Security,Security,—,,,—,El sistema deberá disponer de un analizador que ejecute los archivos de malware para inspeccionar el tipo
+DOSSPRE,dosspre_1257,2,—,Security,—,,,Security,El analizador de malware del sistema deberá enviar todos los archivos y sus registros al servidor principal al finalizar el proceso de análisis.
+DOSSPRE,dosspre_0005,1,—,Security,—,,,—,El sistema deberá generar un informe de las vulnerabilidades detectadas y analizadas.
+DOSSPRE,dosspre_0013,1,Security,—,Security,,,Security,El sistema deberá permitir al usuario generar sus claves públicas y privadas ECC. Estas claves se utilizarán para el cifrado de la clave de cifrado AES y también para el PDP.
+DOSSPRE,dosspre_0015,1,—,Security,—,,,—,"El sistema deberá proporcionar una plataforma que permita al usuario cargar archivos para su almacenamiento y, asimismo, recuperarlos descargándolos cuando sea necesario."
+DOSSPRE,dosspre_0030,1,Security,Security,Security,,,—,El sistema deberá mostrar un informe con los resultados detallados obtenidos de los archivos enviados para su análisis e indicará claramente qué archivos son maliciosos y cuáles son inofensivos.
+DOSSPRE,dosspre_0043,1,—,Security,—,,,—,El sistema deberá adaptarse a todo tipo de aplicaciones.
+DOSSPRE,dosspre_0049,1,—,Security,—,,,—,El sistema deberá permitir al administrador incorporar la marca de agua digital invisible cada vez que un autor envíe su obra.
+DOSSPRE,dosspre_0057,1,—,—,—,,,Security,El sistema deberá poder recuperar antecedentes penales de la base de datos a partir de las fotografías tomadas
+DOSSPRE,dosspre_0066,1,Security,Security,—,,,Security,"El sistema deberá ser capaz de registrar el nombre de host del nodo malicioso, así como el SSID de la red a la que está conectado, con el fin de determinar desde qué zona del campus se está llevando a cabo el ataque."
+DOSSPRE,dosspre_0078,1,—,—,Security,,,—,El sistema deberá ser capaz de detectar una figura que se aproxime.
+DOSSPRE,dosspre_0086,1,—,—,Security,,,—,"El sistema deberá garantizar una alta disponibilidad de la aplicación siempre que el usuario la necesite, por lo que se establecerá un módulo de recuperación en caso de pérdida del teléfono móvil."
+DOSSPRE,dosspre_0121,1,—,Security,—,,,—,El sistema deberá proporcionar estadísticas de reputación de la red de confianza.
+DOSSPRE,dosspre_0123,1,—,—,Security,,,—,El sistema deberá gestionar los perfiles de usuario.
+DOSSPRE,dosspre_0127,1,Security,Security,—,,,Security,El sistema deberá permitir un fallo seguro siempre que se produzca un fallo.
+DOSSPRE,dosspre_0129,1,—,—,Security,,,—,El sistema deberá cumplir con las directrices contra el blanqueo de capitales de Zimbabue.
+DOSSPRE,dosspre_0149,1,Security,Security,—,,,Security,"El sistema deberá permitir la supervisión del tráfico de red en tiempo real mediante la captura del tráfico web entrante y saliente de TCP, HTTP(S) y TLS, con el fin de correlacionarlo con la lista negra de cryptojacking configurada."
+DOSSPRE,dosspre_0153,1,—,—,Security,,,—,El sistema deberá generar una notificación emergente en la que se informe de la actividad de criptojacking detectada.
+DOSSPRE,dosspre_0159,1,—,—,Security,,,—,El sistema no debería consumir una cantidad significativamente elevada de recursos de la CPU.
+DOSSPRE,dosspre_0177,1,—,—,—,,,Security,"El sistema deberá garantizar que las interrupciones en el servicio de Internet no afecten a su disponibilidad, ya que se podrá seguir concediendo o denegando el acceso al sistema a cualquier usuario."
+DOSSPRE,dosspre_0182,1,—,—,Security,,,—,El sistema se mantendrá mediante actualizaciones frecuentes.
+DOSSPRE,dosspre_0184,1,Security,Security,—,,,Security,El sistema deberá realizar una verificación para determinar los derechos de usuario y de acceso.
+DOSSPRE,dosspre_0188,1,—,—,Security,,,—,El sistema deberá poder mostrar todas las unidades de negocio registradas antes de que el usuario realice una selección.
+DOSSPRE,dosspre_0189,1,—,Security,—,,,—,El sistema deberá poder generar informes a partir de la actividad registrada en el mismo.
+DOSSPRE,dosspre_0191,1,—,Security,—,,,—,El sistema deberá permitir al usuario acceder a los datos o recursos en la ubicación indicada y en el formato adecuado en todo momento.
+DOSSPRE,dosspre_0194,1,—,—,—,,,Security,El sistema deberá permitir introducir el nombre de la persona cuyos datos y PII se vayan a buscar.
+DOSSPRE,dosspre_0195,1,—,—,Security,,,—,El sistema deberá permitir el acceso de la aplicación web a los perfiles públicos de las redes sociales.
+DOSSPRE,dosspre_0211,1,Security,Security,—,,,Security,El sistema debería conservar el historial de las transacciones en una base de datos segura.
+DOSSPRE,dosspre_0213,1,—,Security,—,,,—,El sistema debería cumplir con la legislación aplicable a la tecnología que se vaya a utilizar.
+DOSSPRE,dosspre_0218,1,—,—,Security,,,—,El sistema debería señalar una reclamación cuya puntuación supere el umbral
+DOSSPRE,dosspre_0226,1,Security,Security,—,,,Security,Los permisos de acceso a los datos del sistema solo deberían ser modificados por el administrador de datos del sistema.
+DOSSPRE,dosspre_0227,1,Security,Security,Security,,,—,El sistema debería desconectarse automáticamente tras un periodo determinado de inactividad.
+DOSSPRE,dosspre_0233,1,—,—,Security,,,—,El sistema deberá garantizar que las acciones que no se puedan deshacer requieran una confirmación antes de que se lleven a cabo.
+DOSSPRE,dosspre_0238,1,—,—,Security,,,—,"El sistema deberá garantizar que la interfaz se mueva con rapidez, al ritmo de los clics del ratón del usuario y, siempre que sea posible."
+DOSSPRE,dosspre_0240,1,Security,Security,Security,,,—,El sistema deberá permitir a los usuarios introducir sus nombres de usuario y contraseñas.
+DOSSPRE,dosspre_0243,1,Security,—,Security,,,Security,El sistema deberá permitir que el usuario sea redirigido a la página de opciones o de vuelta a la página de inicio de sesión para volver a intentarlo.
+DOSSPRE,dosspre_0244,1,Security,—,Security,,,Security,Este sistema permite verificar las credenciales de inicio de sesión de los usuarios comparándolas con las almacenadas en el sistema.
+DOSSPRE,dosspre_0247,1,Security,—,Security,,,Security,"El sistema deberá garantizar que el usuario acceda al sistema si las credenciales son válidas; en caso contrario, deberá redirigir al usuario a la página de inicio de sesión, donde debería introducir otro número de licencia o número de matrícula del vehículo."
+DOSSPRE,dosspre_0253,1,—,Security,—,,,—,El sistema deberá permitir al usuario consultar la base de datos
+DOSSPRE,dosspre_0255,1,—,Security,—,,,—,El sistema deberá poder cerrar la sesión
+DOSSPRE,dosspre_0269,1,Security,Security,Security,,,—,El sistema nunca mostrará la contraseña de un usuario. Siempre se mostrará con caracteres especiales que representen los caracteres tecleados.
+DOSSPRE,dosspre_0271,1,—,—,—,,,Security,El sistema debería ser capaz de capturar archivos de registro de Windows independientemente del sistema operativo Windows.
+DOSSPRE,dosspre_0276,1,—,—,Security,,,—,El sistema deberá tardar poco tiempo en responder a un comando para realizar el cifrado y el descifrado de datos.
+DOSSPRE,dosspre_0287,1,Security,—,Security,,,Security,El sistema deberá permitir la captura de registros específicos de los ordenadores y su integración sin fallos con la aplicación web mediante mecanismos de seguridad como HMAC y PGP.
+DOSSPRE,dosspre_0292,1,—,Security,—,,,—,El sistema deberá facilitar la gestión de casos para la ZRP.
+DOSSPRE,dosspre_0294,1,Security,Security,—,,,Security,El sistema deberá mostrar los registros de la actividad de los investigadores.
+DOSSPRE,dosspre_0296,1,Security,Security,Security,,,—,El sistema utiliza procedimientos almacenados.
+DOSSPRE,dosspre_0302,1,—,—,Security,,,—,"El sistema se basará en una arquitectura cliente-servidor, por lo que los recursos se obtendrán de dos fuentes diferentes en cualquier momento dado, lo que aumentará la eficiencia en la utilización de los recursos y reducirá los cuellos de botella del sistema."
+DOSSPRE,dosspre_0322,1,—,Security,—,,,—,El sistema debería ser capaz de llevar a cabo cada tarea solicitada por el usuario lo más rápidamente posible.
+DOSSPRE,dosspre_0324,1,—,—,Security,,,—,"El sistema debería ser capaz de proporcionar datos correspondientes al número máximo actual de etiquetas —dos mil en la actualidad— durante un periodo de treinta días, en el formato que el usuario decida."
+DOSSPRE,dosspre_0336,1,—,Security,—,,,—,El servicio del sistema debe estar siempre disponible cuando se necesite.
+DOSSPRE,dosspre_0341,1,Security,—,Security,,,Security,El sistema deberá permitir el uso de contraseñas y nombres de usuario para el acceso a los datos y su modificación.
+DOSSPRE,dosspre_0344,1,—,—,Security,,,—,El sistema permite recuperar rápidamente la información.
+DOSSPRE,dosspre_0350,1,—,—,—,,,Security,El sistema deberá permitir que un usuario pueda recuperar información de la base de datos.
+DOSSPRE,dosspre_0354,1,—,—,Security,,,—,El sistema deberá permitir al usuario utilizar Bluetooth para activar un smartphone que se comunique con un ordenador portátil a través de una conexión inalámbrica de corto alcance.
+DOSSPRE,dosspre_0357,1,—,Security,—,,,—,"El sistema cuenta con muy pocas interfaces, por lo que no confunde a los usuarios a medida que se adentran en él."
+DOSSPRE,dosspre_0359,1,—,—,—,,,Security,El sistema debería almacenar la información básica de los pacientes y los permisos en un servidor central.
+DOSSPRE,dosspre_0368,1,—,—,Security,,,—,El sistema deberá permitir el acceso a los profesionales sanitarios a través de una aplicación de software basada en pantalla.
+DOSSPRE,dosspre_0369,1,Security,Security,Security,,,—,El sistema deberá permitir que los servidores de cada instalación no se vean afectados en caso de fallo del servidor central.
+DOSSPRE,dosspre_0373,1,Security,Security,—,,,Security,El sistema deberá proporcionar registros de auditoría cuando sea necesario.
+DOSSPRE,dosspre_0377,1,Security,—,Security,,,Security,El sistema debería ser capaz de bloquear el tráfico hacia y desde la red que se identifique como potencialmente malicioso.
+DOSSPRE,dosspre_0390,1,—,—,Security,,,—,La interfaz de usuario incluye una interfaz gráfica de usuario (GUI) que contiene todos los complementos básicos que conforman las funciones básicas del programa.
+DOSSPRE,dosspre_0393,1,Security,Security,Security,,,—,"El sistema mostrará mensajes de alerta en caso de que se detecte una anomalía y, además, mostrará un panel con los registros de eventos de la anomalía detectada."
+DOSSPRE,dosspre_0396,1,—,—,—,,,Security,"El sistema deberá disponer de capacidad de creación de imágenes para realizar una copia de la información contenida en el dispositivo móvil, que se utilizará durante el proceso forense como fuente de datos de prueba."
+DOSSPRE,dosspre_0407,1,—,Security,—,,,—,El sistema deberá garantizar la portabilidad mediante la aplicación de un nivel de abstracción relativamente generalizado que debería interponerse entre las interfaces del sistema y la lógica de la aplicación.
+DOSSPRE,dosspre_0432,1,—,—,—,,,Security,El sistema deberá ser capaz de desfragmentar los paquetes capturados.
+DOSSPRE,dosspre_0444,1,—,—,Security,,,—,La interfaz de usuario del sistema deberá constar de una parte front-end y una parte back-end SQL que contribuyan a una excelente experiencia de usuario.
+DOSSPRE,dosspre_0447,1,—,Security,—,,,—,El sistema deberá permitir que el análisis de la sangre se realice en el banco de sangre y que los resultados se introduzcan en el sistema.
+DOSSPRE,dosspre_0448,1,—,—,Security,,,—,El sistema deberá poder aplazar a los donantes no aptos e informar a los donantes aptos mediante SMS.
+DOSSPRE,dosspre_0449,1,—,—,Security,,,—,El sistema deberá poder mantener un inventario de los identificadores y los grupos sanguíneos de las donaciones de sangre.
+DOSSPRE,dosspre_0450,1,—,—,—,,,Security,"El sistema deberá permitir que, cuando el médico o el hospital realicen una solicitud, se abra una sesión y se genere una clave de confirmación que se envíe al médico o al paciente por correo electrónico, la cual utilizarán tras recibir la sangre solicitada correcta."
+DOSSPRE,dosspre_0455,1,Security,Security,Security,,,—,El sistema deberá ser capaz de realizar la validación de entradas
+DOSSPRE,dosspre_0461,1,—,Security,—,,,—,"El sistema deberá ser capaz de notificar a las partes implicadas el incidente clínico, incluso cuando se produzca un fallo."
+DOSSPRE,dosspre_0463,1,—,Security,—,,,—,"El sistema deberá garantizar que, en caso de crisis, el paciente solo tenga que pulsar el botón de encendido tres veces, simplificando así la forma en que el paciente interactúa con el sistema."
+DOSSPRE,dosspre_0465,1,Security,—,Security,,,Security,"El sistema deberá resistir cualquier uso no autorizado e ilícito, tanto si se trata de una acción accidental como intencionada."
+DOSSPRE,dosspre_0468,1,—,—,Security,,,—,"Los datos del sistema se integran perfectamente con la aplicación web, ya que ambos sistemas utilizan la misma base de datos para compartir información."
+DOSSPRE,dosspre_0471,1,—,—,—,,,Security,"El sistema deberá ser capaz de crear y aplicar prácticas de codificación seguras a lo largo de todo el proceso de desarrollo, identificando de forma rigurosa el origen de los datos requeridos y reconociendo los elementos y estructuras de datos necesarios para el intercambio."
+DOSSPRE,dosspre_0476,1,—,—,—,,,Security,"El sistema deberá poder generar un registro del número de aprobados y suspendidos, en relación con el examinador."
+DOSSPRE,dosspre_0494,1,Security,—,Security,,,Security,El sistema debería ser capaz de denegar el acceso a la persona que presente una etiqueta que pertenezca a otra persona con una probabilidad elevada.
+DOSSPRE,dosspre_0496,1,—,—,Security,,,—,Un sistema debería diseñarse teniendo en cuenta la psicología y la fisiología de los usuarios.
+DOSSPRE,dosspre_0507,1,—,—,Security,,,—,El sistema deberá permitir a los usuarios interactuar con el sistema de control de acceso basado en RFID y reconocimiento facial.
+DOSSPRE,dosspre_0513,1,—,—,—,,,Security,"El sistema deberá garantizar que, en caso de que se detecten nuevos atributos, se active el módulo de detección de anomalías, el cual, basándose en la información de la que ya dispone el sistema, realice una predicción sobre los nuevos datos."
+DOSSPRE,dosspre_0534,1,—,Security,—,,,—,"Se puede confiar en el sistema para la detección de spam incluso tras un uso prolongado, ya que los datos utilizados para entrenar el clasificador son muy amplios."
+DOSSPRE,dosspre_0540,1,Security,Security,Security,,,—,El sistema deberá enviar una contraseña de un solo uso al teléfono del usuario para completar el proceso de inicio de sesión.
+DOSSPRE,dosspre_0545,1,—,—,—,,,Security,El sistema funciona correctamente en entornos web y permite el inicio de sesión de varios clientes y la comunicación al mismo tiempo.
+DOSSPRE,dosspre_0551,1,—,Security,—,,,—,El sistema deberá permitir la inserción o la recuperación de mensajes de la imagen sin que se produzcan errores por parte del usuario.
+DOSSPRE,dosspre_0563,1,—,—,Security,,,—,"El sistema entregará los correos electrónicos siempre que haya conexión a Internet para recibirlos, con tiempos de inactividad mínimos."
+DOSSPRE,dosspre_0571,1,Security,Security,—,,,Security,"El sistema deberá poder garantizar que la información facilitada incluya un nombre de usuario único, una contraseña y algunos datos personales necesarios para verificar que el usuario cumple los requisitos para crear una cuenta."
+DOSSPRE,dosspre_0574,1,—,Security,—,,,—,"El buzón del sistema se encarga de mostrar los correos electrónicos del usuario que ha iniciado sesión, así como todos los correos no deseados, y contará con un panel de control para navegar por los correos."
+DOSSPRE,dosspre_0577,1,Security,Security,—,,,Security,El sistema deberá proporcionar a todos los usuarios internos una copia de seguridad de los datos operativos y de transacción.
+DOSSPRE,dosspre_0583,1,Security,Security,—,,,Security,Cada usuario debe tener configurado un nombre de usuario único y una contraseña que se pueda cambiar cuando sea necesario.
+DOSSPRE,dosspre_0584,1,Security,—,Security,,,Security,El superadministrador del sistema debería poder conceder privilegios de acceso a los usuarios y restringir el acceso a la información y los datos que los usuarios pueden consultar o modificar en cualquier momento.
+DOSSPRE,dosspre_0593,1,Security,Security,Security,,,—,Uso de una base de datos central que permita la captura y la manipulación de datos en tiempo real para facilitar el acceso a la información de los ordenadores portátiles desde cualquier ordenador conectado a la base de datos.
+DOSSPRE,dosspre_0598,1,Security,—,Security,,,Security,El sistema debe contar con una función de inicio de sesión que limite el uso individual a aquellas funciones a las que el usuario necesite acceder en función de sus responsabilidades.
+DOSSPRE,dosspre_0599,1,Security,—,Security,,,Security,"Se debería realizar una copia de seguridad de la base de datos del sistema de forma continua, al menos una vez cada cuatro horas, con el fin de minimizar la pérdida de datos en caso de un fallo catastrófico."
+DOSSPRE,dosspre_0614,1,—,Security,—,,,—,El sistema deberá permitir al usuario modificar el PIN temporal recibido del sistema.
+DOSSPRE,dosspre_0615,1,—,Security,—,,,—,"El sistema se situará entre el cliente y el servidor; no obstante, forma parte de la arquitectura del servidor."
+DOSSPRE,dosspre_0626,1,—,Security,—,,,—,"El sistema permitirá al usuario introducir en el navegador la URL del servidor local y el puerto del panel de administración, tras lo cual se procederá al inicio de sesión. Esto lo proporciona el marco de trabajo Django."
+DOSSPRE,dosspre_0633,1,Security,Security,Security,,,—,El sistema deberá ser capaz de verificar el certificado SSL.
+DOSSPRE,dosspre_0638,1,Security,—,Security,,,Security,"El sistema debería ser capaz de diagnosticar con precisión las vulnerabilidades reales, cuando estas existan, basándose en la realización de experimentos basados en fórmulas."
+DOSSPRE,dosspre_0646,1,—,—,Security,,,—,El programa de descarga del sistema deberá permitir la descarga de contenidos desde el servidor (tienda de música).
+DOSSPRE,dosspre_0649,1,—,—,Security,,,—,El reproductor del sistema rellena la tabla de consulta con los datos necesarios.
+DOSSPRE,dosspre_0651,1,—,—,—,,,Security,El reproductor del sistema deberá enviar los contenidos a la carpeta oculta.
+DOSSPRE,dosspre_0652,1,—,—,—,,,Security,El reproductor del sistema deberá localizar y recuperar los contenidos necesarios de la carpeta oculta.
+DOSSPRE,dosspre_0656,1,—,Security,—,,,—,El sistema se compone de diferentes módulos que funcionan de forma coordinada para alcanzar el objetivo deseado.
+DOSSPRE,dosspre_0660,1,—,Security,—,,,—,El sistema deberá ser capaz de cumplir la función para la que fue diseñado sin fallos.
+DOSSPRE,dosspre_0661,1,Security,—,Security,,,Security,La capacidad del sistema para generar una salida recortada impedirá que un atacante (pirata) tenga acceso a un único archivo de canción completo a partir de cualquier punto.
+DOSSPRE,dosspre_0662,1,Security,—,Security,,,Security,"El reproductor ocultará los archivos recortados de cualquier contacto directo con el usuario o un atacante, impidiendo así de forma fiable cualquier intercambio ilegal de archivos."
+DOSSPRE,dosspre_0668,1,Security,Security,—,,,Security,El sistema deberá permitir a los usuarios autorizados modificar los datos de los pacientes.
+DOSSPRE,dosspre_0673,1,—,—,Security,,,—,El sistema deberá permitir la creación y la edición de los datos de los usuarios.
+DOSSPRE,dosspre_0674,1,—,Security,—,,,—,El sistema deberá permitir la gestión de pacientes.
+DOSSPRE,dosspre_0682,1,Security,—,Security,,,Security,El sistema permitirá que un autor que desee proteger su obra contra el uso no autorizado suba una imagen para incrustar la marca de agua digital invisible cada vez que envíe una obra de arte.
+DOSSPRE,dosspre_0687,1,Security,Security,—,,,Security,El principio de autenticación del sistema se aplica en el sentido de que el sistema notifica si hay o no una marca de agua en la imagen.
+DOSSPRE,dosspre_0693,1,—,—,—,,,Security,El sistema deberá almacenar los datos de tráfico capturados durante un período predeterminado.
+DOSSPRE,dosspre_0699,1,—,—,—,,,Security,"El sistema deberá proporcionar informes sobre las intrusiones, su clasificación y las medidas adoptadas."
+DOSSPRE,dosspre_0700,1,—,Security,—,,,—,El sistema deberá proporcionar informes sobre el éxito o el fracaso de la adquisición de imágenes forenses.
+DOSSPRE,dosspre_0711,1,Security,Security,—,,,Security,"El sistema deberá contar con módulos de cifrado y descifrado para lograr una seguridad mayor y mejorada, con el fin de evitar, en general, las violaciones de la privacidad."
+DOSSPRE,dosspre_0712,1,Security,Security,—,,,Security,El sistema deberá proporcionar filtrado por tipo de archivo para evitar sobrecargar el flujo normal de información con archivos innecesarios.
+DOSSPRE,dosspre_0716,1,Security,—,Security,,,Security,El sistema ofrece poco margen para retrasos en la transmisión de datos y fallos del sistema gracias a los procedimientos de gestión de errores y a los mecanismos de retroalimentación.
+DOSSPRE,dosspre_0720,1,—,—,Security,,,—,Los archivos ejecutables del sistema pueden subirse a servicios de almacenamiento en línea y pueden ser descargados y utilizados por el siguiente usuario desde el otro extremo.
+DOSSPRE,dosspre_0722,1,—,—,Security,,,—,"El sistema deberá integrar las instrucciones, los procedimientos o la guía de operaciones en los productos finales, de modo que, cuando alguien no consiga realizar una determinada acción, tenga un lugar al que acudir para consultar."
+DOSSPRE,dosspre_0732,1,—,—,Security,,,—,"El sistema está diseñado para ofrecer al usuario numerosas opciones, entre las que se incluye la posibilidad de cambiar"
+DOSSPRE,dosspre_0733,1,Security,—,Security,,,Security,"El sistema puede configurarse para funcionar con una cámara, un ordenador y otro sistema de control de acceso con el fin de mejorar la autenticación de múltiples factores."
+DOSSPRE,dosspre_0739,1,—,—,—,,,Security,El sistema deberá ser capaz de reconocer los rostros detectados en la imagen.
+DOSSPRE,dosspre_0769,1,Security,Security,—,,,Security,"El sistema deberá implementar una combinación de algoritmos criptográficos que sean seguros y que se haya demostrado que son indescifrables con las tecnologías actuales; por lo tanto, el uso conjunto de estos algoritmos refuerza la seguridad del sistema."
+DOSSPRE,dosspre_0770,1,Security,—,Security,,,Security,El sistema propuesto está diseñado para utilizar un sistema de autenticación de usuario de dos factores que garantiza que solo el usuario registrado y legítimo pueda acceder al sistema y cargar o consultar los datos.
+DOSSPRE,dosspre_0771,1,Security,Security,—,,,Security,"El sistema deberá garantizar que, una vez que el titular de la cuenta haya introducido una contraseña de inicio de sesión correcta, reciba una OTP o un código enviado por correo electrónico o al teléfono móvil del propietario de los datos."
+DOSSPRE,dosspre_0779,1,Security,Security,—,,,Security,El sistema deberá permitir que un usuario inicie sesión en el sistema y se autentique.
+DOSSPRE,dosspre_0783,1,—,—,—,,,Security,El sistema deberá permitir al usuario realizar operaciones CRUD sobre los registros.
+DOSSPRE,dosspre_0786,1,Security,Security,—,,,Security,El sistema deberá reducir la incidencia de fallos en el sistema.
+DOSSPRE,dosspre_0788,1,—,—,—,,,Security,El sistema deberá proporcionar redundancia para evitar un único punto de fallo y reducir las interrupciones que puedan dejar el sistema inutilizable.
+DOSSPRE,dosspre_0794,1,—,—,Security,,,—,El sistema deberá permitir que el usuario traslade mensajes a la carpeta de spam mediante la inclusión en la lista negra y a la carpeta de correo legítimo mediante la inclusión en la lista blanca.
+DOSSPRE,dosspre_0795,1,Security,Security,—,,,Security,PlutoMail ofrecerá protección contra el spam a nivel de servidor y eliminará la necesidad de instalar y actualizar software antispam en cada ordenador de sobremesa.
+DOSSPRE,dosspre_0810,1,—,—,Security,,,—,El sistema deberá permitir al usuario ver el correo no deseado.
+DOSSPRE,dosspre_0833,1,—,—,—,,,Security,El sistema deberá limitar el acceso al mismo por parte de la policía únicamente a los agentes que hayan recibido la autorización correspondiente.
+DOSSPRE,dosspre_0836,1,—,Security,—,,,—,"El sistema deberá tener disponibilidad en todo momento, lo que significa que el usuario podrá acceder a él mediante una aplicación en su dispositivo, lo que responde a la preocupación del usuario respecto a la fiabilidad del sistema durante el horario normal de funcionamiento."
+DOSSPRE,dosspre_0854,1,—,—,Security,,,—,La capacidad para hacer las cosas bien dependerá de la definición de las tareas de supervisión.
+DOSSPRE,dosspre_0855,1,Security,Security,Security,,,—,"El software analizará el escaneo de puertos únicamente en el host en el que se vaya a implementar, lo que dedicará toda la atención a una parte de las numerosas políticas de un ordenador."
+DOSSPRE,dosspre_0870,1,—,—,Security,,,—,El sistema debería ser accesible dondequiera que sea necesario. En cualquier momento en que los clientes necesiten realizar una compra
+DOSSPRE,dosspre_0872,1,Security,—,Security,,,Security,"El sistema principal se centra en la seguridad de las transacciones en línea, por lo que es seguro."
+DOSSPRE,dosspre_0874,1,—,—,Security,,,—,El sistema deberá ser capaz de controlar una bomba de agua para la aplicación de agua a los cultivos que se riegan.
+DOSSPRE,dosspre_0891,1,—,—,Security,,,—,El sistema deberá ser capaz de aleatorizar las escenas de tal forma que el usuario no pueda predecir cuál será la siguiente escena.
+DOSSPRE,dosspre_0903,1,—,—,—,,,Security,El sistema deberá conservar los registros de todos los bebés que tenga posteriormente una madre.
+DOSSPRE,dosspre_0917,1,—,—,Security,,,—,El sistema deberá ser capaz de predecir transacciones fraudulentas y no fraudulentas en tiempo real.
+DOSSPRE,dosspre_0918,1,—,Security,—,,,—,El sistema deberá ser capaz de almacenar información sobre las transacciones.
+DOSSPRE,dosspre_0937,1,Security,Security,Security,,,—,El sistema deberá ofrecer al usuario la opción de cifrar y descifrar datos.
+DOSSPRE,dosspre_0944,1,Security,—,Security,,,Security,El sistema deberá ser autoprotector y a prueba de fallos; la gestión de excepciones garantizará que el sistema sea a prueba de fallos y se detenga de forma controlada en caso de error.
+DOSSPRE,dosspre_0946,1,Security,Security,Security,,,—,Los empleados deberán identificarse mediante una contraseña de 6 caracteres.
+DOSSPRE,dosspre_0949,1,—,—,Security,,,—,El sistema deberá calcular el salario de cada empleado al final de cada mes.
+DOSSPRE,dosspre_0950,1,—,—,—,,,Security,El sistema deberá permitir que un cliente se registre
+DOSSPRE,dosspre_0963,1,Security,Security,—,,,Security,El sistema deberá permitir que se realicen cambios de forma autorizada.
+DOSSPRE,dosspre_0965,1,Security,—,Security,,,Security,El sistema deberá permitir el almacenamiento seguro de la información de los clientes.
+DOSSPRE,dosspre_0973,1,—,—,—,,,Security,El sistema deberá crear una transacción que se envíe al protocolo Ethereum.
+DOSSPRE,dosspre_0974,1,Security,Security,—,,,Security,Las firmas digitales de la transacción son validadas por el protocolo Ethereum.
+DOSSPRE,dosspre_0975,1,Security,—,Security,,,Security,Los datos de transacción son validados por el contrato inteligente.
+DOSSPRE,dosspre_0979,1,—,Security,—,,,—,El contrato inteligente emite el miembro del bloque en el que se realizó la minería de la transacción.
+DOSSPRE,dosspre_0981,1,Security,Security,Security,,,—,El sistema deberá permitir al administrador asignar roles a los usuarios.
+DOSSPRE,dosspre_0982,1,—,—,—,,,Security,El sistema deberá aplicar una supervisión en tiempo real de los datos a los que se realiza el acceso.
+DOSSPRE,dosspre_0990,1,—,—,Security,,,—,"El sistema deberá permitir que, a medida que aumente el número de historiales de pacientes con el tiempo, la capacidad del sistema para almacenar dichos historiales también aumente proporcionalmente."
+DOSSPRE,dosspre_0994,1,—,Security,—,,,—,"Los procesos del sistema, como el cifrado y el descifrado, no deben ralentizar el sistema."
+DOSSPRE,dosspre_0997,1,—,—,—,,,Security,Los datos del registro del sistema se conservarán sin que ello suponga una carga para los usuarios.
+DOSSPRE,dosspre_1008,1,Security,Security,—,,,Security,El sistema deberá garantizar la privacidad de los datos de usuario en todo momento.
+DOSSPRE,dosspre_1011,1,Security,Security,—,,,Security,El sistema deberá permitir a los usuarios responder a preguntas sobre su perfil después de que se les haya solicitado que las rellenen en el momento del registro; dichas preguntas se utilizarán como preguntas de seguridad en caso de que se olvide la contraseña.
+DOSSPRE,dosspre_1012,1,—,—,Security,,,—,El sistema deberá permitir a los usuarios subir archivos de datos de cualquier tipo a sus cuentas en la nube con una descripción de al menos 5 palabras.
+DOSSPRE,dosspre_1013,1,Security,Security,Security,,,—,"El sistema permitirá a los usuarios descargar archivos cuando deseen utilizarlos, tras responder correctamente a las preguntas generadas aleatoriamente a partir de sus perfiles."
+DOSSPRE,dosspre_1020,1,Security,Security,Security,,,—,El sistema deberá permitir al estudiante disfrutar de un inicio de sesión único en todos los servicios web de la universidad.
+DOSSPRE,dosspre_1023,1,Security,Security,—,,,Security,El sistema deberá proporcionar una autenticación y autorización seguras de los alumnos mediante el uso de tokens SAML de seguridad que contengan aserciones sobre un sujeto para la comunicación entre partes de confianza.
+DOSSPRE,dosspre_1026,1,—,Security,—,,,—,El sistema deberá distribuir claves para la firma digital RSA.
+DOSSPRE,dosspre_1029,1,—,—,Security,,,—,El sistema deberá detectar un accidente en caso de impacto y enviará automáticamente una alerta (SMS) a un teléfono designado.
+DOSSPRE,dosspre_1037,1,—,—,Security,,,—,Se implementará en el sistema un sistema de geovallas para garantizar que los autobuses no se desvíen de sus rutas programadas.
+DOSSPRE,dosspre_1038,1,—,—,Security,,,—,La función de seguimiento por GPS deberá permitir la gestión de la flota en tiempo real.
+DOSSPRE,dosspre_1039,1,—,Security,—,,,—,El sistema deberá ser capaz de recopilar todos los datos relativos a una persona.
+DOSSPRE,dosspre_1042,1,—,—,Security,,,—,El sistema deberá diferenciar los sistemas que representan distintas etapas de su ciclo de vida.
+DOSSPRE,dosspre_1044,1,Security,—,Security,,,Security,El sistema incluirá en una lista negra a cualquier usuario que haya cometido un robo de identidad.
+DOSSPRE,dosspre_1046,1,—,—,Security,,,—,"El sistema también deberá permitir el inicio de sesión de varios clientes y la reserva de diferentes citas, así como la asignación de un horario distinto a cada usuario."
+DOSSPRE,dosspre_1057,1,Security,Security,Security,,,—,El sistema deberá aplicar el cálculo de hash a las contraseñas utilizando HMAC
+DOSSPRE,dosspre_1060,1,Security,Security,Security,,,—,El sistema deberá permitir que un usuario se registre e inicie sesión.
+DOSSPRE,dosspre_1061,1,Security,Security,Security,,,—,El sistema deberá realizar la validación de las contraseñas de usuario.
+DOSSPRE,dosspre_1068,1,Security,Security,Security,,,—,El sistema deberá permitir el cambio de contraseña en un plazo determinado.
+DOSSPRE,dosspre_1073,1,—,—,Security,,,—,El sistema deberá permitir el uso de una marca de agua visible junto con el cliente de correo electrónico.
+DOSSPRE,dosspre_1081,1,Security,—,Security,,,Security,El sistema deberá proporcionar un servicio de autenticación a todos los usuarios antes de que se les permita insertar una marca de agua mediante un cliente de correo electrónico.
+DOSSPRE,dosspre_1084,1,—,—,—,,,Security,El sistema deberá poder realizar comprobaciones aleatorias de la conexión.
+DOSSPRE,dosspre_1086,1,—,Security,—,,,—,El sistema deberá ser capaz de registrar una conexión inalámbrica.
+DOSSPRE,dosspre_1091,1,Security,Security,—,,,Security,El sistema deberá proporcionar autenticación de dos factores.
+DOSSPRE,dosspre_1100,1,Security,Security,Security,,,—,El sistema deberá permitir al administrador visualizar la dirección IP.
+DOSSPRE,dosspre_1107,1,Security,Security,—,,,Security,El sistema deberá permitir que el administrador del sistema inicie sesión en el sitio web con el objetivo de consultar los mensajes de advertencia.
+DOSSPRE,dosspre_1113,1,Security,—,Security,,,Security,El sistema utilizará códigos QR para facilitar la concesión de acceso.
+DOSSPRE,dosspre_1121,1,—,Security,—,,,—,El sistema deberá permitir una transmisión breve de información.
+DOSSPRE,dosspre_1127,1,—,Security,—,,,—,El servidor del sistema deberá ser capaz de generar identificadores de transacción únicos tras cada compra o descarga gratuita.
+DOSSPRE,dosspre_1128,1,—,—,—,,,Security,"El sistema deberá garantizar que el identificador de transacción, el UUID y el número de serie de almacenamiento se utilicen para el cifrado por parte del servidor y el descifrado por parte del cliente."
+DOSSPRE,dosspre_1135,1,Security,—,Security,,,Security,El sistema deberá otorgar a cada usuario que adquiera una copia de un vídeo un derecho de acceso de por vida a una copia auténtica de dicho vídeo.
+DOSSPRE,dosspre_1149,1,Security,Security,Security,,,—,"El sistema deberá integrar factores relacionados con cálculos complejos, robustez y seguridad."
+DOSSPRE,dosspre_1151,1,—,—,Security,,,—,El sistema deberá ser capaz de orientar los movimientos del agente permitiendo que la agencia de marcas de agua digitales tome nota de los informes y cree una base de conocimientos compartida.
+DOSSPRE,dosspre_1154,1,—,—,—,,,Security,El sistema deberá exigir a los agentes que comuniquen las imágenes detectadas a la base de datos de la agencia.
+DOSSPRE,dosspre_1169,1,Security,Security,—,,,Security,El sistema deberá garantizar la fiabilidad y la resiliencia ante fallos.
+DOSSPRE,dosspre_1170,1,—,—,Security,,,—,El sistema se desarrollará de manera que tenga disponibilidad en todo momento.
+DOSSPRE,dosspre_1175,1,Security,Security,—,,,Security,El sistema deberá mostrar un panel con los registros de las anomalías detectadas.
+DOSSPRE,dosspre_1193,1,Security,—,Security,,,Security,El sistema deberá ser capaz de identificar entradas erróneas.
+DOSSPRE,dosspre_1200,1,Security,Security,—,,,Security,El sistema deberá ofrecer validación de entradas.
+DOSSPRE,dosspre_1205,1,—,Security,—,,,—,El módulo de cálculo de hash del sistema deberá utilizar el algoritmo SHA-2.
+DOSSPRE,dosspre_1210,1,—,Security,—,,,—,"El sistema no deberá sufrir ralentizaciones durante las tareas de entrada/salida ni durante aquellas que requieran un gran esfuerzo computacional, como el cifrado, la incrustación o la extracción."
+DOSSPRE,dosspre_1214,1,Security,Security,Security,,,—,El sistema deberá ser capaz de detectar transacciones fraudulentas en tiempo real.
+DOSSPRE,dosspre_1220,1,Security,Security,—,,,Security,El sistema deberá exigir que todos los usuarios realicen el inicio de sesión antes de poder tener acceso al sistema.
+DOSSPRE,dosspre_1222,1,Security,—,Security,,,Security,El sistema deberá permitir la reversión autorizada de acciones.
+DOSSPRE,dosspre_1226,1,Security,Security,—,,,Security,El sistema deberá permitir el filtrado por tipo de archivo para evitar la sobrecarga del flujo normal de información con archivos innecesarios.
+DOSSPRE,dosspre_1231,1,—,—,—,,,Security,El sistema se instalará en el teléfono móvil de cada empleado para supervisar las aplicaciones del dispositivo y registrar las actividades que se realicen en él.
+DOSSPRE,dosspre_1240,1,Security,Security,Security,,,—,"El sistema deberá ser capaz de generar registros periódicos, así como de recopilar y analizar datos para alertar a los padres cada vez que se escriban determinadas palabras clave."
+DOSSPRE,dosspre_1244,1,—,—,Security,,,—,"El sistema deberá ser capaz de adaptarse a medida que se añadan nuevas URL y sitios web a los que ya están filtrados, a medida que vayan apareciendo."
+DOSSPRE,dosspre_1253,1,Security,Security,Security,,,—,El sistema deberá ser capaz de realizar la detección de malware y clasificar tanto el malware conocido como el desconocido en sus respectivas familias de malware.
+DOSSPRE,dosspre_1258,1,—,—,—,,,Security,El proceso de clasificación del sistema deberá clasificar el malware identificado en sus respectivas familias de malware.
+DOSSPRE,dosspre_1259,1,—,—,—,,,Security,El proceso de clasificación del sistema deberá generar un informe sobre los efectos de la actividad de malware durante su ejecución.
+PROMISE_exp,promise_0226,5,Security,—,—,—,—,—,El producto debe tener capacidad de auditoría. El producto debe almacenar mensajes durante un mínimo de un año para fines de auditoría y seguimiento de transacciones
+PROMISE_exp,promise_0244,5,Security,—,—,—,—,—,Un cliente solo puede transmitir una película si la compró y está dentro del período de visualización de 2 días
+PROMISE_exp,promise_0119,4,—,Security,Security,Security,Security,—,Solo se debe actualizar las partes que han cambiado al conectarse al servidor.
+PROMISE_exp,promise_0158,4,—,Security,Security,Security,—,Security,"Mientras se transmite una película, el almacenamiento en búfer solo debería ocurrir si hay latencia en la conexión del usuario"
+PROMISE_exp,promise_0231,4,Security,—,—,Security,—,—,El sistema se construirá de manera que sea lo más seguro posible frente a interferencias maliciosas.
+PROMISE_exp,promise_0262,4,Security,—,—,—,Security,—,El sistema usará una base de datos segura
+PROMISE_exp,promise_0265,4,Security,—,—,—,Security,—,El Sistema de Disputas generará un Informe de Usuario que detalla cualquier nuevo usuario que se haya agregado y cualquier cambio en el nivel de acceso de un usuario existente. El informe se revisará con fines de auditoría.
+PROMISE_exp,promise_0268,4,Security,—,—,—,Security,—,El Comisionado será el único usuario autorizado por liga para ajustar la configuración de la liga
+PROMISE_exp,promise_0271,4,Security,—,—,—,—,Security,El cierre de sesión debe ser automático después de 1 hora de inactividad.
+PROMISE_exp,promise_0273,4,Security,—,—,—,Security,—,El sistema notificará a los clientes los cambios en su política de información.
+PROMISE_exp,promise_0279,4,Security,Security,—,—,—,—,Criterio de adecuación: la Dra. Susan Poslusny y Karen Sysol son las únicas personas que tendrán acceso a la programación de la sección final de la clase para el sistema que interactúa con CampusConnect.
+PROMISE_exp,promise_0283,4,Security,—,—,—,Security,—,"Para evitar ataques, el sistema debería generar una palabra aleatoria y pedirle al usuario que la ingrese correctamente para múltiples intentos."
+PROMISE_exp,promise_0452,4,Security,—,—,—,Security,—,El navegador web del cliente nunca mostrará el número de tarjeta de crédito del cliente después de recuperarlo de la base de datos. Siempre se mostrará con solo los últimos 4 dígitos del número de la tarjeta de crédito.
+PROMISE_exp,promise_0455,4,Security,—,—,—,Security,—,El sistema utilizará el software de protección antivirus estándar de la organización para ayudar a monitorear las amenazas a sí mismo
+PROMISE_exp,promise_0052,3,—,—,—,Security,Security,Security,Debería dar una vista detallada de todos los datos en el registro médico después de iniciar sesión.
+PROMISE_exp,promise_0106,3,—,Security,—,—,Security,Security,El sistema podrá realizar copias de seguridad automáticas de los datos comerciales y restaurarlos a pedido
+PROMISE_exp,promise_0113,3,—,—,Security,—,Security,Security,La aplicación Disputas debe interactuar con la Base de datos de información del titular de la tarjeta. La base de datos de información del titular de la tarjeta proporciona información detallada con respecto a un titular de la tarjeta. Toda la información detallada del titular de la tarjeta debe obtenerse de la base de datos de información del titular de la tarjeta.
+PROMISE_exp,promise_0184,3,—,—,Security,Security,Security,—,El sistema mostrará mensajes de confirmación a los usuarios dentro de los 4 segundos después de que el usuario envíe la información al sistema.
+PROMISE_exp,promise_0227,3,Security,Security,—,—,Security,—,Todas las adiciones de nuevos usuarios y las modificaciones al acceso de los usuarios se registrarán en el Informe de usuario
+PROMISE_exp,promise_0232,3,Security,—,—,—,Security,Security,El sitio web se protegerá a sí mismo de abusos intencionales y notificará al administrador en todos los casos
+PROMISE_exp,promise_0240,3,Security,Security,—,—,Security,—,El producto debe garantizar que los datos de la base de datos se correspondan con los datos introducidos por el usuario. Cada reserva de sala de conferencias en el sistema contendrá la misma información que ingresó el usuario.
+PROMISE_exp,promise_0250,3,Security,—,—,—,Security,Security,El sistema cerrará automáticamente la sesión de todos los clientes después de un período de inactividad.
+PROMISE_exp,promise_0258,3,Security,—,—,—,Security,Security,El sistema WCS no permitirá inicios de sesión automáticos por parte de ningún usuario. Las cookies que contienen información de inicio de sesión de WCS sobre un usuario no se almacenarán en la computadora de un usuario.
+PROMISE_exp,promise_0263,3,Security,—,—,Security,Security,—,El acceso de los usuarios debería limitarse a los permisos otorgados a su(s) rol(es). A cada nivel en la jerarquía del PCG se le asignará un rol y los usuarios serán asignados a estos roles. El acceso a la funcionalidad dentro del sistema RFS depende de los privilegios/permisos asignados al rol.
+PROMISE_exp,promise_0266,3,Security,—,—,Security,Security,—,El sitio web debe informar a sus usuarios de sus prácticas de información antes de recopilar datos de ellos a través de una Política de privacidad accesible en todas las páginas del sitio web.
+PROMISE_exp,promise_0320,3,—,—,Security,Security,Security,—,La aplicación le pedirá al usuario que confirme la eliminación de un jugador o el intercambio de un jugador antes de realizar la acción.
+PROMISE_exp,promise_0381,3,—,—,—,Security,Security,Security,El producto y/o las bases de datos/sistemas de archivos dependientes permanecerán operativos como resultado de la entrada de datos maliciosos. El producto y/o las bases de datos/sistemas de archivos dependientes no se bloquearán el 100% del tiempo que se ingresen datos maliciosos en el producto.
+PROMISE_exp,promise_0439,3,Security,—,—,—,Security,Security,La transferencia segura de datos a través de Internet podría proporcionarse mediante el cifrado SSL que será configurado por el administrador del sistema host.
+PROMISE_exp,promise_0100,2,—,—,—,—,Security,Security,El Sistema no requerirá licencias adicionales de terceros que resulten en tarifas de regalías.
+PROMISE_exp,promise_0102,2,—,Security,—,—,—,Security,El producto debe ser independiente de la plataforma. El producto debe permitir el acceso a cualquier tipo de entorno y plataforma de desarrollo
+PROMISE_exp,promise_0185,2,—,—,Security,—,—,Security,El sistema permitirá que los clientes cancelen su cuenta. El proceso no llevará más de 2 minutos. La base de datos marcará la cuenta como inactiva y el usuario no podrá iniciar sesión en el sitio web.
+PROMISE_exp,promise_0214,2,—,—,—,Security,Security,—,El sistema WCS tendrá la capacidad de incluir datos para regiones fuera de los Estados Unidos y los usuarios fuera de los Estados Unidos podrán acceder a él si lo aprueba la administración de CCR.
+PROMISE_exp,promise_0229,2,Security,—,—,Security,Security,Security,Solo los ajustadores con un rol de supervisor pueden actualizar las calificaciones de las instalaciones de reparación preferidas. Los usuarios sin el rol de supervisor no pueden acceder a las calificaciones de las instalaciones de reparación.
+PROMISE_exp,promise_0242,2,Security,—,—,Security,Security,Security,Solo se introducirán en el sistema datos válidos. No se introducirán datos inválidos en el sistema.
+PROMISE_exp,promise_0248,2,Security,—,—,Security,Security,Security,La seguridad de la información personal está definida fuera del alcance del SDMS por el servidor de la base de datos.
+PROMISE_exp,promise_0251,2,Security,—,—,Security,Security,Security,Se registrarán las direcciones IP desde donde se realizó la transacción.
+PROMISE_exp,promise_0269,2,Security,—,—,Security,Security,Security,El sistema deberá tener una verificación básica de la integridad de los datos para reducir la posibilidad de que se introduzcan datos incorrectos o no válidos
+PROMISE_exp,promise_0276,2,Security,—,—,Security,Security,Security,Cada propietario del equipo deberá utilizar un nombre de usuario y una contraseña para poder ser autenticado y acceder a la página del propietario del equipo
+PROMISE_exp,promise_0277,2,Security,—,—,Security,Security,Security,El sistema mantendrá una seguridad constante. Cualquier cambio en las contraseñas y/o permisos de los usuarios debería tener efecto en todas las partes del Sistema.
+PROMISE_exp,promise_0284,2,Security,—,—,Security,Security,Security,La autenticación y los privilegios del usuario están definidos fuera del alcance del sistema por Microsoft Active Directory Server.
+PROMISE_exp,promise_0303,2,—,—,—,Security,Security,—,El sistema deberá proporcionar acceso para discapacitados.
+PROMISE_exp,promise_0357,2,—,—,—,Security,Security,—,Los cálculos realizados por el sistema deben cumplir con las normas establecidas por el usuario y no deberían variar a menos que el usuario los cambie explícitamente.
+PROMISE_exp,promise_0379,2,—,—,—,—,Security,Security,El sistema marcará las tabletas que no envíen mensajes de mantenimiento de conexión oportunos como no operativas y desasociará al camarero asignado de la tableta.
+PROMISE_exp,promise_0426,2,Security,—,—,Security,Security,Security,Todas las transacciones de la red que involucren información financiera o información de identificación personal serán cifradas.
+PROMISE_exp,promise_0434,2,Security,—,Security,Security,Security,—,La contraseña de un camarero utilizada para el inicio de sesión de la tableta debe tener una robustez de al menos 64 bits.
+PROMISE_exp,promise_0438,2,—,—,Security,Security,—,—,ABS manejará todos los errores esperados e inesperados de manera que evite la pérdida de información y un largo período de inactividad.
+PROMISE_exp,promise_0441,2,Security,—,—,Security,Security,Security,Los datos confidenciales se cifrarán antes de enviarse a través de conexiones inseguras como Internet.
+PROMISE_exp,promise_0445,2,Security,Security,—,—,Security,Security,El sistema tendrá diferentes tipos de usuarios y cada usuario tiene restricciones de acceso.
+PROMISE_exp,promise_0446,2,Security,—,—,Security,Security,Security,La transacción de datos entre el cliente y el servidor debe cifrarse mediante tecnología SSL.
+PROMISE_exp,promise_0448,2,Security,—,—,Security,Security,Security,El sistema utilizará la comunicación HTTPS para garantizar la confidencialidad de los datos.
+PROMISE_exp,promise_0001,1,—,—,Security,—,—,—,Todas las funciones del sistema deben estar disponibles para el usuario cada vez que se encienda el sistema.
+PROMISE_exp,promise_0059,1,—,—,Security,—,—,—,La interfaz de usuario debe tener botones de menú estándar para la navegación
+PROMISE_exp,promise_0065,1,—,—,—,—,Security,—,El sitio web no debe ser ofensivo para grupos religiosos o étnicos
+PROMISE_exp,promise_0068,1,—,—,Security,—,—,—,La apariencia del sistema se ajustará a los estándares de interfaz de usuario del dispositivo inteligente
+PROMISE_exp,promise_0111,1,—,—,Security,—,—,—,Se podrá acceder a todos los aspectos del sitio web mediante un navegador web a través de Internet
+PROMISE_exp,promise_0122,1,—,—,—,—,Security,—,Se utilizará una base de datos secundaria para almacenar estadísticas y datos históricos
+PROMISE_exp,promise_0129,1,—,—,Security,—,—,—,El sistema se activará escribiendo «pine» en un comando o indicador de shell.
+PROMISE_exp,promise_0149,1,—,—,Security,—,—,—,El alto nivel de rendimiento requiere una red de alta velocidad y un alto nivel de conectividad.
+PROMISE_exp,promise_0176,1,—,—,—,—,Security,—,El sistema puede limitarse o ralentizarse en cargas pesadas para garantizar el servicio para todos. Por limitación se entiende que ciertas funciones pueden no estar disponibles durante una gran carga del servidor.
+PROMISE_exp,promise_0225,1,Security,Security,—,Security,Security,Security,Solo los estimadores de colisiones deben buscar piezas recicladas. Los usuarios sin la función de estimador de colisiones no tendrán acceso a la búsqueda de piezas recicladas.
+PROMISE_exp,promise_0228,1,Security,—,Security,Security,Security,Security,El producto no proporcionará a los jugadores acceso a información que pueda revelar la identidad de otro jugador
+PROMISE_exp,promise_0236,1,Security,Security,—,Security,Security,Security,Todo el mundo (partes interesadas e invitados) puede tener acceso al sistema y al catálogo. Cada cliente debe tener acceso seguro y privado a sus datos. El técnico puede tener acceso a todas las partes del sistema. Todos estos accesos (excepto el acceso “visita guiada”) requieren identificación mediante ID de usuario y contraseña.
+PROMISE_exp,promise_0238,1,Security,—,Security,Security,Security,Security,Copias de seguridad completas de los datos deben crearse diariamente.
+PROMISE_exp,promise_0241,1,Security,—,Security,Security,Security,Security,"El sitio web debe proporcionar el más alto grado de seguridad a los usuarios registrados. Todas las transacciones que se realicen deben ser aseguradas. La información confidencial que se transmite hacia y desde el sitio web debe protegerse. El robo de identidad y otros problemas relacionados con la seguridad deben resolverse. Debe evitarse la transmisión no autorizada de información confidencial del usuario a sitios web de terceros para su referencia. Sobre la base del acuerdo del usuario, la información debe ser procesada. Toda la información sobre el usuario registrado debe almacenarse de forma segura en la base de datos central."
+PROMISE_exp,promise_0243,1,Security,Security,—,Security,Security,Security,Un camarero que intente iniciar sesión en una segunda tableta mientras ya ha iniciado sesión en otra tableta será rechazado y notificado a través de ambas tabletas.
+PROMISE_exp,promise_0246,1,Security,Security,—,Security,Security,Security,El sistema no dejará en el ordenador del cliente ninguna cookie que contenga la contraseña del usuario.
+PROMISE_exp,promise_0252,1,Security,Security,—,Security,Security,Security,Se requerirá que los usuarios inicien sesión en el sistema para todas las operaciones excepto las operaciones en la página de inicio de sesión.
+PROMISE_exp,promise_0253,1,Security,—,Security,Security,Security,Security,El sistema controlará de forma granular los derechos de acceso a todos los subsistemas principales. Debería ser posible asignar derechos de acceso a todos los subsistemas de forma independiente.
+PROMISE_exp,promise_0257,1,Security,Security,—,Security,Security,Security,La seguridad del sistema y los niveles de acceso se proporcionan en el sistema en línea. Hay varios niveles de acceso al sistema y autoridad funcional. El acceso de cada estudiante está limitado a sus propios registros. Solo los administradores autorizados del sistema tienen acceso a todos los registros de estudiantes.
+PROMISE_exp,promise_0264,1,Security,Security,—,Security,Security,Security,La contraseña de un camarero utilizada para el inicio de sesión de la tableta debe cambiarse cada tres meses.
+PROMISE_exp,promise_0282,1,Security,Security,—,Security,Security,Security,Todas las contraseñas que se generan o aceptan deben almacenarse en la base de datos de forma cifrada.
+PROMISE_exp,promise_0285,1,—,—,Security,—,—,—,"Los usuarios podrán acceder a las páginas «add», «drop» y «trade player» con un clic desde la página del propietario del equipo."
+PROMISE_exp,promise_0299,1,—,Security,—,—,—,—,El sistema proporcionará una forma de volver a la pantalla de inicio.
+PROMISE_exp,promise_0301,1,—,—,—,—,Security,—,"Un usuario podrá utilizar el sistema sin instrucciones después de un corto período de tiempo. Después de un uso, el usuario debe comprender y recordar el 90% del uso y la navegación del sistema."
+PROMISE_exp,promise_0348,1,—,—,Security,—,—,—,Un usuario final puede usar este sistema en cualquier sistema operativo; ya sea Windows o Linux.
+PROMISE_exp,promise_0360,1,—,—,—,—,Security,—,El producto deberá cumplir con las regulaciones de seguros con respecto al procesamiento de reclamaciones.
+PROMISE_exp,promise_0374,1,—,—,—,—,Security,—,El sistema debería advertir a los usuarios de ECA sobre el mal funcionamiento del sistema.
+PROMISE_exp,promise_0382,1,—,—,—,Security,—,—,La confiabilidad del programa general depende de la confiabilidad de los componentes separados. El principal pilar de la confiabilidad del sistema es la copia de seguridad de la base de datos que se mantiene y actualiza continuamente para reflejar los cambios más recientes.
+PROMISE_exp,promise_0396,1,—,—,Security,—,—,—,El sistema utilizará los equipos informáticos de los que se dispone actualmente.
+PROMISE_exp,promise_0420,1,Security,—,Security,Security,Security,Security,El producto debe tener seguridad. El producto debe proporcionar autenticación y autorización
+PROMISE_exp,promise_0436,1,Security,Security,Security,Security,—,Security,En cualquier momento dado un camarero solo podrá iniciar sesión en una tableta.
+PROMISE_exp,promise_0451,1,—,—,—,—,Security,—,El sistema confirmará todas las transacciones con el navegador web del cliente.
+PROMISE_exp,promise_0459,1,Security,Security,Security,—,Security,Security,La aplicación Disputas manipulará y visualizará los datos comerciales. Los usuarios no tendrán acceso directo a los archivos de datos o bases de datos.
+SecReq,secreq_0057,5,—,Security,Security,Security,Security,Security,"Una vez insertada la tarjeta CEP en el dispositivo de punto de venta, este inicia la transacción de cancelación de la última compra."
+SecReq,secreq_0066,5,—,Security,Security,Security,Security,Security,El adquirente del comercio realiza la validación del lote para asegurarse de que se ha transmitido correctamente y lo registra en el registro.
+SecReq,secreq_0146,5,—,Security,Security,Security,Security,Security,"El proveedor de aplicaciones es responsable de proporcionar aplicaciones que cumplan con las normas y políticas de seguridad del emisor de la tarjeta,"
+SecReq,secreq_0199,5,—,Security,Security,Security,Security,Security,"El nivel de seguridad de la comunicación con una entidad externa a la tarjeta no se aplica necesariamente a cada mensaje individual que se transmite, sino que solo puede aplicarse al entorno y/o al contexto en el que se transmiten los mensajes."
+SecReq,secreq_0204,5,Security,—,—,—,—,—,"Los modelos de ciclo de vida son responsables de la funcionalidad y la seguridad de la tarjeta, los archivos de carga ejecutables, los módulos ejecutables, los dominios de seguridad y las aplicaciones."
+SecReq,secreq_0325,5,Security,—,—,—,—,—,El CNG y el CPN deberán implementar mecanismos para limitar la visibilidad de la red y los recursos del lado de la WAN a las entidades con autorización.
+SecReq,secreq_0328,5,Security,—,—,—,—,—,El CNG y el CPN deberán ser capaces de admitir funcionalidades relacionadas con el control parental que limiten el uso de la conexión de banda ancha en función del usuario o del tiempo. Las limitaciones basadas en el contenido podrán compartirse con servidores de red específicos.
+SecReq,secreq_0011,4,Security,—,Security,—,—,—,El dispositivo de carga envía S1 en una solicitud de autorización al emisor
+SecReq,secreq_0056,4,—,Security,Security,Security,—,Security,La tarjeta CEP envía una respuesta al comando de anulación al dispositivo de punto de venta. La reversión se considera realizada con éxito incluso en caso de respuesta negativa o de falta de respuesta por parte de la tarjeta CEP.
+SecReq,secreq_0076,4,—,—,Security,Security,Security,Security,Las transacciones en punto de venta (TPV) cuyo pago haya sido rechazado por el adquirente del comercio se marcan con un código de error que indica el tipo de fallo de validación y se remiten al emisor de la tarjeta únicamente con fines de información sobre el historial de la tarjeta CEP.
+SecReq,secreq_0080,4,Security,—,Security,—,—,—,"Dado que estas transacciones se realizan en línea con el emisor, este tiene la posibilidad de realizar el bloqueo de la tarjeta o la aplicación. Estas transacciones no están disponibles para una tarjeta que ya haya sido bloqueada."
+SecReq,secreq_0091,4,—,—,Security,Security,Security,Security,Todos los mensajes en línea deben poder incluir datos discrecionales del emisor de la tarjeta procedentes de la tarjeta CEP.
+SecReq,secreq_0118,4,Security,—,Security,—,—,—,"Los emisores de fondos deben aceptar las solicitudes de autorización de fondos, independientemente del tipo de moneda de carga, según lo permitido."
+SecReq,secreq_0125,4,Security,—,—,—,Security,—,Todas las aplicaciones incluidas en GlobalPlatform deberán implementarse en un entorno de ejecución seguro e independiente del hardware.
+SecReq,secreq_0132,4,Security,—,—,Security,—,—,El OPEN deberá ser responsable de hacer cumplir los principios de seguridad definidos para la gestión del contenido de la tarjeta.
+SecReq,secreq_0140,4,—,Security,Security,—,Security,Security,El emisor de la tarjeta es responsable de colaborar con los proveedores de aplicaciones para crear e inicializar dominios de seguridad distintos del dominio de seguridad del emisor
+SecReq,secreq_0141,4,—,Security,Security,Security,Security,—,"El emisor de la tarjeta es responsable de establecer la política relativa a la gestión del ciclo de vida de la tarjeta y de la aplicación, los niveles de verificación de velocidad, los privilegios y otros parámetros de seguridad"
+SecReq,secreq_0217,4,—,Security,Security,Security,Security,—,"No se permitirán cambios del contenido de la tarjeta, incluida cualquier gestión de datos (en concreto, claves de dominio de seguridad y datos), mientras la tarjeta se encuentre en estado CARD_LOCKED."
+SecReq,secreq_0310,4,Security,—,Security,—,—,—,"Cuando un CND inicie una sesión en el CNG, este último deberá registrar la asociación entre el identificador de sesión, la identidad del dispositivo iniciador y el identificador de usuario iniciador."
+SecReq,secreq_0311,4,Security,—,Security,—,—,—,"Al transmitir información de gestión desde el CNG a un CND, el CNG deberá añadir una marca de tiempo o un número de secuencia al mensaje saliente."
+SecReq,secreq_0322,4,Security,—,Security,—,—,—,El CNG deberá admitir mecanismos de autenticación de los CND inalámbricos para la conectividad local. También podrán implementarse mecanismos similares para dispositivos no inalámbricos.
+SecReq,secreq_0327,4,Security,Security,—,—,—,—,"El entorno CPN deberá protegerse mediante una función de cortafuegos con seguimiento de estado, que podrá implementarse en el CNG."
+SecReq,secreq_0343,4,—,Security,Security,—,Security,Security,"Para establecer la conectividad de acceso remoto se debería utilizar la autenticación, el encaminamiento y la conectividad estándar de las redes NGN."
+SecReq,secreq_0345,4,—,—,Security,Security,Security,Security,El CNG podrá permitir la apertura dinámica y segura del cortafuegos para dispositivos de acceso remoto basándose en las funciones de autenticación NGN.
+SecReq,secreq_0399,4,—,Security,—,Security,Security,Security,El CNG deberá admitir mecanismos de autenticación segura y comunicación con el sistema de gestión remota.
+SecReq,secreq_0014,3,Security,—,Security,—,Security,—,El emisor envía S2 al adquirente de carga en el mensaje de respuesta de autorización.
+SecReq,secreq_0015,3,Security,Security,Security,—,—,—,Las descargas solo están permitidas en una cuenta controlada por el emisor de la tarjeta y se realizan únicamente en un dispositivo de carga bajo el control del emisor de la tarjeta.
+SecReq,secreq_0034,3,Security,—,Security,—,—,Security,Cada PSAM debe mantener un contador de transacciones. El identificador único del PSAM y el contador de transacciones se utilizan durante la comunicación con una tarjeta CEP. El contador de transacciones no debe reiniciarse durante la vida útil del PSAM.
+SecReq,secreq_0046,3,—,Security,Security,—,—,Security,"Si un proveedor de esquema compatible dispone de un proceso de resolución de disputas, participar en dicho proceso junto con los procesadores de pagos conectados para resolver cualquier problema relacionado con transacciones no válidas. Estos procesos de resolución deberían incluir un mecanismo para el reembolso de los fondos asociados a las transacciones no válidas."
+SecReq,secreq_0048,3,Security,Security,—,Security,—,—,"Si el emisor de la tarjeta detecta errores en el MAC del emisor de la tarjeta durante el procesamiento de las transacciones, podrá recurrirse a un mecanismo de resolución de disputas, establecido por el proveedor de esquema, para obtener el reembolso del importe."
+SecReq,secreq_0074,3,—,—,Security,Security,—,Security,"Una transacción que supere las validaciones del adquirente del comercio y se remita al emisor de la tarjeta será abonada por este último. Si la transacción no supera las validaciones del emisor de la tarjeta, este podrá seguir los procedimientos de resolución de disputas del proveedor de esquema."
+SecReq,secreq_0111,3,Security,—,Security,—,—,Security,Se debe enviar al adquirente de carga una prueba de que se ha producido una carga o descarga para evitar el repudio.
+SecReq,secreq_0134,3,Security,—,—,Security,Security,—,"La GlobalPlatform API deberá proporcionar servicios a la aplicación, tales como la verificación de la tarjeta y servicios de seguridad."
+SecReq,secreq_0139,3,Security,Security,Security,—,—,—,"El emisor de la tarjeta es responsable de hacer cumplir las normas y políticas aplicables a los proveedores de aplicaciones, que regulan todos los aspectos de las aplicaciones que se vayan a proporcionar al emisor de la tarjeta o que se vayan a utilizar en las tarjetas de este"
+SecReq,secreq_0165,3,Security,Security,—,Security,—,—,"OPEN deberá comprobar las reglas de acceso de la aplicación de acuerdo con los privilegios de aplicación,"
+SecReq,secreq_0188,3,Security,—,—,Security,—,Security,"Una tarjeta GlobalPlatform debería ser compatible con la criptografía simétrica, como el algoritmo del Estándar de Cifrado de Datos (DES)."
+SecReq,secreq_0190,3,Security,—,—,Security,Security,—,"Cuando estén disponibles, las aplicaciones deberán poder disponer de servicios para cifrar y descifrar cualquier tipo de datos utilizando estos algoritmos."
+SecReq,secreq_0193,3,Security,—,—,Security,Security,—,El hash del bloque de datos del archivo de carga se utiliza en el cálculo de la firma del bloque de datos del archivo de carga.
+SecReq,secreq_0194,3,—,Security,Security,—,—,Security,El hash del bloque de datos del archivo de carga se utiliza en el cálculo del token de carga.
+SecReq,secreq_0197,3,—,Security,Security,Security,—,—,El dominio de seguridad apropiado puede generar recibos durante la gestión delegada.
+SecReq,secreq_0313,3,Security,—,Security,—,—,Security,"Al recibir en el CNG un mensaje para acceder o actualizar la información de configuración, el CNG solo permitirá el acceso si el remitente es un administrador."
+SecReq,secreq_0317,3,Security,Security,—,—,Security,—,"Al recibir una solicitud válida (es decir, autorizada) de acceso a un servicio o una aplicación alojados en la CNG, esta deberá proporcionar el servicio o la aplicación solicitados al usuario solicitante."
+SecReq,secreq_0320,3,Security,—,—,—,Security,Security,El CNG deberá admitir mecanismos para autenticarse ante la NGN con el fin de utilizar los servicios.
+SecReq,secreq_0323,3,Security,—,—,Security,Security,—,El CNG y el CPN deberán admitir mecanismos que impidan el acceso a la red por parte de usuarios no autorizados.
+SecReq,secreq_0338,3,—,—,—,Security,Security,Security,"El CNG y la red del cliente garantizarán la confidencialidad y la integridad de los flujos de señalización, control, medios y gestión."
+SecReq,secreq_0348,3,—,—,Security,Security,—,Security,"Si se presta el servicio de comunicación «Home to Home» (H2H), cada CNG deberá garantizar que las sesiones de servicios de emergencia que se originen en su CPN estén asociadas a la información de ubicación y/o a la identidad de la persona que realiza la llamada correspondientes."
+SecReq,secreq_0421,3,—,—,—,Security,Security,Security,El CND deberá facilitar su identidad de registro cuando solicite el registro en la red.
+SecReq,secreq_0006,2,Security,—,Security,—,Security,Security,"Para cargar un valor de forma segura en una ranura de la tarjeta CEP, el dispositivo de carga establece una conexión entre el emisor y la tarjeta CEP."
+SecReq,secreq_0020,2,—,Security,Security,—,—,—,"En caso de que la operación no se complete con éxito, se lleva a cabo el tratamiento de excepciones descrito en la sección «Tratamiento de excepciones en línea»."
+SecReq,secreq_0031,2,Security,—,—,Security,Security,Security,El número y el importe de las transacciones del lote deben estar protegidos por el S4 MAC. Esta información no forma parte del proceso de verificación del emisor de la tarjeta.
+SecReq,secreq_0044,2,Security,—,—,Security,Security,Security,"Compartir una o varias claves MAC con los procesadores con los que se conecta, generar un MAC en cada transmisión enviada a otro procesador y verificar el MAC en cada transmisión recibida de otro procesador."
+SecReq,secreq_0049,2,Security,Security,Security,Security,—,—,"Si un proveedor de esquema establece un repositorio central de errores, todas las transacciones del esquema que presenten errores de MAC deberán enviarse a dicho repositorio central de errores, independientemente de que se sometan o no al proceso de resolución de disputas."
+SecReq,secreq_0073,2,—,Security,Security,—,—,—,"Tras la investigación, si la entidad adquirente del comercio decide, basándose en las normas del sistema, aceptar las transacciones, debe existir un método para liquidarlas y remitirlas al emisor de la tarjeta."
+SecReq,secreq_0075,2,Security,Security,Security,Security,—,—,"El pago por detalle es la modalidad de pago predeterminada que utilizan las entidades adquirentes para abonar a sus comerciantes. En esta modalidad, la entidad adquirente se basa en el MAC S5 de la transacción en punto de venta (TPV) para determinar la aceptación. A los comerciantes solo se les abona por las transacciones válidas en punto de venta."
+SecReq,secreq_0083,2,—,Security,—,—,—,Security,"La aplicación CEP debe contener datos que indiquen la presencia de una entidad financiera vinculada. Si se establece una entidad financiera vinculada para la aplicación CEP, deben permitirse las cargas vinculadas y los datos de la aplicación deben indicar si se admiten dichas cargas."
+SecReq,secreq_0084,2,—,Security,Security,—,—,—,"Se requiere flexibilidad para adaptarse a la variedad de entornos en los que pueden implementarse cargas no vinculadas. Por consiguiente, la especificación de diseño no debe impedir que las transacciones de doble tramo** se realicen de forma secuencial o en paralelo. El diseño de una implementación concreta variará en función de las capacidades del dispositivo, del host y de la red."
+SecReq,secreq_0124,2,—,Security,Security,—,—,—,"La arquitectura del monedero electrónico no debe impedir la eventual implantación de diversos dispositivos para satisfacer las necesidades de numerosos entornos de aceptación de tarjetas. No debe impedirse que la función de descarga sea compatible con cualquiera o todos estos dispositivos, a elección del adquirente."
+SecReq,secreq_0127,2,—,Security,—,Security,—,—,El entorno de ejecución se encargará de establecer los servicios de comunicación entre la tarjeta y las entidades externas a la misma.
+SecReq,secreq_0179,2,—,Security,Security,—,—,—,"Una Global Services Application deberá ser capaz de prestar servicios a otras aplicaciones, tales como servicios CVM,"
+SecReq,secreq_0182,2,Security,Security,Security,—,—,Security,Las aplicaciones deberían exponer únicamente los datos y recursos que sean necesarios para el correcto funcionamiento de la aplicación.
+SecReq,secreq_0198,2,—,—,Security,—,—,Security,Una tarjeta GlobalPlatform puede proporcionar servicios de seguridad relacionados con la información intercambiada entre la tarjeta y una entidad externa a la misma.
+SecReq,secreq_0200,2,—,—,Security,Security,—,—,El concepto de ciclo de vida de la tarjeta (véase la sección 5.1 —Ciclo de vida de la tarjeta—) puede utilizarse para determinar el nivel de seguridad de la comunicación entre la tarjeta y una entidad externa a la misma.
+SecReq,secreq_0300,2,Security,—,—,Security,Security,Security,El CNG deberá detectar el fin de la vida útil de la clave utilizada para la protección criptográfica de la comunicación inalámbrica entre el CND y el CNG.
+SecReq,secreq_0304,2,Security,—,Security,—,Security,Security,El CNG debería detectar la reutilización de credenciales de usuario y/o de dispositivo.
+SecReq,secreq_0306,2,Security,—,Security,Security,Security,—,"El CNG deberá aplicar una política de protección de la privacidad que especifique, como mínimo, qué información es privada y qué información es crítica."
+SecReq,secreq_0349,2,—,—,—,Security,Security,—,"El CPN puede admitir la comunicación cifrada con dispositivos de acceso remoto, y dicha comunicación cifrada puede finalizar bien en el CNG, bien en el CND."
+SecReq,secreq_0400,2,—,—,—,Security,Security,—,El CNG deberá estar asociado a un identificador de hardware único que se utilizará para su identificación en el lado de la NGN.
+SecReq,secreq_0407,2,—,Security,Security,—,—,—,El CNG deberá admitir mecanismos que permitan la gestión remota de los CND cuando proceda.
+SecReq,secreq_0438,2,—,Security,Security,—,—,—,"(p. ej., teléfonos VoIP, videoteléfonos, decodificadores, etc.)."
+SecReq,secreq_0024,1,Security,Security,Security,—,Security,Security,"La tarjeta debe garantizar que la transacción se realice en el mismo dispositivo de punto de venta que se utilizó para la compra que se va a cancelar, y que el importe de la cancelación sea el mismo que el de la compra o, en el caso de una compra incremental, el mismo que el del último paso."
+SecReq,secreq_0028,1,Security,Security,—,Security,Security,Security,Las transmisiones entre sistemas host deberían protegerse mediante MAC basados en claves únicas compartidas por los nodos implicados.
+SecReq,secreq_0032,1,Security,Security,—,Security,Security,Security,Los proveedores de esquemas deben asignar identificadores únicos a los adquirentes del comercio que prestan servicios de PSAM.
+SecReq,secreq_0037,1,—,—,—,Security,—,—,Debe incluir el contador de transacciones más reciente y el importe de los lotes que el comerciante o el adquirente del comercio no hayan eliminado del dispositivo de punto de venta.
+SecReq,secreq_0038,1,—,—,Security,—,—,—,Debe contener los detalles de una transacción entre el comando de inicialización de dicha transacción y el comando de inicialización de la siguiente transacción.
+SecReq,secreq_0041,1,—,—,—,—,—,Security,Asegurarse de que cada lote de transacciones se compense y se liquide una sola vez.
+SecReq,secreq_0043,1,Security,Security,—,Security,Security,Security,"Asegurarse de que las claves públicas de la CA, los parámetros de agregación, las listas de bloqueo y las listas de revocación de certificados de emisores de los proveedores de esquema se envíen a los dispositivos de punto de venta."
+SecReq,secreq_0050,1,—,—,—,—,Security,—,El pago de una transacción solo es necesario cuando se envía una transacción detallada para su pago; un adquirente del comercio puede optar por pagar al comerciante utilizando el total del lote.
+SecReq,secreq_0051,1,—,Security,—,—,—,—,El plazo de pago al comerciante debe acordarse entre el comerciante y el adquirente del comercio.
+SecReq,secreq_0053,1,Security,Security,Security,Security,Security,—,El importe que se va a anular es el importe del último paso de la transacción. El comando de anulación enviado a la tarjeta CEP contiene un S2 MAC calculado por el PSAM.
+SecReq,secreq_0058,1,—,—,Security,—,—,—,"Si el dispositivo de punto de venta admite varias aplicaciones o varios tipos de transacciones, la interacción entre el terminal y el consumidor o el agente de ventas determina la aplicación CEP y la función que se va a realizar (cancelar la última transacción de compra)."
+SecReq,secreq_0068,1,—,—,Security,—,—,—,Los totales agregados por emisor de tarjeta deben transmitirse a la entidad adquirente del comercio al mismo tiempo y de la misma forma que las transacciones detalladas no agregadas del lote.
+SecReq,secreq_0071,1,Security,Security,—,Security,Security,Security,"Cada transacción de compra se firma mediante la tarjeta CEP con un MAC S6, que el emisor de la tarjeta utiliza para realizar la validación de que la transacción se ha realizado con una tarjeta CEP legítima y no falsificada. El emisor de la tarjeta realiza la validación del MAC de la tarjeta CEP"
+SecReq,secreq_0072,1,Security,Security,—,Security,Security,Security,"Las decisiones de pago se basan en la validación de firmas, las normas del proveedor de esquema y los acuerdos entre el comerciante y el adquirente del comercio."
+SecReq,secreq_0082,1,—,—,Security,—,—,—,Los adquirentes de carga deben determinar las divisas que deben admitir para las transacciones de carga.
+SecReq,secreq_0086,1,—,—,Security,—,—,—,El emisor de la tarjeta debe establecer sus políticas para asignar y ajustar los saldos máximos de las ranuras. Estas políticas pueden exigir que el emisor de la tarjeta mantenga una base de datos de tarjetas
+SecReq,secreq_0089,1,—,Security,—,—,—,—,Los emisores de tarjetas deben proporcionar un código alfabético de divisa en cada mensaje que establezca una nueva divisa. El dispositivo de carga utilizará este código alfabético de divisa y el exponente de moneda para mostrar los saldos en cada divisa. Esto permite al titular de la tarjeta identificar la divisa que se muestra.
+SecReq,secreq_0095,1,—,—,Security,—,—,—,"Es el emisor de la tarjeta quien decide qué divisas pueden ocupar las ranuras de la tarjeta CEP. El emisor de la tarjeta toma esta decisión durante la operación de carga o de transacción de cambio de divisas, al aprobar o rechazar la solicitud de autorización de la operación."
+SecReq,secreq_0097,1,—,Security,—,—,—,—,"La tarjeta CEP limita cada ranura a un saldo máximo. El saldo máximo de una ranura se establece al asignarle una moneda y lo determina externamente el emisor de la tarjeta o los datos de la tarjeta CEP, que indican un saldo máximo en una moneda de referencia. No es obligatorio que todos los máximos de las ranuras tengan el mismo valor relativo, ni que la tarjeta mantenga un valor total máximo."
+SecReq,secreq_0108,1,Security,Security,—,Security,Security,Security,Las funciones de carga y descarga deben autenticarse mediante seguridad de extremo a extremo entre la tarjeta y el emisor de la misma.
+SecReq,secreq_0116,1,—,Security,—,—,—,—,"El plazo durante el cual el titular de una tarjeta puede realizar una descarga de valor electrónico, realizar una compra o un cambio de divisas con una tarjeta caducada puede ser determinado por cada emisor de la tarjeta."
+SecReq,secreq_0117,1,—,—,Security,—,—,—,"Los consumidores deben poder realizar la carga del valor electrónico en sus tarjetas en cualquier dispositivo de carga participante, independientemente de su ubicación, siempre que la moneda solicitada sea compatible con el adquirente y el emisor de la tarjeta."
+SecReq,secreq_0126,1,Security,Security,—,Security,Security,Security,El entorno de ejecución se encargará de realizar la separación del almacenamiento seguro para el código de aplicación y los datos.
+SecReq,secreq_0131,1,—,—,Security,—,—,—,"El OPEN se encargará de la carga del código de aplicación, el contenido de la tarjeta y la gestión de la memoria."
+SecReq,secreq_0135,1,—,—,—,—,—,Security,"La GlobalPlatform API deberá proporcionar servicios para la gestión del contenido de la tarjeta, tales como el bloqueo de la tarjeta y la actualización del estado del ciclo de vida de la aplicación."
+SecReq,secreq_0145,1,Security,Security,—,Security,Security,Security,"El proveedor de aplicaciones es responsable de colaborar con el emisor de la tarjeta para cargar las claves generadas en el dominio de seguridad del proveedor de aplicaciones,"
+SecReq,secreq_0148,1,—,—,Security,—,—,—,"El proveedor de aplicaciones es responsable de obtener la autorización de carga, instalación y extradición del emisor de la tarjeta,"
+SecReq,secreq_0149,1,—,Security,—,—,—,—,"El proveedor de aplicaciones es responsable de entregar los recibos correspondientes a la carga, instalación, eliminación y extradición, de acuerdo con la política del emisor de la tarjeta."
+SecReq,secreq_0153,1,Security,Security,—,Security,Security,Security,"El entorno de ejecución es responsable de proporcionar una interfaz a todas las aplicaciones que garantice que los mecanismos de seguridad del entorno de ejecución no puedan ser eludidos, desactivados, corrompidos ni burlados de ningún otro modo"
+SecReq,secreq_0156,1,Security,—,Security,Security,Security,Security,"La gestión segura de la memoria deberá garantizar que, cuando se admita más de un canal lógico, el código y los datos de cada aplicación seleccionada simultáneamente (incluidos los datos transitorios de sesión), así como el propio entorno de ejecución y sus datos (incluidos los datos transitorios de sesión), estén protegidos contra el acceso no autorizado desde el interior de la tarjeta"
+SecReq,secreq_0157,1,Security,Security,—,Security,Security,Security,"La gestión segura de la memoria deberá garantizar que no se pueda tener acceso al contenido anterior de la memoria cuando esta se reutilice,"
+SecReq,secreq_0174,1,—,—,Security,—,—,—,"Cuando proceda, un dominio de seguridad deberá solicitar al OPEN que realice la carga, instalación, extradición y eliminación del contenido de la tarjeta,"
+SecReq,secreq_0177,1,—,—,Security,—,—,—,"Cuando proceda, un dominio de seguridad deberá generar recibos de carga, instalación, extradición y eliminación,"
+SecReq,secreq_0180,1,Security,Security,—,Security,Security,Security,"Una Global Services Application deberá conservar de forma segura los datos relacionados con la aplicación de Servicios Globales,"
+SecReq,secreq_0185,1,Security,Security,—,Security,Security,Security,"Uno de los principales requisitos de una tarjeta GlobalPlatform es la capacidad de proporcionar un nivel mínimo de funcionalidad de criptografía. Esta criptografía se utiliza, por ejemplo, para la generación de firmas, y está disponible para su uso por parte de las aplicaciones presentes en la tarjeta."
+SecReq,secreq_0206,1,Security,Security,—,Security,Security,Security,OPEN será responsable de garantizar la seguridad y la gestión de la tarjeta y su contenido.
+SecReq,secreq_0209,1,—,—,Security,—,—,—,"En el estado OP_READY, el dominio de seguridad del emisor deberá ser la aplicación seleccionada implícitamente para todas las interfaces de la tarjeta."
+SecReq,secreq_0211,1,—,—,—,—,Security,—,"En el estado OP_READY, la clave inicial deberá estar disponible dentro del dominio de seguridad del emisor."
+SecReq,secreq_0213,1,Security,—,Security,Security,Security,Security,El estado SECURED puede utilizarse para hacer cumplir las políticas de seguridad pertinentes del dominio de seguridad y de las aplicaciones.
+SecReq,secreq_0215,1,—,—,Security,—,—,—,El estado CARD_LOCKED deberá permitir desactivar el dominio de seguridad y la aplicación seleccionados.
+SecReq,secreq_0222,1,—,—,—,—,Security,—,El GlobalPlatform Environment (OPEN) admite las funciones del marco de confianza de GlobalPlatform (comunicación segura entre aplicaciones) si el entorno de ejecución subyacente no las admite:
+SecReq,secreq_0223,1,—,Security,—,—,—,—,El GlobalPlatform Registry es un almacén de datos necesario para dar soporte a las diversas funciones del sistema de GlobalPlatform.
+SecReq,secreq_0233,1,—,—,—,—,—,Security,"En el caso del despacho de comandos a una aplicación, es responsabilidad de esta rechazar correctamente aquellos que no reconozca, no espere o no pueda procesar."
+SecReq,secreq_0240,1,—,—,Security,—,—,—,El canal lógico básico es la interfaz permanentemente disponible para una tarjeta GlobalPlatform y debe ser admitido por el OPEN.
+SecReq,secreq_0295,1,—,—,Security,—,—,—,Cada archivo de carga ejecutable o módulo ejecutable está asociado a un AID que deberá ser único en la tarjeta.
+SecReq,secreq_0296,1,—,—,—,Security,—,—,"Un identificador de aplicación (AID) puede ser el mismo que el de un módulo ejecutable, pero no puede ser el mismo que el de un archivo de carga ejecutable ni el mismo que el de otra aplicación ya presente en el GlobalPlatform Registry."
+SecReq,secreq_0308,1,Security,Security,—,Security,Security,Security,El CNG deberá aplicar una política de gestión de autorizaciones.
+SecReq,secreq_0309,1,Security,Security,—,Security,Security,Security,"Al recibir en el CNG un mensaje para acceder a la información de configuración con fines de actualización y detección de fallos de autorización, el CNG rechazará la solicitud y gestionará el fallo de acuerdo con la política de gestión de autorizaciones de la CPN."
+SecReq,secreq_0315,1,Security,Security,Security,Security,—,Security,"Cuando el CNG reciba una notificación de que ha vencido la asignación de un recurso, deberá eliminar todos los datos residuales asociados a la invocación de dicho recurso."
+SecReq,secreq_0316,1,Security,Security,—,Security,Security,Security,"Al recibir una solicitud válida (es decir, autorizada) de datos almacenados en el CNG, este deberá facilitar los datos solicitados al usuario solicitante."
+SecReq,secreq_0318,1,Security,Security,—,Security,Security,Security,"En caso de detectarse cualquier fallo o interrupción del sistema que no haya sido gestionado específicamente por otros mecanismos, el CNG deberá volver a un estado seguro conocido."
+SecReq,secreq_0319,1,Security,Security,Security,—,Security,Security,El CNG deberá admitir mecanismos para la autenticación ante la NGN con fines de conectividad.
+SecReq,secreq_0321,1,Security,Security,—,Security,Security,Security,"El CNG deberá admitir mecanismos para la autenticación de los CND ante la NGN con fines de uso del servicio, en caso de que estos no puedan cumplir íntegramente los procedimientos correspondientes de forma autónoma."
+SecReq,secreq_0326,1,Security,—,Security,Security,Security,Security,Las operaciones de diagnóstico realizadas por un operador en la CPN deberán llevarse a cabo de conformidad con las normas que protegen la privacidad de los usuarios de CPN.
+SecReq,secreq_0329,1,—,—,Security,—,—,—,"El CNG deberá estar equipado con una interfaz WAN hacia la NGN, que implemente las funcionalidades de las capas 1 y 2 (solución «todo en uno»)."
+SecReq,secreq_0333,1,—,—,Security,—,—,—,"El CNG deberá admitir diferentes esquemas de direcciones IP y subredes en el mismo puerto físico de LAN, así como en diferentes puertos LAN, independientemente de si el modo de funcionamiento es de encaminamiento o de puente, permitiendo el acceso directo a los CND desde el lado de la NGN en relación con los flujos del plano de datos, del plano de control y del plano de gestión."
+SecReq,secreq_0340,1,—,—,Security,—,—,—,"El CNG debería negociar los parámetros de sesión (ancho de banda, resolución de pantalla, códecs...) con la NGN de forma transparente para el usuario."
+SecReq,secreq_0342,1,—,—,—,Security,—,—,"El CNG deberá permitir al cliente el acceso remoto a un CND de la red del cliente, por ejemplo, una cámara de videovigilancia."
+SecReq,secreq_0344,1,—,—,Security,—,—,—,"El CNG puede utilizar múltiples conexiones de túnel para proporcionar, por ejemplo, una QoS adecuada al usuario de acceso remoto."
+SecReq,secreq_0351,1,—,Security,—,—,—,—,La CNG puede admitir mecanismos que faciliten la movilidad de los usuarios y de los servicios a los que están suscritos de un entorno físico de cliente a otro.
+SecReq,secreq_0352,1,—,—,Security,—,—,—,"El CNG debería poder ayudar a establecer sesiones de Rich Communication Suite entre CND, incluyendo la unión y división de flujos de voz y multimedia."
+SecReq,secreq_0355,1,—,—,Security,—,—,—,"Deberá ser posible que una única identidad pública esté asociada a varios CND, asignándose a cada asociación una identidad privada única."
+SecReq,secreq_0365,1,—,—,Security,—,—,—,"En el caso de flujos de multidifusión, el CNG deberá mantener un registro de qué dispositivos están suscritos a qué grupo de multidifusión."
+SecReq,secreq_0371,1,—,—,Security,—,—,—,Los STB o las pasarelas de medios deberían estar equipados con una API abierta y programable que permita la implementación de lógicas de servicio específicas.
+SecReq,secreq_0377,1,—,—,Security,—,—,—,La CPN debería permitir el almacenamiento de contenido generado por el usuario (UGC) dentro de la propia CPN.
+SecReq,secreq_0392,1,—,—,Security,—,—,—,El CNG deberá ser capaz de clasificar el tráfico de red de área local que el propio CNG simplemente puentea dentro de la CPN.
+SecReq,secreq_0394,1,—,—,Security,—,—,—,"En caso de que se produzca un volumen elevado de tráfico en el sentido ascendente o descendente, se implementará un mecanismo de gestión de la congestión en la CNG para minimizar el impacto desde el punto de vista de la experiencia del usuario."
+SecReq,secreq_0404,1,—,—,Security,—,—,—,"La gestión remota de CNG requiere la gestión de un conjunto específico de parámetros. Deberá estar disponible, como mínimo, la siguiente lista de parámetros: identificación del cliente, identificación física de la línea, lista de servicios contratados y dirección IP de CNG."
+SecReq,secreq_0408,1,—,—,—,—,—,Security,Se implementarán mecanismos de protección para evitar que un cliente de gestión pueda tener acceso y modificar parámetros cuya configuración no esté permitida.
+SecReq,secreq_0409,1,—,—,Security,—,—,—,"El CPN (a través de los CND y/o el CNG) deberá admitir la configuración manual para introducir la información necesaria para acceder a la red IMS (por ejemplo, IMPU, IMPI, claves compartidas, dominio de la red de origen o dirección IP del P-CSCF, etc.)."
+SecReq,secreq_0412,1,—,Security,—,—,—,—,El CND debería ser capaz de admitir funciones de arranque inicial para recuperar los datos de configuración de red necesarios para conectarse a la NGN.
+SecReq,secreq_0415,1,—,—,Security,—,—,—,El CPN debería admitir una funcionalidad que garantice la QoS y la priorización de llamadas para las sesiones que se inicien o terminen en el H(e)NB.
+SecReq,secreq_0422,1,—,—,Security,—,—,—,"Con el fin de dar soporte a los servicios NGN y a las comunicaciones intra-CPN, todas las CND de la CPN deberán ser direccionables directamente o a través de la CNG utilizando mecanismos de L2/L3."
+SecReq,secreq_0432,1,—,—,Security,—,—,—,"La CPN deberá admitir el control de acceso seguro remoto, basado en las funciones de red NGN."

@@ -1,0 +1,72 @@
+[2026-11-26T13:21:00] empieza la cola
+[2026-11-26T13:21:00] INICIO subcategories/c0_real/promise/beto
+[2026-11-26T13:54:49] FIN subcategories/c0_real/promise/beto (33.8 min)
+[2026-11-26T13:54:49] INICIO subcategories/c0_real/secreq/beto
+[2026-11-26T15:04:31] FIN subcategories/c0_real/secreq/beto (69.7 min)
+[2026-11-26T15:04:31] INICIO subcategories/c0_real/dosspre/beto
+[2026-11-26T17:10:54] FIN subcategories/c0_real/dosspre/beto (126.4 min)
+[2026-11-26T17:10:54] INICIO subcategories/c0_real/promise/roberta_bne
+[2026-11-26T17:49:50] FIN subcategories/c0_real/promise/roberta_bne (38.9 min)
+[2026-11-26T17:49:50] INICIO subcategories/c0_real/secreq/roberta_bne
+[2026-11-26T19:01:07] FIN subcategories/c0_real/secreq/roberta_bne (71.3 min)
+[2026-11-26T19:01:07] INICIO subcategories/c0_real/dosspre/roberta_bne
+[2026-11-26T20:58:06] FIN subcategories/c0_real/dosspre/roberta_bne (117.0 min)
+[2026-11-26T20:58:06] ENTRENAMIENTO COMPLETO
+binary/c0_real: 3 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\binary\c0_real\results_binary_c0_real.xlsx
+subcategories/c0_real: 9 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c0_real\results_subcategories_c0_real.xlsx
+subcategories/c1_augmented: 9 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c1_augmented\results_subcategories_c1_augmented.xlsx
+cascada/c0_real: 3 pares evaluados
+cascada/c1_augmented: 3 pares evaluados
+[2026-11-26T20:58:19] INICIO binary/c0_real/promise/beto
+[2026-11-26T22:15:42] FIN binary/c0_real/promise/beto (77.4 min)
+[2026-11-26T22:15:42] INICIO binary/c0_real/secreq/beto
+[2026-11-26T23:46:41] FIN binary/c0_real/secreq/beto (91.0 min)
+[2026-11-26T23:46:41] INICIO binary/c0_real/promise/roberta_bne
+[2026-11-27T01:00:14] FIN binary/c0_real/promise/roberta_bne (73.6 min)
+[2026-11-27T01:00:14] INICIO binary/c0_real/secreq/roberta_bne
+[2026-11-27T02:20:42] FIN binary/c0_real/secreq/roberta_bne (80.5 min)
+[2026-11-27T02:20:42] ENTRENAMIENTO COMPLETO
+[2026-11-27T02:20:43] INICIO binary/c0_real/promise/cnn
+[2026-11-27T02:28:38] FIN binary/c0_real/promise/cnn (7.9 min)
+[2026-11-27T02:28:38] INICIO binary/c0_real/secreq/cnn
+[2026-11-27T02:37:19] FIN binary/c0_real/secreq/cnn (8.7 min)
+[2026-11-27T02:37:19] INICIO binary/c0_real/dosspre/cnn
+[2026-11-27T02:52:34] FIN binary/c0_real/dosspre/cnn (15.2 min)
+[2026-11-27T02:52:34] INICIO subcategories/c0_real/promise/cnn
+[2026-11-27T02:56:26] FIN subcategories/c0_real/promise/cnn (3.9 min)
+[2026-11-27T02:56:26] INICIO subcategories/c0_real/secreq/cnn
+[2026-11-27T03:02:03] FIN subcategories/c0_real/secreq/cnn (5.6 min)
+[2026-11-27T03:02:03] INICIO subcategories/c0_real/dosspre/cnn
+[2026-11-27T03:11:17] FIN subcategories/c0_real/dosspre/cnn (9.2 min)
+[2026-11-27T03:11:17] INICIO subcategories/c1_augmented/promise/cnn
+[2026-11-27T03:16:45] FIN subcategories/c1_augmented/promise/cnn (5.5 min)
+[2026-11-27T03:16:45] INICIO subcategories/c1_augmented/secreq/cnn
+[2026-11-27T03:23:52] FIN subcategories/c1_augmented/secreq/cnn (7.1 min)
+[2026-11-27T03:23:52] INICIO subcategories/c1_augmented/dosspre/cnn
+[2026-11-27T03:35:26] FIN subcategories/c1_augmented/dosspre/cnn (11.6 min)
+[2026-11-27T03:35:26] ENTRENAMIENTO COMPLETO
+[2026-11-27T03:35:26] INICIO binary/c0_real/promise/bilstm
+[2026-11-27T03:54:42] ERROR binary/c0_real/promise/bilstm (19.3 min; ver binary_c0_real_promise_bilstm.log)
+[2026-11-27T03:54:42] INICIO binary/c0_real/secreq/bilstm
+[2026-11-27T04:18:33] ERROR binary/c0_real/secreq/bilstm (23.9 min; ver binary_c0_real_secreq_bilstm.log)
+[2026-11-27T04:18:33] INICIO binary/c0_real/dosspre/bilstm
+[2026-11-27T04:56:37] ERROR binary/c0_real/dosspre/bilstm (38.1 min; ver binary_c0_real_dosspre_bilstm.log)
+[2026-11-27T04:56:37] INICIO subcategories/c0_real/promise/bilstm
+[2026-11-27T05:05:53] ERROR subcategories/c0_real/promise/bilstm (9.3 min; ver subcategories_c0_real_promise_bilstm.log)
+[2026-11-27T05:05:53] INICIO subcategories/c0_real/secreq/bilstm
+[2026-11-27T05:20:59] ERROR subcategories/c0_real/secreq/bilstm (15.1 min; ver subcategories_c0_real_secreq_bilstm.log)
+[2026-11-27T05:20:59] INICIO subcategories/c0_real/dosspre/bilstm
+[2026-11-27T05:44:47] ERROR subcategories/c0_real/dosspre/bilstm (23.8 min; ver subcategories_c0_real_dosspre_bilstm.log)
+[2026-11-27T05:44:47] INICIO subcategories/c1_augmented/promise/bilstm
+[2026-11-27T05:56:53] ERROR subcategories/c1_augmented/promise/bilstm (12.1 min; ver subcategories_c1_augmented_promise_bilstm.log)
+[2026-11-27T05:56:53] INICIO subcategories/c1_augmented/secreq/bilstm
+[2026-11-27T06:17:06] ERROR subcategories/c1_augmented/secreq/bilstm (20.2 min; ver subcategories_c1_augmented_secreq_bilstm.log)
+[2026-11-27T06:17:06] INICIO subcategories/c1_augmented/dosspre/bilstm
+[2026-11-27T06:45:06] ERROR subcategories/c1_augmented/dosspre/bilstm (28.0 min; ver subcategories_c1_augmented_dosspre_bilstm.log)
+[2026-11-27T06:45:06] TERMINADO CON ERRORES: ['binary/c0_real/promise/bilstm', 'binary/c0_real/secreq/bilstm', 'binary/c0_real/dosspre/bilstm', 'subcategories/c0_real/promise/bilstm', 'subcategories/c0_real/secreq/bilstm', 'subcategories/c0_real/dosspre/bilstm', 'subcategories/c1_augmented/promise/bilstm', 'subcategories/c1_augmented/secreq/bilstm', 'subcategories/c1_augmented/dosspre/bilstm']
+binary/c0_real: 13 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\binary\c0_real\results_binary_c0_real.xlsx
+subcategories/c0_real: 15 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c0_real\results_subcategories_c0_real.xlsx
+subcategories/c1_augmented: 15 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c1_augmented\results_subcategories_c1_augmented.xlsx
+cascada/c0_real: 13 pares evaluados
+cascada/c1_augmented: 13 pares evaluados
+[2026-11-27T06:45:26] cola terminada

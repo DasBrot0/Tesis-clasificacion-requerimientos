@@ -1,1 +1,5 @@
-﻿
+﻿dataset,macro_f1 Transformers (media agrupada),macro_f1 Deep Learning (media agrupada),mejor Transformers,mejor Deep Learning,delta_macro_f1,folds_won,cliffs_delta_folds,magnitude,mejor rango SK Transformers,mejor rango SK Deep Learning,wilcoxon_p
+PROMISE_exp,0.6523643469036517,0.4745671262090472,DistilBETO,CNN,0.17779722069460457,5 de 5,0.84,grande,1.0,2.0,
+SecReq,0.6894503841206273,0.5100917403455354,BETO,CNN,0.17935864377509192,4 de 5,0.84,grande,1.0,1.0,
+DOSSPRE,0.7975897174284251,0.601440918769998,RoBERTa-BNE,CNN,0.19614879865842716,5 de 5,1.0,grande,1.0,2.0,
+Los 3 datasets,0.7131348161509014,0.5286999284415268,,,0.18443488770937455,14 de 15,,Transformers superiores en 3 de 3,,,0.0001220703125

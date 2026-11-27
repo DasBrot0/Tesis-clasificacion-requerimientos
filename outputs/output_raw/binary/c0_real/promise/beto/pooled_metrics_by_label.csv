@@ -1,0 +1,2 @@
+﻿label,precision,recall,f1,support,in_macro_average
+Security,0.8405797101449275,0.7532467532467533,0.7945205479452054,77,True

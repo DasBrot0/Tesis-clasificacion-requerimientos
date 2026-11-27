@@ -1,0 +1,547 @@
+
+=== subcategories | c0_real | PROMISE_exp / CNN | cuda ===
+reales=77 | sintéticos=0 | CV anidada 5x3 | trials por externo=25 | etiquetas evaluadas=['Confidentiality', 'Integrity', 'Authenticity', 'Resistance']
+
+--- externo 1/5: entrenamiento=62 reales + 0 sintéticos | prueba=15 ---
+[I 2026-11-27 02:52:38,309] A new study created in RDB with name: subcategories_promise_cnn_outer_0
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4142 mejor época=2 de 50
+    fold interno 2/3: macro_f1=0.2000 mejor época=27 de 42
+    fold interno 3/3: macro_f1=0.3292 mejor época=1 de 36
+[I 2026-11-27 02:52:42,288] Trial 0 finished with value: 0.31447191697191695 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.31447191697191695.
+  trial 1: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3111 mejor época=16 de 50
+    fold interno 2/3: macro_f1=0.3467 mejor época=12 de 42
+    fold interno 3/3: macro_f1=0.2633 mejor época=1 de 39
+[I 2026-11-27 02:52:44,961] Trial 1 finished with value: 0.3070335539301057 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}. Best is trial 0 with value: 0.31447191697191695.
+  trial 2: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4166 mejor época=2 de 50
+    fold interno 2/3: macro_f1=0.3518 mejor época=3 de 38
+    fold interno 3/3: macro_f1=0.4492 mejor época=2 de 50
+[I 2026-11-27 02:52:47,939] Trial 2 finished with value: 0.40586283603026235 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 3: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3530 mejor época=2 de 25
+    fold interno 2/3: macro_f1=0.1897 mejor época=5 de 21
+    fold interno 3/3: macro_f1=0.2857 mejor época=2 de 14
+[I 2026-11-27 02:52:49,748] Trial 3 finished with value: 0.2761129355956942 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 4: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2917 mejor época=2 de 23
+    fold interno 2/3: macro_f1=0.2905 mejor época=5 de 16
+    fold interno 3/3: macro_f1=0.2762 mejor época=1 de 20
+[I 2026-11-27 02:52:51,556] Trial 4 finished with value: 0.2861111111111111 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 5: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2830 mejor época=3 de 42
+[I 2026-11-27 02:52:52,710] Trial 5 pruned. 
+  trial 6: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3287 mejor época=20 de 50
+[I 2026-11-27 02:52:53,927] Trial 6 pruned. 
+  trial 7: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1739 mejor época=7 de 17
+[I 2026-11-27 02:52:54,607] Trial 7 pruned. 
+  trial 8: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0002515372563421254, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3861 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3461 mejor época=2 de 40
+    fold interno 3/3: macro_f1=0.4492 mejor época=2 de 31
+[I 2026-11-27 02:52:57,486] Trial 8 finished with value: 0.39381475006475003 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0002515372563421254, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 9: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0018805852195291279, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2572 mejor época=17 de 27
+[I 2026-11-27 02:52:58,344] Trial 9 pruned. 
+  trial 10: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.005522664207103456, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2685 mejor época=7 de 17
+[I 2026-11-27 02:52:58,987] Trial 10 pruned. 
+  trial 11: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00034855009976460667, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4020 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3385 mejor época=1 de 28
+    fold interno 3/3: macro_f1=0.4537 mejor época=4 de 26
+[I 2026-11-27 02:53:01,627] Trial 11 finished with value: 0.39805801082974995 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00034855009976460667, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 12: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0005471233570004945, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.2143 mejor época=1 de 32
+[I 2026-11-27 02:53:02,600] Trial 12 pruned. 
+  trial 13: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0004209426409736111, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1667 mejor época=36 de 46
+[I 2026-11-27 02:53:03,861] Trial 13 pruned. 
+  trial 14: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0014138990016497623, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3738 mejor época=1 de 20
+[I 2026-11-27 02:53:04,518] Trial 14 pruned. 
+  trial 15: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00010338008703822555, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2662 mejor época=2 de 50
+[I 2026-11-27 02:53:05,868] Trial 15 pruned. 
+  trial 16: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00011637778378226422, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4357 mejor época=16 de 50
+    fold interno 2/3: macro_f1=0.1579 mejor época=50 de 50
+    fold interno 3/3: macro_f1=0.4251 mejor época=3 de 50
+[I 2026-11-27 02:53:09,185] Trial 16 finished with value: 0.33956454103775185 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00011637778378226422, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 17: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00028073916102278474, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4020 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3385 mejor época=1 de 50
+    fold interno 3/3: macro_f1=0.4632 mejor época=2 de 49
+[I 2026-11-27 02:53:12,571] Trial 17 finished with value: 0.4012447927889104 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00028073916102278474, 'pos_weight': False}. Best is trial 2 with value: 0.40586283603026235.
+  trial 18: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00022167426687331936, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4020 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3474 mejor época=2 de 50
+    fold interno 3/3: macro_f1=0.4298 mejor época=2 de 50
+[I 2026-11-27 02:53:16,066] Trial 18 finished with value: 0.3930522770240512 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00022167426687331936, 'pos_weight': False}. Best is trial 2 with value: 0.40586283603026235.
+  trial 19: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00010210780363938234, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3001 mejor época=3 de 50
+[I 2026-11-27 02:53:17,322] Trial 19 pruned. 
+  trial 20: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00016402030559658923, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.3817 mejor época=13 de 50
+[I 2026-11-27 02:53:18,638] Trial 20 pruned. 
+  trial 21: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.0007500923762951473, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4080 mejor época=1 de 31
+    fold interno 2/3: macro_f1=0.1842 mejor época=22 de 32
+    fold interno 3/3: macro_f1=0.3719 mejor época=1 de 29
+[I 2026-11-27 02:53:21,001] Trial 21 finished with value: 0.3213927516673512 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.0007500923762951473, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 22: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.000700180239753675, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.3258 mejor época=1 de 43
+[I 2026-11-27 02:53:22,174] Trial 22 pruned. 
+  trial 23: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0004898133662045507, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4020 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3385 mejor época=1 de 42
+    fold interno 3/3: macro_f1=0.4763 mejor época=5 de 25
+[I 2026-11-27 02:53:24,728] Trial 23 finished with value: 0.4056082806082806 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0004898133662045507, 'pos_weight': True}. Best is trial 2 with value: 0.40586283603026235.
+  trial 24: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0008039710452695546, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3362 mejor época=1 de 36
+[I 2026-11-27 02:53:25,624] Trial 24 pruned. 
+  modelo final: 2 épocas sobre 62 filas, config={'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+  externo 1 prueba: {'macro_f1': 0.285, 'weighted_f1': 0.3419, 'micro_f1': 0.3571, 'macro_recall': 0.631, 'loss': 0.83}
+
+--- externo 2/5: entrenamiento=61 reales + 0 sintéticos | prueba=16 ---
+[I 2026-11-27 02:53:26,649] A new study created in RDB with name: subcategories_promise_cnn_outer_1
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4110 mejor época=1 de 50
+    fold interno 2/3: macro_f1=0.3010 mejor época=43 de 50
+    fold interno 3/3: macro_f1=0.1923 mejor época=3 de 43
+[I 2026-11-27 02:53:29,539] Trial 0 finished with value: 0.30144234850117196 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.30144234850117196.
+  trial 1: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3319 mejor época=2 de 50
+    fold interno 2/3: macro_f1=0.4581 mejor época=5 de 50
+    fold interno 3/3: macro_f1=0.4274 mejor época=2 de 50
+[I 2026-11-27 02:53:32,896] Trial 1 finished with value: 0.4057887277908316 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}. Best is trial 1 with value: 0.4057887277908316.
+  trial 2: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3866 mejor época=4 de 50
+    fold interno 2/3: macro_f1=0.2564 mejor época=46 de 50
+    fold interno 3/3: macro_f1=0.1324 mejor época=2 de 50
+[I 2026-11-27 02:53:36,322] Trial 2 finished with value: 0.2584890954456172 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}. Best is trial 1 with value: 0.4057887277908316.
+  trial 3: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4675 mejor época=13 de 43
+    fold interno 2/3: macro_f1=0.4056 mejor época=25 de 35
+    fold interno 3/3: macro_f1=0.3168 mejor época=9 de 34
+[I 2026-11-27 02:53:39,021] Trial 3 finished with value: 0.39660858063031973 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}. Best is trial 1 with value: 0.4057887277908316.
+  trial 4: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4895 mejor época=13 de 40
+    fold interno 2/3: macro_f1=0.4810 mejor época=25 de 35
+    fold interno 3/3: macro_f1=0.4246 mejor época=7 de 21
+[I 2026-11-27 02:53:41,521] Trial 4 finished with value: 0.46502645502645495 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}. Best is trial 4 with value: 0.46502645502645495.
+  trial 5: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3989 mejor época=49 de 50
+[I 2026-11-27 02:53:42,810] Trial 5 pruned. 
+  trial 6: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3319 mejor época=3 de 50
+[I 2026-11-27 02:53:44,042] Trial 6 pruned. 
+  trial 7: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3639 mejor época=6 de 16
+[I 2026-11-27 02:53:44,718] Trial 7 pruned. 
+  trial 8: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0019234026619739644, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5302 mejor época=12 de 39
+    fold interno 2/3: macro_f1=0.4743 mejor época=9 de 19
+    fold interno 3/3: macro_f1=0.5292 mejor época=6 de 19
+[I 2026-11-27 02:53:46,848] Trial 8 finished with value: 0.5112240537240537 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0019234026619739644, 'pos_weight': True}. Best is trial 8 with value: 0.5112240537240537.
+  trial 9: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.004960355007430165, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4361 mejor época=4 de 15
+[I 2026-11-27 02:53:47,481] Trial 9 pruned. 
+  trial 10: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0001915617775506052, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2652 mejor época=41 de 50
+[I 2026-11-27 02:53:48,625] Trial 10 pruned. 
+  trial 11: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0028537425796560352, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4895 mejor época=7 de 17
+    fold interno 2/3: macro_f1=0.4810 mejor época=6 de 18
+    fold interno 3/3: macro_f1=0.5500 mejor época=6 de 16
+[I 2026-11-27 02:53:50,290] Trial 11 finished with value: 0.5068253968253967 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0028537425796560352, 'pos_weight': True}. Best is trial 8 with value: 0.5112240537240537.
+  trial 12: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.004267218606724674, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5104 mejor época=7 de 17
+    fold interno 2/3: macro_f1=0.4743 mejor época=10 de 20
+    fold interno 3/3: macro_f1=0.6443 mejor época=6 de 16
+[I 2026-11-27 02:53:52,035] Trial 12 finished with value: 0.5429870129870129 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.004267218606724674, 'pos_weight': True}. Best is trial 12 with value: 0.5429870129870129.
+  trial 13: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.005338830647283741, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4674 mejor época=18 de 28
+[I 2026-11-27 02:53:52,814] Trial 13 pruned. 
+  trial 14: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.007055752820221533, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4229 mejor época=4 de 22
+[I 2026-11-27 02:53:53,493] Trial 14 pruned. 
+  trial 15: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.4, 'learning_rate': 0.003892004774197061, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4304 mejor época=12 de 23
+[I 2026-11-27 02:53:54,333] Trial 15 pruned. 
+  trial 16: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009851905460304535, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5412 mejor época=3 de 13
+    fold interno 2/3: macro_f1=0.5164 mejor época=3 de 13
+    fold interno 3/3: macro_f1=0.5852 mejor época=9 de 19
+[I 2026-11-27 02:53:55,984] Trial 16 finished with value: 0.5475996972488201 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009851905460304535, 'pos_weight': True}. Best is trial 16 with value: 0.5475996972488201.
+  trial 17: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009946703105099947, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.6179 mejor época=3 de 13
+    fold interno 2/3: macro_f1=0.5431 mejor época=3 de 13
+    fold interno 3/3: macro_f1=0.5749 mejor época=8 de 18
+[I 2026-11-27 02:53:57,699] Trial 17 finished with value: 0.5786119436119436 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009946703105099947, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  trial 18: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.008841129858244846, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4750 mejor época=4 de 14
+[I 2026-11-27 02:53:58,340] Trial 18 pruned. 
+  trial 19: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.0033022643734913768, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4750 mejor época=4 de 16
+[I 2026-11-27 02:53:58,950] Trial 19 pruned. 
+  trial 20: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.009728405072383366, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5060 mejor época=8 de 18
+    fold interno 2/3: macro_f1=0.4911 mejor época=2 de 12
+    fold interno 3/3: macro_f1=0.5018 mejor época=2 de 13
+[I 2026-11-27 02:54:00,610] Trial 20 finished with value: 0.4996420246420246 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.009728405072383366, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  trial 21: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00657036250894496, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.6384 mejor época=9 de 19
+    fold interno 2/3: macro_f1=0.5656 mejor época=20 de 30
+    fold interno 3/3: macro_f1=0.5091 mejor época=21 de 31
+[I 2026-11-27 02:54:02,983] Trial 21 finished with value: 0.5710140387199883 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00657036250894496, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  trial 22: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.008552726934088657, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5432 mejor época=2 de 18
+    fold interno 2/3: macro_f1=0.4905 mejor época=6 de 16
+    fold interno 3/3: macro_f1=0.5310 mejor época=7 de 17
+[I 2026-11-27 02:54:04,784] Trial 22 finished with value: 0.5215702372903185 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.008552726934088657, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  trial 23: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.00704481116706849, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5438 mejor época=7 de 17
+    fold interno 2/3: macro_f1=0.5153 mejor época=3 de 13
+    fold interno 3/3: macro_f1=0.5935 mejor época=10 de 20
+[I 2026-11-27 02:54:06,571] Trial 23 finished with value: 0.5508657086022816 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.00704481116706849, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  trial 24: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0056169943343288755, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5310 mejor época=10 de 20
+    fold interno 2/3: macro_f1=0.5417 mejor época=3 de 13
+    fold interno 3/3: macro_f1=0.5816 mejor época=9 de 19
+[I 2026-11-27 02:54:08,393] Trial 24 finished with value: 0.5514005602240896 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0056169943343288755, 'pos_weight': True}. Best is trial 17 with value: 0.5786119436119436.
+  modelo final: 5 épocas sobre 61 filas, config={'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009946703105099947, 'pos_weight': True}
+  externo 2 prueba: {'macro_f1': 0.2829, 'weighted_f1': 0.4095, 'micro_f1': 0.5, 'macro_recall': 0.2708, 'loss': 0.9377}
+
+--- externo 3/5: entrenamiento=62 reales + 0 sintéticos | prueba=15 ---
+[I 2026-11-27 02:54:09,179] A new study created in RDB with name: subcategories_promise_cnn_outer_2
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.3616 mejor época=1 de 41
+    fold interno 2/3: macro_f1=0.2292 mejor época=2 de 48
+    fold interno 3/3: macro_f1=0.2524 mejor época=1 de 50
+[I 2026-11-27 02:54:12,058] Trial 0 finished with value: 0.28107547416767803 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.28107547416767803.
+  trial 1: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3750 mejor época=50 de 50
+    fold interno 2/3: macro_f1=0.2333 mejor época=32 de 42
+    fold interno 3/3: macro_f1=0.2352 mejor época=9 de 50
+[I 2026-11-27 02:54:15,321] Trial 1 finished with value: 0.281168582375479 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}. Best is trial 1 with value: 0.281168582375479.
+  trial 2: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3143 mejor época=13 de 50
+    fold interno 2/3: macro_f1=0.3500 mejor época=50 de 50
+    fold interno 3/3: macro_f1=0.2786 mejor época=10 de 50
+[I 2026-11-27 02:54:18,789] Trial 2 finished with value: 0.3142857142857143 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}. Best is trial 2 with value: 0.3142857142857143.
+  trial 3: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4762 mejor época=11 de 25
+    fold interno 2/3: macro_f1=0.3685 mejor época=23 de 33
+    fold interno 3/3: macro_f1=0.2292 mejor época=1 de 28
+[I 2026-11-27 02:54:21,097] Trial 3 finished with value: 0.35795855379188707 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}. Best is trial 3 with value: 0.35795855379188707.
+  trial 4: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5208 mejor época=25 de 35
+    fold interno 2/3: macro_f1=0.3817 mejor época=6 de 22
+    fold interno 3/3: macro_f1=0.1800 mejor época=18 de 28
+[I 2026-11-27 02:54:23,364] Trial 4 finished with value: 0.3608597883597883 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}. Best is trial 4 with value: 0.3608597883597883.
+  trial 5: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5083 mejor época=32 de 50
+    fold interno 2/3: macro_f1=0.4334 mejor época=1 de 46
+    fold interno 3/3: macro_f1=0.3481 mejor época=2 de 44
+[I 2026-11-27 02:54:26,732] Trial 5 finished with value: 0.4299431718619275 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}. Best is trial 5 with value: 0.4299431718619275.
+  trial 6: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3750 mejor época=50 de 50
+[I 2026-11-27 02:54:27,974] Trial 6 pruned. 
+  trial 7: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5693 mejor época=5 de 15
+    fold interno 2/3: macro_f1=0.4508 mejor época=10 de 20
+    fold interno 3/3: macro_f1=0.4822 mejor época=13 de 23
+[I 2026-11-27 02:54:29,983] Trial 7 finished with value: 0.5007772278872022 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 8: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5152 mejor época=9 de 19
+    fold interno 2/3: macro_f1=0.4552 mejor época=10 de 20
+    fold interno 3/3: macro_f1=0.5239 mejor época=14 de 24
+[I 2026-11-27 02:54:32,020] Trial 8 finished with value: 0.49808959156785243 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 9: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.00015675567561486347, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3024 mejor época=6 de 50
+[I 2026-11-27 02:54:33,198] Trial 9 pruned. 
+  trial 10: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0008134837312503412, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3972 mejor época=1 de 23
+[I 2026-11-27 02:54:33,943] Trial 10 pruned. 
+  trial 11: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.008246370419625166, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4902 mejor época=9 de 19
+[I 2026-11-27 02:54:34,732] Trial 11 pruned. 
+  trial 12: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0045063768364245445, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.4724 mejor época=4 de 14
+[I 2026-11-27 02:54:35,401] Trial 12 pruned. 
+  trial 13: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0020919937652604656, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.6012 mejor época=7 de 18
+    fold interno 2/3: macro_f1=0.4022 mejor época=11 de 21
+    fold interno 3/3: macro_f1=0.3685 mejor época=16 de 26
+[I 2026-11-27 02:54:37,561] Trial 13 finished with value: 0.45729430258415765 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0020919937652604656, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 14: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0027045684934771993, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5379 mejor época=12 de 22
+    fold interno 2/3: macro_f1=0.4791 mejor época=10 de 20
+    fold interno 3/3: macro_f1=0.3652 mejor época=20 de 30
+[I 2026-11-27 02:54:39,641] Trial 14 finished with value: 0.46071271723445645 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0027045684934771993, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 15: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.000808946670801587, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3848 mejor época=17 de 27
+[I 2026-11-27 02:54:40,548] Trial 15 pruned. 
+  trial 16: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0017834546331310873, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5133 mejor época=9 de 19
+    fold interno 2/3: macro_f1=0.3750 mejor época=13 de 23
+    fold interno 3/3: macro_f1=0.2667 mejor época=1 de 17
+[I 2026-11-27 02:54:42,494] Trial 16 finished with value: 0.385 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0017834546331310873, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 17: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.006020949428806874, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.6030 mejor época=8 de 18
+    fold interno 2/3: macro_f1=0.4333 mejor época=11 de 21
+    fold interno 3/3: macro_f1=0.4137 mejor época=8 de 18
+[I 2026-11-27 02:54:44,357] Trial 17 finished with value: 0.48334859584859585 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.006020949428806874, 'pos_weight': True}. Best is trial 7 with value: 0.5007772278872022.
+  trial 18: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.003954626792713764, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5833 mejor época=11 de 21
+    fold interno 2/3: macro_f1=0.4735 mejor época=8 de 18
+    fold interno 3/3: macro_f1=0.5167 mejor época=7 de 17
+[I 2026-11-27 02:54:46,275] Trial 18 finished with value: 0.5244949494949495 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.003954626792713764, 'pos_weight': True}. Best is trial 18 with value: 0.5244949494949495.
+  trial 19: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.002728206649831563, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5030 mejor época=7 de 17
+[I 2026-11-27 02:54:46,971] Trial 19 pruned. 
+  trial 20: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0012874916031487041, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.5238 mejor época=26 de 36
+    fold interno 2/3: macro_f1=0.2159 mejor época=1 de 22
+    fold interno 3/3: macro_f1=0.1800 mejor época=32 de 42
+[I 2026-11-27 02:54:49,740] Trial 20 finished with value: 0.30657287157287155 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0012874916031487041, 'pos_weight': False}. Best is trial 18 with value: 0.5244949494949495.
+  trial 21: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.002681806654953696, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4429 mejor época=6 de 16
+[I 2026-11-27 02:54:50,410] Trial 21 pruned. 
+  trial 22: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.005818173296077116, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5064 mejor época=11 de 21
+[I 2026-11-27 02:54:51,179] Trial 22 pruned. 
+  trial 23: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.004406525995343365, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5833 mejor época=12 de 22
+    fold interno 2/3: macro_f1=0.4656 mejor época=8 de 18
+    fold interno 3/3: macro_f1=0.6001 mejor época=15 de 25
+[I 2026-11-27 02:54:53,230] Trial 23 finished with value: 0.549672187715666 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.004406525995343365, 'pos_weight': True}. Best is trial 23 with value: 0.549672187715666.
+  trial 24: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0013202002691963795, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4602 mejor época=25 de 36
+[I 2026-11-27 02:54:54,214] Trial 24 pruned. 
+  modelo final: 12 épocas sobre 62 filas, config={'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.004406525995343365, 'pos_weight': True}
+  externo 3 prueba: {'macro_f1': 0.1765, 'weighted_f1': 0.3137, 'micro_f1': 0.4444, 'macro_recall': 0.1875, 'loss': 1.3172}
+
+--- externo 4/5: entrenamiento=61 reales + 0 sintéticos | prueba=16 ---
+[I 2026-11-27 02:54:55,107] A new study created in RDB with name: subcategories_promise_cnn_outer_3
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.5068 mejor época=30 de 50
+    fold interno 2/3: macro_f1=0.4652 mejor época=42 de 50
+    fold interno 3/3: macro_f1=0.4230 mejor época=3 de 46
+[I 2026-11-27 02:54:57,767] Trial 0 finished with value: 0.4650010289653754 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.4650010289653754.
+  trial 1: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5671 mejor época=7 de 50
+    fold interno 2/3: macro_f1=0.4424 mejor época=49 de 50
+    fold interno 3/3: macro_f1=0.1957 mejor época=17 de 30
+[I 2026-11-27 02:55:00,780] Trial 1 finished with value: 0.4017253278122843 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 2: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3522 mejor época=50 de 50
+    fold interno 2/3: macro_f1=0.2316 mejor época=49 de 50
+    fold interno 3/3: macro_f1=0.4675 mejor época=1 de 50
+[I 2026-11-27 02:55:04,265] Trial 2 finished with value: 0.35043088273676926 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 3: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4829 mejor época=20 de 30
+    fold interno 2/3: macro_f1=0.5062 mejor época=17 de 27
+    fold interno 3/3: macro_f1=0.1800 mejor época=13 de 23
+[I 2026-11-27 02:55:06,531] Trial 3 finished with value: 0.38971491228070176 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 4: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4304 mejor época=21 de 31
+    fold interno 2/3: macro_f1=0.4708 mejor época=19 de 29
+    fold interno 3/3: macro_f1=0.1818 mejor época=8 de 18
+[I 2026-11-27 02:55:08,728] Trial 4 finished with value: 0.3610287659200702 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 5: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5583 mejor época=48 de 50
+    fold interno 2/3: macro_f1=0.3833 mejor época=47 de 50
+    fold interno 3/3: macro_f1=0.4028 mejor época=1 de 45
+[I 2026-11-27 02:55:12,105] Trial 5 finished with value: 0.44815389924085575 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 6: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5631 mejor época=9 de 50
+    fold interno 2/3: macro_f1=0.4355 mejor época=50 de 50
+    fold interno 3/3: macro_f1=0.1923 mejor época=22 de 50
+[I 2026-11-27 02:55:15,521] Trial 6 finished with value: 0.39698731220470357 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}. Best is trial 0 with value: 0.4650010289653754.
+  trial 7: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5667 mejor época=9 de 19
+    fold interno 2/3: macro_f1=0.5967 mejor época=4 de 14
+    fold interno 3/3: macro_f1=0.3695 mejor época=4 de 14
+[I 2026-11-27 02:55:17,296] Trial 7 finished with value: 0.510946275946276 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}. Best is trial 7 with value: 0.510946275946276.
+  trial 8: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5762 mejor época=15 de 25
+    fold interno 2/3: macro_f1=0.6133 mejor época=11 de 21
+    fold interno 3/3: macro_f1=0.4955 mejor época=2 de 13
+[I 2026-11-27 02:55:19,343] Trial 8 finished with value: 0.5616594516594516 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}. Best is trial 8 with value: 0.5616594516594516.
+  trial 9: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0001563020127164592, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4829 mejor época=12 de 50
+[I 2026-11-27 02:55:20,578] Trial 9 pruned. 
+  trial 10: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0008224009504020449, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4841 mejor época=12 de 41
+[I 2026-11-27 02:55:21,662] Trial 10 pruned. 
+  trial 11: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.008246370419625166, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5913 mejor época=10 de 20
+    fold interno 2/3: macro_f1=0.5637 mejor época=2 de 12
+    fold interno 3/3: macro_f1=0.5889 mejor época=2 de 12
+[I 2026-11-27 02:55:23,354] Trial 11 finished with value: 0.5813187901423196 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.008246370419625166, 'pos_weight': True}. Best is trial 11 with value: 0.5813187901423196.
+  trial 12: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.00708626318885539, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.5524 mejor época=6 de 16
+[I 2026-11-27 02:55:24,006] Trial 12 pruned. 
+  trial 13: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.007801119966592655, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5405 mejor época=8 de 18
+[I 2026-11-27 02:55:24,679] Trial 13 pruned. 
+  trial 14: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0024515735153895217, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5833 mejor época=22 de 32
+    fold interno 2/3: macro_f1=0.5717 mejor época=11 de 25
+    fold interno 3/3: macro_f1=0.3662 mejor época=9 de 19
+[I 2026-11-27 02:55:26,846] Trial 14 finished with value: 0.5070760233918128 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0024515735153895217, 'pos_weight': True}. Best is trial 11 with value: 0.5813187901423196.
+  trial 15: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.002800700569153284, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.6072 mejor época=4 de 16
+    fold interno 2/3: macro_f1=0.4714 mejor época=18 de 28
+    fold interno 3/3: macro_f1=0.2917 mejor época=1 de 12
+[I 2026-11-27 02:55:28,745] Trial 15 finished with value: 0.45678053830227733 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.002800700569153284, 'pos_weight': True}. Best is trial 11 with value: 0.5813187901423196.
+  trial 16: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.009915308985965522, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5634 mejor época=3 de 13
+[I 2026-11-27 02:55:29,361] Trial 16 pruned. 
+  trial 17: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.003302381741728394, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.5125 mejor época=26 de 36
+[I 2026-11-27 02:55:30,433] Trial 17 pruned. 
+  trial 18: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.007118344437496253, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5524 mejor época=11 de 21
+[I 2026-11-27 02:55:31,238] Trial 18 pruned. 
+  trial 19: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0009236820328697235, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5397 mejor época=6 de 20
+[I 2026-11-27 02:55:32,045] Trial 19 pruned. 
+  trial 20: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0017042617473283016, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.6000 mejor época=9 de 21
+    fold interno 2/3: macro_f1=0.4564 mejor época=15 de 25
+    fold interno 3/3: macro_f1=0.1852 mejor época=6 de 17
+[I 2026-11-27 02:55:34,010] Trial 20 finished with value: 0.4138651471984805 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0017042617473283016, 'pos_weight': False}. Best is trial 11 with value: 0.5813187901423196.
+  trial 21: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004316949921958777, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5686 mejor época=5 de 15
+    fold interno 2/3: macro_f1=0.6098 mejor época=14 de 24
+    fold interno 3/3: macro_f1=0.4244 mejor época=3 de 13
+[I 2026-11-27 02:55:35,915] Trial 21 finished with value: 0.5342744673627027 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004316949921958777, 'pos_weight': True}. Best is trial 11 with value: 0.5813187901423196.
+  trial 22: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004088223127066771, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5397 mejor época=13 de 23
+[I 2026-11-27 02:55:36,775] Trial 22 pruned. 
+  trial 23: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00957831613992937, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5455 mejor época=3 de 13
+[I 2026-11-27 02:55:37,404] Trial 23 pruned. 
+  trial 24: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0018633144273935685, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.5762 mejor época=5 de 18
+    fold interno 2/3: macro_f1=0.5457 mejor época=11 de 21
+    fold interno 3/3: macro_f1=0.3397 mejor época=12 de 22
+[I 2026-11-27 02:55:39,299] Trial 24 finished with value: 0.4871721877156659 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0018633144273935685, 'pos_weight': True}. Best is trial 11 with value: 0.5813187901423196.
+  modelo final: 5 épocas sobre 61 filas, config={'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.008246370419625166, 'pos_weight': True}
+  externo 4 prueba: {'macro_f1': 0.3247, 'weighted_f1': 0.4767, 'micro_f1': 0.5556, 'macro_recall': 0.375, 'loss': 1.0159}
+
+--- externo 5/5: entrenamiento=62 reales + 0 sintéticos | prueba=15 ---
+[I 2026-11-27 02:55:40,118] A new study created in RDB with name: subcategories_promise_cnn_outer_4
+  trial 0: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.2996 mejor época=3 de 17
+    fold interno 2/3: macro_f1=0.2833 mejor época=26 de 50
+    fold interno 3/3: macro_f1=0.2982 mejor época=1 de 50
+[I 2026-11-27 02:55:42,653] Trial 0 finished with value: 0.2937273739905319 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.001, 'pos_weight': False}. Best is trial 0 with value: 0.2937273739905319.
+  trial 1: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3761 mejor época=3 de 32
+    fold interno 2/3: macro_f1=0.3374 mejor época=1 de 50
+    fold interno 3/3: macro_f1=0.3292 mejor época=9 de 50
+[I 2026-11-27 02:55:45,818] Trial 1 finished with value: 0.3475827129859388 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0002310201887845295, 'pos_weight': True}. Best is trial 1 with value: 0.3475827129859388.
+  trial 2: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1902 mejor época=2 de 36
+    fold interno 2/3: macro_f1=0.1852 mejor época=44 de 50
+    fold interno 3/3: macro_f1=0.1250 mejor época=42 de 50
+[I 2026-11-27 02:55:48,984] Trial 2 finished with value: 0.16680085882984433 and parameters: {'embedding_dim': 64, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.00021930485556643703, 'pos_weight': True}. Best is trial 1 with value: 0.3475827129859388.
+  trial 3: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1923 mejor época=4 de 14
+    fold interno 2/3: macro_f1=0.2738 mejor época=22 de 32
+    fold interno 3/3: macro_f1=0.2675 mejor época=22 de 32
+[I 2026-11-27 02:55:51,175] Trial 3 finished with value: 0.24455369192211296 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.0012399967836846098, 'pos_weight': True}. Best is trial 1 with value: 0.3475827129859388.
+  trial 4: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2997 mejor época=1 de 13
+    fold interno 2/3: macro_f1=0.3436 mejor época=1 de 15
+    fold interno 3/3: macro_f1=0.3542 mejor época=8 de 23
+[I 2026-11-27 02:55:52,915] Trial 4 finished with value: 0.33247863247863246 and parameters: {'embedding_dim': 100, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.001217284708112243, 'pos_weight': True}. Best is trial 1 with value: 0.3475827129859388.
+  trial 5: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3319 mejor época=2 de 19
+    fold interno 2/3: macro_f1=0.3343 mejor época=3 de 48
+    fold interno 3/3: macro_f1=0.2875 mejor época=5 de 50
+[I 2026-11-27 02:55:55,858] Trial 5 finished with value: 0.3179031515988038 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.4, 'learning_rate': 0.0004589824181495653, 'pos_weight': True}. Best is trial 1 with value: 0.3475827129859388.
+  trial 6: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3761 mejor época=5 de 38
+    fold interno 2/3: macro_f1=0.3374 mejor época=2 de 50
+    fold interno 3/3: macro_f1=0.3301 mejor época=14 de 50
+[I 2026-11-27 02:55:59,087] Trial 6 finished with value: 0.3478800002397478 and parameters: {'embedding_dim': 100, 'num_filters': 100, 'kernel_size': 5, 'batch_size': 32, 'dropout': 0.3, 'learning_rate': 0.00016435497475111326, 'pos_weight': True}. Best is trial 6 with value: 0.3478800002397478.
+  trial 7: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3102 mejor época=3 de 13
+    fold interno 2/3: macro_f1=0.3750 mejor época=3 de 14
+    fold interno 3/3: macro_f1=0.3667 mejor época=5 de 15
+[I 2026-11-27 02:56:00,682] Trial 7 finished with value: 0.35061728395061725 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.004048966222584676, 'pos_weight': True}. Best is trial 7 with value: 0.35061728395061725.
+  trial 8: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4707 mejor época=3 de 13
+    fold interno 2/3: macro_f1=0.3832 mejor época=12 de 22
+    fold interno 3/3: macro_f1=0.3542 mejor época=8 de 18
+[I 2026-11-27 02:56:02,632] Trial 8 finished with value: 0.4026570048309179 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}. Best is trial 8 with value: 0.4026570048309179.
+  trial 9: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0001563020127164592, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3786 mejor época=3 de 41
+    fold interno 2/3: macro_f1=0.3871 mejor época=6 de 50
+    fold interno 3/3: macro_f1=0.3179 mejor época=15 de 50
+[I 2026-11-27 02:56:05,917] Trial 9 finished with value: 0.3612094695428028 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0001563020127164592, 'pos_weight': True}. Best is trial 8 with value: 0.4026570048309179.
+  trial 10: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0008224009504020449, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.4535 mejor época=1 de 13
+    fold interno 2/3: macro_f1=0.2756 mejor época=26 de 36
+    fold interno 3/3: macro_f1=0.2929 mejor época=2 de 25
+[I 2026-11-27 02:56:07,867] Trial 10 finished with value: 0.34068339068339065 and parameters: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0008224009504020449, 'pos_weight': True}. Best is trial 8 with value: 0.4026570048309179.
+  trial 11: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00024400147325766202, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.3786 mejor época=1 de 39
+    fold interno 2/3: macro_f1=0.3460 mejor época=2 de 50
+    fold interno 3/3: macro_f1=0.2738 mejor época=50 de 50
+[I 2026-11-27 02:56:11,364] Trial 11 finished with value: 0.3328019521985039 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.00024400147325766202, 'pos_weight': False}. Best is trial 8 with value: 0.4026570048309179.
+  trial 12: {'embedding_dim': 128, 'num_filters': 100, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0051317494941778286, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2676 mejor época=6 de 16
+[I 2026-11-27 02:56:12,007] Trial 12 pruned. 
+  trial 13: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.5, 'learning_rate': 0.0007065184886185501, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3240 mejor época=1 de 14
+[I 2026-11-27 02:56:12,618] Trial 13 pruned. 
+  trial 14: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00013224303521466957, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3786 mejor época=3 de 38
+    fold interno 2/3: macro_f1=0.3500 mejor época=5 de 50
+    fold interno 3/3: macro_f1=0.2552 mejor época=3 de 50
+[I 2026-11-27 02:56:16,257] Trial 14 finished with value: 0.32791461412151063 and parameters: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00013224303521466957, 'pos_weight': True}. Best is trial 8 with value: 0.4026570048309179.
+  trial 15: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0002130722248682923, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1897 mejor época=4 de 15
+[I 2026-11-27 02:56:16,865] Trial 15 pruned. 
+  trial 16: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 4, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.003512960823966096, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2857 mejor época=7 de 17
+[I 2026-11-27 02:56:17,492] Trial 16 pruned. 
+  trial 17: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0009446312896924484, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2914 mejor época=2 de 12
+[I 2026-11-27 02:56:18,124] Trial 17 pruned. 
+  trial 18: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.4, 'learning_rate': 0.008875502331773111, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3514 mejor época=8 de 18
+[I 2026-11-27 02:56:18,758] Trial 18 pruned. 
+  trial 19: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.3, 'learning_rate': 0.00045047611527049367, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3500 mejor época=1 de 15
+[I 2026-11-27 02:56:19,469] Trial 19 pruned. 
+  trial 20: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.008717476071540772, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.3652 mejor época=14 de 24
+[I 2026-11-27 02:56:20,334] Trial 20 pruned. 
+  trial 21: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.5, 'learning_rate': 0.0028099843812623947, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2917 mejor época=6 de 16
+[I 2026-11-27 02:56:21,001] Trial 21 pruned. 
+  trial 22: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 5, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.0058611773968036745, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.2756 mejor época=16 de 26
+[I 2026-11-27 02:56:21,837] Trial 22 pruned. 
+  trial 23: {'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.002034850091916336, 'pos_weight': False}
+    fold interno 1/3: macro_f1=0.2738 mejor época=8 de 18
+[I 2026-11-27 02:56:22,606] Trial 23 pruned. 
+  trial 24: {'embedding_dim': 64, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 32, 'dropout': 0.2, 'learning_rate': 0.0001545571508207066, 'pos_weight': True}
+    fold interno 1/3: macro_f1=0.1000 mejor época=29 de 42
+[I 2026-11-27 02:56:23,636] Trial 24 pruned. 
+  modelo final: 8 épocas sobre 62 filas, config={'embedding_dim': 128, 'num_filters': 128, 'kernel_size': 3, 'batch_size': 16, 'dropout': 0.2, 'learning_rate': 0.006026698794482356, 'pos_weight': True}
+  externo 5 prueba: {'macro_f1': 0.5813, 'weighted_f1': 0.5941, 'micro_f1': 0.6, 'macro_recall': 0.4896, 'loss': 0.7195}
+macro_f1: externos 0.3301 ± 0.1508 | agrupado 0.3670
+weighted_f1: externos 0.4272 ± 0.1127 | agrupado 0.4499
+micro_f1: externos 0.4914 ± 0.0951 | agrupado 0.4746
+macro_recall: externos 0.3908 ± 0.1756 | agrupado 0.3848

@@ -1,0 +1,5 @@
+﻿label,TP,FP,FN,TN
+Confidentiality,18,5,14,140
+Integrity,46,28,20,83
+Authenticity,57,21,17,82
+Resistance,4,5,8,160

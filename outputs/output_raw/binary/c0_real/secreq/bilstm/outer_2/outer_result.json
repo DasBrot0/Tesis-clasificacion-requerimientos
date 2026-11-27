@@ -1,0 +1,48 @@
+{
+  "task": "binary",
+  "outer": 2,
+  "train_real_rows": 346,
+  "train_synthetic_rows": 0,
+  "test_rows": 87,
+  "optuna": {
+    "trials_finished": 25,
+    "trials_pruned": 12
+  },
+  "default_config_inner_cv_objective": 0.7841394048256007,
+  "best_trial": {
+    "trial_id": 23,
+    "inner_cv_objective_mean": 0.81975125325211,
+    "inner_cv_objective_std": 0.023511361933498606
+  },
+  "winning_config": {
+    "embedding_dim": 100,
+    "hidden_units": 64,
+    "num_layers": 1,
+    "batch_size": 16,
+    "dropout": 0.3,
+    "learning_rate": 0.0015620202211172752,
+    "pos_weight": false
+  },
+  "final_training_epochs": 13,
+  "thresholds_by_label": {
+    "Security": 0.525
+  },
+  "test": {
+    "f1": 0.7777777777777778,
+    "precision": 0.7567567567567568,
+    "recall": 0.8,
+    "f1_macro_2class": 0.8104575163398693,
+    "loss": 0.6401340797029692
+  },
+  "test_per_label": [
+    {
+      "label": "Security",
+      "precision": 0.7567567567567568,
+      "recall": 0.8,
+      "f1": 0.7777777777777778,
+      "support": 35,
+      "in_macro_average": true
+    }
+  ],
+  "elapsed_minutes": 4.2
+}

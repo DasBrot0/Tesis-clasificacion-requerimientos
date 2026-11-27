@@ -1,0 +1,59 @@
+{
+  "condition": "c0_real",
+  "dataset": "promise",
+  "binary_model": "bilstm",
+  "subcategory_model": "bilstm",
+  "rows": 456,
+  "security": {
+    "f1": 0.5581395348837209,
+    "precision": 0.6923076923076923,
+    "recall": 0.4675324675324675,
+    "f1_macro_2class": 0.7426713000089102
+  },
+  "end_to_end": {
+    "macro_f1": 0.3294686907020873,
+    "weighted_f1": 0.35918978344025776,
+    "micro_f1": 0.3673469387755102,
+    "macro_recall": 0.2818986568986569
+  },
+  "subcategories_only": {
+    "macro_f1": 0.4910609720392329,
+    "weighted_f1": 0.5308018940265318,
+    "micro_f1": 0.5380116959064327,
+    "macro_recall": 0.4835164835164835
+  },
+  "per_label": [
+    {
+      "label": "Confidentiality",
+      "precision": 0.4444444444444444,
+      "recall": 0.41025641025641024,
+      "f1": 0.4266666666666667,
+      "support": 39,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.4,
+      "recall": 0.2857142857142857,
+      "f1": 0.3333333333333333,
+      "support": 14,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.38461538461538464,
+      "recall": 0.2777777777777778,
+      "f1": 0.3225806451612903,
+      "support": 18,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.5,
+      "recall": 0.15384615384615385,
+      "f1": 0.23529411764705882,
+      "support": 13,
+      "in_macro_average": true
+    }
+  ]
+}
