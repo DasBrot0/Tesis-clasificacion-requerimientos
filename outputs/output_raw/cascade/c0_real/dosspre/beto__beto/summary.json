@@ -1,0 +1,59 @@
+{
+  "condition": "c0_real",
+  "dataset": "dosspre",
+  "binary_model": "beto",
+  "subcategory_model": "beto",
+  "rows": 1185,
+  "security": {
+    "f1": 0.753731343283582,
+    "precision": 0.7336561743341404,
+    "recall": 0.7749360613810742,
+    "f1_macro_2class": 0.8136472808371933
+  },
+  "end_to_end": {
+    "macro_f1": 0.670749700073828,
+    "weighted_f1": 0.6843866491851189,
+    "micro_f1": 0.6858638743455497,
+    "macro_recall": 0.6571658645329919
+  },
+  "subcategories_only": {
+    "macro_f1": 0.8006332028248766,
+    "weighted_f1": 0.819827464024694,
+    "micro_f1": 0.8233731739707836,
+    "macro_recall": 0.7755785823471545
+  },
+  "per_label": [
+    {
+      "label": "Confidentiality",
+      "precision": 0.7669902912621359,
+      "recall": 0.7053571428571429,
+      "f1": 0.7348837209302326,
+      "support": 112,
+      "in_macro_average": true
+    },
+    {
+      "label": "Integrity",
+      "precision": 0.7045454545454546,
+      "recall": 0.5081967213114754,
+      "f1": 0.5904761904761905,
+      "support": 61,
+      "in_macro_average": true
+    },
+    {
+      "label": "Authenticity",
+      "precision": 0.6946564885496184,
+      "recall": 0.7520661157024794,
+      "f1": 0.7222222222222222,
+      "support": 121,
+      "in_macro_average": true
+    },
+    {
+      "label": "Resistance",
+      "precision": 0.61,
+      "recall": 0.6630434782608695,
+      "f1": 0.6354166666666666,
+      "support": 92,
+      "in_macro_average": true
+    }
+  ]
+}

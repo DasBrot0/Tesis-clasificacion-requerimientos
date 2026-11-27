@@ -1,0 +1,12 @@
+[2026-11-27T07:58:10] empieza la cola
+[2026-11-27T07:58:10] INICIO binary/c0_real/dosspre/beto
+[2026-11-27T10:44:04] FIN binary/c0_real/dosspre/beto (165.9 min)
+[2026-11-27T10:44:04] INICIO binary/c0_real/dosspre/roberta_bne
+[2026-11-27T13:24:00] FIN binary/c0_real/dosspre/roberta_bne (159.9 min)
+[2026-11-27T13:24:00] ENTRENAMIENTO COMPLETO
+binary/c0_real: 15 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\binary\c0_real\results_binary_c0_real.xlsx
+subcategories/c0_real: 15 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c0_real\results_subcategories_c0_real.xlsx
+subcategories/c1_augmented: 15 corridas -> C:\Users\Franco\Projects\ULima\SeminarioI-binario\outputs\reports\subcategories\c1_augmented\results_subcategories_c1_augmented.xlsx
+cascada/c0_real: 15 pares evaluados
+cascada/c1_augmented: 15 pares evaluados
+[2026-11-27T13:24:34] cola terminada

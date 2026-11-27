@@ -1,4 +1,4 @@
 ﻿dataset,best_model,top_group,f1,recall,reason,candidates
 PROMISE_exp,RoBERTa-BNE,RoBERTa-BNE = DistilBETO = BETO,0.8502994011976048,0.922077922077922,mayor recall del grupo superior (y mayor f1),"RoBERTa-BNE: f1 0.850, recall 0.922; DistilBETO: f1 0.830, recall 0.792; BETO: f1 0.795, recall 0.753"
 SecReq,RoBERTa-BNE,BETO = RoBERTa-BNE = DistilBETO = CNN,0.88,0.8700564971751412,mayor recall del grupo superior (y mayor f1),"RoBERTa-BNE: f1 0.880, recall 0.870; BETO: f1 0.867, recall 0.864; DistilBETO: f1 0.860, recall 0.853; CNN: f1 0.831, recall 0.831"
-DOSSPRE,DistilBETO,DistilBETO,0.7416331994645248,0.7084398976982097,único modelo del grupo superior de Scott-Knott ESD,"DistilBETO: f1 0.742, recall 0.708"
+DOSSPRE,BETO,RoBERTa-BNE = BETO = DistilBETO,0.753731343283582,0.7749360613810742,"mayor recall del grupo superior; RoBERTa-BNE tiene más f1, pero la diferencia no es significativa","BETO: f1 0.754, recall 0.775; RoBERTa-BNE: f1 0.765, recall 0.742; DistilBETO: f1 0.742, recall 0.708"

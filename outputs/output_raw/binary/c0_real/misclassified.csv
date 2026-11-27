@@ -1,423 +1,474 @@
 ﻿dataset,ID,models_wrong,real,CNN,BiLSTM,BETO,RoBERTa-BNE,DistilBETO,requirement
-DOSSPRE,dosspre_0001,3,Security,—,—,,,—,El sistema deberá detectar vulnerabilidades de inyección SQL y XSS en un sitio web o una aplicación web determinados.
-DOSSPRE,dosspre_0002,3,—,Security,Security,,,Security,El sistema deberá analizar la vulnerabilidad detectada
-DOSSPRE,dosspre_0029,3,Security,—,—,,,—,El sistema deberá generar un informe en el que se describa el efecto que ha tenido el malware durante su ejecución en un entorno aislado.
-DOSSPRE,dosspre_0033,3,Security,—,—,,,—,"El sistema estará aislado del usuario y la aplicación no requiere interacción por parte de este, por lo que las posibilidades de que los usuarios lo dañen son muy limitadas."
-DOSSPRE,dosspre_0048,3,—,Security,Security,,,Security,"El sistema deberá permitir que un autor que desee proteger su obra contra el uso no autorizado suba una imagen con su marca de agua digital visible, junto con el número de registro."
-DOSSPRE,dosspre_0050,3,Security,—,—,,,—,"El sistema deberá permitir la verificación de imágenes con marca de agua que hayan sido enviadas dos o más veces por diferentes autores, con el fin de proteger los derechos de autor del propietario."
-DOSSPRE,dosspre_0081,3,Security,—,—,,,—,El sistema deberá poder abrir la puerta cuando el PIN sea correcto.
-DOSSPRE,dosspre_0103,3,—,Security,Security,,,Security,El sistema deberá tener acceso a la lista de contactos del dispositivo del menor.
-DOSSPRE,dosspre_0108,3,—,Security,Security,,,Security,El sistema deberá impedir que se instalen o desinstalen aplicaciones.
-DOSSPRE,dosspre_0109,3,Security,—,—,,,—,El sistema deberá ser capaz de generar y enviar registros periódicos al smartphone de los padres.
-DOSSPRE,dosspre_0152,3,Security,—,—,,,—,"El sistema deberá supervisar el uso de la CPU para detectar picos en dicho uso provocados por el cryptojacking, leyendo constantemente el porcentaje de utilización de la CPU del ordenador y comparándolo con la línea base de uso de CPU, así como detectar los picos extremos o las desviaciones respecto a la línea base de uso de CPU debidos a la actividad de cryptojacking."
-DOSSPRE,dosspre_0157,3,Security,—,—,,,—,"El sistema deberá permitir el registro del dominio o la aplicación de cryptojacking detectados, junto con la fecha y la hora de la detección."
-DOSSPRE,dosspre_0158,3,—,Security,Security,,,Security,El sistema debería ser capaz de detectar el cryptojacking de forma rápida y oportuna.
-DOSSPRE,dosspre_0163,3,Security,—,—,,,—,El sistema debería ser fiable a la hora de detectar la actividad de malware de criptojacking conocida.
-DOSSPRE,dosspre_0179,3,Security,—,—,,,—,El sistema deberá ser capaz de distinguir al usuario legítimo del ilegítimo mediante el uso de datos biométricos de comportamiento únicos.
-DOSSPRE,dosspre_0183,3,Security,—,—,,,—,"El sistema deberá diseñarse de forma que sea compatible con numerosos sistemas operativos, como Windows, Android y Linux."
-DOSSPRE,dosspre_0219,3,Security,—,—,,,—,Los usuarios deberán poder tener acceso al sistema a través de un portal web HTTPS.
-DOSSPRE,dosspre_0232,3,—,Security,Security,,,Security,El sistema debería garantizar que los mensajes de error se comuniquen al usuario o al administrador.
-DOSSPRE,dosspre_0275,3,Security,—,—,,,—,El sistema debería poder generar un resumen del informe de auditoría para enviarlo al usuario del sistema.
-DOSSPRE,dosspre_0282,3,Security,—,—,,,—,"El sistema deberá permitir que la captura de registros se realice en segundo plano, lo que facilitará considerablemente el trabajo del auditor."
-DOSSPRE,dosspre_0285,3,Security,—,—,,,—,"El sistema deberá permitir a los usuarios disponer de su propia clave específica, generada por la máquina y añadida a la lista de claves para el proceso de generación de MAC."
-DOSSPRE,dosspre_0288,3,Security,—,—,,,—,El sistema deberá garantizar que se establezca una interfaz segura y eficaz para reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
-DOSSPRE,dosspre_0290,3,Security,—,—,,,—,El sistema deberá permitir la implementación de protocolos claros y seguros de intercambio de datos y documentar las interfaces y los protocolos que se utilicen.
-DOSSPRE,dosspre_0338,3,Security,—,—,,,—,El sistema deberá tener la capacidad de recuperación de todos los historiales de escaneo en caso de interrupción del sistema.
-DOSSPRE,dosspre_0353,3,Security,—,—,,,—,"El sistema deberá ofrecer autenticación por Bluetooth, de modo que los usuarios no tengan que desactivar la autenticación del ordenador portátil, ya que tienen que realizar el proceso de desbloqueo con frecuencia durante la jornada laboral."
-DOSSPRE,dosspre_0361,3,—,Security,Security,,,Security,El sistema captura y almacena la plantilla de huella dactilar de los usuarios en el momento del inicio de sesión inicial.
-DOSSPRE,dosspre_0364,3,Security,—,—,,,—,El sistema debería permitir el acceso de los centros médicos certificados a la información crítica de los pacientes cuando sea necesario.
-DOSSPRE,dosspre_0374,3,Security,—,—,,,—,El sistema debería ser capaz de capturar (sniffing) el tráfico entrante y saliente de la red en tiempo real.
-DOSSPRE,dosspre_0376,3,—,Security,Security,,,Security,El sistema debería ser capaz de alertar a los responsables de la red sobre la posible ocurrencia de un ataque de intrusión y proporcionar información relativa a dicho ataque.
-DOSSPRE,dosspre_0443,3,Security,—,—,,,—,"Los atributos estáticos del sistema permiten detectar con antelación posibles cuellos de botella en el rendimiento operativo y futuros problemas de escalabilidad, lo que permite corregirlos a tiempo."
-DOSSPRE,dosspre_0462,3,Security,—,—,,,—,El sistema deberá ser capaz de proporcionar ayuda en un breve espacio de tiempo.
-DOSSPRE,dosspre_0469,3,—,Security,Security,,,Security,El sistema funciona bien a la hora de reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
-DOSSPRE,dosspre_0472,3,—,Security,Security,,,Security,El sistema deberá implementar protocolos claros y seguros de intercambio de datos; lo ideal es implementar protocolos seguros y documentar las interfaces y los protocolos que se utilicen.
-DOSSPRE,dosspre_0521,3,—,Security,Security,,,Security,El sistema deberá garantizar que el rendimiento del IDS sea suficiente para detectar intrusiones en tiempo real (por «tiempo real» se entiende que una intrusión debe detectarse antes de que se produzcan daños significativos).
-DOSSPRE,dosspre_0541,3,—,Security,Security,,,Security,"El sistema deberá permitir la generación de claves públicas y privadas. Estas claves se utilizarán para el cifrado y descifrado de la clave simétrica AES, con el fin de garantizar un intercambio de claves más seguro."
-DOSSPRE,dosspre_0585,3,Security,—,—,,,—,"El sistema debería poder realizar la validación de los datos introducidos, reduciendo así la redundancia y la duplicación en la base de datos."
-DOSSPRE,dosspre_0605,3,Security,—,—,,,—,El sistema debe permitir a los clientes ejecutar un protocolo de encaminamiento distinto al de la red del proveedor de servicios de Internet.
-DOSSPRE,dosspre_0607,3,Security,—,—,,,—,El sistema deberá garantizar que un dispositivo situado en un área ODPF no se comunique con otro situado en un área OSPF diferente.
-DOSSPRE,dosspre_0610,3,—,Security,Security,,,Security,El sistema deberá garantizar que el servidor de autenticación se comunique con el controlador de la puerta para abrirla y cerrarla.
-DOSSPRE,dosspre_0617,3,Security,—,—,,,—,"El sistema funciona como un IDS/IPD y ayuda a aliviar el tráfico dirigido al servidor, en caso de que se produzca un ataque DOS distribuido y el servidor se vea saturado de solicitudes."
-DOSSPRE,dosspre_0634,3,Security,—,—,,,—,El sistema deberá ser capaz de generar un informe sobre las vulnerabilidades detectadas y analizadas.
-DOSSPRE,dosspre_0637,3,Security,—,—,,,—,El escáner del sistema puede aceptar un determinado número de URL para comprobar si presentan las vulnerabilidades seleccionadas.
-DOSSPRE,dosspre_0650,3,—,Security,Security,,,Security,El reproductor del sistema localiza la carpeta oculta.
-DOSSPRE,dosspre_0664,3,—,Security,Security,,,Security,El sistema deberá permitir el inicio de sesión para un usuario.
-DOSSPRE,dosspre_0671,3,Security,—,—,,,—,El sistema deberá utilizar un «honeypot» que registre y analice los paquetes que circulan por la red. Un «honeypot» es un sistema señuelo que se utiliza para hacer creer al atacante que está atacando el sistema deseado.
-DOSSPRE,dosspre_0672,3,—,Security,Security,,,Security,El sistema deberá garantizar que el honeypot registre las actividades del atacante y avise a los administradores del sistema en caso de que se produzca una amenaza para el sistema protegido.
-DOSSPRE,dosspre_0679,3,—,Security,Security,,,Security,"El sistema deberá incorporar principios de seguridad, como la autenticación."
-DOSSPRE,dosspre_0692,3,Security,—,—,,,—,El sistema deberá capturar el tráfico de red entre el hipervisor y la máquina virtual objeto de supervisión.
-DOSSPRE,dosspre_0707,3,Security,—,—,,,—,El sistema deberá proporcionar un canal seguro de comunicación entre el sistema back-end y la interfaz de usuario web.
-DOSSPRE,dosspre_0729,3,Security,—,—,,,—,"Los componentes del sistema no se verán afectados por cambios climáticos como el calor o la humedad, ya que la carcasa se diseñará para adaptarse a las condiciones climáticas predominantes."
-DOSSPRE,dosspre_0778,3,Security,—,—,,,—,El sistema deberá permitir que un usuario se registre mediante el patrocinio del departamento de Recursos Humanos correspondiente.
-DOSSPRE,dosspre_0780,3,Security,—,—,,,—,El sistema deberá permitir al usuario visualizar el contenido o el panel de control.
-DOSSPRE,dosspre_0824,3,Security,—,—,,,—,El sistema deberá permitir el análisis de los lugares donde se cometen más delitos utilizando datos de colaboración ciudadana e informes.
-DOSSPRE,dosspre_0842,3,Security,—,—,,,—,"El sistema deberá permitir al usuario recuperar los identificadores únicos del nodo que se utilizaron para generar el identificador único o la huella dactilar del nodo en el momento del registro, cuando el titular se matriculó o se incorporó a la universidad con dicho nodo."
-DOSSPRE,dosspre_0852,3,Security,—,—,,,—,La escucha del sistema para el escaneo se lleva a cabo mientras se supervisan las actividades del sistema operativo.
-DOSSPRE,dosspre_0861,3,—,Security,Security,,,Security,El sistema permitirá el registro de las credenciales de usuario.
-DOSSPRE,dosspre_0864,3,Security,—,—,,,—,El sistema deberá permitir que las anomalías se contengan tras su detección.
-DOSSPRE,dosspre_0878,3,Security,—,—,,,—,El sistema debería permitir una rápida recuperación de errores.
-DOSSPRE,dosspre_0926,3,—,Security,Security,,,Security,El sistema deberá ser capaz de comprobar el certificado SSL de una aplicación web o un sitio web determinados.
-DOSSPRE,dosspre_0928,3,Security,—,—,,,—,"El sistema detecta indicadores (patrones, atributos) de vulnerabilidades cuya existencia se conoce, o que permiten aprovecharlas, en los servicios o versiones de software detectados."
-DOSSPRE,dosspre_0943,3,Security,—,—,,,—,El sistema deberá ejecutar sus tareas con precisión cuando se le envíe un comando. Las pruebas garantizarán que todas las funciones estén correctamente incluidas.
-DOSSPRE,dosspre_0947,3,—,Security,Security,,,Security,El sistema deberá poner en marcha un reloj cuando un empleado inicie sesión y detenerlo cuando el empleado cierre la sesión.
-DOSSPRE,dosspre_0964,3,Security,—,—,,,—,El sistema deberá poder mostrar la información KYC de los clientes a los usuarios autorizados.
-DOSSPRE,dosspre_0969,3,—,Security,Security,,,Security,El sistema deberá permitir el registro del identificador nacional de la persona a cuyo nombre se expide el puesto.
-DOSSPRE,dosspre_1002,3,Security,—,—,,,—,"El sistema deberá permitir la identificación facial a través de los datos de dicha persona, si se trata de un empleado."
-DOSSPRE,dosspre_1007,3,—,Security,Security,,,Security,El sistema deberá ser capaz de identificar correctamente las huellas faciales con márgenes de error mínimos.
-DOSSPRE,dosspre_1021,3,Security,—,—,,,—,El sistema deberá poder asignar recursos al estudiante concreto que haya solicitado el servicio.
-DOSSPRE,dosspre_1041,3,—,Security,Security,,,Security,El sistema deberá generar un código QR con el hash MD5.
-DOSSPRE,dosspre_1051,3,Security,—,—,,,—,"El sistema deberá garantizar que la información personal no se muestre al público, sino que quede codificada en un código QR."
-DOSSPRE,dosspre_1058,3,Security,—,—,,,—,El sistema deberá generar contraseñas basadas en el tiempo mediante la aplicación Google Authenticator.
-DOSSPRE,dosspre_1067,3,Security,—,—,,,—,El TOTP generado por el sistema deberá ser un código de acceso único que cambie cada 30 segundos.
-DOSSPRE,dosspre_1074,3,Security,—,—,,,—,"El sistema deberá disponer de una plataforma que permita seleccionar una marca de agua única que se insertará en un documento para proteger los datos, atribuyendo la propiedad a sus legítimos titulares."
-DOSSPRE,dosspre_1105,3,Security,—,—,,,—,El sistema se instalará en el dispositivo móvil de cada representante para supervisar las aplicaciones del dispositivo y registrar las actividades realizadas en el mismo.
-DOSSPRE,dosspre_1106,3,—,Security,Security,,,Security,"El sistema deberá analizar las actividades detectadas, comprobar si se trata de un uso autorizado y, posteriormente, enviar una advertencia al administrador del sistema mediante la transmisión de los datos a través de Internet."
-DOSSPRE,dosspre_1129,3,—,Security,Security,,,Security,El sistema deberá garantizar que el cliente genere la clave simétrica utilizada por el servidor para el cifrado.
-DOSSPRE,dosspre_1146,3,—,Security,Security,,,Security,El sistema deberá tener disponibilidad para garantizar la seguridad de los archivos frente a usuarios no autorizados.
-DOSSPRE,dosspre_1159,3,Security,—,—,,,—,El sistema deberá garantizar que la comunicación entre los agentes y la agencia o el servidor sea tal que solo los agentes registrados puedan informar a la agencia.
-DOSSPRE,dosspre_1163,3,Security,—,—,,,—,El sistema deberá ser capaz de alertar al administrador de la red sobre la posible aparición de un ataque de intrusión y proporcionar información relativa a dicho ataque.
-DOSSPRE,dosspre_1188,3,—,Security,Security,,,Security,El sistema deberá permitir el acceso simultáneo de varios usuarios.
-DOSSPRE,dosspre_1213,3,—,Security,Security,,,Security,El sistema deberá garantizar que la clave pública permanezca abierta y con acceso al dominio público.
-DOSSPRE,dosspre_1237,3,—,Security,Security,,,Security,El sistema deberá impedir la instalación o la eliminación de cualquier aplicación.
-DOSSPRE,dosspre_1239,3,Security,—,—,,,—,El sistema deberá impedir que se envíen o reciban archivos multimedia a través de Bluetooth.
-DOSSPRE,dosspre_0014,2,—,Security,Security,,,—,El sistema deberá permitir al usuario cargar y descargar archivos almacenados.
-DOSSPRE,dosspre_0022,2,—,Security,Security,,,—,El sistema deberá permitir el inicio de sesión de varios clientes y el almacenamiento de sus archivos en el servidor remoto.
-DOSSPRE,dosspre_0038,2,Security,Security,—,,,—,El sistema deberá permitir que un miembro forme espontáneamente un grupo de n firmantes utilizando claves públicas de grupo que asocien a los miembros del grupo.
-DOSSPRE,dosspre_0055,2,—,—,Security,,,Security,"El sistema permitirá, de forma opcional, que el usuario elimine los ficheros con los datos del sospechoso o los guarde para futuros registros en una base de datos segura."
-DOSSPRE,dosspre_0087,2,—,Security,Security,,,—,El sistema deberá permitir la transmisión de datos de corta duración entre el ordenador y el smartphone a través de Bluetooth.
-DOSSPRE,dosspre_0088,2,—,—,Security,,,Security,El sistema deberá permitir que los sistemas de bloqueo de datos Bluetooth generen los mismos resultados repetidamente.
-DOSSPRE,dosspre_0089,2,—,—,Security,,,Security,"El sistema deberá permitir que, en caso de que el teléfono móvil no esté disponible, el usuario realice ciertas autenticaciones para obtener acceso al sistema."
-DOSSPRE,dosspre_0139,2,Security,—,—,,,Security,El sistema conservará los registros de vídeo en los que solo se detecte movimiento.
-DOSSPRE,dosspre_0154,2,—,Security,—,,,Security,El sistema deberá enviar automáticamente alertas por correo electrónico cuando se detecte actividad de criptojacking.
-DOSSPRE,dosspre_0155,2,Security,Security,—,,,—,"El sistema deberá permitir al usuario establecer una contraseña para el cambio de correo electrónico, de modo que se le solicite posteriormente cuando intente modificar la dirección de correo electrónico del usuario en cuestión."
-DOSSPRE,dosspre_0166,2,Security,—,—,,,Security,El sistema debería garantizar que solo el usuario autorizado pueda modificar la dirección de correo electrónico registrada para recibir alertas de cryptojacking.
-DOSSPRE,dosspre_0167,2,—,Security,Security,,,—,El sistema debería ofrecer una función de evaluación de la solidez de las contraseñas para sugerir al usuario mejoras en la seguridad de las mismas.
-DOSSPRE,dosspre_0168,2,Security,—,—,,,Security,"El sistema no debería infringir la legislación, respetando la privacidad de la información de usuario sensible y los derechos de propiedad intelectual."
-DOSSPRE,dosspre_0176,2,—,Security,—,,,Security,"El sistema se someterá a diversas pruebas, como pruebas de estrés, para garantizar que no se produzcan errores en la verificación del usuario."
-DOSSPRE,dosspre_0196,2,—,—,Security,,,Security,El sistema deberá permitir que Selenium extraiga la información de identificación personal de un individuo.
-DOSSPRE,dosspre_0205,2,Security,Security,—,,,—,El sistema deberá facilitar el seguimiento de las actividades de una persona tras la comisión de un delito.
-DOSSPRE,dosspre_0206,2,Security,—,—,,,Security,"El sistema deberá tener acceso a información de identificación personal para permitir a los investigadores reconstruir un hecho delictivo una vez que haya tenido lugar, asegurando así las pruebas."
-DOSSPRE,dosspre_0208,2,—,Security,Security,,,—,El sistema debería ser capaz de generar códigos USSD para la transacción.
-DOSSPRE,dosspre_0212,2,Security,Security,—,,,—,El sistema debería limitar los intentos de introducción de la contraseña a tres únicamente.
-DOSSPRE,dosspre_0223,2,Security,—,—,,,Security,La información introducida solo puede ser modificada por el usuario una vez que se haya realizado la autenticación para verificarla.
-DOSSPRE,dosspre_0234,2,Security,—,—,,,Security,El sistema propuesto deberá establecer permisos de acceso de tal forma que los datos de la aplicación solo puedan ser modificados por el administrador de datos del sistema y que los datos almacenados en la base de datos se sometan al cálculo de hash.
-DOSSPRE,dosspre_0246,2,Security,Security,—,,,—,"El sistema deberá ser capaz de determinar si las credenciales de inicio de sesión son válidas o no, y buscar resultados que coincidan con el titular de la licencia en cuestión o con la información del vehículo."
-DOSSPRE,dosspre_0266,2,Security,—,—,,,Security,El sistema deberá almacenar automáticamente la información de credenciales en una base de datos central.
-DOSSPRE,dosspre_0268,2,Security,—,—,,,Security,El sistema deberá utilizar una vía segura para enviar todas las credenciales válidas a la plataforma.
-DOSSPRE,dosspre_0278,2,Security,Security,—,,,—,El sistema deberá garantizar la disponibilidad del informe de auditoría para los usuarios.
-DOSSPRE,dosspre_0308,2,—,Security,Security,,,—,El sistema deberá permitir que los usuarios generales solo tengan acceso a través de la interfaz de usuario.
-DOSSPRE,dosspre_0311,2,Security,—,—,,,Security,El sistema deberá tener tolerancia a fallos y deberá poder salir del programa de forma segura si se produce algún problema.
-DOSSPRE,dosspre_0312,2,—,Security,Security,,,—,El sistema deberá permitir al usuario el acceso a la pantalla del menú de inicio.
-DOSSPRE,dosspre_0316,2,Security,—,Security,,,—,"El sistema debería estar preparado para todas las situaciones, de modo que tenga capacidad de recuperación en cualquier condición de error."
-DOSSPRE,dosspre_0319,2,—,Security,Security,,,—,El sistema debería mantenerse adecuadamente para que pueda resolver cualquier conflicto de datos y seguir funcionando en cualquier circunstancia.
-DOSSPRE,dosspre_0328,2,—,Security,Security,,,—,El sistema deberá mostrar interfaces que describan las operaciones realizadas durante los procesos.
-DOSSPRE,dosspre_0330,2,—,Security,Security,,,—,"El sistema debe generar informes (fecha, hora, hash del archivo, estado) u otros resultados una vez que se haya realizado el escaneo del archivo."
-DOSSPRE,dosspre_0337,2,Security,—,—,,,Security,"Los resultados del proceso de escaneo deben ser fiables, lo que significa que debe haber un número mínimo de falsos positivos o ninguno."
-DOSSPRE,dosspre_0342,2,—,Security,Security,,,—,"El sistema deberá permitir el almacenamiento, la recuperación y la manipulación de datos de forma sencilla."
-DOSSPRE,dosspre_0346,2,Security,—,—,,,Security,"El sistema funciona dentro de sus límites, que también establecen restricciones a su funcionamiento, y dichos límites constituyen las restricciones."
-DOSSPRE,dosspre_0363,2,—,Security,Security,,,—,"El sistema debería permitir a los usuarios almacenar información crítica, como alergias y afecciones, en un servidor central."
-DOSSPRE,dosspre_0365,2,Security,Security,—,,,—,El sistema deberá conservar los historiales médicos completos de los pacientes en formato cifrado en un servidor.
-DOSSPRE,dosspre_0391,2,Security,Security,—,,,—,El sistema deberá disponer de una pantalla de inicio de sesión que permita al administrador de la red acceder al sistema.
-DOSSPRE,dosspre_0398,2,—,Security,Security,,,—,"El sistema deberá disponer de un módulo de análisis que utilice los metadatos contenidos en la información extraída para detectar datos de localización, con el fin de crear un mapa de desplazamientos a partir de dicha información."
-DOSSPRE,dosspre_0409,2,—,Security,Security,,,—,El sistema se diseñará de tal forma que sea compatible con otras arquitecturas de sistema.
-DOSSPRE,dosspre_0417,2,—,Security,—,,,Security,El sistema deberá permitir la minería de datos web de Twitter; la Twitter API ofrece diferentes niveles de acceso a los datos a través de su programa Twitter Data Grants.
-DOSSPRE,dosspre_0422,2,Security,Security,—,,,—,El sistema deberá permitir al usuario firmar un documento
-DOSSPRE,dosspre_0431,2,—,Security,Security,,,—,El sistema deberá ser capaz de capturar paquetes de datos
-DOSSPRE,dosspre_0437,2,—,Security,Security,,,—,El sistema debe permitir la escalabilidad para poder realizar modificaciones legítimas de los datos de usuario.
-DOSSPRE,dosspre_0439,2,Security,—,—,,,Security,El sistema deberá ser capaz de bloquear cualquier detección ilegítima con el fin de utilizar de manera eficiente los recursos del sistema.
-DOSSPRE,dosspre_0440,2,—,Security,Security,,,—,El sistema deberá ser capaz de minimizar los falsos positivos y los falsos negativos.
-DOSSPRE,dosspre_0452,2,Security,—,—,,,Security,El sistema deberá permitir que un usuario se registre y acceda al sistema en nombre del receptor de sangre.
-DOSSPRE,dosspre_0475,2,—,Security,Security,,,—,El sistema deberá poder asignar a un examinador una ruta que deberá seguir una vez que haya finalizado la prueba de un alumno de autoescuela en el recinto.
-DOSSPRE,dosspre_0492,2,Security,—,Security,,,—,El sistema debería ser capaz de comparar la huella facial actual con las huellas faciales de la base de datos.
-DOSSPRE,dosspre_0493,2,Security,Security,—,,,—,El sistema debería ser capaz de cotejar el identificador de la tarjeta o etiqueta RFID con el identificador facial o personal del usuario para conceder el acceso.
-DOSSPRE,dosspre_0500,2,Security,Security,—,,,—,"El sistema deberá incorporar controles adecuados para las validaciones de la entrada del usuario y la gestión de la configuración, con el fin de impedir la manipulación de software."
-DOSSPRE,dosspre_0502,2,Security,—,Security,,,—,El sistema deberá permitir el registro de eventos para cada actividad de los usuarios.
-DOSSPRE,dosspre_0505,2,—,Security,Security,,,—,"En este sistema, el sistema RFID debería estar vinculado al sistema de reconocimiento facial, de modo que funcione como un único sistema de seguridad de control de acceso. Funcionalidad"
-DOSSPRE,dosspre_0511,2,—,—,Security,,,Security,El sistema debe alertar al usuario sobre actividades maliciosas y recomendarle las medidas que debe tomar.
-DOSSPRE,dosspre_0517,2,Security,—,—,,,Security,"El sistema deberá detectar ataques de denegación de servicio, incluyendo sobrecargas del servicio, tormentas de difusión y también inundaciones de mensajes."
-DOSSPRE,dosspre_0520,2,—,Security,Security,,,—,El sistema deberá supervisar y realizar el escaneo del host
-DOSSPRE,dosspre_0523,2,—,—,Security,,,Security,El sistema deberá permitir al usuario salir del programa una vez que este se haya iniciado.
-DOSSPRE,dosspre_0536,2,Security,—,—,,,Security,El sistema no deberá permitir la ingeniería inversa de su código fuente.
-DOSSPRE,dosspre_0544,2,Security,—,—,,,Security,El sistema deberá permitir al usuario incrustar el mensaje cifrado y recuperarlo de la imagen mediante la técnica LBS.
-DOSSPRE,dosspre_0556,2,Security,—,—,,,Security,El sistema deberá ser capaz de detectar mensajes de spam y enviarlos a la carpeta de spam en tiempo real.
-DOSSPRE,dosspre_0569,2,—,Security,—,,,Security,El sistema contará con una página de inicio que se encargará de realizar la redirección del usuario a la página deseada; esta puede ser una página de inicio de sesión en la que el usuario acceda a su cuenta de correo electrónico o una página de registro en la que el usuario cree una cuenta de correo electrónico.
-DOSSPRE,dosspre_0570,2,—,—,Security,,,Security,"El sistema deberá disponer de una página de registro para recopilar y verificar los datos del nuevo usuario, con el fin de comprobar si la información facilitada cumple con los requisitos del sistema."
-DOSSPRE,dosspre_0572,2,Security,Security,—,,,—,"El sistema deberá contar con un campo opcional de correo electrónico para la recuperación; en caso de que se olvide la contraseña, se enviará a ese correo electrónico un enlace de restablecimiento con las instrucciones correspondientes."
-DOSSPRE,dosspre_0594,2,Security,—,Security,,,—,El sistema debería ser capaz de identificar y detectar los errores en las entradas del usuario.
-DOSSPRE,dosspre_0595,2,Security,—,—,,,Security,El sistema no deberá permitir la introducción de datos de tipo incorrecto.
-DOSSPRE,dosspre_0603,2,Security,Security,—,,,—,El sistema deberá exigir una contraseña para el inicio de sesión en los routers del proveedor.
-DOSSPRE,dosspre_0611,2,—,—,Security,,,Security,El sistema deberá disponer de una base de datos para almacenar las cuentas de usuario y los datos de los usuarios registrados.
-DOSSPRE,dosspre_0612,2,Security,—,—,,,Security,El sistema deberá permitir la consulta de los usuarios registrados si así lo solicita el servidor de autenticación.
-DOSSPRE,dosspre_0631,2,Security,—,—,,,Security,El sistema deberá ser capaz de analizar la vulnerabilidad detectada.
-DOSSPRE,dosspre_0632,2,Security,Security,—,,,—,El sistema deberá ser capaz de identificar una tasa baja de falsos positivos y aceptable.
-DOSSPRE,dosspre_0635,2,Security,—,—,,,Security,"El sistema tendrá una tasa baja de falsos positivos, de modo que pueda identificar correctamente las alertas de falsos positivos y diferenciarlas de las que indican una vulnerabilidad real."
-DOSSPRE,dosspre_0648,2,Security,—,Security,,,—,El reproductor del sistema se encargará del cálculo de hash para los nombres de las partes recortadas.
-DOSSPRE,dosspre_0653,2,—,Security,Security,,,—,El reproductor del sistema deberá reorganizar correctamente las partes de las canciones recortadas aleatoriamente.
-DOSSPRE,dosspre_0663,2,—,Security,Security,,,—,El sistema deberá permitir que un usuario cree una cuenta.
-DOSSPRE,dosspre_0666,2,—,Security,Security,,,—,El sistema deberá generar un informe de supresión.
-DOSSPRE,dosspre_0669,2,—,Security,Security,,,—,El sistema deberá realizar un análisis de la carga útil del tráfico de red en toda la red de la organización.
-DOSSPRE,dosspre_0670,2,Security,—,—,,,Security,El sistema deberá analizar y registrar las firmas de paquetes sospechosos y detectar una anomalía si los datos de los paquetes siguientes coinciden con las firmas registradas relacionadas con amenazas.
-DOSSPRE,dosspre_0678,2,—,Security,Security,,,—,"El sistema deberá proporcionar marcas de agua digitales invisibles diseñadas mediante la transformación coseno discreta, que integra factores de cálculos complejos y robustez."
-DOSSPRE,dosspre_0683,2,Security,—,—,,,Security,"En caso de que una imagen con marca de agua sea enviada dos o más veces por diferentes autores, el administrador deberá poder verificar quién es el propietario legítimo de la imagen para proteger los derechos de autor."
-DOSSPRE,dosspre_0696,2,Security,—,—,,,Security,El sistema deberá obtener automáticamente una imagen forense de la memoria principal de la máquina virtual comprometida en cuanto se detecte una intrusión grave.
-DOSSPRE,dosspre_0706,2,Security,—,—,,,Security,El sistema deberá proporcionar control de acceso a la interfaz de usuario.
-DOSSPRE,dosspre_0727,2,Security,—,Security,,,—,"El sistema deberá contar con medidas de seguridad contra las amenazas ambientales, lo cual constituye una de sus funciones principales."
-DOSSPRE,dosspre_0728,2,—,—,Security,,,Security,"El sistema puede utilizarse en otras plataformas, como circuitos de conmutación, o integrarse en sistemas de seguridad doméstica."
-DOSSPRE,dosspre_0731,2,Security,—,Security,,,—,"El sistema deberá responder rápidamente ante las intrusiones, con el fin de contribuir a frenar la gravedad de los daños o a mitigar el riesgo."
-DOSSPRE,dosspre_0743,2,Security,—,—,,,Security,"El sistema deberá estar protegido contra fallos deliberados e intrusivos procedentes de fuentes internas y externas, ya que cuenta con controles adecuados, tales como las validaciones de la entrada del usuario y medidas contra la manipulación de software."
-DOSSPRE,dosspre_0748,2,—,Security,Security,,,—,"El sistema deberá ser capaz de identificar claramente los protocolos de intercambio de datos pertinentes, así como documentar o hacer referencia a los requisitos técnicos para dicho intercambio, incluyendo: la fuente, los elementos de datos, las estructuras de datos, el método de sincronización y los protocolos."
-DOSSPRE,dosspre_0761,2,—,Security,Security,,,—,"La interfaz web se ha desarrollado utilizando CSS y Bootstrap, lo que permite utilizar el sistema en teléfonos móviles."
-DOSSPRE,dosspre_0763,2,—,Security,Security,,,—,"El PDP reduce el tiempo y el esfuerzo computacional que se necesitarían si los propietarios de los datos tuvieran que descargarlos y, a continuación, comprobar manualmente si han sido modificados."
-DOSSPRE,dosspre_0774,2,Security,Security,—,,,—,El sistema deberá poder mostrar una sección en la que se indique la última vez que un usuario inició sesión en el sistema y un resumen de las actividades que realizó en el sistema tras iniciar sesión.
-DOSSPRE,dosspre_0781,2,Security,Security,—,,,—,El sistema deberá permitir que el usuario gestione su propia contraseña.
-DOSSPRE,dosspre_0796,2,—,—,Security,,,Security,PlutoMail ofrece una rápida puesta en marcha y una alta tasa de detección de spam mediante el análisis bayesiano y otros métodos: no requiere configuración y presenta una tasa baja de falsos positivos gracias a su lista blanca automática.
-DOSSPRE,dosspre_0815,2,Security,Security,—,,,—,El sistema deberá permitir al radiólogo realizar el cifrado y subir las imágenes a la nube.
-DOSSPRE,dosspre_0828,2,—,Security,Security,,,—,El sistema deberá permitir a los usuarios realizar un seguimiento de la evolución de los casos notificados anteriormente.
-DOSSPRE,dosspre_0850,2,Security,—,—,,,Security,"El software es crítico para la seguridad y se utiliza como última línea de defensa frente a ataques, ya que los defectos en el software crítico para la seguridad pueden provocar graves interrupciones del servicio o tiempos de inactividad del servidor."
-DOSSPRE,dosspre_0853,2,—,Security,Security,,,—,"El sistema no interactúa de forma continua con la base de datos, sino que solo consulta la información de los estudiantes en la base de datos de la universidad cuando el administrador lo solicita."
-DOSSPRE,dosspre_0894,2,—,Security,Security,,,—,El sistema deberá poder aceptar datos de proyectos anteriores para el proceso de aprendizaje.
-DOSSPRE,dosspre_0925,2,—,Security,—,,,Security,El sistema deberá ofrecer un escáner de vulnerabilidades de scripts SQL y XSS para aplicaciones web seguras.
-DOSSPRE,dosspre_0929,2,—,Security,Security,,,—,"El sistema deberá informar de los resultados, tras detectar y analizar las vulnerabilidades."
-DOSSPRE,dosspre_0930,2,Security,—,—,,,Security,"El sistema deberá verificar el certificado SSL de un servidor web determinado para asegurarse de que está correctamente instalado, es válido, es de confianza y no da lugar a ningún error para ninguno de los usuarios."
-DOSSPRE,dosspre_0931,2,Security,Security,—,,,—,"El sistema se conecta al servidor de aplicaciones web y muestra los resultados de la conexión SSL, incluyendo qué certificado SSL está instalado y si este proporciona los certificados intermedios correctos."
-DOSSPRE,dosspre_0936,2,Security,—,—,,,Security,El sistema garantiza que el usuario esté debidamente autenticado en cada acceso al sistema.
-DOSSPRE,dosspre_0952,2,—,Security,Security,,,—,El sistema deberá permitir la verificación y validación de los documentos.
-DOSSPRE,dosspre_0954,2,Security,—,Security,,,—,El sistema deberá permitir la replicación múltiple de datos.
-DOSSPRE,dosspre_0972,2,—,—,Security,,,Security,El sistema se comunicará con la API de Django para obtener la dirección de Ethereum correspondiente al identificador nacional introducido.
-DOSSPRE,dosspre_0985,2,Security,—,Security,,,—,El sistema deberá permitir que los datos introducidos en el mismo se cifren antes de enviarse a la instancia de la base de datos en nuestro servidor en la nube para su almacenamiento.
-DOSSPRE,dosspre_0986,2,Security,—,Security,,,—,"El sistema deberá permitir a los usuarios recuperar los datos cuando lo soliciten, incluso en casos de emergencia, en los que dichos datos deberían recuperarse y estar descifrados antes de que el profesional sanitario pueda acceder a ellos."
-DOSSPRE,dosspre_0993,2,Security,—,—,,,Security,El sistema deberá garantizar que los registros del sistema se cifren y se almacenen en la nube como texto cifrado.
-DOSSPRE,dosspre_1001,2,Security,Security,—,,,—,El sistema deberá permitir el reconocimiento facial.
-DOSSPRE,dosspre_1014,2,Security,—,—,,,Security,"El sistema deberá permitir a los usuarios autorizados gestionar sus archivos, es decir, actualizar y eliminar datos de sus cuentas."
-DOSSPRE,dosspre_1040,2,Security,Security,—,,,—,El sistema deberá procesar los datos recibidos y generar un hash MD5 de los mismos.
-DOSSPRE,dosspre_1050,2,Security,—,—,,,Security,El sistema deberá garantizar la confidencialidad de la información personal esencial recopilada en todos los controladores del sistema.
-DOSSPRE,dosspre_1065,2,Security,—,—,,,Security,El sistema deberá permitir que el servidor bancario verifique las credenciales de los usuarios al iniciar sesión durante un breve periodo de tiempo.
-DOSSPRE,dosspre_1089,2,—,—,Security,,,Security,El sistema deberá proporcionar orientación sobre cómo garantizar la seguridad de un archivo.
-DOSSPRE,dosspre_1095,2,Security,—,—,,,Security,El sistema deberá poder bloquear los sitios web que figuren en la base de datos.
-DOSSPRE,dosspre_1104,2,Security,Security,—,,,—,El sistema deberá permitir al administrador realizar modificaciones.
-DOSSPRE,dosspre_1130,2,Security,—,—,,,Security,El sistema deberá permitir al cliente descifrar el contenido de vídeo en un archivo virtual y enviar la ubicación a los reproductores multimedia.
-DOSSPRE,dosspre_1136,2,Security,—,—,,,Security,El sistema deberá denegar el acceso a usuarios no autorizados para que no puedan redistribuir la copia que hayan adquirido legalmente.
-DOSSPRE,dosspre_1137,2,Security,Security,—,,,—,El sistema deberá distribuir copias auténticas de cada vídeo suministrado.
-DOSSPRE,dosspre_1150,2,—,Security,Security,,,—,"El sistema deberá garantizar que la agencia de marcas de agua digitales pueda realizar el despacho de agentes, recopilar y comunicar la información procesada procedente de los hosts visitados dentro de la red."
-DOSSPRE,dosspre_1157,2,Security,—,—,,,Security,El sistema deberá proporcionar autenticación garantizando que los agentes comparen las claves de marca de agua de las imágenes detectadas con las claves ya almacenadas en la base de datos de la agencia.
-DOSSPRE,dosspre_1208,2,Security,—,—,,,Security,El sistema deberá generar una carga útil cifrada y la firma del mensaje.
-DOSSPRE,dosspre_1221,2,Security,—,—,,,Security,El sistema deberá ofrecer capacidades de gestión de errores.
-DOSSPRE,dosspre_1228,2,—,Security,Security,,,—,El sistema deberá ser ligero
-DOSSPRE,dosspre_1236,2,Security,—,Security,,,—,"El sistema deberá recopilar y analizar los datos que el niño esté escribiendo y, si detecta determinadas palabras clave o una secuencia continua de palabrotas, debería enviar una alerta por mensaje de texto a los padres."
-DOSSPRE,dosspre_1246,2,Security,—,—,,,Security,El sistema deberá permitir que un usuario que tenga una cuenta de Twitter cree una aplicación para tener acceso a los tokens.
-DOSSPRE,dosspre_1254,2,Security,Security,—,,,—,El sistema deberá ser capaz de detectar y combatir tanto el malware existente como el nuevo.
-DOSSPRE,dosspre_1256,2,Security,Security,—,,,—,El sistema deberá disponer de un analizador que ejecute los archivos de malware para inspeccionar el tipo
-DOSSPRE,dosspre_1257,2,—,Security,—,,,Security,El analizador de malware del sistema deberá enviar todos los archivos y sus registros al servidor principal al finalizar el proceso de análisis.
-DOSSPRE,dosspre_0005,1,—,Security,—,,,—,El sistema deberá generar un informe de las vulnerabilidades detectadas y analizadas.
-DOSSPRE,dosspre_0013,1,Security,—,Security,,,Security,El sistema deberá permitir al usuario generar sus claves públicas y privadas ECC. Estas claves se utilizarán para el cifrado de la clave de cifrado AES y también para el PDP.
-DOSSPRE,dosspre_0015,1,—,Security,—,,,—,"El sistema deberá proporcionar una plataforma que permita al usuario cargar archivos para su almacenamiento y, asimismo, recuperarlos descargándolos cuando sea necesario."
-DOSSPRE,dosspre_0030,1,Security,Security,Security,,,—,El sistema deberá mostrar un informe con los resultados detallados obtenidos de los archivos enviados para su análisis e indicará claramente qué archivos son maliciosos y cuáles son inofensivos.
-DOSSPRE,dosspre_0043,1,—,Security,—,,,—,El sistema deberá adaptarse a todo tipo de aplicaciones.
-DOSSPRE,dosspre_0049,1,—,Security,—,,,—,El sistema deberá permitir al administrador incorporar la marca de agua digital invisible cada vez que un autor envíe su obra.
-DOSSPRE,dosspre_0057,1,—,—,—,,,Security,El sistema deberá poder recuperar antecedentes penales de la base de datos a partir de las fotografías tomadas
-DOSSPRE,dosspre_0066,1,Security,Security,—,,,Security,"El sistema deberá ser capaz de registrar el nombre de host del nodo malicioso, así como el SSID de la red a la que está conectado, con el fin de determinar desde qué zona del campus se está llevando a cabo el ataque."
-DOSSPRE,dosspre_0078,1,—,—,Security,,,—,El sistema deberá ser capaz de detectar una figura que se aproxime.
-DOSSPRE,dosspre_0086,1,—,—,Security,,,—,"El sistema deberá garantizar una alta disponibilidad de la aplicación siempre que el usuario la necesite, por lo que se establecerá un módulo de recuperación en caso de pérdida del teléfono móvil."
-DOSSPRE,dosspre_0121,1,—,Security,—,,,—,El sistema deberá proporcionar estadísticas de reputación de la red de confianza.
-DOSSPRE,dosspre_0123,1,—,—,Security,,,—,El sistema deberá gestionar los perfiles de usuario.
-DOSSPRE,dosspre_0127,1,Security,Security,—,,,Security,El sistema deberá permitir un fallo seguro siempre que se produzca un fallo.
-DOSSPRE,dosspre_0129,1,—,—,Security,,,—,El sistema deberá cumplir con las directrices contra el blanqueo de capitales de Zimbabue.
-DOSSPRE,dosspre_0149,1,Security,Security,—,,,Security,"El sistema deberá permitir la supervisión del tráfico de red en tiempo real mediante la captura del tráfico web entrante y saliente de TCP, HTTP(S) y TLS, con el fin de correlacionarlo con la lista negra de cryptojacking configurada."
-DOSSPRE,dosspre_0153,1,—,—,Security,,,—,El sistema deberá generar una notificación emergente en la que se informe de la actividad de criptojacking detectada.
-DOSSPRE,dosspre_0159,1,—,—,Security,,,—,El sistema no debería consumir una cantidad significativamente elevada de recursos de la CPU.
-DOSSPRE,dosspre_0177,1,—,—,—,,,Security,"El sistema deberá garantizar que las interrupciones en el servicio de Internet no afecten a su disponibilidad, ya que se podrá seguir concediendo o denegando el acceso al sistema a cualquier usuario."
-DOSSPRE,dosspre_0182,1,—,—,Security,,,—,El sistema se mantendrá mediante actualizaciones frecuentes.
-DOSSPRE,dosspre_0184,1,Security,Security,—,,,Security,El sistema deberá realizar una verificación para determinar los derechos de usuario y de acceso.
-DOSSPRE,dosspre_0188,1,—,—,Security,,,—,El sistema deberá poder mostrar todas las unidades de negocio registradas antes de que el usuario realice una selección.
-DOSSPRE,dosspre_0189,1,—,Security,—,,,—,El sistema deberá poder generar informes a partir de la actividad registrada en el mismo.
-DOSSPRE,dosspre_0191,1,—,Security,—,,,—,El sistema deberá permitir al usuario acceder a los datos o recursos en la ubicación indicada y en el formato adecuado en todo momento.
-DOSSPRE,dosspre_0194,1,—,—,—,,,Security,El sistema deberá permitir introducir el nombre de la persona cuyos datos y PII se vayan a buscar.
-DOSSPRE,dosspre_0195,1,—,—,Security,,,—,El sistema deberá permitir el acceso de la aplicación web a los perfiles públicos de las redes sociales.
-DOSSPRE,dosspre_0211,1,Security,Security,—,,,Security,El sistema debería conservar el historial de las transacciones en una base de datos segura.
-DOSSPRE,dosspre_0213,1,—,Security,—,,,—,El sistema debería cumplir con la legislación aplicable a la tecnología que se vaya a utilizar.
-DOSSPRE,dosspre_0218,1,—,—,Security,,,—,El sistema debería señalar una reclamación cuya puntuación supere el umbral
-DOSSPRE,dosspre_0226,1,Security,Security,—,,,Security,Los permisos de acceso a los datos del sistema solo deberían ser modificados por el administrador de datos del sistema.
-DOSSPRE,dosspre_0227,1,Security,Security,Security,,,—,El sistema debería desconectarse automáticamente tras un periodo determinado de inactividad.
-DOSSPRE,dosspre_0233,1,—,—,Security,,,—,El sistema deberá garantizar que las acciones que no se puedan deshacer requieran una confirmación antes de que se lleven a cabo.
-DOSSPRE,dosspre_0238,1,—,—,Security,,,—,"El sistema deberá garantizar que la interfaz se mueva con rapidez, al ritmo de los clics del ratón del usuario y, siempre que sea posible."
-DOSSPRE,dosspre_0240,1,Security,Security,Security,,,—,El sistema deberá permitir a los usuarios introducir sus nombres de usuario y contraseñas.
-DOSSPRE,dosspre_0243,1,Security,—,Security,,,Security,El sistema deberá permitir que el usuario sea redirigido a la página de opciones o de vuelta a la página de inicio de sesión para volver a intentarlo.
-DOSSPRE,dosspre_0244,1,Security,—,Security,,,Security,Este sistema permite verificar las credenciales de inicio de sesión de los usuarios comparándolas con las almacenadas en el sistema.
-DOSSPRE,dosspre_0247,1,Security,—,Security,,,Security,"El sistema deberá garantizar que el usuario acceda al sistema si las credenciales son válidas; en caso contrario, deberá redirigir al usuario a la página de inicio de sesión, donde debería introducir otro número de licencia o número de matrícula del vehículo."
-DOSSPRE,dosspre_0253,1,—,Security,—,,,—,El sistema deberá permitir al usuario consultar la base de datos
-DOSSPRE,dosspre_0255,1,—,Security,—,,,—,El sistema deberá poder cerrar la sesión
-DOSSPRE,dosspre_0269,1,Security,Security,Security,,,—,El sistema nunca mostrará la contraseña de un usuario. Siempre se mostrará con caracteres especiales que representen los caracteres tecleados.
-DOSSPRE,dosspre_0271,1,—,—,—,,,Security,El sistema debería ser capaz de capturar archivos de registro de Windows independientemente del sistema operativo Windows.
-DOSSPRE,dosspre_0276,1,—,—,Security,,,—,El sistema deberá tardar poco tiempo en responder a un comando para realizar el cifrado y el descifrado de datos.
-DOSSPRE,dosspre_0287,1,Security,—,Security,,,Security,El sistema deberá permitir la captura de registros específicos de los ordenadores y su integración sin fallos con la aplicación web mediante mecanismos de seguridad como HMAC y PGP.
-DOSSPRE,dosspre_0292,1,—,Security,—,,,—,El sistema deberá facilitar la gestión de casos para la ZRP.
-DOSSPRE,dosspre_0294,1,Security,Security,—,,,Security,El sistema deberá mostrar los registros de la actividad de los investigadores.
-DOSSPRE,dosspre_0296,1,Security,Security,Security,,,—,El sistema utiliza procedimientos almacenados.
-DOSSPRE,dosspre_0302,1,—,—,Security,,,—,"El sistema se basará en una arquitectura cliente-servidor, por lo que los recursos se obtendrán de dos fuentes diferentes en cualquier momento dado, lo que aumentará la eficiencia en la utilización de los recursos y reducirá los cuellos de botella del sistema."
-DOSSPRE,dosspre_0322,1,—,Security,—,,,—,El sistema debería ser capaz de llevar a cabo cada tarea solicitada por el usuario lo más rápidamente posible.
-DOSSPRE,dosspre_0324,1,—,—,Security,,,—,"El sistema debería ser capaz de proporcionar datos correspondientes al número máximo actual de etiquetas —dos mil en la actualidad— durante un periodo de treinta días, en el formato que el usuario decida."
-DOSSPRE,dosspre_0336,1,—,Security,—,,,—,El servicio del sistema debe estar siempre disponible cuando se necesite.
-DOSSPRE,dosspre_0341,1,Security,—,Security,,,Security,El sistema deberá permitir el uso de contraseñas y nombres de usuario para el acceso a los datos y su modificación.
-DOSSPRE,dosspre_0344,1,—,—,Security,,,—,El sistema permite recuperar rápidamente la información.
-DOSSPRE,dosspre_0350,1,—,—,—,,,Security,El sistema deberá permitir que un usuario pueda recuperar información de la base de datos.
-DOSSPRE,dosspre_0354,1,—,—,Security,,,—,El sistema deberá permitir al usuario utilizar Bluetooth para activar un smartphone que se comunique con un ordenador portátil a través de una conexión inalámbrica de corto alcance.
-DOSSPRE,dosspre_0357,1,—,Security,—,,,—,"El sistema cuenta con muy pocas interfaces, por lo que no confunde a los usuarios a medida que se adentran en él."
-DOSSPRE,dosspre_0359,1,—,—,—,,,Security,El sistema debería almacenar la información básica de los pacientes y los permisos en un servidor central.
-DOSSPRE,dosspre_0368,1,—,—,Security,,,—,El sistema deberá permitir el acceso a los profesionales sanitarios a través de una aplicación de software basada en pantalla.
-DOSSPRE,dosspre_0369,1,Security,Security,Security,,,—,El sistema deberá permitir que los servidores de cada instalación no se vean afectados en caso de fallo del servidor central.
-DOSSPRE,dosspre_0373,1,Security,Security,—,,,Security,El sistema deberá proporcionar registros de auditoría cuando sea necesario.
-DOSSPRE,dosspre_0377,1,Security,—,Security,,,Security,El sistema debería ser capaz de bloquear el tráfico hacia y desde la red que se identifique como potencialmente malicioso.
-DOSSPRE,dosspre_0390,1,—,—,Security,,,—,La interfaz de usuario incluye una interfaz gráfica de usuario (GUI) que contiene todos los complementos básicos que conforman las funciones básicas del programa.
-DOSSPRE,dosspre_0393,1,Security,Security,Security,,,—,"El sistema mostrará mensajes de alerta en caso de que se detecte una anomalía y, además, mostrará un panel con los registros de eventos de la anomalía detectada."
-DOSSPRE,dosspre_0396,1,—,—,—,,,Security,"El sistema deberá disponer de capacidad de creación de imágenes para realizar una copia de la información contenida en el dispositivo móvil, que se utilizará durante el proceso forense como fuente de datos de prueba."
-DOSSPRE,dosspre_0407,1,—,Security,—,,,—,El sistema deberá garantizar la portabilidad mediante la aplicación de un nivel de abstracción relativamente generalizado que debería interponerse entre las interfaces del sistema y la lógica de la aplicación.
-DOSSPRE,dosspre_0432,1,—,—,—,,,Security,El sistema deberá ser capaz de desfragmentar los paquetes capturados.
-DOSSPRE,dosspre_0444,1,—,—,Security,,,—,La interfaz de usuario del sistema deberá constar de una parte front-end y una parte back-end SQL que contribuyan a una excelente experiencia de usuario.
-DOSSPRE,dosspre_0447,1,—,Security,—,,,—,El sistema deberá permitir que el análisis de la sangre se realice en el banco de sangre y que los resultados se introduzcan en el sistema.
-DOSSPRE,dosspre_0448,1,—,—,Security,,,—,El sistema deberá poder aplazar a los donantes no aptos e informar a los donantes aptos mediante SMS.
-DOSSPRE,dosspre_0449,1,—,—,Security,,,—,El sistema deberá poder mantener un inventario de los identificadores y los grupos sanguíneos de las donaciones de sangre.
-DOSSPRE,dosspre_0450,1,—,—,—,,,Security,"El sistema deberá permitir que, cuando el médico o el hospital realicen una solicitud, se abra una sesión y se genere una clave de confirmación que se envíe al médico o al paciente por correo electrónico, la cual utilizarán tras recibir la sangre solicitada correcta."
-DOSSPRE,dosspre_0455,1,Security,Security,Security,,,—,El sistema deberá ser capaz de realizar la validación de entradas
-DOSSPRE,dosspre_0461,1,—,Security,—,,,—,"El sistema deberá ser capaz de notificar a las partes implicadas el incidente clínico, incluso cuando se produzca un fallo."
-DOSSPRE,dosspre_0463,1,—,Security,—,,,—,"El sistema deberá garantizar que, en caso de crisis, el paciente solo tenga que pulsar el botón de encendido tres veces, simplificando así la forma en que el paciente interactúa con el sistema."
-DOSSPRE,dosspre_0465,1,Security,—,Security,,,Security,"El sistema deberá resistir cualquier uso no autorizado e ilícito, tanto si se trata de una acción accidental como intencionada."
-DOSSPRE,dosspre_0468,1,—,—,Security,,,—,"Los datos del sistema se integran perfectamente con la aplicación web, ya que ambos sistemas utilizan la misma base de datos para compartir información."
-DOSSPRE,dosspre_0471,1,—,—,—,,,Security,"El sistema deberá ser capaz de crear y aplicar prácticas de codificación seguras a lo largo de todo el proceso de desarrollo, identificando de forma rigurosa el origen de los datos requeridos y reconociendo los elementos y estructuras de datos necesarios para el intercambio."
-DOSSPRE,dosspre_0476,1,—,—,—,,,Security,"El sistema deberá poder generar un registro del número de aprobados y suspendidos, en relación con el examinador."
-DOSSPRE,dosspre_0494,1,Security,—,Security,,,Security,El sistema debería ser capaz de denegar el acceso a la persona que presente una etiqueta que pertenezca a otra persona con una probabilidad elevada.
-DOSSPRE,dosspre_0496,1,—,—,Security,,,—,Un sistema debería diseñarse teniendo en cuenta la psicología y la fisiología de los usuarios.
-DOSSPRE,dosspre_0507,1,—,—,Security,,,—,El sistema deberá permitir a los usuarios interactuar con el sistema de control de acceso basado en RFID y reconocimiento facial.
-DOSSPRE,dosspre_0513,1,—,—,—,,,Security,"El sistema deberá garantizar que, en caso de que se detecten nuevos atributos, se active el módulo de detección de anomalías, el cual, basándose en la información de la que ya dispone el sistema, realice una predicción sobre los nuevos datos."
-DOSSPRE,dosspre_0534,1,—,Security,—,,,—,"Se puede confiar en el sistema para la detección de spam incluso tras un uso prolongado, ya que los datos utilizados para entrenar el clasificador son muy amplios."
-DOSSPRE,dosspre_0540,1,Security,Security,Security,,,—,El sistema deberá enviar una contraseña de un solo uso al teléfono del usuario para completar el proceso de inicio de sesión.
-DOSSPRE,dosspre_0545,1,—,—,—,,,Security,El sistema funciona correctamente en entornos web y permite el inicio de sesión de varios clientes y la comunicación al mismo tiempo.
-DOSSPRE,dosspre_0551,1,—,Security,—,,,—,El sistema deberá permitir la inserción o la recuperación de mensajes de la imagen sin que se produzcan errores por parte del usuario.
-DOSSPRE,dosspre_0563,1,—,—,Security,,,—,"El sistema entregará los correos electrónicos siempre que haya conexión a Internet para recibirlos, con tiempos de inactividad mínimos."
-DOSSPRE,dosspre_0571,1,Security,Security,—,,,Security,"El sistema deberá poder garantizar que la información facilitada incluya un nombre de usuario único, una contraseña y algunos datos personales necesarios para verificar que el usuario cumple los requisitos para crear una cuenta."
-DOSSPRE,dosspre_0574,1,—,Security,—,,,—,"El buzón del sistema se encarga de mostrar los correos electrónicos del usuario que ha iniciado sesión, así como todos los correos no deseados, y contará con un panel de control para navegar por los correos."
-DOSSPRE,dosspre_0577,1,Security,Security,—,,,Security,El sistema deberá proporcionar a todos los usuarios internos una copia de seguridad de los datos operativos y de transacción.
-DOSSPRE,dosspre_0583,1,Security,Security,—,,,Security,Cada usuario debe tener configurado un nombre de usuario único y una contraseña que se pueda cambiar cuando sea necesario.
-DOSSPRE,dosspre_0584,1,Security,—,Security,,,Security,El superadministrador del sistema debería poder conceder privilegios de acceso a los usuarios y restringir el acceso a la información y los datos que los usuarios pueden consultar o modificar en cualquier momento.
-DOSSPRE,dosspre_0593,1,Security,Security,Security,,,—,Uso de una base de datos central que permita la captura y la manipulación de datos en tiempo real para facilitar el acceso a la información de los ordenadores portátiles desde cualquier ordenador conectado a la base de datos.
-DOSSPRE,dosspre_0598,1,Security,—,Security,,,Security,El sistema debe contar con una función de inicio de sesión que limite el uso individual a aquellas funciones a las que el usuario necesite acceder en función de sus responsabilidades.
-DOSSPRE,dosspre_0599,1,Security,—,Security,,,Security,"Se debería realizar una copia de seguridad de la base de datos del sistema de forma continua, al menos una vez cada cuatro horas, con el fin de minimizar la pérdida de datos en caso de un fallo catastrófico."
-DOSSPRE,dosspre_0614,1,—,Security,—,,,—,El sistema deberá permitir al usuario modificar el PIN temporal recibido del sistema.
-DOSSPRE,dosspre_0615,1,—,Security,—,,,—,"El sistema se situará entre el cliente y el servidor; no obstante, forma parte de la arquitectura del servidor."
-DOSSPRE,dosspre_0626,1,—,Security,—,,,—,"El sistema permitirá al usuario introducir en el navegador la URL del servidor local y el puerto del panel de administración, tras lo cual se procederá al inicio de sesión. Esto lo proporciona el marco de trabajo Django."
-DOSSPRE,dosspre_0633,1,Security,Security,Security,,,—,El sistema deberá ser capaz de verificar el certificado SSL.
-DOSSPRE,dosspre_0638,1,Security,—,Security,,,Security,"El sistema debería ser capaz de diagnosticar con precisión las vulnerabilidades reales, cuando estas existan, basándose en la realización de experimentos basados en fórmulas."
-DOSSPRE,dosspre_0646,1,—,—,Security,,,—,El programa de descarga del sistema deberá permitir la descarga de contenidos desde el servidor (tienda de música).
-DOSSPRE,dosspre_0649,1,—,—,Security,,,—,El reproductor del sistema rellena la tabla de consulta con los datos necesarios.
-DOSSPRE,dosspre_0651,1,—,—,—,,,Security,El reproductor del sistema deberá enviar los contenidos a la carpeta oculta.
-DOSSPRE,dosspre_0652,1,—,—,—,,,Security,El reproductor del sistema deberá localizar y recuperar los contenidos necesarios de la carpeta oculta.
-DOSSPRE,dosspre_0656,1,—,Security,—,,,—,El sistema se compone de diferentes módulos que funcionan de forma coordinada para alcanzar el objetivo deseado.
-DOSSPRE,dosspre_0660,1,—,Security,—,,,—,El sistema deberá ser capaz de cumplir la función para la que fue diseñado sin fallos.
-DOSSPRE,dosspre_0661,1,Security,—,Security,,,Security,La capacidad del sistema para generar una salida recortada impedirá que un atacante (pirata) tenga acceso a un único archivo de canción completo a partir de cualquier punto.
-DOSSPRE,dosspre_0662,1,Security,—,Security,,,Security,"El reproductor ocultará los archivos recortados de cualquier contacto directo con el usuario o un atacante, impidiendo así de forma fiable cualquier intercambio ilegal de archivos."
-DOSSPRE,dosspre_0668,1,Security,Security,—,,,Security,El sistema deberá permitir a los usuarios autorizados modificar los datos de los pacientes.
-DOSSPRE,dosspre_0673,1,—,—,Security,,,—,El sistema deberá permitir la creación y la edición de los datos de los usuarios.
-DOSSPRE,dosspre_0674,1,—,Security,—,,,—,El sistema deberá permitir la gestión de pacientes.
-DOSSPRE,dosspre_0682,1,Security,—,Security,,,Security,El sistema permitirá que un autor que desee proteger su obra contra el uso no autorizado suba una imagen para incrustar la marca de agua digital invisible cada vez que envíe una obra de arte.
-DOSSPRE,dosspre_0687,1,Security,Security,—,,,Security,El principio de autenticación del sistema se aplica en el sentido de que el sistema notifica si hay o no una marca de agua en la imagen.
-DOSSPRE,dosspre_0693,1,—,—,—,,,Security,El sistema deberá almacenar los datos de tráfico capturados durante un período predeterminado.
-DOSSPRE,dosspre_0699,1,—,—,—,,,Security,"El sistema deberá proporcionar informes sobre las intrusiones, su clasificación y las medidas adoptadas."
-DOSSPRE,dosspre_0700,1,—,Security,—,,,—,El sistema deberá proporcionar informes sobre el éxito o el fracaso de la adquisición de imágenes forenses.
-DOSSPRE,dosspre_0711,1,Security,Security,—,,,Security,"El sistema deberá contar con módulos de cifrado y descifrado para lograr una seguridad mayor y mejorada, con el fin de evitar, en general, las violaciones de la privacidad."
-DOSSPRE,dosspre_0712,1,Security,Security,—,,,Security,El sistema deberá proporcionar filtrado por tipo de archivo para evitar sobrecargar el flujo normal de información con archivos innecesarios.
-DOSSPRE,dosspre_0716,1,Security,—,Security,,,Security,El sistema ofrece poco margen para retrasos en la transmisión de datos y fallos del sistema gracias a los procedimientos de gestión de errores y a los mecanismos de retroalimentación.
-DOSSPRE,dosspre_0720,1,—,—,Security,,,—,Los archivos ejecutables del sistema pueden subirse a servicios de almacenamiento en línea y pueden ser descargados y utilizados por el siguiente usuario desde el otro extremo.
-DOSSPRE,dosspre_0722,1,—,—,Security,,,—,"El sistema deberá integrar las instrucciones, los procedimientos o la guía de operaciones en los productos finales, de modo que, cuando alguien no consiga realizar una determinada acción, tenga un lugar al que acudir para consultar."
-DOSSPRE,dosspre_0732,1,—,—,Security,,,—,"El sistema está diseñado para ofrecer al usuario numerosas opciones, entre las que se incluye la posibilidad de cambiar"
-DOSSPRE,dosspre_0733,1,Security,—,Security,,,Security,"El sistema puede configurarse para funcionar con una cámara, un ordenador y otro sistema de control de acceso con el fin de mejorar la autenticación de múltiples factores."
-DOSSPRE,dosspre_0739,1,—,—,—,,,Security,El sistema deberá ser capaz de reconocer los rostros detectados en la imagen.
-DOSSPRE,dosspre_0769,1,Security,Security,—,,,Security,"El sistema deberá implementar una combinación de algoritmos criptográficos que sean seguros y que se haya demostrado que son indescifrables con las tecnologías actuales; por lo tanto, el uso conjunto de estos algoritmos refuerza la seguridad del sistema."
-DOSSPRE,dosspre_0770,1,Security,—,Security,,,Security,El sistema propuesto está diseñado para utilizar un sistema de autenticación de usuario de dos factores que garantiza que solo el usuario registrado y legítimo pueda acceder al sistema y cargar o consultar los datos.
-DOSSPRE,dosspre_0771,1,Security,Security,—,,,Security,"El sistema deberá garantizar que, una vez que el titular de la cuenta haya introducido una contraseña de inicio de sesión correcta, reciba una OTP o un código enviado por correo electrónico o al teléfono móvil del propietario de los datos."
-DOSSPRE,dosspre_0779,1,Security,Security,—,,,Security,El sistema deberá permitir que un usuario inicie sesión en el sistema y se autentique.
-DOSSPRE,dosspre_0783,1,—,—,—,,,Security,El sistema deberá permitir al usuario realizar operaciones CRUD sobre los registros.
-DOSSPRE,dosspre_0786,1,Security,Security,—,,,Security,El sistema deberá reducir la incidencia de fallos en el sistema.
-DOSSPRE,dosspre_0788,1,—,—,—,,,Security,El sistema deberá proporcionar redundancia para evitar un único punto de fallo y reducir las interrupciones que puedan dejar el sistema inutilizable.
-DOSSPRE,dosspre_0794,1,—,—,Security,,,—,El sistema deberá permitir que el usuario traslade mensajes a la carpeta de spam mediante la inclusión en la lista negra y a la carpeta de correo legítimo mediante la inclusión en la lista blanca.
-DOSSPRE,dosspre_0795,1,Security,Security,—,,,Security,PlutoMail ofrecerá protección contra el spam a nivel de servidor y eliminará la necesidad de instalar y actualizar software antispam en cada ordenador de sobremesa.
-DOSSPRE,dosspre_0810,1,—,—,Security,,,—,El sistema deberá permitir al usuario ver el correo no deseado.
-DOSSPRE,dosspre_0833,1,—,—,—,,,Security,El sistema deberá limitar el acceso al mismo por parte de la policía únicamente a los agentes que hayan recibido la autorización correspondiente.
-DOSSPRE,dosspre_0836,1,—,Security,—,,,—,"El sistema deberá tener disponibilidad en todo momento, lo que significa que el usuario podrá acceder a él mediante una aplicación en su dispositivo, lo que responde a la preocupación del usuario respecto a la fiabilidad del sistema durante el horario normal de funcionamiento."
-DOSSPRE,dosspre_0854,1,—,—,Security,,,—,La capacidad para hacer las cosas bien dependerá de la definición de las tareas de supervisión.
-DOSSPRE,dosspre_0855,1,Security,Security,Security,,,—,"El software analizará el escaneo de puertos únicamente en el host en el que se vaya a implementar, lo que dedicará toda la atención a una parte de las numerosas políticas de un ordenador."
-DOSSPRE,dosspre_0870,1,—,—,Security,,,—,El sistema debería ser accesible dondequiera que sea necesario. En cualquier momento en que los clientes necesiten realizar una compra
-DOSSPRE,dosspre_0872,1,Security,—,Security,,,Security,"El sistema principal se centra en la seguridad de las transacciones en línea, por lo que es seguro."
-DOSSPRE,dosspre_0874,1,—,—,Security,,,—,El sistema deberá ser capaz de controlar una bomba de agua para la aplicación de agua a los cultivos que se riegan.
-DOSSPRE,dosspre_0891,1,—,—,Security,,,—,El sistema deberá ser capaz de aleatorizar las escenas de tal forma que el usuario no pueda predecir cuál será la siguiente escena.
-DOSSPRE,dosspre_0903,1,—,—,—,,,Security,El sistema deberá conservar los registros de todos los bebés que tenga posteriormente una madre.
-DOSSPRE,dosspre_0917,1,—,—,Security,,,—,El sistema deberá ser capaz de predecir transacciones fraudulentas y no fraudulentas en tiempo real.
-DOSSPRE,dosspre_0918,1,—,Security,—,,,—,El sistema deberá ser capaz de almacenar información sobre las transacciones.
-DOSSPRE,dosspre_0937,1,Security,Security,Security,,,—,El sistema deberá ofrecer al usuario la opción de cifrar y descifrar datos.
-DOSSPRE,dosspre_0944,1,Security,—,Security,,,Security,El sistema deberá ser autoprotector y a prueba de fallos; la gestión de excepciones garantizará que el sistema sea a prueba de fallos y se detenga de forma controlada en caso de error.
-DOSSPRE,dosspre_0946,1,Security,Security,Security,,,—,Los empleados deberán identificarse mediante una contraseña de 6 caracteres.
-DOSSPRE,dosspre_0949,1,—,—,Security,,,—,El sistema deberá calcular el salario de cada empleado al final de cada mes.
-DOSSPRE,dosspre_0950,1,—,—,—,,,Security,El sistema deberá permitir que un cliente se registre
-DOSSPRE,dosspre_0963,1,Security,Security,—,,,Security,El sistema deberá permitir que se realicen cambios de forma autorizada.
-DOSSPRE,dosspre_0965,1,Security,—,Security,,,Security,El sistema deberá permitir el almacenamiento seguro de la información de los clientes.
-DOSSPRE,dosspre_0973,1,—,—,—,,,Security,El sistema deberá crear una transacción que se envíe al protocolo Ethereum.
-DOSSPRE,dosspre_0974,1,Security,Security,—,,,Security,Las firmas digitales de la transacción son validadas por el protocolo Ethereum.
-DOSSPRE,dosspre_0975,1,Security,—,Security,,,Security,Los datos de transacción son validados por el contrato inteligente.
-DOSSPRE,dosspre_0979,1,—,Security,—,,,—,El contrato inteligente emite el miembro del bloque en el que se realizó la minería de la transacción.
-DOSSPRE,dosspre_0981,1,Security,Security,Security,,,—,El sistema deberá permitir al administrador asignar roles a los usuarios.
-DOSSPRE,dosspre_0982,1,—,—,—,,,Security,El sistema deberá aplicar una supervisión en tiempo real de los datos a los que se realiza el acceso.
-DOSSPRE,dosspre_0990,1,—,—,Security,,,—,"El sistema deberá permitir que, a medida que aumente el número de historiales de pacientes con el tiempo, la capacidad del sistema para almacenar dichos historiales también aumente proporcionalmente."
-DOSSPRE,dosspre_0994,1,—,Security,—,,,—,"Los procesos del sistema, como el cifrado y el descifrado, no deben ralentizar el sistema."
-DOSSPRE,dosspre_0997,1,—,—,—,,,Security,Los datos del registro del sistema se conservarán sin que ello suponga una carga para los usuarios.
-DOSSPRE,dosspre_1008,1,Security,Security,—,,,Security,El sistema deberá garantizar la privacidad de los datos de usuario en todo momento.
-DOSSPRE,dosspre_1011,1,Security,Security,—,,,Security,El sistema deberá permitir a los usuarios responder a preguntas sobre su perfil después de que se les haya solicitado que las rellenen en el momento del registro; dichas preguntas se utilizarán como preguntas de seguridad en caso de que se olvide la contraseña.
-DOSSPRE,dosspre_1012,1,—,—,Security,,,—,El sistema deberá permitir a los usuarios subir archivos de datos de cualquier tipo a sus cuentas en la nube con una descripción de al menos 5 palabras.
-DOSSPRE,dosspre_1013,1,Security,Security,Security,,,—,"El sistema permitirá a los usuarios descargar archivos cuando deseen utilizarlos, tras responder correctamente a las preguntas generadas aleatoriamente a partir de sus perfiles."
-DOSSPRE,dosspre_1020,1,Security,Security,Security,,,—,El sistema deberá permitir al estudiante disfrutar de un inicio de sesión único en todos los servicios web de la universidad.
-DOSSPRE,dosspre_1023,1,Security,Security,—,,,Security,El sistema deberá proporcionar una autenticación y autorización seguras de los alumnos mediante el uso de tokens SAML de seguridad que contengan aserciones sobre un sujeto para la comunicación entre partes de confianza.
-DOSSPRE,dosspre_1026,1,—,Security,—,,,—,El sistema deberá distribuir claves para la firma digital RSA.
-DOSSPRE,dosspre_1029,1,—,—,Security,,,—,El sistema deberá detectar un accidente en caso de impacto y enviará automáticamente una alerta (SMS) a un teléfono designado.
-DOSSPRE,dosspre_1037,1,—,—,Security,,,—,Se implementará en el sistema un sistema de geovallas para garantizar que los autobuses no se desvíen de sus rutas programadas.
-DOSSPRE,dosspre_1038,1,—,—,Security,,,—,La función de seguimiento por GPS deberá permitir la gestión de la flota en tiempo real.
-DOSSPRE,dosspre_1039,1,—,Security,—,,,—,El sistema deberá ser capaz de recopilar todos los datos relativos a una persona.
-DOSSPRE,dosspre_1042,1,—,—,Security,,,—,El sistema deberá diferenciar los sistemas que representan distintas etapas de su ciclo de vida.
-DOSSPRE,dosspre_1044,1,Security,—,Security,,,Security,El sistema incluirá en una lista negra a cualquier usuario que haya cometido un robo de identidad.
-DOSSPRE,dosspre_1046,1,—,—,Security,,,—,"El sistema también deberá permitir el inicio de sesión de varios clientes y la reserva de diferentes citas, así como la asignación de un horario distinto a cada usuario."
-DOSSPRE,dosspre_1057,1,Security,Security,Security,,,—,El sistema deberá aplicar el cálculo de hash a las contraseñas utilizando HMAC
-DOSSPRE,dosspre_1060,1,Security,Security,Security,,,—,El sistema deberá permitir que un usuario se registre e inicie sesión.
-DOSSPRE,dosspre_1061,1,Security,Security,Security,,,—,El sistema deberá realizar la validación de las contraseñas de usuario.
-DOSSPRE,dosspre_1068,1,Security,Security,Security,,,—,El sistema deberá permitir el cambio de contraseña en un plazo determinado.
-DOSSPRE,dosspre_1073,1,—,—,Security,,,—,El sistema deberá permitir el uso de una marca de agua visible junto con el cliente de correo electrónico.
-DOSSPRE,dosspre_1081,1,Security,—,Security,,,Security,El sistema deberá proporcionar un servicio de autenticación a todos los usuarios antes de que se les permita insertar una marca de agua mediante un cliente de correo electrónico.
-DOSSPRE,dosspre_1084,1,—,—,—,,,Security,El sistema deberá poder realizar comprobaciones aleatorias de la conexión.
-DOSSPRE,dosspre_1086,1,—,Security,—,,,—,El sistema deberá ser capaz de registrar una conexión inalámbrica.
-DOSSPRE,dosspre_1091,1,Security,Security,—,,,Security,El sistema deberá proporcionar autenticación de dos factores.
-DOSSPRE,dosspre_1100,1,Security,Security,Security,,,—,El sistema deberá permitir al administrador visualizar la dirección IP.
-DOSSPRE,dosspre_1107,1,Security,Security,—,,,Security,El sistema deberá permitir que el administrador del sistema inicie sesión en el sitio web con el objetivo de consultar los mensajes de advertencia.
-DOSSPRE,dosspre_1113,1,Security,—,Security,,,Security,El sistema utilizará códigos QR para facilitar la concesión de acceso.
-DOSSPRE,dosspre_1121,1,—,Security,—,,,—,El sistema deberá permitir una transmisión breve de información.
-DOSSPRE,dosspre_1127,1,—,Security,—,,,—,El servidor del sistema deberá ser capaz de generar identificadores de transacción únicos tras cada compra o descarga gratuita.
-DOSSPRE,dosspre_1128,1,—,—,—,,,Security,"El sistema deberá garantizar que el identificador de transacción, el UUID y el número de serie de almacenamiento se utilicen para el cifrado por parte del servidor y el descifrado por parte del cliente."
-DOSSPRE,dosspre_1135,1,Security,—,Security,,,Security,El sistema deberá otorgar a cada usuario que adquiera una copia de un vídeo un derecho de acceso de por vida a una copia auténtica de dicho vídeo.
-DOSSPRE,dosspre_1149,1,Security,Security,Security,,,—,"El sistema deberá integrar factores relacionados con cálculos complejos, robustez y seguridad."
-DOSSPRE,dosspre_1151,1,—,—,Security,,,—,El sistema deberá ser capaz de orientar los movimientos del agente permitiendo que la agencia de marcas de agua digitales tome nota de los informes y cree una base de conocimientos compartida.
-DOSSPRE,dosspre_1154,1,—,—,—,,,Security,El sistema deberá exigir a los agentes que comuniquen las imágenes detectadas a la base de datos de la agencia.
-DOSSPRE,dosspre_1169,1,Security,Security,—,,,Security,El sistema deberá garantizar la fiabilidad y la resiliencia ante fallos.
-DOSSPRE,dosspre_1170,1,—,—,Security,,,—,El sistema se desarrollará de manera que tenga disponibilidad en todo momento.
-DOSSPRE,dosspre_1175,1,Security,Security,—,,,Security,El sistema deberá mostrar un panel con los registros de las anomalías detectadas.
-DOSSPRE,dosspre_1193,1,Security,—,Security,,,Security,El sistema deberá ser capaz de identificar entradas erróneas.
-DOSSPRE,dosspre_1200,1,Security,Security,—,,,Security,El sistema deberá ofrecer validación de entradas.
-DOSSPRE,dosspre_1205,1,—,Security,—,,,—,El módulo de cálculo de hash del sistema deberá utilizar el algoritmo SHA-2.
-DOSSPRE,dosspre_1210,1,—,Security,—,,,—,"El sistema no deberá sufrir ralentizaciones durante las tareas de entrada/salida ni durante aquellas que requieran un gran esfuerzo computacional, como el cifrado, la incrustación o la extracción."
-DOSSPRE,dosspre_1214,1,Security,Security,Security,,,—,El sistema deberá ser capaz de detectar transacciones fraudulentas en tiempo real.
-DOSSPRE,dosspre_1220,1,Security,Security,—,,,Security,El sistema deberá exigir que todos los usuarios realicen el inicio de sesión antes de poder tener acceso al sistema.
-DOSSPRE,dosspre_1222,1,Security,—,Security,,,Security,El sistema deberá permitir la reversión autorizada de acciones.
-DOSSPRE,dosspre_1226,1,Security,Security,—,,,Security,El sistema deberá permitir el filtrado por tipo de archivo para evitar la sobrecarga del flujo normal de información con archivos innecesarios.
-DOSSPRE,dosspre_1231,1,—,—,—,,,Security,El sistema se instalará en el teléfono móvil de cada empleado para supervisar las aplicaciones del dispositivo y registrar las actividades que se realicen en él.
-DOSSPRE,dosspre_1240,1,Security,Security,Security,,,—,"El sistema deberá ser capaz de generar registros periódicos, así como de recopilar y analizar datos para alertar a los padres cada vez que se escriban determinadas palabras clave."
-DOSSPRE,dosspre_1244,1,—,—,Security,,,—,"El sistema deberá ser capaz de adaptarse a medida que se añadan nuevas URL y sitios web a los que ya están filtrados, a medida que vayan apareciendo."
-DOSSPRE,dosspre_1253,1,Security,Security,Security,,,—,El sistema deberá ser capaz de realizar la detección de malware y clasificar tanto el malware conocido como el desconocido en sus respectivas familias de malware.
-DOSSPRE,dosspre_1258,1,—,—,—,,,Security,El proceso de clasificación del sistema deberá clasificar el malware identificado en sus respectivas familias de malware.
-DOSSPRE,dosspre_1259,1,—,—,—,,,Security,El proceso de clasificación del sistema deberá generar un informe sobre los efectos de la actividad de malware durante su ejecución.
+DOSSPRE,dosspre_0029,5,Security,—,—,—,—,—,El sistema deberá generar un informe en el que se describa el efecto que ha tenido el malware durante su ejecución en un entorno aislado.
+DOSSPRE,dosspre_0033,5,Security,—,—,—,—,—,"El sistema estará aislado del usuario y la aplicación no requiere interacción por parte de este, por lo que las posibilidades de que los usuarios lo dañen son muy limitadas."
+DOSSPRE,dosspre_0048,5,—,Security,Security,Security,Security,Security,"El sistema deberá permitir que un autor que desee proteger su obra contra el uso no autorizado suba una imagen con su marca de agua digital visible, junto con el número de registro."
+DOSSPRE,dosspre_0081,5,Security,—,—,—,—,—,El sistema deberá poder abrir la puerta cuando el PIN sea correcto.
+DOSSPRE,dosspre_0103,5,—,Security,Security,Security,Security,Security,El sistema deberá tener acceso a la lista de contactos del dispositivo del menor.
+DOSSPRE,dosspre_0109,5,Security,—,—,—,—,—,El sistema deberá ser capaz de generar y enviar registros periódicos al smartphone de los padres.
+DOSSPRE,dosspre_0152,5,Security,—,—,—,—,—,"El sistema deberá supervisar el uso de la CPU para detectar picos en dicho uso provocados por el cryptojacking, leyendo constantemente el porcentaje de utilización de la CPU del ordenador y comparándolo con la línea base de uso de CPU, así como detectar los picos extremos o las desviaciones respecto a la línea base de uso de CPU debidos a la actividad de cryptojacking."
+DOSSPRE,dosspre_0158,5,—,Security,Security,Security,Security,Security,El sistema debería ser capaz de detectar el cryptojacking de forma rápida y oportuna.
+DOSSPRE,dosspre_0183,5,Security,—,—,—,—,—,"El sistema deberá diseñarse de forma que sea compatible con numerosos sistemas operativos, como Windows, Android y Linux."
+DOSSPRE,dosspre_0219,5,Security,—,—,—,—,—,Los usuarios deberán poder tener acceso al sistema a través de un portal web HTTPS.
+DOSSPRE,dosspre_0282,5,Security,—,—,—,—,—,"El sistema deberá permitir que la captura de registros se realice en segundo plano, lo que facilitará considerablemente el trabajo del auditor."
+DOSSPRE,dosspre_0285,5,Security,—,—,—,—,—,"El sistema deberá permitir a los usuarios disponer de su propia clave específica, generada por la máquina y añadida a la lista de claves para el proceso de generación de MAC."
+DOSSPRE,dosspre_0290,5,Security,—,—,—,—,—,El sistema deberá permitir la implementación de protocolos claros y seguros de intercambio de datos y documentar las interfaces y los protocolos que se utilicen.
+DOSSPRE,dosspre_0361,5,—,Security,Security,Security,Security,Security,El sistema captura y almacena la plantilla de huella dactilar de los usuarios en el momento del inicio de sesión inicial.
+DOSSPRE,dosspre_0364,5,Security,—,—,—,—,—,El sistema debería permitir el acceso de los centros médicos certificados a la información crítica de los pacientes cuando sea necesario.
+DOSSPRE,dosspre_0376,5,—,Security,Security,Security,Security,Security,El sistema debería ser capaz de alertar a los responsables de la red sobre la posible ocurrencia de un ataque de intrusión y proporcionar información relativa a dicho ataque.
+DOSSPRE,dosspre_0443,5,Security,—,—,—,—,—,"Los atributos estáticos del sistema permiten detectar con antelación posibles cuellos de botella en el rendimiento operativo y futuros problemas de escalabilidad, lo que permite corregirlos a tiempo."
+DOSSPRE,dosspre_0462,5,Security,—,—,—,—,—,El sistema deberá ser capaz de proporcionar ayuda en un breve espacio de tiempo.
+DOSSPRE,dosspre_0472,5,—,Security,Security,Security,Security,Security,El sistema deberá implementar protocolos claros y seguros de intercambio de datos; lo ideal es implementar protocolos seguros y documentar las interfaces y los protocolos que se utilicen.
+DOSSPRE,dosspre_0521,5,—,Security,Security,Security,Security,Security,El sistema deberá garantizar que el rendimiento del IDS sea suficiente para detectar intrusiones en tiempo real (por «tiempo real» se entiende que una intrusión debe detectarse antes de que se produzcan daños significativos).
+DOSSPRE,dosspre_0541,5,—,Security,Security,Security,Security,Security,"El sistema deberá permitir la generación de claves públicas y privadas. Estas claves se utilizarán para el cifrado y descifrado de la clave simétrica AES, con el fin de garantizar un intercambio de claves más seguro."
+DOSSPRE,dosspre_0607,5,Security,—,—,—,—,—,El sistema deberá garantizar que un dispositivo situado en un área ODPF no se comunique con otro situado en un área OSPF diferente.
+DOSSPRE,dosspre_0610,5,—,Security,Security,Security,Security,Security,El sistema deberá garantizar que el servidor de autenticación se comunique con el controlador de la puerta para abrirla y cerrarla.
+DOSSPRE,dosspre_0637,5,Security,—,—,—,—,—,El escáner del sistema puede aceptar un determinado número de URL para comprobar si presentan las vulnerabilidades seleccionadas.
+DOSSPRE,dosspre_0664,5,—,Security,Security,Security,Security,Security,El sistema deberá permitir el inicio de sesión para un usuario.
+DOSSPRE,dosspre_0672,5,—,Security,Security,Security,Security,Security,El sistema deberá garantizar que el honeypot registre las actividades del atacante y avise a los administradores del sistema en caso de que se produzca una amenaza para el sistema protegido.
+DOSSPRE,dosspre_0679,5,—,Security,Security,Security,Security,Security,"El sistema deberá incorporar principios de seguridad, como la autenticación."
+DOSSPRE,dosspre_0729,5,Security,—,—,—,—,—,"Los componentes del sistema no se verán afectados por cambios climáticos como el calor o la humedad, ya que la carcasa se diseñará para adaptarse a las condiciones climáticas predominantes."
+DOSSPRE,dosspre_0778,5,Security,—,—,—,—,—,El sistema deberá permitir que un usuario se registre mediante el patrocinio del departamento de Recursos Humanos correspondiente.
+DOSSPRE,dosspre_0780,5,Security,—,—,—,—,—,El sistema deberá permitir al usuario visualizar el contenido o el panel de control.
+DOSSPRE,dosspre_0824,5,Security,—,—,—,—,—,El sistema deberá permitir el análisis de los lugares donde se cometen más delitos utilizando datos de colaboración ciudadana e informes.
+DOSSPRE,dosspre_0842,5,Security,—,—,—,—,—,"El sistema deberá permitir al usuario recuperar los identificadores únicos del nodo que se utilizaron para generar el identificador único o la huella dactilar del nodo en el momento del registro, cuando el titular se matriculó o se incorporó a la universidad con dicho nodo."
+DOSSPRE,dosspre_0852,5,Security,—,—,—,—,—,La escucha del sistema para el escaneo se lleva a cabo mientras se supervisan las actividades del sistema operativo.
+DOSSPRE,dosspre_0861,5,—,Security,Security,Security,Security,Security,El sistema permitirá el registro de las credenciales de usuario.
+DOSSPRE,dosspre_0864,5,Security,—,—,—,—,—,El sistema deberá permitir que las anomalías se contengan tras su detección.
+DOSSPRE,dosspre_0878,5,Security,—,—,—,—,—,El sistema debería permitir una rápida recuperación de errores.
+DOSSPRE,dosspre_0926,5,—,Security,Security,Security,Security,Security,El sistema deberá ser capaz de comprobar el certificado SSL de una aplicación web o un sitio web determinados.
+DOSSPRE,dosspre_0943,5,Security,—,—,—,—,—,El sistema deberá ejecutar sus tareas con precisión cuando se le envíe un comando. Las pruebas garantizarán que todas las funciones estén correctamente incluidas.
+DOSSPRE,dosspre_1002,5,Security,—,—,—,—,—,"El sistema deberá permitir la identificación facial a través de los datos de dicha persona, si se trata de un empleado."
+DOSSPRE,dosspre_1007,5,—,Security,Security,Security,Security,Security,El sistema deberá ser capaz de identificar correctamente las huellas faciales con márgenes de error mínimos.
+DOSSPRE,dosspre_1021,5,Security,—,—,—,—,—,El sistema deberá poder asignar recursos al estudiante concreto que haya solicitado el servicio.
+DOSSPRE,dosspre_1041,5,—,Security,Security,Security,Security,Security,El sistema deberá generar un código QR con el hash MD5.
+DOSSPRE,dosspre_1051,5,Security,—,—,—,—,—,"El sistema deberá garantizar que la información personal no se muestre al público, sino que quede codificada en un código QR."
+DOSSPRE,dosspre_1105,5,Security,—,—,—,—,—,El sistema se instalará en el dispositivo móvil de cada representante para supervisar las aplicaciones del dispositivo y registrar las actividades realizadas en el mismo.
+DOSSPRE,dosspre_1106,5,—,Security,Security,Security,Security,Security,"El sistema deberá analizar las actividades detectadas, comprobar si se trata de un uso autorizado y, posteriormente, enviar una advertencia al administrador del sistema mediante la transmisión de los datos a través de Internet."
+DOSSPRE,dosspre_1129,5,—,Security,Security,Security,Security,Security,El sistema deberá garantizar que el cliente genere la clave simétrica utilizada por el servidor para el cifrado.
+DOSSPRE,dosspre_1146,5,—,Security,Security,Security,Security,Security,El sistema deberá tener disponibilidad para garantizar la seguridad de los archivos frente a usuarios no autorizados.
+DOSSPRE,dosspre_1159,5,Security,—,—,—,—,—,El sistema deberá garantizar que la comunicación entre los agentes y la agencia o el servidor sea tal que solo los agentes registrados puedan informar a la agencia.
+DOSSPRE,dosspre_1213,5,—,Security,Security,Security,Security,Security,El sistema deberá garantizar que la clave pública permanezca abierta y con acceso al dominio público.
+DOSSPRE,dosspre_1239,5,Security,—,—,—,—,—,El sistema deberá impedir que se envíen o reciban archivos multimedia a través de Bluetooth.
+DOSSPRE,dosspre_0002,4,—,Security,Security,—,Security,Security,El sistema deberá analizar la vulnerabilidad detectada
+DOSSPRE,dosspre_0050,4,Security,—,—,—,Security,—,"El sistema deberá permitir la verificación de imágenes con marca de agua que hayan sido enviadas dos o más veces por diferentes autores, con el fin de proteger los derechos de autor del propietario."
+DOSSPRE,dosspre_0055,4,—,—,Security,Security,Security,Security,"El sistema permitirá, de forma opcional, que el usuario elimine los ficheros con los datos del sospechoso o los guarde para futuros registros en una base de datos segura."
+DOSSPRE,dosspre_0089,4,—,—,Security,Security,Security,Security,"El sistema deberá permitir que, en caso de que el teléfono móvil no esté disponible, el usuario realice ciertas autenticaciones para obtener acceso al sistema."
+DOSSPRE,dosspre_0154,4,—,Security,—,Security,Security,Security,El sistema deberá enviar automáticamente alertas por correo electrónico cuando se detecte actividad de criptojacking.
+DOSSPRE,dosspre_0157,4,Security,—,—,Security,—,—,"El sistema deberá permitir el registro del dominio o la aplicación de cryptojacking detectados, junto con la fecha y la hora de la detección."
+DOSSPRE,dosspre_0163,4,Security,—,—,Security,—,—,El sistema debería ser fiable a la hora de detectar la actividad de malware de criptojacking conocida.
+DOSSPRE,dosspre_0167,4,—,Security,Security,Security,Security,—,El sistema debería ofrecer una función de evaluación de la solidez de las contraseñas para sugerir al usuario mejoras en la seguridad de las mismas.
+DOSSPRE,dosspre_0179,4,Security,—,—,Security,—,—,El sistema deberá ser capaz de distinguir al usuario legítimo del ilegítimo mediante el uso de datos biométricos de comportamiento únicos.
+DOSSPRE,dosspre_0196,4,—,—,Security,Security,Security,Security,El sistema deberá permitir que Selenium extraiga la información de identificación personal de un individuo.
+DOSSPRE,dosspre_0205,4,Security,Security,—,—,—,—,El sistema deberá facilitar el seguimiento de las actividades de una persona tras la comisión de un delito.
+DOSSPRE,dosspre_0232,4,—,Security,Security,Security,—,Security,El sistema debería garantizar que los mensajes de error se comuniquen al usuario o al administrador.
+DOSSPRE,dosspre_0275,4,Security,—,—,—,Security,—,El sistema debería poder generar un resumen del informe de auditoría para enviarlo al usuario del sistema.
+DOSSPRE,dosspre_0308,4,—,Security,Security,Security,Security,—,El sistema deberá permitir que los usuarios generales solo tengan acceso a través de la interfaz de usuario.
+DOSSPRE,dosspre_0316,4,Security,—,Security,—,—,—,"El sistema debería estar preparado para todas las situaciones, de modo que tenga capacidad de recuperación en cualquier condición de error."
+DOSSPRE,dosspre_0337,4,Security,—,—,—,—,Security,"Los resultados del proceso de escaneo deben ser fiables, lo que significa que debe haber un número mínimo de falsos positivos o ninguno."
+DOSSPRE,dosspre_0417,4,—,Security,—,Security,Security,Security,El sistema deberá permitir la minería de datos web de Twitter; la Twitter API ofrece diferentes niveles de acceso a los datos a través de su programa Twitter Data Grants.
+DOSSPRE,dosspre_0422,4,Security,Security,—,—,—,—,El sistema deberá permitir al usuario firmar un documento
+DOSSPRE,dosspre_0469,4,—,Security,Security,Security,—,Security,El sistema funciona bien a la hora de reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
+DOSSPRE,dosspre_0492,4,Security,—,Security,—,—,—,El sistema debería ser capaz de comparar la huella facial actual con las huellas faciales de la base de datos.
+DOSSPRE,dosspre_0505,4,—,Security,Security,Security,Security,—,"En este sistema, el sistema RFID debería estar vinculado al sistema de reconocimiento facial, de modo que funcione como un único sistema de seguridad de control de acceso. Funcionalidad"
+DOSSPRE,dosspre_0511,4,—,—,Security,Security,Security,Security,El sistema debe alertar al usuario sobre actividades maliciosas y recomendarle las medidas que debe tomar.
+DOSSPRE,dosspre_0585,4,Security,—,—,—,Security,—,"El sistema debería poder realizar la validación de los datos introducidos, reduciendo así la redundancia y la duplicación en la base de datos."
+DOSSPRE,dosspre_0594,4,Security,—,Security,—,—,—,El sistema debería ser capaz de identificar y detectar los errores en las entradas del usuario.
+DOSSPRE,dosspre_0605,4,Security,—,—,—,Security,—,El sistema debe permitir a los clientes ejecutar un protocolo de encaminamiento distinto al de la red del proveedor de servicios de Internet.
+DOSSPRE,dosspre_0617,4,Security,—,—,—,Security,—,"El sistema funciona como un IDS/IPD y ayuda a aliviar el tráfico dirigido al servidor, en caso de que se produzca un ataque DOS distribuido y el servidor se vea saturado de solicitudes."
+DOSSPRE,dosspre_0632,4,Security,Security,—,—,—,—,El sistema deberá ser capaz de identificar una tasa baja de falsos positivos y aceptable.
+DOSSPRE,dosspre_0634,4,Security,—,—,—,Security,—,El sistema deberá ser capaz de generar un informe sobre las vulnerabilidades detectadas y analizadas.
+DOSSPRE,dosspre_0648,4,Security,—,Security,—,—,—,El reproductor del sistema se encargará del cálculo de hash para los nombres de las partes recortadas.
+DOSSPRE,dosspre_0650,4,—,Security,Security,Security,—,Security,El reproductor del sistema localiza la carpeta oculta.
+DOSSPRE,dosspre_0706,4,Security,—,—,—,—,Security,El sistema deberá proporcionar control de acceso a la interfaz de usuario.
+DOSSPRE,dosspre_0774,4,Security,Security,—,—,—,—,El sistema deberá poder mostrar una sección en la que se indique la última vez que un usuario inició sesión en el sistema y un resumen de las actividades que realizó en el sistema tras iniciar sesión.
+DOSSPRE,dosspre_0952,4,—,Security,Security,Security,Security,—,El sistema deberá permitir la verificación y validación de los documentos.
+DOSSPRE,dosspre_0954,4,Security,—,Security,—,—,—,El sistema deberá permitir la replicación múltiple de datos.
+DOSSPRE,dosspre_0964,4,Security,—,—,Security,—,—,El sistema deberá poder mostrar la información KYC de los clientes a los usuarios autorizados.
+DOSSPRE,dosspre_0969,4,—,Security,Security,Security,—,Security,El sistema deberá permitir el registro del identificador nacional de la persona a cuyo nombre se expide el puesto.
+DOSSPRE,dosspre_1001,4,Security,Security,—,—,—,—,El sistema deberá permitir el reconocimiento facial.
+DOSSPRE,dosspre_1067,4,Security,—,—,Security,—,—,El TOTP generado por el sistema deberá ser un código de acceso único que cambie cada 30 segundos.
+DOSSPRE,dosspre_1074,4,Security,—,—,—,Security,—,"El sistema deberá disponer de una plataforma que permita seleccionar una marca de agua única que se insertará en un documento para proteger los datos, atribuyendo la propiedad a sus legítimos titulares."
+DOSSPRE,dosspre_1104,4,Security,Security,—,—,—,—,El sistema deberá permitir al administrador realizar modificaciones.
+DOSSPRE,dosspre_1137,4,Security,Security,—,—,—,—,El sistema deberá distribuir copias auténticas de cada vídeo suministrado.
+DOSSPRE,dosspre_1163,4,Security,—,—,—,Security,—,El sistema deberá ser capaz de alertar al administrador de la red sobre la posible aparición de un ataque de intrusión y proporcionar información relativa a dicho ataque.
+DOSSPRE,dosspre_1236,4,Security,—,Security,—,—,—,"El sistema deberá recopilar y analizar los datos que el niño esté escribiendo y, si detecta determinadas palabras clave o una secuencia continua de palabrotas, debería enviar una alerta por mensaje de texto a los padres."
+DOSSPRE,dosspre_1237,4,—,Security,Security,Security,—,Security,El sistema deberá impedir la instalación o la eliminación de cualquier aplicación.
+DOSSPRE,dosspre_1246,4,Security,—,—,—,—,Security,El sistema deberá permitir que un usuario que tenga una cuenta de Twitter cree una aplicación para tener acceso a los tokens.
+DOSSPRE,dosspre_0001,3,Security,—,—,Security,Security,—,El sistema deberá detectar vulnerabilidades de inyección SQL y XSS en un sitio web o una aplicación web determinados.
+DOSSPRE,dosspre_0005,3,—,Security,—,Security,Security,—,El sistema deberá generar un informe de las vulnerabilidades detectadas y analizadas.
+DOSSPRE,dosspre_0030,3,Security,Security,Security,—,—,—,El sistema deberá mostrar un informe con los resultados detallados obtenidos de los archivos enviados para su análisis e indicará claramente qué archivos son maliciosos y cuáles son inofensivos.
+DOSSPRE,dosspre_0088,3,—,—,Security,Security,—,Security,El sistema deberá permitir que los sistemas de bloqueo de datos Bluetooth generen los mismos resultados repetidamente.
+DOSSPRE,dosspre_0108,3,—,Security,Security,—,—,Security,El sistema deberá impedir que se instalen o desinstalen aplicaciones.
+DOSSPRE,dosspre_0153,3,—,—,Security,Security,Security,—,El sistema deberá generar una notificación emergente en la que se informe de la actividad de criptojacking detectada.
+DOSSPRE,dosspre_0176,3,—,Security,—,—,Security,Security,"El sistema se someterá a diversas pruebas, como pruebas de estrés, para garantizar que no se produzcan errores en la verificación del usuario."
+DOSSPRE,dosspre_0177,3,—,—,—,Security,Security,Security,"El sistema deberá garantizar que las interrupciones en el servicio de Internet no afecten a su disponibilidad, ya que se podrá seguir concediendo o denegando el acceso al sistema a cualquier usuario."
+DOSSPRE,dosspre_0206,3,Security,—,—,Security,—,Security,"El sistema deberá tener acceso a información de identificación personal para permitir a los investigadores reconstruir un hecho delictivo una vez que haya tenido lugar, asegurando así las pruebas."
+DOSSPRE,dosspre_0208,3,—,Security,Security,Security,—,—,El sistema debería ser capaz de generar códigos USSD para la transacción.
+DOSSPRE,dosspre_0233,3,—,—,Security,Security,Security,—,El sistema deberá garantizar que las acciones que no se puedan deshacer requieran una confirmación antes de que se lleven a cabo.
+DOSSPRE,dosspre_0243,3,Security,—,Security,—,—,Security,El sistema deberá permitir que el usuario sea redirigido a la página de opciones o de vuelta a la página de inicio de sesión para volver a intentarlo.
+DOSSPRE,dosspre_0266,3,Security,—,—,Security,—,Security,El sistema deberá almacenar automáticamente la información de credenciales en una base de datos central.
+DOSSPRE,dosspre_0271,3,—,—,—,Security,Security,Security,El sistema debería ser capaz de capturar archivos de registro de Windows independientemente del sistema operativo Windows.
+DOSSPRE,dosspre_0278,3,Security,Security,—,Security,—,—,El sistema deberá garantizar la disponibilidad del informe de auditoría para los usuarios.
+DOSSPRE,dosspre_0288,3,Security,—,—,Security,Security,—,El sistema deberá garantizar que se establezca una interfaz segura y eficaz para reducir el riesgo asociado a los errores derivados de formatos de datos inexactos.
+DOSSPRE,dosspre_0296,3,Security,Security,Security,—,—,—,El sistema utiliza procedimientos almacenados.
+DOSSPRE,dosspre_0319,3,—,Security,Security,Security,—,—,El sistema debería mantenerse adecuadamente para que pueda resolver cualquier conflicto de datos y seguir funcionando en cualquier circunstancia.
+DOSSPRE,dosspre_0338,3,Security,—,—,Security,Security,—,El sistema deberá tener la capacidad de recuperación de todos los historiales de escaneo en caso de interrupción del sistema.
+DOSSPRE,dosspre_0342,3,—,Security,Security,—,Security,—,"El sistema deberá permitir el almacenamiento, la recuperación y la manipulación de datos de forma sencilla."
+DOSSPRE,dosspre_0346,3,Security,—,—,—,Security,Security,"El sistema funciona dentro de sus límites, que también establecen restricciones a su funcionamiento, y dichos límites constituyen las restricciones."
+DOSSPRE,dosspre_0353,3,Security,—,—,Security,Security,—,"El sistema deberá ofrecer autenticación por Bluetooth, de modo que los usuarios no tengan que desactivar la autenticación del ordenador portátil, ya que tienen que realizar el proceso de desbloqueo con frecuencia durante la jornada laboral."
+DOSSPRE,dosspre_0363,3,—,Security,Security,—,Security,—,"El sistema debería permitir a los usuarios almacenar información crítica, como alergias y afecciones, en un servidor central."
+DOSSPRE,dosspre_0374,3,Security,—,—,Security,Security,—,El sistema debería ser capaz de capturar (sniffing) el tráfico entrante y saliente de la red en tiempo real.
+DOSSPRE,dosspre_0391,3,Security,Security,—,Security,—,—,El sistema deberá disponer de una pantalla de inicio de sesión que permita al administrador de la red acceder al sistema.
+DOSSPRE,dosspre_0437,3,—,Security,Security,—,Security,—,El sistema debe permitir la escalabilidad para poder realizar modificaciones legítimas de los datos de usuario.
+DOSSPRE,dosspre_0450,3,—,—,—,Security,Security,Security,"El sistema deberá permitir que, cuando el médico o el hospital realicen una solicitud, se abra una sesión y se genere una clave de confirmación que se envíe al médico o al paciente por correo electrónico, la cual utilizarán tras recibir la sangre solicitada correcta."
+DOSSPRE,dosspre_0471,3,—,—,—,Security,Security,Security,"El sistema deberá ser capaz de crear y aplicar prácticas de codificación seguras a lo largo de todo el proceso de desarrollo, identificando de forma rigurosa el origen de los datos requeridos y reconociendo los elementos y estructuras de datos necesarios para el intercambio."
+DOSSPRE,dosspre_0493,3,Security,Security,—,—,Security,—,El sistema debería ser capaz de cotejar el identificador de la tarjeta o etiqueta RFID con el identificador facial o personal del usuario para conceder el acceso.
+DOSSPRE,dosspre_0500,3,Security,Security,—,Security,—,—,"El sistema deberá incorporar controles adecuados para las validaciones de la entrada del usuario y la gestión de la configuración, con el fin de impedir la manipulación de software."
+DOSSPRE,dosspre_0502,3,Security,—,Security,Security,—,—,El sistema deberá permitir el registro de eventos para cada actividad de los usuarios.
+DOSSPRE,dosspre_0507,3,—,—,Security,Security,Security,—,El sistema deberá permitir a los usuarios interactuar con el sistema de control de acceso basado en RFID y reconocimiento facial.
+DOSSPRE,dosspre_0520,3,—,Security,Security,Security,—,—,El sistema deberá supervisar y realizar el escaneo del host
+DOSSPRE,dosspre_0523,3,—,—,Security,Security,—,Security,El sistema deberá permitir al usuario salir del programa una vez que este se haya iniciado.
+DOSSPRE,dosspre_0536,3,Security,—,—,Security,—,Security,El sistema no deberá permitir la ingeniería inversa de su código fuente.
+DOSSPRE,dosspre_0551,3,—,Security,—,Security,Security,—,El sistema deberá permitir la inserción o la recuperación de mensajes de la imagen sin que se produzcan errores por parte del usuario.
+DOSSPRE,dosspre_0556,3,Security,—,—,—,Security,Security,El sistema deberá ser capaz de detectar mensajes de spam y enviarlos a la carpeta de spam en tiempo real.
+DOSSPRE,dosspre_0572,3,Security,Security,—,Security,—,—,"El sistema deberá contar con un campo opcional de correo electrónico para la recuperación; en caso de que se olvide la contraseña, se enviará a ese correo electrónico un enlace de restablecimiento con las instrucciones correspondientes."
+DOSSPRE,dosspre_0593,3,Security,Security,Security,—,—,—,Uso de una base de datos central que permita la captura y la manipulación de datos en tiempo real para facilitar el acceso a la información de los ordenadores portátiles desde cualquier ordenador conectado a la base de datos.
+DOSSPRE,dosspre_0595,3,Security,—,—,Security,—,Security,El sistema no deberá permitir la introducción de datos de tipo incorrecto.
+DOSSPRE,dosspre_0598,3,Security,—,Security,—,—,Security,El sistema debe contar con una función de inicio de sesión que limite el uso individual a aquellas funciones a las que el usuario necesite acceder en función de sus responsabilidades.
+DOSSPRE,dosspre_0611,3,—,—,Security,Security,—,Security,El sistema deberá disponer de una base de datos para almacenar las cuentas de usuario y los datos de los usuarios registrados.
+DOSSPRE,dosspre_0614,3,—,Security,—,Security,Security,—,El sistema deberá permitir al usuario modificar el PIN temporal recibido del sistema.
+DOSSPRE,dosspre_0631,3,Security,—,—,Security,—,Security,El sistema deberá ser capaz de analizar la vulnerabilidad detectada.
+DOSSPRE,dosspre_0670,3,Security,—,—,Security,—,Security,El sistema deberá analizar y registrar las firmas de paquetes sospechosos y detectar una anomalía si los datos de los paquetes siguientes coinciden con las firmas registradas relacionadas con amenazas.
+DOSSPRE,dosspre_0671,3,Security,—,—,Security,Security,—,El sistema deberá utilizar un «honeypot» que registre y analice los paquetes que circulan por la red. Un «honeypot» es un sistema señuelo que se utiliza para hacer creer al atacante que está atacando el sistema deseado.
+DOSSPRE,dosspre_0692,3,Security,—,—,Security,Security,—,El sistema deberá capturar el tráfico de red entre el hipervisor y la máquina virtual objeto de supervisión.
+DOSSPRE,dosspre_0707,3,Security,—,—,Security,Security,—,El sistema deberá proporcionar un canal seguro de comunicación entre el sistema back-end y la interfaz de usuario web.
+DOSSPRE,dosspre_0731,3,Security,—,Security,—,Security,—,"El sistema deberá responder rápidamente ante las intrusiones, con el fin de contribuir a frenar la gravedad de los daños o a mitigar el riesgo."
+DOSSPRE,dosspre_0733,3,Security,—,Security,—,—,Security,"El sistema puede configurarse para funcionar con una cámara, un ordenador y otro sistema de control de acceso con el fin de mejorar la autenticación de múltiples factores."
+DOSSPRE,dosspre_0748,3,—,Security,Security,Security,—,—,"El sistema deberá ser capaz de identificar claramente los protocolos de intercambio de datos pertinentes, así como documentar o hacer referencia a los requisitos técnicos para dicho intercambio, incluyendo: la fuente, los elementos de datos, las estructuras de datos, el método de sincronización y los protocolos."
+DOSSPRE,dosspre_0763,3,—,Security,Security,—,Security,—,"El PDP reduce el tiempo y el esfuerzo computacional que se necesitarían si los propietarios de los datos tuvieran que descargarlos y, a continuación, comprobar manualmente si han sido modificados."
+DOSSPRE,dosspre_0788,3,—,—,—,Security,Security,Security,El sistema deberá proporcionar redundancia para evitar un único punto de fallo y reducir las interrupciones que puedan dejar el sistema inutilizable.
+DOSSPRE,dosspre_0833,3,—,—,—,Security,Security,Security,El sistema deberá limitar el acceso al mismo por parte de la policía únicamente a los agentes que hayan recibido la autorización correspondiente.
+DOSSPRE,dosspre_0855,3,Security,Security,Security,—,—,—,"El software analizará el escaneo de puertos únicamente en el host en el que se vaya a implementar, lo que dedicará toda la atención a una parte de las numerosas políticas de un ordenador."
+DOSSPRE,dosspre_0925,3,—,Security,—,—,Security,Security,El sistema deberá ofrecer un escáner de vulnerabilidades de scripts SQL y XSS para aplicaciones web seguras.
+DOSSPRE,dosspre_0928,3,Security,—,—,Security,Security,—,"El sistema detecta indicadores (patrones, atributos) de vulnerabilidades cuya existencia se conoce, o que permiten aprovecharlas, en los servicios o versiones de software detectados."
+DOSSPRE,dosspre_0947,3,—,Security,Security,—,—,Security,El sistema deberá poner en marcha un reloj cuando un empleado inicie sesión y detenerlo cuando el empleado cierre la sesión.
+DOSSPRE,dosspre_0950,3,—,—,—,Security,Security,Security,El sistema deberá permitir que un cliente se registre
+DOSSPRE,dosspre_0963,3,Security,Security,—,—,—,Security,El sistema deberá permitir que se realicen cambios de forma autorizada.
+DOSSPRE,dosspre_0973,3,—,—,—,Security,Security,Security,El sistema deberá crear una transacción que se envíe al protocolo Ethereum.
+DOSSPRE,dosspre_0982,3,—,—,—,Security,Security,Security,El sistema deberá aplicar una supervisión en tiempo real de los datos a los que se realiza el acceso.
+DOSSPRE,dosspre_0985,3,Security,—,Security,—,Security,—,El sistema deberá permitir que los datos introducidos en el mismo se cifren antes de enviarse a la instancia de la base de datos en nuestro servidor en la nube para su almacenamiento.
+DOSSPRE,dosspre_0986,3,Security,—,Security,Security,—,—,"El sistema deberá permitir a los usuarios recuperar los datos cuando lo soliciten, incluso en casos de emergencia, en los que dichos datos deberían recuperarse y estar descifrados antes de que el profesional sanitario pueda acceder a ellos."
+DOSSPRE,dosspre_0997,3,—,—,—,Security,Security,Security,Los datos del registro del sistema se conservarán sin que ello suponga una carga para los usuarios.
+DOSSPRE,dosspre_1013,3,Security,Security,Security,—,—,—,"El sistema permitirá a los usuarios descargar archivos cuando deseen utilizarlos, tras responder correctamente a las preguntas generadas aleatoriamente a partir de sus perfiles."
+DOSSPRE,dosspre_1020,3,Security,Security,Security,—,—,—,El sistema deberá permitir al estudiante disfrutar de un inicio de sesión único en todos los servicios web de la universidad.
+DOSSPRE,dosspre_1040,3,Security,Security,—,—,Security,—,El sistema deberá procesar los datos recibidos y generar un hash MD5 de los mismos.
+DOSSPRE,dosspre_1058,3,Security,—,—,Security,Security,—,El sistema deberá generar contraseñas basadas en el tiempo mediante la aplicación Google Authenticator.
+DOSSPRE,dosspre_1084,3,—,—,—,Security,Security,Security,El sistema deberá poder realizar comprobaciones aleatorias de la conexión.
+DOSSPRE,dosspre_1127,3,—,Security,—,Security,Security,—,El servidor del sistema deberá ser capaz de generar identificadores de transacción únicos tras cada compra o descarga gratuita.
+DOSSPRE,dosspre_1128,3,—,—,—,Security,Security,Security,"El sistema deberá garantizar que el identificador de transacción, el UUID y el número de serie de almacenamiento se utilicen para el cifrado por parte del servidor y el descifrado por parte del cliente."
+DOSSPRE,dosspre_1130,3,Security,—,—,Security,—,Security,El sistema deberá permitir al cliente descifrar el contenido de vídeo en un archivo virtual y enviar la ubicación a los reproductores multimedia.
+DOSSPRE,dosspre_1149,3,Security,Security,Security,—,—,—,"El sistema deberá integrar factores relacionados con cálculos complejos, robustez y seguridad."
+DOSSPRE,dosspre_1188,3,—,Security,Security,—,—,Security,El sistema deberá permitir el acceso simultáneo de varios usuarios.
+DOSSPRE,dosspre_1208,3,Security,—,—,—,Security,Security,El sistema deberá generar una carga útil cifrada y la firma del mensaje.
+DOSSPRE,dosspre_1214,3,Security,Security,Security,—,—,—,El sistema deberá ser capaz de detectar transacciones fraudulentas en tiempo real.
+DOSSPRE,dosspre_1220,3,Security,Security,—,—,—,Security,El sistema deberá exigir que todos los usuarios realicen el inicio de sesión antes de poder tener acceso al sistema.
+DOSSPRE,dosspre_1221,3,Security,—,—,Security,—,Security,El sistema deberá ofrecer capacidades de gestión de errores.
+DOSSPRE,dosspre_1240,3,Security,Security,Security,—,—,—,"El sistema deberá ser capaz de generar registros periódicos, así como de recopilar y analizar datos para alertar a los padres cada vez que se escriban determinadas palabras clave."
+DOSSPRE,dosspre_1244,3,—,—,Security,Security,Security,—,"El sistema deberá ser capaz de adaptarse a medida que se añadan nuevas URL y sitios web a los que ya están filtrados, a medida que vayan apareciendo."
+DOSSPRE,dosspre_1256,3,Security,Security,—,—,Security,—,El sistema deberá disponer de un analizador que ejecute los archivos de malware para inspeccionar el tipo
+DOSSPRE,dosspre_1257,3,—,Security,—,Security,—,Security,El analizador de malware del sistema deberá enviar todos los archivos y sus registros al servidor principal al finalizar el proceso de análisis.
+DOSSPRE,dosspre_0013,2,Security,—,Security,—,Security,Security,El sistema deberá permitir al usuario generar sus claves públicas y privadas ECC. Estas claves se utilizarán para el cifrado de la clave de cifrado AES y también para el PDP.
+DOSSPRE,dosspre_0014,2,—,Security,Security,—,—,—,El sistema deberá permitir al usuario cargar y descargar archivos almacenados.
+DOSSPRE,dosspre_0022,2,—,Security,Security,—,—,—,El sistema deberá permitir el inicio de sesión de varios clientes y el almacenamiento de sus archivos en el servidor remoto.
+DOSSPRE,dosspre_0038,2,Security,Security,—,Security,Security,—,El sistema deberá permitir que un miembro forme espontáneamente un grupo de n firmantes utilizando claves públicas de grupo que asocien a los miembros del grupo.
+DOSSPRE,dosspre_0057,2,—,—,—,Security,—,Security,El sistema deberá poder recuperar antecedentes penales de la base de datos a partir de las fotografías tomadas
+DOSSPRE,dosspre_0077,2,—,—,—,Security,Security,—,El sistema deberá permitir al administrador iniciar sesión y configurar el software para que se ejecute y emita las alertas deseadas desde los ordenadores que realizan el escaneo del servidor.
+DOSSPRE,dosspre_0086,2,—,—,Security,—,Security,—,"El sistema deberá garantizar una alta disponibilidad de la aplicación siempre que el usuario la necesite, por lo que se establecerá un módulo de recuperación en caso de pérdida del teléfono móvil."
+DOSSPRE,dosspre_0087,2,—,Security,Security,—,—,—,El sistema deberá permitir la transmisión de datos de corta duración entre el ordenador y el smartphone a través de Bluetooth.
+DOSSPRE,dosspre_0121,2,—,Security,—,Security,—,—,El sistema deberá proporcionar estadísticas de reputación de la red de confianza.
+DOSSPRE,dosspre_0139,2,Security,—,—,Security,Security,Security,El sistema conservará los registros de vídeo en los que solo se detecte movimiento.
+DOSSPRE,dosspre_0155,2,Security,Security,—,Security,Security,—,"El sistema deberá permitir al usuario establecer una contraseña para el cambio de correo electrónico, de modo que se le solicite posteriormente cuando intente modificar la dirección de correo electrónico del usuario en cuestión."
+DOSSPRE,dosspre_0166,2,Security,—,—,Security,Security,Security,El sistema debería garantizar que solo el usuario autorizado pueda modificar la dirección de correo electrónico registrada para recibir alertas de cryptojacking.
+DOSSPRE,dosspre_0168,2,Security,—,—,Security,Security,Security,"El sistema no debería infringir la legislación, respetando la privacidad de la información de usuario sensible y los derechos de propiedad intelectual."
+DOSSPRE,dosspre_0188,2,—,—,Security,Security,—,—,El sistema deberá poder mostrar todas las unidades de negocio registradas antes de que el usuario realice una selección.
+DOSSPRE,dosspre_0194,2,—,—,—,Security,—,Security,El sistema deberá permitir introducir el nombre de la persona cuyos datos y PII se vayan a buscar.
+DOSSPRE,dosspre_0195,2,—,—,Security,Security,—,—,El sistema deberá permitir el acceso de la aplicación web a los perfiles públicos de las redes sociales.
+DOSSPRE,dosspre_0197,2,—,—,—,Security,Security,—,El sistema deberá permitir la extracción de la información de identificación personal.
+DOSSPRE,dosspre_0212,2,Security,Security,—,Security,Security,—,El sistema debería limitar los intentos de introducción de la contraseña a tres únicamente.
+DOSSPRE,dosspre_0223,2,Security,—,—,Security,Security,Security,La información introducida solo puede ser modificada por el usuario una vez que se haya realizado la autenticación para verificarla.
+DOSSPRE,dosspre_0227,2,Security,Security,Security,Security,—,—,El sistema debería desconectarse automáticamente tras un periodo determinado de inactividad.
+DOSSPRE,dosspre_0234,2,Security,—,—,Security,Security,Security,El sistema propuesto deberá establecer permisos de acceso de tal forma que los datos de la aplicación solo puedan ser modificados por el administrador de datos del sistema y que los datos almacenados en la base de datos se sometan al cálculo de hash.
+DOSSPRE,dosspre_0246,2,Security,Security,—,Security,Security,—,"El sistema deberá ser capaz de determinar si las credenciales de inicio de sesión son válidas o no, y buscar resultados que coincidan con el titular de la licencia en cuestión o con la información del vehículo."
+DOSSPRE,dosspre_0248,2,Security,Security,Security,—,—,Security,El sistema deberá permitir al usuario crear una cuenta en el sistema e iniciar sesión mediante huella dactilar.
+DOSSPRE,dosspre_0251,2,—,—,—,Security,Security,—,El sistema deberá permitir la verificación de la huella dactilar del titular de la licencia.
+DOSSPRE,dosspre_0255,2,—,Security,—,Security,—,—,El sistema deberá poder cerrar la sesión
+DOSSPRE,dosspre_0268,2,Security,—,—,Security,Security,Security,El sistema deberá utilizar una vía segura para enviar todas las credenciales válidas a la plataforma.
+DOSSPRE,dosspre_0311,2,Security,—,—,Security,Security,Security,El sistema deberá tener tolerancia a fallos y deberá poder salir del programa de forma segura si se produce algún problema.
+DOSSPRE,dosspre_0312,2,—,Security,Security,—,—,—,El sistema deberá permitir al usuario el acceso a la pantalla del menú de inicio.
+DOSSPRE,dosspre_0328,2,—,Security,Security,—,—,—,El sistema deberá mostrar interfaces que describan las operaciones realizadas durante los procesos.
+DOSSPRE,dosspre_0330,2,—,Security,Security,—,—,—,"El sistema debe generar informes (fecha, hora, hash del archivo, estado) u otros resultados una vez que se haya realizado el escaneo del archivo."
+DOSSPRE,dosspre_0350,2,—,—,—,Security,—,Security,El sistema deberá permitir que un usuario pueda recuperar información de la base de datos.
+DOSSPRE,dosspre_0365,2,Security,Security,—,Security,Security,—,El sistema deberá conservar los historiales médicos completos de los pacientes en formato cifrado en un servidor.
+DOSSPRE,dosspre_0372,2,Security,Security,Security,—,—,Security,El sistema deberá permitir la aplicación de niveles de acceso a la información de los pacientes.
+DOSSPRE,dosspre_0393,2,Security,Security,Security,Security,—,—,"El sistema mostrará mensajes de alerta en caso de que se detecte una anomalía y, además, mostrará un panel con los registros de eventos de la anomalía detectada."
+DOSSPRE,dosspre_0396,2,—,—,—,—,Security,Security,"El sistema deberá disponer de capacidad de creación de imágenes para realizar una copia de la información contenida en el dispositivo móvil, que se utilizará durante el proceso forense como fuente de datos de prueba."
+DOSSPRE,dosspre_0398,2,—,Security,Security,—,—,—,"El sistema deberá disponer de un módulo de análisis que utilice los metadatos contenidos en la información extraída para detectar datos de localización, con el fin de crear un mapa de desplazamientos a partir de dicha información."
+DOSSPRE,dosspre_0409,2,—,Security,Security,—,—,—,El sistema se diseñará de tal forma que sea compatible con otras arquitecturas de sistema.
+DOSSPRE,dosspre_0431,2,—,Security,Security,—,—,—,El sistema deberá ser capaz de capturar paquetes de datos
+DOSSPRE,dosspre_0439,2,Security,—,—,Security,Security,Security,El sistema deberá ser capaz de bloquear cualquier detección ilegítima con el fin de utilizar de manera eficiente los recursos del sistema.
+DOSSPRE,dosspre_0440,2,—,Security,Security,—,—,—,El sistema deberá ser capaz de minimizar los falsos positivos y los falsos negativos.
+DOSSPRE,dosspre_0452,2,Security,—,—,Security,Security,Security,El sistema deberá permitir que un usuario se registre y acceda al sistema en nombre del receptor de sangre.
+DOSSPRE,dosspre_0461,2,—,Security,—,Security,—,—,"El sistema deberá ser capaz de notificar a las partes implicadas el incidente clínico, incluso cuando se produzca un fallo."
+DOSSPRE,dosspre_0475,2,—,Security,Security,—,—,—,El sistema deberá poder asignar a un examinador una ruta que deberá seguir una vez que haya finalizado la prueba de un alumno de autoescuela en el recinto.
+DOSSPRE,dosspre_0513,2,—,—,—,—,Security,Security,"El sistema deberá garantizar que, en caso de que se detecten nuevos atributos, se active el módulo de detección de anomalías, el cual, basándose en la información de la que ya dispone el sistema, realice una predicción sobre los nuevos datos."
+DOSSPRE,dosspre_0517,2,Security,—,—,Security,Security,Security,"El sistema deberá detectar ataques de denegación de servicio, incluyendo sobrecargas del servicio, tormentas de difusión y también inundaciones de mensajes."
+DOSSPRE,dosspre_0544,2,Security,—,—,Security,Security,Security,El sistema deberá permitir al usuario incrustar el mensaje cifrado y recuperarlo de la imagen mediante la técnica LBS.
+DOSSPRE,dosspre_0558,2,—,—,—,Security,Security,—,El sistema deberá permitir a los usuarios clasificar los mensajes como «correo legítimo» si se han clasificado erróneamente como «spam».
+DOSSPRE,dosspre_0569,2,—,Security,—,—,—,Security,El sistema contará con una página de inicio que se encargará de realizar la redirección del usuario a la página deseada; esta puede ser una página de inicio de sesión en la que el usuario acceda a su cuenta de correo electrónico o una página de registro en la que el usuario cree una cuenta de correo electrónico.
+DOSSPRE,dosspre_0570,2,—,—,Security,—,—,Security,"El sistema deberá disponer de una página de registro para recopilar y verificar los datos del nuevo usuario, con el fin de comprobar si la información facilitada cumple con los requisitos del sistema."
+DOSSPRE,dosspre_0574,2,—,Security,—,—,Security,—,"El buzón del sistema se encarga de mostrar los correos electrónicos del usuario que ha iniciado sesión, así como todos los correos no deseados, y contará con un panel de control para navegar por los correos."
+DOSSPRE,dosspre_0603,2,Security,Security,—,Security,Security,—,El sistema deberá exigir una contraseña para el inicio de sesión en los routers del proveedor.
+DOSSPRE,dosspre_0612,2,Security,—,—,Security,Security,Security,El sistema deberá permitir la consulta de los usuarios registrados si así lo solicita el servidor de autenticación.
+DOSSPRE,dosspre_0628,2,—,—,—,Security,Security,—,El sistema deberá permitir al administrador buscar el archivo en su sistema local y enviarlo a la plataforma de análisis.
+DOSSPRE,dosspre_0633,2,Security,Security,Security,—,Security,—,El sistema deberá ser capaz de verificar el certificado SSL.
+DOSSPRE,dosspre_0635,2,Security,—,—,Security,Security,Security,"El sistema tendrá una tasa baja de falsos positivos, de modo que pueda identificar correctamente las alertas de falsos positivos y diferenciarlas de las que indican una vulnerabilidad real."
+DOSSPRE,dosspre_0653,2,—,Security,Security,—,—,—,El reproductor del sistema deberá reorganizar correctamente las partes de las canciones recortadas aleatoriamente.
+DOSSPRE,dosspre_0663,2,—,Security,Security,—,—,—,El sistema deberá permitir que un usuario cree una cuenta.
+DOSSPRE,dosspre_0666,2,—,Security,Security,—,—,—,El sistema deberá generar un informe de supresión.
+DOSSPRE,dosspre_0669,2,—,Security,Security,—,—,—,El sistema deberá realizar un análisis de la carga útil del tráfico de red en toda la red de la organización.
+DOSSPRE,dosspre_0678,2,—,Security,Security,—,—,—,"El sistema deberá proporcionar marcas de agua digitales invisibles diseñadas mediante la transformación coseno discreta, que integra factores de cálculos complejos y robustez."
+DOSSPRE,dosspre_0682,2,Security,—,Security,Security,—,Security,El sistema permitirá que un autor que desee proteger su obra contra el uso no autorizado suba una imagen para incrustar la marca de agua digital invisible cada vez que envíe una obra de arte.
+DOSSPRE,dosspre_0683,2,Security,—,—,Security,Security,Security,"En caso de que una imagen con marca de agua sea enviada dos o más veces por diferentes autores, el administrador deberá poder verificar quién es el propietario legítimo de la imagen para proteger los derechos de autor."
+DOSSPRE,dosspre_0693,2,—,—,—,Security,—,Security,El sistema deberá almacenar los datos de tráfico capturados durante un período predeterminado.
+DOSSPRE,dosspre_0696,2,Security,—,—,Security,Security,Security,El sistema deberá obtener automáticamente una imagen forense de la memoria principal de la máquina virtual comprometida en cuanto se detecte una intrusión grave.
+DOSSPRE,dosspre_0699,2,—,—,—,Security,—,Security,"El sistema deberá proporcionar informes sobre las intrusiones, su clasificación y las medidas adoptadas."
+DOSSPRE,dosspre_0711,2,Security,Security,—,—,Security,Security,"El sistema deberá contar con módulos de cifrado y descifrado para lograr una seguridad mayor y mejorada, con el fin de evitar, en general, las violaciones de la privacidad."
+DOSSPRE,dosspre_0712,2,Security,Security,—,Security,—,Security,El sistema deberá proporcionar filtrado por tipo de archivo para evitar sobrecargar el flujo normal de información con archivos innecesarios.
+DOSSPRE,dosspre_0716,2,Security,—,Security,—,Security,Security,El sistema ofrece poco margen para retrasos en la transmisión de datos y fallos del sistema gracias a los procedimientos de gestión de errores y a los mecanismos de retroalimentación.
+DOSSPRE,dosspre_0727,2,Security,—,Security,Security,Security,—,"El sistema deberá contar con medidas de seguridad contra las amenazas ambientales, lo cual constituye una de sus funciones principales."
+DOSSPRE,dosspre_0728,2,—,—,Security,—,—,Security,"El sistema puede utilizarse en otras plataformas, como circuitos de conmutación, o integrarse en sistemas de seguridad doméstica."
+DOSSPRE,dosspre_0743,2,Security,—,—,Security,Security,Security,"El sistema deberá estar protegido contra fallos deliberados e intrusivos procedentes de fuentes internas y externas, ya que cuenta con controles adecuados, tales como las validaciones de la entrada del usuario y medidas contra la manipulación de software."
+DOSSPRE,dosspre_0747,2,—,—,—,Security,Security,—,"El sistema deberá permitir crear y aplicar prácticas de programación seguras mediante la identificación rigurosa de las fuentes de los datos necesarios, así como la identificación de los elementos y estructuras de datos necesarios para el intercambio."
+DOSSPRE,dosspre_0761,2,—,Security,Security,—,—,—,"La interfaz web se ha desarrollado utilizando CSS y Bootstrap, lo que permite utilizar el sistema en teléfonos móviles."
+DOSSPRE,dosspre_0781,2,Security,Security,—,Security,Security,—,El sistema deberá permitir que el usuario gestione su propia contraseña.
+DOSSPRE,dosspre_0795,2,Security,Security,—,Security,—,Security,PlutoMail ofrecerá protección contra el spam a nivel de servidor y eliminará la necesidad de instalar y actualizar software antispam en cada ordenador de sobremesa.
+DOSSPRE,dosspre_0796,2,—,—,Security,—,—,Security,PlutoMail ofrece una rápida puesta en marcha y una alta tasa de detección de spam mediante el análisis bayesiano y otros métodos: no requiere configuración y presenta una tasa baja de falsos positivos gracias a su lista blanca automática.
+DOSSPRE,dosspre_0813,2,—,—,—,Security,Security,—,"El sistema deberá permitir a los médicos registrarse y crear una cuenta y, tras el registro, permitir que el sistema genere las claves públicas y privadas de los médicos."
+DOSSPRE,dosspre_0815,2,Security,Security,—,Security,Security,—,El sistema deberá permitir al radiólogo realizar el cifrado y subir las imágenes a la nube.
+DOSSPRE,dosspre_0828,2,—,Security,Security,—,—,—,El sistema deberá permitir a los usuarios realizar un seguimiento de la evolución de los casos notificados anteriormente.
+DOSSPRE,dosspre_0850,2,Security,—,—,Security,Security,Security,"El software es crítico para la seguridad y se utiliza como última línea de defensa frente a ataques, ya que los defectos en el software crítico para la seguridad pueden provocar graves interrupciones del servicio o tiempos de inactividad del servidor."
+DOSSPRE,dosspre_0853,2,—,Security,Security,—,—,—,"El sistema no interactúa de forma continua con la base de datos, sino que solo consulta la información de los estudiantes en la base de datos de la universidad cuando el administrador lo solicita."
+DOSSPRE,dosspre_0891,2,—,—,Security,Security,—,—,El sistema deberá ser capaz de aleatorizar las escenas de tal forma que el usuario no pueda predecir cuál será la siguiente escena.
+DOSSPRE,dosspre_0894,2,—,Security,Security,—,—,—,El sistema deberá poder aceptar datos de proyectos anteriores para el proceso de aprendizaje.
+DOSSPRE,dosspre_0903,2,—,—,—,Security,—,Security,El sistema deberá conservar los registros de todos los bebés que tenga posteriormente una madre.
+DOSSPRE,dosspre_0917,2,—,—,Security,Security,—,—,El sistema deberá ser capaz de predecir transacciones fraudulentas y no fraudulentas en tiempo real.
+DOSSPRE,dosspre_0918,2,—,Security,—,Security,—,—,El sistema deberá ser capaz de almacenar información sobre las transacciones.
+DOSSPRE,dosspre_0929,2,—,Security,Security,—,—,—,"El sistema deberá informar de los resultados, tras detectar y analizar las vulnerabilidades."
+DOSSPRE,dosspre_0930,2,Security,—,—,Security,Security,Security,"El sistema deberá verificar el certificado SSL de un servidor web determinado para asegurarse de que está correctamente instalado, es válido, es de confianza y no da lugar a ningún error para ninguno de los usuarios."
+DOSSPRE,dosspre_0931,2,Security,Security,—,Security,Security,—,"El sistema se conecta al servidor de aplicaciones web y muestra los resultados de la conexión SSL, incluyendo qué certificado SSL está instalado y si este proporciona los certificados intermedios correctos."
+DOSSPRE,dosspre_0936,2,Security,—,—,Security,Security,Security,El sistema garantiza que el usuario esté debidamente autenticado en cada acceso al sistema.
+DOSSPRE,dosspre_0937,2,Security,Security,Security,—,Security,—,El sistema deberá ofrecer al usuario la opción de cifrar y descifrar datos.
+DOSSPRE,dosspre_0972,2,—,—,Security,—,—,Security,El sistema se comunicará con la API de Django para obtener la dirección de Ethereum correspondiente al identificador nacional introducido.
+DOSSPRE,dosspre_0975,2,Security,—,Security,Security,—,Security,Los datos de transacción son validados por el contrato inteligente.
+DOSSPRE,dosspre_0981,2,Security,Security,Security,Security,—,—,El sistema deberá permitir al administrador asignar roles a los usuarios.
+DOSSPRE,dosspre_0993,2,Security,—,—,Security,Security,Security,El sistema deberá garantizar que los registros del sistema se cifren y se almacenen en la nube como texto cifrado.
+DOSSPRE,dosspre_1010,2,Security,Security,Security,—,—,Security,El sistema deberá permitir a los usuarios conectarse a sus cuentas tras registrarse inicialmente en el sistema e iniciar sesión para tener acceso a él.
+DOSSPRE,dosspre_1014,2,Security,—,—,Security,Security,Security,"El sistema deberá permitir a los usuarios autorizados gestionar sus archivos, es decir, actualizar y eliminar datos de sus cuentas."
+DOSSPRE,dosspre_1026,2,—,Security,—,Security,—,—,El sistema deberá distribuir claves para la firma digital RSA.
+DOSSPRE,dosspre_1050,2,Security,—,—,Security,Security,Security,El sistema deberá garantizar la confidencialidad de la información personal esencial recopilada en todos los controladores del sistema.
+DOSSPRE,dosspre_1065,2,Security,—,—,Security,Security,Security,El sistema deberá permitir que el servidor bancario verifique las credenciales de los usuarios al iniciar sesión durante un breve periodo de tiempo.
+DOSSPRE,dosspre_1066,2,Security,Security,Security,—,—,Security,El servidor del sistema deberá generar el valor TOTP que tenga una vigencia de la duración especificada.
+DOSSPRE,dosspre_1089,2,—,—,Security,—,—,Security,El sistema deberá proporcionar orientación sobre cómo garantizar la seguridad de un archivo.
+DOSSPRE,dosspre_1095,2,Security,—,—,Security,Security,Security,El sistema deberá poder bloquear los sitios web que figuren en la base de datos.
+DOSSPRE,dosspre_1113,2,Security,—,Security,Security,—,Security,El sistema utilizará códigos QR para facilitar la concesión de acceso.
+DOSSPRE,dosspre_1135,2,Security,—,Security,Security,—,Security,El sistema deberá otorgar a cada usuario que adquiera una copia de un vídeo un derecho de acceso de por vida a una copia auténtica de dicho vídeo.
+DOSSPRE,dosspre_1136,2,Security,—,—,Security,Security,Security,El sistema deberá denegar el acceso a usuarios no autorizados para que no puedan redistribuir la copia que hayan adquirido legalmente.
+DOSSPRE,dosspre_1150,2,—,Security,Security,—,—,—,"El sistema deberá garantizar que la agencia de marcas de agua digitales pueda realizar el despacho de agentes, recopilar y comunicar la información procesada procedente de los hosts visitados dentro de la red."
+DOSSPRE,dosspre_1154,2,—,—,—,Security,—,Security,El sistema deberá exigir a los agentes que comuniquen las imágenes detectadas a la base de datos de la agencia.
+DOSSPRE,dosspre_1157,2,Security,—,—,Security,Security,Security,El sistema deberá proporcionar autenticación garantizando que los agentes comparen las claves de marca de agua de las imágenes detectadas con las claves ya almacenadas en la base de datos de la agencia.
+DOSSPRE,dosspre_1175,2,Security,Security,—,Security,—,Security,El sistema deberá mostrar un panel con los registros de las anomalías detectadas.
+DOSSPRE,dosspre_1193,2,Security,—,Security,Security,—,Security,El sistema deberá ser capaz de identificar entradas erróneas.
+DOSSPRE,dosspre_1228,2,—,Security,Security,—,—,—,El sistema deberá ser ligero
+DOSSPRE,dosspre_1231,2,—,—,—,Security,—,Security,El sistema se instalará en el teléfono móvil de cada empleado para supervisar las aplicaciones del dispositivo y registrar las actividades que se realicen en él.
+DOSSPRE,dosspre_1254,2,Security,Security,—,Security,Security,—,El sistema deberá ser capaz de detectar y combatir tanto el malware existente como el nuevo.
+DOSSPRE,dosspre_1255,2,—,—,—,Security,Security,—,El sistema deberá contar con un proceso de recopilación de datos que permita recopilar datos benignos y maliciosos e introducirlos en el sistema para la detección de malware.
+DOSSPRE,dosspre_1258,2,—,—,—,Security,—,Security,El proceso de clasificación del sistema deberá clasificar el malware identificado en sus respectivas familias de malware.
+DOSSPRE,dosspre_0015,1,—,Security,—,—,—,—,"El sistema deberá proporcionar una plataforma que permita al usuario cargar archivos para su almacenamiento y, asimismo, recuperarlos descargándolos cuando sea necesario."
+DOSSPRE,dosspre_0043,1,—,Security,—,—,—,—,El sistema deberá adaptarse a todo tipo de aplicaciones.
+DOSSPRE,dosspre_0049,1,—,Security,—,—,—,—,El sistema deberá permitir al administrador incorporar la marca de agua digital invisible cada vez que un autor envíe su obra.
+DOSSPRE,dosspre_0066,1,Security,Security,—,Security,Security,Security,"El sistema deberá ser capaz de registrar el nombre de host del nodo malicioso, así como el SSID de la red a la que está conectado, con el fin de determinar desde qué zona del campus se está llevando a cabo el ataque."
+DOSSPRE,dosspre_0067,1,—,—,—,Security,—,—,"El sistema deberá poder cotejar el registro de ordenadores portátiles de los estudiantes y el de ordenadores de la universidad, y buscar el dispositivo que coincida con el nodo malicioso, así como el estudiante correspondiente y sus datos personales."
+DOSSPRE,dosspre_0068,1,—,—,—,Security,—,—,"El sistema deberá poder mostrar un mensaje en la pantalla de notas de infracción en el que se advierta al alumno, mencionándolo por su nombre, de que no está permitido el escaneo de puertos, y este aviso se añadirá automáticamente al expediente del alumno si dicha infracción se repite más de una vez."
+DOSSPRE,dosspre_0078,1,—,—,Security,—,—,—,El sistema deberá ser capaz de detectar una figura que se aproxime.
+DOSSPRE,dosspre_0084,1,—,—,—,—,Security,—,El sistema deberá permitir un tiempo de respuesta breve ante un comando para cifrar y descifrar datos.
+DOSSPRE,dosspre_0114,1,—,—,—,—,Security,—,El sistema deberá ser capaz de preprocesar los datos no estructurados para convertirlos en información significativa y compararlos con las palabras clave existentes en la base de datos.
+DOSSPRE,dosspre_0120,1,—,—,—,—,Security,—,El sistema deberá proporcionar un servicio de depósito en garantía (PayNow vinculado a bancos comerciales de Zimbabue y plataformas de dinero móvil) que imponga el bloqueo de los dólares estadounidenses hasta que se reciba la confirmación del vendedor.
+DOSSPRE,dosspre_0122,1,—,—,—,Security,—,—,El sistema deberá registrar y almacenar todas las transacciones.
+DOSSPRE,dosspre_0123,1,—,—,Security,—,—,—,El sistema deberá gestionar los perfiles de usuario.
+DOSSPRE,dosspre_0124,1,—,—,—,Security,—,—,El sistema deberá permitir el procesamiento de transacciones con Bitcoin.
+DOSSPRE,dosspre_0127,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir un fallo seguro siempre que se produzca un fallo.
+DOSSPRE,dosspre_0129,1,—,—,Security,—,—,—,El sistema deberá cumplir con las directrices contra el blanqueo de capitales de Zimbabue.
+DOSSPRE,dosspre_0149,1,Security,Security,—,Security,Security,Security,"El sistema deberá permitir la supervisión del tráfico de red en tiempo real mediante la captura del tráfico web entrante y saliente de TCP, HTTP(S) y TLS, con el fin de correlacionarlo con la lista negra de cryptojacking configurada."
+DOSSPRE,dosspre_0156,1,Security,Security,Security,Security,—,Security,"El sistema deberá permitir que se cierre la aplicación de cryptojacking, a menos que el usuario elija explícitamente ignorarla."
+DOSSPRE,dosspre_0159,1,—,—,Security,—,—,—,El sistema no debería consumir una cantidad significativamente elevada de recursos de la CPU.
+DOSSPRE,dosspre_0171,1,—,—,—,Security,—,—,El sistema deberá permitir la extracción de características únicas a partir de conjuntos de datos.
+DOSSPRE,dosspre_0173,1,Security,Security,Security,Security,—,Security,"El sistema deberá permitir que se extraigan las características cuando el usuario inicie sesión y que se realice una comparación de similitud para comprobar la autenticidad del usuario; si la comparación es satisfactoria, se concederá acceso al usuario, y se denegará el acceso en caso de que no coincidan."
+DOSSPRE,dosspre_0182,1,—,—,Security,—,—,—,El sistema se mantendrá mediante actualizaciones frecuentes.
+DOSSPRE,dosspre_0184,1,Security,Security,—,Security,Security,Security,El sistema deberá realizar una verificación para determinar los derechos de usuario y de acceso.
+DOSSPRE,dosspre_0189,1,—,Security,—,—,—,—,El sistema deberá poder generar informes a partir de la actividad registrada en el mismo.
+DOSSPRE,dosspre_0191,1,—,Security,—,—,—,—,El sistema deberá permitir al usuario acceder a los datos o recursos en la ubicación indicada y en el formato adecuado en todo momento.
+DOSSPRE,dosspre_0211,1,Security,Security,—,Security,Security,Security,El sistema debería conservar el historial de las transacciones en una base de datos segura.
+DOSSPRE,dosspre_0213,1,—,Security,—,—,—,—,El sistema debería cumplir con la legislación aplicable a la tecnología que se vaya a utilizar.
+DOSSPRE,dosspre_0218,1,—,—,Security,—,—,—,El sistema debería señalar una reclamación cuya puntuación supere el umbral
+DOSSPRE,dosspre_0226,1,Security,Security,—,Security,Security,Security,Los permisos de acceso a los datos del sistema solo deberían ser modificados por el administrador de datos del sistema.
+DOSSPRE,dosspre_0238,1,—,—,Security,—,—,—,"El sistema deberá garantizar que la interfaz se mueva con rapidez, al ritmo de los clics del ratón del usuario y, siempre que sea posible."
+DOSSPRE,dosspre_0240,1,Security,Security,Security,Security,Security,—,El sistema deberá permitir a los usuarios introducir sus nombres de usuario y contraseñas.
+DOSSPRE,dosspre_0244,1,Security,—,Security,Security,Security,Security,Este sistema permite verificar las credenciales de inicio de sesión de los usuarios comparándolas con las almacenadas en el sistema.
+DOSSPRE,dosspre_0247,1,Security,—,Security,Security,Security,Security,"El sistema deberá garantizar que el usuario acceda al sistema si las credenciales son válidas; en caso contrario, deberá redirigir al usuario a la página de inicio de sesión, donde debería introducir otro número de licencia o número de matrícula del vehículo."
+DOSSPRE,dosspre_0253,1,—,Security,—,—,—,—,El sistema deberá permitir al usuario consultar la base de datos
+DOSSPRE,dosspre_0269,1,Security,Security,Security,Security,Security,—,El sistema nunca mostrará la contraseña de un usuario. Siempre se mostrará con caracteres especiales que representen los caracteres tecleados.
+DOSSPRE,dosspre_0276,1,—,—,Security,—,—,—,El sistema deberá tardar poco tiempo en responder a un comando para realizar el cifrado y el descifrado de datos.
+DOSSPRE,dosspre_0281,1,—,—,—,Security,—,—,La interfaz del sistema incluirá un panel de control claro y fácil de interpretar que contenga toda la información necesaria sobre los registros capturados con seguridad.
+DOSSPRE,dosspre_0287,1,Security,—,Security,Security,Security,Security,El sistema deberá permitir la captura de registros específicos de los ordenadores y su integración sin fallos con la aplicación web mediante mecanismos de seguridad como HMAC y PGP.
+DOSSPRE,dosspre_0289,1,Security,Security,Security,Security,—,Security,El sistema deberá garantizar que el emisor de los archivos de registro requeridos identifique los elementos de datos y las estructuras de datos necesarios para el intercambio.
+DOSSPRE,dosspre_0292,1,—,Security,—,—,—,—,El sistema deberá facilitar la gestión de casos para la ZRP.
+DOSSPRE,dosspre_0294,1,Security,Security,—,Security,Security,Security,El sistema deberá mostrar los registros de la actividad de los investigadores.
+DOSSPRE,dosspre_0299,1,—,—,—,Security,—,—,El sistema deberá tener una mayor probabilidad de funcionar sin fallos durante un período de tiempo determinado en un entorno específico.
+DOSSPRE,dosspre_0302,1,—,—,Security,—,—,—,"El sistema se basará en una arquitectura cliente-servidor, por lo que los recursos se obtendrán de dos fuentes diferentes en cualquier momento dado, lo que aumentará la eficiencia en la utilización de los recursos y reducirá los cuellos de botella del sistema."
+DOSSPRE,dosspre_0322,1,—,Security,—,—,—,—,El sistema debería ser capaz de llevar a cabo cada tarea solicitada por el usuario lo más rápidamente posible.
+DOSSPRE,dosspre_0324,1,—,—,Security,—,—,—,"El sistema debería ser capaz de proporcionar datos correspondientes al número máximo actual de etiquetas —dos mil en la actualidad— durante un periodo de treinta días, en el formato que el usuario decida."
+DOSSPRE,dosspre_0336,1,—,Security,—,—,—,—,El servicio del sistema debe estar siempre disponible cuando se necesite.
+DOSSPRE,dosspre_0341,1,Security,—,Security,Security,Security,Security,El sistema deberá permitir el uso de contraseñas y nombres de usuario para el acceso a los datos y su modificación.
+DOSSPRE,dosspre_0344,1,—,—,Security,—,—,—,El sistema permite recuperar rápidamente la información.
+DOSSPRE,dosspre_0354,1,—,—,Security,—,—,—,El sistema deberá permitir al usuario utilizar Bluetooth para activar un smartphone que se comunique con un ordenador portátil a través de una conexión inalámbrica de corto alcance.
+DOSSPRE,dosspre_0357,1,—,Security,—,—,—,—,"El sistema cuenta con muy pocas interfaces, por lo que no confunde a los usuarios a medida que se adentran en él."
+DOSSPRE,dosspre_0359,1,—,—,—,—,—,Security,El sistema debería almacenar la información básica de los pacientes y los permisos en un servidor central.
+DOSSPRE,dosspre_0368,1,—,—,Security,—,—,—,El sistema deberá permitir el acceso a los profesionales sanitarios a través de una aplicación de software basada en pantalla.
+DOSSPRE,dosspre_0369,1,Security,Security,Security,Security,Security,—,El sistema deberá permitir que los servidores de cada instalación no se vean afectados en caso de fallo del servidor central.
+DOSSPRE,dosspre_0373,1,Security,Security,—,Security,Security,Security,El sistema deberá proporcionar registros de auditoría cuando sea necesario.
+DOSSPRE,dosspre_0377,1,Security,—,Security,Security,Security,Security,El sistema debería ser capaz de bloquear el tráfico hacia y desde la red que se identifique como potencialmente malicioso.
+DOSSPRE,dosspre_0378,1,—,—,—,Security,—,—,El sistema debería poder generar informes mensuales sobre las anomalías detectadas.
+DOSSPRE,dosspre_0380,1,—,—,—,—,Security,—,El sistema debería poder supervisar la red en tiempo real.
+DOSSPRE,dosspre_0390,1,—,—,Security,—,—,—,La interfaz de usuario incluye una interfaz gráfica de usuario (GUI) que contiene todos los complementos básicos que conforman las funciones básicas del programa.
+DOSSPRE,dosspre_0407,1,—,Security,—,—,—,—,El sistema deberá garantizar la portabilidad mediante la aplicación de un nivel de abstracción relativamente generalizado que debería interponerse entre las interfaces del sistema y la lógica de la aplicación.
+DOSSPRE,dosspre_0410,1,—,—,—,Security,—,—,El sistema deberá permitir que un usuario disponga de una cuenta operativa en la plataforma de Twitter y cree una aplicación para obtener tokens de acceso.
+DOSSPRE,dosspre_0432,1,—,—,—,—,—,Security,El sistema deberá ser capaz de desfragmentar los paquetes capturados.
+DOSSPRE,dosspre_0444,1,—,—,Security,—,—,—,La interfaz de usuario del sistema deberá constar de una parte front-end y una parte back-end SQL que contribuyan a una excelente experiencia de usuario.
+DOSSPRE,dosspre_0447,1,—,Security,—,—,—,—,El sistema deberá permitir que el análisis de la sangre se realice en el banco de sangre y que los resultados se introduzcan en el sistema.
+DOSSPRE,dosspre_0448,1,—,—,Security,—,—,—,El sistema deberá poder aplazar a los donantes no aptos e informar a los donantes aptos mediante SMS.
+DOSSPRE,dosspre_0449,1,—,—,Security,—,—,—,El sistema deberá poder mantener un inventario de los identificadores y los grupos sanguíneos de las donaciones de sangre.
+DOSSPRE,dosspre_0455,1,Security,Security,Security,Security,Security,—,El sistema deberá ser capaz de realizar la validación de entradas
+DOSSPRE,dosspre_0457,1,—,—,—,Security,—,—,El sistema debería ser capaz de identificar la ubicación actual del paciente en situaciones de emergencia.
+DOSSPRE,dosspre_0463,1,—,Security,—,—,—,—,"El sistema deberá garantizar que, en caso de crisis, el paciente solo tenga que pulsar el botón de encendido tres veces, simplificando así la forma en que el paciente interactúa con el sistema."
+DOSSPRE,dosspre_0465,1,Security,—,Security,Security,Security,Security,"El sistema deberá resistir cualquier uso no autorizado e ilícito, tanto si se trata de una acción accidental como intencionada."
+DOSSPRE,dosspre_0468,1,—,—,Security,—,—,—,"Los datos del sistema se integran perfectamente con la aplicación web, ya que ambos sistemas utilizan la misma base de datos para compartir información."
+DOSSPRE,dosspre_0476,1,—,—,—,—,—,Security,"El sistema deberá poder generar un registro del número de aprobados y suspendidos, en relación con el examinador."
+DOSSPRE,dosspre_0494,1,Security,—,Security,Security,Security,Security,El sistema debería ser capaz de denegar el acceso a la persona que presente una etiqueta que pertenezca a otra persona con una probabilidad elevada.
+DOSSPRE,dosspre_0496,1,—,—,Security,—,—,—,Un sistema debería diseñarse teniendo en cuenta la psicología y la fisiología de los usuarios.
+DOSSPRE,dosspre_0516,1,Security,Security,Security,Security,—,Security,El sistema deberá detectar intrusiones específicas en un área de protección designada.
+DOSSPRE,dosspre_0519,1,—,—,—,Security,—,—,El sistema deberá supervisar y realizar escaneos en la red
+DOSSPRE,dosspre_0534,1,—,Security,—,—,—,—,"Se puede confiar en el sistema para la detección de spam incluso tras un uso prolongado, ya que los datos utilizados para entrenar el clasificador son muy amplios."
+DOSSPRE,dosspre_0540,1,Security,Security,Security,Security,Security,—,El sistema deberá enviar una contraseña de un solo uso al teléfono del usuario para completar el proceso de inicio de sesión.
+DOSSPRE,dosspre_0545,1,—,—,—,—,—,Security,El sistema funciona correctamente en entornos web y permite el inicio de sesión de varios clientes y la comunicación al mismo tiempo.
+DOSSPRE,dosspre_0557,1,—,—,—,Security,—,—,El sistema deberá permitir a los usuarios clasificar los mensajes como spam si se han clasificado erróneamente como correo legítimo.
+DOSSPRE,dosspre_0563,1,—,—,Security,—,—,—,"El sistema entregará los correos electrónicos siempre que haya conexión a Internet para recibirlos, con tiempos de inactividad mínimos."
+DOSSPRE,dosspre_0571,1,Security,Security,—,Security,Security,Security,"El sistema deberá poder garantizar que la información facilitada incluya un nombre de usuario único, una contraseña y algunos datos personales necesarios para verificar que el usuario cumple los requisitos para crear una cuenta."
+DOSSPRE,dosspre_0575,1,—,—,—,—,Security,—,El sistema deberá proporcionar a los supervisores informes ad hoc para la toma de decisiones
+DOSSPRE,dosspre_0577,1,Security,Security,—,Security,Security,Security,El sistema deberá proporcionar a todos los usuarios internos una copia de seguridad de los datos operativos y de transacción.
+DOSSPRE,dosspre_0578,1,—,—,—,Security,—,—,El sistema deberá proporcionar a los usuarios un sistema libre de errores y eficiente a la hora de capturar y recuperar información.
+DOSSPRE,dosspre_0583,1,Security,Security,—,Security,Security,Security,Cada usuario debe tener configurado un nombre de usuario único y una contraseña que se pueda cambiar cuando sea necesario.
+DOSSPRE,dosspre_0584,1,Security,—,Security,Security,Security,Security,El superadministrador del sistema debería poder conceder privilegios de acceso a los usuarios y restringir el acceso a la información y los datos que los usuarios pueden consultar o modificar en cualquier momento.
+DOSSPRE,dosspre_0599,1,Security,—,Security,Security,Security,Security,"Se debería realizar una copia de seguridad de la base de datos del sistema de forma continua, al menos una vez cada cuatro horas, con el fin de minimizar la pérdida de datos en caso de un fallo catastrófico."
+DOSSPRE,dosspre_0615,1,—,Security,—,—,—,—,"El sistema se situará entre el cliente y el servidor; no obstante, forma parte de la arquitectura del servidor."
+DOSSPRE,dosspre_0616,1,—,—,—,Security,—,—,El sistema deberá permitir que los datos de tráfico en forma de solicitudes o paquetes HTTP se envíen de un lado a otro entre el cliente y el servidor durante el proceso de aprovisionamiento normal del servicio.
+DOSSPRE,dosspre_0626,1,—,Security,—,—,—,—,"El sistema permitirá al usuario introducir en el navegador la URL del servidor local y el puerto del panel de administración, tras lo cual se procederá al inicio de sesión. Esto lo proporciona el marco de trabajo Django."
+DOSSPRE,dosspre_0629,1,—,—,—,—,Security,—,"El sistema deberá permitir que los resultados, que contienen una lista de direcciones IP seleccionadas, puedan visualizarse en la plataforma web."
+DOSSPRE,dosspre_0638,1,Security,—,Security,Security,Security,Security,"El sistema debería ser capaz de diagnosticar con precisión las vulnerabilidades reales, cuando estas existan, basándose en la realización de experimentos basados en fórmulas."
+DOSSPRE,dosspre_0646,1,—,—,Security,—,—,—,El programa de descarga del sistema deberá permitir la descarga de contenidos desde el servidor (tienda de música).
+DOSSPRE,dosspre_0649,1,—,—,Security,—,—,—,El reproductor del sistema rellena la tabla de consulta con los datos necesarios.
+DOSSPRE,dosspre_0651,1,—,—,—,—,—,Security,El reproductor del sistema deberá enviar los contenidos a la carpeta oculta.
+DOSSPRE,dosspre_0652,1,—,—,—,—,—,Security,El reproductor del sistema deberá localizar y recuperar los contenidos necesarios de la carpeta oculta.
+DOSSPRE,dosspre_0656,1,—,Security,—,—,—,—,El sistema se compone de diferentes módulos que funcionan de forma coordinada para alcanzar el objetivo deseado.
+DOSSPRE,dosspre_0660,1,—,Security,—,—,—,—,El sistema deberá ser capaz de cumplir la función para la que fue diseñado sin fallos.
+DOSSPRE,dosspre_0661,1,Security,—,Security,Security,Security,Security,La capacidad del sistema para generar una salida recortada impedirá que un atacante (pirata) tenga acceso a un único archivo de canción completo a partir de cualquier punto.
+DOSSPRE,dosspre_0662,1,Security,—,Security,Security,Security,Security,"El reproductor ocultará los archivos recortados de cualquier contacto directo con el usuario o un atacante, impidiendo así de forma fiable cualquier intercambio ilegal de archivos."
+DOSSPRE,dosspre_0668,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir a los usuarios autorizados modificar los datos de los pacientes.
+DOSSPRE,dosspre_0673,1,—,—,Security,—,—,—,El sistema deberá permitir la creación y la edición de los datos de los usuarios.
+DOSSPRE,dosspre_0674,1,—,Security,—,—,—,—,El sistema deberá permitir la gestión de pacientes.
+DOSSPRE,dosspre_0681,1,Security,Security,Security,Security,—,Security,"El sistema deberá incluir una sección dedicada a la verificación, de modo que, si se afirma que una imagen contiene una marca de agua, el sistema sea capaz de detectarla y mostrarla."
+DOSSPRE,dosspre_0687,1,Security,Security,—,Security,Security,Security,El principio de autenticación del sistema se aplica en el sentido de que el sistema notifica si hay o no una marca de agua en la imagen.
+DOSSPRE,dosspre_0700,1,—,Security,—,—,—,—,El sistema deberá proporcionar informes sobre el éxito o el fracaso de la adquisición de imágenes forenses.
+DOSSPRE,dosspre_0720,1,—,—,Security,—,—,—,Los archivos ejecutables del sistema pueden subirse a servicios de almacenamiento en línea y pueden ser descargados y utilizados por el siguiente usuario desde el otro extremo.
+DOSSPRE,dosspre_0722,1,—,—,Security,—,—,—,"El sistema deberá integrar las instrucciones, los procedimientos o la guía de operaciones en los productos finales, de modo que, cuando alguien no consiga realizar una determinada acción, tenga un lugar al que acudir para consultar."
+DOSSPRE,dosspre_0732,1,—,—,Security,—,—,—,"El sistema está diseñado para ofrecer al usuario numerosas opciones, entre las que se incluye la posibilidad de cambiar"
+DOSSPRE,dosspre_0739,1,—,—,—,—,—,Security,El sistema deberá ser capaz de reconocer los rostros detectados en la imagen.
+DOSSPRE,dosspre_0762,1,—,—,—,—,Security,—,"El sistema propuesto es eficiente, ya que se basa en los algoritmos de cifrado más seguros y eficientes."
+DOSSPRE,dosspre_0768,1,Security,Security,Security,—,Security,Security,"El sistema mejora la seguridad mediante el uso de algoritmos de cifrado más seguros y eficientes, concretamente el Estándar de Cifrado Avanzado (AES) con una clave de 256 bits y la criptografía de curva elíptica."
+DOSSPRE,dosspre_0769,1,Security,Security,—,Security,Security,Security,"El sistema deberá implementar una combinación de algoritmos criptográficos que sean seguros y que se haya demostrado que son indescifrables con las tecnologías actuales; por lo tanto, el uso conjunto de estos algoritmos refuerza la seguridad del sistema."
+DOSSPRE,dosspre_0770,1,Security,—,Security,Security,Security,Security,El sistema propuesto está diseñado para utilizar un sistema de autenticación de usuario de dos factores que garantiza que solo el usuario registrado y legítimo pueda acceder al sistema y cargar o consultar los datos.
+DOSSPRE,dosspre_0771,1,Security,Security,—,Security,Security,Security,"El sistema deberá garantizar que, una vez que el titular de la cuenta haya introducido una contraseña de inicio de sesión correcta, reciba una OTP o un código enviado por correo electrónico o al teléfono móvil del propietario de los datos."
+DOSSPRE,dosspre_0779,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir que un usuario inicie sesión en el sistema y se autentique.
+DOSSPRE,dosspre_0783,1,—,—,—,—,—,Security,El sistema deberá permitir al usuario realizar operaciones CRUD sobre los registros.
+DOSSPRE,dosspre_0786,1,Security,Security,—,Security,Security,Security,El sistema deberá reducir la incidencia de fallos en el sistema.
+DOSSPRE,dosspre_0794,1,—,—,Security,—,—,—,El sistema deberá permitir que el usuario traslade mensajes a la carpeta de spam mediante la inclusión en la lista negra y a la carpeta de correo legítimo mediante la inclusión en la lista blanca.
+DOSSPRE,dosspre_0809,1,—,—,—,Security,—,—,El sistema deberá permitir al usuario borrar mensajes de correo electrónico.
+DOSSPRE,dosspre_0810,1,—,—,Security,—,—,—,El sistema deberá permitir al usuario ver el correo no deseado.
+DOSSPRE,dosspre_0836,1,—,Security,—,—,—,—,"El sistema deberá tener disponibilidad en todo momento, lo que significa que el usuario podrá acceder a él mediante una aplicación en su dispositivo, lo que responde a la preocupación del usuario respecto a la fiabilidad del sistema durante el horario normal de funcionamiento."
+DOSSPRE,dosspre_0854,1,—,—,Security,—,—,—,La capacidad para hacer las cosas bien dependerá de la definición de las tareas de supervisión.
+DOSSPRE,dosspre_0870,1,—,—,Security,—,—,—,El sistema debería ser accesible dondequiera que sea necesario. En cualquier momento en que los clientes necesiten realizar una compra
+DOSSPRE,dosspre_0872,1,Security,—,Security,Security,Security,Security,"El sistema principal se centra en la seguridad de las transacciones en línea, por lo que es seguro."
+DOSSPRE,dosspre_0874,1,—,—,Security,—,—,—,El sistema deberá ser capaz de controlar una bomba de agua para la aplicación de agua a los cultivos que se riegan.
+DOSSPRE,dosspre_0912,1,Security,Security,Security,—,Security,Security,"El sistema se utilizará a nivel nacional y ofrecerá fiabilidad; sin embargo, resulta difícil equilibrar el tiempo de desarrollo, aunque proporciona madurez, tolerancia a fallos y capacidad de recuperación."
+DOSSPRE,dosspre_0923,1,—,—,—,—,Security,—,"El sistema también debería poder notificar al usuario cualquier cambio en las condiciones, es decir, cualquier caída o aumento; en definitiva, cualquier anomalía debería notificarse al usuario del sistema."
+DOSSPRE,dosspre_0944,1,Security,—,Security,Security,Security,Security,El sistema deberá ser autoprotector y a prueba de fallos; la gestión de excepciones garantizará que el sistema sea a prueba de fallos y se detenga de forma controlada en caso de error.
+DOSSPRE,dosspre_0946,1,Security,Security,Security,Security,Security,—,Los empleados deberán identificarse mediante una contraseña de 6 caracteres.
+DOSSPRE,dosspre_0949,1,—,—,Security,—,—,—,El sistema deberá calcular el salario de cada empleado al final de cada mes.
+DOSSPRE,dosspre_0961,1,—,—,—,Security,—,—,El sistema deberá enviar solicitudes a los clientes para obtener su consentimiento para el uso de su información KYC.
+DOSSPRE,dosspre_0965,1,Security,—,Security,Security,Security,Security,El sistema deberá permitir el almacenamiento seguro de la información de los clientes.
+DOSSPRE,dosspre_0974,1,Security,Security,—,Security,Security,Security,Las firmas digitales de la transacción son validadas por el protocolo Ethereum.
+DOSSPRE,dosspre_0979,1,—,Security,—,—,—,—,El contrato inteligente emite el miembro del bloque en el que se realizó la minería de la transacción.
+DOSSPRE,dosspre_0990,1,—,—,Security,—,—,—,"El sistema deberá permitir que, a medida que aumente el número de historiales de pacientes con el tiempo, la capacidad del sistema para almacenar dichos historiales también aumente proporcionalmente."
+DOSSPRE,dosspre_0994,1,—,Security,—,—,—,—,"Los procesos del sistema, como el cifrado y el descifrado, no deben ralentizar el sistema."
+DOSSPRE,dosspre_1008,1,Security,Security,—,Security,Security,Security,El sistema deberá garantizar la privacidad de los datos de usuario en todo momento.
+DOSSPRE,dosspre_1011,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir a los usuarios responder a preguntas sobre su perfil después de que se les haya solicitado que las rellenen en el momento del registro; dichas preguntas se utilizarán como preguntas de seguridad en caso de que se olvide la contraseña.
+DOSSPRE,dosspre_1012,1,—,—,Security,—,—,—,El sistema deberá permitir a los usuarios subir archivos de datos de cualquier tipo a sus cuentas en la nube con una descripción de al menos 5 palabras.
+DOSSPRE,dosspre_1015,1,Security,Security,Security,Security,—,Security,El sistema deberá generar archivos señuelo para enviárselos a un intruso cada vez que se detecte una descarga sospechosa.
+DOSSPRE,dosspre_1023,1,Security,Security,—,Security,Security,Security,El sistema deberá proporcionar una autenticación y autorización seguras de los alumnos mediante el uso de tokens SAML de seguridad que contengan aserciones sobre un sujeto para la comunicación entre partes de confianza.
+DOSSPRE,dosspre_1029,1,—,—,Security,—,—,—,El sistema deberá detectar un accidente en caso de impacto y enviará automáticamente una alerta (SMS) a un teléfono designado.
+DOSSPRE,dosspre_1030,1,—,—,—,Security,—,—,"El sistema deberá proporcionar un procedimiento de verificación, mediante el cual los administradores intentarán establecer contacto con el autobús en cuestión para comprobar si realmente se ha producido un accidente y determinar el nivel de respuesta necesario."
+DOSSPRE,dosspre_1037,1,—,—,Security,—,—,—,Se implementará en el sistema un sistema de geovallas para garantizar que los autobuses no se desvíen de sus rutas programadas.
+DOSSPRE,dosspre_1038,1,—,—,Security,—,—,—,La función de seguimiento por GPS deberá permitir la gestión de la flota en tiempo real.
+DOSSPRE,dosspre_1039,1,—,Security,—,—,—,—,El sistema deberá ser capaz de recopilar todos los datos relativos a una persona.
+DOSSPRE,dosspre_1042,1,—,—,Security,—,—,—,El sistema deberá diferenciar los sistemas que representan distintas etapas de su ciclo de vida.
+DOSSPRE,dosspre_1044,1,Security,—,Security,Security,Security,Security,El sistema incluirá en una lista negra a cualquier usuario que haya cometido un robo de identidad.
+DOSSPRE,dosspre_1046,1,—,—,Security,—,—,—,"El sistema también deberá permitir el inicio de sesión de varios clientes y la reserva de diferentes citas, así como la asignación de un horario distinto a cada usuario."
+DOSSPRE,dosspre_1057,1,Security,Security,Security,Security,Security,—,El sistema deberá aplicar el cálculo de hash a las contraseñas utilizando HMAC
+DOSSPRE,dosspre_1060,1,Security,Security,Security,Security,Security,—,El sistema deberá permitir que un usuario se registre e inicie sesión.
+DOSSPRE,dosspre_1061,1,Security,Security,Security,Security,Security,—,El sistema deberá realizar la validación de las contraseñas de usuario.
+DOSSPRE,dosspre_1068,1,Security,Security,Security,Security,Security,—,El sistema deberá permitir el cambio de contraseña en un plazo determinado.
+DOSSPRE,dosspre_1073,1,—,—,Security,—,—,—,El sistema deberá permitir el uso de una marca de agua visible junto con el cliente de correo electrónico.
+DOSSPRE,dosspre_1081,1,Security,—,Security,Security,Security,Security,El sistema deberá proporcionar un servicio de autenticación a todos los usuarios antes de que se les permita insertar una marca de agua mediante un cliente de correo electrónico.
+DOSSPRE,dosspre_1086,1,—,Security,—,—,—,—,El sistema deberá ser capaz de registrar una conexión inalámbrica.
+DOSSPRE,dosspre_1091,1,Security,Security,—,Security,Security,Security,El sistema deberá proporcionar autenticación de dos factores.
+DOSSPRE,dosspre_1100,1,Security,Security,Security,Security,Security,—,El sistema deberá permitir al administrador visualizar la dirección IP.
+DOSSPRE,dosspre_1101,1,—,—,—,Security,—,—,El sistema deberá mostrar al usuario un mensaje cuando se acceda a una página web bloqueada.
+DOSSPRE,dosspre_1107,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir que el administrador del sistema inicie sesión en el sitio web con el objetivo de consultar los mensajes de advertencia.
+DOSSPRE,dosspre_1119,1,—,—,—,Security,—,—,"El marco deberá presentar una elevada capacidad de gestión de tareas y de los usuarios de la administración, desde el inicio de sesión, durante la transacción y hasta la nueva verificación del usuario."
+DOSSPRE,dosspre_1121,1,—,Security,—,—,—,—,El sistema deberá permitir una transmisión breve de información.
+DOSSPRE,dosspre_1151,1,—,—,Security,—,—,—,El sistema deberá ser capaz de orientar los movimientos del agente permitiendo que la agencia de marcas de agua digitales tome nota de los informes y cree una base de conocimientos compartida.
+DOSSPRE,dosspre_1152,1,—,—,—,Security,—,—,"La agencia de marcas de agua digitales del sistema controlará la red remota en calidad de administradora, y es allí donde se almacenan los agentes."
+DOSSPRE,dosspre_1169,1,Security,Security,—,Security,Security,Security,El sistema deberá garantizar la fiabilidad y la resiliencia ante fallos.
+DOSSPRE,dosspre_1170,1,—,—,Security,—,—,—,El sistema se desarrollará de manera que tenga disponibilidad en todo momento.
+DOSSPRE,dosspre_1200,1,Security,Security,—,Security,Security,Security,El sistema deberá ofrecer validación de entradas.
+DOSSPRE,dosspre_1205,1,—,Security,—,—,—,—,El módulo de cálculo de hash del sistema deberá utilizar el algoritmo SHA-2.
+DOSSPRE,dosspre_1206,1,—,—,—,Security,—,—,"El sistema deberá admitir como entradas archivos de audio WAVE, texto de mensajes, clave pública y clave privada. Funcionalidad"
+DOSSPRE,dosspre_1210,1,—,Security,—,—,—,—,"El sistema no deberá sufrir ralentizaciones durante las tareas de entrada/salida ni durante aquellas que requieran un gran esfuerzo computacional, como el cifrado, la incrustación o la extracción."
+DOSSPRE,dosspre_1222,1,Security,—,Security,Security,Security,Security,El sistema deberá permitir la reversión autorizada de acciones.
+DOSSPRE,dosspre_1223,1,Security,Security,Security,—,Security,Security,El sistema deberá conservar la información sobre el inicio y el fin de sesión a efectos de responsabilidad demostrable.
+DOSSPRE,dosspre_1226,1,Security,Security,—,Security,Security,Security,El sistema deberá permitir el filtrado por tipo de archivo para evitar la sobrecarga del flujo normal de información con archivos innecesarios.
+DOSSPRE,dosspre_1233,1,Security,Security,Security,Security,—,Security,El sistema deberá permitir al administrador del sistema iniciar sesión en el sitio web para consultar los mensajes de notificación.
+DOSSPRE,dosspre_1253,1,Security,Security,Security,Security,Security,—,El sistema deberá ser capaz de realizar la detección de malware y clasificar tanto el malware conocido como el desconocido en sus respectivas familias de malware.
+DOSSPRE,dosspre_1259,1,—,—,—,—,—,Security,El proceso de clasificación del sistema deberá generar un informe sobre los efectos de la actividad de malware durante su ejecución.
 PROMISE_exp,promise_0226,5,Security,—,—,—,—,—,El producto debe tener capacidad de auditoría. El producto debe almacenar mensajes durante un mínimo de un año para fines de auditoría y seguimiento de transacciones
 PROMISE_exp,promise_0244,5,Security,—,—,—,—,—,Un cliente solo puede transmitir una película si la compró y está dentro del período de visualización de 2 días
 PROMISE_exp,promise_0119,4,—,Security,Security,Security,Security,—,Solo se debe actualizar las partes que han cambiado al conectarse al servidor.
